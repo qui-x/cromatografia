@@ -1,7 +1,7 @@
 {
-  "name": "SIAB — Simulador de Indicadores Ácido-Base",
-  "short_name": "SIAB",
-  "description": "Investigue ácidos e bases com temas, missões, roteiros, instrumentos e relatórios.",
+  "name": "SIAC — Simulador Interativo de Análise Cromatográfica",
+  "short_name": "SIAC",
+  "description": "SIAC — A Identidade das Cores Ocultas. Identidade visual do simulador de cromatografia em desenvolvimento.",
   "lang": "pt-BR",
   "dir": "ltr",
   "id": "./",
@@ -9,8 +9,8 @@
   "scope": "./",
   "display": "standalone",
   "orientation": "any",
-  "background_color": "#080c14",
-  "theme_color": "#0c1520",
+  "background_color": "#081E26",
+  "theme_color": "#0B5472",
   "categories": [
     "education"
   ],
@@ -34,7 +34,7 @@
       "purpose": "maskable"
     },
     {
-      "src": "assets/siab-icone.svg",
+      "src": "assets/siac-icone.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any"
