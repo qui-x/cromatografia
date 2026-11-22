@@ -7,6 +7,7 @@ on:
       - "assets/siac-icone-app.svg"
       - "js/ui/abertura.js"
       - "css/siac-identidade.css"
+      - "scripts/siac-capturar-abertura.cjs"
       - "scripts/siac-gerar-icones.py"
       - "tests/siac-identidade.test.cjs"
       - ".github/workflows/siac-identidade.yml"
@@ -32,6 +33,20 @@ jobs:
         run: |
           node --check js/ui/abertura.js
           node tests/siac-identidade.test.cjs
+      - name: Instalar navegador para inspeção da abertura
+        run: |
+          npm ci --ignore-scripts
+          npx playwright install --with-deps chromium
+      - name: Verificar abertura real no navegador e salvar quadros
+        run: node scripts/siac-capturar-abertura.cjs
+      - name: Preservar evidências visuais
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: siac-abertura-evidencias
+          path: docs/evidencias/siac-abertura/
+          retention-days: 14
+          if-no-files-found: warn
       - name: Guardar ícones PWA no branch visual
         run: |
           git config user.name "github-actions[bot]"
