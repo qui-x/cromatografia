@@ -3,7 +3,7 @@ from pathlib import Path
 import cairosvg
 
 base = Path(__file__).resolve().parents[1]
-source = base / "assets" / "siac-icone.svg"
+source = base / "assets" / "siac-icone-app.svg"
 outputs = {
     "icone-192.png": 192,
     "icone-512.png": 512,

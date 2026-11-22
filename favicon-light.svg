@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192" role="img" aria-labelledby="siac-t siac-d">
 <title id="siac-t">SIAC — A Identidade das Cores Ocultas</title>
 <desc id="siac-d">Papel cromatográfico com três bandas separadas, linha de origem e câmara com solvente.</desc>
-<rect width="192" height="192" fill="#0B5472"/>
+
 <rect x="69" y="18" width="54" height="152" rx="7" fill="#F4E9D8" stroke="#1F2D3D" stroke-width="4"/>
 <rect x="79" y="48" width="34" height="12" rx="5" fill="#16839A"/>
 <rect x="79" y="75" width="34" height="12" rx="5" fill="#D96C1F"/>

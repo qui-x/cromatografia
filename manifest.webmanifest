@@ -34,7 +34,7 @@
       "purpose": "maskable"
     },
     {
-      "src": "assets/siac-icone.svg",
+      "src": "assets/siac-icone-app.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any"

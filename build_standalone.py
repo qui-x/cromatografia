@@ -37,7 +37,7 @@ html = re.sub(r'<script\b[^>]*src="([^"]+)"[^>]*>\s*</script>',
 
 # Imagens viram data URI.
 uri = {}
-for asset in ['assets/siab-icone.svg', 'favicon-dark.svg', 'favicon-light.svg']:
+for asset in ['assets/siab-icone.svg', 'assets/siac-icone.svg', 'assets/siac-icone-app.svg', 'favicon-dark.svg', 'favicon-light.svg']:
     uri[asset] = 'data:image/svg+xml;base64,' + base64.b64encode((root / asset).read_bytes()).decode('ascii')
     html = html.replace('"' + asset + '"', '"' + uri[asset] + '"')
 

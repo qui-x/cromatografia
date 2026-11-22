@@ -5,7 +5,7 @@
    página. */
 // Abertura visual original restaurada. Nova versão do cache elimina modelos,
 // player de vídeo e bibliotecas de abertura 3D das cópias offline.
-const VERSAO = "siac-identidade-0.1.0+20261122";
+const VERSAO = "siac-abertura-0.2.0+20261122";
 // Projetos do mesmo usuario.github.io compartilham a origem. Cada publicação
 // precisa de seu próprio cache; atualizar uma cópia não deve apagar outra.
 const BASE = new URL(self.registration.scope);
@@ -17,6 +17,7 @@ const ARQUIVOS = [
   "./index.html",
   "./manifest.webmanifest",
   "./assets/siac-icone.svg",
+  "./assets/siac-icone-app.svg",
   "./assets/icones/apple-touch-icon.png",
   "./vendor/dialog-polyfill/dialog-polyfill.css",
   "./css/stylesiab.css",

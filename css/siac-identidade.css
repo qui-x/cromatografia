@@ -44,46 +44,265 @@
 :root[data-theme="light"] .modulo[data-modulo="calcular"] { --mod: #8B4517; --mod-rgb: 139,69,23; }
 :root[data-contrast="on"] .modulo { --mod: var(--accent); --mod-rgb: 255,255,0; --mod-grad: #000; }
 .modulo-icone { background: var(--mod-grad); }
+/* Abertura artística SIAC v2: vinheta científica em SVG, sem painéis translúcidos.
+ * Os únicos efeitos de difusão são nas bandas cromatográficas, não na interface.
+ * Mantém o comportamento de saída e acessibilidade do SIAB. */
 .abertura, :root[data-theme="light"] .abertura {
   background: var(--bg);
   color: var(--text);
+  animation: abertura-seguranca .4s ease 8.5s forwards;
 }
-.abertura-tubos { width: min(400px, 90vw); }
+:root[data-contrast="on"] .abertura { background:#000; color:#fff; }
+.abertura-palco {
+  width: min(820px, 100%);
+  gap: 7px;
+}
+.abertura-tubos {
+  width: min(760px, 96vw);
+  height: auto;
+  max-height: min(64dvh, 455px);
+  overflow: visible;
+  transition: transform .62s cubic-bezier(.16, .75, .25, 1);
+}
+.com-marca .abertura-tubos { transform: translateY(-6px) scale(.96); }
+.abertura-marca {
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+  padding: 6px 10px;
+}
+.abertura-marca img { width: 50px; height: 50px; object-fit: contain; }
 .abertura-marca strong {
+  display: block;
+  font-size: clamp(1.4rem, 3.7vw, 1.95rem);
+  letter-spacing: .12em;
   background: none;
   -webkit-background-clip: initial;
   background-clip: initial;
   color: var(--accent);
 }
 :root[data-theme="light"] .abertura-marca strong { color: #0B5472; }
-:root[data-contrast="on"] .abertura-marca strong { color: #ff0; }
-.ab-crom-papel { fill: #F4E9D8; stroke: #1F2D3D; stroke-width: 2.5; }
-.ab-crom-camara { fill: none; stroke: #81D9CE; stroke-width: 3; }
-.ab-crom-solvente { fill: #2E9B8F; }
-.ab-crom-umida { fill: #DAECE5; transform: scaleY(0); transform-box: fill-box; transform-origin: center bottom; transition: transform 2s linear; }
-.ab-crom-origem { stroke: #24313D; stroke-width: 2; stroke-linecap: round; }
-.ab-crom-frente { stroke: #0B5472; stroke-width: 2; stroke-dasharray: 5 4; transform: translateY(0); transition: transform 2s linear; }
-.ab-crom-amostra { fill: #1F2D3D; transition: opacity .3s; }
-.ab-crom-banda { opacity: 0; transition: transform 2s ease-out, opacity .2s linear; }
-.ab-crom-banda-1 { fill: #16839A; }
-.ab-crom-banda-2 { fill: #D96C1F; }
-.ab-crom-banda-3 { fill: #2E9B8F; }
-.em-desenvolvimento .ab-crom-umida { transform: scaleY(1); }
-.em-desenvolvimento .ab-crom-frente { transform: translateY(-105px); }
-.em-desenvolvimento .ab-crom-banda { opacity: 1; }
-.em-desenvolvimento .ab-crom-banda-1 { transform: translateY(-88px); }
-.em-desenvolvimento .ab-crom-banda-2 { transform: translateY(-60px); }
-.em-desenvolvimento .ab-crom-banda-3 { transform: translateY(-33px); }
-.em-desenvolvimento .ab-crom-amostra { opacity: 0; }
-.ab-crom-legenda { font: 600 11px system-ui, sans-serif; fill: var(--text); text-anchor: middle; }
-.abertura-marca { align-items: center; }
-.abertura-marca img { width: 46px; height: 46px; }
-@media (max-width: 420px) {
-  .abertura-marca { gap: 9px; max-width: 96vw; }
-  .abertura-marca strong { font-size: 1.35rem; }
-  .abertura-marca span { font-size: .73rem; }
-  .abertura-marca em { font-size: .7rem; }
+:root[data-contrast="on"] .abertura-marca strong { color:#ff0; }
+.abertura-marca span {
+  font-size: clamp(.72rem, 2.6vw, 1rem);
+  font-weight: 600;
+  opacity: 1;
+}
+.abertura-marca em {
+  font-style: normal;
+  font-size: clamp(.7rem, 2.4vw, .9rem);
+  color: var(--accent);
+  opacity: 1;
+  letter-spacing: .015em;
+}
+.siac-ab-moldura {
+  fill: var(--panel);
+  stroke: var(--border);
+  stroke-width: 2;
+}
+.siac-ab-cantoneira {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+.siac-ab-mesa {
+  fill: none;
+  stroke: var(--secondary);
+  stroke-width: 3;
+}
+.siac-ab-mesa-fina {
+  fill: none;
+  stroke: var(--border);
+  stroke-width: 2;
+}
+.siac-ab-legenda, .siac-ab-legenda-menor {
+  font-family: system-ui, "Segoe UI", sans-serif;
+  font-weight: 750;
+  fill: var(--secondary);
+  font-size: 10px;
+  letter-spacing: .08em;
+}
+.siac-ab-legenda-menor { font-size: 9px; }
+.siac-ab-risco {
+  stroke: var(--muted);
+  stroke-width: 2;
+  stroke-linecap: round;
+  fill: none;
+}
+.siac-ab-vidro {
+  fill: none;
+  stroke: var(--secondary);
+  stroke-width: 3;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.siac-ab-pote {
+  fill: var(--panel2);
+  stroke: var(--border);
+  stroke-width: 2;
+}
+.siac-ab-papel-grupo {
+  transform: translateY(-40px);
+  transition: transform .52s cubic-bezier(.2,.8,.2,1);
+}
+.siac-ab-imersa .siac-ab-papel-grupo { transform: translateY(0); }
+.siac-ab-papel {
+  fill: #F4E9D8;
+  stroke: #CDBA99;
+  stroke-width: 3;
+}
+.siac-ab-amostra-rotulo {
+  font: 750 13px system-ui, "Segoe UI", sans-serif;
+  fill: #1F2D3D;
+  text-anchor: middle;
+}
+.siac-ab-origem {
+  stroke: #1F2D3D;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-dasharray: 4 4;
+}
+.siac-ab-regua {
+  fill: none;
+  stroke: #A3947E;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+}
+.siac-ab-umidade {
+  fill: #DCEAE0;
+  transform: scaleY(0);
+  transform-origin: 50% 100%;
+  transform-box: fill-box;
+  transition: transform 2.68s linear;
+}
+.siac-ab-desenvolvendo .siac-ab-umidade { transform: scaleY(1); }
+.siac-ab-frente {
+  fill: none;
+  stroke: #16839A;
+  stroke-width: 2.5;
+  stroke-dasharray: 5 5;
+  transform: translateY(0);
+  opacity: 0;
+  transition: transform 2.68s linear, opacity .14s linear;
+}
+.siac-ab-desenvolvendo .siac-ab-frente {
+  opacity: 1;
+  transform: translateY(-203px);
+}
+.siac-ab-ponto {
+  fill: #1F2D3D;
+  transform: scale(0);
+  transform-origin: center;
+  transform-box: fill-box;
+  transition: transform .2s cubic-bezier(.1,.8,.2,1), opacity .24s;
+}
+.siac-ab-aplicada .siac-ab-ponto { transform: scale(1); }
+.siac-ab-desenvolvendo .siac-ab-ponto { opacity: 0; }
+.siac-ab-faixa {
+  opacity: 0;
+  transform: translateY(0);
+  transition:
+    transform 2.42s cubic-bezier(.22,.69,.31,.97) var(--atraso),
+    opacity .28s ease var(--atraso);
+}
+.siac-ab-desenvolvendo .siac-ab-faixa {
+  opacity: 1;
+  transform: translateY(var(--ascensao));
+}
+.siac-ab-pigmento { stroke: none; }
+.siac-ab-pigmento-nuvem {
+  opacity: .24;
+  filter: url(#siac-ab-difusao);
+}
+.siac-ab-camara-fundo, .siac-ab-camara-frente { pointer-events: none; }
+.siac-ab-contorno {
+  fill: none;
+  stroke: var(--secondary);
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+.siac-ab-banho { fill: #2E9B8F; }
+.siac-ab-superficie {
+  fill: none;
+  stroke: #81D9CE;
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+.siac-ab-borda-camara {
+  fill: none;
+  stroke: var(--secondary);
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+.siac-ab-capilar {
+  opacity: 0;
+  transform: translate(-150px,-72px);
+  transform-box: view-box;
+}
+.siac-ab-aplicando .siac-ab-capilar {
+  animation: siac-ab-capilar-mover 1.55s cubic-bezier(.25,.1,.25,1) both;
+}
+.siac-ab-capilar-vidro {
+  stroke: #D9E6E3;
+  stroke-width: 7;
+  fill: none;
+  stroke-linecap: round;
+}
+.siac-ab-capilar-amostra {
+  stroke: #16839A;
+  stroke-width: 4;
+  fill: none;
+  stroke-linecap: round;
+}
+.siac-ab-capilar-tampa, .siac-ab-capilar-aro {
+  stroke: #D96C1F;
+  stroke-width: 7;
+  fill: none;
+  stroke-linecap: round;
+}
+.siac-ab-anotacoes {
+  opacity: 0;
+  transform: translateY(9px);
+  transition: opacity .43s ease, transform .43s ease;
+}
+.siac-ab-revelada .siac-ab-anotacoes { opacity: 1; transform: none; }
+.siac-ab-anotacao-linha {
+  stroke: #D96C1F;
+  stroke-width: 2;
+  fill: none;
+  stroke-linejoin: round;
+}
+.siac-ab-anotacao-texto {
+  fill: #D96C1F;
+  font: 750 11px system-ui, sans-serif;
+  letter-spacing: .06em;
+}
+@keyframes siac-ab-capilar-mover {
+  0%   {opacity:0; transform:translate(-112px,-80px);}
+  8%   {opacity:1; transform:translate(0,-34px);}
+  16%  {opacity:1; transform:translate(0,-28px);}
+  23%  {opacity:1; transform:translate(0,-18px);}
+  34%  {opacity:1; transform:translate(68px,-28px);}
+  42%  {opacity:1; transform:translate(68px,-18px);}
+  54%  {opacity:1; transform:translate(136px,-28px);}
+  62%  {opacity:1; transform:translate(136px,-18px);}
+  80%  {opacity:1; transform:translate(153px,-92px);}
+  100% {opacity:0; transform:translate(170px,-130px);}
+}
+@media (max-width: 520px) {
+  .abertura-palco { width: 100%; }
+  .abertura-tubos { width: 98vw; max-height: min(55dvh, 390px); }
+  .abertura-marca { gap: 9px; max-width: 95vw; }
+  .abertura-marca img { width: 40px; height: 40px; }
+  .abertura-pular { font-size: .72rem; }
+}
+@media (max-height: 500px) {
+  .abertura-tubos { max-height: 58dvh; }
+  .abertura-marca img { width: 33px; height: 33px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .ab-crom-umida, .ab-crom-frente, .ab-crom-banda { transition: none; }
+  .siac-ab-papel-grupo, .siac-ab-umidade, .siac-ab-frente,
+  .siac-ab-faixa, .siac-ab-anotacoes, .abertura-tubos { transition:none; }
+  .siac-ab-capilar { animation:none !important; }
 }
