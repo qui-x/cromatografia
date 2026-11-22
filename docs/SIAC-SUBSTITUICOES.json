@@ -1,12 +1,12 @@
 {
   "index.html": {
     "estado": "adaptado",
-    "motivo": "Marca na abertura, cabeçalho e início; CSS de paleta sólida.",
+    "motivo": "Apresentação SIAC e carregamento da nova abertura v4 em três béqueres.",
     "teste": "node tests/siac-identidade.test.cjs"
   },
   "js/ui/abertura.js": {
     "estado": "adaptado",
-    "motivo": "Substitui animação de pH por cena de separação cromatográfica.",
+    "motivo": "Vinheta v4 com três câmaras independentes, migração contínua, gradientes físicos ilustrativos e revelação da marca.",
     "teste": "node tests/siac-identidade.test.cjs"
   },
   "manifest.webmanifest": {
@@ -16,7 +16,7 @@
   },
   "sw.js": {
     "estado": "adaptado",
-    "motivo": "Cache e cores separados da publicação SIAB; novos arquivos SIAC.",
+    "motivo": "Novo cache PWA para abertura v4 e página isolada de prévia; sem interferir no cache SIAB.",
     "teste": "node tests/siac-identidade.test.cjs"
   },
   "js/a11y/preferencias.js": {

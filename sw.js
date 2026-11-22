@@ -5,7 +5,7 @@
    página. */
 // Abertura visual original restaurada. Nova versão do cache elimina modelos,
 // player de vídeo e bibliotecas de abertura 3D das cópias offline.
-const VERSAO = "siac-abertura-0.2.0+20261122";
+const VERSAO = "siac-abertura-v4.0.0+20261122";
 // Projetos do mesmo usuario.github.io compartilham a origem. Cada publicação
 // precisa de seu próprio cache; atualizar uma cópia não deve apagar outra.
 const BASE = new URL(self.registration.scope);
@@ -32,6 +32,8 @@ const ARQUIVOS = [
   "./css/refinements.css",
   "./css/aplicativo.css",
   "./css/siac-identidade.css",
+  "./css/siac-abertura-v4.css",
+  "./previews/abertura-v4.html",
   "./vendor/dialog-polyfill/dialog-polyfill.js",
   "./js/core/namespace.js",
   "./js/core/util.js",

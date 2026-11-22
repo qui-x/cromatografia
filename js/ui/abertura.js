@@ -1,176 +1,336 @@
 "use strict";
-/* SIAC — A Identidade das Cores Ocultas.
- * Vinheta: aplicação de amostras -> imersão -> ascensão do solvente ->
- * separação das bandas -> assinatura da marca.
- * Uma representação artística, não uma simulação quantitativa.
- * Mantém as preferências e o comportamento de pular do SIAB.
+/* SIAC — A Identidade das Cores Ocultas | abertura artística v4.
+ * Três amostras em três béqueres independentes, com cromatografia planar
+ * ilustrativa e transição das bandas para a identidade do aplicativo.
+ * A animação NÃO é o motor científico: as frações de migração são artísticas.
+ * Conserva controles de acessibilidade, pular e armazenamento do SIAB.
  */
 SIAB.abertura = (() => {
   const CHAVE = "siac_abertura";
-  const TEMPOS = Object.freeze({
-    aplicar: 320, pontos: [580, 870, 1150], imergir: 1480,
-    desenvolver: 1810, revelar: 4510, marca: 4940, sair: 6890
-  });
-  const timers = [];
-  const amostras = Object.freeze([
-    { x: 310, rotulo: "A", bandas: [
-      { dist: 162, largo: 22, cor: "#16839A", atraso: 130 },
-      { dist: 98, largo: 20, cor: "#D96C1F", atraso: 200 },
-      { dist: 46, largo: 18, cor: "#2E9B8F", atraso: 270 }
-    ] },
-    { x: 378, rotulo: "B", bandas: [
-      { dist: 188, largo: 21, cor: "#16839A", atraso: 230 },
-      { dist: 114, largo: 19, cor: "#2E9B8F", atraso: 290 },
-      { dist: 67, largo: 18, cor: "#D96C1F", atraso: 370 }
-    ] },
-    { x: 446, rotulo: "?", bandas: [
-      { dist: 171, largo: 21, cor: "#16839A", atraso: 170 },
-      { dist: 133, largo: 19, cor: "#D96C1F", atraso: 240 },
-      { dist: 74, largo: 18, cor: "#2E9B8F", atraso: 320 }
-    ] }
+  const FIM = 6950, INICIO_MIGRACAO = 1560, FIM_MIGRACAO = 4560;
+  const LARGURA = 1060, ALTURA = 515, ORIGEM = 342, FRENTE_MAX = 192;
+  const CENTROS = [191, 530, 869];
+  const AMOSTRAS = Object.freeze([
+    { id:"A", nome:"TINTA", cor:"#0D667B", frentes:0.98, atraso:0,
+      bandas:[
+        { rf:.86, cor:"#168DA7", nome:"Ciano", larg:29, rastro:.14 },
+        { rf:.56, cor:"#E3902F", nome:"Âmbar", larg:25, rastro:.23 },
+        { rf:.29, cor:"#276F80", nome:"Petróleo", larg:25, rastro:.29 }
+      ] },
+    { id:"B", nome:"PIGMENTOS", cor:"#596A2D", frentes:1.00, atraso:90,
+      bandas:[
+        { rf:.79, cor:"#D79B32", nome:"Ouro", larg:29, rastro:.15 },
+        { rf:.51, cor:"#3EAA76", nome:"Verde", larg:25, rastro:.27 },
+        { rf:.32, cor:"#91B949", nome:"Oliva", larg:28, rastro:.24 },
+        { rf:.16, cor:"#B76636", nome:"Terracota", larg:24, rastro:.32 }
+      ] },
+    { id:"C", nome:"CORANTES", cor:"#6C4343", frentes:1.02, atraso:175,
+      bandas:[
+        { rf:.89, cor:"#D46943", nome:"Coral", larg:26, rastro:.16 },
+        { rf:.64, cor:"#126B8F", nome:"Azul", larg:28, rastro:.20 },
+        { rf:.38, cor:"#47A693", nome:"Turquesa", larg:25, rastro:.31 }
+      ] }
   ]);
-  let ativa = false, elemento = null;
-
+  const tempos = Object.freeze({
+    entrada: [0,510], aplicar:[420,1460], imersao:[1390,1790],
+    separacao:[INICIO_MIGRACAO,FIM_MIGRACAO], observar:[4530,5160],
+    identidade:[5100,6180], saida:FIM
+  });
+  let caixa = null, svg = null, inicio = 0, frame = 0, fechamento = null;
+  let ativa = false, refs = [], marcas = [];
+  const clamp = n => Math.max(0,Math.min(1,n));
+  const faixa = (t,a,b) => clamp((t-a)/(b-a));
+  const suave = v => v*v*(3-2*v);
+  const decrescer = v => 1-Math.pow(1-v,1.24);
   function ligada() {
     try { return localStorage.getItem(CHAVE) !== "off"; }
     catch (_) { return true; }
   }
-  function definir(ligar) {
-    try { localStorage.setItem(CHAVE, ligar ? "on" : "off"); }
-    catch (_) { /* ausência de armazenamento: preferência da visita */ }
+  function definir(v) {
+    try { localStorage.setItem(CHAVE, v ? "on":"off"); }
+    catch (_) { /* armazenamento indisponível */ }
   }
-  function desenhar(caixa) {
-    const svg = caixa.querySelector(".abertura-tubos");
-    if (!svg) return;
-    svg.setAttribute("viewBox", "0 0 760 455");
-    svg.setAttribute("role", "img");
-    svg.setAttribute("aria-label", "Três amostras são depositadas no papel. O solvente sobe e os componentes se separam em bandas.");
-    const trilhas = amostras.map((amostra, i) => {
-      const bandas = amostra.bandas.map(b => `
-        <g class="siac-ab-faixa" style="--ascensao:-${b.dist}px;--atraso:${b.atraso}ms">
-          <ellipse cx="${amostra.x}" cy="322" rx="${b.largo+5}" ry="10" fill="${b.cor}" class="siac-ab-pigmento-nuvem"/>
-          <path d="M${amostra.x-b.largo} 322
-            Q${amostra.x-b.largo+3} 314 ${amostra.x} 315
-            Q${amostra.x+b.largo-3} 314 ${amostra.x+b.largo} 322
-            Q${amostra.x+b.largo-3} 330 ${amostra.x} 329
-            Q${amostra.x-b.largo+3} 330 ${amostra.x-b.largo} 322Z"
-            fill="${b.cor}" class="siac-ab-pigmento"/>
-        </g>`).join("");
-      return `<g class="siac-ab-trilha siac-ab-trilha-${i+1}">
-        <text x="${amostra.x}" y="66" class="siac-ab-amostra-rotulo">${amostra.rotulo}</text>
-        <circle cx="${amostra.x}" cy="322" r="6" class="siac-ab-ponto"/>
-        ${bandas}
-      </g>`;
-    }).join("");
-    const marcas = Array.from({length:8},(_,i) =>
-      `<path d="M${270-(i%2?3:8)} ${96+i*30}h${i%2?4:9}" class="siac-ab-regua"/>`
+  // Cálculo geométrico independente do relógio e do dispositivo.
+  function quadro(tempo) {
+    const entrada = suave(faixa(tempo,0,520));
+    const imersao = suave(faixa(tempo,1390,1790));
+    const revelar = suave(faixa(tempo,5100,5960));
+    const assinatura = suave(faixa(tempo,5480,6220));
+    return {
+      entrada, imersao, revelar, assinatura,
+      placas: AMOSTRAS.map(a => {
+        const u = faixa(tempo - a.atraso,INICIO_MIGRACAO,FIM_MIGRACAO);
+        const desenvolvimento = decrescer(u);
+        const avancou = FRENTE_MAX * a.frentes * desenvolvimento;
+        const frenteY = ORIGEM-avancou;
+        return {
+          id:a.id, u, frenteY,
+          bandas:a.bandas.map(b => ({
+            y:ORIGEM-avancou*b.rf, rf:b.rf, cor:b.cor, largura:b.larg,
+            traco:b.rastro, visivel:clamp(u*7), deslocamento:avancou*b.rf
+          }))
+        };
+      })
+    };
+  }
+  function definicoes() {
+    const pigmentos = AMOSTRAS.flatMap((a,i) =>
+      a.bandas.flatMap((b,j) => [
+        `<radialGradient id="siac-v4-mancha-${i}-${j}" cx="48%" cy="49%" r="68%">
+          <stop offset="0%" stop-color="${b.cor}" stop-opacity=".98"/>
+          <stop offset="32%" stop-color="${b.cor}" stop-opacity=".92"/>
+          <stop offset="66%" stop-color="${b.cor}" stop-opacity=".47"/>
+          <stop offset="100%" stop-color="${b.cor}" stop-opacity="0"/>
+        </radialGradient>`,
+        `<linearGradient id="siac-v4-rastro-${i}-${j}" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0%" stop-color="${b.cor}" stop-opacity=".68"/>
+          <stop offset="50%" stop-color="${b.cor}" stop-opacity=".22"/>
+          <stop offset="100%" stop-color="${b.cor}" stop-opacity="0"/>
+        </linearGradient>`
+      ])
     ).join("");
-    svg.innerHTML = `
-    <defs>
-      <clipPath id="siac-ab-corte-papel"><rect x="274" y="74" width="208" height="303" rx="2"/></clipPath>
-      <pattern id="siac-ab-fibras" width="21" height="19" patternUnits="userSpaceOnUse">
-        <path d="M3 13l5-2M14 4l4 2" stroke="#D4C5AC" stroke-width=".6"/>
-        <circle cx="11" cy="16" r=".65" fill="#D4C5AC"/>
-      </pattern>
-      <filter id="siac-ab-difusao" x="-30%" y="-80%" width="160%" height="260%">
-        <feGaussianBlur stdDeviation="2.9"/>
-      </filter>
-    </defs>
-    <rect x="16" y="16" width="728" height="419" rx="16" class="siac-ab-moldura"/>
-    <path d="M40 402H720" class="siac-ab-mesa"/>
-    <path d="M40 412H720" class="siac-ab-mesa-fina"/>
-    <path d="M54 54h35M54 54v35M706 54h-35M706 54v35" class="siac-ab-cantoneira"/>
-    <g class="siac-ab-frascos">
-      <path d="M93 248v104a10 10 0 0 0 10 10h54a10 10 0 0 0 10-10V248" class="siac-ab-vidro"/>
-      <path d="M88 248h84" class="siac-ab-vidro"/>
-      <rect x="99" y="294" width="62" height="62" rx="5" fill="#16839A"/>
-      <path d="M108 271h42M108 279h31" class="siac-ab-risco"/>
-      <text x="130" y="387" class="siac-ab-legenda-menor">AMOSTRA</text>
-      <rect x="83" y="119" width="96" height="66" rx="8" class="siac-ab-pote"/>
-      <path d="M95 137h70M95 148h51M95 159h59" class="siac-ab-risco"/>
-      <text x="131" y="111" class="siac-ab-legenda-menor">MISTURA</text>
-    </g>
-    <g class="siac-ab-coluna-lateral">
-      <path d="M564 108h132M564 120h96" class="siac-ab-risco"/>
-      <text x="565" y="94" class="siac-ab-legenda">FASE ESTACIONÁRIA</text>
-      <path d="M564 265h132M564 277h96" class="siac-ab-risco"/>
-      <text x="565" y="251" class="siac-ab-legenda">FASE MÓVEL</text>
-      <text x="566" y="342" class="siac-ab-legenda-menor">SEPARAÇÃO</text>
-      <text x="566" y="362" class="siac-ab-legenda-menor">POR AFINIDADE</text>
-    </g>
-    <g class="siac-ab-camara-fundo">
-      <path d="M244 275v98a19 19 0 0 0 19 19h233a19 19 0 0 0 19-19v-98" class="siac-ab-contorno"/>
-      <path d="M245 351h269v22a18 18 0 0 1-18 18H263a18 18 0 0 1-18-18Z" class="siac-ab-banho"/>
-      <path d="M248 351h263" class="siac-ab-superficie"/>
-    </g>
-    <g class="siac-ab-papel-grupo">
-      <rect x="271" y="71" width="214" height="311" rx="5" class="siac-ab-papel"/>
-      <g clip-path="url(#siac-ab-corte-papel)">
-        <rect x="274" y="74" width="208" height="303" fill="url(#siac-ab-fibras)"/>
-        <rect x="275" y="110" width="206" height="241" class="siac-ab-umidade"/>
-        ${trilhas}
-        <path d="M284 322H472" class="siac-ab-origem"/>
-        <path d="M278 322H478" class="siac-ab-frente"/>
-        <g class="siac-ab-marcas">${marcas}</g>
+    return `
+      <defs>
+        <pattern id="siac-v4-papel-fibra" width="17" height="19" patternUnits="userSpaceOnUse">
+          <path d="M3 7l4-1M10 14l3-1M12 4l2 1" stroke="#CABDA6" stroke-width=".75" fill="none"/>
+          <circle cx="7" cy="15" r=".7" fill="#C6BBA6"/>
+        </pattern>
+        <linearGradient id="siac-v4-umidade" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#B7D9C9" stop-opacity=".19"/>
+          <stop offset="35%" stop-color="#99CDBD" stop-opacity=".29"/>
+          <stop offset="100%" stop-color="#8ABAA9" stop-opacity=".47"/>
+        </linearGradient>
+        <linearGradient id="siac-v4-solvente" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#6ABDC1"/>
+          <stop offset="100%" stop-color="#267A8D"/>
+        </linearGradient>
+        <filter id="siac-v4-borda-difusa" x="-50%" y="-100%" width="200%" height="300%">
+          <feGaussianBlur stdDeviation="3.8"/>
+        </filter>
+        ${CENTROS.map((cx,i) => `
+          <clipPath id="siac-v4-clip-${i}">
+            <rect x="${cx-65}" y="100" width="130" height="289" rx="2"/>
+          </clipPath>`).join("")}
+        ${pigmentos}
+      </defs>
+    `;
+  }
+  function construirBanda(cx,i,j,b) {
+    const x = cx + (j%2 ? 1.8 : -1.4);
+    return `
+      <g class="siac-v4-componente" data-banda="${i}-${j}">
+        <path class="siac-v4-trilha" data-trilha="${i}-${j}"
+          stroke="url(#siac-v4-rastro-${i}-${j})" stroke-width="${b.larg*.53}" />
+        <g class="siac-v4-manchas" data-mancha="${i}-${j}">
+          <ellipse cx="0" cy="0" rx="${b.larg*1.30}" ry="15"
+            fill="${b.cor}" opacity=".17" filter="url(#siac-v4-borda-difusa)"/>
+          <path d="M${-b.larg} 1 C${-b.larg+2} -9 -14 -11 0 -10
+            C13 -11 ${b.larg-2} -7 ${b.larg} 0
+            C${b.larg-3} 9 9 12 0 10
+            C-14 12 ${-b.larg+3} 9 ${-b.larg} 1Z"
+            fill="url(#siac-v4-mancha-${i}-${j})"/>
+          <ellipse cx="-2" cy="-1.2" rx="${b.larg*.56}" ry="4.4"
+            fill="${b.cor}" opacity=".37"/>
+        </g>
+      </g>`;
+  }
+  function construirPlaca(a,i) {
+    const x = CENTROS[i], papelX=x-65, len=130;
+    const manchas=a.bandas.map((b,j)=>construirBanda(x,i,j,b)).join("");
+    return `
+      <g class="siac-v4-conjunto" data-placa="${a.id}">
+        <g class="siac-v4-identificacao">
+          <text x="${x}" y="41" class="siac-v4-numero">${a.id}</text>
+          <text x="${x}" y="61" class="siac-v4-nome">${a.nome}</text>
+        </g>
+        <g class="siac-v4-bequer">
+          <path d="M${x-108} 175h216m-209 1v226a18 18 0 0 0 18 18h164a18 18 0 0 0 18-18V176"
+            class="siac-v4-vidro"/>
+          <path d="M${x-99} 372h198v29a17 17 0 0 1-17 17h-164a17 17 0 0 1-17-17Z"
+            fill="url(#siac-v4-solvente)" class="siac-v4-poco-solvente"/>
+          <path d="M${x-98} 372Q${x-51} 370 ${x} 372T${x+98} 372"
+            class="siac-v4-menisco"/>
+          <path d="M${x-94} 222v139M${x+93} 220v115" class="siac-v4-reflexo-vidro"/>
+          <path d="M${x+78} 300h10M${x+78} 323h10M${x+78} 347h10"
+            class="siac-v4-graduacao"/>
+        </g>
+        <g class="siac-v4-papel" data-papel="${i}">
+          <rect x="${papelX}" y="98" width="${len}" height="289" rx="3" class="siac-v4-folha"/>
+          <g clip-path="url(#siac-v4-clip-${i})">
+            <rect x="${papelX+3}" y="101" width="124" height="283" fill="url(#siac-v4-papel-fibra)"/>
+            <rect data-umidade="${i}" x="${papelX+3}" y="382" width="124" height="0"
+              fill="url(#siac-v4-umidade)"/>
+            <path data-frente="${i}" d="" class="siac-v4-frente"/>
+            ${manchas}
+            <path d="M${papelX+10} ${ORIGEM}h110" class="siac-v4-origem"/>
+            <g class="siac-v4-regua">
+              ${Array.from({length:8},(_,k)=>`<path d="M${papelX+5} ${138+k*25}h${k%2?4:9}"/>`).join("")}
+            </g>
+            <circle data-ponto="${i}" cx="${x}" cy="${ORIGEM}" r="5.5"
+              fill="${a.cor}" class="siac-v4-ponto"/>
+          </g>
+          <path d="M${papelX+7} 106v6M${papelX+123} 106v6" class="siac-v4-folha-detalhe"/>
+        </g>
+        <g class="siac-v4-capilar" data-capilar="${i}">
+          <path d="M${x-5} 93V${ORIGEM-6}" class="siac-v4-capilar-vidro"/>
+          <path d="M${x-5} ${ORIGEM-20}V${ORIGEM-6}" class="siac-v4-capilar-tinta"
+            stroke="${a.cor}"/>
+          <path d="M${x-13} 89h16" class="siac-v4-capilar-cabeca"/>
+        </g>
+        <text x="${x}" y="458" class="siac-v4-legenda">AMOSTRA ${a.id}</text>
+        <path d="M${x-52} 472h104" class="siac-v4-linha-legenda"/>
+      </g>`;
+  }
+  function desenhar(el) {
+    svg=el.querySelector(".abertura-tubos");
+    if(!svg)return;
+    svg.setAttribute("viewBox",`0 0 ${LARGURA} ${ALTURA}`);
+    svg.setAttribute("preserveAspectRatio","xMidYMid meet");
+    svg.setAttribute("role","img");
+    svg.setAttribute("aria-label",
+      "Três béqueres independentes com amostras A, B e C. Cada placa desenvolve bandas e rastros cromatográficos distintos.");
+    svg.innerHTML = definicoes() + `
+      <g class="siac-v4-cena">
+        <path d="M41 430H1019" class="siac-v4-bancada"/>
+        <path d="M41 439H1019" class="siac-v4-bancada-secundaria"/>
+        ${AMOSTRAS.map(construirPlaca).join("")}
+        <g class="siac-v4-arcos" aria-hidden="true">
+          <path data-arco="0" d="M191 197C267 120 352 133 530 195" stroke="#168DA7"/>
+          <path data-arco="1" d="M530 197C530 141 530 160 530 195" stroke="#D79B32"/>
+          <path data-arco="2" d="M869 197C791 117 711 139 530 195" stroke="#3EAA76"/>
+        </g>
+        <g class="siac-v4-assinatura-simbolo">
+          <rect x="497" y="113" width="66" height="162" rx="5" fill="#F4E9D8" stroke="#1F2D3D" stroke-width="3"/>
+          <path d="M503 137H557" stroke="#0B5472" stroke-width="2.5" stroke-dasharray="5 4"/>
+          <rect x="506" y="167" width="48" height="13" rx="5" fill="#168DA7"/>
+          <rect x="506" y="194" width="48" height="13" rx="5" fill="#D79B32"/>
+          <rect x="506" y="221" width="48" height="13" rx="5" fill="#3EAA76"/>
+          <path d="M502 254H558" stroke="#1F2D3D" stroke-width="2"/>
+          <path d="M476 242v26q0 18 18 18h72q18 0 18-18v-26" fill="none"
+            stroke="#81D9CE" stroke-width="5" stroke-linecap="round"/>
+        </g>
       </g>
-    </g>
-    <g class="siac-ab-camara-frente">
-      <path d="M242 275H517" class="siac-ab-borda-camara"/>
-      <path d="M246 351H514" class="siac-ab-superficie"/>
-    </g>
-    <g class="siac-ab-capilar">
-      <path d="M310 203V310" class="siac-ab-capilar-vidro"/>
-      <path d="M310 281V310" class="siac-ab-capilar-amostra"/>
-      <path d="M310 203v-16" class="siac-ab-capilar-tampa"/>
-      <path d="M299 193h22" class="siac-ab-capilar-aro"/>
-    </g>
-    <g class="siac-ab-anotacoes">
-      <path d="M494 133h49l16-12" class="siac-ab-anotacao-linha"/>
-      <text x="562" y="120" class="siac-ab-anotacao-texto">FRENTE</text>
-      <path d="M494 322h49l16 12" class="siac-ab-anotacao-linha"/>
-      <text x="562" y="335" class="siac-ab-anotacao-texto">ORIGEM</text>
-    </g>`;
+    `;
+    refs=AMOSTRAS.map((a,i)=>({
+      papel:svg.querySelector(`[data-papel="${i}"]`),
+      conjunto:svg.querySelector(`[data-placa="${a.id}"]`),
+      frente:svg.querySelector(`[data-frente="${i}"]`),
+      molhado:svg.querySelector(`[data-umidade="${i}"]`),
+      ponto:svg.querySelector(`[data-ponto="${i}"]`),
+      capilar:svg.querySelector(`[data-capilar="${i}"]`),
+      bandas:a.bandas.map((_,j)=>({
+        grupo:svg.querySelector(`[data-mancha="${i}-${j}"]`),
+        rastro:svg.querySelector(`[data-trilha="${i}-${j}"]`)
+      }))
+    }));
+    marcas=Array.from(svg.querySelectorAll("[data-arco]"));
+    marcas.forEach(p=>{const len=p.getTotalLength();p.dataset.len=String(len);
+      p.style.strokeDasharray=String(len);p.style.strokeDashoffset=String(len)});
+  }
+  function aplicarTempo(t) {
+    if(!caixa||!svg)return;
+    const k=quadro(t);
+    const corte=suave(faixa(t,5050,5900));
+    const entrada=k.entrada;
+    refs.forEach((r,i)=>{
+      const a=AMOSTRAS[i], p=k.placas[i], cx=CENTROS[i];
+      const aplicado=suave(faixa(t,530+i*255,760+i*255));
+      
+      // Cada placa entra na própria câmara, sem afetar as demais.
+      r.papel.setAttribute("transform",`translate(0 ${(-34*(1-k.imersao)).toFixed(2)})`);
+      r.conjunto.style.opacity=String(entrada*(1-.83*corte));
+      r.ponto.style.opacity=String(aplicado*(1-clamp(p.u*3)));
+      // O capilar se aproxima, toca a linha de origem e sai antes da imersão.
+      const entre=faixa(t,410+i*225,880+i*225);
+      const inout=entre<.34?suave(entre/.34):1-suave((entre-.34)/.66);
+      r.capilar.setAttribute("transform",`translate(0 ${(-73+45*inout).toFixed(2)})`);
+      r.capilar.style.opacity=String(inout*.96*(1-corte));
+      const frente=p.frenteY;
+      // Frente e umidade são ancoradas na mesma coordenada.
+      const h=383-frente;
+      r.molhado.setAttribute("y",frente.toFixed(2));
+      r.molhado.setAttribute("height",Math.max(0,h).toFixed(2));
+      r.molhado.style.opacity=String(p.u>0?.92:0);
+      const wobble=Math.sin(t/370+i*1.6)*1.05*p.u;
+      r.frente.setAttribute("d",`M${(cx-61)} ${(frente+wobble).toFixed(2)}q20 -1.6 40 0t41 0t41 0`);
+      r.frente.style.opacity=String(p.u>.02?Math.min(1,p.u*11):0);
+      r.bandas.forEach((b,j)=>{
+        const v=p.bandas[j], desloc=v.deslocamento, orig=ORIGEM, y=v.y;
+        // Afinidade relativa sempre abaixo da frente do solvente.
+        b.grupo.setAttribute("transform",`translate(${cx+(j%2?1.8:-1.4)} ${y.toFixed(2)}) scale(${(0.74+0.26*suave(p.u)).toFixed(3)} ${(0.68+0.36*suave(p.u)).toFixed(3)})`);
+        b.grupo.style.opacity=String(clamp((p.u-.015)*13));
+        const tilt=Math.sin(2.1*j+i)*2.0;
+        const trailerY=Math.min(orig,y+9);
+        b.rastro.setAttribute("d",`M ${(cx+tilt).toFixed(2)} ${(orig-1).toFixed(2)}
+          Q ${(cx-4*Math.sin(i+j)).toFixed(2)} ${((orig+trailerY)/2).toFixed(2)}
+          ${cx} ${trailerY.toFixed(2)}`);
+        b.rastro.style.opacity=String(Math.min(v.traco+.04,1)*clamp(p.u*8));
+      });
+    });
+    // A transformação final é deliberadamente gráfica, não física.
+    marcas.forEach((arco,i)=>{
+      const u=suave(faixa(t,5150+i*125,5780+i*70));
+      arco.style.opacity=String(u*(1-suave(faixa(t,5880,6280))));
+      arco.style.strokeDashoffset=String((Number(arco.dataset.len)*(1-u)).toFixed(2));
+    });
+    const simbolo=svg.querySelector(".siac-v4-assinatura-simbolo");
+    simbolo.style.opacity=String(suave(faixa(t,5540,6080)));
+    simbolo.setAttribute("transform",`translate(530 196) scale(${(.70+.30*suave(faixa(t,5540,6120))).toFixed(3)}) translate(-530 -196)`);
+    const cam=svg.querySelector(".siac-v4-cena");
+    const zoom=1+0.018*suave(faixa(t,1670,4170));
+    cam.setAttribute("transform",`translate(530 245) scale(${zoom.toFixed(4)}) translate(-530 -245)`);
+    if(t>5680)caixa.classList.add("com-marca");
+    else caixa.classList.remove("com-marca");
+    caixa.dataset.tempo=String(Math.round(t));
+    caixa.dataset.fase=t<1390?"aplicação":t<INICIO_MIGRACAO?"imersão":t<FIM_MIGRACAO?"migração":t<5100?"comparação":t<6170?"revelação":"assinatura";
+  }
+  function quadroAtual() {
+    return caixa ? quadro(Number(caixa.dataset.tempo||0)) : null;
   }
   function limpar() {
-    timers.splice(0).forEach(clearTimeout);
-    document.removeEventListener("keydown", encerrar, true);
-    if (elemento) elemento.removeEventListener("pointerdown", encerrar);
+    if(frame) cancelAnimationFrame(frame);
+    frame=0;
+    if(fechamento!==null)clearTimeout(fechamento);
+    fechamento=null;
+    document.removeEventListener("keydown",pular,true);
+    caixa?.removeEventListener("pointerdown",pular);
   }
   function encerrar() {
-    if (!ativa) return;
-    ativa = false;
+    if(!ativa)return;
+    ativa=false;
     limpar();
-    const caixa = elemento;
-    elemento = null;
-    document.documentElement.dataset.abertura = "fim";
-    if (!caixa) return;
-    caixa.classList.add("saindo");
-    setTimeout(() => caixa.remove(), 370);
+    const antigo=caixa;
+    caixa=null;svg=null;refs=[];marcas=[];
+    document.documentElement.dataset.abertura="fim";
+    if(!antigo)return;
+    antigo.classList.add("saindo");
+    setTimeout(()=>antigo.remove(),400);
   }
+  function pular(){encerrar()}
   function iniciar() {
-    const caixa = document.getElementById("abertura");
-    if (!caixa) return;
-    const reduzir = Boolean(window.A11Y?.estado?.motion ||
+    const el=document.getElementById("abertura");
+    if(!el)return;
+    const reduzir=Boolean(window.A11Y?.estado?.motion ||
       window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches);
-    if (!ligada() || reduzir || getComputedStyle(caixa).display === "none") {
-      caixa.remove();
-      document.documentElement.dataset.abertura = "fim";
+    if(!ligada()||reduzir||getComputedStyle(el).display==="none"){
+      el.remove();
+      document.documentElement.dataset.abertura="fim";
       return;
     }
-    elemento = caixa;
-    ativa = true;
-    desenhar(caixa);
-    caixa.addEventListener("pointerdown", encerrar);
-    document.addEventListener("keydown", encerrar, true);
-    timers.push(setTimeout(() => caixa.classList.add("siac-ab-aplicando"), TEMPOS.aplicar));
-    TEMPOS.pontos.forEach((ms,i) => timers.push(setTimeout(() =>
-      caixa.querySelector(`.siac-ab-trilha-${i+1}`)?.classList.add("siac-ab-aplicada"), ms)));
-    timers.push(setTimeout(() => caixa.classList.add("siac-ab-imersa"), TEMPOS.imergir));
-    timers.push(setTimeout(() => caixa.classList.add("siac-ab-desenvolvendo"), TEMPOS.desenvolver));
-    timers.push(setTimeout(() => caixa.classList.add("siac-ab-revelada"), TEMPOS.revelar));
-    timers.push(setTimeout(() => caixa.classList.add("com-marca"), TEMPOS.marca));
-    timers.push(setTimeout(encerrar, TEMPOS.sair));
+    caixa=el; ativa=true; el.classList.add("siac-v4");
+    desenhar(el);
+    el.addEventListener("pointerdown",pular);
+    document.addEventListener("keydown",pular,true);
+    inicio=performance.now();
+    function mover(agora){
+      if(!ativa)return;
+      const t=Math.min(FIM,agora-inicio);
+      aplicarTempo(t);
+      if(t>=FIM){encerrar();return}
+      frame=requestAnimationFrame(mover);
+    }
+    frame=requestAnimationFrame(mover);
   }
-  return Object.freeze({ iniciar, encerrar, definir, ligada, TEMPOS, amostras });
+  return Object.freeze({iniciar,encerrar,definir,ligada,tempos,quadro,quadroAtual,AMOSTRAS});
 })();
 SIAB.abertura.iniciar();

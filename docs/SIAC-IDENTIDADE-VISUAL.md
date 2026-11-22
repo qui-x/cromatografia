@@ -30,3 +30,12 @@ Os tokens de tema escuro/alto contraste servem para legibilidade, sem reintroduz
 - `assets/siac-icone.svg`: símbolo oficial com fundo transparente para cabeçalho, marca, telas, abertura e favicon.
 - `assets/siac-icone-app.svg`: variante com fundo sólido somente para instalação PWA; os PNGs de aplicativo são gerados desta variante.
 - A transparência do símbolo não significa painéis translúcidos. Fundos e cartões do SIAC permanecem sólidos.
+
+## Animação v4 — três béqueres independentes
+- Cada câmara recebe sua própria placa e uma amostra A, B ou C, mantendo dimensões equivalentes.
+- Frentes de solvente avançam continuamente com `requestAnimationFrame`; bandas nunca ultrapassam suas frentes.
+- São 10 bandas, com perfis e intensidades diferentes, centro concentrado, borda de difusão e rastro residual.
+- Degradês restritos a manchas, rastro, umidade e solvente; interface e fundo da marca sólidos.
+- Trajetórias das bandas convergem graficamente para o símbolo SIAC na conclusão.
+- Prévia independente: `previews/abertura-v4.html` — para repetição e avaliação sem abrir o SIAB legado.
+- **Não** são valores científicos medidos: o motor cromatográfico permanece como trabalho independente.

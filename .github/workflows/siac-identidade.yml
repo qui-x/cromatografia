@@ -7,6 +7,10 @@ on:
       - "assets/siac-icone-app.svg"
       - "js/ui/abertura.js"
       - "css/siac-identidade.css"
+      - "css/siac-abertura-v4.css"
+      - "previews/abertura-v4.html"
+      - "scripts/siac-validar-v4.cjs"
+      - "index.html"
       - "scripts/siac-capturar-abertura.cjs"
       - "scripts/siac-gerar-icones.py"
       - "tests/siac-identidade.test.cjs"
@@ -38,7 +42,7 @@ jobs:
           npm ci --ignore-scripts
           npx playwright install --with-deps chromium
       - name: Verificar abertura real no navegador e salvar quadros
-        run: node scripts/siac-capturar-abertura.cjs
+        run: node scripts/siac-validar-v4.cjs
       - name: Preservar evidências visuais
         if: always()
         uses: actions/upload-artifact@v4
