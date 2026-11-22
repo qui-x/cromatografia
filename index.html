@@ -6,19 +6,19 @@
       name="viewport"
       content="width=device-width,initial-scale=1,viewport-fit=cover"
     />
-    <meta name="theme-color" content="#0c1520" />
+    <meta name="theme-color" content="#0B5472" />
     <meta
       name="description"
-      content="SIAB — Simulador de Indicadores Ácido-Base. A química das cores: temas, missões e investigações de ácidos e bases para o ensino médio."
+      content="SIAC — Simulador Interativo de Análise Cromatográfica. A Identidade das Cores Ocultas."
     />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-title" content="SIAB" />
+    <meta name="apple-mobile-web-app-title" content="SIAC" />
     <meta
       name="apple-mobile-web-app-status-bar-style"
       content="black-translucent"
     />
-    <title>SIAB — Simulador de Indicadores Ácido-Base</title>
+    <title>SIAC — A Identidade das Cores Ocultas</title>
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="icon" type="image/svg+xml" href="assets/siab-icone.svg" />
     <link rel="apple-touch-icon" href="assets/icones/apple-touch-icon.png" />
@@ -34,7 +34,7 @@
     <!-- Animação de abertura desligada pelo usuário: esconde antes de desenhar (ver js/ui/abertura.js). -->
     <script>
       try {
-        if (localStorage.getItem("siab_abertura") === "off")
+        if (localStorage.getItem("siac_abertura") === "off")
           document.documentElement.dataset.abertura = "off";
       } catch (erro) {}
     </script>
@@ -44,6 +44,7 @@
     <link rel="stylesheet" href="css/mobile-controls.css?v=1.0.0+20261012" />
     <link rel="stylesheet" href="css/refinements.css?v=1.0.0+20261012" />
     <link rel="stylesheet" href="css/aplicativo.css?v=1.0.0+20261012" />
+    <link rel="stylesheet" href="css/siac-identidade.css?v=siac-0.1.0" />
   </head>
   <body>
     <noscript
@@ -56,11 +57,11 @@
       <div class="abertura-palco">
         <svg class="abertura-tubos" viewBox="0 0 400 215"></svg>
         <div class="abertura-marca">
-          <img src="assets/siab-icone.svg" alt="" width="46" height="46" />
+          <img src="assets/siac-icone.svg" alt="" width="46" height="46" />
           <div>
-            <strong>SIAB</strong
-            ><span>Simulador de Indicadores Ácido-Base</span
-            ><em>A química das cores</em>
+            <strong>SIAC</strong
+            ><span>Simulador Interativo de Análise Cromatográfica</span
+            ><em>A Identidade das Cores Ocultas</em>
           </div>
         </div>
       </div>
@@ -113,12 +114,12 @@
       <a
         class="header-brand"
         href="#/"
-        aria-label="SIAB, Simulador de Indicadores Ácido-Base: página principal"
+        aria-label="SIAC, Simulador Interativo de Análise Cromatográfica: página principal"
       >
-        <img src="assets/siab-icone.svg" alt="" width="30" height="30" />
+        <img src="assets/siac-icone.svg" alt="" width="30" height="30" />
         <div>
-          <strong>SIAB</strong
-          ><span id="header-nome">Simulador de Indicadores Ácido-Base</span>
+          <strong>SIAC</strong
+          ><span id="header-nome">Simulador Interativo de Análise Cromatográfica</span>
         </div>
       </a>
       <nav class="main-nav" aria-label="Seções principais">
@@ -166,15 +167,15 @@
       <section data-tela="inicio" class="tela tela-inicio" hidden>
         <header class="inicio-hero">
           <div>
-            <p class="eyebrow">SIMULADOR DE INDICADORES ÁCIDO-BASE</p>
+            <p class="eyebrow">SIMULADOR INTERATIVO DE ANÁLISE CROMATOGRÁFICA</p>
             <h1 id="inicio-titulo" data-foco tabindex="-1">
-              A química <span>das cores</span>
+              A Identidade <span>das Cores Ocultas</span>
             </h1>
-            <p class="inicio-lema">Observe. Meça. Interprete. Investigue.</p>
+            <p class="inicio-lema">Revelar. Separar. Identificar.</p>
           </div>
           <img
             class="start-icon"
-            src="assets/siab-icone.svg"
+            src="assets/siac-icone.svg"
             alt=""
             width="144"
             height="144"
@@ -184,7 +185,7 @@
           <h2>Escolha seu próximo passo</h2>
           <span>Da curiosidade à descoberta</span>
         </div>
-        <nav class="caminhos inicio-caminhos" aria-label="O que fazer no SIAB">
+        <nav class="caminhos inicio-caminhos" aria-label="O que fazer no SIAC">
           <a class="caminho caminho-laboratorio" href="#/laboratorio">
             <span class="inicio-card-topo">
               <span class="inicio-card-icone"
@@ -2271,7 +2272,7 @@
       aria-describedby="startup-description"
     >
       <div class="startup-brand" aria-hidden="true">
-        <img src="assets/siab-icone.svg" alt="" width="208" height="208" />
+        <img src="assets/siac-icone.svg" alt="" width="208" height="208" />
         <div>
           <span class="startup-nome">Simulador de Indicadores Ácido-Base</span>
           <em>A química das cores</em>
