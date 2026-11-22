@@ -1,0 +1,129 @@
+name: Reconstruir distribuição e manifestos de integridade do SIAB
+
+on:
+  push:
+    branches: ["acidosebases1.0.0"]
+    paths:
+      - ".github/workflows/rebuild-distribution-integrity.yml"
+      - "index.html"
+      - "manifest.webmanifest"
+      - "README.md"
+      - "CHANGELOG.md"
+      - ".github/README.md"
+      - "package.json"
+      - "sw.js"
+      - "package-lock.json"
+      - "build_standalone.py"
+      - "build_manual_docs.cjs"
+      - "build_icon_inventory.cjs"
+      - "FILES.txt"
+      - "js/**"
+      - "css/**"
+      - "assets/**"
+      - "a11y.js"
+      - "favicon-dark.svg"
+      - "favicon-light.svg"
+  workflow_dispatch:
+
+# Evita que duas reconstruções tentem atualizar os mesmos checksums
+# e produzam rejeições de push (non-fast-forward).
+concurrency:
+  group: siab-distribution-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obter o código
+        uses: actions/checkout@v4
+        with:
+          ref: acidosebases1.0.0
+
+      - name: Preparar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Reconstruir documentação e HTML independente
+        run: npm run build
+
+      - name: Conferir a denominação na distribuição
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          titulo = "Simulador de Indicadores Ácido-Base"
+          antigos = (
+              "Simulador Interativo de Ácidos e Bases",
+              "SIMULADOR INTERATIVO DE ÁCIDOS E BASES",
+          )
+          arquivos = (
+              "index.html",
+              "manifest.webmanifest",
+              "README.md",
+              "CHANGELOG.md",
+              ".github/README.md",
+              "package.json",
+              "js/ui/impressao.js",
+              "css/stylesiab.css",
+              "SIAB-1.0.0-standalone.html",
+          )
+          for nome in arquivos:
+              texto = Path(nome).read_text(encoding="utf-8")
+              assert titulo in texto, f"Denominação nova ausente em {nome}"
+              for antigo in antigos:
+                  assert antigo not in texto, f"Denominação anterior ainda aparece em {nome}"
+          marca = re.search(
+              r'<div class="startup-brand" aria-hidden="true">(.*?)</div>\s*</div>',
+              Path("index.html").read_text(encoding="utf-8"),
+              re.S,
+          )
+          assert marca, "Bloco da marca na escolha inicial não encontrado"
+          assert "SIAB" not in marca.group(1), "A sigla SIAB voltou à marca da escolha inicial"
+          assert 'class="startup-nome">Simulador de Indicadores Ácido-Base</span>' in marca.group(1)
+          assert "<em>A química das cores</em>" in marca.group(1)
+
+          service_worker = Path("sw.js").read_text(encoding="utf-8")
+          marca_cache = re.search(r'^const VERSAO = "([^"]+)";', service_worker, re.M)
+          assert marca_cache, "Versão do cache ausente no service worker"
+          versao_cache = marca_cache.group(1)
+          assert f'`{versao_cache}`' in Path("README.md").read_text(encoding="utf-8"), "README descreve versão de cache anterior"
+          print("PASS: nome padronizado na aplicação, no PWA, nos documentos e no HTML independente")
+          PY
+
+      - name: Recalcular e validar SHA-256 e SHA-512
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -t arquivos < <(grep -v -E '^(SHA256SUMS|SHA512SUMS)\.txt$' FILES.txt)
+          test "${#arquivos[@]}" -gt 0
+          for arquivo in "${arquivos[@]}"; do
+            test -f "$arquivo"
+          done
+          sha256sum "${arquivos[@]}" > SHA256SUMS.txt
+          sha512sum "${arquivos[@]}" > SHA512SUMS.txt
+          sha256sum --check SHA256SUMS.txt
+          sha512sum --check SHA512SUMS.txt
+
+      - name: Registrar os artefatos reconstruídos
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(siab): reconstruir HTML e manifestos de integridade"
+            git push origin HEAD:refs/heads/acidosebases1.0.0
+          else
+            echo "Os artefatos já estão atualizados."
+          fi
