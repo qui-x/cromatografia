@@ -185,18 +185,6 @@
   stroke-width: 6;
   stroke-linecap: round;
 }
-.siac-v4-legenda {
-  font: 750 11px system-ui,-apple-system,"Segoe UI",sans-serif;
-  fill: var(--secondary);
-  text-anchor: middle;
-  letter-spacing: .13em;
-}
-.siac-v4-linha-legenda {
-  fill: none;
-  stroke: var(--border);
-  stroke-width: 2.5;
-  stroke-linecap: round;
-}
 .siac-v4-assinatura-simbolo { opacity: 0; }
 .siac-v4.com-marca .abertura-tubos {
   margin-bottom: -70px;
@@ -207,8 +195,7 @@
 :root[data-theme="light"] .siac-v4-numero { fill: #0B5472; }
 :root[data-theme="light"] .siac-v4-menisco { stroke: #257E8E; }
 :root[data-contrast="on"] .siac-v4-vidro,
-:root[data-contrast="on"] .siac-v4-menisco,
-:root[data-contrast="on"] .siac-v4-linha-legenda { stroke: #fff; }
+:root[data-contrast="on"] .siac-v4-menisco { stroke: #fff; }
 :root[data-contrast="on"] .siac-v4-numero,
 :root[data-contrast="on"] .siac-v4-nome { fill: #ff0; }
 @media (max-width:600px) {

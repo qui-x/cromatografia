@@ -36,7 +36,18 @@ async function main(){
     assert.equal(await page.locator("#abertura [data-nevoa]").count(),10);
     assert.equal(await page.locator('#abertura radialGradient[id^="siac-v4-mancha"]').count(),10);
     const stops=await page.locator('#siac-v4-mancha-0-0 stop').count();
-    assert.equal(stops,6,"O núcleo deve dissolver em seis faixas graduais");
+    assert.equal(stops,9,"O núcleo deve ter nove etapas tonais graduais");
+    assert.equal(await page.locator('#siac-v4-rastro-0-0 stop').count(),7,
+      "Rastros com sete etapas e degradação de intensidade");
+    assert.equal(await page.locator("#abertura .siac-v4-identificacao").count(),3);
+    assert.equal(await page.locator("#abertura .siac-v4-numero").count(),3);
+    assert.equal(await page.locator("#abertura .siac-v4-nome").count(),3);
+    assert.equal(await page.locator("#abertura .siac-v4-legenda").count(),0,
+      "Não repetir Amostra A/B/C sob os béqueres");
+    const rotulos = await page.locator("#abertura .siac-v4-identificacao")
+      .allTextContents();
+    assert.deepEqual(rotulos.map(v=>v.replace(/\s+/g," ").trim()),
+      ["A TINTA","B PIGMENTOS","C CORANTES"]);
     const trilhaCss=await page.locator('[data-trilha="0-0"]').evaluate(el=>getComputedStyle(el).fill);
     assert.notEqual(trilhaCss,"none","Rastro precisa usar preenchimento degradê");
 

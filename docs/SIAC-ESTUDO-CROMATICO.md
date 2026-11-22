@@ -48,3 +48,8 @@ As capturas v4.1 mostraram trilhas excessivamente retas. Na v4.2 reduzimos a con
 - A cena experimental se dissolve após a comparação, deixando somente o símbolo central do SIAC (não duplicar o ícone no cabeçalho da vinheta).
 - A assinatura textual aparece sob esse único símbolo, seguida da transição de opacidade de 350 ms, conforme o padrão original do SIAB.
 - Os rastro das manchas cromatográficas durante o desenvolvimento permanecem; somente os arcos artificiais do encerramento foram removidos.
+
+## Revisão de rótulos e espectro cromático — v4.4
+Cada béquer tem uma única identificação superior: **A — Tinta**, **B — Pigmentos**, **C — Corantes**. As repetições inferiores `AMOSTRA A/B/C` e suas linhas decorativas foram removidas.
+
+O degradê das manchas passou de 6 para **9 pontos tonais** (núcleo profundo, cor original, tons progressivamente mais claros até a borda translúcida) e o rastro de 5 para **7 pontos**. Os tons são derivados do pigmento da própria banda; isso representa concentração e dispersão visual, não uma composição química adicional. O halo também foi ampliado e recebeu transição da própria banda para o papel. Nenhuma modificação na paleta estrutural do SIAB/SIAC.
