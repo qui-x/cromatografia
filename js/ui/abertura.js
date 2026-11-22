@@ -1,7 +1,7 @@
 "use strict";
 /* SIAC — A Identidade das Cores Ocultas | abertura artística v4.
  * Três amostras em três béqueres independentes, com cromatografia planar
- * ilustrativa e transição das bandas para a identidade do aplicativo.
+ * ilustrativa e encerramento SIAB: símbolo central, assinatura e fade-out.
  * A animação NÃO é o motor científico: as frações de migração são artísticas.
  * Conserva controles de acessibilidade, pular e armazenamento do SIAB.
  */
@@ -11,24 +11,24 @@ SIAB.abertura = (() => {
   const LARGURA = 1060, ALTURA = 515, ORIGEM = 342, FRENTE_MAX = 192;
   const CENTROS = [191, 530, 869];
   const AMOSTRAS = Object.freeze([
-    { id:"A", nome:"TINTA", cor:"#0D667B", frentes:0.98, atraso:0,
+    { id:"A", nome:"TINTA", cor:"#334155", frentes:0.98, atraso:0,
       bandas:[
-        { rf:.86, cor:"#168DA7", nome:"Ciano", larg:29, rastro:.14 },
-        { rf:.56, cor:"#E3902F", nome:"Âmbar", larg:25, rastro:.23 },
-        { rf:.29, cor:"#276F80", nome:"Petróleo", larg:25, rastro:.29 }
+        { rf:.86, cor:"#009E73", nome:"Verde-azulado", larg:29, rastro:.14 },
+        { rf:.56, cor:"#0072B2", nome:"Azul", larg:25, rastro:.23 },
+        { rf:.29, cor:"#E69F00", nome:"Laranja", larg:25, rastro:.29 }
       ] },
-    { id:"B", nome:"PIGMENTOS", cor:"#596A2D", frentes:1.00, atraso:90,
+    { id:"B", nome:"PIGMENTOS", cor:"#4D7C0F", frentes:1.00, atraso:90,
       bandas:[
-        { rf:.79, cor:"#D79B32", nome:"Ouro", larg:29, rastro:.15 },
-        { rf:.51, cor:"#3EAA76", nome:"Verde", larg:25, rastro:.27 },
-        { rf:.32, cor:"#91B949", nome:"Oliva", larg:28, rastro:.24 },
-        { rf:.16, cor:"#B76636", nome:"Terracota", larg:24, rastro:.32 }
+        { rf:.79, cor:"#EA580C", nome:"Carotenos", larg:29, rastro:.15 },
+        { rf:.51, cor:"#EAB308", nome:"Xantofilas", larg:25, rastro:.27 },
+        { rf:.32, cor:"#15803D", nome:"Clorofila a", larg:28, rastro:.24 },
+        { rf:.16, cor:"#4D7C0F", nome:"Clorofila b", larg:24, rastro:.32 }
       ] },
-    { id:"C", nome:"CORANTES", cor:"#6C4343", frentes:1.02, atraso:175,
+    { id:"C", nome:"CORANTES", cor:"#334155", frentes:1.02, atraso:175,
       bandas:[
-        { rf:.89, cor:"#D46943", nome:"Coral", larg:26, rastro:.16 },
-        { rf:.64, cor:"#126B8F", nome:"Azul", larg:28, rastro:.20 },
-        { rf:.38, cor:"#47A693", nome:"Turquesa", larg:25, rastro:.31 }
+        { rf:.89, cor:"#38BDF8", nome:"Ciano", larg:26, rastro:.16 },
+        { rf:.64, cor:"#009E73", nome:"Esmeralda", larg:28, rastro:.20 },
+        { rf:.38, cor:"#E69F00", nome:"Âmbar", larg:25, rastro:.31 }
       ] }
   ]);
   const tempos = Object.freeze({
@@ -37,11 +37,11 @@ SIAB.abertura = (() => {
     identidade:[5100,6180], saida:FIM
   });
   let caixa = null, svg = null, inicio = 0, frame = 0, fechamento = null;
-  let ativa = false, refs = [], marcas = [];
+  let ativa = false, refs = [];
   const clamp = n => Math.max(0,Math.min(1,n));
   const faixa = (t,a,b) => clamp((t-a)/(b-a));
   const suave = v => v*v*(3-2*v);
-  const decrescer = v => 1-Math.pow(1-v,1.24);
+  const decrescer = v => suave(v); // entrada e saída suaves; sem salto na velocidade
   function ligada() {
     try { return localStorage.getItem(CHAVE) !== "off"; }
     catch (_) { return true; }
@@ -76,15 +76,19 @@ SIAB.abertura = (() => {
   function definicoes() {
     const pigmentos = AMOSTRAS.flatMap((a,i) =>
       a.bandas.flatMap((b,j) => [
-        `<radialGradient id="siac-v4-mancha-${i}-${j}" cx="48%" cy="49%" r="68%">
-          <stop offset="0%" stop-color="${b.cor}" stop-opacity=".98"/>
-          <stop offset="32%" stop-color="${b.cor}" stop-opacity=".92"/>
-          <stop offset="66%" stop-color="${b.cor}" stop-opacity=".47"/>
+        `<radialGradient id="siac-v4-mancha-${i}-${j}" cx="48%" cy="48%" r="76%" fx="47%" fy="44%" color-interpolation="sRGB">
+          <stop offset="0%" stop-color="${b.cor}" stop-opacity=".89"/>
+          <stop offset="17%" stop-color="${b.cor}" stop-opacity=".80"/>
+          <stop offset="38%" stop-color="${b.cor}" stop-opacity=".60"/>
+          <stop offset="58%" stop-color="${b.cor}" stop-opacity=".32"/>
+          <stop offset="77%" stop-color="${b.cor}" stop-opacity=".12"/>
           <stop offset="100%" stop-color="${b.cor}" stop-opacity="0"/>
         </radialGradient>`,
         `<linearGradient id="siac-v4-rastro-${i}-${j}" x1="0" x2="0" y1="0" y2="1">
-          <stop offset="0%" stop-color="${b.cor}" stop-opacity=".68"/>
-          <stop offset="50%" stop-color="${b.cor}" stop-opacity=".22"/>
+          <stop offset="0%" stop-color="${b.cor}" stop-opacity=".35"/>
+          <stop offset="20%" stop-color="${b.cor}" stop-opacity=".24"/>
+          <stop offset="43%" stop-color="${b.cor}" stop-opacity=".13"/>
+          <stop offset="68%" stop-color="${b.cor}" stop-opacity=".045"/>
           <stop offset="100%" stop-color="${b.cor}" stop-opacity="0"/>
         </linearGradient>`
       ])
@@ -92,17 +96,20 @@ SIAB.abertura = (() => {
     return `
       <defs>
         <pattern id="siac-v4-papel-fibra" width="17" height="19" patternUnits="userSpaceOnUse">
-          <path d="M3 7l4-1M10 14l3-1M12 4l2 1" stroke="#CABDA6" stroke-width=".75" fill="none"/>
-          <circle cx="7" cy="15" r=".7" fill="#C6BBA6"/>
+          <path d="M3 7l4-1M10 14l3-1M12 4l2 1" stroke="#E6E4E0" stroke-width=".48" fill="none"/>
+          <circle cx="7" cy="15" r=".6" fill="#E2E0DA"/>
         </pattern>
         <linearGradient id="siac-v4-umidade" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#B7D9C9" stop-opacity=".19"/>
-          <stop offset="35%" stop-color="#99CDBD" stop-opacity=".29"/>
-          <stop offset="100%" stop-color="#8ABAA9" stop-opacity=".47"/>
+          <stop offset="0%" stop-color="#38BDF8" stop-opacity="0"/>
+          <stop offset="5%" stop-color="#38BDF8" stop-opacity=".08"/>
+          <stop offset="16%" stop-color="#38BDF8" stop-opacity=".16"/>
+          <stop offset="48%" stop-color="#BAE6FD" stop-opacity=".19"/>
+          <stop offset="100%" stop-color="#38BDF8" stop-opacity=".22"/>
         </linearGradient>
         <linearGradient id="siac-v4-solvente" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#6ABDC1"/>
-          <stop offset="100%" stop-color="#267A8D"/>
+          <stop offset="0%" stop-color="#38BDF8" stop-opacity=".72"/>
+          <stop offset="44%" stop-color="#168DA7" stop-opacity=".88"/>
+          <stop offset="100%" stop-color="#0B5472" stop-opacity=".98"/>
         </linearGradient>
         <filter id="siac-v4-borda-difusa" x="-50%" y="-100%" width="200%" height="300%">
           <feGaussianBlur stdDeviation="3.8"/>
@@ -119,8 +126,10 @@ SIAB.abertura = (() => {
     const x = cx + (j%2 ? 1.8 : -1.4);
     return `
       <g class="siac-v4-componente" data-banda="${i}-${j}">
+        <path class="siac-v4-trilha-nevoa" data-nevoa="${i}-${j}"
+          fill="url(#siac-v4-rastro-${i}-${j})" filter="url(#siac-v4-borda-difusa)"/>
         <path class="siac-v4-trilha" data-trilha="${i}-${j}"
-          stroke="url(#siac-v4-rastro-${i}-${j})" stroke-width="${b.larg*.53}" />
+          fill="url(#siac-v4-rastro-${i}-${j})" />
         <g class="siac-v4-manchas" data-mancha="${i}-${j}">
           <ellipse cx="0" cy="0" rx="${b.larg*1.30}" ry="15"
             fill="${b.cor}" opacity=".17" filter="url(#siac-v4-borda-difusa)"/>
@@ -129,8 +138,8 @@ SIAB.abertura = (() => {
             C${b.larg-3} 9 9 12 0 10
             C-14 12 ${-b.larg+3} 9 ${-b.larg} 1Z"
             fill="url(#siac-v4-mancha-${i}-${j})"/>
-          <ellipse cx="-2" cy="-1.2" rx="${b.larg*.56}" ry="4.4"
-            fill="${b.cor}" opacity=".37"/>
+          <ellipse cx="-2" cy="-1.2" rx="${b.larg*.60}" ry="5.4"
+            fill="${b.cor}" opacity=".17" filter="url(#siac-v4-borda-difusa)"/>
         </g>
       </g>`;
   }
@@ -138,7 +147,7 @@ SIAB.abertura = (() => {
     const x = CENTROS[i], papelX=x-65, len=130;
     const manchas=a.bandas.map((b,j)=>construirBanda(x,i,j,b)).join("");
     return `
-      <g class="siac-v4-conjunto" data-placa="${a.id}">
+      <g class="siac-v4-conjunto" data-placa="${a.id}" style="--siac-papel:${i===1?"#FAF8F5":"#F8FAFC"}">
         <g class="siac-v4-identificacao">
           <text x="${x}" y="41" class="siac-v4-numero">${a.id}</text>
           <text x="${x}" y="61" class="siac-v4-nome">${a.nome}</text>
@@ -194,11 +203,6 @@ SIAB.abertura = (() => {
         <path d="M41 430H1019" class="siac-v4-bancada"/>
         <path d="M41 439H1019" class="siac-v4-bancada-secundaria"/>
         ${AMOSTRAS.map(construirPlaca).join("")}
-        <g class="siac-v4-arcos" aria-hidden="true">
-          <path data-arco="0" d="M191 197C267 120 352 133 530 195" stroke="#168DA7"/>
-          <path data-arco="1" d="M530 197C530 141 530 160 530 195" stroke="#D79B32"/>
-          <path data-arco="2" d="M869 197C791 117 711 139 530 195" stroke="#3EAA76"/>
-        </g>
         <g class="siac-v4-assinatura-simbolo">
           <rect x="497" y="113" width="66" height="162" rx="5" fill="#F4E9D8" stroke="#1F2D3D" stroke-width="3"/>
           <path d="M503 137H557" stroke="#0B5472" stroke-width="2.5" stroke-dasharray="5 4"/>
@@ -220,12 +224,10 @@ SIAB.abertura = (() => {
       capilar:svg.querySelector(`[data-capilar="${i}"]`),
       bandas:a.bandas.map((_,j)=>({
         grupo:svg.querySelector(`[data-mancha="${i}-${j}"]`),
-        rastro:svg.querySelector(`[data-trilha="${i}-${j}"]`)
+        rastro:svg.querySelector(`[data-trilha="${i}-${j}"]`),
+        nevoa:svg.querySelector(`[data-nevoa="${i}-${j}"]`)
       }))
     }));
-    marcas=Array.from(svg.querySelectorAll("[data-arco]"));
-    marcas.forEach(p=>{const len=p.getTotalLength();p.dataset.len=String(len);
-      p.style.strokeDasharray=String(len);p.style.strokeDashoffset=String(len)});
   }
   function aplicarTempo(t) {
     if(!caixa||!svg)return;
@@ -238,8 +240,8 @@ SIAB.abertura = (() => {
       
       // Cada placa entra na própria câmara, sem afetar as demais.
       r.papel.setAttribute("transform",`translate(0 ${(-34*(1-k.imersao)).toFixed(2)})`);
-      r.conjunto.style.opacity=String(entrada*(1-.83*corte));
-      r.ponto.style.opacity=String(aplicado*(1-clamp(p.u*3)));
+      r.conjunto.style.opacity=String(entrada*(1-corte));
+      r.ponto.style.opacity=String(aplicado*(1-suave(faixa(p.u,0,.38))));
       // O capilar se aproxima, toca a linha de origem e sai antes da imersão.
       const entre=faixa(t,410+i*225,880+i*225);
       const inout=entre<.34?suave(entre/.34):1-suave((entre-.34)/.66);
@@ -250,36 +252,51 @@ SIAB.abertura = (() => {
       const h=383-frente;
       r.molhado.setAttribute("y",frente.toFixed(2));
       r.molhado.setAttribute("height",Math.max(0,h).toFixed(2));
-      r.molhado.style.opacity=String(p.u>0?.92:0);
+      r.molhado.style.opacity=String(.68*suave(faixa(p.u,0,.18)));
       const wobble=Math.sin(t/370+i*1.6)*1.05*p.u;
       r.frente.setAttribute("d",`M${(cx-61)} ${(frente+wobble).toFixed(2)}q20 -1.6 40 0t41 0t41 0`);
-      r.frente.style.opacity=String(p.u>.02?Math.min(1,p.u*11):0);
+      r.frente.style.opacity=String(.72*suave(faixa(p.u,0,.20)));
       r.bandas.forEach((b,j)=>{
         const v=p.bandas[j], desloc=v.deslocamento, orig=ORIGEM, y=v.y;
         // Afinidade relativa sempre abaixo da frente do solvente.
         b.grupo.setAttribute("transform",`translate(${cx+(j%2?1.8:-1.4)} ${y.toFixed(2)}) scale(${(0.74+0.26*suave(p.u)).toFixed(3)} ${(0.68+0.36*suave(p.u)).toFixed(3)})`);
-        b.grupo.style.opacity=String(clamp((p.u-.015)*13));
+        b.grupo.style.opacity=String(suave(faixa(p.u,0,.38)));
         const tilt=Math.sin(2.1*j+i)*2.0;
-        const trailerY=Math.min(orig,y+9);
-        b.rastro.setAttribute("d",`M ${(cx+tilt).toFixed(2)} ${(orig-1).toFixed(2)}
-          Q ${(cx-4*Math.sin(i+j)).toFixed(2)} ${((orig+trailerY)/2).toFixed(2)}
-          ${cx} ${trailerY.toFixed(2)}`);
-        b.rastro.style.opacity=String(Math.min(v.traco+.04,1)*clamp(p.u*8));
+        const ribbon=Math.max(3.5, v.largura*.22)*(1+.08*Math.sin(i+j));
+        const startY=Math.min(orig-1,y+4);
+        const endY=orig-1;
+        const trailH=Math.max(0,endY-startY);
+        const cx0=cx+tilt;
+        // Rastro espacial: fita suavemente ondulada, que afina em direção à origem.
+        // A cor e a opacidade decaem progressivamente, sem linhas rígidas.
+        const caminho=trailH<.6?"":`M ${(cx0-ribbon).toFixed(2)} ${startY.toFixed(2)}
+          C ${(cx0-ribbon*.74).toFixed(2)} ${(startY+trailH*.27).toFixed(2)}
+            ${(cx0-3.2).toFixed(2)} ${(startY+trailH*.72).toFixed(2)}
+            ${(cx0-1.0).toFixed(2)} ${endY.toFixed(2)}
+          Q ${cx0.toFixed(2)} ${(endY+1).toFixed(2)}
+            ${(cx0+1.0).toFixed(2)} ${endY.toFixed(2)}
+          C ${(cx0+3.3).toFixed(2)} ${(startY+trailH*.70).toFixed(2)}
+            ${(cx0+ribbon*.77).toFixed(2)} ${(startY+trailH*.25).toFixed(2)}
+            ${(cx0+ribbon).toFixed(2)} ${startY.toFixed(2)}Z`;
+        b.rastro.setAttribute("d",caminho);
+        b.nevoa.setAttribute("d",caminho);
+        const aparicao=suave(faixa(p.u,.025,.50));
+        b.rastro.style.opacity=String((.36+v.traco*.28)*aparicao);
+        b.nevoa.style.opacity=String((.29+v.traco*.25)*aparicao);
       });
     });
-    // A transformação final é deliberadamente gráfica, não física.
-    marcas.forEach((arco,i)=>{
-      const u=suave(faixa(t,5150+i*125,5780+i*70));
-      arco.style.opacity=String(u*(1-suave(faixa(t,5880,6280))));
-      arco.style.strokeDashoffset=String((Number(arco.dataset.len)*(1-u)).toFixed(2));
-    });
+    // Encerramento ao estilo SIAB: desfazer cena e deixar apenas o símbolo central.
     const simbolo=svg.querySelector(".siac-v4-assinatura-simbolo");
-    simbolo.style.opacity=String(suave(faixa(t,5540,6080)));
-    simbolo.setAttribute("transform",`translate(530 196) scale(${(.70+.30*suave(faixa(t,5540,6120))).toFixed(3)}) translate(-530 -196)`);
+    const aparicao=suave(faixa(t,5240,5700));
+    simbolo.style.opacity=String(aparicao);
+    const escala=(.82+.18*aparicao).toFixed(3);
+    simbolo.setAttribute("transform",`translate(0 ${(55*aparicao).toFixed(2)}) translate(530 196) scale(${escala}) translate(-530 -196)`);
+    const bancada=svg.querySelectorAll(".siac-v4-bancada,.siac-v4-bancada-secundaria");
+    bancada.forEach(elemento=>elemento.style.opacity=String(1-corte));
     const cam=svg.querySelector(".siac-v4-cena");
     const zoom=1+0.018*suave(faixa(t,1670,4170));
     cam.setAttribute("transform",`translate(530 245) scale(${zoom.toFixed(4)}) translate(-530 -245)`);
-    if(t>5680)caixa.classList.add("com-marca");
+    if(t>5500)caixa.classList.add("com-marca");
     else caixa.classList.remove("com-marca");
     caixa.dataset.tempo=String(Math.round(t));
     caixa.dataset.fase=t<1390?"aplicação":t<INICIO_MIGRACAO?"imersão":t<FIM_MIGRACAO?"migração":t<5100?"comparação":t<6170?"revelação":"assinatura";
@@ -300,11 +317,17 @@ SIAB.abertura = (() => {
     ativa=false;
     limpar();
     const antigo=caixa;
-    caixa=null;svg=null;refs=[];marcas=[];
-    document.documentElement.dataset.abertura="fim";
-    if(!antigo)return;
+    caixa=null;svg=null;refs=[];
+    if(!antigo){
+      document.documentElement.dataset.abertura="fim";
+      return;
+    }
+    // Mesmo encerramento do SIAB: transição .35s; só depois ocultar a abertura.
     antigo.classList.add("saindo");
-    setTimeout(()=>antigo.remove(),400);
+    setTimeout(()=>{
+      antigo.remove();
+      document.documentElement.dataset.abertura="fim";
+    },350);
   }
   function pular(){encerrar()}
   function iniciar() {
