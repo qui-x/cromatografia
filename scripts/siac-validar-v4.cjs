@@ -33,8 +33,19 @@ async function main(){
     assert.equal(await page.locator("#abertura [data-umidade]").count(),3);
     assert.equal(await page.locator("#abertura [data-mancha]").count(),10);
     assert.equal(await page.locator("#abertura [data-trilha]").count(),10);
+    assert.equal(await page.locator("#abertura [data-nevoa]").count(),10);
+    assert.equal(await page.locator('#abertura radialGradient[id^="siac-v4-mancha"]').count(),10);
+    const stops=await page.locator('#siac-v4-mancha-0-0 stop').count();
+    assert.equal(stops,6,"O núcleo deve dissolver em seis faixas graduais");
+    const trilhaCss=await page.locator('[data-trilha="0-0"]').evaluate(el=>getComputedStyle(el).fill);
+    assert.notEqual(trilhaCss,"none","Rastro precisa usar preenchimento degradê");
+
     assert.equal(await page.locator("#abertura .siac-v4-capilar").count(),3);
-    assert.equal(await page.locator('img[src="../assets/siac-icone.svg"]').count(),1);
+    assert.equal(await page.locator('img[src="../assets/siac-icone.svg"]').count(),0,
+      "A marca só deve ter o ícone central da cena");
+    assert.equal(await page.locator("#abertura .siac-v4-assinatura-simbolo").count(),1);
+    assert.equal(await page.locator("#abertura .siac-v4-arcos").count(),0);
+    assert.equal(await page.locator("#abertura [data-arco]").count(),0);
     await page.waitForTimeout(340);
     await page.screenshot({path:path.join(out,"01-tres-bequeres.png")});
     await page.waitForTimeout(1000);
@@ -48,6 +59,10 @@ async function main(){
     await page.waitForFunction(() => document.querySelector("#abertura")?.classList.contains("com-marca"),null,{timeout:1200});
     await page.waitForTimeout(160);
     await page.screenshot({path:path.join(out,"06-identidade.png")});
+    assert.equal(await page.locator("#abertura .siac-v4-assinatura-simbolo").count(),1);
+    const marcaOpacity = await page.locator("#abertura .siac-v4-assinatura-simbolo")
+      .evaluate(el => Number(getComputedStyle(el).opacity));
+    assert(marcaOpacity>.2,"O ícone central precisa estar visível no encerramento");
     const model=await page.evaluate(()=>{
       const engine=window.SIAB.abertura;
       return Array.from({length:49},(_,i)=>engine.quadro(1550+i*64));
@@ -81,6 +96,10 @@ async function main(){
     assert.match(await app.title(),/· SIAC$/);
     assert.equal(await app.locator("#abertura [data-placa]").count(),3);
     await app.keyboard.press("Escape");
+    assert.equal(await app.locator("#abertura.saindo").count(),1,
+      "Encerramento SIAB: a classe saindo deve preceder a remoção");
+    const duracao = await app.locator("#abertura").evaluate(el=>getComputedStyle(el).transitionDuration);
+    assert.match(duracao,/0\.35s|350ms/,"Dissolução do SIAB precisa manter 350 ms");
     await app.waitForTimeout(520);
     assert.equal(await app.locator("#abertura").count(),0,"Escape deve pular abertura");
 
