@@ -1,203 +1,82 @@
 "use strict";
-/* Animação de abertura: toca ao abrir o aplicativo ou recarregar a página.
-   Cinco tubos de ensaio, cada um com um indicador, recebem gotas e trocam de
-   composto (ácido → neutro → básico). As cores e os valores de pH vêm do
-   próprio motor químico (SIAB.chem), os mesmos da bancada.
-   Pula com um toque, clique ou tecla. Não aparece com "Reduzir animações",
-   com a preferência do sistema de reduzir movimento, nem quando o usuário
-   desliga em Menu ☰ → Acessibilidade → Animação de abertura. */
+/* SIAC: animação inicial de cromatografia planar.
+   A cena demonstra separação de forma ilustrativa, não é o motor científico.
+   Conserva o fluxo, o controle de movimento e a opção de pular do SIAB. */
 SIAB.abertura = (() => {
-  const CHAVE = "siab_abertura";
-  // [frasco, rótulo] em cada etapa. Todos a 0,01 mol/L (amostras como preparadas).
-  const TUBOS = [
-    {
-      indicador: "phenol",
-      nome: "Fenolftaleína",
-      etapas: [
-        ["hcl", "HCl"],
-        ["water", "H₂O"],
-        ["naoh", "NaOH"],
-      ],
-    },
-    {
-      indicador: "btb",
-      nome: "Bromotimol",
-      etapas: [
-        ["acetic", "CH₃COOH"],
-        ["nacl", "NaCl"],
-        ["ammonia", "NH₃"],
-      ],
-    },
-    {
-      indicador: "cabbage",
-      nome: "Repolho",
-      etapas: [
-        ["lemon", "Limão"],
-        ["water", "H₂O"],
-        ["bicarbonate", "NaHCO₃"],
-      ],
-    },
-    {
-      indicador: "methyl",
-      nome: "Metilorange",
-      etapas: [
-        ["hcl", "HCl"],
-        ["acetic", "CH₃COOH"],
-        ["na2co3", "Na₂CO₃"],
-      ],
-    },
-    {
-      indicador: "universal",
-      nome: "Universal",
-      etapas: [
-        ["hcl", "HCl"],
-        ["nacl", "NaCl"],
-        ["naoh", "NaOH"],
-      ],
-    },
-  ];
-  // Momento (ms) em que cada etapa começa; depois vem a marca e a saída.
-  const TEMPOS = {
-    encher: 150,
-    etapas: [150, 1000, 1750],
-    marca: 2350,
-    sair: 3200,
-    fim: 3650,
-  };
+  const CHAVE = "siac_abertura";
+  const TEMPOS = Object.freeze({ desenvolver: 180, marca: 2350, sair: 3300 });
   const timers = [];
   let ativa = false;
+  let caixaAtiva = null;
 
-  // Texto simples ('on'/'off'): o index.html lê a mesma chave antes de desenhar a página.
-  const ligada = () => {
-    try {
-      return localStorage.getItem(CHAVE) !== "off";
-    } catch (erro) {
-      return true;
-    }
-  };
-
-  // Cor e pH que a bancada mostraria para esse frasco com esse indicador.
-  function leitura(solucao, indicador) {
-    const tubo = {
-      ...SIAB.TUBE_DEFAULTS,
-      solution: solucao,
-      indicator: indicador,
-      concentration: 0.01,
-      additions: [],
-    };
-    const r = SIAB.chem.solve(tubo);
-    const cor = SIAB.chem.liquid(tubo, false, r);
-    return {
-      pH: r.pH,
-      cor: `rgba(${cor.rgb.map(Math.round).join(",")},${Math.round(Math.max(cor.opacity, 0.22) * 100) / 100})`,
-      nome: cor.name,
-    };
+  function ligada() {
+    try { return localStorage.getItem(CHAVE) !== "off"; }
+    catch (_) { return true; }
   }
-
-  const X = (n) => 50 + n * 75;
+  function definir(ligar) {
+    try { localStorage.setItem(CHAVE, ligar ? "on" : "off"); }
+    catch (_) { /* preferência local indisponível */ }
+  }
   function desenhar(caixa) {
-    const tubos = TUBOS.map((t, n) => {
-      const x = X(n);
-      return `<g class="ab-tubo" data-n="${n}">
-        <text class="ab-indicador" x="${x}" y="16">${SIAB.escape(t.nome)}</text>
-        <clipPath id="ab-clip-${n}"><path d="M${x - 15} 34v112a15 15 0 0 0 30 0V34Z"/></clipPath>
-        <g clip-path="url(#ab-clip-${n})">
-          <rect class="ab-liquido" x="${x - 16}" y="32" width="32" height="130"/>
-          <circle class="ab-bolha" cx="${x - 5}" cy="150" r="2.2"/><circle class="ab-bolha" cx="${x + 6}" cy="156" r="1.6"/>
-        </g>
-        <path class="ab-vidro" d="M${x - 17} 30v116a17 17 0 0 0 34 0V30M${x - 21} 30h42"/>
-        <path class="ab-brilho" d="M${x - 10} 42v96"/>
-        <path class="ab-gota" d="M${x} 22c2.4 4 4 6.3 4 8.3a4 4 0 0 1-8 0c0-2 1.6-4.3 4-8.3Z"/>
-        <text class="ab-formula" x="${x}" y="190"></text>
-        <text class="ab-ph" x="${x}" y="207"></text>
-      </g>`;
-    }).join("");
-    caixa.querySelector(".abertura-tubos").innerHTML =
-      `<path class="ab-suporte" d="M14 104h372"/>${tubos}<path class="ab-suporte" d="M14 124h372"/>`;
+    const svg = caixa.querySelector(".abertura-tubos");
+    if (!svg) return;
+    svg.setAttribute("viewBox", "0 0 400 215");
+    svg.setAttribute("aria-label", "Separação ilustrativa de uma amostra em três bandas cromatográficas");
+    svg.innerHTML = `<defs>
+      <clipPath id="siac-ab-corte"><rect x="177" y="24" width="46" height="154" rx="2"/></clipPath>
+    </defs>
+    <rect x="174" y="21" width="52" height="158" rx="5" class="ab-crom-papel"/>
+    <g clip-path="url(#siac-ab-corte)">
+      <rect x="177" y="54" width="46" height="111" class="ab-crom-umida"/>
+      <line x1="178" y1="163" x2="222" y2="163" class="ab-crom-frente"/>
+      <ellipse cx="200" cy="150" rx="6" ry="4" class="ab-crom-amostra"/>
+      <ellipse cx="200" cy="150" rx="16" ry="7" class="ab-crom-banda ab-crom-banda-1"/>
+      <ellipse cx="200" cy="150" rx="14" ry="7" class="ab-crom-banda ab-crom-banda-2"/>
+      <ellipse cx="200" cy="150" rx="13" ry="6" class="ab-crom-banda ab-crom-banda-3"/>
+    </g>
+    <line x1="180" y1="160" x2="220" y2="160" class="ab-crom-origem"/>
+    <path d="M136 132V183q0 12 12 12h104q12 0 12-12v-51" class="ab-crom-camara"/>
+    <path d="M139 170h122v11q0 11-11 11H150q-11 0-11-11Z" class="ab-crom-solvente"/>
+    <path d="M143 116V76m-9 10 9-11 9 11" stroke="#81D9CE" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="200" y="210" class="ab-crom-legenda">Desenvolvimento cromatográfico</text>`;
   }
-
-  function etapa(caixa, k) {
-    caixa.querySelectorAll(".ab-tubo").forEach((g) => {
-      const t = TUBOS[g.dataset.n];
-      const [solucao, rotulo] = t.etapas[k];
-      const l = leitura(solucao, t.indicador);
-      const liquido = g.querySelector(".ab-liquido");
-      const altura = 62 + k * 16;
-      g.querySelector(".ab-gota").style.animationDelay =
-        `${g.dataset.n * 50}ms`;
-      if (k > 0) {
-        g.classList.remove("pingando");
-        void g.getBoundingClientRect();
-        g.classList.add("pingando");
-      }
-      // A cor muda quando a gota chega ao líquido.
-      timers.push(
-        setTimeout(
-          () => {
-            liquido.style.transform = `scaleY(${altura / 130})`;
-            liquido.style.fill = l.cor;
-            g.dataset.cor = l.nome;
-            const formula = g.querySelector(".ab-formula"),
-              ph = g.querySelector(".ab-ph");
-            formula.classList.add("trocando");
-            timers.push(
-              setTimeout(() => {
-                formula.textContent = rotulo;
-                ph.textContent = `pH ${SIAB.format(l.pH, 1)}`;
-                formula.classList.remove("trocando");
-              }, 140),
-            );
-          },
-          k > 0 ? 260 + g.dataset.n * 50 : 0,
-        ),
-      );
-    });
+  function limpar() {
+    timers.splice(0).forEach(clearTimeout);
+    document.removeEventListener("keydown", encerrar, true);
+    if (caixaAtiva) caixaAtiva.removeEventListener("pointerdown", encerrar);
   }
-
   function encerrar() {
     if (!ativa) return;
     ativa = false;
-    timers.splice(0).forEach(clearTimeout);
-    const caixa = document.getElementById("abertura");
-    document.removeEventListener("keydown", encerrar, true);
+    limpar();
+    const caixa = caixaAtiva;
+    caixaAtiva = null;
+    document.documentElement.dataset.abertura = "fim";
     if (!caixa) return;
     caixa.classList.add("saindo");
-    setTimeout(() => caixa.remove(), 350);
-    document.documentElement.dataset.abertura = "fim";
+    setTimeout(() => caixa.remove(), 360);
   }
-
   function iniciar() {
     const caixa = document.getElementById("abertura");
     if (!caixa) return;
-    // Desligada ou com movimento reduzido: some sem tocar.
-    const reduzir =
+    const reduzir = Boolean(
       window.A11Y?.estado?.motion ||
-      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+      window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches
+    );
     if (!ligada() || reduzir || getComputedStyle(caixa).display === "none") {
       caixa.remove();
+      document.documentElement.dataset.abertura = "fim";
       return;
     }
+    caixaAtiva = caixa;
     ativa = true;
     desenhar(caixa);
-    TEMPOS.etapas.forEach((ms, k) =>
-      timers.push(setTimeout(() => etapa(caixa, k), ms)),
-    );
-    timers.push(
-      setTimeout(() => caixa.classList.add("com-marca"), TEMPOS.marca),
-    );
-    timers.push(setTimeout(encerrar, TEMPOS.sair));
     caixa.addEventListener("pointerdown", encerrar);
     document.addEventListener("keydown", encerrar, true);
+    timers.push(setTimeout(() => caixa.classList.add("em-desenvolvimento"), TEMPOS.desenvolver));
+    timers.push(setTimeout(() => caixa.classList.add("com-marca"), TEMPOS.marca));
+    timers.push(setTimeout(encerrar, TEMPOS.sair));
   }
-
-  function definir(ligar) {
-    try {
-      localStorage.setItem(CHAVE, ligar ? "on" : "off");
-    } catch (erro) {
-      /* vale só nesta visita */
-    }
-  }
-
-  return { iniciar, encerrar, definir, ligada, leitura, TUBOS, TEMPOS };
+  return Object.freeze({ iniciar, encerrar, definir, ligada, TEMPOS });
 })();
 SIAB.abertura.iniciar();
