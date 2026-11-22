@@ -74,22 +74,33 @@ SIAB.abertura = (() => {
     };
   }
   function definicoes() {
+    // Ampliar a escala tonal de cada analito, sem atribuir uma nova substância
+    // a cada tom: o núcleo concentrado dissolve-se na superfície clara.
+    const misturar = (cor, alvo, t) => "#" + [1,3,5].map(i =>
+      Math.round(parseInt(cor.slice(i,i+2),16)*(1-t) +
+        parseInt(alvo.slice(i,i+2),16)*t).toString(16).padStart(2,"0")
+    ).join("");
     const pigmentos = AMOSTRAS.flatMap((a,i) =>
       a.bandas.flatMap((b,j) => [
-        `<radialGradient id="siac-v4-mancha-${i}-${j}" cx="48%" cy="48%" r="76%" fx="47%" fy="44%" color-interpolation="sRGB">
-          <stop offset="0%" stop-color="${b.cor}" stop-opacity=".89"/>
-          <stop offset="17%" stop-color="${b.cor}" stop-opacity=".80"/>
-          <stop offset="38%" stop-color="${b.cor}" stop-opacity=".60"/>
-          <stop offset="58%" stop-color="${b.cor}" stop-opacity=".32"/>
-          <stop offset="77%" stop-color="${b.cor}" stop-opacity=".12"/>
-          <stop offset="100%" stop-color="${b.cor}" stop-opacity="0"/>
+        `<radialGradient id="siac-v4-mancha-${i}-${j}" cx="47%" cy="47%" r="96%" fx="43%" fy="42%" color-interpolation="sRGB">
+          <stop offset="0%" stop-color="${misturar(b.cor,"#172B32",.22)}" stop-opacity=".96"/>
+          <stop offset="12%" stop-color="${b.cor}" stop-opacity=".94"/>
+          <stop offset="27%" stop-color="${misturar(b.cor,"#FFFFFF",.09)}" stop-opacity=".84"/>
+          <stop offset="42%" stop-color="${misturar(b.cor,"#FFFFFF",.21)}" stop-opacity=".68"/>
+          <stop offset="57%" stop-color="${misturar(b.cor,"#FFFFFF",.34)}" stop-opacity=".45"/>
+          <stop offset="70%" stop-color="${misturar(b.cor,"#FFFFFF",.50)}" stop-opacity=".26"/>
+          <stop offset="82%" stop-color="${misturar(b.cor,"#FFFFFF",.65)}" stop-opacity=".11"/>
+          <stop offset="92%" stop-color="${misturar(b.cor,"#FFFFFF",.80)}" stop-opacity=".035"/>
+          <stop offset="100%" stop-color="${misturar(b.cor,"#FFFFFF",.90)}" stop-opacity="0"/>
         </radialGradient>`,
-        `<linearGradient id="siac-v4-rastro-${i}-${j}" x1="0" x2="0" y1="0" y2="1">
-          <stop offset="0%" stop-color="${b.cor}" stop-opacity=".35"/>
-          <stop offset="20%" stop-color="${b.cor}" stop-opacity=".24"/>
-          <stop offset="43%" stop-color="${b.cor}" stop-opacity=".13"/>
-          <stop offset="68%" stop-color="${b.cor}" stop-opacity=".045"/>
-          <stop offset="100%" stop-color="${b.cor}" stop-opacity="0"/>
+        `<linearGradient id="siac-v4-rastro-${i}-${j}" x1="0" x2="0" y1="0" y2="1" color-interpolation="sRGB">
+          <stop offset="0%" stop-color="${misturar(b.cor,"#172B32",.14)}" stop-opacity=".37"/>
+          <stop offset="13%" stop-color="${b.cor}" stop-opacity=".32"/>
+          <stop offset="29%" stop-color="${misturar(b.cor,"#FFFFFF",.14)}" stop-opacity=".24"/>
+          <stop offset="46%" stop-color="${misturar(b.cor,"#FFFFFF",.28)}" stop-opacity=".17"/>
+          <stop offset="64%" stop-color="${misturar(b.cor,"#FFFFFF",.48)}" stop-opacity=".09"/>
+          <stop offset="82%" stop-color="${misturar(b.cor,"#FFFFFF",.68)}" stop-opacity=".03"/>
+          <stop offset="100%" stop-color="${misturar(b.cor,"#FFFFFF",.86)}" stop-opacity="0"/>
         </linearGradient>`
       ])
     ).join("");
@@ -131,15 +142,17 @@ SIAB.abertura = (() => {
         <path class="siac-v4-trilha" data-trilha="${i}-${j}"
           fill="url(#siac-v4-rastro-${i}-${j})" />
         <g class="siac-v4-manchas" data-mancha="${i}-${j}">
-          <ellipse cx="0" cy="0" rx="${b.larg*1.30}" ry="15"
-            fill="${b.cor}" opacity=".17" filter="url(#siac-v4-borda-difusa)"/>
+          <ellipse cx="0" cy="0" rx="${b.larg*1.68}" ry="19"
+            fill="url(#siac-v4-mancha-${i}-${j})" opacity=".58"
+            filter="url(#siac-v4-borda-difusa)"/>
           <path d="M${-b.larg} 1 C${-b.larg+2} -9 -14 -11 0 -10
             C13 -11 ${b.larg-2} -7 ${b.larg} 0
             C${b.larg-3} 9 9 12 0 10
             C-14 12 ${-b.larg+3} 9 ${-b.larg} 1Z"
             fill="url(#siac-v4-mancha-${i}-${j})"/>
-          <ellipse cx="-2" cy="-1.2" rx="${b.larg*.60}" ry="5.4"
-            fill="${b.cor}" opacity=".17" filter="url(#siac-v4-borda-difusa)"/>
+          <ellipse cx="-2" cy="-1.2" rx="${b.larg*.58}" ry="5.4"
+            fill="url(#siac-v4-mancha-${i}-${j})" opacity=".24"
+            filter="url(#siac-v4-borda-difusa)"/>
         </g>
       </g>`;
   }
@@ -186,8 +199,7 @@ SIAB.abertura = (() => {
             stroke="${a.cor}"/>
           <path d="M${x-13} 89h16" class="siac-v4-capilar-cabeca"/>
         </g>
-        <text x="${x}" y="458" class="siac-v4-legenda">AMOSTRA ${a.id}</text>
-        <path d="M${x-52} 472h104" class="siac-v4-linha-legenda"/>
+
       </g>`;
   }
   function desenhar(el) {
