@@ -70,7 +70,7 @@ SIAB.initPreferences = () => {
     SIAB.abertura.definir(evento.target.checked);
     SIAB.notice(
       evento.target.checked
-        ? "A animação de abertura toca na próxima vez que o SIAB abrir."
+        ? "A animação de abertura toca na próxima vez que o SIAC abrir."
         : "Animação de abertura desligada.",
     );
   });

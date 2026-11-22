@@ -1,0 +1,40 @@
+name: "SIAC - Ícone e identidade inicial"
+on:
+  push:
+    branches: [feat/siac-experiencia-didatica]
+    paths:
+      - "assets/siac-icone.svg"
+      - "scripts/siac-gerar-icones.py"
+      - "tests/siac-identidade.test.cjs"
+      - ".github/workflows/siac-identidade.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  identidade:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Preparar conversão SVG para PNG
+        run: |
+          python3 -m pip install --user --disable-pip-version-check cairosvg
+      - name: Gerar todos os ícones a partir do SVG
+        run: python3 scripts/siac-gerar-icones.py
+      - name: Verificar sintaxe e identidade
+        run: |
+          node --check js/ui/abertura.js
+          node tests/siac-identidade.test.cjs
+      - name: Guardar ícones PWA no branch visual
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/icones/icone-192.png assets/icones/icone-512.png assets/icones/icone-maskable-512.png assets/icones/apple-touch-icon.png
+          if ! git diff --cached --quiet; then
+            git commit -m "assets(siac): gerar ícones PWA a partir da identidade oficial"
+            git push origin HEAD:feat/siac-experiencia-didatica
+          fi

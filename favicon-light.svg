@@ -1,24 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" viewBox="0 0 32 32" fill="none" role="img" aria-labelledby="siab-icon-title siab-icon-desc">
-  <title id="siab-icon-title">SIAB — A química das cores</title>
-  <desc id="siab-icon-desc">Uma gota sobre um tubo de ensaio com líquido em degradê do vermelho ao roxo.</desc>
-  <defs>
-    <linearGradient id="siab-outline" x1="9" y1="10" x2="23" y2="29" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#DC2626"/>
-      <stop offset=".34" stop-color="#DB2777"/>
-      <stop offset=".65" stop-color="#C026D3"/>
-      <stop offset="1" stop-color="#7C3AED"/>
-    </linearGradient>
-    <linearGradient id="siab-liquid" x1="12" y1="18" x2="20" y2="26" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#DC2626"/>
-      <stop offset=".48" stop-color="#C026D3"/>
-      <stop offset="1" stop-color="#7C3AED"/>
-    </linearGradient>
-    <linearGradient id="siab-drop" x1="13.3" y1="2" x2="18.7" y2="9" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#DC2626"/>
-      <stop offset="1" stop-color="#DB2777"/>
-    </linearGradient>
-  </defs>
-  <path d="M16 2C15.2 3.5 13.3 5.6 13.3 7a2.7 2.7 0 0 0 5.4 0c0-1.4-1.9-3.5-2.7-5Z" fill="url(#siab-drop)"/>
-  <path d="M10 11v12a6 6 0 0 0 12 0V11M8.5 11h15" stroke="url(#siab-outline)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M12 18c2.5-1.5 5.5 1.5 8 0v5a4 4 0 0 1-8 0Z" fill="url(#siab-liquid)"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192" role="img" aria-labelledby="siac-t siac-d">
+<title id="siac-t">SIAC — A Identidade das Cores Ocultas</title>
+<desc id="siac-d">Papel cromatográfico com três bandas separadas, linha de origem e câmara com solvente.</desc>
+<rect width="192" height="192" fill="#0B5472"/>
+<rect x="69" y="18" width="54" height="152" rx="7" fill="#F4E9D8" stroke="#1F2D3D" stroke-width="4"/>
+<rect x="79" y="48" width="34" height="12" rx="5" fill="#16839A"/>
+<rect x="79" y="75" width="34" height="12" rx="5" fill="#D96C1F"/>
+<rect x="79" y="102" width="34" height="12" rx="5" fill="#2E9B8F"/>
+<path d="M79 35h34" stroke="#1F2D3D" stroke-width="3" stroke-dasharray="5 4"/>
+<path d="M78 137h36" stroke="#1F2D3D" stroke-width="3" stroke-linecap="round"/>
+<circle cx="96" cy="137" r="4" fill="#1F2D3D"/>
+<path d="M52 108V72m-10 10 10-11 10 11" fill="none" stroke="#F4E9D8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M43 139v20c0 9 7 16 16 16h74c9 0 16-7 16-16v-20" fill="none" stroke="#F4E9D8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M48 154h96v5c0 6-5 11-11 11H59c-6 0-11-5-11-11z" fill="#59B5BB"/>
+<path d="M69 170h54" stroke="#1F2D3D" stroke-width="3"/>
 </svg>
