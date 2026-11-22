@@ -1,0 +1,62 @@
+name: "SIAC - Importação integral do SIAB 1.0.0"
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/siac-import-siab.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  importar-base-oficial:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout do SIAC
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: true
+
+      - name: Clonar versão oficial congelada do SIAB
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone --depth 1 --branch acidosebases1.0.0 \
+            https://github.com/qui-x/acidobase.git "$RUNNER_TEMP/siab-base"
+          cd "$RUNNER_TEMP/siab-base"
+          test "$(git rev-parse HEAD)" = "6f2c56bae806e8d57418b5b787aa2fe22f342829"
+          echo "SOURCE_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+          echo "SOURCE_COUNT=$(git ls-files | wc -l)" >> "$GITHUB_ENV"
+
+      - name: Copiar integralmente código, documentação e binários
+        shell: bash
+        run: |
+          set -euo pipefail
+          rsync -a --exclude='.git/' "$RUNNER_TEMP/siab-base/" ./
+          while IFS= read -r -d '' file; do
+            cmp "$RUNNER_TEMP/siab-base/$file" "$file"
+          done < <(cd "$RUNNER_TEMP/siab-base" && git ls-files -z)
+          echo "Verificação byte a byte dos arquivos versionados concluída."
+
+      - name: Registrar cópia no ramo main do SIAC
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(siac): importar SIAB 1.0.0 oficial sem alterar a base"
+            git push origin HEAD:main
+          fi
+          {
+            echo "## Base importada para o SIAC"
+            echo "- Origem: qui-x/acidobase `acidosebases1.0.0`"
+            echo "- Commit de origem: \`$SOURCE_SHA\`"
+            echo "- Arquivos versionados na origem: \`$SOURCE_COUNT\`"
+            echo "- Comparação byte a byte: aprovada"
+            echo "- Destino: qui-x/cromatografia `main`"
+          } >> "$GITHUB_STEP_SUMMARY"
