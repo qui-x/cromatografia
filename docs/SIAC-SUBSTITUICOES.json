@@ -53,5 +53,10 @@
     "estado": "adaptado",
     "motivo": "PNG de instalação rasterizado do SVG oficial SIAC.",
     "teste": "node tests/siac-identidade.test.cjs"
+  },
+  "build_standalone.py": {
+    "estado": "adaptado",
+    "motivo": "Incorporar SVGs SIAC transparente e de aplicativo ao HTML standalone para evitar ícones quebrados offline.",
+    "teste": "node tests/siac-identidade.test.cjs"
   }
 }
