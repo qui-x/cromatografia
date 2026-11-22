@@ -1,0 +1,57 @@
+{
+  "index.html": {
+    "estado": "adaptado",
+    "motivo": "Marca na abertura, cabeçalho e início; CSS de paleta sólida.",
+    "teste": "node tests/siac-identidade.test.cjs"
+  },
+  "js/ui/abertura.js": {
+    "estado": "adaptado",
+    "motivo": "Substitui animação de pH por cena de separação cromatográfica.",
+    "teste": "node tests/siac-identidade.test.cjs"
+  },
+  "manifest.webmanifest": {
+    "estado": "adaptado",
+    "motivo": "Nome e ícones oficiais SIAC.",
+    "teste": "node tests/siac-identidade.test.cjs"
+  },
+  "sw.js": {
+    "estado": "adaptado",
+    "motivo": "Cache e cores separados da publicação SIAB; novos arquivos SIAC.",
+    "teste": "node tests/siac-identidade.test.cjs"
+  },
+  "js/a11y/preferencias.js": {
+    "estado": "adaptado",
+    "motivo": "Rótulo da opção de animação de abertura.",
+    "teste": "node tests/siac-identidade.test.cjs"
+  },
+  "favicon-dark.svg": {
+    "estado": "adaptado",
+    "motivo": "Símbolo oficial SIAC tema escuro.",
+    "teste": "node tests/siac-identidade.test.cjs"
+  },
+  "favicon-light.svg": {
+    "estado": "adaptado",
+    "motivo": "Símbolo oficial SIAC tema claro.",
+    "teste": "node tests/siac-identidade.test.cjs"
+  },
+  "assets/icones/icone-192.png": {
+    "estado": "adaptado",
+    "motivo": "PNG de instalação rasterizado do SVG oficial SIAC.",
+    "teste": "node tests/siac-identidade.test.cjs"
+  },
+  "assets/icones/icone-512.png": {
+    "estado": "adaptado",
+    "motivo": "PNG de instalação rasterizado do SVG oficial SIAC.",
+    "teste": "node tests/siac-identidade.test.cjs"
+  },
+  "assets/icones/icone-maskable-512.png": {
+    "estado": "adaptado",
+    "motivo": "PNG de instalação rasterizado do SVG oficial SIAC.",
+    "teste": "node tests/siac-identidade.test.cjs"
+  },
+  "assets/icones/apple-touch-icon.png": {
+    "estado": "adaptado",
+    "motivo": "PNG de instalação rasterizado do SVG oficial SIAC.",
+    "teste": "node tests/siac-identidade.test.cjs"
+  }
+}
