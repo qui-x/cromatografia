@@ -30,6 +30,8 @@ async function main() {
       catch(e) { if(tries===34) throw e; await new Promise(r=>setTimeout(r,120)); }
     }
     await page.waitForSelector("#abertura .siac-ab-papel-grupo",{timeout:4000});
+    await page.waitForFunction(() => /^Início · SIAC$/.test(document.title),null,{timeout:5500});
+    assert.equal(await page.title(), "Início · SIAC");
     assert.equal(await page.locator("#abertura .siac-ab-trilha").count(),3);
     assert.equal(await page.locator("#abertura .siac-ab-faixa").count(),9);
     assert(await page.locator('#abertura .abertura-marca img[src="assets/siac-icone.svg"]').count()>0);
