@@ -25,3 +25,8 @@ Os tokens de tema escuro/alto contraste servem para legibilidade, sem reintroduz
 - Conteúdo científico e controles ácido-base da base ainda aguardam migração para SIAC; esta etapa é apenas visual.
 - A preferência de abertura usa `siac_abertura`, não interfere com `siab_abertura`.
 - Manter opções de movimento reduzido, modo claro, modo escuro e alto contraste.
+
+## Transparência do ícone
+- `assets/siac-icone.svg`: símbolo oficial com fundo transparente para cabeçalho, marca, telas, abertura e favicon.
+- `assets/siac-icone-app.svg`: variante com fundo sólido somente para instalação PWA; os PNGs de aplicativo são gerados desta variante.
+- A transparência do símbolo não significa painéis translúcidos. Fundos e cartões do SIAC permanecem sólidos.
