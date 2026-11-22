@@ -31,15 +31,24 @@ jobs:
           echo "SOURCE_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
           echo "SOURCE_COUNT=$(git ls-files | wc -l)" >> "$GITHUB_ENV"
 
-      - name: Copiar integralmente código, documentação e binários
+      - name: Copiar código e todos os binários sem executar workflows antigos
         shell: bash
         run: |
           set -euo pipefail
-          rsync -a --exclude='.git/' "$RUNNER_TEMP/siab-base/" ./
+          rsync -a --exclude='.git/' --exclude='.github/workflows/' "$RUNNER_TEMP/siab-base/" ./
+          mkdir -p docs/legado-siab/workflows
+          rsync -a "$RUNNER_TEMP/siab-base/.github/workflows/" docs/legado-siab/workflows/
           while IFS= read -r -d '' file; do
-            cmp "$RUNNER_TEMP/siab-base/$file" "$file"
+            case "$file" in
+              .github/workflows/*)
+                cmp "$RUNNER_TEMP/siab-base/$file" "docs/legado-siab/workflows/${file##*/}"
+                ;;
+              *)
+                cmp "$RUNNER_TEMP/siab-base/$file" "$file"
+                ;;
+            esac
           done < <(cd "$RUNNER_TEMP/siab-base" && git ls-files -z)
-          echo "Verificação byte a byte dos arquivos versionados concluída."
+          echo "Verificação byte a byte concluída inclusive workflows arquivados."
 
       - name: Registrar cópia no ramo main do SIAC
         shell: bash
@@ -57,6 +66,7 @@ jobs:
             echo "- Origem: qui-x/acidobase `acidosebases1.0.0`"
             echo "- Commit de origem: \`$SOURCE_SHA\`"
             echo "- Arquivos versionados na origem: \`$SOURCE_COUNT\`"
-            echo "- Comparação byte a byte: aprovada"
+            echo "- Validação byte a byte: aprovada"
+            echo "- Workflows antigos arquivados em docs/legado-siab/workflows/"
             echo "- Destino: qui-x/cromatografia `main`"
           } >> "$GITHUB_STEP_SUMMARY"
