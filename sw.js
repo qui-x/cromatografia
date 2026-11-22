@@ -5,18 +5,18 @@
    página. */
 // Abertura visual original restaurada. Nova versão do cache elimina modelos,
 // player de vídeo e bibliotecas de abertura 3D das cópias offline.
-const VERSAO = "siab-1.0.0+20261112-instalar-visual-limpo";
+const VERSAO = "siac-identidade-0.1.0+20261122";
 // Projetos do mesmo usuario.github.io compartilham a origem. Cada publicação
 // precisa de seu próprio cache; atualizar uma cópia não deve apagar outra.
 const BASE = new URL(self.registration.scope);
 const INICIO = new URL("index.html", BASE).href;
-const PREFIXO_CACHE = `siab@${BASE.href}::`;
+const PREFIXO_CACHE = `siac@${BASE.href}::`;
 const NOME_CACHE = PREFIXO_CACHE + VERSAO;
 const ARQUIVOS = [
   "./",
   "./index.html",
   "./manifest.webmanifest",
-  "./assets/siab-icone.svg",
+  "./assets/siac-icone.svg",
   "./assets/icones/apple-touch-icon.png",
   "./vendor/dialog-polyfill/dialog-polyfill.css",
   "./css/stylesiab.css",
@@ -30,6 +30,7 @@ const ARQUIVOS = [
   "./css/mobile-controls.css",
   "./css/refinements.css",
   "./css/aplicativo.css",
+  "./css/siac-identidade.css",
   "./vendor/dialog-polyfill/dialog-polyfill.js",
   "./js/core/namespace.js",
   "./js/core/util.js",
