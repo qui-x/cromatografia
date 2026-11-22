@@ -4,6 +4,9 @@ on:
     branches: [feat/siac-experiencia-didatica]
     paths:
       - "assets/siac-icone.svg"
+      - "assets/siac-icone-app.svg"
+      - "js/ui/abertura.js"
+      - "css/siac-identidade.css"
       - "scripts/siac-gerar-icones.py"
       - "tests/siac-identidade.test.cjs"
       - ".github/workflows/siac-identidade.yml"
