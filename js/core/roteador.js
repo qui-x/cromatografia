@@ -55,7 +55,7 @@ SIAB.rotear = () => {
       history.replaceState(null, "", canonical);
     } catch (_) {}
   tela.entrar(parametro);
-  document.title = `${tela.titulo?.(parametro) || "Investigar"} · SIAB`;
+  document.title = `${tela.titulo?.(parametro) || "Investigar"} · SIAC`;
   document.querySelectorAll("[data-nav]").forEach((el) => {
     if (el.dataset.nav === (tela.menu || nome))
       el.setAttribute("aria-current", "page");
