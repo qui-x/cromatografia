@@ -98,6 +98,14 @@ SIAC.laboratorio=(()=>{
   $("experiment").append(stage);
   ui.addEventListener("click",montagemClick);
   ver.addEventListener("click",verClick);
+  ver.addEventListener("input",e=>{
+   if(!catalogMode||!e.target.matches("[data-siac-medicao]"))return;
+   SIAC.verDidatico?.setMedicao(e.target.dataset.siacMedicao,e.target.value);
+   const check=SIAC.verDidatico?.validar();
+   const feedback=$("siac-medicao-feedback");
+   if(feedback&&check)feedback.textContent=check.ok?
+    "Distâncias registradas. Abra Calcular → Calcular Rf.":check.motivo;
+  });
   stage.addEventListener("click",stageClick);
   // Um capilar visível acompanha o ponteiro dentro da região do papel.
   // O gesto continua independente de mouse: toque e Enter ativam a aplicação.
@@ -485,16 +493,18 @@ SIAC.laboratorio=(()=>{
  function renderVer(){
   const el=$("siac-ver");if(!el)return;
   if(catalogMode){
-   $("siac-ver-contexto").textContent="Consulta científica · "+(catalogSelection?.substancia?.nome||"selecione uma substância");
-   $("siac-modulos").innerHTML="";
-   $("siac-ver-itens").innerHTML="";
-   $("siac-ver-dados").textContent=catalogSelection?.sistema?
-    (catalogSelection.sistema.rf===null?
-     "Não há Rf individual publicado para este sistema. A opção é um procedimento de grupo, não prova de migração do composto.":
-     "Rf bibliográfico "+fmt(catalogSelection.sistema.rf,3)+
-     ". A posição de uma mancha pode ser projetada para uma frente escolhida, mas a previsão química de Rf permanece indisponível.")+
-    " Não inferir k de coluna, identificação ou cor.":
-    "Escolha primeiro uma substância e depois um sistema de referência. Medir e Calcular exigem amostras e resultados observados em condições compatíveis.";
+   const did=SIAC.verDidatico?.render(catalogSelection,SIAC.metrics);
+   if(!did){
+    $("siac-ver-contexto").textContent="Ferramentas de investigação indisponíveis";
+    $("siac-modulos").innerHTML="";
+    $("siac-ver-itens").innerHTML="";
+    $("siac-ver-dados").textContent="O catálogo didático não foi carregado.";
+    return;
+   }
+   $("siac-ver-contexto").textContent=did.contexto;
+   $("siac-modulos").innerHTML=did.modulos;
+   $("siac-ver-itens").innerHTML=did.itens;
+   $("siac-ver-dados").innerHTML=did.conteudo;
    return;
   }
   const itens=availableItems();
@@ -638,6 +648,11 @@ SIAC.laboratorio=(()=>{
  function render(){if(!enabled||!col)return;renderMontagem();renderStage();renderVer();renderDados();}
  function verClick(e){
   const m=e.target.closest("[data-module]"),v=e.target.closest("[data-ver]");
+  if(catalogMode){
+   if(m&&SIAC.verDidatico?.setModulo(m.dataset.module))render();
+   else if(v&&SIAC.verDidatico?.setFerramenta(v.dataset.ver))render();
+   return;
+  }
   if(m&&MODULES[m.dataset.module]){module=m.dataset.module;item=availableItems()[0];render();}
   if(v){item=v.dataset.ver;render();}
  }
