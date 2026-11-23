@@ -1,0 +1,42 @@
+name: "SIAC — Bancada integrada e coleta"
+on:
+  push:
+    branches: [main]
+    paths:
+      - "index.html"
+      - "css/siac-laboratorio-integrado.css"
+      - "js/ui/siac-laboratorio-integrado.js"
+      - "js/ui/workspace.js"
+      - "js/simulation/siac-coluna.js"
+      - "js/simulation/siac-fracionamento.js"
+      - "tests/siac-laboratorio-integrado-browser.cjs"
+      - ".github/workflows/siac-laboratorio-integrado.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  navegador:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 17
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checagem estática de sintaxe
+        run: |
+          node --check js/ui/siac-laboratorio-integrado.js
+          node --check js/simulation/siac-coluna.js
+          node --check js/simulation/siac-fracionamento.js
+          node --check tests/siac-laboratorio-integrado-browser.cjs
+      - name: Preparar Chromium
+        run: |
+          npm ci --ignore-scripts
+          npx playwright install --with-deps chromium
+      - name: Testar a rota real do laboratório e todo fluxo de coleta
+        run: node tests/siac-laboratorio-integrado-browser.cjs
+      - name: Capturas da bancada
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: siac-laboratorio-integrado
+          path: docs/evidencias/siac-laboratorio/
+          if-no-files-found: warn
+          retention-days: 14

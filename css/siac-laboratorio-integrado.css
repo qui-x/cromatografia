@@ -1,0 +1,101 @@
+/* SIAC — experiência integrada no laboratório, reaproveitando as docas e
+ * os botões de foco/visão geral. Missões legadas não são alteradas. */
+body.siac-active #workspace #dock-left-tabs,
+body.siac-active #workspace #dock-setup-summary,
+body.siac-active #workspace .view-tabs .chip-ver,
+body.siac-active #workspace .view-tabs .chip-sep,
+body.siac-active #workspace .view-tabs #bench-mode {display:none!important}
+body.siac-active #workspace #dock-left-content > :not(#siac-montagem),
+body.siac-active #workspace #dock-right-content > :not(#siac-ver),
+body.siac-active #workspace #experiment > :not(#workspace-toolbar):not(#siac-stage) {display:none!important}
+body.siac-active #workspace #siac-stage,
+body.siac-active #workspace #siac-montagem,
+body.siac-active #workspace #siac-ver {display:block!important}
+body.siac-active #workspace #experiment {min-height:0}
+body.siac-active #workspace .view-tabs{display:flex!important;flex-wrap:wrap;gap:8px}
+body.siac-active #workspace .view-tabs .view-tab-btn{
+ flex:1 1 155px;white-space:normal;text-align:center;min-height:43px}
+#siac-stage,#siac-ver,#siac-montagem{color:var(--text);font-family:inherit}
+#siac-stage{width:100%;min-height:340px;padding:clamp(12px,2vw,28px);overflow:auto}
+#siac-stage h2{font-size:clamp(1rem,1.9vw,1.24rem);margin:0 0 12px}
+#siac-stage h3{font-size:1rem;margin:0 0 8px}
+#siac-montagem,#siac-ver{padding:12px 14px 20px}
+#siac-montagem h2,#siac-ver h2{font-size:1.05rem;margin:6px 0 15px}
+#siac-montagem details{border:1px solid var(--border);border-radius:10px;margin:0 0 11px;padding:11px;background:var(--panel)}
+#siac-montagem summary{font-weight:750;cursor:pointer;padding:3px 1px}
+#siac-montagem label{display:grid;gap:4px;font-weight:650;font-size:.82rem;margin:9px 0;min-width:0}
+#siac-montagem fieldset{border:0;margin:5px 0;padding:0}
+#siac-montagem legend{font-size:.8rem;font-weight:750;margin:8px 0}
+#siac-montagem input:not([type=checkbox]),#siac-montagem select{
+ font:inherit;color:var(--text);background:var(--panel2);border:1px solid var(--border);
+ border-radius:7px;min-height:36px;padding:6px 8px;width:100%;min-width:0;max-width:100%}
+#siac-montagem .siac-modelos label{display:flex;align-items:center;gap:5px}
+#siac-montagem .siac-modelos input[type=number]{width:63px;min-width:63px;max-width:63px;font-size:.75rem;padding:4px}
+#siac-montagem .siac-modelos input[type=checkbox]{width:18px;height:18px;accent-color:var(--accent);flex:0 0 auto}
+.siac-amostra-cor{width:11px;height:11px;display:inline-block;border-radius:50%;flex:0 0 auto}
+#siac-montagem .siac-pares{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:10px}
+#siac-montagem .siac-seletor{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;margin:11px 0}
+#siac-montagem .siac-seletor button{
+ min-width:0;padding:9px 3px;border-radius:7px;border:1px solid var(--border);
+ background:var(--panel2);color:var(--text);font-weight:700}
+#siac-montagem .siac-seletor button[aria-pressed=true]{
+ border:2px solid var(--accent);background:var(--hover)}
+#siac-montagem .siac-seletor small{color:var(--accent)}
+#siac-montagem .siac-acoes{display:flex;flex-wrap:wrap;gap:6px}
+#siac-montagem .siac-acoes button{flex:1 1 110px}
+#siac-stage button:disabled,#siac-montagem button:disabled{opacity:.5;cursor:not-allowed}
+#siac-stage .siac-stage-head{display:flex;justify-content:space-between;gap:12px;
+ align-items:center;padding-bottom:14px;font-size:.83rem;color:var(--muted)}
+#siac-stage .siac-coluna-centro,
+#siac-stage .siac-lado{display:grid;grid-template-columns:minmax(140px,1fr) minmax(130px,1fr);
+ gap:12px;align-items:center;max-width:780px;margin:auto}
+#siac-stage .siac-coluna-centro svg{width:100%;max-width:245px;max-height:370px;margin:auto}
+#siac-stage .siac-lado svg{width:100%;max-width:210px;max-height:290px}
+#siac-stage .siac-coluna-centro p,#siac-stage .siac-lado p{margin:8px 0;line-height:1.6}
+#siac-stage .siac-perfil{border-top:1px solid var(--border);margin-top:14px;padding:12px 0}
+#siac-stage .siac-perfil svg{width:100%;height:auto;max-height:150px}
+#siac-stage .siac-relogio{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:12px}
+#siac-stage .siac-relogio span{font-size:.82rem;font-variant-numeric:tabular-nums}
+#siac-stage .siac-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px}
+#siac-stage .siac-card{display:grid;justify-items:center;align-items:center;gap:3px;
+ min-height:120px;border:1px solid var(--border);border-radius:9px;
+ background:var(--panel);color:var(--text);padding:8px 4px;cursor:pointer}
+#siac-stage .siac-card svg{width:100%;max-width:94px;height:85px}
+#siac-stage .siac-card strong{font-size:.87rem}
+#siac-stage .siac-card small{color:var(--muted);font-size:.72rem}
+#siac-stage #siac-paper-target{cursor:crosshair;border:1px dashed var(--border);
+ padding:5px;border-radius:9px;touch-action:manipulation}
+#siac-stage #siac-paper-target:focus-visible{outline:3px solid var(--focus)}
+#siac-stage .siac-empty{padding:23px 12px;margin:14px auto;max-width:520px;
+ border:1px dashed var(--border);border-radius:11px;text-align:center}
+#siac-stage #siac-stage-status{font-size:.84rem;margin:12px 0 0;color:var(--muted);min-height:20px}
+#siac-ver .siac-modulos,#siac-ver .siac-itens{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-bottom:10px}
+#siac-ver .siac-itens{grid-template-columns:repeat(2,minmax(0,1fr))}
+#siac-ver button{color:var(--text);background:var(--panel2);border:1px solid var(--border);
+ border-radius:7px;padding:8px 5px;font:inherit;font-size:.8rem;min-width:0}
+#siac-ver button[aria-pressed=true]{border-color:var(--accent);background:var(--hover);font-weight:700}
+#siac-ver #siac-ver-dados{white-space:pre-wrap;font-size:.83rem;line-height:1.6;
+ padding:12px;background:var(--panel2);border-radius:8px;border:1px solid var(--border)}
+#siac-montagem .siac-hint,#siac-stage .siac-hint{font-size:.77rem;color:var(--muted);line-height:1.5;margin:9px 0}
+@media(max-width:930px){#siac-stage .siac-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:560px){
+ #siac-stage{padding:10px}
+ #siac-stage .siac-coluna-centro,#siac-stage .siac-lado{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:7px}
+ #siac-stage .siac-coluna-centro svg{max-height:310px}
+ #siac-stage .siac-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
+ #siac-stage .siac-card{min-height:95px;padding:4px}
+ #siac-stage .siac-card svg{height:65px}
+ #siac-stage .siac-relogio button{flex:1 1 130px}
+}
+@media(prefers-reduced-motion:reduce){#siac-stage *,#siac-montagem *{animation:none!important;transition:none!important}}
+
+/* A barra de Foco/Visão geral foi movida pelo workspace SIAB para
+ * #workspace-toolbar dentro do #experiment. Preservá-la integralmente. */
+body.siac-active #workspace #workspace-toolbar{display:flex!important;align-items:center;flex-wrap:wrap;gap:8px}
+body.siac-active #workspace #workspace-toolbar .view-tabs{display:flex!important;flex:1 1 250px;min-width:0}
+body.siac-active #workspace #workspace-toolbar .workspace-launchers{display:flex!important;gap:6px}
+body.siac-active #workspace #overview-count{display:none!important}
+
+/* O desenvolvimento do papel precisa de tempo e progresso legíveis. */
+#siac-stage .siac-tempo-desenvolvimento{display:grid;gap:8px;margin:12px 0;font-size:.82rem;font-weight:650;max-width:320px}
+#siac-stage .siac-tempo-desenvolvimento progress{width:100%;height:12px;accent-color:var(--accent)}

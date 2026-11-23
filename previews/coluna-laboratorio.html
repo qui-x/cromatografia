@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0B5472">
+<title>SIAC — Prévia da coluna cromatográfica</title>
+<link rel="icon" href="../assets/siac-icone.svg" type="image/svg+xml">
+<style>
+:root{color-scheme:light;--azul:#0b5472;--navy:#17384d;--tinta:#17334b;--agua:#168da7;--menta:#2e9b8f;--ouro:#d79b32;--papel:#f9fbfc;--superficie:#fff;--linha:#d7e4e8;--sombra:0 8px 26px #17384d10}
+*{box-sizing:border-box}body{margin:0;color:var(--tinta);background:#f1f6f7;font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}button,input,select{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #de9131;outline-offset:2px}
+header{display:flex;align-items:center;gap:13px;padding:12px clamp(14px,3vw,42px);background:#0b5472;color:#fff;border-bottom:4px solid #7fcabf}header img{width:41px;height:41px;object-fit:contain}header .marca{font-size:22px;font-weight:800;letter-spacing:.1em}header .desc{display:block;font-size:12px;opacity:.89}header .estado{margin-left:auto;background:#ffffff1b;padding:7px 10px;border:1px solid #ffffff3a;border-radius:7px;font-size:12px}
+main{display:grid;grid-template-columns:minmax(255px,295px) minmax(365px,1fr) minmax(215px,260px);min-height:calc(100vh - 76px);max-width:1600px;margin:auto;gap:12px;padding:12px}
+section,aside{min-width:0}
+.doca,.palco,.dados{background:var(--superficie);border:1px solid var(--linha);border-radius:15px;box-shadow:var(--sombra)}
+.doca,.dados{padding:18px}.cabecalho{display:flex;align-items:center;justify-content:space-between;gap:7px;margin-bottom:13px}
+h1,h2,h3,p{margin-top:0}h1{font-size:18px;margin-bottom:3px}h2{font-size:16px;margin-bottom:10px}h3{font-size:13px;letter-spacing:.02em;margin-bottom:7px}small,.explicacao,.legenda{font-size:12px;color:#516879}
+.selo{font-size:10px;border:1px solid #a7d6d4;color:#126f79;border-radius:999px;padding:3px 8px;font-weight:700;white-space:nowrap}
+.rotulo{display:block;font-size:12px;font-weight:700;margin:12px 0 5px;color:#284659}select,input[type=number]{display:block;width:100%;padding:9px 10px;border:1px solid #b8ccd3;border-radius:9px;background:#fff;color:var(--tinta)}
+button.primario{border:0;background:var(--azul);color:#fff;font-weight:700;border-radius:9px;padding:11px 15px}
+button.secundario{border:1px solid #96b9c3;background:#f7fbfc;color:var(--azul);font-weight:650;border-radius:9px;padding:8px 12px}
+button:disabled{opacity:.45;cursor:not-allowed}.acoes{display:flex;gap:7px;flex-wrap:wrap;margin:14px 0}
+details{margin:12px 0;background:#f5f9fa;border:1px solid #d7e6e8;border-radius:10px;padding:9px 11px}
+summary{cursor:pointer;font-weight:700;font-size:12px}.parametros{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.separador{border:0;border-top:1px solid var(--linha);margin:20px 0 15px}
+.fracoes{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;margin-bottom:12px}
+.frasco{border:1px solid #c8d9df;border-radius:10px;background:#fafcfd;padding:8px 2px 6px;min-height:72px;display:flex;align-items:center;flex-direction:column;justify-content:space-around;color:var(--tinta)}
+.frasco.ativo{border:2px solid #0b5472;background:#e7f4f4;padding:7px 1px 5px}.frasco span{font-size:12px;font-weight:750}.frasco svg{width:27px;height:37px}
+.coldupla{display:grid;grid-template-columns:1fr 1fr;gap:8px}.coldupla .rotulo{margin-top:4px}
+.estado-tubo{border-left:3px solid var(--menta);padding:5px 10px;background:#f1f8f7;margin:10px 0;font-size:12px}
+.aviso{min-height:30px;margin:9px 0 0;font-size:12px;color:#80531c}.avisoverde{color:#146751}
+.palco{padding:17px 19px;display:flex;flex-direction:column;gap:12px}
+.palco-cab{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.palco-cab h1{margin:0}.leitura{font-variant-numeric:tabular-nums;color:#37586b;font-size:12px}
+.cena{background:linear-gradient(180deg,#fcfaf6,#eef5f6);border:1px solid #d5e2e4;border-radius:13px;min-height:330px;display:grid;grid-template-columns:minmax(0,1fr) minmax(140px,.9fr);padding:12px;align-items:center;gap:8px;overflow:hidden}
+.coluna-box{text-align:center}.coluna-box svg{display:block;width:100%;max-width:285px;height:390px;margin:auto}
+.coleta-box{text-align:left;align-self:stretch;display:flex;flex-direction:column;justify-content:center;gap:9px}
+.saida{padding:12px;background:#ffffffb8;border:1px solid #d0dfe3;border-radius:9px;font-size:13px}
+.saida strong{display:block;font-size:14px}.saida div{font-size:12px;color:#607582}
+.progresso{height:10px;background:#dbe9eb;border-radius:999px;overflow:hidden}.progresso span{height:100%;display:block;width:0;background:linear-gradient(90deg,#168da7,#2e9b8f);transition:width .13s}
+.grafico-wrap{margin-top:4px}.graficos{border:1px solid #d7e6e8;border-radius:12px;background:#fcfefe;padding:8px}
+.graficos svg{width:100%;height:180px;display:block;touch-action:none;cursor:crosshair}
+.eixos{display:flex;justify-content:space-between;color:#526a79;font-size:11px;padding:0 12px 0 37px}.chaves{display:flex;gap:12px;flex-wrap:wrap;font-size:12px;color:#3e5867}
+.chave{display:inline-flex;align-items:center;gap:5px}.bolinha{width:9px;height:9px;display:inline-block;border-radius:2px}
+.controles{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.controles button{min-width:95px}.controles .tempo{font-variant-numeric:tabular-nums;font-size:12px;color:#476273}
+.dados h2{margin-bottom:12px}.medida{display:flex;justify-content:space-between;border-bottom:1px solid #e0ebed;padding:9px 0;gap:10px}
+.medida dt{font-size:12px;color:#647d8b}.medida dd{margin:0;font-variant-numeric:tabular-nums;font-weight:750;font-size:13px;text-align:right}
+.dados dl{margin:0 0 16px}.nota{background:#edf7f5;border-left:3px solid #4baf9b;padding:11px;border-radius:6px;font-size:12px;color:#214e54;margin:12px 0}
+hr{border:0;border-top:1px solid #dde8eb;margin:16px 0}.dados button{width:100%}
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+@media(max-width:1050px){main{grid-template-columns:260px minmax(360px,1fr)}.dados{grid-column:1/-1}.dados dl{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.medida{display:block}}
+@media(max-width:720px){main{grid-template-columns:1fr;gap:10px;padding:9px}.dados{grid-column:1}.doca,.dados{padding:15px}.cena{min-height:300px}.dados dl{grid-template-columns:1fr 1fr}header .estado{display:none}header{padding:11px 15px}.palco{padding:14px}}
+@media(max-width:390px){.cena{grid-template-columns:1fr 1fr;padding:6px}.coluna-box svg{height:310px}.saida{padding:8px}.palco{padding:10px}}
+@media(prefers-reduced-motion:reduce){.progresso span{transition:none}}
+.composicao-grid{display:grid;gap:6px;margin:9px 0;padding:9px;border:1px solid #d2e5e6;border-radius:8px;background:#f4faf9}
+.composicao-linha{display:flex;align-items:center;gap:7px;font-size:12px;justify-content:space-between}
+.composicao-linha input[type=number]{width:65px;padding:4px;font-size:12px}
+#tempo-didatico{border-left:2px solid #7ab8b1;padding-left:8px;font-size:12px;font-weight:600}
+</style>
+</head>
+<body>
+<header>
+<img src="../assets/siac-icone.svg" alt="" aria-hidden="true">
+<div><span class="marca">SIAC</span><span class="desc">Simulador Interativo de Análise Cromatográfica</span></div>
+<div class="estado">Prévia experimental · Motor v0.1 · Dados hipotéticos</div>
+</header>
+<main>
+<section class="doca" aria-labelledby="montagem-titulo">
+ <div class="cabecalho"><div><h1 id="montagem-titulo">Montagem</h1><small>Preparação da coluna e coleta</small></div><span class="selo">Explorar</span></div>
+ <label class="rotulo" for="amostra">Amostra</label>
+ <select id="amostra">
+  <option value="mistura1">Mistura-modelo I · três componentes</option>
+  <option value="mistura2">Mistura-modelo II · três componentes</option>
+  <option value="personalizada">Mistura livre · escolher componentes</option>
+ </select>
+ <div id="composicao" hidden aria-label="Composição da mistura"></div>
+  <label class="rotulo" for="eluente">Fase móvel</label>
+ <select id="eluente">
+  <option value="eluente1">Eluente didático A</option>
+  <option value="eluente2">Eluente didático B</option>
+ </select>
+ <label class="rotulo" for="suporte">Fase estacionária</label>
+ <select id="suporte">
+  <option value="silica">Sílica (modelo parametrizado)</option>
+  <option value="alumina">Alumina (modelo parametrizado)</option>
+ </select>
+ <details>
+  <summary>Geometria e condições da coluna</summary>
+  <label class="rotulo" for="porte">Referência de montagem</label>
+  <select id="porte" aria-label="Perfil de coluna sugerido">
+   <option value="compacta">Compacta · leito estreito</option>
+   <option value="media">Intermediária · maior capacidade</option>
+   <option value="preparativa">Preparativa · até 1.000 mL</option>
+   <option value="livre">Dimensões livres</option>
+  </select>
+  <small>Perfis sugeridos, não limites fixos. Comprimento, diâmetro, vazão e volume continuam editáveis.</small>
+  <div class="parametros">
+   <div><label class="rotulo" for="comprimento">Comprimento (mm)</label><input id="comprimento" type="number" min="20" max="2000" step="5" value="80"></div>
+   <div><label class="rotulo" for="diametro">Diâmetro interno (mm)</label><input id="diametro" type="number" min="2" max="100" step="1" value="8"></div>
+   <div><label class="rotulo" for="porosidade">Porosidade</label><input id="porosidade" type="number" min=".1" max=".75" step=".05" value=".45"></div>
+   <div><label class="rotulo" for="vazao">Vazão (mL/min)</label><input id="vazao" type="number" min=".01" max="100" step=".01" value=".8"></div>
+   <div><label class="rotulo" for="volumeTotal">Volume acumulado da corrida (mL)</label><input id="volumeTotal" type="number" min=".1" max="1000" step=".1" value="9"></div>
+  </div>
+  <div class="parametros"><div><label class="rotulo" for="capacidade">Capacidade de cada frasco (mL)</label><input id="capacidade" type="number" min=".1" max="1000" step=".1" value="20"></div>
+  <div><label class="rotulo" for="velocidade">Aceleração da coleta</label><select id="velocidade"><option value="1">1× · tempo real</option><option value="30">30×</option><option value="120" selected>120×</option><option value="600">600×</option><option value="1800">1800×</option></select></div></div>
+  </details>
+ <div class="acoes"><button id="montar" class="primario">Montar coluna</button></div>
+ <hr class="separador">
+ <div class="cabecalho"><h2 style="margin:0">Frações F1–F10</h2><span class="selo">10 tubos disponíveis</span></div>
+ <p class="explicacao">Escolha um tubo e arraste uma faixa no perfil de eluição, ou informe início e fim em mL. Não há posições fixas para substâncias.</p>
+ <div class="fracoes" id="frascos" role="group" aria-label="Seleção dos dez tubos de coleta"></div>
+ <div class="estado-tubo" id="estado-tubo" aria-live="polite"></div>
+ <form id="janela-form">
+  <div class="coldupla">
+   <div><label class="rotulo" for="inicio">Início (mL)</label><input id="inicio" type="number" step=".1" min="0" max="1000" placeholder="Definir" required></div>
+   <div><label class="rotulo" for="fim">Fim (mL)</label><input id="fim" type="number" step=".1" min=".1" max="1000" placeholder="Definir" required></div>
+  </div>
+  <div class="acoes"><button class="primario" type="submit">Aplicar janela</button><button class="secundario" id="limpar" type="button">Limpar</button></div>
+ </form>
+ <p id="mensagem" class="aviso" role="status" aria-live="polite">Defina as janelas antes da eluição.</p>
+</section>
+<section class="palco" aria-labelledby="cena-titulo">
+ <div class="palco-cab"><div><h1 id="cena-titulo">Coluna cromatográfica</h1><span class="legenda">A cena responde ao modelo e ao volume eluído</span></div><div id="relogio" class="leitura">0,0 mL · 0,0 min</div></div>
+ <div class="cena">
+  <div class="coluna-box">
+   <svg id="coluna-svg" viewBox="0 0 285 430" role="img" aria-label="Coluna de vidro montada com reservatório, leito de sílica, frita, torneira e haste de sustentação">
+<defs>
+<clipPath id="leito"><rect x="99" y="137" width="82" height="220" rx="2"/></clipPath>
+<linearGradient id="vidro"><stop stop-color="#7caab8" stop-opacity=".55"/><stop offset=".22" stop-color="#fff" stop-opacity=".86"/><stop offset=".78" stop-color="#d8edf0" stop-opacity=".25"/><stop offset="1" stop-color="#39778b" stop-opacity=".53"/></linearGradient>
+<linearGradient id="suporte-g"><stop stop-color="#c6b9a5"/><stop offset=".3" stop-color="#f9f3e7"/><stop offset="1" stop-color="#c7baa9"/></linearGradient>
+<linearGradient id="solvente-g" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#dff8f3" stop-opacity=".72"/><stop offset="1" stop-color="#8fd0c7" stop-opacity=".5"/></linearGradient>
+<filter id="difusao"><feGaussianBlur stdDeviation="2.2"/></filter>
+<pattern id="graos" width="13" height="15" patternUnits="userSpaceOnUse"><circle cx="3" cy="4" r=".7" fill="#887965" opacity=".29"/><circle cx="10" cy="11" r=".7" fill="#9f8c76" opacity=".24"/></pattern>
+</defs>
+<!-- Estrutura: haste, base e abraçadeira -->
+<rect x="30" y="17" width="6" height="380" rx="3" fill="#9db4bb" stroke="#456d7b" stroke-width="1.5"/>
+<path d="M13 399H83L92 412H4Z" fill="#d9e7e9" stroke="#466e7e" stroke-width="2"/>
+<path d="M36 161H76L96 168M36 179H76L96 174" stroke="#6b8893" stroke-width="5" fill="none" stroke-linecap="round"/>
+<circle cx="36" cy="169" r="7" fill="#c2d4d8" stroke="#3e6979" stroke-width="2"/>
+<!-- Reservatório de eluente e conexão -->
+<path d="M111 31H169V39L178 48V79Q178 96 163 107L159 115H121L117 107Q102 96 102 79V48L111 39Z" fill="url(#vidro)" stroke="#245c72" stroke-width="3"/>
+<path d="M110 76Q140 73 170 76V93Q166 103 160 108H120Q113 102 110 93Z" fill="url(#solvente-g)"/>
+<path d="M106 32H174M110 40H170" stroke="#88b7c2" stroke-width="2"/>
+<path d="M121 115H159V135H121Z" fill="#dcebed" stroke="#275d71" stroke-width="2.4"/>
+<!-- Tubo e leito empacotado -->
+<path d="M95 129Q95 125 101 125H179Q185 125 185 131V365Q185 374 177 381L153 394H127L103 381Q95 374 95 365Z" fill="url(#vidro)" stroke="#255b70" stroke-width="3.6"/>
+<rect x="99" y="137" width="82" height="220" fill="url(#suporte-g)"/>
+<rect x="99" y="137" width="82" height="220" fill="url(#graos)"/>
+<g id="bandas" clip-path="url(#leito)"></g>
+<path d="M99 137H181" stroke="#958d80" stroke-width="2" stroke-dasharray="2 2"/>
+<!-- Plugue/frita -->
+<rect x="99" y="359" width="82" height="11" rx="2" fill="#dce8e0" stroke="#77979c" stroke-width="1.5"/>
+<path d="M102 364H179M102 368H179" stroke="#9ab0b0" stroke-dasharray="3 3"/>
+<!-- Reflexo e escala física longitudinal -->
+<path d="M102 151V347" stroke="#fff" opacity=".78" stroke-width="3" stroke-linecap="round"/>
+<path d="M179 151V347" stroke="#306f85" opacity=".20" stroke-width="2"/>
+<g stroke="#376f7d" stroke-width="1" opacity=".72"><path d="M188 142H202M188 170H196M188 198H202M188 226H196M188 254H202M188 282H196M188 310H202M188 338H196"/></g>
+<g fill="#536f7a" font-size="9"><text x="206" y="146">0</text><text x="206" y="202">25</text><text x="206" y="258">50</text><text x="206" y="314">75</text><text x="206" y="342">100%</text></g>
+<!-- Torneira e saída -->
+<path d="M128 394H152V405H128Z" fill="#d9eeee" stroke="#245b71" stroke-width="2.4"/>
+<circle cx="140" cy="405" r="7" fill="#e9f3f3" stroke="#356777" stroke-width="2"/>
+<path d="M132 405H148" stroke="#316e82" stroke-width="4" stroke-linecap="round"/>
+<path d="M140 412V427" stroke="#22879a" stroke-width="3" stroke-linecap="round"/>
+<g font-size="10" fill="#4b6c78"><text x="140" y="17" text-anchor="middle">Reservatório</text><text x="211" y="374">Frita</text><text x="160" y="416">Torneira</text></g>
+</svg>
+   <span class="legenda">Bandas coloridas são visíveis; regiões incolores não são inventadas na imagem.</span>
+  </div>
+  <div class="coleta-box">
+   <div class="saida"><strong id="saida-destino">Saída → descarte</strong><div id="saida-conc">Aguardando eluição</div></div>
+   <div><h3>Progresso da eluição</h3><div class="progresso"><span id="progresso"></span></div></div>
+   <div class="legenda">O tempo de eluição depende da vazão. A aceleração didática altera apenas o relógio da apresentação.</div>
+   <div class="nota">Coleta efetiva somente na saída da coluna. O capilar poderá transferir uma alíquota do frasco para papel/CCD na próxima integração.</div>
+  </div>
+ </div>
+ <div class="grafico-wrap">
+  <div class="cabecalho"><h2 style="margin:0">Perfil de eluição</h2><small>Sinal óptico já observado × volume acumulado (sem identificar componentes)</small></div>
+  <div class="graficos"><svg id="perfil-svg" viewBox="0 0 630 185" role="img" aria-label="Sinal total observado na saída e janelas F1–F10, sem identidades"></svg><div class="eixos"><span>0 mL</span><span id="eixo-max">9 mL · volume eluído</span></div></div>
+  <div class="chaves" id="chaves"></div>
+ </div>
+ <div class="controles"><button class="primario" id="executar" type="button">Iniciar eluição</button><button class="secundario" id="reiniciar" type="button">Voltar ao início</button><span class="tempo" id="texto-progresso">Preparado para coleta</span><span class="tempo" id="tempo-didatico">Tempo simulado 00:00 · 120×</span></div>
+</section>
+<aside class="dados" aria-labelledby="dados-titulo">
+ <div class="cabecalho"><h2 id="dados-titulo">Dados da corrida</h2><span class="selo">Modelo</span></div>
+ <dl id="dados-medidas"></dl>
+ <hr>
+ <h3>Registro da fração em foco</h3>
+ <div id="foco-resumo" class="nota">Selecione um tubo na Montagem e configure sua janela.</div>
+ <h3>Registro gráfico</h3>
+ <p class="explicacao">O registro preserva a coluna, o perfil calculado e as janelas coletadas. É uma evidência simulada, não uma fotografia experimental.</p>
+ <button id="registrar" class="secundario" type="button">Exportar registro SVG</button>
+ <hr>
+ <h3>Continuação do experimento</h3>
+ <p class="explicacao">Capilar → aplicação em papel/CCD → desenvolvimento → detecção UV → relatório ilustrado. Integração com a bancada principal ainda pendente.</p>
+ <div class="nota">Sinal sem identidades: não há previsão universal de substâncias reais. Curvas futuras permanecem ocultas.</div>
+</aside>
+</main>
+<script src="../js/simulation/siac-coluna.js"></script>
+<script src="../js/simulation/siac-fracionamento.js"></script>
+<script>
+(function(){
+"use strict";
+const C=window.SIAC.column,F=window.SIAC.fractionCollector;
+const $=id=>document.getElementById(id);
+const fmt=(v,n=2)=>Number(v).toLocaleString("pt-BR",{minimumFractionDigits:n,maximumFractionDigits:n});
+const catalogoModelo=[
+ {id:"A",nome:"Modelo azul",massa:2,cor:"#0072b2",deteccao:{visivel:true}},
+ {id:"B",nome:"Modelo verde",massa:2.5,cor:"#009e73",deteccao:{visivel:true}},
+ {id:"C",nome:"Modelo incolor",massa:1.2,cor:null,deteccao:{visivel:false,uv365:true}},
+ {id:"D",nome:"Modelo âmbar",massa:1.5,cor:"#d79b32",deteccao:{visivel:true}}
+];
+// Códigos A–D são apenas espécies de cenário didático hipotético, sem nomes químicos reais.
+const amostras={
+ mistura1:{nome:"Mistura-modelo I",analitos:catalogoModelo.slice(0,3)},
+ mistura2:{nome:"Mistura-modelo II",analitos:[
+  {...catalogoModelo[0],massa:1.1},{...catalogoModelo[1],massa:2.8},
+  {...catalogoModelo[2],massa:.9}
+ ]}
+};
+// Valores de retenção dependem de TODA a combinação de cenário + suporte + eluente.
+// São parâmetros hipotéticos; não são deduzidos de nomes nem relacionados a mL fixos.
+const cenarios={
+ eluente1:{silica:{A:.15,B:1.5,C:3,D:2.15},alumina:{A:.6,B:.9,C:2,D:1.65}},
+ eluente2:{silica:{A:.7,B:.45,C:1.45,D:.2},alumina:{A:1.3,B:.3,C:2.65,D:.8}}
+};
+function configurarEditor(){
+ const custom=$("amostra").value==="personalizada";
+ const el=$("composicao");el.hidden=!custom;
+ if(el.childElementCount)return;
+ el.innerHTML='<div class="composicao-grid"><strong style="font-size:12px">Composição livre — exemplos hipotéticos</strong>'+
+  catalogoModelo.map(x=>'<label class="composicao-linha">'+
+   '<span><input type="checkbox" data-analito="'+x.id+'" '+(x.id==="A"||x.id==="C"?"checked":"")+'/> '+
+   x.nome+(x.cor?' <i style="display:inline-block;width:10px;height:10px;border-radius:50%;background:'+x.cor+'"></i>':'')+
+   '</span><span><input type="number" min=".01" max="100" step=".01" data-massa="'+x.id+
+   '" value="'+x.massa+'" aria-label="Massa de '+x.nome+' em mg"/> mg</span></label>').join("")+
+   '<small>Os componentes e as massas são configuráveis; a química não depende do número do frasco.</small></div>';
+}
+function amostraDaMontagem(){
+ if($("amostra").value!=="personalizada")return amostras[$("amostra").value];
+ const analitos=catalogoModelo.filter(x=>$('composicao').querySelector('[data-analito="'+x.id+'"]').checked)
+  .map(x=>({...x,massa:Number($('composicao').querySelector('[data-massa="'+x.id+'"]').value)}));
+ if(!analitos.length)throw Error("Selecione pelo menos um componente para a mistura.");
+ return {nome:"Mistura personalizada (modelo)",analitos};
+}
+let estado,plano,perfil,selecionado="F1",volume=0,rodando=false,ultimo=0,aviso="",arraste=null;
+function configurar(){
+ const a=amostraDaMontagem(),sol=$("eluente").value,sup=$("suporte").value,
+  k=cenarios[sol][sup];
+ const config={
+  amostra:{id:$("amostra").value,nome:a.nome},
+  faseEstacionaria:{id:sup,tipo:sup,indicadorFluorescente254:false},
+  faseMovel:{id:sol,nome:sol},
+  geometria:{comprimentoMm:Number($("comprimento").value),
+   diametroInternoMm:Number($("diametro").value),porosidade:Number($("porosidade").value)},
+  vazaoMlMin:Number($("vazao").value),volumeTotalMl:Number($("volumeTotal").value),
+  componentes:a.analitos.map(x=>({id:x.id,nome:x.nome,massaInicialMg:x.massa,
+   retencao:{modo:"fator",k:k[x.id]},pratosTeoricos:48,
+   corVisivel:x.cor,deteccao:x.deteccao,
+   proveniencia:{classe:"hipotetico",fonte:"Parâmetros didáticos internos não calibrados"}}))
+ };
+ estado=C.prepare(config);
+ plano=F.prepare({volumeTotalMl:config.volumeTotalMl,resolucaoMl:.1,capacidadeFrascoMl:Number($("capacidade").value)});
+ perfil=C.profile(estado,{passos:300});
+ volume=0;rodando=false;selecionado="F1";$("inicio").value="";$("fim").value="";
+ $("inicio").max=config.volumeTotalMl;$("fim").max=config.volumeTotalMl;
+ $("executar").textContent="Iniciar eluição";arraste=null;
+ aviso="Coluna montada. Configure as janelas antes de iniciar.";render();
+}
+function calculoNoVolume(id,ateVolume){
+ const j=plano.janelas.find(j=>j.frasco===id);
+ if(!j)return {volume:0,massas:{}};
+ const fim=Math.min(j.fimMl,Math.max(j.inicioMl,ateVolume));
+ if(fim<=j.inicioMl)return {volume:0,massas:{}};
+ const result=C.massBetween(estado,j.inicioMl,fim);
+ return {volume:result.volumeMl,massas:result.componentesMg};
+}
+function corDaFracao(massas){
+ const mapa=Object.fromEntries(estado.config.componentes.filter(x=>x.corVisivel).map(x=>[x.id,x.corVisivel]));
+ const disponiveis=Object.entries(massas).filter(([id,m])=>m>0.0001&&mapa[id]);
+ if(!disponiveis.length)return "#bed8dc";
+ let soma=0,r=0,g=0,b=0;
+ for(const [id,m] of disponiveis){
+  const h=mapa[id];soma+=m;
+  r+=parseInt(h.slice(1,3),16)*m;
+  g+=parseInt(h.slice(3,5),16)*m;
+  b+=parseInt(h.slice(5,7),16)*m;
+ }
+ return "rgb("+[r,g,b].map(v=>Math.round(v/soma)).join(",")+")";
+}
+function desenharTubos(){
+ const f=$("frascos");f.innerHTML="";
+ for(let i=1;i<=10;i++){
+  const id="F"+i,j=plano.janelas.find(j=>j.frasco===id),fill=calculoNoVolume(id,volume);
+  const max=j?j.volumeMl:1, altura=fill.volume>0?Math.max(1,25*Math.min(1,fill.volume/max)):0;
+  const bot=document.createElement("button");
+  bot.type="button";bot.className="frasco"+(selecionado===id?" ativo":"");
+  bot.setAttribute("aria-pressed",selecionado===id?"true":"false");
+  bot.setAttribute("aria-label",id+(j?" · coleta "+fmt(j.inicioMl,1)+" a "+fmt(j.fimMl,1)+" mL":" · sem janela definida"));
+  bot.innerHTML='<svg viewBox="0 0 32 44" aria-hidden="true">'+
+   '<defs><clipPath id="clip'+i+'"><path d="M7 3V27Q7 39 16 39Q25 39 25 27V3Z"/></clipPath></defs>'+
+   '<g clip-path="url(#clip'+i+')"><rect x="9" y="'+(39-altura)+'" width="14" height="'+altura+'" fill="'+corDaFracao(fill.massas)+'" opacity=".82"/></g>'+
+   '<path d="M7 3H25M9 3V28Q9 39 16 39Q23 39 23 28V3" fill="none" stroke="#24576d" stroke-width="2.3" stroke-linecap="round"/></svg>'+
+   '<span>'+id+(j?" ●":"")+'</span>';
+  bot.onclick=()=>{selecionado=id;const x=plano.janelas.find(j=>j.frasco===id);
+   $("inicio").value=x?String(x.inicioMl):"";$("fim").value=x?String(x.fimMl):"";render();};
+  f.appendChild(bot);
+ }
+}
+function desenharBandas(obs){
+ const g=$("bandas");g.innerHTML="";
+ for(const banda of obs.bandasVisiveis){
+  const xs=banda.distribuicao,max=Math.max(1e-9,...xs);
+  for(let i=0;i<xs.length;i++){
+   const rel=xs[i]/max;if(rel<.009)continue;
+   const y=137+220*i/xs.length,h=220/xs.length+2.2;
+   const off=1.8*Math.sin(i*2.1+banda.id.charCodeAt(0)*.13),wide=71+5*Math.sin(i*.65);
+   const left=140-wide/2+off,right=140+wide/2+off;
+   const d="M"+left.toFixed(2)+" "+y.toFixed(2)+" Q"+(140+off).toFixed(2)+" "+(y-1.6).toFixed(2)+
+     " "+right.toFixed(2)+" "+(y+1).toFixed(2)+" L"+(right+1).toFixed(2)+" "+(y+h).toFixed(2)+
+     " Q"+(140+off).toFixed(2)+" "+(y+h-1).toFixed(2)+" "+(left-2).toFixed(2)+" "+(y+h).toFixed(2)+"Z";
+   const el=document.createElementNS("http://www.w3.org/2000/svg","path");
+   el.setAttribute("d",d);el.setAttribute("fill",banda.corVisivel);
+   el.setAttribute("opacity",String(.025+.8*Math.sqrt(rel)));
+   el.setAttribute("filter","url(#difusao)");g.appendChild(el);
+  }
+ }
+}
+function sinalObservavel(concentracoes){
+ const vis=estado.config.componentes.filter(c=>c.corVisivel&&c.deteccao.visivel===true);
+ return vis.reduce((s,c)=>s+(concentracoes[c.id]||0),0);
+}
+// O gráfico NÃO tem identificadores, curvas por espécie nem perfil futuro.
+// É um sinal agregado óptico hipotético. Componentes incolores são invisíveis.
+function perfilSvg(){
+ const svg=$("perfil-svg"),p={x:42,y:12,w:566,h:145},maxV=estado.config.volumeTotalMl;
+ const pontos=perfil.trechos;
+ const vistos=pontos.filter(t=>(t.inicioMl+t.fimMl)/2<=volume+1e-10);
+ const maxSinal=Math.max(.01,...vistos.map(t=>sinalObservavel(t.concentracoesMgPorMl)));
+ let out='<rect x="0" y="0" width="630" height="185" fill="#fcfefe"/>';
+ for(let i=0;i<=4;i++){
+  const y=p.y+p.h*i/4;out+='<path d="M'+p.x+' '+y+'H'+(p.x+p.w)+'" stroke="#e0ebee" stroke-width="1"/>';
+ }
+ for(const j of plano.janelas){
+  const x=p.x+p.w*j.inicioMl/maxV,w=p.w*j.volumeMl/maxV;
+  out+='<rect x="'+x+'" y="'+p.y+'" width="'+w+'" height="'+p.h+'" fill="#0b5472" opacity=".10"/>';
+  out+='<text x="'+(x+2)+'" y="23" font-size="10" fill="#0b5472">'+j.frasco+'</text>';
+ }
+ if(arraste){
+  const xs=p.x+p.w*Math.min(arraste.inicioMl,arraste.fimMl)/maxV;
+  const xf=p.x+p.w*Math.max(arraste.inicioMl,arraste.fimMl)/maxV;
+  out+='<rect x="'+xs+'" y="'+p.y+'" width="'+Math.max(2,xf-xs)+'" height="'+p.h+'" fill="#2e9b8f" opacity=".21"/>';
+ }
+ let d="";
+ for(const t of vistos){
+  const x=p.x+p.w*((t.inicioMl+t.fimMl)/2)/maxV;
+  const y=p.y+p.h-p.h*sinalObservavel(t.concentracoesMgPorMl)/maxSinal;
+  d+=(d?"L":"M")+x.toFixed(2)+" "+y.toFixed(2)+" ";
+ }
+ if(d)out+='<path d="'+d+'" stroke="#0b7990" stroke-width="2.7" fill="none" stroke-linejoin="round"/>';
+ const vx=p.x+p.w*volume/maxV;
+ out+='<path d="M'+vx+' '+p.y+'V'+(p.y+p.h)+'" stroke="#0b5472" stroke-width="2" stroke-dasharray="4 3"/>';
+ out+='<path d="M'+p.x+' '+p.y+'V'+(p.y+p.h)+'H'+(p.x+p.w)+'" fill="none" stroke="#64828e" stroke-width="1.5"/>';
+ out+='<text x="5" y="13" font-size="10" fill="#516a76">Sinal (u.a.)</text>';
+ svg.innerHTML=out;
+ $("eixo-max").textContent=fmt(maxV,1)+" mL · volume acumulado";
+ $("chaves").innerHTML='<span class="chave"><i class="bolinha" style="background:#0b7990"></i>Sinal combinado já observado (modelo)</span>'+
+ '<span class="chave"><i class="bolinha" style="background:#b6d4d9"></i>Janelas de coleta</span>';
+}
+function mostrarTempo(minutos){
+ const secs=Math.floor(Math.max(0,minutos)*60);
+ const h=Math.floor(secs/3600),m=Math.floor((secs%3600)/60),ss=secs%60;
+ return [h,m,ss].map(x=>String(x).padStart(2,"0")).join(":");
+}
+function render(){
+ if(!estado)return;
+ const s=C.advance(estado,volume/estado.config.vazaoMlMin),obs=C.observe(s);
+ desenharBandas(obs);desenharTubos();perfilSvg();
+ $("relogio").textContent=fmt(volume,2)+" mL · "+fmt(s.tempoMin,2)+" min";
+ $("progresso").style.width=(100*volume/estado.config.volumeTotalMl)+"%";
+ $("tempo-didatico").textContent="Tempo da corrida "+mostrarTempo(s.tempoMin)+" / "+
+   mostrarTempo(estado.config.tempoTotalMin)+" · "+Number($("velocidade").value)+"×";
+ const destino=volume>=estado.config.volumeTotalMl?"concluído":F.routeAt(plano,volume);
+ $("saida-destino").textContent="Saída → "+(destino==="descarte"?"descarte":destino);
+ const saida=C.outlet(estado,volume);
+ $("saida-conc").textContent="Sinal visual agregado (modelo): "+fmt(sinalObservavel(saida.concentracoesMgPorMl),3)+" u.a. · sem identificar espécies";
+ const selected=plano.janelas.find(j=>j.frasco===selecionado),colhido=calculoNoVolume(selecionado,volume);
+ $("estado-tubo").textContent=selecionado+(selected?" · "+fmt(selected.inicioMl,1)+"–"+fmt(selected.fimMl,1)+" mL · coletado "+fmt(colhido.volume,2)+" mL":" · sem intervalo de coleta");
+ $("foco-resumo").textContent=selecionado+(selected?": janela "+fmt(selected.inicioMl,1)+"–"+fmt(selected.fimMl,1)+" mL. Coleta atual: "+fmt(colhido.volume,3)+" mL.":" não tem coleta programada.");
+ $("mensagem").textContent=aviso;
+ $("mensagem").className="aviso"+(aviso.includes("definida")||aviso.includes("montada")||aviso.includes("atualizada")?" avisoverde":"");
+ $("executar").textContent=volume>=estado.config.volumeTotalMl?"Eluição concluída":rodando?"Pausar":"Iniciar eluição";
+ $("executar").disabled=volume>=estado.config.volumeTotalMl;
+ $("inicio").disabled=rodando||volume>0;$("fim").disabled=rodando||volume>0;
+ $("janela-form").querySelector('button[type=submit]').disabled=rodando||volume>0;
+ $("limpar").disabled=rodando||volume>0;
+ $("montar").disabled=rodando;
+ $("texto-progresso").textContent=rodando?"Eluindo":volume>0?"Eluição "+fmt(100*volume/estado.config.volumeTotalMl,0)+"%":"Preparado";
+ const d=$("dados-medidas");
+ const dados=[
+  ["Volume morto",fmt(estado.config.geometria.volumeMortoMl,3)+" mL"],
+  ["Vazão",fmt(estado.config.vazaoMlMin,2)+" mL/min"],
+  ["Escala da corrida",fmt(estado.config.volumeTotalMl,1)+" mL"],
+  ["Retenção/eficiência","k e N parametrizados"],
+  ["Frações configuradas",String(plano.janelas.length)+" / 10"]
+ ];
+ d.innerHTML=dados.map(x=>'<div class="medida"><dt>'+x[0]+'</dt><dd>'+x[1]+'</dd></div>').join("");
+}
+const perfisColuna={
+ compacta:{comprimento:80,diametro:8,vazao:.8,volumeTotal:9,capacidade:20},
+ media:{comprimento:150,diametro:20,vazao:2.5,volumeTotal:100,capacidade:50},
+ preparativa:{comprimento:400,diametro:50,vazao:5,volumeTotal:1000,capacidade:250}
+};
+$("porte").addEventListener("change",()=>{
+ const perfil=perfisColuna[$("porte").value];
+ if(!perfil)return;
+ for(const [id,v] of Object.entries(perfil))$(id).value=String(v);
+ aviso="Perfil geométrico sugerido: monte a coluna para atualizar a corrida.";
+ render();
+});
+$("amostra").addEventListener("change",configurarEditor);
+configurarEditor();
+$("montar").addEventListener("click",()=>{try{configurar()}catch(e){aviso=e.message;render();}});
+$("janela-form").addEventListener("submit",e=>{
+ e.preventDefault();
+ if(volume>0)return;
+ try{
+  plano=F.setWindow(plano,selecionado,Number($("inicio").value),Number($("fim").value));
+  aviso="Janela de "+selecionado+" atualizada.";render();
+ }catch(err){aviso=err.message;render();}
+});
+$("limpar").addEventListener("click",()=>{
+ if(volume>0)return;
+ plano=F.clearWindow(plano,selecionado);$("inicio").value="";$("fim").value="";
+ aviso="Janela removida de "+selecionado+".";render();
+});
+// Seleção direta na curva: mesma janela editável numericamente por teclado.
+function volumeDoPonteiro(e){
+ const svg=$("perfil-svg"),rect=svg.getBoundingClientRect();
+ const localX=(e.clientX-rect.left)*630/rect.width;
+ const total=estado.config.volumeTotalMl;
+ const v=Math.max(0,Math.min(total,(localX-42)/566*total));
+ return Math.max(0,Math.min(total,Math.round(v/0.1)*0.1));
+}
+$("perfil-svg").addEventListener("pointerdown",e=>{
+ if(volume>0||rodando){aviso="Reinicie antes de redefinir janelas de coleta.";render();return;}
+ arraste={inicioMl:volumeDoPonteiro(e),fimMl:volumeDoPonteiro(e)};
+ $("perfil-svg").setPointerCapture(e.pointerId);
+ e.preventDefault();render();
+});
+$("perfil-svg").addEventListener("pointermove",e=>{
+ if(!arraste)return;
+ arraste.fimMl=volumeDoPonteiro(e);
+ $("inicio").value=String(Math.min(arraste.inicioMl,arraste.fimMl));
+ $("fim").value=String(Math.max(arraste.inicioMl,arraste.fimMl));
+ render();
+});
+$("perfil-svg").addEventListener("pointerup",e=>{
+ if(!arraste)return;
+ arraste.fimMl=volumeDoPonteiro(e);
+ let inicio=Math.min(arraste.inicioMl,arraste.fimMl),fim=Math.max(arraste.inicioMl,arraste.fimMl);
+ arraste=null;
+ if(fim-inicio<0.0999){
+  fim=Math.min(estado.config.volumeTotalMl,inicio+0.1);
+  inicio=Math.max(0,fim-0.1);
+ }
+ $("inicio").value=String(inicio);$("fim").value=String(fim);
+ try{plano=F.setWindow(plano,selecionado,inicio,fim);aviso="Janela de "+selecionado+" definida diretamente no perfil.";}
+ catch(err){aviso=err.message;}
+ render();
+});
+$("perfil-svg").addEventListener("pointercancel",()=>{arraste=null;render();});
+$("executar").addEventListener("click",()=>{
+ if(volume>=estado.config.volumeTotalMl)return;
+ rodando=!rodando;ultimo=0;
+ aviso=plano.janelas.length?"Eluição iniciada com coleta seletiva.":"Eluição iniciada: todo eluato seguirá ao descarte.";
+ render();
+});
+$("reiniciar").addEventListener("click",()=>{
+ rodando=false;ultimo=0;volume=0;aviso="Eluição reiniciada. Janelas preservadas.";render();
+});
+function frame(t){
+ if(rodando){
+  if(ultimo){
+   const dt=Math.min(.13,(t-ultimo)/1000);
+   // Cronômetro = vazão × tempo, com acelerador alterando apenas a espera didática.
+   const dtDidaticoMin=dt*Number($("velocidade").value)/60;
+   volume=Math.min(estado.config.volumeTotalMl,
+     volume+dtDidaticoMin*estado.config.vazaoMlMin);
+   if(volume>=estado.config.volumeTotalMl){rodando=false;aviso="Eluição terminada. Selecione uma fração para analisar.";}
+   render();
+  }
+  ultimo=t;
+ }else ultimo=0;
+ requestAnimationFrame(frame);
+}
+$("registrar").addEventListener("click",()=>{
+ const coleta=F.integrate(plano,perfil.trechos);
+ const linhas=coleta.frascos.filter(f=>f.ativo).map((f,i)=>{
+  const real=calculoNoVolume(f.frasco,volume);
+  return '<text x="38" y="'+(535+i*19)+'" fill="#17384d" font-size="13">'+
+    f.frasco+' · janela '+fmt(f.inicioMl,1)+'–'+fmt(f.fimMl,1)+' mL · efetivamente coletado '+fmt(real.volume,2)+' mL</text>';
+ }).join("");
+ const coletadoAteAgora=coleta.frascos.filter(f=>f.ativo).reduce((s,f)=>s+calculoNoVolume(f.frasco,volume).volume,0);
+ const dados='Eluição: '+fmt(volume,2)+' / '+fmt(estado.config.volumeTotalMl,2)+' mL · Descarte até agora: '+fmt(Math.max(0,volume-coletadoAteAgora),2)+' mL';
+ const documento='<?xml version="1.0" encoding="UTF-8"?>'+
+ '<svg xmlns="http://www.w3.org/2000/svg" width="900" height="820" viewBox="0 0 900 820">'+
+ '<rect width="900" height="820" fill="#fff"/>'+
+ '<text x="32" y="45" fill="#0b5472" font-size="28" font-weight="bold">SIAC · Registro gráfico da coluna</text>'+
+ '<text x="32" y="72" fill="#415f71" font-size="14">Amostra: '+estado.config.amostra.nome+' · Modelo hipotético não calibrado</text>'+
+ '<svg x="20" y="95" width="270" height="390" viewBox="0 0 285 430">'+$("coluna-svg").innerHTML+'</svg>'+
+ '<svg x="292" y="136" width="585" height="280" viewBox="0 0 630 185">'+$("perfil-svg").innerHTML+'</svg>'+
+ '<text x="32" y="505" fill="#0b5472" font-size="17" font-weight="bold">Janelas coletoras F1–F10</text>'+linhas+
+ '<text x="32" y="766" fill="#385568" font-size="13">'+dados+'</text>'+
+ '<text x="32" y="791" fill="#667c87" font-size="12">Registro digital ilustrativo: não é fotografia nem laudo de identificação.</text></svg>';
+ const blob=new Blob([documento],{type:"image/svg+xml;charset=utf-8"}),url=URL.createObjectURL(blob);
+ const a=document.createElement("a");a.href=url;a.download="siac-coluna-registro.svg";a.click();
+ setTimeout(()=>URL.revokeObjectURL(url),500);
+ aviso="Registro gráfico gerado com as janelas da corrida.";render();
+});
+configurar();
+requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

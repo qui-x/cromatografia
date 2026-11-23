@@ -101,6 +101,27 @@
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+/* Profundidade do recipiente: parede posterior → papel → vidro e solvente frontais.
+ * O líquido frontal é translúcido para deixar visível a parte imersa do papel. */
+.siac-v4-parede-frontal {
+  fill: #8bbac2;
+  fill-opacity: .075;
+  stroke: none;
+  pointer-events: none;
+}
+.siac-v4-bequer-frontal .siac-v4-poco-solvente {
+  opacity: .64;
+  pointer-events: none;
+}
+.siac-v4-borda-frontal {
+  fill: none;
+  stroke: var(--secondary);
+  stroke-width: 2.6;
+  stroke-opacity: .73;
+  stroke-linecap: round;
+  pointer-events: none;
+}
+.siac-v4-bequer-frontal { pointer-events: none; }
 .siac-v4-reflexo-vidro {
   fill: none;
   stroke: #6ABDC1;

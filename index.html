@@ -20,7 +20,7 @@
     />
     <title>SIAC — A Identidade das Cores Ocultas</title>
     <link rel="manifest" href="manifest.webmanifest" />
-    <link rel="icon" type="image/svg+xml" href="assets/siac-icone.svg" />
+    <link rel="icon" type="image/svg+xml" href="assets/siac-icone.svg?v=alpha-1" />
     <link rel="apple-touch-icon" href="assets/icones/apple-touch-icon.png" />
     <link
       rel="stylesheet"
@@ -45,7 +45,8 @@
     <link rel="stylesheet" href="css/refinements.css?v=1.0.0+20261012" />
     <link rel="stylesheet" href="css/aplicativo.css?v=1.0.0+20261012" />
     <link rel="stylesheet" href="css/siac-identidade.css?v=siac-0.1.0" />
-    <link rel="stylesheet" href="css/siac-abertura-v4.css?v=siac-v4.6-20261122" />
+    <link rel="stylesheet" href="css/siac-abertura-v4.css?v=siac-v4.7-profundidade-20261122" />
+    <link rel="stylesheet" href="css/siac-laboratorio-integrado.css?v=siac-papel-bequer-1" />
   </head>
   <body>
     <noscript
@@ -255,6 +256,8 @@
           <nav aria-label="Apoio e configurações">
             <a href="#/manual">Manual de uso</a>
             <a href="#/professor">Área do Professor</a>
+            <a href="previews/coluna-laboratorio.html" target="_blank" rel="noopener noreferrer"
+              title="Prévia experimental de cromatografia em coluna, em desenvolvimento">Testar coluna cromatográfica (prévia)</a>
           </nav>
           <button class="quiet-btn" data-abrir-atividade>
             <span data-app-icon="professor"></span>Abrir atividade
@@ -2079,7 +2082,7 @@
       aria-labelledby="about-title"
     >
       <div class="dialog-heading">
-        <h2 id="about-title">Sobre o SIAC</h2>
+        <h2 id="about-title">Sobre o SIAB</h2>
         <button
           type="button"
           class="icon-btn"
@@ -2431,7 +2434,7 @@
     <script src="js/simulation/quimica.js?v=1.0.0+20261012"></script>
     <script src="js/simulation/condutividade.js?v=1.0.0+20261012"></script>
     <script src="js/core/estado.js?v=1.0.0+20261012"></script>
-    <script src="js/ui/abertura.js?v=siac-v4.6-20261122"></script>
+    <script src="js/ui/abertura.js?v=siac-v4.7-profundidade-20261122"></script>
     <script src="js/core/loja.js?v=1.0.0+20261012"></script>
     <script src="js/core/persistencia.js?v=1.0.0+20261111-indexeddb100"></script>
     <script src="js/core/migracoes.js?v=1.0.0+20261012"></script>
@@ -2484,6 +2487,9 @@
     <script src="js/ui/activity-ui.js?v=1.0.0+20261012"></script>
     <script src="js/ui/abrir-atividade.js?v=1.0.0+20261012"></script>
     <script src="js/init/integracao.js?v=1.0.0+20261012"></script>
+    <script src="js/simulation/siac-coluna.js?v=siac-integra-1"></script>
+    <script src="js/simulation/siac-fracionamento.js?v=siac-integra-1"></script>
+    <script src="js/ui/siac-laboratorio-integrado.js?v=siac-papel-bequer-1"></script>
     <script src="js/init/app.js?v=1.0.0+20261111-indexeddb100"></script>
     <script src="js/ui/mobile-study.js?v=1.0.0+20261012"></script>
     <!-- O verificador de abertura é concluído pelo bootstrap assíncrono. -->

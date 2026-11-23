@@ -1,18 +1,13 @@
 # SIAC — Simulador Interativo de Análise Cromatográfica
 
-**Projeto em desenvolvimento.** O SIAC reutiliza a infraestrutura de experiência do SIAB — Simulador de Indicadores Ácido-Base, preservando acessibilidade, laboratório livre, caderno, relatórios e PWA. **A migração científica não está concluída**: diversas telas e atividades ainda executam o motor ácido-base legado, e por isso não devem ser usadas como resultados cromatográficos.
+**A Identidade das Cores Ocultas** · Em desenvolvimento. A aplicação reutiliza infraestrutura do SIAB, mas ainda contém telas e experimentos ácido-base não migrados; estes não representam resultados cromatográficos.
 
-- [Prévia da abertura do SIAC](https://qui-x.github.io/cromatografia/previews/abertura-v4.html)
-- [Plano científico de migração](docs/SIAC-PLANO-MIGRACAO.md)
-- [Auditoria inicial do legado](docs/SIAC-AUDITORIA-LEGADO.md)
-- [Motor planar em desenvolvimento](docs/SIAC-MOTOR-CROMATOGRAFICO.md)
-- [PR científica (rascunho, sem merge)](https://github.com/qui-x/cromatografia/pull/1)
+- [Prévia da experiência de foco e frações](previews/siac-alternancia-foco.html)
+- [Plano da experiência](docs/SIAC-PLANO-EXPERIENCIA.md)
+- [Motor de coluna e coleta na bancada](index.html#/laboratorio)
+- [PR científica em desenvolvimento](https://github.com/qui-x/cromatografia/pull/1)
 
-## Documentação histórica da base SIAB
-
-O conteúdo abaixo é preservado como **referência histórica da aplicação de origem**. As imagens e as funcionalidades ácido-base descritas não representam o estado final do SIAC.
-
----
+## Legado SIAB — documentação preservada
 
 # SIAB 1.0.0
 

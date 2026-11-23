@@ -2,7 +2,7 @@
   "name": "siac-cromatografia",
   "version": "1.0.0",
   "private": true,
-  "description": "SIAC — Simulador Interativo de Análise Cromatográfica; migração científica em andamento a partir da base SIAB.",
+  "description": "SIAC — Simulador Interativo de Análise Cromatográfica: experiência cromatográfica em migração científica do SIAB.",
   "license": "GPL-3.0-only",
   "scripts": {
     "start": "python3 -m http.server 8080",

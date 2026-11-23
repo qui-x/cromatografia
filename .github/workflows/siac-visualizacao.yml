@@ -3,6 +3,9 @@ on:
   push:
     branches: [feat/siac-experiencia-didatica]
     paths:
+      - "assets/siac-icone.svg"
+      - "assets/siac-icone-app.svg"
+      - "tests/siac-logo-transparencia.test.cjs"
       - "js/ui/siac-estado-visualizacao.js"
       - "previews/siac-alternancia-foco.html"
       - "scripts/siac-visualizacao-standalone.cjs"
@@ -37,6 +40,7 @@ jobs:
       - name: Validar estados, capilar, UV e isolamento
         run: |
           node tests/siac-visualizacao.test.cjs
+          node tests/siac-logo-transparencia.test.cjs
           node - <<'NODE'
           const fs=require("fs");
           const index=fs.readFileSync("index.html","utf8");
