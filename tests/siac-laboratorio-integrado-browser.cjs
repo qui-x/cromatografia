@@ -73,6 +73,13 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
     assert.equal(await page.locator("#siac-stage .siac-card").count(),0);
     await page.locator("#focus-tab").click({force:true});
     assert.match(await page.locator("#focus-tab").textContent(),/Coluna em foco/);
+    // A doca Montagem cobre parte da cena em desktop: fechá-la antes de iniciar.
+    if(await page.locator("#close-controls").isVisible()){
+      await page.locator("#close-controls").click();
+    }else{
+      await page.evaluate(()=>SIAB.workspace.close("left",false));
+    }
+    await page.waitForFunction(()=>document.getElementById("controls")?.classList.contains("dock-collapsed"),null,{timeout:3000});
     // O cronômetro deve realmente avançar o volume a partir da vazão.
     // O seletor SIAB substitui o <select> nativo por um controle próprio.
     await page.locator("#siac-velocidade").evaluate(el=>{el.value="1800";el.dispatchEvent(new Event("change",{bubbles:true}));});
