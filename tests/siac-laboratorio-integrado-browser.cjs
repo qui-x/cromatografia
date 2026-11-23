@@ -77,8 +77,14 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
    assert.equal(await page.locator("#siac-catalogo-solvente").isDisabled(),true);
    assert.match(await page.locator("#siac-catalogo-dados").textContent(),/Não há sistema eluente/);
    // HPTLC científica é consulta dos Rf publicados; não substitui demonstração de coluna.
-   await page.locator('[data-siac-modo="hptlc"]').evaluate(el=>el.click());
+   assert.equal(await page.locator('[data-siac-open-hptlc="caffeine"]').count(),1);
+   await page.locator('[data-siac-open-hptlc="caffeine"]').evaluate(el=>el.click());
    assert.equal(await page.evaluate(()=>SIAC.laboratorio.snapshot.modo),"hptlc");
+   assert.equal(await page.evaluate(()=>SIAC.laboratorio.snapshot.hptlc.sample),"caffeine");
+   await page.locator("#siac-hptlc-sample").evaluate(el=>{
+     el.value="both";el.dispatchEvent(new Event("change",{bubbles:true}));
+   });
+   assert.equal(await page.evaluate(()=>SIAC.laboratorio.snapshot.hptlc.sample),"both");
    assert.equal(await page.locator("#siac-hptlc-controls").isVisible(),true);
    assert.match(await page.locator("#siac-stage").textContent(),/não é uma corrida no SIAC/);
    assert.equal(await page.locator("#siac-stage .siac-hptlc-band").count(),0);
