@@ -17,7 +17,7 @@ assert.equal(headline?.[1],expected,"Título principal do diálogo");
 assert.equal(splashTitle?.[1],expected,"Título principal da vinheta");
 assert.match(initial[1],/class="startup-nome">SIAC · Simulador Interativo de Análise Cromatográfica/);
 assert.match(screen[1],/<span>SIAC<\/span\s*>/);
-assert.match(html,/<h1 id="inicio-titulo"[\s\S]*?A identidade <span>das cores ocultas<\/span>/);
+assert.match(html,/<h1 id="inicio-titulo"[\s\S]*?A Identidade <span>das Cores Ocultas<\/span>/);
 assert.match(html,/<title>A Identidade das Cores Ocultas — SIAC<\/title>/);
 assert.match(css,/\.startup-brand \.startup-titulo\s*\{[\s\S]*?font-size: clamp\(1\.6rem, 2\.7vw, 2\.5rem\)/);
 assert.match(splash,/\.siac-v4 \.abertura-marca strong\s*\{[\s\S]*?font-size: clamp\(1\.8rem,4vw,3\.1rem\)/);
