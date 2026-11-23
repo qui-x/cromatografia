@@ -17,7 +17,7 @@
 
 ## Calcular
 - **Rf** chama `SIAC.metrics.planarRf()` já existente, somente se as duas distâncias manuais satisfizerem validação. Mostra a divisão e valor adimensional.
-- **Referência** exibe Rf bibliográfico, Rf do exercício (se existente) e diferença absoluta; se faltar Rf, a comparação fica indisponível. Diferença pequena não confirma identidade; nenhuma tolerância de identificação é inventada.
+- **Referência** exibe Rf bibliográfico, Rf do exercício (se existente), diferença absoluta e projeção geométrica de deslocamento a partir da frente informada; a Montagem não apresenta campos numéricos de Rf; se faltar Rf, a comparação fica indisponível. Diferença pequena não confirma identidade; nenhuma tolerância de identificação é inventada.
 - **Coluna** ensina que k exige Vₘ e Vᵣ medidos/parametrizados e explica o bloqueio de conversão automática de Rf planar em k de coluna. Não cria dado de retenção para as 76 substâncias.
 
 ## Exemplo de uso
