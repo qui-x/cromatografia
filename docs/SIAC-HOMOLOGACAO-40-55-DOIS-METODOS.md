@@ -18,12 +18,24 @@
 - **Ver / Calcular:** Rf por distâncias observadas, comparação de padrões somente sob condições compatíveis; para coluna, k e métricas somente com dados de retenção e largura/volume apropriados.
 - **Dados:** por composto, exibir **Método 1 / Método 2**, solventes com composição, origem e grau de confirmação, técnica, detector, retenção e limitações.
 
-## Situação da base local na data da política
-- 76 compostos candidatos.
-- 11 compostos com pelo menos um valor de Rf registrado no catálogo local, em um método cada.
-- Zero compostos com **dois métodos específicos** registrados no catálogo local, mesmo antes de verificar solventes contrastantes.
-- Portanto, **zero habilitados para a homologação dupla estrita** nesta base. Resultados adicionais localizados em pesquisa não devem ser tratados como dados validados sem incorporação das fontes, confrontos individuais e condições.
-- Projeções geométricas e banco de solubilidade não completam lacunas de retenção.
+## Situação da base local — atualização da pesquisa de 23/11/2026
+- **76** compostos candidatos (catálogo estável; nenhum candidato novo por nome aproximado).
+- **9 protocolos** cadastrados, incluindo 4 fontes/métodos adicionais incorporados nesta etapa.
+- **66 registros pontuais de Rf** e **um intervalo de Rf** preservado como intervalo original (feofitina b: 0,47–0,54). Quantidade de linhas ≠ quantidade de substâncias.
+- **24 substâncias** com pelo menos um método de retenção individual reportado: 20 aminoácidos e 4 pigmentos vegetais.
+- **20 substâncias** com pelo menos dois métodos individuais e sistemas de solventes realmente diferentes: **16 aminoácidos + 4 pigmentos**.
+- **Zero substâncias homologadas** pela regra estrita, pois os registros ainda não têm identidade individual e condição experimental homologadas. Especialmente, valores de uma **tabela comercial de referência didática** não equivalem a medições primárias verificadas.
+- O quadro abaixo informa **cobertura bibliográfica preliminar**, não autorização automática para o motor. Cada protocolo continua com `status != homologado`.
+- Projeções geométricas e bancos de solubilidade não completam lacunas de retenção.
+
+### Fontes e métodos incorporados
+1. **Ukil, Samanta & Laskar (2013)**, *Oriental Journal of Chemistry*, [artigo primário](https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/): CCD de sílica gel G (0,1 mm), **1-propanol/água 70:30**, revelação por 4-dimetilaminobenzaldeído e isatina após aquecimento; 20 aminoácidos do SIAC possuem Rf na Tabela 1.
+2. **Dobado (rev. 2024)**, [protocolo didático de pigmentos](https://www.chemistry-online.com/lab/experiments/separation-pigments-spinach-leaf/): sílica gel 60F em alumínio, **hexano/acetona 7:3**, leitura visível; Rf de clorofilas a/b e feofitinas a/b, esta última como intervalo. A natureza do extrato e a variabilidade importam.
+3. **Pro-Techex**, [quadro de kit didático, p. 5](https://5.imimg.com/data5/SELLER/Doc/2025/6/518306737/JX/IU/GS/9824300/pro-techex-thin-layer-chromatography-teaching-kit.pdf): dois eluentes independentes, **etanol 96%/água 7:3** e **1-butanol/ácido acético/água 8:2:2**, com valores tabulados para 15 aminoácidos do catálogo. **Não tratar como artigo primário nem homologa-lo sem conferir placa, incerteza, condições originais e origem dos valores.**
+
+**Limitação do protocolo com 1-butanol:** variar apenas as proporções de 12:3:5 (Amrita) para 8:2:2 (kit) **não** satisfaz a regra de dois solventes diferentes entre esses dois métodos isoladamente; a comparação com etanol/água ou 1-propanol/água oferece diferença real de componentes.
+
+A matriz auditável em `data/siac/matriz-cobertura-dois-metodos.v2.json` identifica, por candidato, quais métodos, sistemas eluentes, fontes, números e intervalos estão disponíveis e as pendências antes da homologação.
 
 ## Auditoria executável
 - Motor: `js/simulation/siac-homologacao.js`.
