@@ -74,22 +74,21 @@ As equações de migração e largura acima são escolhas de modelo didático pa
 
 **Arquivo:** `js/simulation/siac-fracionamento.js`. Este arquivo **não implementa a química ou a cinética da coluna**: recebe um perfil de saída externo, em concentração (mg/mL) ao longo de volume acumulado (mL), e distribui o eluato em dez tubos ou descarte. Isso permite validar a mecânica de coleta sem inventar dados de retenção.
 
-**Controle individual:** o estudante define para cada tubo F1–F10 uma janela `[inicioMl, fimMl)` do **volume cumulativo de eluato**, com um passo de 0,1 mL por padrão e extensão 0,1–10 mL no experimento didático inicial. Os dez tubos são vagas disponíveis; tubos sem janela permanecem inativos. Janelas não podem se sobrepor para uma saída única.
+**Controle individual e escala variável:** cada execução **precisa informar** `volumeTotalMl` da coluna no cenário didático (0,1–10,0 mL). Não há valor padrão obrigatório de 10 mL. A resolução `resolucaoMl` é configurável (0,1 mL como valor inicial didático); um intervalo é delimitado por `inicioMl` e `fimMl` na escala **do eluato acumulado**. O estudante escolhe qualquer frasco F1–F10, em qualquer trecho válido da corrida, antes de executá-la. Os dez tubos **começam sem janelas obrigatórias** e podem permanecer vazios. A atribuição é limitada a janelas não sobrepostas de uma única saída.
 
-**Exemplo:** F1 recebe de 0,6 a 0,8 mL; F2 recebe de 3,5 a 3,7 mL. O líquido entre esses intervalos é desviado para descarte/recuperação e contabilizado, mesmo quando contém analitos. O frasco não é preenchido artificialmente no momento do clique: o conteúdo só chega após a eluição atingir a janela configurada.
+**Os números usados nos testes são somente casos artificiais de verificação**, jamais definições de onde certa substância deve aparecer. Não existe ligação rígida de F1 à primeira faixa, de F2 à segunda faixa, nem ligação de qualquer volume a uma identidade química. O conteúdo depende da mistura, da fase estacionária, do eluente, da cinética de retenção, do fluxo e do perfil de saída fornecido pelo motor da coluna.
 
 ```js
 const F=SIAC.fractionCollector;
-const plano=F.prepare({volumeTotalMl:10,resolucaoMl:0.1,janelas:[
-  {frasco:"F1",inicioMl:0.6,fimMl:0.8},
-  {frasco:"F2",inicioMl:3.5,fimMl:3.7}
-]});
-const destino=F.routeAt(plano,3.6); // "F2"
-const saida=F.integrate(plano,[
-  {inicioMl:0,fimMl:10,concentracoesMgPorMl:{A:1,B:0.5}}
-]);
-// saida.frascos[0], saida.frascos[1], saida.descarte
+// Os valores de volume, seleção e janelas são fornecidos pelo experimento e pelo aluno.
+let plano=F.prepare({volumeTotalMl:volumeDaCorridaMl,resolucaoMl:resolucaoDaMedidaMl});
+plano=F.setWindow(plano,frascoEscolhido,inicioEscolhidoMl,fimEscolhidoMl);
+plano=F.clearWindow(plano,frascoDesmarcado); // se desejar
+const destino=F.routeAt(plano,volumeDeEluatoQueJaSaiuMl);
+const resultado=F.integrate(plano,perfilDaColuna); // determina o conteúdo REALMENTE interceptado
 ```
+
+`setWindow` e `clearWindow` geram **novo plano imutável**, sem interferir nos parâmetros de separação. A UI deve bloquear alterações retroativas após uma coleta real começar; o motor de coleta isolado ainda não controla o relógio do procedimento.
 
 **Premissas da integração:** concentrações constantes em cada trecho de perfil, com unidades explícitas. Cada massa é obtida por concentração × volume coletado no intervalo. O algoritmo preserva volume e massa entre tubos e descarte e não interpreta o conteúdo como puro por uma cor ou pelo instante de coleta.
 
@@ -101,7 +100,7 @@ const saida=F.integrate(plano,[
 - **Interface:** na doca Montagem exibir dez tubos e dois controles **somente do tubo selecionado**, por arrasto sobre o perfil ou entrada numérica acessível. Registrar o perfil, o descarte e cada intervalo no relatório gráfico.
 - **Transição para capilar/papel:** criar uma amostra derivada do tubo realmente coletado e preservá-la com proveniência antes de habilitar análise planar.
 
-**Ensaios automatizados:** `node tests/siac-fracionamento.test.cjs`. Testam os exemplos F1 0,6 mL e F2 3,5 mL, frascos inativos, limites, ausência de janelas sobrepostas, coeluição, descarte, volumes e conservação de massa.
+**Ensaios automatizados:** `node tests/siac-fracionamento.test.cjs`. Testam múltiplas escalas configuráveis de 0,1 a 10 mL, atribuição/remoção de janelas em frascos arbitrários, diferentes perfis de eluição, frascos inativos, sobreposição, coeluição, descarte, volumes e conservação de massa. Os valores numéricos nos testes são apenas dados de fixture.
 
-**Base técnica de coletores reais:** Gilson FC 204/FC 203 (coleta por janelas e desvio fora delas), Bio-Rad BioFrac (tempo, volume ou gotas), Thermo Fisher (frações e válvula de desvio). O uso de dez tubos fixos e a resolução de 0,1 mL são decisões didáticas do SIAC, não valores universais de instrumentação.
+**Base técnica de coletores reais:** Gilson FC 204/FC 203 (coleta por janelas e desvio fora delas), Bio-Rad BioFrac (tempo, volume ou gotas), Thermo Fisher (frações e válvula de desvio). A disponibilidade de dez tubos na interface e a resolução inicial de 0,1 mL são decisões didáticas, não valores instrumentais universais; **nenhuma janela de frasco ou volume total é fixo no experimento**.
 
