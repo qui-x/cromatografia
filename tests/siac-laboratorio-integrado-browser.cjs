@@ -1,6 +1,6 @@
 "use strict";
 const assert=require("node:assert/strict");
-const fs=require("node:fs"),path=require("node:path"),{spawn}=require("node:child_process");
+const fs=require("node:fs"),path=require("node:path"),http=require("node:http"),{spawn}=require("node:child_process");
 const {chromium}=require("playwright");
 const root=path.join(__dirname,".."),port=4187;
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
@@ -9,7 +9,17 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
  let browser;
  try{
   let available=false;
-  for(let i=0;i<50;i++){try{if((await fetch("http://127.0.0.1:"+port+"/index.html")).ok){available=true;break;}}catch{}await sleep(150);}
+  for(let i=0;i<50;i++){
+    try{
+      available=await new Promise((resolve,reject)=>{
+        const req=http.get("http://127.0.0.1:"+port+"/index.html",res=>{
+          const ok=res.statusCode===200;res.resume();res.on("end",()=>resolve(ok));
+        });req.on("error",reject);req.setTimeout(1500,()=>req.destroy());
+      });
+      if(available)break;
+    }catch{}
+    await sleep(150);
+  }
   assert(available,"Servidor HTTP indisponível");
   browser=await chromium.launch({headless:true,args:["--no-sandbox"]});
   for(const width of [360,768,1360]){
