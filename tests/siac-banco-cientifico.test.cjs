@@ -94,10 +94,10 @@ for(const p of solvents.paresMiscibilidade){
   assert.equal(p.temperaturaC,null,"Não inventar temperatura de matriz");
 }
 const candidates=new Set(analytes.candidatos.map(a=>a.id));
-assert(analytes.candidatos.every(a=>a.homologacao==="candidato_sem_parametros"));
-assert(analytes.candidatos.every(a=>!a.identity.verificadoIndividualmente));
+assert.equal(analytes.candidatos.filter(a=>a.homologacao==="homologado_hptlc_condicional").length,2);
+assert.equal(analytes.candidatos.filter(a=>a.identity.verificadoIndividualmente).length,2);
 assert(analytes.candidatos.every(a=>a.propriedades.densidade===null));
-assert(analytes.candidatos.every(a=>a.retencao.rf.length===0));
+assert.equal(analytes.candidatos.filter(a=>a.retencao.rf.length===2).length,2);
 let rfs=0;
 for(const p of analytes.protocolos){
   assert(analytes.fontes[p.fonte]&&p.tecnica&&p.status,"método sem contexto/URL");
@@ -107,7 +107,7 @@ for(const p of analytes.protocolos){
     assert(r.fonte&&analytes.fontes[r.fonte],"Rf sem proveniência");
     assert(candidates.has(r.analito)||r.analito.endsWith("_band"),
       "Banda precisa ser um candidato ou fração não identificada: "+r.analito);
-    assert(p.status!=="homologado","Protocolo não passou por revisão primária");
+    if(p.status==="homologado")assert(r.homologado===true&&p.auditoriaCientifica?.doi==="10.3390/molecules27020405","Homologação sem auditoria bibliográfica");
     rfs++;
   }
 }
@@ -152,8 +152,8 @@ const novos=[
 const newMethods=analytes.protocolos.filter(p=>novos.includes(p.id));
 assert.equal(newMethods.length,14);
 assert.equal(newMethods.reduce((n,p)=>n+p.dadosRf.length,0),25);
-assert(newMethods.every(p=>p.status!=="homologado"&&p.faseMovel.homologada===false));
-assert(newMethods.every(p=>p.dadosRf.every(x=>x.homologado===false&&analytes.fontes[x.fonte])));
+assert(newMethods.every(p=>p.status==="homologado" ? p.faseMovel.homologada===true : p.faseMovel.homologada===false));
+assert(newMethods.every(p=>p.dadosRf.every(x=>x.homologado===(p.status==="homologado")&&analytes.fontes[x.fonte])));
 assert(newMethods.some(p=>p.dadosRf.some(x=>Number.isFinite(x.desvioPadraoRf))),
  "conservar desvio padrão de estudo experimental HPTLC");
 assert(newMethods.some(p=>p.dadosRf.some(x=>x.identificacaoTentativa)),
@@ -168,7 +168,19 @@ for(const p of analytes.protocolos){
  }
 }
 
-assert(analytes.protocolos.every(p=>p.status!=="homologado"));
+const homologados=analytes.protocolos.filter(p=>p.status==="homologado");
+assert.equal(homologados.length,2);
+assert.deepEqual(homologados.map(x=>x.id).sort(),[
+ "hptlc_green2022_normal_ethylacetate_ethanol_85_15",
+ "hptlc_green2022_reverse_ethanol_water_50_50"].sort());
+assert(homologados.every(p=>p.disponibilidadeSimulador?.habilitarCenaQuantitativa===false));
+assert(analytes.protocolos.filter(p=>p.status!=="homologado").every(p=>p.dadosRf.every(d=>d.homologado!==true)),
+ "Somente métodos NP/RP-HPTLC de fonte conferida podem ter marcação de retenção homologada");
+for(const [id,cas,cid] of [["caffeine","58-08-2",2519],["paracetamol","103-90-2",1983]]){
+ const x=analytes.candidatos.find(c=>c.id===id);
+ assert(x&&x.identity.verificadoIndividualmente&&x.identity.cas===cas&&x.identity.pubchemCID===cid);
+ assert.equal(x.retencao.rf.length,2);
+}
 assert.equal(
  analytes.protocolos.find(p=>p.id==="tlc_food_dyes_fao_system_10_butanol_acetic_water")
   .dadosRf.find(r=>r.analito==="erythrosine").rf,1);
