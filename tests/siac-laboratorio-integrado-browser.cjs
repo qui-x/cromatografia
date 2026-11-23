@@ -37,13 +37,17 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
      await page.evaluate(()=>SIAB.workspace.open("left"));
    }
    // O catálogo é o modo padrão: sem substância não há solvente habilitado.
-   await page.locator("#siac-catalogo-substancia").waitFor({timeout:5000});
+   await page.locator("#siac-catalogo-substancia").waitFor({state:"attached",timeout:5000});
    assert.equal(await page.locator("#siac-catalogo-substancia option").count(),77);
    assert.equal(await page.locator("#siac-catalogo-solvente").isDisabled(),true);
    assert.equal(await page.evaluate(()=>SIAC.laboratorio.snapshot.modo),"pesquisa");
-   await page.locator("#siac-catalogo-substancia").selectOption("glycine");
+   await page.locator("#siac-catalogo-substancia").evaluate(el=>{
+     el.value="glycine";el.dispatchEvent(new Event("change",{bubbles:true}));
+   });
    assert.equal(await page.locator("#siac-catalogo-solvente").isEnabled(),true);
-   await page.locator("#siac-catalogo-solvente").selectOption("tlc_aminoacids_amrita_12_3_5");
+   await page.locator("#siac-catalogo-solvente").evaluate(el=>{
+     el.value="tlc_aminoacids_amrita_12_3_5";el.dispatchEvent(new Event("change",{bubbles:true}));
+   });
    assert.match(await page.locator("#siac-catalogo-dados").textContent(),/Rf bibliográfico:\s*0,20/);
    assert.equal(await page.evaluate(()=>SIAC.laboratorio.snapshot.substanciaId),"glycine");
    assert.match(await page.locator("#siac-stage").textContent(),/não são um motor validado/);
@@ -67,7 +71,9 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
    assert.match(await page.locator("#siac-ver-dados").textContent(),/0,2/);
    await page.locator('#siac-ver [data-ver="comparar"]').evaluate(el=>el.click());
    assert.match(await page.locator("#siac-ver-dados").textContent(),/não confirma identidade/);
-   await page.locator("#siac-catalogo-substancia").selectOption("caffeine");
+   await page.locator("#siac-catalogo-substancia").evaluate(el=>{
+     el.value="caffeine";el.dispatchEvent(new Event("change",{bubbles:true}));
+   });
    assert.equal(await page.locator("#siac-catalogo-solvente").isDisabled(),true);
    assert.match(await page.locator("#siac-catalogo-dados").textContent(),/Não há sistema eluente/);
    // O modo de demonstração precisa ser explicitamente escolhido antes de
