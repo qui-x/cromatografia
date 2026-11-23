@@ -194,26 +194,48 @@ hr{border:0;border-top:1px solid #dde8eb;margin:16px 0}.dados button{width:100%}
 const C=window.SIAC.column,F=window.SIAC.fractionCollector;
 const $=id=>document.getElementById(id);
 const fmt=(v,n=2)=>Number(v).toLocaleString("pt-BR",{minimumFractionDigits:n,maximumFractionDigits:n});
+const catalogoModelo=[
+ {id:"A",nome:"Modelo azul",massa:2,cor:"#0072b2",deteccao:{visivel:true}},
+ {id:"B",nome:"Modelo verde",massa:2.5,cor:"#009e73",deteccao:{visivel:true}},
+ {id:"C",nome:"Modelo incolor",massa:1.2,cor:null,deteccao:{visivel:false,uv365:true}},
+ {id:"D",nome:"Modelo âmbar",massa:1.5,cor:"#d79b32",deteccao:{visivel:true}}
+];
+// Códigos A–D são apenas espécies de cenário didático hipotético, sem nomes químicos reais.
 const amostras={
- mistura1:{nome:"Mistura-modelo I",analitos:[
-  {id:"A",nome:"Corante-modelo azul",massa:2,cor:"#0072b2",deteccao:{visivel:true}},
-  {id:"B",nome:"Corante-modelo verde",massa:2.5,cor:"#009e73",deteccao:{visivel:true}},
-  {id:"C",nome:"Analito-modelo incolor",massa:1.2,cor:null,deteccao:{uv365:true}}
- ]},
+ mistura1:{nome:"Mistura-modelo I",analitos:catalogoModelo.slice(0,3)},
  mistura2:{nome:"Mistura-modelo II",analitos:[
-  {id:"A",nome:"Pigmento-modelo azul",massa:1.1,cor:"#0072b2",deteccao:{visivel:true}},
-  {id:"B",nome:"Pigmento-modelo verde",massa:2.8,cor:"#009e73",deteccao:{visivel:true}},
-  {id:"C",nome:"Analito-modelo incolor",massa:.9,cor:null,deteccao:{uv365:true}}
+  {...catalogoModelo[0],massa:1.1},{...catalogoModelo[1],massa:2.8},
+  {...catalogoModelo[2],massa:.9}
  ]}
 };
-// Cada combinação contém k EXPLÍCITO e hipotético. Nomes não determinam retenções.
+// Valores de retenção dependem de TODA a combinação de cenário + suporte + eluente.
+// São parâmetros hipotéticos; não são deduzidos de nomes nem relacionados a mL fixos.
 const cenarios={
- eluente1:{silica:{A:.15,B:1.5,C:3},alumina:{A:.6,B:.9,C:2.0}},
- eluente2:{silica:{A:.7,B:.45,C:1.45},alumina:{A:1.3,B:.3,C:2.65}}
+ eluente1:{silica:{A:.15,B:1.5,C:3,D:2.15},alumina:{A:.6,B:.9,C:2,D:1.65}},
+ eluente2:{silica:{A:.7,B:.45,C:1.45,D:.2},alumina:{A:1.3,B:.3,C:2.65,D:.8}}
 };
+function configurarEditor(){
+ const custom=$("amostra").value==="personalizada";
+ const el=$("composicao");el.hidden=!custom;
+ if(el.childElementCount)return;
+ el.innerHTML='<div class="composicao-grid"><strong style="font-size:12px">Composição livre — exemplos hipotéticos</strong>'+
+  catalogoModelo.map(x=>'<label class="composicao-linha">'+
+   '<span><input type="checkbox" data-analito="'+x.id+'" '+(x.id==="A"||x.id==="C"?"checked":"")+'/> '+
+   x.nome+(x.cor?' <i style="display:inline-block;width:10px;height:10px;border-radius:50%;background:'+x.cor+'"></i>':'')+
+   '</span><span><input type="number" min=".01" max="100" step=".01" data-massa="'+x.id+
+   '" value="'+x.massa+'" aria-label="Massa de '+x.nome+' em mg"/> mg</span></label>').join("")+
+   '<small>Os componentes e as massas são configuráveis; a química não depende do número do frasco.</small></div>';
+}
+function amostraDaMontagem(){
+ if($("amostra").value!=="personalizada")return amostras[$("amostra").value];
+ const analitos=catalogoModelo.filter(x=>$('composicao').querySelector('[data-analito="'+x.id+'"]').checked)
+  .map(x=>({...x,massa:Number($('composicao').querySelector('[data-massa="'+x.id+'"]').value)}));
+ if(!analitos.length)throw Error("Selecione pelo menos um componente para a mistura.");
+ return {nome:"Mistura personalizada (modelo)",analitos};
+}
 let estado,plano,perfil,selecionado="F1",volume=0,rodando=false,ultimo=0,aviso="",arraste=null;
 function configurar(){
- const a=amostras[$("amostra").value],sol=$("eluente").value,sup=$("suporte").value,
+ const a=amostraDaMontagem(),sol=$("eluente").value,sup=$("suporte").value,
   k=cenarios[sol][sup];
  const config={
   amostra:{id:$("amostra").value,nome:a.nome},
@@ -228,7 +250,7 @@ function configurar(){
    proveniencia:{classe:"hipotetico",fonte:"Parâmetros didáticos internos não calibrados"}}))
  };
  estado=C.prepare(config);
- plano=F.prepare({volumeTotalMl:config.volumeTotalMl,resolucaoMl:.1});
+ plano=F.prepare({volumeTotalMl:config.volumeTotalMl,resolucaoMl:.1,capacidadeFrascoMl:Number($("capacidade").value)});
  perfil=C.profile(estado,{passos:300});
  volume=0;rodando=false;selecionado="F1";$("inicio").value="";$("fim").value="";
  $("inicio").max=config.volumeTotalMl;$("fim").max=config.volumeTotalMl;
@@ -372,6 +394,8 @@ function render(){
  ];
  d.innerHTML=dados.map(x=>'<div class="medida"><dt>'+x[0]+'</dt><dd>'+x[1]+'</dd></div>').join("");
 }
+$("amostra").addEventListener("change",configurarEditor);
+configurarEditor();
 $("montar").addEventListener("click",()=>{try{configurar()}catch(e){aviso=e.message;render();}});
 $("janela-form").addEventListener("submit",e=>{
  e.preventDefault();
