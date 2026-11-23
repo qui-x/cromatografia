@@ -23,7 +23,7 @@ SIAB.rotear = () => {
   if (antigas[nome]) {
     nome = antigas[nome];
     SIAB.notice(
-      "Este endereço foi atualizado para a organização atual do SIAB.",
+      "Este endereço foi atualizado para a organização atual do SIAC.",
     );
   }
   if (nome === "a") nome = "atividade"; // endereço curto: #/a/<nome da atividade>
@@ -37,7 +37,7 @@ SIAB.rotear = () => {
     parametro = permitido.parametro;
   }
   if (!SIAB.telas[nome]) {
-    SIAB.notice("Tela não encontrada. Consulte a navegação do SIAB.");
+    SIAB.notice("Tela não encontrada. Consulte a navegação do SIAC.");
     nome = "inicio";
     parametro = "";
   }
