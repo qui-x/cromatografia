@@ -7,7 +7,7 @@ body.siac-active #workspace .view-tabs .chip-sep,
 body.siac-active #workspace .view-tabs #bench-mode {display:none!important}
 body.siac-active #workspace #dock-left-content > :not(#siac-montagem),
 body.siac-active #workspace #dock-right-content > :not(#siac-ver),
-body.siac-active #workspace #experiment > :not(.view-tabs):not(#siac-stage) {display:none!important}
+body.siac-active #workspace #experiment > :not(#workspace-toolbar):not(#siac-stage) {display:none!important}
 body.siac-active #workspace #siac-stage,
 body.siac-active #workspace #siac-montagem,
 body.siac-active #workspace #siac-ver {display:block!important}
@@ -88,3 +88,10 @@ body.siac-active #workspace .view-tabs .view-tab-btn{
  #siac-stage .siac-relogio button{flex:1 1 130px}
 }
 @media(prefers-reduced-motion:reduce){#siac-stage *,#siac-montagem *{animation:none!important;transition:none!important}}
+
+/* A barra de Foco/Visão geral foi movida pelo workspace SIAB para
+ * #workspace-toolbar dentro do #experiment. Preservá-la integralmente. */
+body.siac-active #workspace #workspace-toolbar{display:flex!important;align-items:center;flex-wrap:wrap;gap:8px}
+body.siac-active #workspace #workspace-toolbar .view-tabs{display:flex!important;flex:1 1 250px;min-width:0}
+body.siac-active #workspace #workspace-toolbar .workspace-launchers{display:flex!important;gap:6px}
+body.siac-active #workspace #overview-count{display:none!important}
