@@ -136,19 +136,20 @@
     const id=s.frascoSelecionado,cap=s.capilar;
     if(id!==cap.frascoOrigem)falhar("selecione o frasco de origem para aplicar em seu papel");
     const origemMm=numero(o.origemMm,"origemMm",0);
+    const posicaoLateralMm=numero(o.posicaoLateralMm??10,"posicaoLateralMm",0,30);
     const larguraMm=numero(o.larguraMm??1,"larguraMm",Number.MIN_VALUE);
     const tempoS=numero(o.tempoS??0,"tempoS",0);
     const papel=s.papeis[id];
     if(papel.etapa==="desenvolvendo"||papel.etapa==="desenvolvido"||papel.etapa==="revelado")
       falhar("não aplicar novamente em suporte já desenvolvido");
-    const aplicacao={origemMm,larguraMm,tempoS,frascoOrigem:id,volumeMl:cap.volumeMl,
+    const aplicacao={origemMm,posicaoLateralMm,larguraMm,tempoS,frascoOrigem:id,volumeMl:cap.volumeMl,
       corObservada:cap.corObservada,proveniencia:cap.proveniencia};
     return atualizar(s,{
       papeis:{...s.papeis,[id]:{...papel,etapa:"aplicado",
         aplicacoes:papel.aplicacoes.concat([aplicacao]),
         proveniencia:cap.proveniencia}},
       capilar:null
-    },"aplicar-capilar",{id,origemMm,larguraMm,tempoS});
+    },"aplicar-capilar",{id,origemMm,posicaoLateralMm,larguraMm,tempoS});
   }
   // Só evolui com uma medição/cálculo entregue pelo motor planar, não sorteia manchas.
   function desenvolver(s,medicoes){
