@@ -439,9 +439,12 @@ SIAC.laboratorio=(()=>{
    const plano=SIAC.hptlcDidatico?.snapshot.view||"placa";
    if(a.textContent!=="Placa HPTLC em foco")a.textContent="Placa HPTLC em foco";
    if(b.textContent!=="Comparar fases HPTLC")b.textContent="Comparar fases HPTLC";
-   a.setAttribute("aria-pressed",String(plano==="placa"));
-   b.setAttribute("aria-pressed",String(plano==="comparar"));
-   a.disabled=false;b.disabled=false;
+   if(a.getAttribute("aria-pressed")!==String(plano==="placa"))
+    a.setAttribute("aria-pressed",String(plano==="placa"));
+   if(b.getAttribute("aria-pressed")!==String(plano==="comparar"))
+    b.setAttribute("aria-pressed",String(plano==="comparar"));
+   if(a.disabled)a.disabled=false;
+   if(b.disabled)b.disabled=false;
    return;
   }
   const focusLabel={coluna:"Coluna em foco",tubo:"Tubo em foco",amostra:"Amostra em foco"}[focus];
