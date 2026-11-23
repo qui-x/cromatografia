@@ -1,9 +1,9 @@
 {
-  "versao": "2.0.0",
+  "versao": "2.1.0",
   "data": "2026-11-23",
   "titulo": "Matriz preliminar de cobertura científica do SIAC",
   "fonte": "data/siac/analitos-protocolos.v1.json",
-  "observacao": "A matriz usa EXCLUSIVAMENTE métodos já registrados no catálogo local. Não representa cruzamento completo com bancos externos ou pesquisa de artigos recentes.",
+  "observacao": "Matriz calculada a partir dos nove protocolos locais e das tabelas de Rf rastreadas até 23/11/2026. Dezena(s) de resultados são tabelas didáticas, não medições primárias reprocessadas. Quatro pigmentos e 20 aminoácidos têm pelo menos um registro, 20 compostos possuem dois sistemas eluentes contrastantes em pesquisa; nenhum homologado. NÃO representa cruzamento de bases externas de centenas de milhares de linhas.",
   "regras": {
     "minimoMetodosIndependentesComRetencaoIndividual": 2,
     "minimoSolventesQuimicamenteDistintos": 2,
@@ -15,11 +15,15 @@
   },
   "resumo": {
     "candidatos": 76,
-    "comPeloMenosUmRfIndividual": 11,
-    "comDoisMetodosDocumentados": 0,
+    "comPeloMenosUmRfIndividual": 24,
+    "comDoisMetodosDocumentados": 20,
+    "comDoisMetodosESolventesDistintos": 20,
     "homologadosNaRegraNova": 0,
     "faltamParaMetaMinima": 40,
-    "faltamParaMetaAmpliada": 55
+    "faltamParaMetaAmpliada": 55,
+    "totaisRegistroRfPontual": 66,
+    "totalRfIntervalos": 1,
+    "protocolos": 9
   },
   "candidatos": [
     {
@@ -27,15 +31,16 @@
       "nome": "Tartrazina (FD&C Yellow 5)",
       "grupo": "corantes_alimenticios",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -43,15 +48,16 @@
       "nome": "Amarelo crepúsculo FCF (Yellow 6)",
       "grupo": "corantes_alimenticios",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -59,15 +65,16 @@
       "nome": "Vermelho Allura AC (Red 40)",
       "grupo": "corantes_alimenticios",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -75,15 +82,16 @@
       "nome": "Azul brilhante FCF (Blue 1)",
       "grupo": "corantes_alimenticios",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -91,15 +99,16 @@
       "nome": "Indigotina (Blue 2)",
       "grupo": "corantes_alimenticios",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -107,15 +116,16 @@
       "nome": "Eritrosina (Red 3)",
       "grupo": "corantes_alimenticios",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -123,15 +133,16 @@
       "nome": "Verde rápido FCF (Green 3)",
       "grupo": "corantes_alimenticios",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -139,15 +150,16 @@
       "nome": "Ponceau 4R",
       "grupo": "corantes_alimenticios",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -155,15 +167,16 @@
       "nome": "Amaranto (corante azo)",
       "grupo": "corantes_alimenticios",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -171,15 +184,16 @@
       "nome": "Azul patente V",
       "grupo": "corantes_alimenticios",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -187,15 +201,16 @@
       "nome": "Amarelo de quinolina",
       "grupo": "corantes_alimenticios",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -203,14 +218,21 @@
       "nome": "Clorofila a",
       "grupo": "pigmentos_vegetais",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 1,
+      "metodosComRetencaoIndividual": 2,
       "metodos": [
         {
           "protocoloId": "tlc_spinach_quach_2004",
           "tecnica": "ccd",
           "fonte": "quach",
-          "rf": 0.44,
-          "sistemaFaseMovel": {
+          "fonteUrl": "https://doi.org/10.1021/ed081p385",
+          "solventes": [
+            "acetone",
+            "cyclohexane",
+            "ethyl_acetate",
+            "methanol",
+            "petroleum_ether_mixture"
+          ],
+          "faseMovel": {
             "componentes": [
               {
                 "id": "petroleum_ether_mixture",
@@ -236,17 +258,79 @@
             "base": "v/v",
             "mistura": "soma 100 partes"
           },
+          "faseEstacionaria": "sílica gel sobre suporte poliéster",
           "detector": "visível",
-          "estado": "nao_homologado"
+          "rf": [
+            {
+              "valor": 0.44,
+              "classe": "transcricao_de_publicacao",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "relato_de_literatura_pendente_de_conferencia_no_original"
+        },
+        {
+          "protocoloId": "tlc_spinach_dobado_hexane_acetone_7_3",
+          "tecnica": "ccd",
+          "fonte": "dobado2024",
+          "fonteUrl": "https://www.chemistry-online.com/lab/experiments/separation-pigments-spinach-leaf/",
+          "solventes": [
+            "acetone",
+            "hexanes_mixture"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "hexanes_mixture",
+                "partes": 7
+              },
+              {
+                "id": "acetone",
+                "partes": 3
+              }
+            ],
+            "base": "v/v",
+            "mistura": "hexano:acetona 7:3, composição do hexano não especificada",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel 60F em alumínio",
+          "detector": "visível após secagem",
+          "rf": [
+            {
+              "valor": 0.46,
+              "classe": "valor_reportado_em_tabela_educacional",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "protocolo_educacional_online_nao_homologado"
         }
       ],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "tlc_spinach_quach_2004",
+            "tlc_spinach_dobado_hexane_acetone_7_3"
+          ],
+          "solventesA": [
+            "acetone",
+            "cyclohexane",
+            "ethyl_acetate",
+            "methanol",
+            "petroleum_ether_mixture"
+          ],
+          "solventesB": [
+            "acetone",
+            "hexanes_mixture"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "metodo_2_documentado",
-        "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -254,14 +338,21 @@
       "nome": "Clorofila b",
       "grupo": "pigmentos_vegetais",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 1,
+      "metodosComRetencaoIndividual": 2,
       "metodos": [
         {
           "protocoloId": "tlc_spinach_quach_2004",
           "tecnica": "ccd",
           "fonte": "quach",
-          "rf": 0.32,
-          "sistemaFaseMovel": {
+          "fonteUrl": "https://doi.org/10.1021/ed081p385",
+          "solventes": [
+            "acetone",
+            "cyclohexane",
+            "ethyl_acetate",
+            "methanol",
+            "petroleum_ether_mixture"
+          ],
+          "faseMovel": {
             "componentes": [
               {
                 "id": "petroleum_ether_mixture",
@@ -287,17 +378,79 @@
             "base": "v/v",
             "mistura": "soma 100 partes"
           },
+          "faseEstacionaria": "sílica gel sobre suporte poliéster",
           "detector": "visível",
-          "estado": "nao_homologado"
+          "rf": [
+            {
+              "valor": 0.32,
+              "classe": "transcricao_de_publicacao",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "relato_de_literatura_pendente_de_conferencia_no_original"
+        },
+        {
+          "protocoloId": "tlc_spinach_dobado_hexane_acetone_7_3",
+          "tecnica": "ccd",
+          "fonte": "dobado2024",
+          "fonteUrl": "https://www.chemistry-online.com/lab/experiments/separation-pigments-spinach-leaf/",
+          "solventes": [
+            "acetone",
+            "hexanes_mixture"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "hexanes_mixture",
+                "partes": 7
+              },
+              {
+                "id": "acetone",
+                "partes": 3
+              }
+            ],
+            "base": "v/v",
+            "mistura": "hexano:acetona 7:3, composição do hexano não especificada",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel 60F em alumínio",
+          "detector": "visível após secagem",
+          "rf": [
+            {
+              "valor": 0.42,
+              "classe": "valor_reportado_em_tabela_educacional",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "protocolo_educacional_online_nao_homologado"
         }
       ],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "tlc_spinach_quach_2004",
+            "tlc_spinach_dobado_hexane_acetone_7_3"
+          ],
+          "solventesA": [
+            "acetone",
+            "cyclohexane",
+            "ethyl_acetate",
+            "methanol",
+            "petroleum_ether_mixture"
+          ],
+          "solventesB": [
+            "acetone",
+            "hexanes_mixture"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "metodo_2_documentado",
-        "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -305,27 +458,119 @@
       "nome": "Feofitina a",
       "grupo": "pigmentos_vegetais",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 1,
+      "metodosComRetencaoIndividual": 2,
       "metodos": [
         {
           "protocoloId": "tlc_spinach_pheophytin_quach_2004",
           "tecnica": "ccd",
           "fonte": "quach",
-          "rf": 0.6,
-          "sistemaFaseMovel": {
-            "herdadaDe": "tlc_spinach_quach_2004"
+          "fonteUrl": "https://doi.org/10.1021/ed081p385",
+          "solventes": [
+            "acetone",
+            "cyclohexane",
+            "ethyl_acetate",
+            "methanol",
+            "petroleum_ether_mixture"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "petroleum_ether_mixture",
+                "partes": 60
+              },
+              {
+                "id": "cyclohexane",
+                "partes": 16
+              },
+              {
+                "id": "ethyl_acetate",
+                "partes": 10
+              },
+              {
+                "id": "acetone",
+                "partes": 10
+              },
+              {
+                "id": "methanol",
+                "partes": 4
+              }
+            ],
+            "base": "v/v",
+            "mistura": "soma 100 partes"
           },
+          "faseEstacionaria": "sílica gel sobre poliéster",
           "detector": "visível",
-          "estado": "nao_homologado"
+          "rf": [
+            {
+              "valor": 0.6,
+              "classe": "transcricao_de_publicacao",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "relato_secundario_pendente_conferencia"
+        },
+        {
+          "protocoloId": "tlc_spinach_dobado_hexane_acetone_7_3",
+          "tecnica": "ccd",
+          "fonte": "dobado2024",
+          "fonteUrl": "https://www.chemistry-online.com/lab/experiments/separation-pigments-spinach-leaf/",
+          "solventes": [
+            "acetone",
+            "hexanes_mixture"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "hexanes_mixture",
+                "partes": 7
+              },
+              {
+                "id": "acetone",
+                "partes": 3
+              }
+            ],
+            "base": "v/v",
+            "mistura": "hexano:acetona 7:3, composição do hexano não especificada",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel 60F em alumínio",
+          "detector": "visível após secagem",
+          "rf": [
+            {
+              "valor": 0.55,
+              "classe": "valor_reportado_em_tabela_educacional",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "protocolo_educacional_online_nao_homologado"
         }
       ],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "tlc_spinach_pheophytin_quach_2004",
+            "tlc_spinach_dobado_hexane_acetone_7_3"
+          ],
+          "solventesA": [
+            "acetone",
+            "cyclohexane",
+            "ethyl_acetate",
+            "methanol",
+            "petroleum_ether_mixture"
+          ],
+          "solventesB": [
+            "acetone",
+            "hexanes_mixture"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "metodo_2_documentado",
-        "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -333,27 +578,120 @@
       "nome": "Feofitina b",
       "grupo": "pigmentos_vegetais",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 1,
+      "metodosComRetencaoIndividual": 2,
       "metodos": [
         {
           "protocoloId": "tlc_spinach_pheophytin_quach_2004",
           "tecnica": "ccd",
           "fonte": "quach",
-          "rf": 0.49,
-          "sistemaFaseMovel": {
-            "herdadaDe": "tlc_spinach_quach_2004"
+          "fonteUrl": "https://doi.org/10.1021/ed081p385",
+          "solventes": [
+            "acetone",
+            "cyclohexane",
+            "ethyl_acetate",
+            "methanol",
+            "petroleum_ether_mixture"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "petroleum_ether_mixture",
+                "partes": 60
+              },
+              {
+                "id": "cyclohexane",
+                "partes": 16
+              },
+              {
+                "id": "ethyl_acetate",
+                "partes": 10
+              },
+              {
+                "id": "acetone",
+                "partes": 10
+              },
+              {
+                "id": "methanol",
+                "partes": 4
+              }
+            ],
+            "base": "v/v",
+            "mistura": "soma 100 partes"
           },
+          "faseEstacionaria": "sílica gel sobre poliéster",
           "detector": "visível",
-          "estado": "nao_homologado"
+          "rf": [
+            {
+              "valor": 0.49,
+              "classe": "transcricao_de_publicacao",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "relato_secundario_pendente_conferencia"
+        },
+        {
+          "protocoloId": "tlc_spinach_dobado_hexane_acetone_7_3",
+          "tecnica": "ccd",
+          "fonte": "dobado2024",
+          "fonteUrl": "https://www.chemistry-online.com/lab/experiments/separation-pigments-spinach-leaf/",
+          "solventes": [
+            "acetone",
+            "hexanes_mixture"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "hexanes_mixture",
+                "partes": 7
+              },
+              {
+                "id": "acetone",
+                "partes": 3
+              }
+            ],
+            "base": "v/v",
+            "mistura": "hexano:acetona 7:3, composição do hexano não especificada",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel 60F em alumínio",
+          "detector": "visível após secagem",
+          "rf": [],
+          "rfIntervalo": [
+            {
+              "min": 0.47,
+              "max": 0.54,
+              "classe": "intervalo_reportado_em_tabela_educacional",
+              "homologado": false
+            }
+          ],
+          "estado": "protocolo_educacional_online_nao_homologado"
         }
       ],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "tlc_spinach_pheophytin_quach_2004",
+            "tlc_spinach_dobado_hexane_acetone_7_3"
+          ],
+          "solventesA": [
+            "acetone",
+            "cyclohexane",
+            "ethyl_acetate",
+            "methanol",
+            "petroleum_ether_mixture"
+          ],
+          "solventesB": [
+            "acetone",
+            "hexanes_mixture"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "metodo_2_documentado",
-        "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -361,15 +699,16 @@
       "nome": "β-caroteno",
       "grupo": "pigmentos_vegetais",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -377,15 +716,16 @@
       "nome": "α-caroteno",
       "grupo": "pigmentos_vegetais",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -393,15 +733,16 @@
       "nome": "Luteína",
       "grupo": "pigmentos_vegetais",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -409,15 +750,16 @@
       "nome": "Zeaxantina",
       "grupo": "pigmentos_vegetais",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -425,15 +767,16 @@
       "nome": "Licopeno",
       "grupo": "pigmentos_vegetais",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -441,15 +784,16 @@
       "nome": "Violaxantina",
       "grupo": "pigmentos_vegetais",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -457,15 +801,16 @@
       "nome": "Neoxantina",
       "grupo": "pigmentos_vegetais",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -473,15 +818,16 @@
       "nome": "β-criptoxantina",
       "grupo": "pigmentos_vegetais",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -489,15 +835,16 @@
       "nome": "Cianidina-3-O-glicosídeo",
       "grupo": "pigmentos_vegetais",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -505,15 +852,16 @@
       "nome": "Delfinidina-3-O-glicosídeo",
       "grupo": "pigmentos_vegetais",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -521,15 +869,16 @@
       "nome": "Quercetina",
       "grupo": "pigmentos_vegetais",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -537,15 +886,16 @@
       "nome": "Rutina",
       "grupo": "pigmentos_vegetais",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -553,15 +903,16 @@
       "nome": "Curcumina",
       "grupo": "pigmentos_vegetais",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -569,15 +920,16 @@
       "nome": "Capsantina",
       "grupo": "pigmentos_vegetais",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -585,15 +937,16 @@
       "nome": "Bixina",
       "grupo": "pigmentos_vegetais",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -601,15 +954,16 @@
       "nome": "Norbixina",
       "grupo": "pigmentos_vegetais",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -617,14 +971,19 @@
       "nome": "Alanina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 1,
+      "metodosComRetencaoIndividual": 4,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_amrita_12_3_5",
           "tecnica": "ccd",
           "fonte": "amrita",
-          "rf": 0.24,
-          "sistemaFaseMovel": {
+          "fonteUrl": "https://vlab.amrita.edu/index.php/images/theme/theme/amrita/MEC/?brch=63&cnt=2&sim=154&sub=3",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
             "componentes": [
               {
                 "id": "butanol_1",
@@ -643,17 +1002,213 @@
             "mistura": "descrita pelo guia",
             "solventeReal": "consultar fonte"
           },
+          "faseEstacionaria": "placa_TLC",
           "detector": "ninhidrina pós-desenvolvimento",
-          "estado": "nao_homologado"
+          "rf": [
+            {
+              "valor": 0.24,
+              "classe": "reportado_no_guia",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_didatica_com_rf_compilado"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tecnica": "ccd",
+          "fonte": "ukil2013",
+          "fonteUrl": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "solventes": [
+            "propanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "propanol_1",
+                "partes": 70
+              },
+              {
+                "id": "water",
+                "partes": 30
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-propanol:água 70:30",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel G, Merck",
+          "detector": "4-dimetilaminobenzaldeído 1% em acetona, aquecimento 110°C 10 min; isatina 0,4% em etanol, novo aquecimento 110°C 10 min",
+          "rf": [
+            {
+              "valor": 0.37,
+              "classe": "valor_experimental_tabela_1_artigo_2013",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_protechex_etanol96_water_7_3",
+          "tecnica": "ccd",
+          "fonte": "protechex2025",
+          "fonteUrl": "https://5.imimg.com/data5/SELLER/Doc/2025/6/518306737/JX/IU/GS/9824300/pro-techex-thin-layer-chromatography-teaching-kit.pdf",
+          "solventes": [
+            "ethanol",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "ethanol",
+                "partes": 7
+              },
+              {
+                "id": "water",
+                "partes": 3
+              }
+            ],
+            "base": "v/v",
+            "mistura": "etanol comercial 96%:água, 7:3; conteúdo adicional de água no etanol não resolvido",
+            "homologada": false
+          },
+          "faseEstacionaria": "placa TLC do kit",
+          "detector": "ninhidrina aplicada em spray após desenvolvimento, secagem e aquecimento leve",
+          "rf": [
+            {
+              "valor": 0.47,
+              "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "tabela_referencia_comercial_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2",
+          "tecnica": "ccd",
+          "fonte": "protechex2025",
+          "fonteUrl": "https://5.imimg.com/data5/SELLER/Doc/2025/6/518306737/JX/IU/GS/9824300/pro-techex-thin-layer-chromatography-teaching-kit.pdf",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 8
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 2
+              },
+              {
+                "id": "water",
+                "partes": 2
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-butanol:ácido acético:água, 8:2:2",
+            "homologada": false
+          },
+          "faseEstacionaria": "placa TLC do kit",
+          "detector": "ninhidrina aplicada em spray após desenvolvimento, secagem e aquecimento leve",
+          "rf": [
+            {
+              "valor": 0.27,
+              "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "tabela_referencia_comercial_nao_homologada"
         }
       ],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "tlc_aminoacids_amrita_12_3_5",
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30"
+          ],
+          "solventesA": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "propanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_amrita_12_3_5",
+            "tlc_aminoacids_protechex_etanol96_water_7_3"
+          ],
+          "solventesA": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "ethanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_protechex_etanol96_water_7_3"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "ethanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "metodo_2_documentado",
-        "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -661,15 +1216,53 @@
       "nome": "Arginina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
-      "metodos": [],
+      "metodosComRetencaoIndividual": 1,
+      "metodos": [
+        {
+          "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tecnica": "ccd",
+          "fonte": "ukil2013",
+          "fonteUrl": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "solventes": [
+            "propanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "propanol_1",
+                "partes": 70
+              },
+              {
+                "id": "water",
+                "partes": 30
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-propanol:água 70:30",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel G, Merck",
+          "detector": "4-dimetilaminobenzaldeído 1% em acetona, aquecimento 110°C 10 min; isatina 0,4% em etanol, novo aquecimento 110°C 10 min",
+          "rf": [
+            {
+              "valor": 0.02,
+              "classe": "valor_experimental_tabela_1_artigo_2013",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_nao_homologada"
+        }
+      ],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -677,15 +1270,53 @@
       "nome": "Asparagina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
-      "metodos": [],
+      "metodosComRetencaoIndividual": 1,
+      "metodos": [
+        {
+          "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tecnica": "ccd",
+          "fonte": "ukil2013",
+          "fonteUrl": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "solventes": [
+            "propanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "propanol_1",
+                "partes": 70
+              },
+              {
+                "id": "water",
+                "partes": 30
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-propanol:água 70:30",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel G, Merck",
+          "detector": "4-dimetilaminobenzaldeído 1% em acetona, aquecimento 110°C 10 min; isatina 0,4% em etanol, novo aquecimento 110°C 10 min",
+          "rf": [
+            {
+              "valor": 0.14,
+              "classe": "valor_experimental_tabela_1_artigo_2013",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_nao_homologada"
+        }
+      ],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -693,15 +1324,173 @@
       "nome": "Ácido aspártico",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
-      "metodos": [],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
+      "metodosComRetencaoIndividual": 3,
+      "metodos": [
+        {
+          "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tecnica": "ccd",
+          "fonte": "ukil2013",
+          "fonteUrl": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "solventes": [
+            "propanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "propanol_1",
+                "partes": 70
+              },
+              {
+                "id": "water",
+                "partes": 30
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-propanol:água 70:30",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel G, Merck",
+          "detector": "4-dimetilaminobenzaldeído 1% em acetona, aquecimento 110°C 10 min; isatina 0,4% em etanol, novo aquecimento 110°C 10 min",
+          "rf": [
+            {
+              "valor": 0.33,
+              "classe": "valor_experimental_tabela_1_artigo_2013",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_protechex_etanol96_water_7_3",
+          "tecnica": "ccd",
+          "fonte": "protechex2025",
+          "fonteUrl": "https://5.imimg.com/data5/SELLER/Doc/2025/6/518306737/JX/IU/GS/9824300/pro-techex-thin-layer-chromatography-teaching-kit.pdf",
+          "solventes": [
+            "ethanol",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "ethanol",
+                "partes": 7
+              },
+              {
+                "id": "water",
+                "partes": 3
+              }
+            ],
+            "base": "v/v",
+            "mistura": "etanol comercial 96%:água, 7:3; conteúdo adicional de água no etanol não resolvido",
+            "homologada": false
+          },
+          "faseEstacionaria": "placa TLC do kit",
+          "detector": "ninhidrina aplicada em spray após desenvolvimento, secagem e aquecimento leve",
+          "rf": [
+            {
+              "valor": 0.55,
+              "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "tabela_referencia_comercial_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2",
+          "tecnica": "ccd",
+          "fonte": "protechex2025",
+          "fonteUrl": "https://5.imimg.com/data5/SELLER/Doc/2025/6/518306737/JX/IU/GS/9824300/pro-techex-thin-layer-chromatography-teaching-kit.pdf",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 8
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 2
+              },
+              {
+                "id": "water",
+                "partes": 2
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-butanol:ácido acético:água, 8:2:2",
+            "homologada": false
+          },
+          "faseEstacionaria": "placa TLC do kit",
+          "detector": "ninhidrina aplicada em spray após desenvolvimento, secagem e aquecimento leve",
+          "rf": [
+            {
+              "valor": 0.21,
+              "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "tabela_referencia_comercial_nao_homologada"
+        }
+      ],
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_protechex_etanol96_water_7_3"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "ethanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "metodo_2_documentado",
-        "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -709,15 +1498,53 @@
       "nome": "Cisteína",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
-      "metodos": [],
+      "metodosComRetencaoIndividual": 1,
+      "metodos": [
+        {
+          "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tecnica": "ccd",
+          "fonte": "ukil2013",
+          "fonteUrl": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "solventes": [
+            "propanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "propanol_1",
+                "partes": 70
+              },
+              {
+                "id": "water",
+                "partes": 30
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-propanol:água 70:30",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel G, Merck",
+          "detector": "4-dimetilaminobenzaldeído 1% em acetona, aquecimento 110°C 10 min; isatina 0,4% em etanol, novo aquecimento 110°C 10 min",
+          "rf": [
+            {
+              "valor": 0.38,
+              "classe": "valor_experimental_tabela_1_artigo_2013",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_nao_homologada"
+        }
+      ],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -725,14 +1552,19 @@
       "nome": "Ácido glutâmico",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 1,
+      "metodosComRetencaoIndividual": 4,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_amrita_12_3_5",
           "tecnica": "ccd",
           "fonte": "amrita",
-          "rf": 0.25,
-          "sistemaFaseMovel": {
+          "fonteUrl": "https://vlab.amrita.edu/index.php/images/theme/theme/amrita/MEC/?brch=63&cnt=2&sim=154&sub=3",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
             "componentes": [
               {
                 "id": "butanol_1",
@@ -751,17 +1583,213 @@
             "mistura": "descrita pelo guia",
             "solventeReal": "consultar fonte"
           },
+          "faseEstacionaria": "placa_TLC",
           "detector": "ninhidrina pós-desenvolvimento",
-          "estado": "nao_homologado"
+          "rf": [
+            {
+              "valor": 0.25,
+              "classe": "reportado_no_guia",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_didatica_com_rf_compilado"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tecnica": "ccd",
+          "fonte": "ukil2013",
+          "fonteUrl": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "solventes": [
+            "propanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "propanol_1",
+                "partes": 70
+              },
+              {
+                "id": "water",
+                "partes": 30
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-propanol:água 70:30",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel G, Merck",
+          "detector": "4-dimetilaminobenzaldeído 1% em acetona, aquecimento 110°C 10 min; isatina 0,4% em etanol, novo aquecimento 110°C 10 min",
+          "rf": [
+            {
+              "valor": 0.35,
+              "classe": "valor_experimental_tabela_1_artigo_2013",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_protechex_etanol96_water_7_3",
+          "tecnica": "ccd",
+          "fonte": "protechex2025",
+          "fonteUrl": "https://5.imimg.com/data5/SELLER/Doc/2025/6/518306737/JX/IU/GS/9824300/pro-techex-thin-layer-chromatography-teaching-kit.pdf",
+          "solventes": [
+            "ethanol",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "ethanol",
+                "partes": 7
+              },
+              {
+                "id": "water",
+                "partes": 3
+              }
+            ],
+            "base": "v/v",
+            "mistura": "etanol comercial 96%:água, 7:3; conteúdo adicional de água no etanol não resolvido",
+            "homologada": false
+          },
+          "faseEstacionaria": "placa TLC do kit",
+          "detector": "ninhidrina aplicada em spray após desenvolvimento, secagem e aquecimento leve",
+          "rf": [
+            {
+              "valor": 0.63,
+              "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "tabela_referencia_comercial_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2",
+          "tecnica": "ccd",
+          "fonte": "protechex2025",
+          "fonteUrl": "https://5.imimg.com/data5/SELLER/Doc/2025/6/518306737/JX/IU/GS/9824300/pro-techex-thin-layer-chromatography-teaching-kit.pdf",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 8
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 2
+              },
+              {
+                "id": "water",
+                "partes": 2
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-butanol:ácido acético:água, 8:2:2",
+            "homologada": false
+          },
+          "faseEstacionaria": "placa TLC do kit",
+          "detector": "ninhidrina aplicada em spray após desenvolvimento, secagem e aquecimento leve",
+          "rf": [
+            {
+              "valor": 0.27,
+              "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "tabela_referencia_comercial_nao_homologada"
         }
       ],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "tlc_aminoacids_amrita_12_3_5",
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30"
+          ],
+          "solventesA": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "propanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_amrita_12_3_5",
+            "tlc_aminoacids_protechex_etanol96_water_7_3"
+          ],
+          "solventesA": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "ethanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_protechex_etanol96_water_7_3"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "ethanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "metodo_2_documentado",
-        "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -769,15 +1797,53 @@
       "nome": "Glutamina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
-      "metodos": [],
+      "metodosComRetencaoIndividual": 1,
+      "metodos": [
+        {
+          "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tecnica": "ccd",
+          "fonte": "ukil2013",
+          "fonteUrl": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "solventes": [
+            "propanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "propanol_1",
+                "partes": 70
+              },
+              {
+                "id": "water",
+                "partes": 30
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-propanol:água 70:30",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel G, Merck",
+          "detector": "4-dimetilaminobenzaldeído 1% em acetona, aquecimento 110°C 10 min; isatina 0,4% em etanol, novo aquecimento 110°C 10 min",
+          "rf": [
+            {
+              "valor": 0.15,
+              "classe": "valor_experimental_tabela_1_artigo_2013",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_nao_homologada"
+        }
+      ],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -785,14 +1851,19 @@
       "nome": "Glicina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 1,
+      "metodosComRetencaoIndividual": 4,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_amrita_12_3_5",
           "tecnica": "ccd",
           "fonte": "amrita",
-          "rf": 0.2,
-          "sistemaFaseMovel": {
+          "fonteUrl": "https://vlab.amrita.edu/index.php/images/theme/theme/amrita/MEC/?brch=63&cnt=2&sim=154&sub=3",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
             "componentes": [
               {
                 "id": "butanol_1",
@@ -811,17 +1882,213 @@
             "mistura": "descrita pelo guia",
             "solventeReal": "consultar fonte"
           },
+          "faseEstacionaria": "placa_TLC",
           "detector": "ninhidrina pós-desenvolvimento",
-          "estado": "nao_homologado"
+          "rf": [
+            {
+              "valor": 0.2,
+              "classe": "reportado_no_guia",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_didatica_com_rf_compilado"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tecnica": "ccd",
+          "fonte": "ukil2013",
+          "fonteUrl": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "solventes": [
+            "propanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "propanol_1",
+                "partes": 70
+              },
+              {
+                "id": "water",
+                "partes": 30
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-propanol:água 70:30",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel G, Merck",
+          "detector": "4-dimetilaminobenzaldeído 1% em acetona, aquecimento 110°C 10 min; isatina 0,4% em etanol, novo aquecimento 110°C 10 min",
+          "rf": [
+            {
+              "valor": 0.32,
+              "classe": "valor_experimental_tabela_1_artigo_2013",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_protechex_etanol96_water_7_3",
+          "tecnica": "ccd",
+          "fonte": "protechex2025",
+          "fonteUrl": "https://5.imimg.com/data5/SELLER/Doc/2025/6/518306737/JX/IU/GS/9824300/pro-techex-thin-layer-chromatography-teaching-kit.pdf",
+          "solventes": [
+            "ethanol",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "ethanol",
+                "partes": 7
+              },
+              {
+                "id": "water",
+                "partes": 3
+              }
+            ],
+            "base": "v/v",
+            "mistura": "etanol comercial 96%:água, 7:3; conteúdo adicional de água no etanol não resolvido",
+            "homologada": false
+          },
+          "faseEstacionaria": "placa TLC do kit",
+          "detector": "ninhidrina aplicada em spray após desenvolvimento, secagem e aquecimento leve",
+          "rf": [
+            {
+              "valor": 0.43,
+              "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "tabela_referencia_comercial_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2",
+          "tecnica": "ccd",
+          "fonte": "protechex2025",
+          "fonteUrl": "https://5.imimg.com/data5/SELLER/Doc/2025/6/518306737/JX/IU/GS/9824300/pro-techex-thin-layer-chromatography-teaching-kit.pdf",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 8
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 2
+              },
+              {
+                "id": "water",
+                "partes": 2
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-butanol:ácido acético:água, 8:2:2",
+            "homologada": false
+          },
+          "faseEstacionaria": "placa TLC do kit",
+          "detector": "ninhidrina aplicada em spray após desenvolvimento, secagem e aquecimento leve",
+          "rf": [
+            {
+              "valor": 0.22,
+              "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "tabela_referencia_comercial_nao_homologada"
         }
       ],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "tlc_aminoacids_amrita_12_3_5",
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30"
+          ],
+          "solventesA": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "propanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_amrita_12_3_5",
+            "tlc_aminoacids_protechex_etanol96_water_7_3"
+          ],
+          "solventesA": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "ethanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_protechex_etanol96_water_7_3"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "ethanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "metodo_2_documentado",
-        "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -829,15 +2096,173 @@
       "nome": "Histidina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
-      "metodos": [],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
+      "metodosComRetencaoIndividual": 3,
+      "metodos": [
+        {
+          "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tecnica": "ccd",
+          "fonte": "ukil2013",
+          "fonteUrl": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "solventes": [
+            "propanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "propanol_1",
+                "partes": 70
+              },
+              {
+                "id": "water",
+                "partes": 30
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-propanol:água 70:30",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel G, Merck",
+          "detector": "4-dimetilaminobenzaldeído 1% em acetona, aquecimento 110°C 10 min; isatina 0,4% em etanol, novo aquecimento 110°C 10 min",
+          "rf": [
+            {
+              "valor": 0.2,
+              "classe": "valor_experimental_tabela_1_artigo_2013",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_protechex_etanol96_water_7_3",
+          "tecnica": "ccd",
+          "fonte": "protechex2025",
+          "fonteUrl": "https://5.imimg.com/data5/SELLER/Doc/2025/6/518306737/JX/IU/GS/9824300/pro-techex-thin-layer-chromatography-teaching-kit.pdf",
+          "solventes": [
+            "ethanol",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "ethanol",
+                "partes": 7
+              },
+              {
+                "id": "water",
+                "partes": 3
+              }
+            ],
+            "base": "v/v",
+            "mistura": "etanol comercial 96%:água, 7:3; conteúdo adicional de água no etanol não resolvido",
+            "homologada": false
+          },
+          "faseEstacionaria": "placa TLC do kit",
+          "detector": "ninhidrina aplicada em spray após desenvolvimento, secagem e aquecimento leve",
+          "rf": [
+            {
+              "valor": 0.6,
+              "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "tabela_referencia_comercial_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2",
+          "tecnica": "ccd",
+          "fonte": "protechex2025",
+          "fonteUrl": "https://5.imimg.com/data5/SELLER/Doc/2025/6/518306737/JX/IU/GS/9824300/pro-techex-thin-layer-chromatography-teaching-kit.pdf",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 8
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 2
+              },
+              {
+                "id": "water",
+                "partes": 2
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-butanol:ácido acético:água, 8:2:2",
+            "homologada": false
+          },
+          "faseEstacionaria": "placa TLC do kit",
+          "detector": "ninhidrina aplicada em spray após desenvolvimento, secagem e aquecimento leve",
+          "rf": [
+            {
+              "valor": 0.25,
+              "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "tabela_referencia_comercial_nao_homologada"
+        }
+      ],
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_protechex_etanol96_water_7_3"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "ethanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "metodo_2_documentado",
-        "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -845,15 +2270,173 @@
       "nome": "Isoleucina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
-      "metodos": [],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
+      "metodosComRetencaoIndividual": 3,
+      "metodos": [
+        {
+          "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tecnica": "ccd",
+          "fonte": "ukil2013",
+          "fonteUrl": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "solventes": [
+            "propanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "propanol_1",
+                "partes": 70
+              },
+              {
+                "id": "water",
+                "partes": 30
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-propanol:água 70:30",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel G, Merck",
+          "detector": "4-dimetilaminobenzaldeído 1% em acetona, aquecimento 110°C 10 min; isatina 0,4% em etanol, novo aquecimento 110°C 10 min",
+          "rf": [
+            {
+              "valor": 0.53,
+              "classe": "valor_experimental_tabela_1_artigo_2013",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_protechex_etanol96_water_7_3",
+          "tecnica": "ccd",
+          "fonte": "protechex2025",
+          "fonteUrl": "https://5.imimg.com/data5/SELLER/Doc/2025/6/518306737/JX/IU/GS/9824300/pro-techex-thin-layer-chromatography-teaching-kit.pdf",
+          "solventes": [
+            "ethanol",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "ethanol",
+                "partes": 7
+              },
+              {
+                "id": "water",
+                "partes": 3
+              }
+            ],
+            "base": "v/v",
+            "mistura": "etanol comercial 96%:água, 7:3; conteúdo adicional de água no etanol não resolvido",
+            "homologada": false
+          },
+          "faseEstacionaria": "placa TLC do kit",
+          "detector": "ninhidrina aplicada em spray após desenvolvimento, secagem e aquecimento leve",
+          "rf": [
+            {
+              "valor": 0.6,
+              "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "tabela_referencia_comercial_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2",
+          "tecnica": "ccd",
+          "fonte": "protechex2025",
+          "fonteUrl": "https://5.imimg.com/data5/SELLER/Doc/2025/6/518306737/JX/IU/GS/9824300/pro-techex-thin-layer-chromatography-teaching-kit.pdf",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 8
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 2
+              },
+              {
+                "id": "water",
+                "partes": 2
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-butanol:ácido acético:água, 8:2:2",
+            "homologada": false
+          },
+          "faseEstacionaria": "placa TLC do kit",
+          "detector": "ninhidrina aplicada em spray após desenvolvimento, secagem e aquecimento leve",
+          "rf": [
+            {
+              "valor": 0.46,
+              "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "tabela_referencia_comercial_nao_homologada"
+        }
+      ],
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_protechex_etanol96_water_7_3"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "ethanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "metodo_2_documentado",
-        "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -861,14 +2444,19 @@
       "nome": "Leucina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 1,
+      "metodosComRetencaoIndividual": 4,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_amrita_12_3_5",
           "tecnica": "ccd",
           "fonte": "amrita",
-          "rf": 0.58,
-          "sistemaFaseMovel": {
+          "fonteUrl": "https://vlab.amrita.edu/index.php/images/theme/theme/amrita/MEC/?brch=63&cnt=2&sim=154&sub=3",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
             "componentes": [
               {
                 "id": "butanol_1",
@@ -887,17 +2475,213 @@
             "mistura": "descrita pelo guia",
             "solventeReal": "consultar fonte"
           },
+          "faseEstacionaria": "placa_TLC",
           "detector": "ninhidrina pós-desenvolvimento",
-          "estado": "nao_homologado"
+          "rf": [
+            {
+              "valor": 0.58,
+              "classe": "reportado_no_guia",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_didatica_com_rf_compilado"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tecnica": "ccd",
+          "fonte": "ukil2013",
+          "fonteUrl": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "solventes": [
+            "propanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "propanol_1",
+                "partes": 70
+              },
+              {
+                "id": "water",
+                "partes": 30
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-propanol:água 70:30",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel G, Merck",
+          "detector": "4-dimetilaminobenzaldeído 1% em acetona, aquecimento 110°C 10 min; isatina 0,4% em etanol, novo aquecimento 110°C 10 min",
+          "rf": [
+            {
+              "valor": 0.55,
+              "classe": "valor_experimental_tabela_1_artigo_2013",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_protechex_etanol96_water_7_3",
+          "tecnica": "ccd",
+          "fonte": "protechex2025",
+          "fonteUrl": "https://5.imimg.com/data5/SELLER/Doc/2025/6/518306737/JX/IU/GS/9824300/pro-techex-thin-layer-chromatography-teaching-kit.pdf",
+          "solventes": [
+            "ethanol",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "ethanol",
+                "partes": 7
+              },
+              {
+                "id": "water",
+                "partes": 3
+              }
+            ],
+            "base": "v/v",
+            "mistura": "etanol comercial 96%:água, 7:3; conteúdo adicional de água no etanol não resolvido",
+            "homologada": false
+          },
+          "faseEstacionaria": "placa TLC do kit",
+          "detector": "ninhidrina aplicada em spray após desenvolvimento, secagem e aquecimento leve",
+          "rf": [
+            {
+              "valor": 0.61,
+              "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "tabela_referencia_comercial_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2",
+          "tecnica": "ccd",
+          "fonte": "protechex2025",
+          "fonteUrl": "https://5.imimg.com/data5/SELLER/Doc/2025/6/518306737/JX/IU/GS/9824300/pro-techex-thin-layer-chromatography-teaching-kit.pdf",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 8
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 2
+              },
+              {
+                "id": "water",
+                "partes": 2
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-butanol:ácido acético:água, 8:2:2",
+            "homologada": false
+          },
+          "faseEstacionaria": "placa TLC do kit",
+          "detector": "ninhidrina aplicada em spray após desenvolvimento, secagem e aquecimento leve",
+          "rf": [
+            {
+              "valor": 0.47,
+              "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "tabela_referencia_comercial_nao_homologada"
         }
       ],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "tlc_aminoacids_amrita_12_3_5",
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30"
+          ],
+          "solventesA": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "propanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_amrita_12_3_5",
+            "tlc_aminoacids_protechex_etanol96_water_7_3"
+          ],
+          "solventesA": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "ethanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_protechex_etanol96_water_7_3"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "ethanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "metodo_2_documentado",
-        "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -905,14 +2689,19 @@
       "nome": "Lisina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 1,
+      "metodosComRetencaoIndividual": 2,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_amrita_12_3_5",
           "tecnica": "ccd",
           "fonte": "amrita",
-          "rf": 0.58,
-          "sistemaFaseMovel": {
+          "fonteUrl": "https://vlab.amrita.edu/index.php/images/theme/theme/amrita/MEC/?brch=63&cnt=2&sim=154&sub=3",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
             "componentes": [
               {
                 "id": "butanol_1",
@@ -931,17 +2720,77 @@
             "mistura": "descrita pelo guia",
             "solventeReal": "consultar fonte"
           },
+          "faseEstacionaria": "placa_TLC",
           "detector": "ninhidrina pós-desenvolvimento",
-          "estado": "nao_homologado"
+          "rf": [
+            {
+              "valor": 0.58,
+              "classe": "reportado_no_guia",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_didatica_com_rf_compilado"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tecnica": "ccd",
+          "fonte": "ukil2013",
+          "fonteUrl": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "solventes": [
+            "propanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "propanol_1",
+                "partes": 70
+              },
+              {
+                "id": "water",
+                "partes": 30
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-propanol:água 70:30",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel G, Merck",
+          "detector": "4-dimetilaminobenzaldeído 1% em acetona, aquecimento 110°C 10 min; isatina 0,4% em etanol, novo aquecimento 110°C 10 min",
+          "rf": [
+            {
+              "valor": 0.03,
+              "classe": "valor_experimental_tabela_1_artigo_2013",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_nao_homologada"
         }
       ],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "tlc_aminoacids_amrita_12_3_5",
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30"
+          ],
+          "solventesA": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "propanol_1",
+            "water"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "metodo_2_documentado",
-        "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -949,15 +2798,173 @@
       "nome": "Metionina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
-      "metodos": [],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
+      "metodosComRetencaoIndividual": 3,
+      "metodos": [
+        {
+          "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tecnica": "ccd",
+          "fonte": "ukil2013",
+          "fonteUrl": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "solventes": [
+            "propanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "propanol_1",
+                "partes": 70
+              },
+              {
+                "id": "water",
+                "partes": 30
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-propanol:água 70:30",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel G, Merck",
+          "detector": "4-dimetilaminobenzaldeído 1% em acetona, aquecimento 110°C 10 min; isatina 0,4% em etanol, novo aquecimento 110°C 10 min",
+          "rf": [
+            {
+              "valor": 0.51,
+              "classe": "valor_experimental_tabela_1_artigo_2013",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_protechex_etanol96_water_7_3",
+          "tecnica": "ccd",
+          "fonte": "protechex2025",
+          "fonteUrl": "https://5.imimg.com/data5/SELLER/Doc/2025/6/518306737/JX/IU/GS/9824300/pro-techex-thin-layer-chromatography-teaching-kit.pdf",
+          "solventes": [
+            "ethanol",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "ethanol",
+                "partes": 7
+              },
+              {
+                "id": "water",
+                "partes": 3
+              }
+            ],
+            "base": "v/v",
+            "mistura": "etanol comercial 96%:água, 7:3; conteúdo adicional de água no etanol não resolvido",
+            "homologada": false
+          },
+          "faseEstacionaria": "placa TLC do kit",
+          "detector": "ninhidrina aplicada em spray após desenvolvimento, secagem e aquecimento leve",
+          "rf": [
+            {
+              "valor": 0.59,
+              "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "tabela_referencia_comercial_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2",
+          "tecnica": "ccd",
+          "fonte": "protechex2025",
+          "fonteUrl": "https://5.imimg.com/data5/SELLER/Doc/2025/6/518306737/JX/IU/GS/9824300/pro-techex-thin-layer-chromatography-teaching-kit.pdf",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 8
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 2
+              },
+              {
+                "id": "water",
+                "partes": 2
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-butanol:ácido acético:água, 8:2:2",
+            "homologada": false
+          },
+          "faseEstacionaria": "placa TLC do kit",
+          "detector": "ninhidrina aplicada em spray após desenvolvimento, secagem e aquecimento leve",
+          "rf": [
+            {
+              "valor": 0.4,
+              "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "tabela_referencia_comercial_nao_homologada"
+        }
+      ],
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_protechex_etanol96_water_7_3"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "ethanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "metodo_2_documentado",
-        "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -965,15 +2972,173 @@
       "nome": "Fenilalanina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
-      "metodos": [],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
+      "metodosComRetencaoIndividual": 3,
+      "metodos": [
+        {
+          "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tecnica": "ccd",
+          "fonte": "ukil2013",
+          "fonteUrl": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "solventes": [
+            "propanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "propanol_1",
+                "partes": 70
+              },
+              {
+                "id": "water",
+                "partes": 30
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-propanol:água 70:30",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel G, Merck",
+          "detector": "4-dimetilaminobenzaldeído 1% em acetona, aquecimento 110°C 10 min; isatina 0,4% em etanol, novo aquecimento 110°C 10 min",
+          "rf": [
+            {
+              "valor": 0.58,
+              "classe": "valor_experimental_tabela_1_artigo_2013",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_protechex_etanol96_water_7_3",
+          "tecnica": "ccd",
+          "fonte": "protechex2025",
+          "fonteUrl": "https://5.imimg.com/data5/SELLER/Doc/2025/6/518306737/JX/IU/GS/9824300/pro-techex-thin-layer-chromatography-teaching-kit.pdf",
+          "solventes": [
+            "ethanol",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "ethanol",
+                "partes": 7
+              },
+              {
+                "id": "water",
+                "partes": 3
+              }
+            ],
+            "base": "v/v",
+            "mistura": "etanol comercial 96%:água, 7:3; conteúdo adicional de água no etanol não resolvido",
+            "homologada": false
+          },
+          "faseEstacionaria": "placa TLC do kit",
+          "detector": "ninhidrina aplicada em spray após desenvolvimento, secagem e aquecimento leve",
+          "rf": [
+            {
+              "valor": 0.63,
+              "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "tabela_referencia_comercial_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2",
+          "tecnica": "ccd",
+          "fonte": "protechex2025",
+          "fonteUrl": "https://5.imimg.com/data5/SELLER/Doc/2025/6/518306737/JX/IU/GS/9824300/pro-techex-thin-layer-chromatography-teaching-kit.pdf",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 8
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 2
+              },
+              {
+                "id": "water",
+                "partes": 2
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-butanol:ácido acético:água, 8:2:2",
+            "homologada": false
+          },
+          "faseEstacionaria": "placa TLC do kit",
+          "detector": "ninhidrina aplicada em spray após desenvolvimento, secagem e aquecimento leve",
+          "rf": [
+            {
+              "valor": 0.49,
+              "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "tabela_referencia_comercial_nao_homologada"
+        }
+      ],
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_protechex_etanol96_water_7_3"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "ethanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "metodo_2_documentado",
-        "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -981,15 +3146,173 @@
       "nome": "Prolina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
-      "metodos": [],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
+      "metodosComRetencaoIndividual": 3,
+      "metodos": [
+        {
+          "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tecnica": "ccd",
+          "fonte": "ukil2013",
+          "fonteUrl": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "solventes": [
+            "propanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "propanol_1",
+                "partes": 70
+              },
+              {
+                "id": "water",
+                "partes": 30
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-propanol:água 70:30",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel G, Merck",
+          "detector": "4-dimetilaminobenzaldeído 1% em acetona, aquecimento 110°C 10 min; isatina 0,4% em etanol, novo aquecimento 110°C 10 min",
+          "rf": [
+            {
+              "valor": 0.26,
+              "classe": "valor_experimental_tabela_1_artigo_2013",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_protechex_etanol96_water_7_3",
+          "tecnica": "ccd",
+          "fonte": "protechex2025",
+          "fonteUrl": "https://5.imimg.com/data5/SELLER/Doc/2025/6/518306737/JX/IU/GS/9824300/pro-techex-thin-layer-chromatography-teaching-kit.pdf",
+          "solventes": [
+            "ethanol",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "ethanol",
+                "partes": 7
+              },
+              {
+                "id": "water",
+                "partes": 3
+              }
+            ],
+            "base": "v/v",
+            "mistura": "etanol comercial 96%:água, 7:3; conteúdo adicional de água no etanol não resolvido",
+            "homologada": false
+          },
+          "faseEstacionaria": "placa TLC do kit",
+          "detector": "ninhidrina aplicada em spray após desenvolvimento, secagem e aquecimento leve",
+          "rf": [
+            {
+              "valor": 0.35,
+              "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "tabela_referencia_comercial_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2",
+          "tecnica": "ccd",
+          "fonte": "protechex2025",
+          "fonteUrl": "https://5.imimg.com/data5/SELLER/Doc/2025/6/518306737/JX/IU/GS/9824300/pro-techex-thin-layer-chromatography-teaching-kit.pdf",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 8
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 2
+              },
+              {
+                "id": "water",
+                "partes": 2
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-butanol:ácido acético:água, 8:2:2",
+            "homologada": false
+          },
+          "faseEstacionaria": "placa TLC do kit",
+          "detector": "ninhidrina aplicada em spray após desenvolvimento, secagem e aquecimento leve",
+          "rf": [
+            {
+              "valor": 0.19,
+              "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "tabela_referencia_comercial_nao_homologada"
+        }
+      ],
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_protechex_etanol96_water_7_3"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "ethanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "metodo_2_documentado",
-        "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -997,15 +3320,173 @@
       "nome": "Serina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
-      "metodos": [],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
+      "metodosComRetencaoIndividual": 3,
+      "metodos": [
+        {
+          "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tecnica": "ccd",
+          "fonte": "ukil2013",
+          "fonteUrl": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "solventes": [
+            "propanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "propanol_1",
+                "partes": 70
+              },
+              {
+                "id": "water",
+                "partes": 30
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-propanol:água 70:30",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel G, Merck",
+          "detector": "4-dimetilaminobenzaldeído 1% em acetona, aquecimento 110°C 10 min; isatina 0,4% em etanol, novo aquecimento 110°C 10 min",
+          "rf": [
+            {
+              "valor": 0.35,
+              "classe": "valor_experimental_tabela_1_artigo_2013",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_protechex_etanol96_water_7_3",
+          "tecnica": "ccd",
+          "fonte": "protechex2025",
+          "fonteUrl": "https://5.imimg.com/data5/SELLER/Doc/2025/6/518306737/JX/IU/GS/9824300/pro-techex-thin-layer-chromatography-teaching-kit.pdf",
+          "solventes": [
+            "ethanol",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "ethanol",
+                "partes": 7
+              },
+              {
+                "id": "water",
+                "partes": 3
+              }
+            ],
+            "base": "v/v",
+            "mistura": "etanol comercial 96%:água, 7:3; conteúdo adicional de água no etanol não resolvido",
+            "homologada": false
+          },
+          "faseEstacionaria": "placa TLC do kit",
+          "detector": "ninhidrina aplicada em spray após desenvolvimento, secagem e aquecimento leve",
+          "rf": [
+            {
+              "valor": 0.48,
+              "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "tabela_referencia_comercial_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2",
+          "tecnica": "ccd",
+          "fonte": "protechex2025",
+          "fonteUrl": "https://5.imimg.com/data5/SELLER/Doc/2025/6/518306737/JX/IU/GS/9824300/pro-techex-thin-layer-chromatography-teaching-kit.pdf",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 8
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 2
+              },
+              {
+                "id": "water",
+                "partes": 2
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-butanol:ácido acético:água, 8:2:2",
+            "homologada": false
+          },
+          "faseEstacionaria": "placa TLC do kit",
+          "detector": "ninhidrina aplicada em spray após desenvolvimento, secagem e aquecimento leve",
+          "rf": [
+            {
+              "valor": 0.22,
+              "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "tabela_referencia_comercial_nao_homologada"
+        }
+      ],
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_protechex_etanol96_water_7_3"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "ethanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "metodo_2_documentado",
-        "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -1013,15 +3494,173 @@
       "nome": "Treonina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
-      "metodos": [],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
+      "metodosComRetencaoIndividual": 3,
+      "metodos": [
+        {
+          "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tecnica": "ccd",
+          "fonte": "ukil2013",
+          "fonteUrl": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "solventes": [
+            "propanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "propanol_1",
+                "partes": 70
+              },
+              {
+                "id": "water",
+                "partes": 30
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-propanol:água 70:30",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel G, Merck",
+          "detector": "4-dimetilaminobenzaldeído 1% em acetona, aquecimento 110°C 10 min; isatina 0,4% em etanol, novo aquecimento 110°C 10 min",
+          "rf": [
+            {
+              "valor": 0.37,
+              "classe": "valor_experimental_tabela_1_artigo_2013",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_protechex_etanol96_water_7_3",
+          "tecnica": "ccd",
+          "fonte": "protechex2025",
+          "fonteUrl": "https://5.imimg.com/data5/SELLER/Doc/2025/6/518306737/JX/IU/GS/9824300/pro-techex-thin-layer-chromatography-teaching-kit.pdf",
+          "solventes": [
+            "ethanol",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "ethanol",
+                "partes": 7
+              },
+              {
+                "id": "water",
+                "partes": 3
+              }
+            ],
+            "base": "v/v",
+            "mistura": "etanol comercial 96%:água, 7:3; conteúdo adicional de água no etanol não resolvido",
+            "homologada": false
+          },
+          "faseEstacionaria": "placa TLC do kit",
+          "detector": "ninhidrina aplicada em spray após desenvolvimento, secagem e aquecimento leve",
+          "rf": [
+            {
+              "valor": 0.5,
+              "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "tabela_referencia_comercial_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2",
+          "tecnica": "ccd",
+          "fonte": "protechex2025",
+          "fonteUrl": "https://5.imimg.com/data5/SELLER/Doc/2025/6/518306737/JX/IU/GS/9824300/pro-techex-thin-layer-chromatography-teaching-kit.pdf",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 8
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 2
+              },
+              {
+                "id": "water",
+                "partes": 2
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-butanol:ácido acético:água, 8:2:2",
+            "homologada": false
+          },
+          "faseEstacionaria": "placa TLC do kit",
+          "detector": "ninhidrina aplicada em spray após desenvolvimento, secagem e aquecimento leve",
+          "rf": [
+            {
+              "valor": 0.25,
+              "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "tabela_referencia_comercial_nao_homologada"
+        }
+      ],
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_protechex_etanol96_water_7_3"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "ethanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "metodo_2_documentado",
-        "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -1029,15 +3668,173 @@
       "nome": "Triptofano",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
-      "metodos": [],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
+      "metodosComRetencaoIndividual": 3,
+      "metodos": [
+        {
+          "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tecnica": "ccd",
+          "fonte": "ukil2013",
+          "fonteUrl": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "solventes": [
+            "propanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "propanol_1",
+                "partes": 70
+              },
+              {
+                "id": "water",
+                "partes": 30
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-propanol:água 70:30",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel G, Merck",
+          "detector": "4-dimetilaminobenzaldeído 1% em acetona, aquecimento 110°C 10 min; isatina 0,4% em etanol, novo aquecimento 110°C 10 min",
+          "rf": [
+            {
+              "valor": 0.62,
+              "classe": "valor_experimental_tabela_1_artigo_2013",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_protechex_etanol96_water_7_3",
+          "tecnica": "ccd",
+          "fonte": "protechex2025",
+          "fonteUrl": "https://5.imimg.com/data5/SELLER/Doc/2025/6/518306737/JX/IU/GS/9824300/pro-techex-thin-layer-chromatography-teaching-kit.pdf",
+          "solventes": [
+            "ethanol",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "ethanol",
+                "partes": 7
+              },
+              {
+                "id": "water",
+                "partes": 3
+              }
+            ],
+            "base": "v/v",
+            "mistura": "etanol comercial 96%:água, 7:3; conteúdo adicional de água no etanol não resolvido",
+            "homologada": false
+          },
+          "faseEstacionaria": "placa TLC do kit",
+          "detector": "ninhidrina aplicada em spray após desenvolvimento, secagem e aquecimento leve",
+          "rf": [
+            {
+              "valor": 0.65,
+              "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "tabela_referencia_comercial_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2",
+          "tecnica": "ccd",
+          "fonte": "protechex2025",
+          "fonteUrl": "https://5.imimg.com/data5/SELLER/Doc/2025/6/518306737/JX/IU/GS/9824300/pro-techex-thin-layer-chromatography-teaching-kit.pdf",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 8
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 2
+              },
+              {
+                "id": "water",
+                "partes": 2
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-butanol:ácido acético:água, 8:2:2",
+            "homologada": false
+          },
+          "faseEstacionaria": "placa TLC do kit",
+          "detector": "ninhidrina aplicada em spray após desenvolvimento, secagem e aquecimento leve",
+          "rf": [
+            {
+              "valor": 0.56,
+              "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "tabela_referencia_comercial_nao_homologada"
+        }
+      ],
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_protechex_etanol96_water_7_3"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "ethanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "metodo_2_documentado",
-        "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -1045,14 +3842,19 @@
       "nome": "Tirosina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 1,
+      "metodosComRetencaoIndividual": 4,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_amrita_12_3_5",
           "tecnica": "ccd",
           "fonte": "amrita",
-          "rf": 0.42,
-          "sistemaFaseMovel": {
+          "fonteUrl": "https://vlab.amrita.edu/index.php/images/theme/theme/amrita/MEC/?brch=63&cnt=2&sim=154&sub=3",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
             "componentes": [
               {
                 "id": "butanol_1",
@@ -1071,17 +3873,213 @@
             "mistura": "descrita pelo guia",
             "solventeReal": "consultar fonte"
           },
+          "faseEstacionaria": "placa_TLC",
           "detector": "ninhidrina pós-desenvolvimento",
-          "estado": "nao_homologado"
+          "rf": [
+            {
+              "valor": 0.42,
+              "classe": "reportado_no_guia",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_didatica_com_rf_compilado"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tecnica": "ccd",
+          "fonte": "ukil2013",
+          "fonteUrl": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "solventes": [
+            "propanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "propanol_1",
+                "partes": 70
+              },
+              {
+                "id": "water",
+                "partes": 30
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-propanol:água 70:30",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel G, Merck",
+          "detector": "4-dimetilaminobenzaldeído 1% em acetona, aquecimento 110°C 10 min; isatina 0,4% em etanol, novo aquecimento 110°C 10 min",
+          "rf": [
+            {
+              "valor": 0.57,
+              "classe": "valor_experimental_tabela_1_artigo_2013",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_protechex_etanol96_water_7_3",
+          "tecnica": "ccd",
+          "fonte": "protechex2025",
+          "fonteUrl": "https://5.imimg.com/data5/SELLER/Doc/2025/6/518306737/JX/IU/GS/9824300/pro-techex-thin-layer-chromatography-teaching-kit.pdf",
+          "solventes": [
+            "ethanol",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "ethanol",
+                "partes": 7
+              },
+              {
+                "id": "water",
+                "partes": 3
+              }
+            ],
+            "base": "v/v",
+            "mistura": "etanol comercial 96%:água, 7:3; conteúdo adicional de água no etanol não resolvido",
+            "homologada": false
+          },
+          "faseEstacionaria": "placa TLC do kit",
+          "detector": "ninhidrina aplicada em spray após desenvolvimento, secagem e aquecimento leve",
+          "rf": [
+            {
+              "valor": 0.65,
+              "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "tabela_referencia_comercial_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2",
+          "tecnica": "ccd",
+          "fonte": "protechex2025",
+          "fonteUrl": "https://5.imimg.com/data5/SELLER/Doc/2025/6/518306737/JX/IU/GS/9824300/pro-techex-thin-layer-chromatography-teaching-kit.pdf",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 8
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 2
+              },
+              {
+                "id": "water",
+                "partes": 2
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-butanol:ácido acético:água, 8:2:2",
+            "homologada": false
+          },
+          "faseEstacionaria": "placa TLC do kit",
+          "detector": "ninhidrina aplicada em spray após desenvolvimento, secagem e aquecimento leve",
+          "rf": [
+            {
+              "valor": 0.47,
+              "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "tabela_referencia_comercial_nao_homologada"
         }
       ],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "tlc_aminoacids_amrita_12_3_5",
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30"
+          ],
+          "solventesA": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "propanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_amrita_12_3_5",
+            "tlc_aminoacids_protechex_etanol96_water_7_3"
+          ],
+          "solventesA": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "ethanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_protechex_etanol96_water_7_3"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "ethanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "metodo_2_documentado",
-        "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -1089,14 +4087,19 @@
       "nome": "Valina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 1,
+      "metodosComRetencaoIndividual": 4,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_amrita_12_3_5",
           "tecnica": "ccd",
           "fonte": "amrita",
-          "rf": 0.4,
-          "sistemaFaseMovel": {
+          "fonteUrl": "https://vlab.amrita.edu/index.php/images/theme/theme/amrita/MEC/?brch=63&cnt=2&sim=154&sub=3",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
             "componentes": [
               {
                 "id": "butanol_1",
@@ -1115,17 +4118,213 @@
             "mistura": "descrita pelo guia",
             "solventeReal": "consultar fonte"
           },
+          "faseEstacionaria": "placa_TLC",
           "detector": "ninhidrina pós-desenvolvimento",
-          "estado": "nao_homologado"
+          "rf": [
+            {
+              "valor": 0.4,
+              "classe": "reportado_no_guia",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_didatica_com_rf_compilado"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tecnica": "ccd",
+          "fonte": "ukil2013",
+          "fonteUrl": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "solventes": [
+            "propanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "propanol_1",
+                "partes": 70
+              },
+              {
+                "id": "water",
+                "partes": 30
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-propanol:água 70:30",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel G, Merck",
+          "detector": "4-dimetilaminobenzaldeído 1% em acetona, aquecimento 110°C 10 min; isatina 0,4% em etanol, novo aquecimento 110°C 10 min",
+          "rf": [
+            {
+              "valor": 0.45,
+              "classe": "valor_experimental_tabela_1_artigo_2013",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_protechex_etanol96_water_7_3",
+          "tecnica": "ccd",
+          "fonte": "protechex2025",
+          "fonteUrl": "https://5.imimg.com/data5/SELLER/Doc/2025/6/518306737/JX/IU/GS/9824300/pro-techex-thin-layer-chromatography-teaching-kit.pdf",
+          "solventes": [
+            "ethanol",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "ethanol",
+                "partes": 7
+              },
+              {
+                "id": "water",
+                "partes": 3
+              }
+            ],
+            "base": "v/v",
+            "mistura": "etanol comercial 96%:água, 7:3; conteúdo adicional de água no etanol não resolvido",
+            "homologada": false
+          },
+          "faseEstacionaria": "placa TLC do kit",
+          "detector": "ninhidrina aplicada em spray após desenvolvimento, secagem e aquecimento leve",
+          "rf": [
+            {
+              "valor": 0.55,
+              "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "tabela_referencia_comercial_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2",
+          "tecnica": "ccd",
+          "fonte": "protechex2025",
+          "fonteUrl": "https://5.imimg.com/data5/SELLER/Doc/2025/6/518306737/JX/IU/GS/9824300/pro-techex-thin-layer-chromatography-teaching-kit.pdf",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 8
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 2
+              },
+              {
+                "id": "water",
+                "partes": 2
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-butanol:ácido acético:água, 8:2:2",
+            "homologada": false
+          },
+          "faseEstacionaria": "placa TLC do kit",
+          "detector": "ninhidrina aplicada em spray após desenvolvimento, secagem e aquecimento leve",
+          "rf": [
+            {
+              "valor": 0.35,
+              "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "tabela_referencia_comercial_nao_homologada"
         }
       ],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "tlc_aminoacids_amrita_12_3_5",
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30"
+          ],
+          "solventesA": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "propanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_amrita_12_3_5",
+            "tlc_aminoacids_protechex_etanol96_water_7_3"
+          ],
+          "solventesA": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "ethanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_protechex_etanol96_water_7_3"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "ethanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "metodo_2_documentado",
-        "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -1133,15 +4332,16 @@
       "nome": "Cafeína",
       "grupo": "farmacos_e_organicos",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -1149,15 +4349,16 @@
       "nome": "Teobromina",
       "grupo": "farmacos_e_organicos",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -1165,15 +4366,16 @@
       "nome": "Paracetamol",
       "grupo": "farmacos_e_organicos",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -1181,15 +4383,16 @@
       "nome": "Ácido acetilsalicílico",
       "grupo": "farmacos_e_organicos",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -1197,15 +4400,16 @@
       "nome": "Ácido salicílico",
       "grupo": "farmacos_e_organicos",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -1213,15 +4417,16 @@
       "nome": "Ibuprofeno",
       "grupo": "farmacos_e_organicos",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -1229,15 +4434,16 @@
       "nome": "Naproxeno",
       "grupo": "farmacos_e_organicos",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -1245,15 +4451,16 @@
       "nome": "Ácido benzoico",
       "grupo": "farmacos_e_organicos",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -1261,15 +4468,16 @@
       "nome": "Vanilina",
       "grupo": "farmacos_e_organicos",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -1277,15 +4485,16 @@
       "nome": "Etilvanilina",
       "grupo": "farmacos_e_organicos",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -1293,15 +4502,16 @@
       "nome": "Cumarina",
       "grupo": "farmacos_e_organicos",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -1309,15 +4519,16 @@
       "nome": "Nicotinamida",
       "grupo": "farmacos_e_organicos",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -1325,15 +4536,16 @@
       "nome": "Riboflavina",
       "grupo": "farmacos_e_organicos",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -1341,15 +4553,16 @@
       "nome": "Ácido ascórbico",
       "grupo": "farmacos_e_organicos",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -1357,15 +4570,16 @@
       "nome": "Fluoresceína",
       "grupo": "indicadores_e_traçadores",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -1373,15 +4587,16 @@
       "nome": "Eosina Y",
       "grupo": "indicadores_e_traçadores",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -1389,15 +4604,16 @@
       "nome": "Rodamina B",
       "grupo": "indicadores_e_traçadores",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -1405,15 +4621,16 @@
       "nome": "Azul de metileno",
       "grupo": "indicadores_e_traçadores",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -1421,15 +4638,16 @@
       "nome": "Alaranjado de metila",
       "grupo": "indicadores_e_traçadores",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -1437,15 +4655,16 @@
       "nome": "Vermelho de metila",
       "grupo": "indicadores_e_traçadores",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -1453,15 +4672,16 @@
       "nome": "Azul de bromotimol",
       "grupo": "indicadores_e_traçadores",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -1469,15 +4689,16 @@
       "nome": "Fenolftaleína",
       "grupo": "indicadores_e_traçadores",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -1485,15 +4706,16 @@
       "nome": "Violeta cristal",
       "grupo": "indicadores_e_traçadores",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -1501,15 +4723,16 @@
       "nome": "Sudan III",
       "grupo": "indicadores_e_traçadores",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
     {
@@ -1517,15 +4740,16 @@
       "nome": "Sudan IV",
       "grupo": "indicadores_e_traçadores",
       "identidadeConfirmada": false,
-      "metodosComRfIndividual": 0,
+      "metodosComRetencaoIndividual": 0,
       "metodos": [],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
+      "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar"
       ]
     }
   ]
