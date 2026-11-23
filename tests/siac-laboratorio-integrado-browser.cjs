@@ -81,6 +81,9 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
     // Montar a coluna NÃO pode redefinir a programação de F1/F7.
     const janelasAntes=await page.evaluate(()=>window.SIAC.laboratorio.snapshot.janelas);
     assert.equal(janelasAntes.length,2);
+    // Estrutura da coluna é um <details> fechado inicialmente; abri-lo
+    // antes de alterar o comprimento exercita a interface real.
+    await page.locator("#siac-comprimento").evaluate(el=>{el.closest("details").open=true;});
     await page.locator("#siac-comprimento").fill("120");
     await page.locator("#siac-montar").click({force:true});
     assert.deepEqual(await page.evaluate(()=>window.SIAC.laboratorio.snapshot.janelas),janelasAntes,
