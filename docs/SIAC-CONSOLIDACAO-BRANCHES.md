@@ -37,3 +37,16 @@
 - Correções homologadas entram na `main` somente depois dos testes de navegador, integridade e paridade.
 - Após confirmar a ancestralidade dos cinco históricos no branch de experiência, os cinco branches temporários podem ser excluídos no GitHub sem excluir o código integrado.
 - PRs fechadas e commits referenciados acima continuam registrados; não reabrir versões antigas como fonte de código ativo.
+
+## Requisito vinculante de desenvolvimento (confirmado em 23/11/2026)
+
+A limpeza já foi executada pelo responsável: a consulta à API do GitHub confirmou **exatamente três branches**, `main`, `feat/siac-experiencia-didatica` e `feat/siac-motor-cromatografico`.
+
+A partir desta verificação:
+- Não criar branches adicionais, nem mesmo temporários. Atualizar os três branches existentes segundo a área de desenvolvimento.
+- Após uma integração homologada, sincronizar o respectivo branch de trabalho com a `main`, preservando trabalho científico não integrado.
+- Verificar o limite nos eventos de criação/push e por auditoria diária via GitHub Actions, além de executar testes unitários da regra.
+- Se aparecer um quarto branch, a auditoria falha. O workflow **sinaliza** a violação, mas não bloqueia o GitHub de criar a referência; um bloqueio preventivo depende de regras do repositório.
+- Os detalhes operacionais também estão em `AGENTS.md`.
+
+**Arquivos de governança:** `AGENTS.md`, `scripts/siac-validar-branches.cjs`, `tests/siac-politica-branches.test.cjs` e `.github/workflows/siac-politica-branches.yml`.
