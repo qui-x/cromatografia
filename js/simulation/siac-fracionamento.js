@@ -19,7 +19,7 @@
   const VERSAO="0.1.0",EPS=1e-8;
   function erro(s) { throw new RangeError("SIAC coletor: "+s); }
   function numero(x,n,min,max=Infinity) {
-    if(typeof x!=="number" || !Number.isFinite(x) || x<min-EPS || x>max+EPS)
+    if(typeof x!=="number" || !Number.isFinite(x) || x<min || x>max)
       erro(n+" inválido");
     return x;
   }
