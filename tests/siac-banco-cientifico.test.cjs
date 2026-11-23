@@ -28,7 +28,7 @@ assert.equal(analytes.status,"PESQUISA_NAO_HOMOLOGADA");
 assert.equal(engines.status,"candidatos_nao_integrados");
 assert.equal(solvents.solventes.length,41);
 assert.equal(analytes.candidatos.length,76);
-assert.equal(analytes.protocolos.length,9);
+assert.equal(analytes.protocolos.length,10);
 assert.equal(engines.motores.length,9);
 assert.equal(stationary.status,"PESQUISA_NAO_HOMOLOGADA");
 assert.equal(stationary.fasesEstacionarias.length,18);
@@ -104,7 +104,7 @@ for(const p of analytes.protocolos){
     rfs++;
   }
 }
-assert.equal(rfs,66);
+assert.equal(rfs,74);
 let intervalos=0;
 for(const p of analytes.protocolos){
  for(const r of (p.dadosRfIntervalos||[])){
@@ -117,6 +117,13 @@ for(const p of analytes.protocolos){
  }
 }
 assert.equal(intervalos,1,"conservar o intervalo original de feofitina b");
+const padiyar=analytes.protocolos.find(p=>p.id==="tlc_aminoacids_padiyar2024_butanol_acetic_water_4_1_1");
+assert(padiyar&&padiyar.status!=="homologado");
+assert.equal(padiyar.dadosRf.length,8);
+assert.equal(padiyar.dadosRf.find(r=>r.analito==="valine").rf,.52);
+assert.equal(padiyar.dadosRf.find(r=>r.analito==="valine").distanciaManchaCm,1.85);
+assert(Math.abs(padiyar.dadosRf.find(r=>r.analito==="valine").diferencaRfDistancias)>.005,
+ "marcar inconsistência de arredondamento em literatura primária");
 for(const id of ["tlc_aminoacids_ukil_2013_propanol_water_70_30","tlc_spinach_dobado_hexane_acetone_7_3",
  "tlc_aminoacids_protechex_etanol96_water_7_3","tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"])
  assert(analytes.protocolos.some(p=>p.id===id&&p.status!=="homologado"),
