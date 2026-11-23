@@ -85,7 +85,7 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
     await page.locator("#siac-montar").click({force:true});
     assert.deepEqual(await page.evaluate(()=>window.SIAC.laboratorio.snapshot.janelas),janelasAntes,
       "Montagem da coluna não deve zerar ou reescrever as janelas dos frascos");
-    assert.equal(await page.locator("#siac-inicio").inputValue(),"1",
+    assert.equal(Number(await page.locator("#siac-inicio").inputValue()),1,
       "A seleção e os campos do frasco devem permanecer na Montagem");
     assert.match(await page.locator("#siac-montagem-status").textContent(),/preservada/);
     // Programação não cria recipientes na bancada.
