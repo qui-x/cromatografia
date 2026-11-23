@@ -202,6 +202,14 @@ body.siac-active #workspace #siac-stage{
   min-width:0;
   overflow-y:auto;
 }
+/* Docas abertas reduzem a área visível. Aproveitar exatamente os recuos
+   dinâmicos que o SIAB já calcula, sem cobrir recipientes atrás dos painéis. */
+@media(min-width:901px){
+  body.siac-active #workspace #siac-stage{
+    padding-inline-start:max(clamp(12px,2vw,28px),var(--dock-left-inset,0px));
+    padding-inline-end:max(clamp(12px,2vw,28px),var(--dock-right-inset,0px));
+  }
+}
 #siac-stage .siac-overview-scene{
   display:flex;
   flex-direction:column;
