@@ -6,11 +6,13 @@ on:
       - "js/simulation/siac-cromatografia.js"
       - "js/simulation/siac-fracionamento.js"
       - "js/simulation/siac-coluna.js"
+      - "js/simulation/siac-metricas.js"
       - "previews/coluna-laboratorio.html"
       - "scripts/siac-coluna-standalone.cjs"
       - "tests/siac-cromatografia.test.cjs"
       - "tests/siac-fracionamento.test.cjs"
       - "tests/siac-coluna.test.cjs"
+      - "tests/siac-metricas.test.cjs"
       - "tests/siac-coluna-browser.cjs"
       - "docs/SIAC-MOTOR-CROMATOGRAFICO.md"
       - "docs/SIAC-AUDITORIA-LEGADO.md"
@@ -21,11 +23,13 @@ on:
       - "js/simulation/siac-cromatografia.js"
       - "js/simulation/siac-fracionamento.js"
       - "js/simulation/siac-coluna.js"
+      - "js/simulation/siac-metricas.js"
       - "previews/coluna-laboratorio.html"
       - "scripts/siac-coluna-standalone.cjs"
       - "tests/siac-cromatografia.test.cjs"
       - "tests/siac-fracionamento.test.cjs"
       - "tests/siac-coluna.test.cjs"
+      - "tests/siac-metricas.test.cjs"
       - "tests/siac-coluna-browser.cjs"
       - "docs/SIAC-MOTOR-CROMATOGRAFICO.md"
       - ".github/workflows/siac-motor.yml"
@@ -45,15 +49,18 @@ jobs:
           node --check js/simulation/siac-cromatografia.js
           node --check js/simulation/siac-fracionamento.js
           node --check js/simulation/siac-coluna.js
+          node --check js/simulation/siac-metricas.js
           node --check tests/siac-cromatografia.test.cjs
           node --check tests/siac-fracionamento.test.cjs
           node --check tests/siac-coluna.test.cjs
+          node --check tests/siac-metricas.test.cjs
           node --check tests/siac-coluna-browser.cjs
       - name: Contrato científico e reprodutibilidade
         run: |
           node tests/siac-cromatografia.test.cjs
           node tests/siac-fracionamento.test.cjs
           node tests/siac-coluna.test.cjs
+          node tests/siac-metricas.test.cjs
       - name: Verificar isolamento do motor legado
         run: |
           node - <<'NODE'
