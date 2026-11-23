@@ -20,10 +20,10 @@
 
 ## Situação da base local — atualização da pesquisa de 23/11/2026
 - **76** compostos candidatos (catálogo estável; nenhum candidato novo por nome aproximado).
-- **10 protocolos** cadastrados, incluindo 5 métodos adicionais incorporados nesta etapa.
-- **74 registros pontuais de Rf** e **um intervalo de Rf** preservado como intervalo original (feofitina b: 0,47–0,54). Quantidade de linhas ≠ quantidade de substâncias.
-- **24 substâncias** com pelo menos um método de retenção individual reportado: 20 aminoácidos e 4 pigmentos vegetais.
-- **22 substâncias** com pelo menos dois métodos individuais e sistemas de solventes realmente diferentes: **18 aminoácidos + 4 pigmentos**.
+- **15 protocolos** cadastrados, incluindo 10 métodos adicionais incorporados nesta rodada de pesquisa.
+- **98 registros pontuais de Rf** e **um intervalo de Rf** preservado como intervalo original (feofitina b: 0,47–0,54). Quantidade de linhas ≠ quantidade de substâncias.
+- **32 substâncias** com pelo menos um método de retenção individual reportado: 20 aminoácidos, 8 corantes alimentícios e 4 pigmentos vegetais.
+- **30 substâncias** com pelo menos dois métodos individuais e sistemas de solventes realmente diferentes: **18 aminoácidos + 8 corantes alimentícios + 4 pigmentos**.
 - **Zero substâncias homologadas** pela regra estrita, pois os registros ainda não têm identidade individual e condição experimental homologadas. Especialmente, valores de uma **tabela comercial de referência didática** não equivalem a medições primárias verificadas.
 - O quadro abaixo informa **cobertura bibliográfica preliminar**, não autorização automática para o motor. Cada protocolo continua com `status != homologado`.
 - Projeções geométricas e bancos de solubilidade não completam lacunas de retenção.
@@ -36,6 +36,11 @@
 **Limitação do protocolo com 1-butanol:** variar apenas as proporções de 12:3:5 (Amrita) para 8:2:2 (kit) **não** satisfaz a regra de dois solventes diferentes entre esses dois métodos isoladamente; a comparação com etanol/água ou 1-propanol/água oferece diferença real de componentes.
 
 4. **Padiyar et al. (2024)**, [artigo com distâncias da corrida](https://www.ijpsjournal.com/article/enhanced-thin-layer-chromatography-of-amino-acids-using-mixed-hydrotropic-solutions): sílica gel 60 F254, **1-butanol/ácido acético glacial/água 4:1:1**, ninhidrina e **oito pares distância da mancha / distância da frente**. A fonte usa uma solução de ninhidrina cuja preparação é descrita de forma contraditória (etanol versus água), e a valina apresenta **Rf publicado 0,52** diante de **1,85/3,5 = 0,5286**, que arredondaria a 0,53 a duas casas. Registramos a divergência e **não homologamos** até conferência independente.
+
+5. **FAO/JECFA**, [Combined Compendium, FOOD COLOURS: Identification by chromatography](https://www.fao.org/4/a0691e/A0691E07.htm): tabela histórica reimpressa (Pearson 1973/IARC 1981) com **valores esperados de Rf** em dez eluentes para corantes alimentícios. Foram cadastrados **sistemas 1, 7 e 10** para oito corantes do SIAC, em sílica gel G. Os números entre parênteses são **manchas subsidiárias de menor intensidade** (não são Rf da molécula principal); `quinoline_yellow` permanece sem valor individual por ser mistura de composição variável. Corantes como eritrosina aparecem com **Rf 1,00 em certas condições**, valor na frente do solvente e pouco discriminatório. Fonte de compêndio, **não medições primárias reprocessadas**, exigindo padrão.
+6. **Sobańska et al. (2017)**, [artigo primário](https://onlinelibrary.wiley.com/doi/10.1155/2017/9528472), *Journal of Analytical Methods in Chemistry*: otimização com 20 sistemas de fase móvel, dos quais cadastramos dois para tartrazina, amarelo crepúsculo FCF, Ponceau 4R e azul brilhante FCF: **metanol/tolueno 11:9** e **acetato de etila/2-propanol/água 75:35:30**. Valores da triagem não recebem automaticamente as condições do **protocolo analítico final**, que usa outra fase móvel.
+
+**Cobertura por grupo na matriz atual:** 18/20 aminoácidos com dois métodos; 8/11 corantes alimentícios com dois; 4/20 pigmentos vegetais com dois; 0/14 fármacos e orgânicos, 0/11 indicadores e traçadores. Essa distribuição indica onde priorizar as próximas buscas, mas **nenhum dos 30 está totalmente homologado**.
 
 A matriz auditável em `data/siac/matriz-cobertura-dois-metodos.v2.json` identifica, por candidato, quais métodos, sistemas eluentes, fontes, números e intervalos estão disponíveis e as pendências antes da homologação.
 
