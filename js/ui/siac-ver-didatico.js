@@ -113,7 +113,10 @@
    escape(s.nome)+'</strong>. Comparação numérica indisponível.</p>';
   return '<p>Rf bibliográfico condicionado ao método: <strong>'+fmt(m.rf)+'</strong>.</p>'+
    (calc.ok?'<p>Rf do exercício: '+fmt(calc.rf)+'. Diferença absoluta: <strong>'+
-     fmt(Math.abs(calc.rf-m.rf))+'</strong>.</p>':
+     fmt(Math.abs(calc.rf-m.rf))+'</strong>.</p>'+
+     '<p>Projeção geométrica pela referência: '+fmt(calc.frenteMm*m.rf,2)+
+     ' mm de deslocamento para uma frente de '+fmt(calc.frenteMm,2)+
+     ' mm. Isso não é uma estimativa independente da química.</p>':
     '<p>'+escape(calc.motivo)+' Registre as distâncias em Medir → Régua.</p>')+
    '<p>Uma diferença pequena, isoladamente, <strong>não confirma identidade</strong>. Antes de comparar amostras, confira suporte, solvente, revelação, temperatura e tolerância fundamentada.</p>';
  }
