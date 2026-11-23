@@ -32,7 +32,7 @@ SIAC.laboratorio=(()=>{
  const availableItems=()=>CONTEXT[focus]?.[module]||MODULES[module];
  let ready=false,enabled=false,col=null,plan=null,volume=0,speed=120,
   running=false,lastFrame=0,view="foco",focus="coluna",group="frascos",
-  selected="F1",capillary=null,development=null,module="observar",
+  selected="F1",capillary=null,capillaryLoading=null,development=null,module="observar",
   item="aparencia",papers={},withdrawn={},status="",lastDraw=0;
  const fmt=(n,d=2)=>Number(n).toLocaleString("pt-BR",{minimumFractionDigits:d,maximumFractionDigits:d});
  const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
@@ -84,6 +84,15 @@ SIAC.laboratorio=(()=>{
   ui.addEventListener("click",montagemClick);
   ver.addEventListener("click",verClick);
   stage.addEventListener("click",stageClick);
+  // Um capilar visível acompanha o ponteiro dentro da região do papel.
+  // O gesto continua independente de mouse: toque e Enter ativam a aplicação.
+  stage.addEventListener("pointermove",e=>{
+   const target=e.target.closest?.("#siac-paper-target");
+   if(!target||!capillary)return;
+   const b=target.getBoundingClientRect();
+   target.style.setProperty("--siac-capillary-x",
+     (100*clamp((e.clientX-b.left)/b.width,.29,.70)).toFixed(1)+"%");
+  });
   $("focus-tab").addEventListener("click",e=>{if(!enabled)return;e.stopImmediatePropagation();e.preventDefault();
    if(view==="foco")focus=VIEWS[(VIEWS.indexOf(focus)+1)%3];else view="foco";render();},true);
   $("overview-tab").addEventListener("click",e=>{if(!enabled)return;e.stopImmediatePropagation();e.preventDefault();
@@ -220,10 +229,20 @@ SIAC.laboratorio=(()=>{
   const h=Math.min(110,120*available/capacity),components=f?.componentesMg||{};
   const visible=col.config.componentes.filter(c=>c.corVisivel&&components[c.id]>1e-10);
   const color=visible.length?visible.sort((a,b)=>components[b.id]-components[a.id])[0].corVisivel:"#b8d2dc";
+  // O conteúdo do capilar é uma alíquota real do frasco; o comprimento desenhado
+  // é didático e não representa uma altura de Jurin calibrada.
+  const uptake=capillaryLoading?.id===f?.id?
+   '<g class="siac-capillary-uptake" aria-label="Capilar aspirando amostra">'+
+    '<path d="M87 4V176M94 4V176" stroke="#4b899a" stroke-width="1.8" fill="none"/>'+
+    '<path d="M89 5V173" stroke="#fff" stroke-opacity=".86" stroke-width="1" fill="none"/>'+
+    '<rect class="siac-capillary-fluid" x="89" y="122" width="3" height="53" rx="1" fill="'+color+'"/>'+
+    '<ellipse cx="90.5" cy="175" rx="3.5" ry="2.5" fill="'+color+'" opacity=".65"/>'+
+   '</g>':"";
   return '<svg viewBox="0 0 170 208" role="img" aria-label="Frasco '+esc(f?.id||selected)+' com eluato">'+
    '<defs><clipPath id="sciac-tube"><path d="M50 22V147Q50 177 85 177Q120 177 120 147V22Z"/></clipPath></defs>'+
    '<g clip-path="url(#sciac-tube)"><rect x="52" y="'+(177-h)+'" width="67" height="'+h+'" fill="'+color+'" opacity=".73"/></g>'+
    '<path d="M50 22V147Q50 177 85 177Q120 177 120 147V22M45 22H125" fill="none" stroke="#2c6880" stroke-width="4"/>'+
+   uptake+
    '<text x="85" y="199" text-anchor="middle" font-size="15" fill="currentColor">'+esc(f?.id||selected)+'</text></svg>';
  }
  function paperSVG(p,id,large=true){
@@ -234,14 +253,18 @@ SIAC.laboratorio=(()=>{
    p.aliquotaMg[b.id]-p.aliquotaMg[a.id])[0];
   let marcas="";
   if(p.frenteMm>0){
-   marcas+='<rect x="58" y="'+frenteY.toFixed(2)+'" width="101" height="'+
-    (origemY-frenteY).toFixed(2)+'" fill="#8ebdc4" opacity=".13"/>';
+   // A região úmida começa na base do suporte e cresce até a frente;
+   // não surge apenas acima da linha de aplicação.
+   marcas+='<rect class="siac-paper-wet" x="58" y="'+frenteY.toFixed(2)+
+    '" width="101" height="'+(234-frenteY).toFixed(2)+
+    '" fill="#8ebdc4" opacity=".22"/>';
    marcas+='<path d="M62 '+frenteY.toFixed(2)+
     'H156" stroke="#336e7d" stroke-width="1.5" stroke-dasharray="4 4"/>';
   }
   if(p.origem){
    const x=90+p.origem.x*2;
-   marcas+='<ellipse cx="'+x+'" cy="'+origemY+
+   marcas+='<ellipse class="'+(p.etapa==="aplicado"?"siac-spot-halo":"siac-spot-fixed")+
+    '" cx="'+x+'" cy="'+origemY+
     '" rx="9" ry="4" fill="'+(dominante?.corVisivel||"#7f9da5")+'" opacity=".35"/>';
   }
   for(const m of p.sinais){
@@ -303,14 +326,27 @@ SIAC.laboratorio=(()=>{
   const f=current();
   if(!f)return '<h2>'+(focus==="tubo"?"Tubo em foco":"Amostra em foco")+'</h2>'+
    '<p class="siac-empty">Ainda não existe frasco montado nesta posição. Aguarde a eluição ou selecione um frasco já preenchido na Visão geral.</p>';
-  if(focus==="tubo")return '<h2>Tubo em foco · '+f.id+'</h2><div class="siac-lado">'+tubeSVG(f)+
-   '<div><p>'+fmt(f.volumeMl)+' mL recolhidos</p><p>'+fmt(f.disponivelMl)+' mL disponíveis</p>'+
-   '<p class="siac-hint">O conteúdo é derivado do eluato que chegou ao frasco, sem identificar a substância.</p>'+
-   '<button id="siac-retirar" type="button" class="primary-btn">Carregar capilar (0,01 mL)</button></div></div>';
+  if(focus==="tubo"){
+   const aspirando=capillaryLoading?.id===f.id;
+   return '<h2>Tubo em foco · '+f.id+'</h2><div class="siac-lado">'+tubeSVG(f)+
+    '<div><p>'+fmt(f.volumeMl)+' mL recolhidos</p><p>'+fmt(f.disponivelMl)+' mL disponíveis</p>'+
+    (aspirando?'<p class="siac-capillary-status" role="status">Capilar aspirando 0,01 mL</p>':
+     '<p class="siac-hint">O capilar transfere uma alíquota do frasco para o papel.</p>')+
+    '<button id="siac-retirar" type="button" class="primary-btn" '+(aspirando?'disabled':'')+
+    '>'+(aspirando?'Aspirando…':'Carregar capilar (0,01 mL)')+'</button></div></div>';
+  }
   const p=paper(f.id);
+  // O aplicador acompanha o ponteiro, mas o suporte também pode ser acionado
+  // por toque ou teclado, sem movimentação obrigatória do mouse.
+  const aplicador=capillary?.id===selected?
+   '<svg class="siac-capillary-applicator" viewBox="0 0 48 150" aria-hidden="true">'+
+    '<path d="M20 2L21 115Q24 122 27 115L28 2" stroke="#347b92" stroke-width="2.4" fill="#c5eaf0" fill-opacity=".28"/>'+
+    '<path d="M23 73V112Q24 117 25 112V73Z" fill="#2d91a5" opacity=".76"/>'+
+    '<path d="M24 117Q18 124 24 129Q30 124 24 117Z" fill="#2d91a5" opacity=".56"/>'+
+   '</svg>':"";
   return '<h2>Amostra em foco · P'+f.id.slice(1)+'</h2><div class="siac-lado">'+
    '<div id="siac-paper-target" tabindex="0" role="button" aria-label="Posicionar capilar na origem do papel" aria-disabled="'+(!capillary)+'">'+
-   paperSVG(p,"P"+f.id.slice(1))+'</div>'+
+   paperSVG(p,"P"+f.id.slice(1))+aplicador+'</div>'+
    '<div><p>Etapa: <strong>'+p.etapa+'</strong></p>'+
    '<p>'+(capillary?"Capilar carregado: clique na linha de origem do papel ou pressione Enter.":"Selecione o capilar no Tubo em foco.")+'</p>'+
    (p.etapa==="aplicado"?'<button id="siac-desenvolver" class="primary-btn">Mergulhar o papel na câmara e desenvolver</button>':"")+
@@ -440,13 +476,17 @@ SIAC.laboratorio=(()=>{
   const pick=btn?.closest("[data-open-fraction]");
   if(pick){choose(pick.dataset.openFraction,pick.dataset.openFocus);return;}
   if(btn?.id==="siac-executar"){running=!running;lastFrame=0;render();return;}
-  if(btn?.id==="siac-reiniciar"){running=false;lastFrame=0;volume=0;withdrawn={};papers={};capillary=null;development=null;
+  if(btn?.id==="siac-reiniciar"){running=false;lastFrame=0;volume=0;withdrawn={};papers={};capillary=null;capillaryLoading=null;development=null;
    status="Corrida reiniciada. Janelas preservadas; os frascos começam vazios.";render();return;}
-  if(btn?.id==="siac-retirar"){const f=current();if(!f||f.disponivelMl<.01){status="Aguarde coleta suficiente para carregar o capilar.";render();return;}
+  if(btn?.id==="siac-retirar"){
+   if(capillaryLoading)return;
+   const f=current();if(!f||f.disponivelMl<.01){status="Aguarde coleta suficiente para carregar o capilar.";render();return;}
    withdrawn[f.id]=(withdrawn[f.id]||0)+.01;
    capillary={id:f.id,volumeMl:.01,masses:Object.fromEntries(Object.entries(f.componentesMg)
     .map(([id,m])=>[id,m*.01/f.volumeMl]))};
-   focus="amostra";render();return;}
+   capillaryLoading={id:f.id,start:performance.now()};
+   status="Aspirando uma alíquota de "+f.id+" por capilaridade.";render();return;
+  }
   if(btn?.id==="siac-desenvolver"){
    const p=paper(selected);if(p.etapa!=="aplicado")return;
    p.etapa="desenvolvendo";p.tempoS=0;development={id:selected};status="Desenvolvimento cromatográfico em andamento.";render();return;}
@@ -476,6 +516,12 @@ SIAC.laboratorio=(()=>{
   status="Amostra aplicada em P"+selected.slice(1)+". Desenvolva para observar as manchas.";render();
  }
  function frame(now){
+  if(capillaryLoading&&now-capillaryLoading.start>=1100){
+   const id=capillaryLoading.id;capillaryLoading=null;
+   if(enabled&&focus==="tubo"&&selected===id){focus="amostra";view="foco";}
+   status="Capilar carregado de "+id+". Posicione a ponta na linha de origem.";
+   render();
+  }
   if(enabled&&col&&(running||development)){
    const dt=lastFrame?Math.min(.15,(now-lastFrame)/1000):0;lastFrame=now;
    if(running){
@@ -487,7 +533,9 @@ SIAC.laboratorio=(()=>{
     // O desenvolvimento mantém um tempo didático observável, independente da
     // aceleração muito maior que pode ser usada na coleta da coluna.
     p.tempoS=Math.min(60,p.tempoS+dt*Math.min(speed,6));
-    p.frenteMm=55*p.tempoS/60;
+    // Progressão visual idealizada proporcional a √t, consistente com a
+    // parametrização provisória do motor planar, ainda sem calibração.
+    p.frenteMm=55*Math.sqrt(p.tempoS/60);
     p.sinais=Object.entries(p.aliquotaMg||{}).filter(([id,m])=>m>1e-12&&
       col.config.componentes.find(c=>c.id===id)?.deteccao.visivel)
       .map(([id,m])=>({distanciaMm:MODELOS.find(x=>x.id===id).rf*p.frenteMm,
@@ -514,6 +562,9 @@ SIAC.laboratorio=(()=>{
  else setTimeout(start,0);
  return Object.freeze({get active(){return enabled;},get snapshot(){return {
    volumeMl:volume,visao:view,foco:focus,geral:group,selecionado:selected,
-   preenchidos:filled().map(f=>f.id),papeis:Object.fromEntries(Object.entries(papers).map(([id,p])=>[id,p.etapa]))
+   preenchidos:filled().map(f=>f.id),capilar:capillaryLoading?"aspirando":capillary?"carregado":"vazio",
+   frenteMm:development?paper(development.id).frenteMm:null,
+   preenchidosDetalhe:filled().map(f=>({id:f.id,volumeMl:f.volumeMl})),
+   papeis:Object.fromEntries(Object.entries(papers).map(([id,p])=>[id,p.etapa]))
   };},render});
 })();
