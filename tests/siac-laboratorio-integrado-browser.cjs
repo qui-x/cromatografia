@@ -82,7 +82,7 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
     await page.waitForFunction(()=>document.getElementById("controls")?.classList.contains("dock-collapsed"),null,{timeout:3000});
     // O cronômetro deve realmente avançar o volume a partir da vazão.
     // O seletor SIAB substitui o <select> nativo por um controle próprio.
-    await page.locator("#siac-velocidade").evaluate(el=>{el.value="1800";el.dispatchEvent(new Event("change",{bubbles:true}));});
+    await page.locator("#siac-velocidade").evaluate(el=>{el.value="120";el.dispatchEvent(new Event("change",{bubbles:true}));});
     await page.locator("#siac-executar").click({force:true});
     await page.waitForTimeout(1300);
     console.log("SIAC APÓS EXECUTAR",JSON.stringify(await page.evaluate(()=>({
