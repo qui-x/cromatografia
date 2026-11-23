@@ -37,11 +37,12 @@
   }
   function preparar(c={}) {
     if(!c || typeof c!=="object" || Array.isArray(c)) erro("configuração");
-    // Escala inicial de operação fornecida pela coluna: nunca impor 10 mL como valor fixo.
-    const total=numero(c.volumeTotalMl,"volumeTotalMl",0.1,10);
+    // Escala operacional de cada corrida de 0,1 a 1000 mL; nenhum volume associado a um analito.
+    const total=numero(c.volumeTotalMl,"volumeTotalMl",0.1,1000);
     const resolucao=numero(c.resolucaoMl??0.1,"resolucaoMl",Number.MIN_VALUE);
     if(total/resolucao<1-EPS)erro("volume total deve conter pelo menos um passo");
     if(!Array.isArray(c.janelas??[]))erro("janelas devem ser uma lista");
+    const capacidadeFrascoMl=c.capacidadeFrascoMl===undefined?null:numero(c.capacidadeFrascoMl,"capacidadeFrascoMl",Number.MIN_VALUE,1000);
     const origem=new Set(),janelas=[];
     for(const j of c.janelas??[]) {
       if(!j || typeof j!=="object")erro("janela deve ser objeto");
@@ -52,6 +53,7 @@
       const inicio=numero(j.inicioMl,frasco+".inicioMl",0,total);
       const fim=numero(j.fimMl,frasco+".fimMl",resolucao,total);
       if(fim-inicio<EPS)erro(frasco+": fim deve exceder início");
+      if(capacidadeFrascoMl!==null && fim-inicio>capacidadeFrascoMl+EPS)erro(frasco+": capacidade do recipiente excedida");
       const emGrade=x=>Math.abs(x/resolucao-Math.round(x/resolucao))<1e-7;
       if(!emGrade(inicio) || !emGrade(fim))erro(frasco+": valor não múltiplo da resolução");
       janelas.push({frasco,inicioMl:inicio,fimMl:fim,volumeMl:fim-inicio});
@@ -72,7 +74,7 @@
     }
     if(cursor<total-EPS) intervalos.push({destino:"descarte",inicioMl:cursor,fimMl:total});
     return fixar({versao:VERSAO,volumeTotalMl:total,resolucaoMl:resolucao,
-      frascos,janelas,intervalos});
+      capacidadeFrascoMl,frascos,janelas,intervalos});
   }
   function conferirPlano(plano) {
     if(!plano || plano.versao!==VERSAO || !Array.isArray(plano.janelas))erro("plano incompatível");
@@ -91,12 +93,14 @@
     conferirPlano(plano);
     valorChave(frasco);
     return preparar({volumeTotalMl:plano.volumeTotalMl,resolucaoMl:plano.resolucaoMl,
+      ...(plano.capacidadeFrascoMl===null?{}:{capacidadeFrascoMl:plano.capacidadeFrascoMl}),
       janelas:plano.janelas.filter(j=>j.frasco!==frasco).concat([{frasco,inicioMl,fimMl}])});
   }
   function limparJanela(plano,frasco) {
     conferirPlano(plano);
     valorChave(frasco);
     return preparar({volumeTotalMl:plano.volumeTotalMl,resolucaoMl:plano.resolucaoMl,
+      ...(plano.capacidadeFrascoMl===null?{}:{capacidadeFrascoMl:plano.capacidadeFrascoMl}),
       janelas:plano.janelas.filter(j=>j.frasco!==frasco)});
   }
   function soma(mapa,id,valor) { mapa[id]=(mapa[id]||0)+valor; }
