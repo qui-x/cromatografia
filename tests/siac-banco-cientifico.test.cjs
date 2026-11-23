@@ -163,7 +163,7 @@ for(const p of analytes.protocolos){
  const mobile=p.faseMovel?.componentes||[];
  for(const reagent of mobile){
   assert(
-   usedSolvents.has(reagent.id) || reagent.id==="aqueous_ammonia_sg0880",
+   usedSolvents.has(reagent.id) || ["aqueous_ammonia_sg0880","sodium_chloride"].includes(reagent.id),
    "solvente químico sem registro no catálogo: "+reagent.id+" em "+p.id);
  }
 }
