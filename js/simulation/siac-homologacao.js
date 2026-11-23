@@ -11,7 +11,7 @@
  if(raiz){raiz.SIAC=raiz.SIAC||{};raiz.SIAC.homologacao=api;}
 })(typeof globalThis==="object"?globalThis:null,function(){
  const POLITICA=Object.freeze({
-  versao:"2.1.0",
+  versao:"2.2.0",
   metaMinimaSubstancias:40,
   metaAmpliadaSubstancias:55,
   minimoMetodosIndependentes:2,
@@ -78,6 +78,12 @@
   if(!p.aplicacao?.detector||/não informado|nao informado/i.test(p.aplicacao.detector))
    deficits.push("detector_incompleto");
   if(!p.fonte||!fonteCatalogo?.[p.fonte])deficits.push("fonte_sem_url");
+  if(p.status==="homologado"&&(
+    typeof p.auditoriaCientifica?.fontePrimaria!=="string"||
+    p.auditoriaCientifica.fontePrimaria!==fonteCatalogo[p.fonte]||
+    !p.auditoriaCientifica.secoesConferidas||
+    !/^\\d{4}-\\d{2}-\\d{2}$/.test(p.auditoriaCientifica.dataConferencia||"")
+  ))deficits.push("auditoria_primaria_incompleta");
   if(p.status!=="homologado")deficits.push("protocolo_nao_homologado");
   if(p.faseEstacionaria?.homologada!==true)deficits.push("suporte_nao_homologado");
   if(fm?.homologada!==true)deficits.push("eluente_nao_homologado");
