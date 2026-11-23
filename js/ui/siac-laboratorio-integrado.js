@@ -338,11 +338,16 @@ SIAC.laboratorio=(()=>{
   const p=paper(f.id);
   // O aplicador acompanha o ponteiro, mas o suporte também pode ser acionado
   // por toque ou teclado, sem movimentação obrigatória do mouse.
+  const presentes=col.config.componentes.filter(c=>
+   c.corVisivel&&capillary?.masses?.[c.id]>1e-10).sort((a,b)=>
+   capillary.masses[b.id]-capillary.masses[a.id]);
+  // Soluções incolores recebem apenas o reflexo neutro do vidro.
+  const capCor=presentes[0]?.corVisivel||"#b8d2dc";
   const aplicador=capillary?.id===selected?
    '<svg class="siac-capillary-applicator" viewBox="0 0 48 150" aria-hidden="true">'+
     '<path d="M20 2L21 115Q24 122 27 115L28 2" stroke="#347b92" stroke-width="2.4" fill="#c5eaf0" fill-opacity=".28"/>'+
-    '<path d="M23 73V112Q24 117 25 112V73Z" fill="#2d91a5" opacity=".76"/>'+
-    '<path d="M24 117Q18 124 24 129Q30 124 24 117Z" fill="#2d91a5" opacity=".56"/>'+
+    '<path d="M23 73V112Q24 117 25 112V73Z" fill="'+capCor+'" opacity=".76"/>'+
+    '<path d="M24 117Q18 124 24 129Q30 124 24 117Z" fill="'+capCor+'" opacity=".56"/>'+
    '</svg>':"";
   return '<h2>Amostra em foco · P'+f.id.slice(1)+'</h2><div class="siac-lado">'+
    '<div id="siac-paper-target" tabindex="0" role="button" aria-label="Posicionar capilar na origem do papel" aria-disabled="'+(!capillary)+'">'+
@@ -543,7 +548,11 @@ SIAC.laboratorio=(()=>{
     if(p.tempoS>=60){
      p.etapa="desenvolvido";development=null;
      status="Papel retirado do béquer. Desenvolvimento finalizado; as manchas não confirmam identidades.";}}
-   if(now-lastDraw>160||!running){renderStage();renderVer();renderMontagem();lastDraw=now;}
+   if(now-lastDraw>160||!running){
+    // Preserva a animação de aspiração mesmo com a coluna ainda eluindo.
+    if(!capillaryLoading)renderStage();
+    renderVer();renderMontagem();lastDraw=now;
+   }
   }else lastFrame=0;
   requestAnimationFrame(frame);
  }
