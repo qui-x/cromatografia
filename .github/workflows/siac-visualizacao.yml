@@ -6,6 +6,7 @@ on:
       - "assets/siac-icone.svg"
       - "assets/siac-icone-app.svg"
       - "tests/siac-logo-transparencia.test.cjs"
+      - "tests/siac-logo-browser.cjs"
       - "js/ui/siac-estado-visualizacao.js"
       - "previews/siac-alternancia-foco.html"
       - "scripts/siac-visualizacao-standalone.cjs"
@@ -59,6 +60,7 @@ jobs:
           npx playwright install --with-deps chromium
       - name: Navegar em sete dimensões de tela
         run: node tests/siac-visualizacao-browser.cjs
+          node tests/siac-logo-browser.cjs
       - name: Guardar capturas
         if: always()
         uses: actions/upload-artifact@v4
