@@ -1,0 +1,43 @@
+name: "SIAC - Motor cromatográfico planar"
+on:
+  push:
+    branches: [feat/siac-motor-cromatografico]
+    paths:
+      - "js/simulation/siac-cromatografia.js"
+      - "tests/siac-cromatografia.test.cjs"
+      - "docs/SIAC-MOTOR-CROMATOGRAFICO.md"
+      - "docs/SIAC-AUDITORIA-LEGADO.md"
+      - ".github/workflows/siac-motor.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "js/simulation/siac-cromatografia.js"
+      - "tests/siac-cromatografia.test.cjs"
+      - "docs/SIAC-MOTOR-CROMATOGRAFICO.md"
+      - ".github/workflows/siac-motor.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  testar-motor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verificar sintaxe
+        run: |
+          node --check js/simulation/siac-cromatografia.js
+          node --check tests/siac-cromatografia.test.cjs
+      - name: Contrato científico e reprodutibilidade
+        run: node tests/siac-cromatografia.test.cjs
+      - name: Verificar isolamento do motor legado
+        run: |
+          node - <<'NODE'
+          const fs=require("fs");
+          const index=fs.readFileSync("index.html","utf8");
+          if(index.includes('src="js/simulation/siac-cromatografia.js"'))
+            throw Error("Não ativar motor não homologado na bancada legada.");
+          console.log("Motor SIAC científico isolado do SIAB legado: OK");
+          NODE
