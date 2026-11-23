@@ -63,5 +63,10 @@
     "estado": "adaptado",
     "motivo": "Corrigir título dinâmico da aba para 'Início · SIAC' e demais telas; evitar SIAB no título de navegação.",
     "teste": "node tests/siac-identidade.test.cjs; node scripts/siac-capturar-abertura.cjs"
+  },
+  "js/ui/workspace.js": {
+    "estado": "adaptado",
+    "motivo": "Adequação comprovada da barra de Foco, Visão geral e lançadores do workspace à bancada SIAC, preservando organização e comandos SIAB.",
+    "teste": "node tests/siac-coluna.test.cjs; node tests/siac-identidade.test.cjs"
   }
 }
