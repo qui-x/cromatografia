@@ -374,9 +374,13 @@ function frame(t){
 }
 $("registrar").addEventListener("click",()=>{
  const coleta=F.integrate(plano,perfil.trechos);
- const linhas=coleta.frascos.filter(f=>f.ativo).map((f,i)=>'<text x="38" y="'+(535+i*19)+'" fill="#17384d" font-size="13">'+
-  f.frasco+' · '+fmt(f.inicioMl,1)+'–'+fmt(f.fimMl,1)+' mL · '+fmt(f.volumeMl,2)+' mL</text>').join("");
- const dados='Eluição: '+fmt(volume,2)+' / '+fmt(estado.config.volumeTotalMl,2)+' mL · Descarte final planejado: '+fmt(coleta.descarte.volumeMl,2)+' mL';
+ const linhas=coleta.frascos.filter(f=>f.ativo).map((f,i)=>{
+  const real=calculoNoVolume(f.frasco,volume);
+  return '<text x="38" y="'+(535+i*19)+'" fill="#17384d" font-size="13">'+
+    f.frasco+' · janela '+fmt(f.inicioMl,1)+'–'+fmt(f.fimMl,1)+' mL · efetivamente coletado '+fmt(real.volume,2)+' mL</text>';
+ }).join("");
+ const coletadoAteAgora=coleta.frascos.filter(f=>f.ativo).reduce((s,f)=>s+calculoNoVolume(f.frasco,volume).volume,0);
+ const dados='Eluição: '+fmt(volume,2)+' / '+fmt(estado.config.volumeTotalMl,2)+' mL · Descarte até agora: '+fmt(Math.max(0,volume-coletadoAteAgora),2)+' mL';
  const documento='<?xml version="1.0" encoding="UTF-8"?>'+
  '<svg xmlns="http://www.w3.org/2000/svg" width="900" height="820" viewBox="0 0 900 820">'+
  '<rect width="900" height="820" fill="#fff"/>'+
