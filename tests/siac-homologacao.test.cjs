@@ -8,18 +8,18 @@ assert.equal(report.resumo.comUmOuMaisMetodosDeRetencao,42);
 assert.equal(report.resumo.comDoisOuMaisMetodosDeRetencao,40,
   "os 20 candidatos com dois métodos devem ter evidência individual");
 assert.equal(report.resumo.comDoisMetodosESolventesContrastantes,40);
-assert.equal(report.resumo.completamenteHomologados,0,
-  "catálogo experimental ainda não homologado segundo a política de dois métodos");
-assert.equal(report.resumo.faltamParaMetaMinima,40);
-assert.equal(report.resumo.faltamParaMetaAmpliada,55);
-assert(report.candidatos.every(c=>!c.homologacaoCompleta));
+assert.equal(report.resumo.completamenteHomologados,2,
+ "cafeína e paracetamol têm dados HPTLC com dois eluentes e fonte primária conferida");
+assert.equal(report.resumo.faltamParaMetaMinima,38);
+assert.equal(report.resumo.faltamParaMetaAmpliada,53);
+assert.deepEqual(report.candidatos.filter(c=>c.homologacaoCompleta).map(c=>c.id).sort(),["caffeine","paracetamol"]);
 const novos40=["methyl_orange","sudan_iv","quercetin","curcumin","caffeine","paracetamol",
  "ibuprofen","acetylsalicylic_acid","beta_carotene","lutein"];
 for(const id of novos40){
  const x=h.avaliarSubstancia(id,base);
  assert(x.metodosComRetencaoIndividual>=2,"dois métodos faltando: "+id);
  assert(x.comparacoesPossiveis.length>0,"solventes sem contraste real: "+id);
- assert.equal(x.homologacaoCompleta,false,"não homologar cientificamente apenas por bibliografia");
+ assert.equal(x.homologacaoCompleta,["caffeine","paracetamol"].includes(id),"somente dois analitos HPTLC foram revisados na fonte primária");
 }
 const porGrupo=report.candidatos.filter(c=>c.comparacoesPossiveis.length>0)
  .reduce((acc,c)=>(acc[c.grupo]=(acc[c.grupo]||0)+1,acc),{});
@@ -43,8 +43,9 @@ assert.deepEqual(
  matriz.candidatos.filter(c=>c.doisSolventesContrastantesEmDoisMetodos).map(c=>c.id).sort(),
  report.candidatos.filter(c=>c.comparacoesPossiveis.length>0).map(c=>c.id).sort(),
  "pares de métodos em pesquisa precisam coincidir entre a matriz publicada e o motor");
-assert(matriz.candidatos.every(c=>!c.homologacaoCompleta),
- "não promover tabela didática para homologação");
+assert.deepEqual(matriz.candidatos.filter(c=>c.homologacaoCompleta).map(c=>c.id).sort(),["caffeine","paracetamol"]);
+assert.equal(matriz.resumo.liberadosParaSimulacaoReal,0,"HPTLC não pode abrir a cena de CCD ou coluna");
+assert(matriz.candidatos.every(c=>!c.homologacaoCompleta||c.disponibilidadeSimulacaoReal===false));
 
 assert.equal(h.avaliarSubstancia("glycine",base).metodosComRetencaoIndividual,4);
 assert.equal(h.avaliarSubstancia("chlorophyll_a",base).metodosComRetencaoIndividual,2);
