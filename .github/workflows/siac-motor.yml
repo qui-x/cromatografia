@@ -6,9 +6,11 @@ on:
       - "js/simulation/siac-cromatografia.js"
       - "js/simulation/siac-fracionamento.js"
       - "js/simulation/siac-coluna.js"
+      - "previews/coluna-laboratorio.html"
       - "tests/siac-cromatografia.test.cjs"
       - "tests/siac-fracionamento.test.cjs"
       - "tests/siac-coluna.test.cjs"
+      - "tests/siac-coluna-browser.cjs"
       - "docs/SIAC-MOTOR-CROMATOGRAFICO.md"
       - "docs/SIAC-AUDITORIA-LEGADO.md"
       - ".github/workflows/siac-motor.yml"
@@ -18,9 +20,11 @@ on:
       - "js/simulation/siac-cromatografia.js"
       - "js/simulation/siac-fracionamento.js"
       - "js/simulation/siac-coluna.js"
+      - "previews/coluna-laboratorio.html"
       - "tests/siac-cromatografia.test.cjs"
       - "tests/siac-fracionamento.test.cjs"
       - "tests/siac-coluna.test.cjs"
+      - "tests/siac-coluna-browser.cjs"
       - "docs/SIAC-MOTOR-CROMATOGRAFICO.md"
       - ".github/workflows/siac-motor.yml"
   workflow_dispatch:
@@ -42,6 +46,7 @@ jobs:
           node --check tests/siac-cromatografia.test.cjs
           node --check tests/siac-fracionamento.test.cjs
           node --check tests/siac-coluna.test.cjs
+          node --check tests/siac-coluna-browser.cjs
       - name: Contrato científico e reprodutibilidade
         run: |
           node tests/siac-cromatografia.test.cjs
@@ -56,3 +61,23 @@ jobs:
             throw Error("Não ativar motor não homologado na bancada legada.");
           console.log("Motor SIAC científico isolado do SIAB legado: OK");
           NODE
+
+  testar-interface:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@v4
+      - name: Preparar navegador
+        run: |
+          npm ci --ignore-scripts
+          npx playwright install --with-deps chromium
+      - name: Testar interface da coluna e coleta
+        run: node tests/siac-coluna-browser.cjs
+      - name: Preservar capturas
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: siac-coluna-previa
+          path: docs/evidencias/siac-coluna/
+          if-no-files-found: warn
+          retention-days: 14
