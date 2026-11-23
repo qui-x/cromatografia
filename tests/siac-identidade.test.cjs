@@ -17,9 +17,13 @@ const preview=read("previews/abertura-v4.html");
 // Uma marca, duas aplicações: transparência nas telas e fundo sólido no app.
 assert.match(svg, /<svg[\s>]/);
 assert.match(svg, /cromatogr/i);
-assert.doesNotMatch(svg, /<linearGradient|<radialGradient|opacity=/i);
+assert.match(svg, /data:image\/webp;base64,/);
+assert.match(app, /data:image\/webp;base64,/);
+assert.match(svg, /Placa cromatográfica inclinada/);
+assert.match(app, /A mesma placa cromatográfica/);
+assert.match(js, /iconeOficial/);
 assert.doesNotMatch(svg, /<rect width="192" height="192" fill="#0B5472"/i);
-assert.match(app, /<rect width="192" height="192" fill="#0B5472"/i);
+assert.match(app, /<rect width="160" height="160" rx="28" fill="#002e40"/i);
 assert.match(html, /SIAC — A Identidade das Cores Ocultas/);
 assert.match(html, /<svg class="abertura-tubos"/);
 assert.doesNotMatch(html, /<div class="abertura-marca">\s*<img/);
