@@ -82,25 +82,25 @@ SIAB.abertura = (() => {
     ).join("");
     const pigmentos = AMOSTRAS.flatMap((a,i) =>
       a.bandas.flatMap((b,j) => [
-        `<radialGradient id="siac-v4-mancha-${i}-${j}" cx="47%" cy="47%" r="96%" fx="43%" fy="42%" color-interpolation="sRGB">
-          <stop offset="0%" stop-color="${misturar(b.cor,"#172B32",.22)}" stop-opacity=".96"/>
-          <stop offset="12%" stop-color="${b.cor}" stop-opacity=".94"/>
-          <stop offset="27%" stop-color="${misturar(b.cor,"#FFFFFF",.09)}" stop-opacity=".84"/>
-          <stop offset="42%" stop-color="${misturar(b.cor,"#FFFFFF",.21)}" stop-opacity=".68"/>
-          <stop offset="57%" stop-color="${misturar(b.cor,"#FFFFFF",.34)}" stop-opacity=".45"/>
-          <stop offset="70%" stop-color="${misturar(b.cor,"#FFFFFF",.50)}" stop-opacity=".26"/>
-          <stop offset="82%" stop-color="${misturar(b.cor,"#FFFFFF",.65)}" stop-opacity=".11"/>
-          <stop offset="92%" stop-color="${misturar(b.cor,"#FFFFFF",.80)}" stop-opacity=".035"/>
+        `<radialGradient id="siac-v4-mancha-${i}-${j}" cx="46%" cy="45%" r="100%" fx="42%" fy="40%" color-interpolation="sRGB">
+          <stop offset="0%" stop-color="${misturar(b.cor,"#1A2B30",.12)}" stop-opacity=".74"/>
+          <stop offset="10%" stop-color="${b.cor}" stop-opacity=".70"/>
+          <stop offset="22%" stop-color="${misturar(b.cor,"#FFFFFF",.08)}" stop-opacity=".62"/>
+          <stop offset="36%" stop-color="${misturar(b.cor,"#FFFFFF",.18)}" stop-opacity=".50"/>
+          <stop offset="50%" stop-color="${misturar(b.cor,"#FFFFFF",.30)}" stop-opacity=".36"/>
+          <stop offset="64%" stop-color="${misturar(b.cor,"#FFFFFF",.46)}" stop-opacity=".23"/>
+          <stop offset="78%" stop-color="${misturar(b.cor,"#FFFFFF",.62)}" stop-opacity=".12"/>
+          <stop offset="90%" stop-color="${misturar(b.cor,"#FFFFFF",.78)}" stop-opacity=".05"/>
           <stop offset="100%" stop-color="${misturar(b.cor,"#FFFFFF",.90)}" stop-opacity="0"/>
         </radialGradient>`,
         `<linearGradient id="siac-v4-rastro-${i}-${j}" x1="0" x2="0" y1="0" y2="1" color-interpolation="sRGB">
-          <stop offset="0%" stop-color="${misturar(b.cor,"#172B32",.14)}" stop-opacity=".37"/>
-          <stop offset="13%" stop-color="${b.cor}" stop-opacity=".32"/>
-          <stop offset="29%" stop-color="${misturar(b.cor,"#FFFFFF",.14)}" stop-opacity=".24"/>
-          <stop offset="46%" stop-color="${misturar(b.cor,"#FFFFFF",.28)}" stop-opacity=".17"/>
-          <stop offset="64%" stop-color="${misturar(b.cor,"#FFFFFF",.48)}" stop-opacity=".09"/>
-          <stop offset="82%" stop-color="${misturar(b.cor,"#FFFFFF",.68)}" stop-opacity=".03"/>
-          <stop offset="100%" stop-color="${misturar(b.cor,"#FFFFFF",.86)}" stop-opacity="0"/>
+          <stop offset="0%" stop-color="${misturar(b.cor,"#1A2B30",.06)}" stop-opacity=".22"/>
+          <stop offset="14%" stop-color="${b.cor}" stop-opacity=".20"/>
+          <stop offset="30%" stop-color="${misturar(b.cor,"#FFFFFF",.16)}" stop-opacity=".16"/>
+          <stop offset="48%" stop-color="${misturar(b.cor,"#FFFFFF",.32)}" stop-opacity=".11"/>
+          <stop offset="66%" stop-color="${misturar(b.cor,"#FFFFFF",.50)}" stop-opacity=".07"/>
+          <stop offset="84%" stop-color="${misturar(b.cor,"#FFFFFF",.72)}" stop-opacity=".025"/>
+          <stop offset="100%" stop-color="${misturar(b.cor,"#FFFFFF",.88)}" stop-opacity="0"/>
         </linearGradient>`
       ])
     ).join("");
@@ -125,6 +125,9 @@ SIAB.abertura = (() => {
         <filter id="siac-v4-borda-difusa" x="-50%" y="-100%" width="200%" height="300%">
           <feGaussianBlur stdDeviation="3.8"/>
         </filter>
+        <filter id="siac-v4-absorvido" x="-25%" y="-75%" width="150%" height="250%">
+          <feGaussianBlur stdDeviation="1.15"/>
+        </filter>
         ${CENTROS.map((cx,i) => `
           <clipPath id="siac-v4-clip-${i}">
             <rect x="${cx-65}" y="100" width="130" height="289" rx="2"/>
@@ -134,25 +137,33 @@ SIAB.abertura = (() => {
     `;
   }
   function construirBanda(cx,i,j,b) {
-    const x = cx + (j%2 ? 1.8 : -1.4);
+    // A dispersão é diferente em cada placa, mas sempre reprodutível.
+    // O formato acompanha o tamanho da banda, sem elipses uniformes.
+    const escala=(b.larg/28).toFixed(3);
+    const assimetria=(1+0.045*Math.sin(i*4+j*2)).toFixed(3);
+    const inclinacao=((i*3+j*7)%9-4)*.6;
     return `
       <g class="siac-v4-componente" data-banda="${i}-${j}">
         <path class="siac-v4-trilha-nevoa" data-nevoa="${i}-${j}"
           fill="url(#siac-v4-rastro-${i}-${j})" filter="url(#siac-v4-borda-difusa)"/>
         <path class="siac-v4-trilha" data-trilha="${i}-${j}"
-          fill="url(#siac-v4-rastro-${i}-${j})" />
+          fill="url(#siac-v4-rastro-${i}-${j})"/>
         <g class="siac-v4-manchas" data-mancha="${i}-${j}">
-          <ellipse cx="0" cy="0" rx="${b.larg*1.68}" ry="19"
-            fill="url(#siac-v4-mancha-${i}-${j})" opacity=".58"
+          <g class="siac-v4-forma-organica"
+            transform="rotate(${inclinacao}) scale(${escala} ${assimetria})">
+          <path class="siac-v4-halo-absorvido"
+            d="M-41 -3 C-37 -13 -21 -23 -6 -20 C8 -24 26 -15 37 -8
+              C45 0 37 12 25 17 C13 22 -5 17 -15 20
+              C-30 15 -42 8 -41 -3Z"
+            fill="url(#siac-v4-mancha-${i}-${j})" opacity=".34"
             filter="url(#siac-v4-borda-difusa)"/>
-          <path d="M${-b.larg} 1 C${-b.larg+2} -9 -14 -11 0 -10
-            C13 -11 ${b.larg-2} -7 ${b.larg} 0
-            C${b.larg-3} 9 9 12 0 10
-            C-14 12 ${-b.larg+3} 9 ${-b.larg} 1Z"
-            fill="url(#siac-v4-mancha-${i}-${j})"/>
-          <ellipse cx="-2" cy="-1.2" rx="${b.larg*.58}" ry="5.4"
-            fill="url(#siac-v4-mancha-${i}-${j})" opacity=".24"
-            filter="url(#siac-v4-borda-difusa)"/>
+          <path class="siac-v4-pigmento-absorvido"
+            d="M-29 -3 C-27 -9 -17 -13 -8 -12 C0 -17 12 -11 21 -8
+              C29 -4 30 2 24 8 C15 15 4 10 -5 13
+              C-17 10 -28 6 -29 -3Z"
+            fill="url(#siac-v4-mancha-${i}-${j})" opacity=".75"
+            filter="url(#siac-v4-absorvido)"/>
+          </g>
         </g>
       </g>`;
   }
@@ -269,32 +280,40 @@ SIAB.abertura = (() => {
       r.frente.setAttribute("d",`M${(cx-61)} ${(frente+wobble).toFixed(2)}q20 -1.6 40 0t41 0t41 0`);
       r.frente.style.opacity=String(.72*suave(faixa(p.u,0,.20)));
       r.bandas.forEach((b,j)=>{
-        const v=p.bandas[j], desloc=v.deslocamento, orig=ORIGEM, y=v.y;
-        // Afinidade relativa sempre abaixo da frente do solvente.
-        b.grupo.setAttribute("transform",`translate(${cx+(j%2?1.8:-1.4)} ${y.toFixed(2)}) scale(${(0.74+0.26*suave(p.u)).toFixed(3)} ${(0.68+0.36*suave(p.u)).toFixed(3)})`);
-        b.grupo.style.opacity=String(suave(faixa(p.u,0,.38)));
-        const tilt=Math.sin(2.1*j+i)*2.0;
-        const ribbon=Math.max(3.5, v.largura*.22)*(1+.08*Math.sin(i+j));
-        const startY=Math.min(orig-1,y+4);
+        const v=p.bandas[j], orig=ORIGEM, y=v.y;
+        // A banda permanece abaixo da frente do eluente, mas sua forma não
+        // é um círculo rígido. O desvio é leve, determinístico e por analito.
+        const leveJitterX=Math.sin(i*1.7+j*2.1)*1.4;
+        const leveJitterY=Math.cos(i*1.2+j*1.8)*.8;
+        b.grupo.setAttribute("transform",
+          `translate(${(cx+leveJitterX).toFixed(2)} ${(y+leveJitterY).toFixed(2)})
+          scale(${(.90+.14*suave(faixa(p.u,0,.7))).toFixed(3)}
+                ${(.86+.18*suave(faixa(p.u,0,.7))).toFixed(3)})`);
+        b.grupo.style.opacity=String(suave(faixa(p.u,0,.42)));
+
+        // A trilha é um vestígio de concentração, não uma haste geométrica.
+        // A largura decresce em direção à origem e o contorno se dispersa.
+        const startY=Math.min(orig-1,y+5.5);
         const endY=orig-1;
         const trailH=Math.max(0,endY-startY);
-        const cx0=cx+tilt;
-        // Rastro espacial: fita suavemente ondulada, que afina em direção à origem.
-        // A cor e a opacidade decaem progressivamente, sem linhas rígidas.
-        const caminho=trailH<.6?"":`M ${(cx0-ribbon).toFixed(2)} ${startY.toFixed(2)}
-          C ${(cx0-ribbon*.74).toFixed(2)} ${(startY+trailH*.27).toFixed(2)}
-            ${(cx0-3.2).toFixed(2)} ${(startY+trailH*.72).toFixed(2)}
-            ${(cx0-1.0).toFixed(2)} ${endY.toFixed(2)}
-          Q ${cx0.toFixed(2)} ${(endY+1).toFixed(2)}
-            ${(cx0+1.0).toFixed(2)} ${endY.toFixed(2)}
-          C ${(cx0+3.3).toFixed(2)} ${(startY+trailH*.70).toFixed(2)}
-            ${(cx0+ribbon*.77).toFixed(2)} ${(startY+trailH*.25).toFixed(2)}
-            ${(cx0+ribbon).toFixed(2)} ${startY.toFixed(2)}Z`;
+        const larguraTopo=Math.max(5.2,v.largura*.30);
+        const larguraBase=Math.max(2.0,v.largura*.11);
+        const x=cx+leveJitterX;
+        const caminho=trailH<.8?"":`
+          M ${(x-larguraTopo).toFixed(2)} ${startY.toFixed(2)}
+          C ${(x-larguraTopo*.86).toFixed(2)} ${(startY+trailH*.22).toFixed(2)}
+            ${(x-larguraBase*1.1).toFixed(2)} ${(startY+trailH*.76).toFixed(2)}
+            ${(x-larguraBase).toFixed(2)} ${endY.toFixed(2)}
+          Q ${x.toFixed(2)} ${(endY+1.2).toFixed(2)}
+            ${(x+larguraBase).toFixed(2)} ${endY.toFixed(2)}
+          C ${(x+larguraBase*1.06).toFixed(2)} ${(startY+trailH*.72).toFixed(2)}
+            ${(x+larguraTopo*.82).toFixed(2)} ${(startY+trailH*.20).toFixed(2)}
+            ${(x+larguraTopo).toFixed(2)} ${startY.toFixed(2)}Z`;
         b.rastro.setAttribute("d",caminho);
         b.nevoa.setAttribute("d",caminho);
-        const aparicao=suave(faixa(p.u,.025,.50));
-        b.rastro.style.opacity=String((.36+v.traco*.28)*aparicao);
-        b.nevoa.style.opacity=String((.29+v.traco*.25)*aparicao);
+        const aparicao=suave(faixa(p.u,.03,.52));
+        b.rastro.style.opacity=String((.16+v.traco*.18)*aparicao);
+        b.nevoa.style.opacity=String((.12+v.traco*.14)*aparicao);
       });
     });
     // Encerramento ao estilo SIAB: desfazer cena e deixar apenas o símbolo central.

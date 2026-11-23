@@ -48,6 +48,15 @@ async function main(){
       .allTextContents();
     assert.deepEqual(rotulos.map(v=>v.replace(/\s+/g," ").trim()),
       ["A TINTA","B PIGMENTOS","C CORANTES"]);
+    assert.equal(await page.locator("#abertura .siac-v4-halo-absorvido").count(),10);
+    assert.equal(await page.locator("#abertura .siac-v4-pigmento-absorvido").count(),10);
+    assert.equal(await page.locator("#abertura .siac-v4-manchas ellipse").count(),0,
+      "Não usar oval rígido no interior das bandas");
+    assert.equal(await page.locator("#abertura #siac-v4-mancha-0-0 stop").first()
+      .getAttribute("stop-opacity"),".74","Centro não pode voltar à opacidade excessiva");
+    const blend=await page.locator("#abertura [data-mancha='0-0']")
+      .evaluate(el=>getComputedStyle(el).mixBlendMode);
+    assert.equal(blend,"multiply","Pigmento deve se mesclar com o papel");
     const trilhaCss=await page.locator('[data-trilha="0-0"]').evaluate(el=>getComputedStyle(el).fill);
     assert.notEqual(trilhaCss,"none","Rastro precisa usar preenchimento degradê");
 
