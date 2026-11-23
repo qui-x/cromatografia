@@ -1,0 +1,24 @@
+name: "SIAC — Política de três branches"
+on:
+  create:
+  push:
+    branches: ["**"]
+  schedule:
+    - cron: "15 10 * * *"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  governanca:
+    name: "Exigir exatamente os três branches oficiais"
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validar regras sem acesso à rede
+        run: node tests/siac-politica-branches.test.cjs
+      - name: Conferir branches reais do GitHub
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: node scripts/siac-validar-branches.cjs
