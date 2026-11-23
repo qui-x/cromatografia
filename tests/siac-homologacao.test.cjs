@@ -4,16 +4,23 @@ const h=require("../js/simulation/siac-homologacao.js");
 const base=require("../data/siac/analitos-protocolos.v1.json");
 const report=h.auditarCatalogo(base);
 assert.equal(report.resumo.catalogados,76);
-assert.equal(report.resumo.comUmOuMaisMetodosDeRetencao,11);
-assert.equal(report.resumo.comDoisOuMaisMetodosDeRetencao,0,
-  "mistura de solventes em um método não constitui dois métodos");
-assert.equal(report.resumo.comDoisMetodosESolventesContrastantes,0);
+assert.equal(report.resumo.comUmOuMaisMetodosDeRetencao,24);
+assert.equal(report.resumo.comDoisOuMaisMetodosDeRetencao,20,
+  "os 20 candidatos com dois métodos devem ter evidência individual");
+assert.equal(report.resumo.comDoisMetodosESolventesContrastantes,20);
 assert.equal(report.resumo.completamenteHomologados,0,
   "catálogo experimental ainda não homologado segundo a política de dois métodos");
 assert.equal(report.resumo.faltamParaMetaMinima,40);
 assert.equal(report.resumo.faltamParaMetaAmpliada,55);
 assert(report.candidatos.every(c=>!c.homologacaoCompleta));
-assert.equal(h.avaliarSubstancia("glycine",base).metodosComRetencaoIndividual,1);
+assert.equal(h.avaliarSubstancia("glycine",base).metodosComRetencaoIndividual,4);
+assert.equal(h.avaliarSubstancia("chlorophyll_a",base).metodosComRetencaoIndividual,2);
+assert.equal(h.avaliarSubstancia("pheophytin_b",base).metodosComRetencaoIndividual,2);
+const pheo=h.avaliarSubstancia("pheophytin_b",base);
+assert(pheo.metodos.some(m=>m.registrosRfIntervalos===1),
+ "o Rf da fonte deve permanecer como intervalo, não estimativa pontual");
+assert.equal(h.avaliarSubstancia("arginine",base).metodosComRetencaoIndividual,1,
+ "somente um método documentado para arginina");
 assert.equal(h.avaliarSubstancia("caffeine",base).metodosComRetencaoIndividual,0);
 assert.throws(()=>h.avaliarSubstancia("inventado",base),RangeError);
 const candidate={...base.candidatos.find(c=>c.id==="glycine"),
