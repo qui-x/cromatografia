@@ -224,7 +224,7 @@ SIAC.laboratorio=(()=>{
    '<text x="179" y="358" fill="#526f7c" font-size="11">Torneira</text>'+
    '</svg>';
  }
- function tubeSVG(f){
+ function tubeSVG(f,showLabel=true){
   const available=f?.volumeMl||0,j=plan?.janelas.find(x=>x.frasco===f?.id),capacity=plan?.capacidadeFrascoMl||Math.max(1,available);
   const h=Math.min(110,120*available/capacity),components=f?.componentesMg||{};
   const visible=col.config.componentes.filter(c=>c.corVisivel&&components[c.id]>1e-10);
@@ -243,7 +243,7 @@ SIAC.laboratorio=(()=>{
    '<g clip-path="url(#sciac-tube)"><rect x="52" y="'+(177-h)+'" width="67" height="'+h+'" fill="'+color+'" opacity=".73"/></g>'+
    '<path d="M50 22V147Q50 177 85 177Q120 177 120 147V22M45 22H125" fill="none" stroke="#2c6880" stroke-width="4"/>'+
    uptake+
-   '<text x="85" y="199" text-anchor="middle" font-size="15" fill="currentColor">'+esc(f?.id||selected)+'</text></svg>';
+   (showLabel?'<text x="85" y="199" text-anchor="middle" font-size="15" fill="currentColor">'+esc(f?.id||selected)+'</text>':"")+'</svg>';
  }
  function paperSVG(p,id,large=true){
   const imerso=p.etapa==="desenvolvendo";
@@ -295,8 +295,8 @@ SIAC.laboratorio=(()=>{
     (p.uv.length?"#d9f1e4":"#fff9e9")+'" stroke="#447687" stroke-width="2.5"/>'+
    '<path d="M62 204H156" stroke="#7b929c" stroke-width="2" stroke-dasharray="4 4"/>'+
    marcas+solvente+vidro+
-   '<text x="110" y="258" text-anchor="middle" fill="currentColor" font-size="14">'+
-   esc(id)+'</text></svg>';
+   (large?'<text x="110" y="258" text-anchor="middle" fill="currentColor" font-size="14">'+
+   esc(id)+'</text>':"")+'</svg>';
  }
  function drawGraph(){
   if(!col)return "";
@@ -367,7 +367,7 @@ SIAC.laboratorio=(()=>{
    (group==="frascos"?"Frascos coletados":"Papéis das frações")+'">'+fracs.map(f=>{
    const p=paper(f.id),isPaper=group==="papeis";
    return '<button class="siac-card" type="button" data-open-fraction="'+f.id+'" data-open-focus="'+(isPaper?"amostra":"tubo")+'">'+
-     (isPaper?paperSVG(p,"P"+f.id.slice(1),false):tubeSVG(f))+
+     (isPaper?paperSVG(p,"P"+f.id.slice(1),false):tubeSVG(f,false))+
      '<strong>'+(isPaper?"P"+f.id.slice(1):f.id)+'</strong>'+
      '<small>'+(isPaper?esc(p.etapa):fmt(f.volumeMl)+" mL")+'</small></button>';
   }).join("")+'</div>':'<p class="siac-empty">Nenhum frasco preenchido até agora. Os tubos aparecerão conforme o eluato for coletado.</p>')+
