@@ -688,10 +688,13 @@ function interfaceMontagem(container,onMode){
  function updateInfo(){
   const a=substantia(state.substanciaId),options=sistemasPara(state.substanciaId),p=options.find(x=>x.id===state.sistemaId);
   if(!a){$("siac-catalogo-dados").innerHTML='<p>Selecione um composto para consultar seus métodos.</p>';return;}
+  const comRf=options.filter(x=>x.rf!==null).length;
+  const cobertura='<p class="siac-hint"><strong>Cobertura científica: '+comRf+
+   '/2 métodos com retenção individual.</strong> Homologação exige dois métodos independentes com sistemas de solventes quimicamente diferentes, identidade e condições conferidas. Nenhum desses candidatos está homologado para simulação quantitativa real nesta base.</p>';
   if(!options.length){$("siac-catalogo-dados").innerHTML='<p><strong>'+escapeHTML(a.nome)+'</strong> · '+escapeHTML(FAMILIAS[a.grupo])+
-   '</p><p>Não há sistema eluente individual documentado no catálogo atual. Não é permitido atribuir um solvente ou estimar Rf por suposição.</p>';return;}
+   '</p><p>Não há sistema eluente individual documentado no catálogo atual. Não é permitido atribuir um solvente ou estimar Rf por suposição.</p>'+cobertura;return;}
   if(!p){$("siac-catalogo-dados").innerHTML='<p><strong>'+escapeHTML(a.nome)+'</strong> · '+options.length+
-   ' sistema(s) associado(s) em literatura. Escolha a fase móvel para consultar as condições.</p>';return;}
+   ' sistema(s) associado(s) em literatura. Escolha a fase móvel para consultar as condições.</p>'+cobertura;return;}
   const rf=p.rf===null?'<p>Rf: ainda não documentado para este composto.</p>':
    '<p><strong>Rf bibliográfico: '+p.rf.toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:3})+
    '</strong> · <span>não é valor medido no SIAC. Use a régua e o cálculo na doca Ver.</span></p>';
@@ -699,7 +702,7 @@ function interfaceMontagem(container,onMode){
    '<p>Suporte: '+escapeHTML(p.faseEstacionaria)+' · Detecção: '+escapeHTML(p.detector)+'</p>'+
    (p.preTratamento?'<p>Pré-tratamento: '+escapeHTML(p.preTratamento)+'</p>':"")+
    rf+'<p class="siac-hint">Fonte: '+escapeHTML(p.fonte)+' · Evidência: '+escapeHTML(p.evidencia)+
-   '. Condições experimentais incompletas; não permite simular retenção em coluna ou confirmar identidade.</p>';
+   '. Condições experimentais incompletas; não permite simular retenção em coluna ou confirmar identidade.</p>'+cobertura;
  }
  function notify(){onMode?.({...state,substancia:substantia(state.substanciaId),sistema:sistemasPara(state.substanciaId).find(x=>x.id===state.sistemaId)||null});}
  card.addEventListener("click",ev=>{
