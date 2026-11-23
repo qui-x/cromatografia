@@ -55,7 +55,7 @@
     const volumeGeometricoMl=Math.PI*(diametroInternoMm/2)**2*comprimentoMm/1000;
     const volumeMortoMl=volumeGeometricoMl*porosidade;
     const vazaoMlMin=numero(c.vazaoMlMin,"vazaoMlMin",0.001,100);
-    const volumeTotalMl=numero(c.volumeTotalMl,"volumeTotalMl",0.1,10);
+    const volumeTotalMl=numero(c.volumeTotalMl,"volumeTotalMl",0.1,1000);
     const amostra=c.amostra?objeto(c.amostra,"amostra"):null;
     if(!amostra)erro("amostra obrigatória");
     texto(amostra.id,"amostra.id");
