@@ -82,7 +82,7 @@
     typeof p.auditoriaCientifica?.fontePrimaria!=="string"||
     p.auditoriaCientifica.fontePrimaria!==fonteCatalogo[p.fonte]||
     !p.auditoriaCientifica.secoesConferidas||
-    !/^\\d{4}-\\d{2}-\\d{2}$/.test(p.auditoriaCientifica.dataConferencia||"")
+    !/^\d{4}-\d{2}-\d{2}$/.test(p.auditoriaCientifica.dataConferencia||"")
   ))deficits.push("auditoria_primaria_incompleta");
   if(p.status!=="homologado")deficits.push("protocolo_nao_homologado");
   if(p.faseEstacionaria?.homologada!==true)deficits.push("suporte_nao_homologado");
