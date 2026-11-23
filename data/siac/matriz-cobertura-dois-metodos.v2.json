@@ -1,9 +1,9 @@
 {
-  "versao": "2.5.0",
+  "versao": "2.6.0",
   "data": "2026-11-23",
   "titulo": "Matriz preliminar de cobertura científica do SIAC",
   "fonte": "data/siac/analitos-protocolos.v1.json",
-  "observacao": "40 substâncias têm dois sistemas bibliográficos contrastantes; 2 (cafeína e paracetamol) com método científico NP/RP-HPTLC conferido em literatura primária e identidade molecular CAS/CID verificada, mas nenhum liberado para cena física do SIAC. Não aplicar HPTLC a CCD genérica, papel ou coluna.",
+  "observacao": "Duas substâncias (cafeína e paracetamol) com dados científicos homologados exclusivamente em HPTLC NP/RP de artigo primário, sem cena de HPTLC operacional. Methyl orange/Sudan IV têm Rf na literatura primária HFSA e métodos conferidos, mas sem replicatas e sem caracterização de incerteza; não homologar nem extrapolar.",
   "regras": {
     "minimoMetodosIndependentesComRetencaoIndividual": 2,
     "minimoSolventesQuimicamenteDistintos": 2,
@@ -7877,7 +7877,15 @@
             }
           ],
           "rfIntervalo": [],
-          "estado": "referencia_primaria_em_revisao_nao_homologada"
+          "estado": "referencia_primaria_conferida_sem_replicatas",
+          "auditoriaCientifica": {
+            "estado": "fonte_primaria_conferida_sem_replicatas",
+            "doi": "10.3390/separations13110336",
+            "local": "Table 2; seção 2.4; seção 3.2",
+            "replicatas": null,
+            "desvioPadrao": null,
+            "proibicao": "não gerar dispersão experimental fictícia; não homologar cena HFSA"
+          }
         },
         {
           "protocoloId": "tlc_hfsa_2026_mph2_hexane_isopropanol_water_acetic",
@@ -7923,7 +7931,15 @@
             }
           ],
           "rfIntervalo": [],
-          "estado": "referencia_primaria_em_revisao_nao_homologada"
+          "estado": "referencia_primaria_conferida_sem_replicatas",
+          "auditoriaCientifica": {
+            "estado": "fonte_primaria_conferida_sem_replicatas",
+            "doi": "10.3390/separations13110336",
+            "local": "Table 2; seção 2.4; seção 3.2",
+            "replicatas": null,
+            "desvioPadrao": null,
+            "proibicao": "não gerar dispersão experimental fictícia; não homologar cena HFSA"
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -7948,7 +7964,8 @@
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar",
+        "replicatas_nao_reportadas_hfsa"
       ]
     },
     {
@@ -8082,7 +8099,15 @@
             }
           ],
           "rfIntervalo": [],
-          "estado": "referencia_primaria_em_revisao_nao_homologada"
+          "estado": "referencia_primaria_conferida_sem_replicatas",
+          "auditoriaCientifica": {
+            "estado": "fonte_primaria_conferida_sem_replicatas",
+            "doi": "10.3390/separations13110336",
+            "local": "Table 2; seção 2.4; seção 3.2",
+            "replicatas": null,
+            "desvioPadrao": null,
+            "proibicao": "não gerar dispersão experimental fictícia; não homologar cena HFSA"
+          }
         },
         {
           "protocoloId": "tlc_hfsa_2026_mph2_hexane_isopropanol_water_acetic",
@@ -8128,7 +8153,15 @@
             }
           ],
           "rfIntervalo": [],
-          "estado": "referencia_primaria_em_revisao_nao_homologada"
+          "estado": "referencia_primaria_conferida_sem_replicatas",
+          "auditoriaCientifica": {
+            "estado": "fonte_primaria_conferida_sem_replicatas",
+            "doi": "10.3390/separations13110336",
+            "local": "Table 2; seção 2.4; seção 3.2",
+            "replicatas": null,
+            "desvioPadrao": null,
+            "proibicao": "não gerar dispersão experimental fictícia; não homologar cena HFSA"
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -8153,7 +8186,8 @@
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_e_condicoes_a_homologar"
+        "identidade_primaria_e_condicoes_a_homologar",
+        "replicatas_nao_reportadas_hfsa"
       ]
     }
   ]
