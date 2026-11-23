@@ -79,12 +79,13 @@ SIAC.laboratorio=(()=>{
   if(SIAC.catalogo?.interfaceMontagem){
     SIAC.catalogo.interfaceMontagem(ui,selecionado=>{
       catalogSelection=selecionado;
-      catalogMode=selecionado.modo==="pesquisa";
+      catalogMode=selecionado.modo!=="demo";
       if(catalogMode)running=false;
       ui.classList.toggle("siac-catalogo-ativo",catalogMode);
       if(ready&&enabled)render();
     });
   }
+  SIAC.hptlcDidatico?.mountIntoCatalog(ui,()=>{if(ready&&enabled)render();});
   const ver=document.createElement("section");ver.id="siac-ver";ver.innerHTML=
    '<h2>Ver · Cromatografia</h2><p id="siac-ver-contexto" class="siac-ver-contexto" aria-live="polite"></p><div id="siac-modulos" class="siac-modulos"></div>'+
    '<div id="siac-ver-itens" class="siac-itens"></div><div id="siac-ver-dados" aria-live="polite"></div>';
@@ -117,8 +118,10 @@ SIAC.laboratorio=(()=>{
      (100*clamp((e.clientX-b.left)/b.width,.29,.70)).toFixed(1)+"%");
   });
   $("focus-tab").addEventListener("click",e=>{if(!enabled)return;e.stopImmediatePropagation();e.preventDefault();
+   if(catalogSelection?.modo==="hptlc"){SIAC.hptlcDidatico?.view("placa");render();return;}
    if(view==="foco")focus=VIEWS[(VIEWS.indexOf(focus)+1)%3];else view="foco";render();},true);
   $("overview-tab").addEventListener("click",e=>{if(!enabled)return;e.stopImmediatePropagation();e.preventDefault();
+   if(catalogSelection?.modo==="hptlc"){SIAC.hptlcDidatico?.view("comparar");render();return;}
    if(view==="geral")group=GROUPS[(GROUPS.indexOf(group)+1)%2];else view="geral";render();},true);
   for(const b of [$("focus-tab"),$("overview-tab")]){
    // O renderizador SIAB legado pode reescrever rótulos e aria após a entrada.
@@ -432,6 +435,15 @@ SIAC.laboratorio=(()=>{
  function sincronizarAbas(){
   if(!enabled)return;
   const a=$("focus-tab"),b=$("overview-tab");
+  if(catalogSelection?.modo==="hptlc"){
+   const plano=SIAC.hptlcDidatico?.snapshot.view||"placa";
+   if(a.textContent!=="Placa HPTLC em foco")a.textContent="Placa HPTLC em foco";
+   if(b.textContent!=="Comparar fases HPTLC")b.textContent="Comparar fases HPTLC";
+   a.setAttribute("aria-pressed",String(plano==="placa"));
+   b.setAttribute("aria-pressed",String(plano==="comparar"));
+   a.disabled=false;b.disabled=false;
+   return;
+  }
   const focusLabel={coluna:"Coluna em foco",tubo:"Tubo em foco",amostra:"Amostra em foco"}[focus];
   if(a.textContent!==focusLabel)a.textContent=focusLabel;
   const groupLabel="Visão geral · "+(group==="frascos"?"Frascos":"Papéis")+" ";
@@ -450,6 +462,11 @@ SIAC.laboratorio=(()=>{
  }
  function renderStage(){
   const stage=$("siac-stage");if(!stage||!col)return;
+  if(catalogSelection?.modo==="hptlc"){
+   sincronizarAbas();
+   stage.innerHTML=SIAC.hptlcDidatico?.scene()||"<p>Consulta HPTLC indisponível.</p>";
+   return;
+  }
   if(catalogMode){
    const a=catalogSelection?.substancia,m=catalogSelection?.sistema;
    const info=!a?"Escolha uma substância na doca Montagem. A fase móvel ficará disponível após a seleção.":
@@ -492,6 +509,16 @@ SIAC.laboratorio=(()=>{
  }
  function renderVer(){
   const el=$("siac-ver");if(!el)return;
+  if(catalogSelection?.modo==="hptlc"){
+   const h=SIAC.hptlcDidatico?.renderVer();
+   if(h){
+    $("siac-ver-contexto").textContent=h.contexto;
+    $("siac-modulos").innerHTML=h.modulos;
+    $("siac-ver-itens").innerHTML=h.itens;
+    $("siac-ver-dados").innerHTML=h.conteudo;
+    return;
+   }
+  }
   if(catalogMode){
    const did=SIAC.verDidatico?.render(catalogSelection,SIAC.metrics);
    if(!did){
@@ -564,6 +591,10 @@ SIAC.laboratorio=(()=>{
  function renderDados(){
   const el=$("siac-dados");
   if(!el||!col)return;
+  if(catalogSelection?.modo==="hptlc"){
+   el.innerHTML=SIAC.hptlcDidatico?.renderDados()||"<p>Dados HPTLC indisponíveis.</p>";
+   return;
+  }
   if(catalogMode){
    const a=catalogSelection?.substancia,m=catalogSelection?.sistema;
    el.innerHTML='<h2>Dados · investigação</h2>'+
@@ -648,6 +679,11 @@ SIAC.laboratorio=(()=>{
  function render(){if(!enabled||!col)return;renderMontagem();renderStage();renderVer();renderDados();}
  function verClick(e){
   const m=e.target.closest("[data-module]"),v=e.target.closest("[data-ver]");
+  if(catalogSelection?.modo==="hptlc"){
+   if(m&&SIAC.hptlcDidatico?.setModule(m.dataset.module))render();
+   else if(v&&SIAC.hptlcDidatico?.setTool(v.dataset.ver))render();
+   return;
+  }
   if(catalogMode){
    if(m&&SIAC.verDidatico?.setModulo(m.dataset.module))render();
    else if(v&&SIAC.verDidatico?.setFerramenta(v.dataset.ver))render();
@@ -657,6 +693,11 @@ SIAC.laboratorio=(()=>{
   if(v){item=v.dataset.ver;render();}
  }
  function stageClick(e){
+  if(catalogSelection?.modo==="hptlc"){
+   const chosen=e.target.closest("[data-hptlc-focus]");
+   if(chosen&&SIAC.hptlcDidatico?.focus(chosen.dataset.hptlcFocus))render();
+   return;
+  }
   if(catalogMode)return;
   const btn=e.target.closest("button");
   const pick=btn?.closest("[data-open-fraction]");
@@ -752,7 +793,8 @@ SIAC.laboratorio=(()=>{
  else setTimeout(start,0);
  return Object.freeze({get active(){return enabled;},get snapshot(){return {
    volumeMl:volume,visao:view,foco:focus,geral:group,selecionado:selected,
-   modo:catalogMode?"pesquisa":"demonstracao",substanciaId:catalogSelection?.substanciaId||null,
+   modo:catalogSelection?.modo==="hptlc"?"hptlc":catalogMode?"pesquisa":"demonstracao",
+   hptlc:SIAC.hptlcDidatico?.snapshot||null,substanciaId:catalogSelection?.substanciaId||null,
    sistemaId:catalogSelection?.sistemaId||null,
    preenchidos:filled().map(f=>f.id),capilar:capillaryLoading?"aspirando":capillary?"carregado":"vazio",
    frenteMm:development?paper(development.id).frenteMm:null,
