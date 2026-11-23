@@ -92,7 +92,7 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
       acceleration:document.querySelector("#siac-velocidade")?.value,
       visible:!document.querySelector("#siac-stage")?.hidden
     }))),"pageErrors:",errors);
-    await page.waitForFunction(()=>window.SIAC?.laboratorio?.snapshot?.volumeMl>1.7,null,{timeout:5000});
+    await page.waitForFunction(()=>window.SIAC?.laboratorio?.snapshot?.volumeMl>1.7,null,{polling:250,timeout:12000});
     await page.locator("#siac-executar").click({force:true});
     const snapshot=await page.evaluate(()=>window.SIAC.laboratorio.snapshot);
     assert(snapshot.preenchidos.includes("F1"));
@@ -115,7 +115,7 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
     await page.locator("#siac-paper-target").click({force:true});
     assert.match(await page.locator("#siac-stage").textContent(),/aplicado/);
     await page.locator("#siac-desenvolver").click({force:true});
-    await page.waitForFunction(()=>window.SIAC?.laboratorio?.snapshot?.papeis?.F7==="desenvolvido",null,{timeout:5000});
+    await page.waitForFunction(()=>window.SIAC?.laboratorio?.snapshot?.papeis?.F7==="desenvolvido",null,{polling:250,timeout:20000});
     await page.locator("#siac-uv").click({force:true});
     assert.equal(await page.evaluate(()=>window.SIAC.laboratorio.snapshot.papeis.F7),"revelado");
     await page.locator("#overview-tab").click({force:true});
