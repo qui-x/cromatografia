@@ -126,11 +126,13 @@ SIAC.laboratorio=(()=>{
   if($("controls-title"))$("controls-title").textContent=available?"Montagem":"Prateleira";
   if(available){
    mount();if(!col)build();
-   for(const id of ["workspace-ver","workspace-dados"])
+   for(const id of ["workspace-ver","workspace-dados","siac-ver","siac-dados"])
     if($(id))$(id).hidden=false;
    render();
   }
   else if(ready){
+   // O conteúdo SIAC não deve vazar para docas de rotas legadas do SIAB.
+   for(const id of ["siac-ver","siac-dados"])if($(id))$(id).hidden=true;
    // Restaurar rótulos convencionais do SIAB ao sair do laboratório cromatográfico.
    $("focus-tab").textContent="Tubo em foco";
    $("overview-tab").innerHTML='Visão geral <span id="overview-count"></span>';
