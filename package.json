@@ -1,8 +1,8 @@
 {
-  "name": "siab-acidobase",
+  "name": "siac-cromatografia",
   "version": "1.0.0",
   "private": true,
-  "description": "SIAB — Simulador de Indicadores Ácido-Base: temas, missões, roteiros, relatórios e PWA para investigação de ácidos e bases.",
+  "description": "SIAC — Simulador Interativo de Análise Cromatográfica; migração científica em andamento a partir da base SIAB.",
   "license": "GPL-3.0-only",
   "scripts": {
     "start": "python3 -m http.server 8080",
