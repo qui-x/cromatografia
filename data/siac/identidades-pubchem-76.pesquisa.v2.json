@@ -1,0 +1,1859 @@
+{
+  "versao": "0.2-pesquisa-2026-11-23",
+  "status": "IDENTIDADES_CID_CANDIDATAS_SEM_HOMOLOGACAO_ESTRUTURAL",
+  "escopo": "76 nomes pesquisados em referências PubChem; nenhum CAS/InChIKey inferido ou preenchido sem verificação cruzada; registros de retenção são separados.",
+  "notas": [
+    "Não inferir a presença de um composto em TLCexp, BigSolDB ou MixtureSolDB apenas por coincidência de nome: cruzamento CSV ainda pendente.",
+    "CIDs indicam candidatos químicos localizados, não prova de amostra pura, sal, isômero, CAS ou método cromatográfico. Estatutos de homologação prévios permanecem inalterados.",
+    "Áreas como cor visível, fluorescência e Rf não são propriedades universais do nome do composto; registrar solvente, pH, fase, temperatura e detector.",
+    "Quinoline Yellow E104 exige representação de mistura, nunca o CID 6731 isolado."
+  ],
+  "fontesGerais": [
+    {
+      "nome": "PubChem Compound",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest"
+    },
+    {
+      "nome": "E104 composição",
+      "url": "https://www.legislation.gov.uk/eur/2012/231/annexes/adopted?timeline=false"
+    },
+    {
+      "nome": "Quach 2004",
+      "url": "https://doi.org/10.1021/ed081p385"
+    }
+  ],
+  "resumo": {
+    "total": 76,
+    "comCidReferencial": 75,
+    "semIdentidadeMolecularUnica": 1,
+    "exigemEspecificacao": 49,
+    "idsDuplicados": 0,
+    "homologadasParaMotor": 0
+  },
+  "candidatos": [
+    {
+      "id": "tartrazina",
+      "nome": "Tartrazina (FD&C Yellow 5)",
+      "grupo": "corantes_alimenticios",
+      "referenciaQuimica": {
+        "pubchemCID": 164825,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/164825",
+        "classe": "cid_candidato_forma_a_confirmar",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "Registro candidato é forma trissódica; a forma ácida tem outro CID.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "sunset_yellow_fcf",
+      "nome": "Amarelo crepúsculo FCF (Yellow 6)",
+      "grupo": "corantes_alimenticios",
+      "referenciaQuimica": {
+        "pubchemCID": 17730,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/17730",
+        "classe": "cid_candidato_forma_a_confirmar",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "Registro candidato de sal dissódico; pureza de padrão depende da ficha.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "allura_red_ac",
+      "nome": "Vermelho Allura AC (Red 40)",
+      "grupo": "corantes_alimenticios",
+      "referenciaQuimica": {
+        "pubchemCID": 33258,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/33258",
+        "classe": "cid_candidato_localizado",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": null,
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "brilliant_blue_fcf",
+      "nome": "Azul brilhante FCF (Blue 1)",
+      "grupo": "corantes_alimenticios",
+      "referenciaQuimica": {
+        "pubchemCID": 19700,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/19700",
+        "classe": "cid_candidato_forma_a_confirmar",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "Registro candidato forma dissódica; checar proporção de corante e sal em formulações.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "indigotine",
+      "nome": "Indigotina (Blue 2)",
+      "grupo": "corantes_alimenticios",
+      "referenciaQuimica": {
+        "pubchemCID": 2723854,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/2723854",
+        "classe": "cid_candidato_forma_a_confirmar",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "Registro candidato é índigo carmim (sal dissódico); não trocar por anião isolado ou índigo.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "erythrosine",
+      "nome": "Eritrosina (Red 3)",
+      "grupo": "corantes_alimenticios",
+      "referenciaQuimica": {
+        "pubchemCID": 27872,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/27872",
+        "classe": "cid_candidato_forma_a_confirmar",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "Registro candidato de eritrosina sal de sódio; outros CIDs de protonação/formulação existem.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "fast_green_fcf",
+      "nome": "Verde rápido FCF (Green 3)",
+      "grupo": "corantes_alimenticios",
+      "referenciaQuimica": {
+        "pubchemCID": 16887,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/16887",
+        "classe": "cid_candidato_localizado",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": null,
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "ponceau_4r",
+      "nome": "Ponceau 4R",
+      "grupo": "corantes_alimenticios",
+      "referenciaQuimica": {
+        "pubchemCID": 17466,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/17466",
+        "classe": "cid_candidato_forma_a_confirmar",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "Registro candidato de sal trissódico; não igualar a corante comercial parcialmente impuro.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "amaranth",
+      "nome": "Amaranto (corante azo)",
+      "grupo": "corantes_alimenticios",
+      "referenciaQuimica": {
+        "pubchemCID": 13506,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/13506",
+        "classe": "cid_candidato_forma_a_confirmar",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "Registrar corante azo, não planta amaranto.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "patent_blue_v",
+      "nome": "Azul patente V",
+      "grupo": "corantes_alimenticios",
+      "referenciaQuimica": {
+        "pubchemCID": 77073,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/77073",
+        "classe": "cid_candidato_forma_a_confirmar",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "Registro candidato corresponde a forma cálcica; formulações também usam sal de sódio; conferir amostra.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "quinoline_yellow",
+      "nome": "Amarelo de quinolina",
+      "grupo": "corantes_alimenticios",
+      "referenciaQuimica": {
+        "pubchemCID": null,
+        "url": null,
+        "classe": "mistura_sem_cid_unico",
+        "status": "nao_resolvido_em_molecula_unica",
+        "nota": "Corante E104 é mistura comercial de sais sulfonados; não associar CID 6731 (quinophthalone não sulfonada) à mistura.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "Especificações E104 (EUR-Lex 2026), mistura de sais sulfonados",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "chlorophyll_a",
+      "nome": "Clorofila a",
+      "grupo": "pigmentos_vegetais",
+      "referenciaQuimica": {
+        "pubchemCID": 12085802,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/12085802",
+        "classe": "cid_candidato_forma_a_confirmar",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "Há registros PubChem alternativos para isômeros/análogos; a configuração estrutural e origem precisam ser definidas.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "chlorophyll_b",
+      "nome": "Clorofila b",
+      "grupo": "pigmentos_vegetais",
+      "referenciaQuimica": {
+        "pubchemCID": 11593175,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/11593175",
+        "classe": "cid_candidato_forma_a_confirmar",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "Verificar estereoquímica de extrato e evitar clorofila b' (epímero).",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "pheophytin_a",
+      "nome": "Feofitina a",
+      "grupo": "pigmentos_vegetais",
+      "referenciaQuimica": {
+        "pubchemCID": 135398712,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/135398712",
+        "classe": "cid_candidato_forma_a_confirmar",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "Feofitina resulta de perda de Mg; não usar Rf de extrato fresco sem conversão adequada.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "pheophytin_b",
+      "nome": "Feofitina b",
+      "grupo": "pigmentos_vegetais",
+      "referenciaQuimica": {
+        "pubchemCID": 135407446,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/135407446",
+        "classe": "cid_candidato_forma_a_confirmar",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "Feofitina resulta de perda de Mg; não usar Rf de extrato fresco sem conversão adequada.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "beta_carotene",
+      "nome": "β-caroteno",
+      "grupo": "pigmentos_vegetais",
+      "referenciaQuimica": {
+        "pubchemCID": 5280489,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/5280489",
+        "classe": "cid_candidato_localizado",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": null,
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "alpha_carotene",
+      "nome": "α-caroteno",
+      "grupo": "pigmentos_vegetais",
+      "referenciaQuimica": {
+        "pubchemCID": 6419725,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6419725",
+        "classe": "cid_candidato_localizado",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": null,
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "lutein",
+      "nome": "Luteína",
+      "grupo": "pigmentos_vegetais",
+      "referenciaQuimica": {
+        "pubchemCID": 5281243,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/5281243",
+        "classe": "cid_candidato_forma_a_confirmar",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "Verificar estereoisomeria e distingui-la da zeaxantina.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "zeaxanthin",
+      "nome": "Zeaxantina",
+      "grupo": "pigmentos_vegetais",
+      "referenciaQuimica": {
+        "pubchemCID": 5280899,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/5280899",
+        "classe": "cid_candidato_forma_a_confirmar",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "Verificar estereoisomeria; luteína e zeaxantina não são o mesmo composto.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "lycopene",
+      "nome": "Licopeno",
+      "grupo": "pigmentos_vegetais",
+      "referenciaQuimica": {
+        "pubchemCID": 446925,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/446925",
+        "classe": "cid_candidato_localizado",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": null,
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "violaxanthin",
+      "nome": "Violaxantina",
+      "grupo": "pigmentos_vegetais",
+      "referenciaQuimica": {
+        "pubchemCID": 448438,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/448438",
+        "classe": "cid_candidato_localizado",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": null,
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "neoxanthin",
+      "nome": "Neoxantina",
+      "grupo": "pigmentos_vegetais",
+      "referenciaQuimica": {
+        "pubchemCID": 5282217,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/5282217",
+        "classe": "cid_candidato_forma_a_confirmar",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "Diferentes isômeros cis/trans podem formar entidades distintas.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "beta_cryptoxanthin",
+      "nome": "β-criptoxantina",
+      "grupo": "pigmentos_vegetais",
+      "referenciaQuimica": {
+        "pubchemCID": 5281235,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/5281235",
+        "classe": "cid_candidato_localizado",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": null,
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "cyanidin_3_glucoside",
+      "nome": "Cianidina-3-O-glicosídeo",
+      "grupo": "pigmentos_vegetais",
+      "referenciaQuimica": {
+        "pubchemCID": 92131208,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/92131208",
+        "classe": "cid_candidato_forma_a_confirmar",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "CID candidato é forma de cátion antocianina; diferenciar sais com contraíon cloreto e variação com pH.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "delphinidin_3_glucoside",
+      "nome": "Delfinidina-3-O-glicosídeo",
+      "grupo": "pigmentos_vegetais",
+      "referenciaQuimica": {
+        "pubchemCID": 443650,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/443650",
+        "classe": "cid_candidato_forma_a_confirmar",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "CID candidato é cátion; cloreto está em CID distinto; pH e contraíon determinam espécie.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "quercetin",
+      "nome": "Quercetina",
+      "grupo": "pigmentos_vegetais",
+      "referenciaQuimica": {
+        "pubchemCID": 5280343,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/5280343",
+        "classe": "cid_candidato_localizado",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": null,
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "rutin",
+      "nome": "Rutina",
+      "grupo": "pigmentos_vegetais",
+      "referenciaQuimica": {
+        "pubchemCID": 5280805,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/5280805",
+        "classe": "cid_candidato_localizado",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": null,
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "curcumin",
+      "nome": "Curcumina",
+      "grupo": "pigmentos_vegetais",
+      "referenciaQuimica": {
+        "pubchemCID": 969516,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/969516",
+        "classe": "cid_candidato_localizado",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": null,
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "capsanthin",
+      "nome": "Capsantina",
+      "grupo": "pigmentos_vegetais",
+      "referenciaQuimica": {
+        "pubchemCID": 5281228,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/5281228",
+        "classe": "cid_candidato_localizado",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": null,
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "bixin",
+      "nome": "Bixina",
+      "grupo": "pigmentos_vegetais",
+      "referenciaQuimica": {
+        "pubchemCID": 5281226,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/5281226",
+        "classe": "cid_candidato_forma_a_confirmar",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "Forma estrutural de referência 9'-cis; especificar isômero no protocolo.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "norbixin",
+      "nome": "Norbixina",
+      "grupo": "pigmentos_vegetais",
+      "referenciaQuimica": {
+        "pubchemCID": 5281249,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/5281249",
+        "classe": "cid_candidato_forma_a_confirmar",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "Ácido de referência; distinguir norbixina dissódica e isômeros.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "alanine",
+      "nome": "Alanina",
+      "grupo": "aminoacidos",
+      "referenciaQuimica": {
+        "pubchemCID": 5950,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/5950",
+        "classe": "cid_candidato_estereoisomero_L",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "PubChem referente à forma L; o nome no catálogo SIAC não especificava estereoisômero.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "arginine",
+      "nome": "Arginina",
+      "grupo": "aminoacidos",
+      "referenciaQuimica": {
+        "pubchemCID": 6322,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6322",
+        "classe": "cid_candidato_estereoisomero_L",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "PubChem referente à forma L; o nome no catálogo SIAC não especificava estereoisômero.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "asparagine",
+      "nome": "Asparagina",
+      "grupo": "aminoacidos",
+      "referenciaQuimica": {
+        "pubchemCID": 6267,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6267",
+        "classe": "cid_candidato_estereoisomero_L",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "PubChem referente à forma L; o nome no catálogo SIAC não especificava estereoisômero.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "aspartic_acid",
+      "nome": "Ácido aspártico",
+      "grupo": "aminoacidos",
+      "referenciaQuimica": {
+        "pubchemCID": 5960,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/5960",
+        "classe": "cid_candidato_estereoisomero_L",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "PubChem referente à forma L; o nome no catálogo SIAC não especificava estereoisômero.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "cysteine",
+      "nome": "Cisteína",
+      "grupo": "aminoacidos",
+      "referenciaQuimica": {
+        "pubchemCID": 5862,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/5862",
+        "classe": "cid_candidato_estereoisomero_L",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "PubChem referente à forma L; o nome no catálogo SIAC não especificava estereoisômero.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "glutamic_acid",
+      "nome": "Ácido glutâmico",
+      "grupo": "aminoacidos",
+      "referenciaQuimica": {
+        "pubchemCID": 33032,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/33032",
+        "classe": "cid_candidato_estereoisomero_L",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "PubChem referente à forma L; o nome no catálogo SIAC não especificava estereoisômero.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "glutamine",
+      "nome": "Glutamina",
+      "grupo": "aminoacidos",
+      "referenciaQuimica": {
+        "pubchemCID": 5961,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/5961",
+        "classe": "cid_candidato_estereoisomero_L",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "PubChem referente à forma L; o nome no catálogo SIAC não especificava estereoisômero.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "glycine",
+      "nome": "Glicina",
+      "grupo": "aminoacidos",
+      "referenciaQuimica": {
+        "pubchemCID": 750,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/750",
+        "classe": "cid_candidato_localizado",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": null,
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "histidine",
+      "nome": "Histidina",
+      "grupo": "aminoacidos",
+      "referenciaQuimica": {
+        "pubchemCID": 6274,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6274",
+        "classe": "cid_candidato_estereoisomero_L",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "PubChem referente à forma L; o nome no catálogo SIAC não especificava estereoisômero.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "isoleucine",
+      "nome": "Isoleucina",
+      "grupo": "aminoacidos",
+      "referenciaQuimica": {
+        "pubchemCID": 6306,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6306",
+        "classe": "cid_candidato_estereoisomero_L",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "PubChem referente à forma L; o nome no catálogo SIAC não especificava estereoisômero.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "leucine",
+      "nome": "Leucina",
+      "grupo": "aminoacidos",
+      "referenciaQuimica": {
+        "pubchemCID": 6106,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6106",
+        "classe": "cid_candidato_estereoisomero_L",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "PubChem referente à forma L; o nome no catálogo SIAC não especificava estereoisômero.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "lysine",
+      "nome": "Lisina",
+      "grupo": "aminoacidos",
+      "referenciaQuimica": {
+        "pubchemCID": 5962,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/5962",
+        "classe": "cid_candidato_estereoisomero_L",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "PubChem referente à forma L; o nome no catálogo SIAC não especificava estereoisômero.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "methionine",
+      "nome": "Metionina",
+      "grupo": "aminoacidos",
+      "referenciaQuimica": {
+        "pubchemCID": 6137,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6137",
+        "classe": "cid_candidato_estereoisomero_L",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "PubChem referente à forma L; o nome no catálogo SIAC não especificava estereoisômero.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "phenylalanine",
+      "nome": "Fenilalanina",
+      "grupo": "aminoacidos",
+      "referenciaQuimica": {
+        "pubchemCID": 6140,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6140",
+        "classe": "cid_candidato_estereoisomero_L",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "PubChem referente à forma L; o nome no catálogo SIAC não especificava estereoisômero.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "proline",
+      "nome": "Prolina",
+      "grupo": "aminoacidos",
+      "referenciaQuimica": {
+        "pubchemCID": 145742,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/145742",
+        "classe": "cid_candidato_estereoisomero_L",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "PubChem referente à forma L; o nome no catálogo SIAC não especificava estereoisômero.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "serine",
+      "nome": "Serina",
+      "grupo": "aminoacidos",
+      "referenciaQuimica": {
+        "pubchemCID": 5951,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/5951",
+        "classe": "cid_candidato_estereoisomero_L",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "PubChem referente à forma L; o nome no catálogo SIAC não especificava estereoisômero.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "threonine",
+      "nome": "Treonina",
+      "grupo": "aminoacidos",
+      "referenciaQuimica": {
+        "pubchemCID": 6288,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6288",
+        "classe": "cid_candidato_estereoisomero_L",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "PubChem referente à forma L; o nome no catálogo SIAC não especificava estereoisômero.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "tryptophan",
+      "nome": "Triptofano",
+      "grupo": "aminoacidos",
+      "referenciaQuimica": {
+        "pubchemCID": 6305,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6305",
+        "classe": "cid_candidato_estereoisomero_L",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "PubChem referente à forma L; o nome no catálogo SIAC não especificava estereoisômero.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "tyrosine",
+      "nome": "Tirosina",
+      "grupo": "aminoacidos",
+      "referenciaQuimica": {
+        "pubchemCID": 6057,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6057",
+        "classe": "cid_candidato_estereoisomero_L",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "PubChem referente à forma L; o nome no catálogo SIAC não especificava estereoisômero.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "valine",
+      "nome": "Valina",
+      "grupo": "aminoacidos",
+      "referenciaQuimica": {
+        "pubchemCID": 6287,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6287",
+        "classe": "cid_candidato_estereoisomero_L",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "PubChem referente à forma L; o nome no catálogo SIAC não especificava estereoisômero.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "caffeine",
+      "nome": "Cafeína",
+      "grupo": "farmacos_e_organicos",
+      "referenciaQuimica": {
+        "pubchemCID": 2519,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/2519",
+        "classe": "cid_candidato_localizado",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": null,
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "theobromine",
+      "nome": "Teobromina",
+      "grupo": "farmacos_e_organicos",
+      "referenciaQuimica": {
+        "pubchemCID": 5429,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/5429",
+        "classe": "cid_candidato_localizado",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": null,
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "paracetamol",
+      "nome": "Paracetamol",
+      "grupo": "farmacos_e_organicos",
+      "referenciaQuimica": {
+        "pubchemCID": 1983,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/1983",
+        "classe": "cid_candidato_localizado",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": null,
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "acetylsalicylic_acid",
+      "nome": "Ácido acetilsalicílico",
+      "grupo": "farmacos_e_organicos",
+      "referenciaQuimica": {
+        "pubchemCID": 2244,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/2244",
+        "classe": "cid_candidato_localizado",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": null,
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "salicylic_acid",
+      "nome": "Ácido salicílico",
+      "grupo": "farmacos_e_organicos",
+      "referenciaQuimica": {
+        "pubchemCID": 338,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/338",
+        "classe": "cid_candidato_localizado",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": null,
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "ibuprofen",
+      "nome": "Ibuprofeno",
+      "grupo": "farmacos_e_organicos",
+      "referenciaQuimica": {
+        "pubchemCID": 3672,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/3672",
+        "classe": "cid_candidato_forma_a_confirmar",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "Registro candidato de mistura racêmica; diferenciar S-ibuprofeno se necessário.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "naproxen",
+      "nome": "Naproxeno",
+      "grupo": "farmacos_e_organicos",
+      "referenciaQuimica": {
+        "pubchemCID": 156391,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/156391",
+        "classe": "cid_candidato_forma_a_confirmar",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "Registro candidato corresponde a naproxeno com estereoquímica; distinguir sal de sódio.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "benzoic_acid",
+      "nome": "Ácido benzoico",
+      "grupo": "farmacos_e_organicos",
+      "referenciaQuimica": {
+        "pubchemCID": 243,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/243",
+        "classe": "cid_candidato_localizado",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": null,
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "vanillin",
+      "nome": "Vanilina",
+      "grupo": "farmacos_e_organicos",
+      "referenciaQuimica": {
+        "pubchemCID": 1183,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/1183",
+        "classe": "cid_candidato_localizado",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": null,
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "ethyl_vanillin",
+      "nome": "Etilvanilina",
+      "grupo": "farmacos_e_organicos",
+      "referenciaQuimica": {
+        "pubchemCID": 8467,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/8467",
+        "classe": "cid_candidato_localizado",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": null,
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "coumarin",
+      "nome": "Cumarina",
+      "grupo": "farmacos_e_organicos",
+      "referenciaQuimica": {
+        "pubchemCID": 323,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/323",
+        "classe": "cid_candidato_localizado",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": null,
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "nicotinamide",
+      "nome": "Nicotinamida",
+      "grupo": "farmacos_e_organicos",
+      "referenciaQuimica": {
+        "pubchemCID": 936,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/936",
+        "classe": "cid_candidato_localizado",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": null,
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "riboflavin",
+      "nome": "Riboflavina",
+      "grupo": "farmacos_e_organicos",
+      "referenciaQuimica": {
+        "pubchemCID": 493570,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/493570",
+        "classe": "cid_candidato_localizado",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": null,
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "ascorbic_acid",
+      "nome": "Ácido ascórbico",
+      "grupo": "farmacos_e_organicos",
+      "referenciaQuimica": {
+        "pubchemCID": 54670067,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/54670067",
+        "classe": "cid_candidato_localizado",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": null,
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "fluorescein",
+      "nome": "Fluoresceína",
+      "grupo": "indicadores_e_traçadores",
+      "referenciaQuimica": {
+        "pubchemCID": 16850,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/16850",
+        "classe": "cid_candidato_forma_a_confirmar",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "Registro candidato é fluoresceína base; há sal dissódico distinto, emissão depende de pH.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "eosin_y",
+      "nome": "Eosina Y",
+      "grupo": "indicadores_e_traçadores",
+      "referenciaQuimica": {
+        "pubchemCID": 11048,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/11048",
+        "classe": "cid_candidato_forma_a_confirmar",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "Registro candidato de sal dissódico; existem outras formas ácido/sal.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "rhodamine_b",
+      "nome": "Rodamina B",
+      "grupo": "indicadores_e_traçadores",
+      "referenciaQuimica": {
+        "pubchemCID": 6694,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6694",
+        "classe": "cid_candidato_forma_a_confirmar",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "Verificar cloreto/base livre e ambiente de detecção.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "methylene_blue",
+      "nome": "Azul de metileno",
+      "grupo": "indicadores_e_traçadores",
+      "referenciaQuimica": {
+        "pubchemCID": 6099,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6099",
+        "classe": "cid_candidato_forma_a_confirmar",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "Registro candidato de cloreto; há catião e hidratos distintos.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "methyl_orange",
+      "nome": "Alaranjado de metila",
+      "grupo": "indicadores_e_traçadores",
+      "referenciaQuimica": {
+        "pubchemCID": 23673835,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/23673835",
+        "classe": "cid_candidato_forma_a_confirmar",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "Registro candidato de sal de sódio; cor depende de pH.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "methyl_red",
+      "nome": "Vermelho de metila",
+      "grupo": "indicadores_e_traçadores",
+      "referenciaQuimica": {
+        "pubchemCID": 10303,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/10303",
+        "classe": "cid_candidato_forma_a_confirmar",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "Registrar mudança de protonação conforme pH.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "bromothymol_blue",
+      "nome": "Azul de bromotimol",
+      "grupo": "indicadores_e_traçadores",
+      "referenciaQuimica": {
+        "pubchemCID": 6450,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6450",
+        "classe": "cid_candidato_forma_a_confirmar",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "Registrar ácido/cor e pH, distinguir sal de sódio.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "phenolphthalein",
+      "nome": "Fenolftaleína",
+      "grupo": "indicadores_e_traçadores",
+      "referenciaQuimica": {
+        "pubchemCID": 4764,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/4764",
+        "classe": "cid_candidato_forma_a_confirmar",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "Registrar espécies ácido/base; não conferir cor por molécula sem condição de pH.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "crystal_violet",
+      "nome": "Violeta cristal",
+      "grupo": "indicadores_e_traçadores",
+      "referenciaQuimica": {
+        "pubchemCID": 11057,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/11057",
+        "classe": "cid_candidato_forma_a_confirmar",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": "Registro candidato cloreto; distinguir catião e formulações.",
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "sudan_iii",
+      "nome": "Sudan III",
+      "grupo": "indicadores_e_traçadores",
+      "referenciaQuimica": {
+        "pubchemCID": 62331,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/62331",
+        "classe": "cid_candidato_localizado",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": null,
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    },
+    {
+      "id": "sudan_iv",
+      "nome": "Sudan IV",
+      "grupo": "indicadores_e_traçadores",
+      "referenciaQuimica": {
+        "pubchemCID": 62330,
+        "url": "https://pubchem.ncbi.nlm.nih.gov/compound/62330",
+        "classe": "cid_candidato_localizado",
+        "status": "correspondencia_pubchem_preliminar",
+        "nota": null,
+        "casConferido": null,
+        "inchiKeyConferido": null,
+        "estruturaEFormaConferidas": false
+      },
+      "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
+      "quimica": {
+        "corObservadaSobCondicoes": null,
+        "uv254": null,
+        "uv365": null,
+        "rfHomologado": false,
+        "kColunaHomologado": false
+      },
+      "autorizacaoSimulacaoReal": false
+    }
+  ]
+}
