@@ -28,7 +28,7 @@ assert.equal(analytes.status,"PESQUISA_NAO_HOMOLOGADA");
 assert.equal(engines.status,"candidatos_nao_integrados");
 assert.equal(solvents.solventes.length,41);
 assert.equal(analytes.candidatos.length,76);
-assert.equal(analytes.protocolos.length,10);
+assert.equal(analytes.protocolos.length,15);
 assert.equal(engines.motores.length,9);
 assert.equal(stationary.status,"PESQUISA_NAO_HOMOLOGADA");
 assert.equal(stationary.fasesEstacionarias.length,18);
@@ -104,7 +104,7 @@ for(const p of analytes.protocolos){
     rfs++;
   }
 }
-assert.equal(rfs,74);
+assert.equal(rfs,98);
 let intervalos=0;
 for(const p of analytes.protocolos){
  for(const r of (p.dadosRfIntervalos||[])){
@@ -120,6 +120,19 @@ assert.equal(intervalos,1,"conservar o intervalo original de feofitina b");
 const padiyar=analytes.protocolos.find(p=>p.id==="tlc_aminoacids_padiyar2024_butanol_acetic_water_4_1_1");
 assert(padiyar&&padiyar.status!=="homologado");
 assert.equal(padiyar.dadosRf.length,8);
+const jecfa=analytes.protocolos.filter(p=>p.fonte==="fao_jecfa_colours");
+const sobanska=analytes.protocolos.filter(p=>p.fonte==="sobanska2017");
+assert.equal(jecfa.length,3);
+assert.equal(sobanska.length,2);
+assert.equal(jecfa.reduce((n,p)=>n+p.dadosRf.length,0),16);
+assert.equal(sobanska.reduce((n,p)=>n+p.dadosRf.length,0),8);
+assert(analytes.protocolos.every(p=>p.status!=="homologado"));
+assert.equal(
+ analytes.protocolos.find(p=>p.id==="tlc_food_dyes_fao_system_10_butanol_acetic_water")
+  .dadosRf.find(r=>r.analito==="erythrosine").rf,1);
+assert(!jecfa.some(p=>p.dadosRf.some(r=>r.analito==="quinoline_yellow")),
+ "mistura de amarelo de quinolina não deve ser tratada como analito molecular singular");
+
 assert.equal(padiyar.dadosRf.find(r=>r.analito==="valine").rf,.52);
 assert.equal(padiyar.dadosRf.find(r=>r.analito==="valine").distanciaManchaCm,1.85);
 assert(Math.abs(padiyar.dadosRf.find(r=>r.analito==="valine").diferencaRfDistancias)>.005,
