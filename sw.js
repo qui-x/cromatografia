@@ -5,7 +5,7 @@
    página. */
 // Abertura visual original restaurada. Nova versão do cache elimina modelos,
 // player de vídeo e bibliotecas de abertura 3D das cópias offline.
-const VERSAO = "siac-v0.2.0-dev-cores-ocultas-catalogo-2metodos-20261123";
+const VERSAO = "siac-v0.2.0-dev-hptlc-referencia-20261123";
 // Projetos do mesmo usuario.github.io compartilham a origem. Cada publicação
 // precisa de seu próprio cache; atualizar uma cópia não deve apagar outra.
 const BASE = new URL(self.registration.scope);
@@ -40,6 +40,8 @@ const ARQUIVOS = [
   "./js/data/siac-catalogo-contextual.js",
   "./js/simulation/siac-metricas.js",
   "./js/ui/siac-ver-didatico.js",
+  "./js/ui/siac-hptlc-didatico.js",
+  "./css/siac-hptlc-didatico.css",
   "./js/ui/siac-laboratorio-integrado.js",
   "./vendor/dialog-polyfill/dialog-polyfill.js",
   "./js/core/namespace.js",
