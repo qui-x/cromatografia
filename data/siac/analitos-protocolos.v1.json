@@ -15,7 +15,9 @@
     "ukil2013": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
     "dobado2024": "https://www.chemistry-online.com/lab/experiments/separation-pigments-spinach-leaf/",
     "protechex2025": "https://5.imimg.com/data5/SELLER/Doc/2025/6/518306737/JX/IU/GS/9824300/pro-techex-thin-layer-chromatography-teaching-kit.pdf",
-    "padiyar2024": "https://www.ijpsjournal.com/article/enhanced-thin-layer-chromatography-of-amino-acids-using-mixed-hydrotropic-solutions"
+    "padiyar2024": "https://www.ijpsjournal.com/article/enhanced-thin-layer-chromatography-of-amino-acids-using-mixed-hydrotropic-solutions",
+    "fao_jecfa_colours": "https://www.fao.org/4/a0691e/A0691E07.htm",
+    "sobanska2017": "https://onlinelibrary.wiley.com/doi/10.1155/2017/9528472"
   },
   "candidatos": [
     {
@@ -2965,6 +2967,444 @@
         }
       ],
       "nota": "Artigo apresenta dados experimentais, inclusive distâncias mensuradas. Há ambiguidade no solvente de preparo da ninhidrina e inconsistência de arredondamento para valina: isso impede homologação automática. Não considerar sistemas aquosos com hidrótopos como solventes diferentes sem substâncias solventes distintas."
+    },
+    {
+      "id": "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
+      "tecnica": "ccd",
+      "assuntos": [
+        "corantes_alimenticios"
+      ],
+      "status": "compendio_fao_republicado_nao_homologado",
+      "fonte": "fao_jecfa_colours",
+      "referenciaSecao": "FAO/JECFA Combined Compendium, FOOD COLOURS, Identification by chromatography, table Rf (Pearson 1973/IARC 1981), sistema 1",
+      "faseEstacionaria": {
+        "classe": "sílica gel G",
+        "detalhamento": "Compêndio registra fase e solução aquosa de corante a 1%; marca, camada e preparo da placa não especificados nesta tabela"
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "isopropanol",
+            "partes": 7
+          },
+          {
+            "id": "aqueous_ammonia_sg0880",
+            "partes": 2,
+            "tipo": "solucao_aquosa_reagente"
+          },
+          {
+            "id": "water",
+            "partes": 1
+          }
+        ],
+        "base": "v/v",
+        "mistura": "2-propanol:amônia aquosa (densidade 0,880):água 7:2:1",
+        "homologada": false
+      },
+      "aplicacao": {
+        "solucaoPadraoPercentual": 1,
+        "solventeAmostra": "water",
+        "detector": "avaliação visual da coloração em luz incidente/transmitida, comparação com padrão",
+        "detectorHomologado": false
+      },
+      "dadosRf": [
+        {
+          "analito": "tartrazina",
+          "rf": 0.66,
+          "fonte": "fao_jecfa_colours",
+          "classe": "Rf principal em tabela de compêndio, sistema 1",
+          "temperaturaC": null,
+          "homologado": false,
+          "nota": "Valor reportado para a composição eluente desta fonte. Não inferir identidade pela correspondência de Rf."
+        },
+        {
+          "analito": "sunset_yellow_fcf",
+          "rf": 0.75,
+          "fonte": "fao_jecfa_colours",
+          "classe": "Rf principal em tabela de compêndio, sistema 1",
+          "temperaturaC": null,
+          "homologado": false,
+          "nota": "Valor reportado para a composição eluente desta fonte. 0,68 entre parênteses indica mancha secundária, não Rf principal."
+        },
+        {
+          "analito": "amaranth",
+          "rf": 0.62,
+          "fonte": "fao_jecfa_colours",
+          "classe": "Rf principal em tabela de compêndio, sistema 1",
+          "temperaturaC": null,
+          "homologado": false,
+          "nota": "Valor reportado para a composição eluente desta fonte. Manchas secundárias 0,48 e 0,76 não são o corante principal."
+        },
+        {
+          "analito": "ponceau_4r",
+          "rf": 0.66,
+          "fonte": "fao_jecfa_colours",
+          "classe": "Rf principal em tabela de compêndio, sistema 1",
+          "temperaturaC": null,
+          "homologado": false,
+          "nota": "Valor reportado para a composição eluente desta fonte. 0,85 entre parênteses representa mancha de menor intensidade."
+        },
+        {
+          "analito": "brilliant_blue_fcf",
+          "rf": 0.64,
+          "fonte": "fao_jecfa_colours",
+          "classe": "Rf principal em tabela de compêndio, sistema 1",
+          "temperaturaC": null,
+          "homologado": false,
+          "nota": "Valor reportado para a composição eluente desta fonte. Não inferir identidade pela correspondência de Rf."
+        },
+        {
+          "analito": "indigotine",
+          "rf": 0.56,
+          "fonte": "fao_jecfa_colours",
+          "classe": "Rf principal em tabela de compêndio, sistema 1",
+          "temperaturaC": null,
+          "homologado": false,
+          "nota": "Valor reportado para a composição eluente desta fonte. Não inferir identidade pela correspondência de Rf."
+        },
+        {
+          "analito": "erythrosine",
+          "rf": 0.85,
+          "fonte": "fao_jecfa_colours",
+          "classe": "Rf principal em tabela de compêndio, sistema 1",
+          "temperaturaC": null,
+          "homologado": false,
+          "nota": "Valor reportado para a composição eluente desta fonte. Manchas subsidiárias 0,68 e 0,79 não são a principal."
+        }
+      ],
+      "nota": "Tabela de valores ESPERADOS em condições de exemplo, não dados brutos ou artigo de medição primária. Números entre parênteses representam manchas de menor intensidade de corantes subsidiários; ignorados nos registros principais. FAO recomenda padrões em múltiplos eluentes."
+    },
+    {
+      "id": "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water",
+      "tecnica": "ccd",
+      "assuntos": [
+        "corantes_alimenticios"
+      ],
+      "status": "compendio_fao_republicado_nao_homologado",
+      "fonte": "fao_jecfa_colours",
+      "referenciaSecao": "FAO/JECFA Combined Compendium, FOOD COLOURS, Identification by chromatography, sistema 7",
+      "faseEstacionaria": {
+        "classe": "sílica gel G",
+        "detalhamento": "Suporte e condições gerais conforme sistema 1 da tabela FAO/JECFA; não confundir com suporte HPTLC ou RP18"
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "acetone",
+            "partes": 60
+          },
+          {
+            "id": "methyl_ethyl_ketone",
+            "partes": 140
+          },
+          {
+            "id": "aqueous_ammonia_sg0880",
+            "partes": 1,
+            "tipo": "solucao_aquosa_reagente"
+          },
+          {
+            "id": "water",
+            "partes": 60
+          }
+        ],
+        "base": "v/v",
+        "mistura": "acetona:2-butanona:amônia aquosa (d=0,880):água 60:140:1:60",
+        "homologada": false
+      },
+      "aplicacao": {
+        "solucaoPadraoPercentual": 1,
+        "solventeAmostra": "water",
+        "detector": "avaliação visual da coloração e comparação com padrão",
+        "detectorHomologado": false
+      },
+      "dadosRf": [
+        {
+          "analito": "tartrazina",
+          "rf": 0.52,
+          "fonte": "fao_jecfa_colours",
+          "classe": "Rf principal em tabela de compêndio, sistema 7",
+          "temperaturaC": null,
+          "homologado": false,
+          "nota": "Valor reportado para a composição eluente desta fonte. Não inferir identidade pela correspondência de Rf."
+        },
+        {
+          "analito": "sunset_yellow_fcf",
+          "rf": 0.65,
+          "fonte": "fao_jecfa_colours",
+          "classe": "Rf principal em tabela de compêndio, sistema 7",
+          "temperaturaC": null,
+          "homologado": false,
+          "nota": "Valor reportado para a composição eluente desta fonte. Não inferir identidade pela correspondência de Rf."
+        },
+        {
+          "analito": "amaranth",
+          "rf": 0.4,
+          "fonte": "fao_jecfa_colours",
+          "classe": "Rf principal em tabela de compêndio, sistema 7",
+          "temperaturaC": null,
+          "homologado": false,
+          "nota": "Valor reportado para a composição eluente desta fonte. Não inferir identidade pela correspondência de Rf."
+        },
+        {
+          "analito": "ponceau_4r",
+          "rf": 0.6,
+          "fonte": "fao_jecfa_colours",
+          "classe": "Rf principal em tabela de compêndio, sistema 7",
+          "temperaturaC": null,
+          "homologado": false,
+          "nota": "Valor reportado para a composição eluente desta fonte. Não inferir identidade pela correspondência de Rf."
+        },
+        {
+          "analito": "brilliant_blue_fcf",
+          "rf": 0.61,
+          "fonte": "fao_jecfa_colours",
+          "classe": "Rf principal em tabela de compêndio, sistema 7",
+          "temperaturaC": null,
+          "homologado": false,
+          "nota": "Valor reportado para a composição eluente desta fonte. Não inferir identidade pela correspondência de Rf."
+        },
+        {
+          "analito": "indigotine",
+          "rf": 0.66,
+          "fonte": "fao_jecfa_colours",
+          "classe": "Rf principal em tabela de compêndio, sistema 7",
+          "temperaturaC": null,
+          "homologado": false,
+          "nota": "Valor reportado para a composição eluente desta fonte. Não inferir identidade pela correspondência de Rf."
+        },
+        {
+          "analito": "patent_blue_v",
+          "rf": 0.69,
+          "fonte": "fao_jecfa_colours",
+          "classe": "Rf principal em tabela de compêndio, sistema 7",
+          "temperaturaC": null,
+          "homologado": false,
+          "nota": "Valor reportado para a composição eluente desta fonte. Não inferir identidade pela correspondência de Rf."
+        }
+      ],
+      "nota": "Fonte oficial reproduz tabela histórica, com interferências de bandas subsidiárias em várias tinturas. Registrar só a primeira entrada da célula quando é principal pontual; nunca interpretar pigmentos subsidiários como a própria molécula."
+    },
+    {
+      "id": "tlc_food_dyes_fao_system_10_butanol_acetic_water",
+      "tecnica": "ccd",
+      "assuntos": [
+        "corantes_alimenticios"
+      ],
+      "status": "compendio_fao_republicado_nao_homologado",
+      "fonte": "fao_jecfa_colours",
+      "referenciaSecao": "FAO/JECFA Combined Compendium, FOOD COLOURS, Identification by chromatography, sistema 10",
+      "faseEstacionaria": {
+        "classe": "sílica gel G",
+        "detalhamento": "Suporte e condições gerais conforme sistema 1 da tabela FAO/JECFA"
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "butanol_1",
+            "partes": 10
+          },
+          {
+            "id": "acetic_acid",
+            "partes": 5
+          },
+          {
+            "id": "water",
+            "partes": 6
+          }
+        ],
+        "base": "v/v",
+        "mistura": "1-butanol:ácido acético glacial:água 10:5:6",
+        "homologada": false
+      },
+      "aplicacao": {
+        "solucaoPadraoPercentual": 1,
+        "solventeAmostra": "water",
+        "detector": "avaliação visual da coloração e comparação com padrão",
+        "detectorHomologado": false
+      },
+      "dadosRf": [
+        {
+          "analito": "erythrosine",
+          "rf": 1,
+          "fonte": "fao_jecfa_colours",
+          "classe": "Rf principal em tabela de compêndio, sistema 10",
+          "temperaturaC": null,
+          "homologado": false,
+          "nota": "Valor reportado para a composição eluente desta fonte. Rf=1,00 (na frente do solvente); com pouca capacidade discriminatória, NÃO indica identificação válida."
+        },
+        {
+          "analito": "patent_blue_v",
+          "rf": 0.59,
+          "fonte": "fao_jecfa_colours",
+          "classe": "Rf principal em tabela de compêndio, sistema 10",
+          "temperaturaC": null,
+          "homologado": false,
+          "nota": "Valor reportado para a composição eluente desta fonte. Não inferir identidade pela correspondência de Rf."
+        }
+      ],
+      "nota": "Eritrosina com Rf 1,00 reportado: não inventar posição além da frente. Azul patente V Rf 0,59. Evitar concluir identificação sem ensaio comparativo de padrões."
+    },
+    {
+      "id": "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9",
+      "tecnica": "ccd",
+      "assuntos": [
+        "corantes_alimenticios"
+      ],
+      "status": "tabela_artigo_primario_nao_homologada",
+      "fonte": "sobanska2017",
+      "ano": 2017,
+      "referenciaSecao": "Sobańska, Pyzowski, Brzezińska & Cal, Journal of Analytical Methods in Chemistry 2017, Table 2, mobile phase #15",
+      "faseEstacionaria": {
+        "classe": "sílica gel 60 Merck",
+        "detalhamento": "placas de 10x20 cm, camada de 0,25 mm; estudo de otimização de eluentes distintos do protocolo final de quantificação"
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "methanol",
+            "partes": 11
+          },
+          {
+            "id": "toluene",
+            "partes": 9
+          }
+        ],
+        "base": "v/v",
+        "mistura": "metanol:tolueno 11:9",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "densitometria por refletância em comprimentos de onda adequados para cada corante",
+        "detectorHomologado": false,
+        "comprimentosOndaNm": {
+          "tartrazina": 420,
+          "sunset_yellow_fcf": 460,
+          "ponceau_4r": 500,
+          "brilliant_blue_fcf": 620
+        }
+      },
+      "dadosRf": [
+        {
+          "analito": "tartrazina",
+          "rf": 0.42,
+          "fonte": "sobanska2017",
+          "classe": "Rf medido durante triagem de solventes, Tabela 2, sistema 15",
+          "temperaturaC": null,
+          "homologado": false,
+          "nota": "Valor reportado para a composição eluente desta fonte. Não inferir identidade pela correspondência de Rf."
+        },
+        {
+          "analito": "sunset_yellow_fcf",
+          "rf": 0.8,
+          "fonte": "sobanska2017",
+          "classe": "Rf medido durante triagem de solventes, Tabela 2, sistema 15",
+          "temperaturaC": null,
+          "homologado": false,
+          "nota": "Valor reportado para a composição eluente desta fonte. Não inferir identidade pela correspondência de Rf."
+        },
+        {
+          "analito": "ponceau_4r",
+          "rf": 0.59,
+          "fonte": "sobanska2017",
+          "classe": "Rf medido durante triagem de solventes, Tabela 2, sistema 15",
+          "temperaturaC": null,
+          "homologado": false,
+          "nota": "Valor reportado para a composição eluente desta fonte. Não inferir identidade pela correspondência de Rf."
+        },
+        {
+          "analito": "brilliant_blue_fcf",
+          "rf": 0.74,
+          "fonte": "sobanska2017",
+          "classe": "Rf medido durante triagem de solventes, Tabela 2, sistema 15",
+          "temperaturaC": null,
+          "homologado": false,
+          "nota": "Valor reportado para a composição eluente desta fonte. Não inferir identidade pela correspondência de Rf."
+        }
+      ],
+      "nota": "Tabela 2 contém 20 fases móveis de otimização; protocolo final usa um eluente diferente (clorofórmio:isopropanol:amônia 1:3:1), portanto NÃO atribuir automaticamente o tempo de desenvolvimento, densitometria e demais parâmetros finais a esta condição da triagem."
+    },
+    {
+      "id": "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water",
+      "tecnica": "ccd",
+      "assuntos": [
+        "corantes_alimenticios"
+      ],
+      "status": "tabela_artigo_primario_nao_homologada",
+      "fonte": "sobanska2017",
+      "ano": 2017,
+      "referenciaSecao": "Sobańska et al. (2017), Table 2, mobile phase #18",
+      "faseEstacionaria": {
+        "classe": "sílica gel 60 Merck",
+        "detalhamento": "placas de 10x20 cm, camada de 0,25 mm; sistema de triagem não é o procedimento final"
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "ethyl_acetate",
+            "partes": 75
+          },
+          {
+            "id": "isopropanol",
+            "partes": 35
+          },
+          {
+            "id": "water",
+            "partes": 30
+          }
+        ],
+        "base": "v/v",
+        "mistura": "acetato de etila:2-propanol:água 75:35:30",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "densitometria por refletância em comprimentos de onda adequados",
+        "detectorHomologado": false,
+        "comprimentosOndaNm": {
+          "tartrazina": 420,
+          "sunset_yellow_fcf": 460,
+          "ponceau_4r": 500,
+          "brilliant_blue_fcf": 620
+        }
+      },
+      "dadosRf": [
+        {
+          "analito": "tartrazina",
+          "rf": 0.06,
+          "fonte": "sobanska2017",
+          "classe": "Rf medido durante triagem de solventes, Tabela 2, sistema 18",
+          "temperaturaC": null,
+          "homologado": false,
+          "nota": "Valor reportado para a composição eluente desta fonte. Não inferir identidade pela correspondência de Rf."
+        },
+        {
+          "analito": "sunset_yellow_fcf",
+          "rf": 0.42,
+          "fonte": "sobanska2017",
+          "classe": "Rf medido durante triagem de solventes, Tabela 2, sistema 18",
+          "temperaturaC": null,
+          "homologado": false,
+          "nota": "Valor reportado para a composição eluente desta fonte. Não inferir identidade pela correspondência de Rf."
+        },
+        {
+          "analito": "ponceau_4r",
+          "rf": 0.13,
+          "fonte": "sobanska2017",
+          "classe": "Rf medido durante triagem de solventes, Tabela 2, sistema 18",
+          "temperaturaC": null,
+          "homologado": false,
+          "nota": "Valor reportado para a composição eluente desta fonte. Não inferir identidade pela correspondência de Rf."
+        },
+        {
+          "analito": "brilliant_blue_fcf",
+          "rf": 0.19,
+          "fonte": "sobanska2017",
+          "classe": "Rf medido durante triagem de solventes, Tabela 2, sistema 18",
+          "temperaturaC": null,
+          "homologado": false,
+          "nota": "Valor reportado para a composição eluente desta fonte. Não inferir identidade pela correspondência de Rf."
+        }
+      ],
+      "nota": "Usar Rf somente sob este eluente; valores diferem radicalmente do eluente metanol/tolueno 11:9. Não usar a condição final quantitativa como se fosse esta fase móvel."
     }
   ],
   "observacoes": [
