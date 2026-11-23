@@ -681,6 +681,9 @@ function interfaceMontagem(container,onMode){
    methods.map(x=>'<option value="'+escapeHTML(x.id)+'">'+escapeHTML(x.faseMovel)+'</option>').join("");
   state.sistemaId="";
   updateInfo();
+  // O SIAB substitui selects nativos por botões temáticos; atualizar
+  // disabled/rótulo quando o catálogo alterar as opções dependentes.
+  if(typeof globalThis==="object")globalThis.SIAB?.refreshSelects?.();
  }
  function updateInfo(){
   const a=substantia(state.substanciaId),options=sistemasPara(state.substanciaId),p=options.find(x=>x.id===state.sistemaId);
