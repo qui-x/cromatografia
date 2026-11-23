@@ -1,0 +1,63 @@
+name: "SIAC — Alternância de foco e papéis"
+on:
+  push:
+    branches: [feat/siac-experiencia-didatica]
+    paths:
+      - "js/ui/siac-estado-visualizacao.js"
+      - "previews/siac-alternancia-foco.html"
+      - "tests/siac-visualizacao.test.cjs"
+      - "tests/siac-visualizacao-browser.cjs"
+      - "docs/SIAC-PLANO-EXPERIENCIA.md"
+      - ".github/workflows/siac-visualizacao.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "js/ui/siac-estado-visualizacao.js"
+      - "previews/siac-alternancia-foco.html"
+      - "tests/siac-visualizacao.test.cjs"
+      - "tests/siac-visualizacao-browser.cjs"
+      - ".github/workflows/siac-visualizacao.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  estados:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checar sintaxe
+        run: |
+          node --check js/ui/siac-estado-visualizacao.js
+          node --check tests/siac-visualizacao.test.cjs
+      - name: Validar estados, capilar, UV e isolamento
+        run: |
+          node tests/siac-visualizacao.test.cjs
+          node - <<'NODE'
+          const fs=require("fs");
+          const index=fs.readFileSync("index.html","utf8");
+          if(index.includes('src="js/ui/siac-estado-visualizacao.js"'))
+            throw Error("Protótipo de visão não homologado indevidamente conectado à main");
+          console.log("Protótipo visual isolado da bancada estável");
+          NODE
+  navegadores:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Preparar Playwright
+        run: |
+          npm ci --ignore-scripts
+          npx playwright install --with-deps chromium
+      - name: Navegar em sete dimensões de tela
+        run: node tests/siac-visualizacao-browser.cjs
+      - name: Guardar capturas
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: siac-alternancia-visual
+          path: docs/evidencias/siac-visualizacao/
+          if-no-files-found: warn
+          retention-days: 14
