@@ -5,6 +5,7 @@ on:
     paths:
       - "js/ui/siac-estado-visualizacao.js"
       - "previews/siac-alternancia-foco.html"
+      - "scripts/siac-visualizacao-standalone.cjs"
       - "tests/siac-visualizacao.test.cjs"
       - "tests/siac-visualizacao-browser.cjs"
       - "docs/SIAC-PLANO-EXPERIENCIA.md"
@@ -14,6 +15,7 @@ on:
     paths:
       - "js/ui/siac-estado-visualizacao.js"
       - "previews/siac-alternancia-foco.html"
+      - "scripts/siac-visualizacao-standalone.cjs"
       - "tests/siac-visualizacao.test.cjs"
       - "tests/siac-visualizacao-browser.cjs"
       - ".github/workflows/siac-visualizacao.yml"
@@ -60,4 +62,13 @@ jobs:
           name: siac-alternancia-visual
           path: docs/evidencias/siac-visualizacao/
           if-no-files-found: warn
+          retention-days: 14
+      - name: Preparar HTML único executável
+        run: node scripts/siac-visualizacao-standalone.cjs
+      - name: Anexar HTML para teste local
+        uses: actions/upload-artifact@v4
+        with:
+          name: siac-alternancia-html
+          path: dist/siac-alternancia-foco.html
+          if-no-files-found: error
           retention-days: 14
