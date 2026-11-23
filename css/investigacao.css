@@ -265,13 +265,13 @@
 .startup-brand img {
   width: 208px;
   height: 208px;
-  filter: drop-shadow(0 8px 40px #c026d345);
+  filter: drop-shadow(0 8px 34px #0B547238);
 }
 .startup-brand .startup-nome {
   display: block;
   max-width: 24ch;
   margin-top: 10px;
-  color: #f3e8fa;
+  color: #F8F4EB;
   font-size: clamp(1.05rem, 1.45vw, 1.25rem);
   font-weight: 700;
   line-height: 1.25;
@@ -280,7 +280,7 @@
 .startup-brand em {
   display: block;
   margin-top: 8px;
-  color: #d5c9e4;
+  color: #C8DCD8;
   font-size: 0.85rem;
   font-style: normal;
 }
