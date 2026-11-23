@@ -51,6 +51,7 @@ const clean=ver.render(sel("caffeine"),metrics);
 assert.match(clean.conteudo,/não há retenção ou detector/);
 assert.equal(ver.snapshot.frente,"","troca de substância deve apagar medidas");
 assert.equal(ver.snapshot.mancha,"");
+ver.setModulo("observar");
 const similar=ver.render(sel("tartrazina"),metrics);
 assert.match(similar.conteudo,/O protocolo é referência bibliográfica/);
 ver.setModulo("calcular");ver.setFerramenta("comparar");
