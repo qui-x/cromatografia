@@ -103,5 +103,23 @@
     "estado": "adaptado",
     "motivo": "Atualizar mensagens e limitar limpeza de PWA ao escopo do SIAC, sem afetar outros simuladores.",
     "teste": "node tests/siac-independencia.test.cjs; node tests/siac-home-browser.cjs"
+  },
+  "FILES.txt": {
+    "estado": "arquivado",
+    "destino": "docs/legado-siab/distribuicao/FILES.txt",
+    "motivo": "Manifesto SHA da versão SIAB original, inválido para descrever os arquivos atuais do SIAC. Cópia preservada byte a byte no acervo histórico.",
+    "teste": "node scripts/siac-auditar-paridade.cjs; node tests/siac-independencia.test.cjs"
+  },
+  "SHA256SUMS.txt": {
+    "estado": "arquivado",
+    "destino": "docs/legado-siab/distribuicao/SHA256SUMS.txt",
+    "motivo": "Manifesto SHA da versão SIAB original, inválido para descrever os arquivos atuais do SIAC. Cópia preservada byte a byte no acervo histórico.",
+    "teste": "node scripts/siac-auditar-paridade.cjs; node tests/siac-independencia.test.cjs"
+  },
+  "SHA512SUMS.txt": {
+    "estado": "arquivado",
+    "destino": "docs/legado-siab/distribuicao/SHA512SUMS.txt",
+    "motivo": "Manifesto SHA da versão SIAB original, inválido para descrever os arquivos atuais do SIAC. Cópia preservada byte a byte no acervo histórico.",
+    "teste": "node scripts/siac-auditar-paridade.cjs; node tests/siac-independencia.test.cjs"
   }
 }

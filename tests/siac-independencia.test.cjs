@@ -5,6 +5,10 @@ const read=p=>fs.readFileSync(path.join(root,p),"utf8");
 const index=read("index.html"),style=read("css/investigacao.css"),pwa=read("js/init/pwa.js"),sw=read("sw.js");
 const core=read("js/core/namespace.js"),maker=read("build_standalone.py");
 const pack=JSON.parse(read("package.json")),lock=JSON.parse(read("package-lock.json"));
+for(const legacy of ["FILES.txt","SHA256SUMS.txt","SHA512SUMS.txt"]){
+ assert(!fs.existsSync(path.join(root,legacy)),legacy+" deve sair da raiz");
+ assert(fs.existsSync(path.join(root,"docs/legado-siab/distribuicao",legacy)),legacy+" deve ficar preservado no arquivo histórico");
+}
 assert.doesNotMatch(index,/\?v=1\.0\.0|Sobre o SIAB|Simulador de Indicadores Ácido-Base/);
 assert.match(index,/<h2 id="about-title">Sobre o SIAC<\/h2>/);
 assert.match(index,/frações cromatográficas/);
