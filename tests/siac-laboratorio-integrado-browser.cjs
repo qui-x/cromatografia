@@ -38,6 +38,14 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
    }
    await page.locator("#siac-montagem #siac-seletor button").first().waitFor({timeout:5000});
    assert.equal(await page.locator("#siac-seletor button").count(),10);
+   console.log("SIAC DIAGNÓSTICO",width,JSON.stringify(await page.evaluate(()=>({
+     snapshot:window.SIAC?.laboratorio?.snapshot,
+     estadoMontagem:document.getElementById("siac-montagem-status")?.textContent,
+     estadoBancada:document.getElementById("siac-stage-status")?.textContent,
+     textoFoco:document.getElementById("focus-tab")?.textContent,
+     pane:document.getElementById("controls")?.className,
+     rota:window.SIAB?.rota?.nome
+   }))),"erros:",errors);
    assert.match(await page.locator("#focus-tab").textContent(),/Coluna em foco/);
    assert.equal(await page.locator("#siac-stage .siac-card").count(),0);
    assert.equal(await page.locator("#siac-stage").isVisible(),true);
