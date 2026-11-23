@@ -20,10 +20,10 @@
 
 ## Situação da base local — atualização da pesquisa de 23/11/2026
 - **76** compostos candidatos (catálogo estável; nenhum candidato novo por nome aproximado).
-- **9 protocolos** cadastrados, incluindo 4 fontes/métodos adicionais incorporados nesta etapa.
-- **66 registros pontuais de Rf** e **um intervalo de Rf** preservado como intervalo original (feofitina b: 0,47–0,54). Quantidade de linhas ≠ quantidade de substâncias.
+- **10 protocolos** cadastrados, incluindo 5 métodos adicionais incorporados nesta etapa.
+- **74 registros pontuais de Rf** e **um intervalo de Rf** preservado como intervalo original (feofitina b: 0,47–0,54). Quantidade de linhas ≠ quantidade de substâncias.
 - **24 substâncias** com pelo menos um método de retenção individual reportado: 20 aminoácidos e 4 pigmentos vegetais.
-- **20 substâncias** com pelo menos dois métodos individuais e sistemas de solventes realmente diferentes: **16 aminoácidos + 4 pigmentos**.
+- **22 substâncias** com pelo menos dois métodos individuais e sistemas de solventes realmente diferentes: **18 aminoácidos + 4 pigmentos**.
 - **Zero substâncias homologadas** pela regra estrita, pois os registros ainda não têm identidade individual e condição experimental homologadas. Especialmente, valores de uma **tabela comercial de referência didática** não equivalem a medições primárias verificadas.
 - O quadro abaixo informa **cobertura bibliográfica preliminar**, não autorização automática para o motor. Cada protocolo continua com `status != homologado`.
 - Projeções geométricas e bancos de solubilidade não completam lacunas de retenção.
@@ -34,6 +34,8 @@
 3. **Pro-Techex**, [quadro de kit didático, p. 5](https://5.imimg.com/data5/SELLER/Doc/2025/6/518306737/JX/IU/GS/9824300/pro-techex-thin-layer-chromatography-teaching-kit.pdf): dois eluentes independentes, **etanol 96%/água 7:3** e **1-butanol/ácido acético/água 8:2:2**, com valores tabulados para 15 aminoácidos do catálogo. **Não tratar como artigo primário nem homologa-lo sem conferir placa, incerteza, condições originais e origem dos valores.**
 
 **Limitação do protocolo com 1-butanol:** variar apenas as proporções de 12:3:5 (Amrita) para 8:2:2 (kit) **não** satisfaz a regra de dois solventes diferentes entre esses dois métodos isoladamente; a comparação com etanol/água ou 1-propanol/água oferece diferença real de componentes.
+
+4. **Padiyar et al. (2024)**, [artigo com distâncias da corrida](https://www.ijpsjournal.com/article/enhanced-thin-layer-chromatography-of-amino-acids-using-mixed-hydrotropic-solutions): sílica gel 60 F254, **1-butanol/ácido acético glacial/água 4:1:1**, ninhidrina e **oito pares distância da mancha / distância da frente**. A fonte usa uma solução de ninhidrina cuja preparação é descrita de forma contraditória (etanol versus água), e a valina apresenta **Rf publicado 0,52** diante de **1,85/3,5 = 0,5286**, que arredondaria a 0,53 a duas casas. Registramos a divergência e **não homologamos** até conferência independente.
 
 A matriz auditável em `data/siac/matriz-cobertura-dois-metodos.v2.json` identifica, por candidato, quais métodos, sistemas eluentes, fontes, números e intervalos estão disponíveis e as pendências antes da homologação.
 
