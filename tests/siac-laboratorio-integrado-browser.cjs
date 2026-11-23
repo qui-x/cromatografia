@@ -133,6 +133,9 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
       "Cartões de papel devem ampliar com a área desktop: "+JSON.stringify(gradePapel));
     assert(gradePapel.art.every(c=>c.height>150&&c.width>200),
       "Papéis não devem permanecer limitados a 94 × 85 px: "+JSON.stringify(gradePapel));
+    const visualFolder=path.join(root,"docs/evidencias/siac-laboratorio");
+    fs.mkdirSync(visualFolder,{recursive:true});
+    await page.screenshot({path:path.join(visualFolder,"visao-papeis-desktop.png"),fullPage:false});
     // Teste só de layout com cópias temporárias de DOM: não cria frações
     // sintéticas nem altera o motor, o volume ou a montagem científica.
     const cenarios=await page.evaluate(()=>{
@@ -174,12 +177,14 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
     assert(gradeMobile.cards.every(c=>c.width>=145)&&gradeMobile.art.every(c=>c.height>=100),
       "Papéis devem se adaptar à largura do celular: "+JSON.stringify(gradeMobile));
     assert(gradeMobile.pageOverflow<=4,"Celular não deve gerar rolagem horizontal");
+    await page.screenshot({path:path.join(visualFolder,"visao-papeis-mobile.png"),fullPage:true});
     await page.setViewportSize({width:1360,height:860});
     // Frascos e papéis compartilham o mesmo dimensionamento responsivo.
     await page.locator("#overview-tab").click({force:true});
     const gradeFrascos=await medirGrade();
     assert(gradeFrascos.art.every(c=>c.height>150&&c.width>200),
       "Frascos devem crescer tanto quanto os papéis: "+JSON.stringify(gradeFrascos));
+    await page.screenshot({path:path.join(visualFolder,"visao-frascos-desktop.png"),fullPage:false});
     await page.locator("#overview-tab").click({force:true});
     // Clique no papel da visão geral transfere para o papel em foco.
     await page.locator('#siac-stage [data-open-fraction=F7]').click({force:true});
