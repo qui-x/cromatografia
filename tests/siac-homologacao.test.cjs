@@ -4,10 +4,10 @@ const h=require("../js/simulation/siac-homologacao.js");
 const base=require("../data/siac/analitos-protocolos.v1.json");
 const report=h.auditarCatalogo(base);
 assert.equal(report.resumo.catalogados,76);
-assert.equal(report.resumo.comUmOuMaisMetodosDeRetencao,24);
-assert.equal(report.resumo.comDoisOuMaisMetodosDeRetencao,22,
+assert.equal(report.resumo.comUmOuMaisMetodosDeRetencao,32);
+assert.equal(report.resumo.comDoisOuMaisMetodosDeRetencao,30,
   "os 20 candidatos com dois métodos devem ter evidência individual");
-assert.equal(report.resumo.comDoisMetodosESolventesContrastantes,22);
+assert.equal(report.resumo.comDoisMetodosESolventesContrastantes,30);
 assert.equal(report.resumo.completamenteHomologados,0,
   "catálogo experimental ainda não homologado segundo a política de dois métodos");
 assert.equal(report.resumo.faltamParaMetaMinima,40);
@@ -24,7 +24,7 @@ assert.equal(matriz.resumo.totaisRegistroRfPontual,
  base.protocolos.reduce((n,p)=>n+(p.dadosRf?.length||0),0));
 assert.equal(matriz.resumo.totalRfIntervalos,
  base.protocolos.reduce((n,p)=>n+(p.dadosRfIntervalos?.length||0),0));
-assert.equal(matriz.resumo.totaisRegistroRfPontual,74);
+assert.equal(matriz.resumo.totaisRegistroRfPontual,98);
 assert.equal(matriz.resumo.totalRfIntervalos,1);
 assert.deepEqual(
  matriz.candidatos.filter(c=>c.doisSolventesContrastantesEmDoisMetodos).map(c=>c.id).sort(),
@@ -41,6 +41,12 @@ assert(pheo.metodos.some(m=>m.registrosRfIntervalos===1),
  "o Rf da fonte deve permanecer como intervalo, não estimativa pontual");
 assert.equal(h.avaliarSubstancia("arginine",base).metodosComRetencaoIndividual,2,
  "arginina tem dois sistemas de solventes em pesquisa");
+assert.equal(h.avaliarSubstancia("tartrazina",base).metodosComRetencaoIndividual,4);
+assert.equal(h.avaliarSubstancia("amaranth",base).metodosComRetencaoIndividual,2);
+assert.equal(h.avaliarSubstancia("patent_blue_v",base).metodosComRetencaoIndividual,2);
+assert.equal(h.avaliarSubstancia("allura_red_ac",base).metodosComRetencaoIndividual,0);
+assert.equal(h.avaliarSubstancia("quinoline_yellow",base).metodosComRetencaoIndividual,0,
+ "não atribuir o Rf de uma mistura comercial a um único analito");
 assert.equal(h.avaliarSubstancia("glutamine",base).metodosComRetencaoIndividual,2,
  "glutamina tem dois sistemas de solventes em pesquisa");
 assert.equal(h.avaliarSubstancia("caffeine",base).metodosComRetencaoIndividual,0);
