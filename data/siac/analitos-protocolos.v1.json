@@ -17,7 +17,16 @@
     "protechex2025": "https://5.imimg.com/data5/SELLER/Doc/2025/6/518306737/JX/IU/GS/9824300/pro-techex-thin-layer-chromatography-teaching-kit.pdf",
     "padiyar2024": "https://www.ijpsjournal.com/article/enhanced-thin-layer-chromatography-of-amino-acids-using-mixed-hydrotropic-solutions",
     "fao_jecfa_colours": "https://www.fao.org/4/a0691e/A0691E07.htm",
-    "sobanska2017": "https://onlinelibrary.wiley.com/doi/10.1155/2017/9528472"
+    "sobanska2017": "https://onlinelibrary.wiley.com/doi/10.1155/2017/9528472",
+    "fibroin2026": "https://www.mdpi.com/2297-8739/13/11/336",
+    "quercetin2010": "https://www.itmedicalteam.pl/pdfdownload.php?aid=0&download=articles/effect-of-sample-preparation-and-tlc-methods-on-thequantitation-of-quercetin-content-in-asthma-weed.pdf",
+    "curcumin2017": "https://acta.pharmaceutica.farmaceut.org/materials/pdf/38517.pdf",
+    "hptlcGreen2022": "https://www.mdpi.com/1420-3049/27/2/405",
+    "ibuprofen2016": "https://www.researchgate.net/publication/296331814_Development_and_validation_of_analysis_method_for_tablet_ibuprofen_by_thin_layer_chromatography-densitometry",
+    "stevensLipsy": "https://web.stevens.edu/wit/research/samples/plipsy_organic_chemistry_lab_report",
+    "bentonite2021": "https://rjptonline.org/HTML_Papers/Research%20Journal%20of%20Pharmacy%20and%20Technology__PID__2021-14-4-51.html",
+    "carotenoid2008": "https://sjst.psu.ac.th/index.php/article/915/PaperPDFw-Links/download",
+    "microalgae2017": "https://researchspace.ukzn.ac.za/server/api/core/bitstreams/9a07f1d3-0158-4a58-8c4e-1bdcc923bd98/content"
   },
   "candidatos": [
     {
@@ -3405,6 +3414,780 @@
         }
       ],
       "nota": "Usar Rf somente sob este eluente; valores diferem radicalmente do eluente metanol/tolueno 11:9. Não usar a condição final quantitativa como se fosse esta fase móvel."
+    },
+    {
+      "id": "tlc_hfsa_2026_mph1_hexane_isopropanol",
+      "tecnica": "ccd",
+      "assuntos": [
+        "indicadores_e_traçadores"
+      ],
+      "status": "referencia_primaria_em_revisao_nao_homologada",
+      "fonte": "fibroin2026",
+      "ano": 2026,
+      "referenciaSecao": "Shakarova et al. 2026, Table 2, MPh1: HFSA",
+      "faseEstacionaria": {
+        "classe": "HFSA (fibroína-sílica híbrida)",
+        "detalhamento": "Camada ~100 µm sobre vidro; adsorvente híbrido específico; não substituir por sílica comercial",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "n_hexane",
+            "partes": 1
+          },
+          {
+            "id": "isopropanol",
+            "partes": 1
+          }
+        ],
+        "base": "v/v",
+        "mistura": "n-hexano:2-propanol 1:1",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "luz visível após secagem",
+        "detectorHomologado": false,
+        "concentracaoPadraoMgMl": 15,
+        "volumeAmostraUl": 1,
+        "saturacaoCamaraMin": 30,
+        "descricaoAmostra": "padrões de corante, não amostras ambientais"
+      },
+      "dadosRf": [
+        {
+          "analito": "methyl_orange",
+          "rf": 0.73,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "fibroin2026",
+          "temperaturaC": null,
+          "homologado": false
+        },
+        {
+          "analito": "sudan_iv",
+          "rf": 0.33,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "fibroin2026",
+          "temperaturaC": null,
+          "homologado": false
+        }
+      ],
+      "nota": "Um Rf individual reportado sem replicatas; NÃO copiar a coluna MSS, que usa suporte diferente; n-hexano ainda não normalizado no catálogo de solventes."
+    },
+    {
+      "id": "tlc_hfsa_2026_mph2_hexane_isopropanol_water_acetic",
+      "tecnica": "ccd",
+      "assuntos": [
+        "indicadores_e_traçadores"
+      ],
+      "status": "referencia_primaria_em_revisao_nao_homologada",
+      "fonte": "fibroin2026",
+      "ano": 2026,
+      "referenciaSecao": "Shakarova et al. 2026, Table 2, MPh2: HFSA",
+      "faseEstacionaria": {
+        "classe": "HFSA (fibroína-sílica híbrida)",
+        "detalhamento": "Camada ~100 µm sobre vidro; adsorvente híbrido específico; não substituir por sílica comercial",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "n_hexane",
+            "partes": 1
+          },
+          {
+            "id": "isopropanol",
+            "partes": 1
+          },
+          {
+            "id": "water",
+            "partes": 0.5
+          },
+          {
+            "id": "acetic_acid",
+            "partes": 0.1
+          }
+        ],
+        "base": "v/v",
+        "mistura": "n-hexano:2-propanol:água:ácido acético glacial 1:1:0,5:0,1",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "luz visível após secagem",
+        "detectorHomologado": false,
+        "concentracaoPadraoMgMl": 15,
+        "volumeAmostraUl": 1,
+        "saturacaoCamaraMin": 30
+      },
+      "dadosRf": [
+        {
+          "analito": "methyl_orange",
+          "rf": 0.49,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "fibroin2026",
+          "temperaturaC": null,
+          "homologado": false
+        },
+        {
+          "analito": "sudan_iv",
+          "rf": 0.86,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "fibroin2026",
+          "temperaturaC": null,
+          "homologado": false
+        }
+      ],
+      "nota": "Mesmo suporte HFSA do método MPh1; adição REAL de água e ácido acético. Sem replicatas independentes, não inferir desvio padrão ou comportamento sob outros suportes."
+    },
+    {
+      "id": "tlc_quercetin2010_system1_toluene_ethylacetate_acetic",
+      "tecnica": "ccd",
+      "assuntos": [
+        "pigmentos_vegetais"
+      ],
+      "status": "referencia_primaria_em_revisao_nao_homologada",
+      "fonte": "quercetin2010",
+      "ano": 2010,
+      "referenciaSecao": "Vairavasundaram & Senthil, 2010, Table I solvent 1 / Table II Standard Quercetin",
+      "faseEstacionaria": {
+        "classe": "sílica gel Whatman K6F 60Å",
+        "detalhamento": "Placa pré-revestida 20×20 cm, camada 0,25 mm; câmara saturada 1 hora; desenvolvimento aproximadamente 16 cm",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "toluene",
+            "partes": 30
+          },
+          {
+            "id": "ethyl_acetate",
+            "partes": 40
+          },
+          {
+            "id": "acetic_acid",
+            "partes": 5
+          }
+        ],
+        "base": "v/v",
+        "mistura": "tolueno:acetato de etila:ácido acético 30:40:5",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "UV de onda curta 254 nm OU aspersão de FeCl3 1% e ferricianeto de potássio 1% (1:1); não afirmar que os dois reveladores foram usados simultaneamente",
+        "detectorHomologado": false,
+        "concentracaoPadraoMgMl": 0.1,
+        "volumeAmostraUl": 10
+      },
+      "dadosRf": [
+        {
+          "analito": "quercetin",
+          "rf": 0.62,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "quercetin2010",
+          "temperaturaC": null,
+          "homologado": false
+        }
+      ],
+      "nota": "Rf do padrão puro (coluna Standard Quercetin), não do extrato de folhas/caules/raízes. Extração com metanol/acetato de etila é operação diferente da fase móvel TLC."
+    },
+    {
+      "id": "tlc_quercetin2010_system4_toluene_acetic",
+      "tecnica": "ccd",
+      "assuntos": [
+        "pigmentos_vegetais"
+      ],
+      "status": "referencia_primaria_em_revisao_nao_homologada",
+      "fonte": "quercetin2010",
+      "ano": 2010,
+      "referenciaSecao": "Vairavasundaram & Senthil, 2010, Table I solvent 4 / Table II Standard Quercetin",
+      "faseEstacionaria": {
+        "classe": "sílica gel Whatman K6F 60Å",
+        "detalhamento": "Placa pré-revestida 20×20 cm, camada 0,25 mm; câmara saturada 1 hora; desenvolvimento aproximadamente 16 cm",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "toluene",
+            "partes": 40
+          },
+          {
+            "id": "acetic_acid",
+            "partes": 20
+          }
+        ],
+        "base": "v/v",
+        "mistura": "tolueno:ácido acético 40:20",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "UV de onda curta 254 nm OU aspersão de FeCl3 1% e ferricianeto de potássio 1% (1:1); não afirmar que os dois reveladores foram usados simultaneamente",
+        "detectorHomologado": false,
+        "concentracaoPadraoMgMl": 0.1,
+        "volumeAmostraUl": 10
+      },
+      "dadosRf": [
+        {
+          "analito": "quercetin",
+          "rf": 0.86,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "quercetin2010",
+          "temperaturaC": null,
+          "homologado": false
+        }
+      ],
+      "nota": "Não confundir Rf .86 do padrão com .85-.83 dos extratos vegetais; troca de eluente com o sistema 1 remove acetato de etila."
+    },
+    {
+      "id": "tlc_curcumin2017_toluene_ethylacetate_95_5",
+      "tecnica": "ccd",
+      "assuntos": [
+        "pigmentos_vegetais"
+      ],
+      "status": "referencia_primaria_em_revisao_nao_homologada",
+      "fonte": "curcumin2017",
+      "ano": 2017,
+      "referenciaSecao": "Ahmed et al. 2017, Acta Pharm. Table II, primeira fase móvel",
+      "faseEstacionaria": {
+        "classe": "CCD de curcuminoides de pó de cúrcuma",
+        "detalhamento": "Artigo apresenta composição dos eluentes e valores para três curcuminoides; marca e espessura da camada TLC não determinadas nesta tabela",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "toluene",
+            "partes": 95
+          },
+          {
+            "id": "ethyl_acetate",
+            "partes": 5
+          }
+        ],
+        "base": "v/v",
+        "mistura": "tolueno:acetato de etila 95:5",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "visualização TLC de curcuminoides (revelador e comprimento de onda não especificados na Tabela II)",
+        "detectorHomologado": false
+      },
+      "dadosRf": [
+        {
+          "analito": "curcumin",
+          "rf": 0.92,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "curcumin2017",
+          "temperaturaC": null,
+          "homologado": false
+        }
+      ],
+      "nota": "Fonte diferencia curcumina de desmetoxicurcumina e bisdesmetoxicurcumina; não confundir Rf destes derivados com curcumina. Substrato de suporte precisa conferência."
+    },
+    {
+      "id": "tlc_curcumin2017_dcm_methanol_95_5",
+      "tecnica": "ccd",
+      "assuntos": [
+        "pigmentos_vegetais"
+      ],
+      "status": "referencia_primaria_em_revisao_nao_homologada",
+      "fonte": "curcumin2017",
+      "ano": 2017,
+      "referenciaSecao": "Ahmed et al. 2017, Acta Pharm. Table II, terceira fase móvel",
+      "faseEstacionaria": {
+        "classe": "CCD de curcuminoides de pó de cúrcuma",
+        "detalhamento": "Artigo apresenta composição dos eluentes e valores para três curcuminoides; marca e espessura da camada TLC não determinadas nesta tabela",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "dcm",
+            "partes": 95
+          },
+          {
+            "id": "methanol",
+            "partes": 5
+          }
+        ],
+        "base": "v/v",
+        "mistura": "diclorometano:metanol 95:5",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "visualização TLC de curcuminoides (revelador não especificado na Tabela II)",
+        "detectorHomologado": false
+      },
+      "dadosRf": [
+        {
+          "analito": "curcumin",
+          "rf": 0.54,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "curcumin2017",
+          "temperaturaC": null,
+          "homologado": false
+        }
+      ],
+      "nota": "Não inferir k de coluna por Rf planar; Rf 0,54 para curcumina, enquanto desmetoxicurcumina 0,46 e bisdesmetoxi 0,35."
+    },
+    {
+      "id": "hptlc_green2022_normal_ethylacetate_ethanol_85_15",
+      "tecnica": "hptlc",
+      "assuntos": [
+        "farmacos_e_organicos"
+      ],
+      "status": "referencia_primaria_em_revisao_nao_homologada",
+      "fonte": "hptlcGreen2022",
+      "ano": 2022,
+      "referenciaSecao": "Alam et al. 2022, Table 3, NP-HPTLC, mean ± SD n=3",
+      "faseEstacionaria": {
+        "classe": "HPTLC de fase normal, sílica gel 60 F254",
+        "detalhamento": "Estudo emprega placa de fase normal, distinta de RP-HPTLC; valores de Rf média ± DP (n=3)",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "ethyl_acetate",
+            "partes": 85
+          },
+          {
+            "id": "ethanol",
+            "partes": 15
+          }
+        ],
+        "base": "v/v",
+        "mistura": "acetato de etila:etanol 85:15",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "densitometria em absorbância a 260 nm",
+        "detectorHomologado": false
+      },
+      "dadosRf": [
+        {
+          "analito": "caffeine",
+          "rf": 0.4,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "hptlcGreen2022",
+          "temperaturaC": null,
+          "homologado": false,
+          "desvioPadraoRf": 0.01,
+          "replicatas": 3
+        },
+        {
+          "analito": "paracetamol",
+          "rf": 0.59,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "hptlcGreen2022",
+          "temperaturaC": null,
+          "homologado": false,
+          "desvioPadraoRf": 0.02,
+          "replicatas": 3
+        }
+      ],
+      "nota": "HPTLC normal com Rf médio e desvio padrão; distinto da RP-HPTLC também pelo suporte, não interpretar como troca APENAS da fase móvel."
+    },
+    {
+      "id": "hptlc_green2022_reverse_ethanol_water_50_50",
+      "tecnica": "hptlc",
+      "assuntos": [
+        "farmacos_e_organicos"
+      ],
+      "status": "referencia_primaria_em_revisao_nao_homologada",
+      "fonte": "hptlcGreen2022",
+      "ano": 2022,
+      "referenciaSecao": "Alam et al. 2022, Table 4, RP-HPTLC, mean ± SD n=3",
+      "faseEstacionaria": {
+        "classe": "HPTLC de fase reversa C18",
+        "detalhamento": "Suporte de fase reversa distinto da sílica normal; contrastar Rf sem atribuir toda diferença só ao solvente",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "ethanol",
+            "partes": 50
+          },
+          {
+            "id": "water",
+            "partes": 50
+          }
+        ],
+        "base": "v/v",
+        "mistura": "etanol:água 50:50",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "densitometria em absorbância a 260 nm",
+        "detectorHomologado": false
+      },
+      "dadosRf": [
+        {
+          "analito": "caffeine",
+          "rf": 0.43,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "hptlcGreen2022",
+          "temperaturaC": null,
+          "homologado": false,
+          "desvioPadraoRf": 0.01,
+          "replicatas": 3
+        },
+        {
+          "analito": "paracetamol",
+          "rf": 0.57,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "hptlcGreen2022",
+          "temperaturaC": null,
+          "homologado": false,
+          "desvioPadraoRf": 0.02,
+          "replicatas": 3
+        }
+      ],
+      "nota": "Desvio padrão medido em ensaios de fase reversa; não fundir com parâmetros de fase normal. Comparação didática entre técnicas, não par isocrático no mesmo suporte."
+    },
+    {
+      "id": "tlc_ibuprofen2016_chloroform_acetone_8_2",
+      "tecnica": "ccd",
+      "assuntos": [
+        "farmacos_e_organicos"
+      ],
+      "status": "referencia_primaria_em_revisao_nao_homologada",
+      "fonte": "ibuprofen2016",
+      "ano": 2016,
+      "referenciaSecao": "Rivai et al. 2016, Table 1, eluente chloroform:acetone",
+      "faseEstacionaria": {
+        "classe": "sílica gel 60 F254 Merck",
+        "detalhamento": "Placa 250 µm; ativação 115 °C por 30 min; câmara saturada 15 min; frente de solvente ~8 cm",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "chloroform",
+            "partes": 8
+          },
+          {
+            "id": "acetone",
+            "partes": 2
+          }
+        ],
+        "base": "v/v",
+        "mistura": "clorofórmio:acetona 8:2",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "mancha sob UV 254 nm e densitometria UV (texto menciona 320 nm na otimização e 222 nm na quantificação)",
+        "detectorHomologado": false
+      },
+      "dadosRf": [
+        {
+          "analito": "ibuprofen",
+          "rf": 0.62,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "ibuprofen2016",
+          "temperaturaC": null,
+          "homologado": false
+        }
+      ],
+      "nota": "Rf de triagem de fase móvel, NÃO o método quantitativo final validado (clorofórmio:metanol 10:1). Descrições de 222/320 nm discordam em seções do artigo."
+    },
+    {
+      "id": "tlc_ibuprofen2016_ethylacetate_pure",
+      "tecnica": "ccd",
+      "assuntos": [
+        "farmacos_e_organicos"
+      ],
+      "status": "referencia_primaria_em_revisao_nao_homologada",
+      "fonte": "ibuprofen2016",
+      "ano": 2016,
+      "referenciaSecao": "Rivai et al. 2016, Table 1, eluente ethyl acetate",
+      "faseEstacionaria": {
+        "classe": "sílica gel 60 F254 Merck",
+        "detalhamento": "Placa 250 µm; ativação 115 °C por 30 min; câmara saturada 15 min; frente de solvente ~8 cm",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "ethyl_acetate",
+            "partes": 10
+          }
+        ],
+        "base": "v/v",
+        "mistura": "acetato de etila puro, 10 partes de solvente",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "mancha sob UV 254 nm e densitometria UV (texto menciona 320 nm na otimização e 222 nm na quantificação)",
+        "detectorHomologado": false
+      },
+      "dadosRf": [
+        {
+          "analito": "ibuprofen",
+          "rf": 0.87,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "ibuprofen2016",
+          "temperaturaC": null,
+          "homologado": false
+        }
+      ],
+      "nota": "Rf .87 de otimização em acetato de etila, não resultado de validação final. Método sem outro componente solvente."
+    },
+    {
+      "id": "tlc_analgesics_stevens_ethyacetate_pure",
+      "tecnica": "ccd",
+      "assuntos": [
+        "farmacos_e_organicos"
+      ],
+      "status": "relatorio_discente_nao_homologado",
+      "fonte": "stevensLipsy",
+      "ano": null,
+      "referenciaSecao": "Lipsy, Stevens Institute, relatório experimental de laboratório, Table 1",
+      "faseEstacionaria": {
+        "classe": "placa plástica recoberta com sílica (relatório de aula)",
+        "detalhamento": "Espessura e fabricante não informados; relatório de graduação, fora de periódico revisado por pares",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "ethyl_acetate",
+            "partes": 1
+          }
+        ],
+        "base": "v/v",
+        "mistura": "acetato de etila puro",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "manchas observadas; procedimento de revelação não descrito",
+        "detectorHomologado": false
+      },
+      "dadosRf": [
+        {
+          "analito": "acetylsalicylic_acid",
+          "rf": 0.45,
+          "classe": "Rf_de_relatorio_educacional_nao_revisado",
+          "fonte": "stevensLipsy",
+          "temperaturaC": null,
+          "homologado": false
+        },
+        {
+          "analito": "caffeine",
+          "rf": 0.08,
+          "classe": "Rf_de_relatorio_educacional_nao_revisado",
+          "fonte": "stevensLipsy",
+          "temperaturaC": null,
+          "homologado": false
+        },
+        {
+          "analito": "paracetamol",
+          "rf": 0.24,
+          "classe": "Rf_de_relatorio_educacional_nao_revisado",
+          "fonte": "stevensLipsy",
+          "temperaturaC": null,
+          "homologado": false
+        },
+        {
+          "analito": "ibuprofen",
+          "rf": 0.6,
+          "classe": "Rf_de_relatorio_educacional_nao_revisado",
+          "fonte": "stevensLipsy",
+          "temperaturaC": null,
+          "homologado": false
+        }
+      ],
+      "nota": "Relatório discente, evidência científica inferior a artigo primário. Rf de padrões isolados, não atribuir aos comprimidos mistos. Usar apenas em pesquisa e exigir validação em fonte independente."
+    },
+    {
+      "id": "tlc_analgesics_bentonite2021_mixed_eluent",
+      "tecnica": "ccd",
+      "assuntos": [
+        "farmacos_e_organicos"
+      ],
+      "status": "referencia_primaria_em_revisao_nao_homologada",
+      "fonte": "bentonite2021",
+      "ano": 2021,
+      "referenciaSecao": "Alhaj Sakur et al. 2021, Abstract + experimental support and retention factors",
+      "faseEstacionaria": {
+        "classe": "bentonita síria modificada por tratamento térmico/ácido B500AW",
+        "detalhamento": "Suporte desenvolvido no estudo, camada 0,25 mm; não equivaler a sílica comum",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "cyclohexane",
+            "partes": 14
+          },
+          {
+            "id": "chloroform",
+            "partes": 5
+          },
+          {
+            "id": "methanol",
+            "partes": 0.25
+          },
+          {
+            "id": "acetic_acid",
+            "partes": 0.75
+          }
+        ],
+        "base": "v/v",
+        "mistura": "ciclo-hexano:clorofórmio:metanol:ácido acético 14:5:0,25:0,75",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "densitometria: paracetamol 250 nm, cafeína 275 nm, ácido acetilsalicílico 200 nm",
+        "detectorHomologado": false
+      },
+      "dadosRf": [
+        {
+          "analito": "acetylsalicylic_acid",
+          "rf": 0.4,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "bentonite2021",
+          "temperaturaC": null,
+          "homologado": false
+        },
+        {
+          "analito": "caffeine",
+          "rf": 0.21,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "bentonite2021",
+          "temperaturaC": null,
+          "homologado": false
+        },
+        {
+          "analito": "paracetamol",
+          "rf": 0.1,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "bentonite2021",
+          "temperaturaC": null,
+          "homologado": false
+        }
+      ],
+      "nota": "Suporte de bentonita tratado, não sílica; diferenças de Rf entre bentonita e placa de Stevens não isolam efeito do solvente."
+    },
+    {
+      "id": "tlc_carotenoids_yuangsoi2008_petroleumether_diethylether_acetone",
+      "tecnica": "ccd",
+      "assuntos": [
+        "pigmentos_vegetais"
+      ],
+      "status": "referencia_primaria_em_revisao_nao_homologada",
+      "fonte": "carotenoid2008",
+      "ano": 2008,
+      "referenciaSecao": "Yuangsoi et al. 2008, Abstract, Results 3.1, Figure 2 (padrões autênticos)",
+      "faseEstacionaria": {
+        "classe": "sílica gel 60 em vidro",
+        "detalhamento": "Placas pré-revestidas; desenvolvimento em câmara saturada e temperatura de 25±2 °C",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "petroleum_ether_mixture",
+            "partes": 75
+          },
+          {
+            "id": "diethyl_ether",
+            "partes": 15
+          },
+          {
+            "id": "acetone",
+            "partes": 10
+          }
+        ],
+        "base": "v/v",
+        "mistura": "éter de petróleo:éter dietílico:acetona 75:15:10",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "densitometria de absorbância a 450 nm",
+        "detectorHomologado": false,
+        "temperaturaC": {
+          "min": 23,
+          "max": 27
+        },
+        "saturacaoCamaraMin": 30
+      },
+      "dadosRf": [
+        {
+          "analito": "beta_carotene",
+          "rf": 0.97,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "carotenoid2008",
+          "temperaturaC": null,
+          "homologado": false
+        },
+        {
+          "analito": "lutein",
+          "rf": 0.17,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "carotenoid2008",
+          "temperaturaC": null,
+          "homologado": false
+        }
+      ],
+      "nota": "Luteína e β-caroteno de padrões de referência, não atribuir aos demais carotenoides. Éter de petróleo não é n-hexano puro."
+    },
+    {
+      "id": "tlc_carotenoids_adedoyin2017_acetone_nhexane_30_70",
+      "tecnica": "ccd",
+      "assuntos": [
+        "pigmentos_vegetais"
+      ],
+      "status": "referencia_primaria_em_revisao_nao_homologada",
+      "fonte": "microalgae2017",
+      "ano": 2017,
+      "referenciaSecao": "Adedoyin 2017, Figura 3.15A e Tabela 3.4, sistema acetona:n-hexano 30:70",
+      "faseEstacionaria": {
+        "classe": "CCD em extrato de microalgas com padrão β-caroteno",
+        "detalhamento": "Fase estacionária reportada na seção de método da dissertação, sem equivalência comprovada à placa do estudo de 2008",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "acetone",
+            "partes": 30
+          },
+          {
+            "id": "n_hexane",
+            "partes": 70
+          }
+        ],
+        "base": "v/v",
+        "mistura": "acetona:n-hexano 30:70 (v/v)",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "pigmentos por inspeção visual e confirmação espectral UV-Vis da fração isolada",
+        "detectorHomologado": false
+      },
+      "dadosRf": [
+        {
+          "analito": "beta_carotene",
+          "rf": 0.95,
+          "classe": "Rf_de_banda_de_extrato_com_atribuicao_bibliografica",
+          "fonte": "microalgae2017",
+          "temperaturaC": null,
+          "homologado": false,
+          "rfPadraoAutenticoMesmoSistema": 0.98
+        },
+        {
+          "analito": "lutein",
+          "rf": 0.54,
+          "classe": "Rf_de_banda_de_extrato_com_atribuicao_bibliografica",
+          "fonte": "microalgae2017",
+          "temperaturaC": null,
+          "homologado": false,
+          "identificacaoTentativa": true
+        }
+      ],
+      "nota": "β-caroteno .95 em extrato, enquanto padrão autêntico .98 no mesmo sistema. Luteína .54 identificada em banda de extrato; não declarar identidade confirmada somente por Rf."
     }
   ],
   "observacoes": [
@@ -3412,6 +4195,7 @@
     "Mesmo dentro de uma classe, Rf e cor dependem do sistema experimental, suporte, solvente e detecção.",
     "Rf da mesma molécula em outra fase não pode ser reutilizado; não existe valor canônico universal.",
     "Banco não incorpora novas substâncias à simulação sem revisão independente das condições de retenção e risco.",
-    "Pesquisa 23/11/2026: adicionados quatro protocolos rastreáveis (Ukil 2013, Dobado 2024, Pro-Techex solventes I/II), totalizando dados de 20 aminoácidos e 4 pigmentos em condições adicionais, inclusive intervalo não pontual de feofitina b. Nenhum registro foi homologado e nenhum ponto médio de faixa foi inventado."
+    "Pesquisa 23/11/2026: adicionados quatro protocolos rastreáveis (Ukil 2013, Dobado 2024, Pro-Techex solventes I/II), totalizando dados de 20 aminoácidos e 4 pigmentos em condições adicionais, inclusive intervalo não pontual de feofitina b. Nenhum registro foi homologado e nenhum ponto médio de faixa foi inventado.",
+    "Pesquisa 23/11/2026: +14 condições cromatográficas descritas em 9 fontes para 10 novas substâncias (fluoresceína não incluída). Distinção entre padrões autênticos, bandas de extrato, relatório acadêmico e técnicas com suportes distintos. n-hexano representado por ID específico ainda pendente de entrada no catálogo físico-químico. Todos os protocolos permanecem NÃO homologados."
   ]
 }
