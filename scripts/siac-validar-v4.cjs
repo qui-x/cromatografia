@@ -34,7 +34,7 @@ async function main(){
     const camadas=await page.locator("#abertura [data-placa]").evaluateAll(placas=>
       placas.map(placa=>{
         const classes=Array.from(placa.children).map(el=>el.getAttribute("class")||"");
-        const pos=c=>classes.findIndex(x=>x.split(/\\s+/).includes(c));
+        const pos=c=>classes.findIndex(x=>x.split(/\s+/).includes(c));
         const papel=placa.querySelector(".siac-v4-folha");
         const frente=placa.querySelector(".siac-v4-bequer-frontal");
         const solvente=frente?.querySelector(".siac-v4-poco-solvente");
