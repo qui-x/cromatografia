@@ -1,0 +1,2407 @@
+{
+  "versao": "0.1-pesquisa-2026-11-23",
+  "status": "PESQUISA_NAO_HOMOLOGADA",
+  "advertencia": "Fonte: guia de fornecedor e catálogos; não são curvas de calibração ou coeficientes de retenção. Não incorporar automaticamente ao motor.",
+  "fontes": {
+    "TF25": {
+      "name": "Fisher Chemical High Purity Solvents Selection Guide, p. 10",
+      "type": "manufacturer_compilation",
+      "url": "https://assets.thermofisher.com/TFS-Assets/ANZ/Application-Notes/chromatography-solvent-application-guide.pdf",
+      "context": "densidade a 25 C; viscosidade a 20 C; bp conforme tabela de fornecedor; mistura comercial não é substância pura"
+    },
+    "MERCK": {
+      "name": "Merck / Sigma-Aldrich HPLC Troubleshooting Guide",
+      "type": "manufacturer_reference",
+      "url": "https://www.sigmaaldrich.com/ST/en/technical-documents/technical-article/analytical-chemistry/small-molecule-hplc/hplc-troubleshooting-guide",
+      "context": "miscibilidade com água, viscosidade, UV cutoff e força eluotrópica em sílica"
+    },
+    "WATERS": {
+      "name": "Waters Solvent Miscibility, atualizado em 16-10-2026",
+      "type": "manufacturer_reference",
+      "url": "https://help.waters.com/help/en/product-support/alliance-is-system-support/715008450/27BE872.html",
+      "context": "números de miscibilidade, viscosidade a 20 C, ponto de ebulição; mudança de fase e temperatura importam"
+    },
+    "SIGMA_MATRIX": {
+      "name": "MilliporeSigma Solvent Miscibility Chart — matriz visual",
+      "type": "manufacturer_reference",
+      "url": "https://www.sigmaaldrich.com/deepweb/assets/sigmaaldrich/marketing/global/documents/solvent-miscibility-rules-chart-ms.pdf",
+      "context": "interpretada visualmente; extração automática de PDF não confiável; tabela categórica não é diagrama quantitativo"
+    },
+    "PUBCHEM_ETHANOL": {
+      "name": "PubChem CID 702 — ethanol",
+      "type": "compiled_property",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/compound/702",
+      "context": "densidade 0.7893 g/cm3 a 20 C conforme anotação, não a 25 C"
+    },
+    "IUPAC": {
+      "name": "IUPAC Gold Book retention factor",
+      "type": "terminology",
+      "url": "https://goldbook.iupac.org/terms/view/R05359"
+    },
+    "AMRITA": {
+      "name": "Amrita Virtual Lab amino acid TLC procedure",
+      "type": "teaching_protocol",
+      "url": "https://vlab.amrita.edu/index.php/images/theme/theme/amrita/MEC/?brch=63&cnt=2&sim=154&sub=3",
+      "context": "fase móvel n-butanol:ácido acético:água 12:3:5 em volume; lista de 7 Rf"
+    },
+    "SPINACH_2004": {
+      "name": "Quach, Steeper & Griffin, J. Chem. Educ. 81(3) 385-387 (2004), doi:10.1021/ed081p385",
+      "type": "peer_reviewed_article",
+      "url": "https://doi.org/10.1021/ed081p385"
+    },
+    "SPINACH_TRANSCRIPT": {
+      "name": "Reprodução acessível do texto de Quach et al. 2004 (verificar contra original antes de homologar)",
+      "type": "secondary_transcript",
+      "url": "https://gradebuddy.com/doc/98524/an-improved-method-for-the-extraction/"
+    },
+    "BASF": {
+      "name": "BASF Food Dye Chromatography Student Guide",
+      "type": "teaching_protocol",
+      "url": "https://agriculture.basf.us/content/dam/cxm/agriculture/community-relations/kids-labs/Food_Dye_Chromatography_Student_Guide.pdf"
+    },
+    "HPTLC_ATLAS": {
+      "name": "HPTLC Association — International Atlas",
+      "type": "reference_catalog",
+      "url": "https://www.hptlc-association.org/atlas/about-hptlc-atlas.cfm"
+    }
+  },
+  "unidades": {
+    "densidade": "g/mL",
+    "viscosidadeDinamica": "cP",
+    "pontoEbulicao": "°C",
+    "corteUV": "nm",
+    "indicePolaridadeSnyder": "adimensional",
+    "forcaEluotropicaSilica": "adimensional"
+  },
+  "solventes": [
+    {
+      "id": "acetone",
+      "nome": "Acetona",
+      "cas": "67-64-1",
+      "tipo": "substancia",
+      "propriedades": {
+        "densidade": {
+          "value": 0.7857,
+          "unit": "g/mL",
+          "temperatureC": 25,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "viscosidadeDinamica": {
+          "value": 0.36,
+          "unit": "cP",
+          "temperatureC": 20,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "pontoEbulicao": {
+          "value": 56.1,
+          "unit": "°C",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "corteUV": {
+          "value": 330,
+          "unit": "nm",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "indicePolaridadeSnyder": {
+          "value": 5.1,
+          "unit": "adimensional",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "forcaEluotropicaSilica": {
+          "value": 0.53,
+          "unit": "adimensional",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        }
+      },
+      "miscibilidadeComAgua": {
+        "classificacao": "completa",
+        "fonte": "MERCK",
+        "tipo": "qualitativo",
+        "temperaturaC": null,
+        "observacao": "Depende das condições de composição e temperatura; não usar para predizer o equilíbrio quantitativo."
+      },
+      "seguranca": {
+        "status": "revisao_fispq_obrigatoria",
+        "usoAluno": "somente_simulacao_ate_revisao"
+      },
+      "observacoes": null
+    },
+    {
+      "id": "acetonitrile",
+      "nome": "Acetonitrila",
+      "cas": "75-05-8",
+      "tipo": "substancia",
+      "propriedades": {
+        "densidade": {
+          "value": 0.778,
+          "unit": "g/mL",
+          "temperatureC": 25,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "viscosidadeDinamica": {
+          "value": 0.36,
+          "unit": "cP",
+          "temperatureC": 20,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "pontoEbulicao": {
+          "value": 81.6,
+          "unit": "°C",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "corteUV": {
+          "value": 190,
+          "unit": "nm",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "indicePolaridadeSnyder": {
+          "value": 5.8,
+          "unit": "adimensional",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "forcaEluotropicaSilica": {
+          "value": 0.52,
+          "unit": "adimensional",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        }
+      },
+      "miscibilidadeComAgua": {
+        "classificacao": "completa",
+        "fonte": "MERCK",
+        "tipo": "qualitativo",
+        "temperaturaC": null,
+        "observacao": "Depende das condições de composição e temperatura; não usar para predizer o equilíbrio quantitativo."
+      },
+      "seguranca": {
+        "status": "revisao_fispq_obrigatoria",
+        "usoAluno": "somente_simulacao_ate_revisao"
+      },
+      "observacoes": null
+    },
+    {
+      "id": "butanol_1",
+      "nome": "1-butanol",
+      "cas": "71-36-3",
+      "tipo": "substancia",
+      "propriedades": {
+        "densidade": {
+          "value": 0.8098,
+          "unit": "g/mL",
+          "temperatureC": 25,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "viscosidadeDinamica": {
+          "value": 2.98,
+          "unit": "cP",
+          "temperatureC": 20,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "pontoEbulicao": {
+          "value": 117.7,
+          "unit": "°C",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "corteUV": {
+          "value": 215,
+          "unit": "nm",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "indicePolaridadeSnyder": {
+          "value": 3.9,
+          "unit": "adimensional",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "forcaEluotropicaSilica": null
+      },
+      "miscibilidadeComAgua": {
+        "classificacao": "limitada",
+        "fonte": "SIGMA_MATRIX",
+        "tipo": "qualitativo",
+        "temperaturaC": null,
+        "observacao": "Não confundir baixa solubilidade com imiscibilidade absoluta; pode haver duas fases em certas composições."
+      },
+      "seguranca": {
+        "status": "revisao_fispq_obrigatoria",
+        "usoAluno": "somente_simulacao_ate_revisao"
+      },
+      "observacoes": null
+    },
+    {
+      "id": "chloroform",
+      "nome": "Clorofórmio",
+      "cas": "67-66-3",
+      "tipo": "substancia",
+      "propriedades": {
+        "densidade": {
+          "value": 1.484,
+          "unit": "g/mL",
+          "temperatureC": 25,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "viscosidadeDinamica": {
+          "value": 0.58,
+          "unit": "cP",
+          "temperatureC": 20,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "pontoEbulicao": {
+          "value": 61.7,
+          "unit": "°C",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "corteUV": {
+          "value": 245,
+          "unit": "nm",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "indicePolaridadeSnyder": {
+          "value": 4.1,
+          "unit": "adimensional",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "forcaEluotropicaSilica": {
+          "value": 0.26,
+          "unit": "adimensional",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        }
+      },
+      "miscibilidadeComAgua": {
+        "classificacao": "limitada",
+        "fonte": "MERCK",
+        "tipo": "qualitativo",
+        "temperaturaC": null,
+        "observacao": "Não confundir baixa solubilidade com imiscibilidade absoluta; pode haver duas fases em certas composições."
+      },
+      "seguranca": {
+        "status": "revisao_fispq_obrigatoria",
+        "usoAluno": "somente_simulacao_ate_revisao"
+      },
+      "observacoes": null
+    },
+    {
+      "id": "cyclohexane",
+      "nome": "Ciclo-hexano",
+      "cas": "110-82-7",
+      "tipo": "substancia",
+      "propriedades": {
+        "densidade": {
+          "value": 0.774,
+          "unit": "g/mL",
+          "temperatureC": 25,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "viscosidadeDinamica": {
+          "value": 0.9,
+          "unit": "cP",
+          "temperatureC": 20,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "pontoEbulicao": {
+          "value": 80.7,
+          "unit": "°C",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "corteUV": {
+          "value": 202,
+          "unit": "nm",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "indicePolaridadeSnyder": {
+          "value": 0.2,
+          "unit": "adimensional",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "forcaEluotropicaSilica": {
+          "value": 0.03,
+          "unit": "adimensional",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        }
+      },
+      "miscibilidadeComAgua": {
+        "classificacao": "nao_completa",
+        "fonte": "SIGMA_MATRIX",
+        "tipo": "qualitativo",
+        "temperaturaC": null,
+        "observacao": "Depende das condições de composição e temperatura; não usar para predizer o equilíbrio quantitativo."
+      },
+      "seguranca": {
+        "status": "revisao_fispq_obrigatoria",
+        "usoAluno": "somente_simulacao_ate_revisao"
+      },
+      "observacoes": null
+    },
+    {
+      "id": "dmf",
+      "nome": "N,N-dimetilformamida",
+      "cas": "68-12-2",
+      "tipo": "substancia",
+      "propriedades": {
+        "densidade": {
+          "value": 0.944,
+          "unit": "g/mL",
+          "temperatureC": 25,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "viscosidadeDinamica": {
+          "value": 0.92,
+          "unit": "cP",
+          "temperatureC": 20,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "pontoEbulicao": {
+          "value": 153,
+          "unit": "°C",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "corteUV": {
+          "value": 268,
+          "unit": "nm",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "indicePolaridadeSnyder": {
+          "value": 6.4,
+          "unit": "adimensional",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "forcaEluotropicaSilica": null
+      },
+      "miscibilidadeComAgua": {
+        "classificacao": "completa",
+        "fonte": "SIGMA_MATRIX",
+        "tipo": "qualitativo",
+        "temperaturaC": null,
+        "observacao": "Depende das condições de composição e temperatura; não usar para predizer o equilíbrio quantitativo."
+      },
+      "seguranca": {
+        "status": "revisao_fispq_obrigatoria",
+        "usoAluno": "somente_simulacao_ate_revisao"
+      },
+      "observacoes": null
+    },
+    {
+      "id": "dmso",
+      "nome": "Dimetilsulfóxido",
+      "cas": "67-68-5",
+      "tipo": "substancia",
+      "propriedades": {
+        "densidade": {
+          "value": 1.1014,
+          "unit": "g/mL",
+          "temperatureC": 25,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "viscosidadeDinamica": {
+          "value": 2.24,
+          "unit": "cP",
+          "temperatureC": 20,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "pontoEbulicao": {
+          "value": 189,
+          "unit": "°C",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "corteUV": {
+          "value": 262,
+          "unit": "nm",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "indicePolaridadeSnyder": {
+          "value": 7.2,
+          "unit": "adimensional",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "forcaEluotropicaSilica": null
+      },
+      "miscibilidadeComAgua": {
+        "classificacao": "completa",
+        "fonte": "SIGMA_MATRIX",
+        "tipo": "qualitativo",
+        "temperaturaC": null,
+        "observacao": "Depende das condições de composição e temperatura; não usar para predizer o equilíbrio quantitativo."
+      },
+      "seguranca": {
+        "status": "revisao_fispq_obrigatoria",
+        "usoAluno": "somente_simulacao_ate_revisao"
+      },
+      "observacoes": null
+    },
+    {
+      "id": "ethyl_acetate",
+      "nome": "Acetato de etila",
+      "cas": "141-78-6",
+      "tipo": "substancia",
+      "propriedades": {
+        "densidade": {
+          "value": 0.894,
+          "unit": "g/mL",
+          "temperatureC": 25,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "viscosidadeDinamica": {
+          "value": 0.45,
+          "unit": "cP",
+          "temperatureC": 20,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "pontoEbulicao": {
+          "value": 77.1,
+          "unit": "°C",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "corteUV": {
+          "value": 255,
+          "unit": "nm",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "indicePolaridadeSnyder": {
+          "value": 4.4,
+          "unit": "adimensional",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "forcaEluotropicaSilica": {
+          "value": 0.38,
+          "unit": "adimensional",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        }
+      },
+      "miscibilidadeComAgua": {
+        "classificacao": "limitada",
+        "fonte": "MERCK",
+        "tipo": "qualitativo",
+        "temperaturaC": null,
+        "observacao": "Não confundir baixa solubilidade com imiscibilidade absoluta; pode haver duas fases em certas composições."
+      },
+      "seguranca": {
+        "status": "revisao_fispq_obrigatoria",
+        "usoAluno": "somente_simulacao_ate_revisao"
+      },
+      "observacoes": null
+    },
+    {
+      "id": "diethyl_ether",
+      "nome": "Éter dietílico",
+      "cas": "60-29-7",
+      "tipo": "substancia",
+      "propriedades": {
+        "densidade": {
+          "value": 0.7134,
+          "unit": "g/mL",
+          "temperatureC": 25,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "viscosidadeDinamica": {
+          "value": 0.24,
+          "unit": "cP",
+          "temperatureC": 20,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "pontoEbulicao": {
+          "value": 34.6,
+          "unit": "°C",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "corteUV": {
+          "value": 218,
+          "unit": "nm",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "indicePolaridadeSnyder": {
+          "value": 2.8,
+          "unit": "adimensional",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "forcaEluotropicaSilica": {
+          "value": 0.43,
+          "unit": "adimensional",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        }
+      },
+      "miscibilidadeComAgua": {
+        "classificacao": "limitada",
+        "fonte": "MERCK",
+        "tipo": "qualitativo",
+        "temperaturaC": null,
+        "observacao": "Não confundir baixa solubilidade com imiscibilidade absoluta; pode haver duas fases em certas composições."
+      },
+      "seguranca": {
+        "status": "revisao_fispq_obrigatoria",
+        "usoAluno": "somente_simulacao_ate_revisao"
+      },
+      "observacoes": null
+    },
+    {
+      "id": "glycerol",
+      "nome": "Glicerol",
+      "cas": "56-81-5",
+      "tipo": "substancia",
+      "propriedades": {
+        "densidade": {
+          "value": 1.2613,
+          "unit": "g/mL",
+          "temperatureC": 25,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "viscosidadeDinamica": null,
+        "pontoEbulicao": {
+          "value": 290,
+          "unit": "°C",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "corteUV": {
+          "value": 205,
+          "unit": "nm",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "indicePolaridadeSnyder": null,
+        "forcaEluotropicaSilica": null
+      },
+      "miscibilidadeComAgua": null,
+      "seguranca": {
+        "status": "revisao_fispq_obrigatoria",
+        "usoAluno": "somente_simulacao_ate_revisao"
+      },
+      "observacoes": null
+    },
+    {
+      "id": "heptane",
+      "nome": "n-heptano",
+      "cas": "142-82-5",
+      "tipo": "substancia",
+      "propriedades": {
+        "densidade": {
+          "value": 0.6838,
+          "unit": "g/mL",
+          "temperatureC": 25,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "viscosidadeDinamica": {
+          "value": 0.4,
+          "unit": "cP",
+          "temperatureC": 20,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "pontoEbulicao": {
+          "value": 98.4,
+          "unit": "°C",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "corteUV": {
+          "value": 197,
+          "unit": "nm",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "indicePolaridadeSnyder": {
+          "value": 0.2,
+          "unit": "adimensional",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "forcaEluotropicaSilica": {
+          "value": 0.01,
+          "unit": "adimensional",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        }
+      },
+      "miscibilidadeComAgua": {
+        "classificacao": "nao_completa",
+        "fonte": "SIGMA_MATRIX",
+        "tipo": "qualitativo",
+        "temperaturaC": null,
+        "observacao": "Depende das condições de composição e temperatura; não usar para predizer o equilíbrio quantitativo."
+      },
+      "seguranca": {
+        "status": "revisao_fispq_obrigatoria",
+        "usoAluno": "somente_simulacao_ate_revisao"
+      },
+      "observacoes": null
+    },
+    {
+      "id": "hexanes_mixture",
+      "nome": "Hexanos comerciais (mistura)",
+      "cas": null,
+      "tipo": "mistura_comercial",
+      "propriedades": {
+        "densidade": {
+          "value": 0.663,
+          "unit": "g/mL",
+          "temperatureC": 25,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "viscosidadeDinamica": {
+          "value": 0.31,
+          "unit": "cP",
+          "temperatureC": 20,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "pontoEbulicao": {
+          "value": 69,
+          "unit": "°C",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "corteUV": {
+          "value": 195,
+          "unit": "nm",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "indicePolaridadeSnyder": {
+          "value": 0.1,
+          "unit": "adimensional",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "forcaEluotropicaSilica": {
+          "value": 0.01,
+          "unit": "adimensional",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        }
+      },
+      "miscibilidadeComAgua": {
+        "classificacao": "nao_completa",
+        "fonte": "MERCK",
+        "tipo": "qualitativo",
+        "temperaturaC": null,
+        "observacao": "Depende das condições de composição e temperatura; não usar para predizer o equilíbrio quantitativo."
+      },
+      "seguranca": {
+        "status": "revisao_fispq_obrigatoria",
+        "usoAluno": "somente_simulacao_ate_revisao"
+      },
+      "observacoes": "Composição variável; propriedade não é universal para um CAS específico."
+    },
+    {
+      "id": "isooctane",
+      "nome": "Iso-octano (2,2,4-trimetilpentano)",
+      "cas": "540-84-1",
+      "tipo": "substancia",
+      "propriedades": {
+        "densidade": {
+          "value": 0.6919,
+          "unit": "g/mL",
+          "temperatureC": 25,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "viscosidadeDinamica": {
+          "value": 0.5,
+          "unit": "cP",
+          "temperatureC": 20,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "pontoEbulicao": {
+          "value": 99.2,
+          "unit": "°C",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "corteUV": {
+          "value": 205,
+          "unit": "nm",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "indicePolaridadeSnyder": {
+          "value": 0.1,
+          "unit": "adimensional",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "forcaEluotropicaSilica": {
+          "value": 0.01,
+          "unit": "adimensional",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        }
+      },
+      "miscibilidadeComAgua": {
+        "classificacao": "nao_completa",
+        "fonte": "SIGMA_MATRIX",
+        "tipo": "qualitativo",
+        "temperaturaC": null,
+        "observacao": "Depende das condições de composição e temperatura; não usar para predizer o equilíbrio quantitativo."
+      },
+      "seguranca": {
+        "status": "revisao_fispq_obrigatoria",
+        "usoAluno": "somente_simulacao_ate_revisao"
+      },
+      "observacoes": null
+    },
+    {
+      "id": "methanol",
+      "nome": "Metanol",
+      "cas": "67-56-1",
+      "tipo": "substancia",
+      "propriedades": {
+        "densidade": {
+          "value": 0.7915,
+          "unit": "g/mL",
+          "temperatureC": 25,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "viscosidadeDinamica": {
+          "value": 0.55,
+          "unit": "cP",
+          "temperatureC": 20,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "pontoEbulicao": {
+          "value": 64.7,
+          "unit": "°C",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "corteUV": {
+          "value": 205,
+          "unit": "nm",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "indicePolaridadeSnyder": {
+          "value": 5.1,
+          "unit": "adimensional",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "forcaEluotropicaSilica": {
+          "value": 0.73,
+          "unit": "adimensional",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        }
+      },
+      "miscibilidadeComAgua": {
+        "classificacao": "completa",
+        "fonte": "MERCK",
+        "tipo": "qualitativo",
+        "temperaturaC": null,
+        "observacao": "Depende das condições de composição e temperatura; não usar para predizer o equilíbrio quantitativo."
+      },
+      "seguranca": {
+        "status": "revisao_fispq_obrigatoria",
+        "usoAluno": "somente_simulacao_ate_revisao"
+      },
+      "observacoes": null
+    },
+    {
+      "id": "dcm",
+      "nome": "Diclorometano",
+      "cas": "75-09-2",
+      "tipo": "substancia",
+      "propriedades": {
+        "densidade": {
+          "value": 1.318,
+          "unit": "g/mL",
+          "temperatureC": 25,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "viscosidadeDinamica": {
+          "value": 0.3,
+          "unit": "cP",
+          "temperatureC": 20,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "pontoEbulicao": {
+          "value": 39.5,
+          "unit": "°C",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "corteUV": {
+          "value": 233,
+          "unit": "nm",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "indicePolaridadeSnyder": {
+          "value": 3.1,
+          "unit": "adimensional",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "forcaEluotropicaSilica": {
+          "value": 0.32,
+          "unit": "adimensional",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        }
+      },
+      "miscibilidadeComAgua": {
+        "classificacao": "limitada",
+        "fonte": "MERCK",
+        "tipo": "qualitativo",
+        "temperaturaC": null,
+        "observacao": "Não confundir baixa solubilidade com imiscibilidade absoluta; pode haver duas fases em certas composições."
+      },
+      "seguranca": {
+        "status": "revisao_fispq_obrigatoria",
+        "usoAluno": "somente_simulacao_ate_revisao"
+      },
+      "observacoes": null
+    },
+    {
+      "id": "nmp",
+      "nome": "N-metil-2-pirrolidona",
+      "cas": "872-50-4",
+      "tipo": "substancia",
+      "propriedades": {
+        "densidade": {
+          "value": 1.03,
+          "unit": "g/mL",
+          "temperatureC": 25,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "viscosidadeDinamica": {
+          "value": 1.67,
+          "unit": "cP",
+          "temperatureC": 20,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "pontoEbulicao": {
+          "value": 202.2,
+          "unit": "°C",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "corteUV": {
+          "value": 275,
+          "unit": "nm",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "indicePolaridadeSnyder": null,
+        "forcaEluotropicaSilica": null
+      },
+      "miscibilidadeComAgua": null,
+      "seguranca": {
+        "status": "revisao_fispq_obrigatoria",
+        "usoAluno": "somente_simulacao_ate_revisao"
+      },
+      "observacoes": null
+    },
+    {
+      "id": "pentane",
+      "nome": "n-pentano",
+      "cas": "109-66-0",
+      "tipo": "substancia",
+      "propriedades": {
+        "densidade": {
+          "value": 0.6264,
+          "unit": "g/mL",
+          "temperatureC": 25,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "viscosidadeDinamica": {
+          "value": 0.22,
+          "unit": "cP",
+          "temperatureC": 20,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "pontoEbulicao": {
+          "value": 36.1,
+          "unit": "°C",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "corteUV": {
+          "value": 190,
+          "unit": "nm",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "indicePolaridadeSnyder": {
+          "value": 0,
+          "unit": "adimensional",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "forcaEluotropicaSilica": {
+          "value": 0,
+          "unit": "adimensional",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        }
+      },
+      "miscibilidadeComAgua": {
+        "classificacao": "nao_completa",
+        "fonte": "SIGMA_MATRIX",
+        "tipo": "qualitativo",
+        "temperaturaC": null,
+        "observacao": "Depende das condições de composição e temperatura; não usar para predizer o equilíbrio quantitativo."
+      },
+      "seguranca": {
+        "status": "revisao_fispq_obrigatoria",
+        "usoAluno": "somente_simulacao_ate_revisao"
+      },
+      "observacoes": null
+    },
+    {
+      "id": "petroleum_ether_mixture",
+      "nome": "Éter de petróleo (mistura; fração 35–60 °C)",
+      "cas": null,
+      "tipo": "mistura_comercial",
+      "propriedades": {
+        "densidade": {
+          "value": 0.64,
+          "unit": "g/mL",
+          "temperatureC": 25,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "viscosidadeDinamica": null,
+        "pontoEbulicao": null,
+        "corteUV": null,
+        "indicePolaridadeSnyder": {
+          "value": 0.1,
+          "unit": "adimensional",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "forcaEluotropicaSilica": null
+      },
+      "miscibilidadeComAgua": null,
+      "seguranca": {
+        "status": "revisao_fispq_obrigatoria",
+        "usoAluno": "somente_simulacao_ate_revisao"
+      },
+      "observacoes": "Composição variável; propriedade não é universal para um CAS específico."
+    },
+    {
+      "id": "isopropanol",
+      "nome": "2-propanol (isopropanol)",
+      "cas": "67-63-0",
+      "tipo": "substancia",
+      "propriedades": {
+        "densidade": {
+          "value": 0.7855,
+          "unit": "g/mL",
+          "temperatureC": 25,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "viscosidadeDinamica": {
+          "value": 2.4,
+          "unit": "cP",
+          "temperatureC": 20,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "pontoEbulicao": {
+          "value": 82.3,
+          "unit": "°C",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "corteUV": {
+          "value": 205,
+          "unit": "nm",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "indicePolaridadeSnyder": {
+          "value": 3.9,
+          "unit": "adimensional",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "forcaEluotropicaSilica": {
+          "value": 0.63,
+          "unit": "adimensional",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        }
+      },
+      "miscibilidadeComAgua": {
+        "classificacao": "completa",
+        "fonte": "MERCK",
+        "tipo": "qualitativo",
+        "temperaturaC": null,
+        "observacao": "Depende das condições de composição e temperatura; não usar para predizer o equilíbrio quantitativo."
+      },
+      "seguranca": {
+        "status": "revisao_fispq_obrigatoria",
+        "usoAluno": "somente_simulacao_ate_revisao"
+      },
+      "observacoes": null
+    },
+    {
+      "id": "thf",
+      "nome": "Tetraidrofurano",
+      "cas": "109-99-9",
+      "tipo": "substancia",
+      "propriedades": {
+        "densidade": {
+          "value": 0.8892,
+          "unit": "g/mL",
+          "temperatureC": 25,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "viscosidadeDinamica": {
+          "value": 0.55,
+          "unit": "cP",
+          "temperatureC": 20,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "pontoEbulicao": {
+          "value": 66.1,
+          "unit": "°C",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "corteUV": {
+          "value": 210,
+          "unit": "nm",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "indicePolaridadeSnyder": {
+          "value": 4,
+          "unit": "adimensional",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "forcaEluotropicaSilica": {
+          "value": 0.35,
+          "unit": "adimensional",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        }
+      },
+      "miscibilidadeComAgua": {
+        "classificacao": "completa",
+        "fonte": "MERCK",
+        "tipo": "qualitativo",
+        "temperaturaC": null,
+        "observacao": "Depende das condições de composição e temperatura; não usar para predizer o equilíbrio quantitativo."
+      },
+      "seguranca": {
+        "status": "revisao_fispq_obrigatoria",
+        "usoAluno": "somente_simulacao_ate_revisao"
+      },
+      "observacoes": null
+    },
+    {
+      "id": "toluene",
+      "nome": "Tolueno",
+      "cas": "108-88-3",
+      "tipo": "substancia",
+      "propriedades": {
+        "densidade": {
+          "value": 0.866,
+          "unit": "g/mL",
+          "temperatureC": 25,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "viscosidadeDinamica": {
+          "value": 0.59,
+          "unit": "cP",
+          "temperatureC": 20,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "pontoEbulicao": {
+          "value": 110.6,
+          "unit": "°C",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "corteUV": {
+          "value": 285,
+          "unit": "nm",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "indicePolaridadeSnyder": {
+          "value": 2.4,
+          "unit": "adimensional",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "forcaEluotropicaSilica": {
+          "value": 0.22,
+          "unit": "adimensional",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        }
+      },
+      "miscibilidadeComAgua": {
+        "classificacao": "nao_completa",
+        "fonte": "SIGMA_MATRIX",
+        "tipo": "qualitativo",
+        "temperaturaC": null,
+        "observacao": "Depende das condições de composição e temperatura; não usar para predizer o equilíbrio quantitativo."
+      },
+      "seguranca": {
+        "status": "revisao_fispq_obrigatoria",
+        "usoAluno": "somente_simulacao_ate_revisao"
+      },
+      "observacoes": null
+    },
+    {
+      "id": "water",
+      "nome": "Água",
+      "cas": "7732-18-5",
+      "tipo": "substancia",
+      "propriedades": {
+        "densidade": {
+          "value": 0.9982,
+          "unit": "g/mL",
+          "temperatureC": 25,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "viscosidadeDinamica": {
+          "value": 1,
+          "unit": "cP",
+          "temperatureC": 20,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "pontoEbulicao": {
+          "value": 100,
+          "unit": "°C",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "corteUV": null,
+        "indicePolaridadeSnyder": {
+          "value": 10.2,
+          "unit": "adimensional",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "TF25",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "forcaEluotropicaSilica": null
+      },
+      "miscibilidadeComAgua": {
+        "classificacao": "completa",
+        "fonte": "SIGMA_MATRIX",
+        "tipo": "qualitativo",
+        "temperaturaC": null,
+        "observacao": "Depende das condições de composição e temperatura; não usar para predizer o equilíbrio quantitativo."
+      },
+      "seguranca": {
+        "status": "revisao_fispq_obrigatoria",
+        "usoAluno": "somente_simulacao_ate_revisao"
+      },
+      "observacoes": null
+    },
+    {
+      "id": "ethanol",
+      "nome": "Etanol",
+      "cas": "64-17-5",
+      "tipo": "substancia",
+      "propriedades": {
+        "densidade": {
+          "value": 0.7893,
+          "unit": "g/mL",
+          "temperatureC": 20,
+          "provenance": "compiled",
+          "sourceId": "PUBCHEM_ETHANOL",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "viscosidadeDinamica": {
+          "value": 1.2,
+          "unit": "cP",
+          "temperatureC": 20,
+          "provenance": "compiled",
+          "sourceId": "MERCK",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "pontoEbulicao": {
+          "value": 78.3,
+          "unit": "°C",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "WATERS",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "corteUV": {
+          "value": 210,
+          "unit": "nm",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "WATERS",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "indicePolaridadeSnyder": {
+          "value": 5.2,
+          "unit": "adimensional",
+          "temperatureC": null,
+          "provenance": "compiled",
+          "sourceId": "WATERS",
+          "condition": "ver tabela original para pureza e pressão"
+        },
+        "forcaEluotropicaSilica": null
+      },
+      "miscibilidadeComAgua": {
+        "classificacao": "completa",
+        "fonte": "SIGMA_MATRIX",
+        "tipo": "qualitativo",
+        "temperaturaC": null,
+        "observacao": "Depende das condições de composição e temperatura; não usar para predizer o equilíbrio quantitativo."
+      },
+      "seguranca": {
+        "status": "revisao_fispq_obrigatoria",
+        "usoAluno": "somente_simulacao_ate_revisao"
+      },
+      "observacoes": "Densidade a 20°C: não comparar diretamente com valores a 25°C."
+    },
+    {
+      "id": "acetic_acid",
+      "nome": "Ácido acético",
+      "cas": "64-19-7",
+      "tipo": "substancia",
+      "propriedades": {
+        "densidade": null,
+        "viscosidadeDinamica": null,
+        "pontoEbulicao": null,
+        "corteUV": null,
+        "indicePolaridadeSnyder": null,
+        "forcaEluotropicaSilica": null
+      },
+      "miscibilidadeComAgua": null,
+      "seguranca": {
+        "status": "revisao_fispq_obrigatoria",
+        "usoAluno": "somente_simulacao_ate_revisao"
+      },
+      "observacoes": "Candidato ao catálogo; constantes numéricas ainda não extraídas e conferidas."
+    },
+    {
+      "id": "benzene",
+      "nome": "Benzeno",
+      "cas": "71-43-2",
+      "tipo": "substancia",
+      "propriedades": {
+        "densidade": null,
+        "viscosidadeDinamica": null,
+        "pontoEbulicao": null,
+        "corteUV": null,
+        "indicePolaridadeSnyder": null,
+        "forcaEluotropicaSilica": null
+      },
+      "miscibilidadeComAgua": {
+        "classificacao": "nao_completa",
+        "fonte": "SIGMA_MATRIX",
+        "tipo": "qualitativo",
+        "temperaturaC": null,
+        "observacao": "Depende das condições de composição e temperatura; não usar para predizer o equilíbrio quantitativo."
+      },
+      "seguranca": {
+        "status": "revisao_fispq_obrigatoria",
+        "usoAluno": "somente_simulacao_ate_revisao"
+      },
+      "observacoes": "Candidato ao catálogo; constantes numéricas ainda não extraídas e conferidas."
+    },
+    {
+      "id": "carbon_tetrachloride",
+      "nome": "Tetracloreto de carbono",
+      "cas": "56-23-5",
+      "tipo": "substancia",
+      "propriedades": {
+        "densidade": null,
+        "viscosidadeDinamica": null,
+        "pontoEbulicao": null,
+        "corteUV": null,
+        "indicePolaridadeSnyder": null,
+        "forcaEluotropicaSilica": null
+      },
+      "miscibilidadeComAgua": null,
+      "seguranca": {
+        "status": "revisao_fispq_obrigatoria",
+        "usoAluno": "somente_simulacao_ate_revisao"
+      },
+      "observacoes": "Candidato ao catálogo; constantes numéricas ainda não extraídas e conferidas."
+    },
+    {
+      "id": "dioxane_1_4",
+      "nome": "1,4-dioxano",
+      "cas": "123-91-1",
+      "tipo": "substancia",
+      "propriedades": {
+        "densidade": null,
+        "viscosidadeDinamica": null,
+        "pontoEbulicao": null,
+        "corteUV": null,
+        "indicePolaridadeSnyder": null,
+        "forcaEluotropicaSilica": null
+      },
+      "miscibilidadeComAgua": {
+        "classificacao": "completa",
+        "fonte": "SIGMA_MATRIX",
+        "tipo": "qualitativo",
+        "temperaturaC": null,
+        "observacao": "Depende das condições de composição e temperatura; não usar para predizer o equilíbrio quantitativo."
+      },
+      "seguranca": {
+        "status": "revisao_fispq_obrigatoria",
+        "usoAluno": "somente_simulacao_ate_revisao"
+      },
+      "observacoes": "Candidato ao catálogo; constantes numéricas ainda não extraídas e conferidas."
+    },
+    {
+      "id": "methyl_ethyl_ketone",
+      "nome": "2-butanona (MEK)",
+      "cas": "78-93-3",
+      "tipo": "substancia",
+      "propriedades": {
+        "densidade": null,
+        "viscosidadeDinamica": null,
+        "pontoEbulicao": null,
+        "corteUV": null,
+        "indicePolaridadeSnyder": null,
+        "forcaEluotropicaSilica": null
+      },
+      "miscibilidadeComAgua": null,
+      "seguranca": {
+        "status": "revisao_fispq_obrigatoria",
+        "usoAluno": "somente_simulacao_ate_revisao"
+      },
+      "observacoes": "Candidato ao catálogo; constantes numéricas ainda não extraídas e conferidas."
+    },
+    {
+      "id": "mtbe",
+      "nome": "Éter metil-terc-butílico",
+      "cas": "1634-04-4",
+      "tipo": "substancia",
+      "propriedades": {
+        "densidade": null,
+        "viscosidadeDinamica": null,
+        "pontoEbulicao": null,
+        "corteUV": null,
+        "indicePolaridadeSnyder": null,
+        "forcaEluotropicaSilica": null
+      },
+      "miscibilidadeComAgua": {
+        "classificacao": "limitada",
+        "fonte": "SIGMA_MATRIX",
+        "tipo": "qualitativo",
+        "temperaturaC": null,
+        "observacao": "Não confundir baixa solubilidade com imiscibilidade absoluta; pode haver duas fases em certas composições."
+      },
+      "seguranca": {
+        "status": "revisao_fispq_obrigatoria",
+        "usoAluno": "somente_simulacao_ate_revisao"
+      },
+      "observacoes": "Candidato ao catálogo; constantes numéricas ainda não extraídas e conferidas."
+    },
+    {
+      "id": "butyl_acetate",
+      "nome": "Acetato de n-butila",
+      "cas": "123-86-4",
+      "tipo": "substancia",
+      "propriedades": {
+        "densidade": null,
+        "viscosidadeDinamica": null,
+        "pontoEbulicao": null,
+        "corteUV": null,
+        "indicePolaridadeSnyder": null,
+        "forcaEluotropicaSilica": null
+      },
+      "miscibilidadeComAgua": null,
+      "seguranca": {
+        "status": "revisao_fispq_obrigatoria",
+        "usoAluno": "somente_simulacao_ate_revisao"
+      },
+      "observacoes": "Candidato ao catálogo; constantes numéricas ainda não extraídas e conferidas."
+    },
+    {
+      "id": "dichloroethane_1_2",
+      "nome": "1,2-dicloroetano",
+      "cas": "107-06-2",
+      "tipo": "substancia",
+      "propriedades": {
+        "densidade": null,
+        "viscosidadeDinamica": null,
+        "pontoEbulicao": null,
+        "corteUV": null,
+        "indicePolaridadeSnyder": null,
+        "forcaEluotropicaSilica": null
+      },
+      "miscibilidadeComAgua": null,
+      "seguranca": {
+        "status": "revisao_fispq_obrigatoria",
+        "usoAluno": "somente_simulacao_ate_revisao"
+      },
+      "observacoes": "Candidato ao catálogo; constantes numéricas ainda não extraídas e conferidas."
+    },
+    {
+      "id": "diisopropyl_ether",
+      "nome": "Éter di-isopropílico",
+      "cas": "108-20-3",
+      "tipo": "substancia",
+      "propriedades": {
+        "densidade": null,
+        "viscosidadeDinamica": null,
+        "pontoEbulicao": null,
+        "corteUV": null,
+        "indicePolaridadeSnyder": null,
+        "forcaEluotropicaSilica": null
+      },
+      "miscibilidadeComAgua": null,
+      "seguranca": {
+        "status": "revisao_fispq_obrigatoria",
+        "usoAluno": "somente_simulacao_ate_revisao"
+      },
+      "observacoes": "Candidato ao catálogo; constantes numéricas ainda não extraídas e conferidas."
+    },
+    {
+      "id": "propanol_1",
+      "nome": "1-propanol",
+      "cas": "71-23-8",
+      "tipo": "substancia",
+      "propriedades": {
+        "densidade": null,
+        "viscosidadeDinamica": null,
+        "pontoEbulicao": null,
+        "corteUV": null,
+        "indicePolaridadeSnyder": null,
+        "forcaEluotropicaSilica": null
+      },
+      "miscibilidadeComAgua": {
+        "classificacao": "completa",
+        "fonte": "SIGMA_MATRIX",
+        "tipo": "qualitativo",
+        "temperaturaC": null,
+        "observacao": "Depende das condições de composição e temperatura; não usar para predizer o equilíbrio quantitativo."
+      },
+      "seguranca": {
+        "status": "revisao_fispq_obrigatoria",
+        "usoAluno": "somente_simulacao_ate_revisao"
+      },
+      "observacoes": "Candidato ao catálogo; constantes numéricas ainda não extraídas e conferidas."
+    },
+    {
+      "id": "triethylamine",
+      "nome": "Trietilamina",
+      "cas": "121-44-8",
+      "tipo": "substancia",
+      "propriedades": {
+        "densidade": null,
+        "viscosidadeDinamica": null,
+        "pontoEbulicao": null,
+        "corteUV": null,
+        "indicePolaridadeSnyder": null,
+        "forcaEluotropicaSilica": null
+      },
+      "miscibilidadeComAgua": null,
+      "seguranca": {
+        "status": "revisao_fispq_obrigatoria",
+        "usoAluno": "somente_simulacao_ate_revisao"
+      },
+      "observacoes": "Candidato ao catálogo; constantes numéricas ainda não extraídas e conferidas."
+    },
+    {
+      "id": "ethyl_lactate",
+      "nome": "Lactato de etila",
+      "cas": "97-64-3",
+      "tipo": "substancia",
+      "propriedades": {
+        "densidade": null,
+        "viscosidadeDinamica": null,
+        "pontoEbulicao": null,
+        "corteUV": null,
+        "indicePolaridadeSnyder": null,
+        "forcaEluotropicaSilica": null
+      },
+      "miscibilidadeComAgua": null,
+      "seguranca": {
+        "status": "revisao_fispq_obrigatoria",
+        "usoAluno": "somente_simulacao_ate_revisao"
+      },
+      "observacoes": "Candidato ao catálogo; constantes numéricas ainda não extraídas e conferidas."
+    },
+    {
+      "id": "dimethyl_carbonate",
+      "nome": "Carbonato de dimetila",
+      "cas": "616-38-6",
+      "tipo": "substancia",
+      "propriedades": {
+        "densidade": null,
+        "viscosidadeDinamica": null,
+        "pontoEbulicao": null,
+        "corteUV": null,
+        "indicePolaridadeSnyder": null,
+        "forcaEluotropicaSilica": null
+      },
+      "miscibilidadeComAgua": null,
+      "seguranca": {
+        "status": "revisao_fispq_obrigatoria",
+        "usoAluno": "somente_simulacao_ate_revisao"
+      },
+      "observacoes": "Candidato ao catálogo; constantes numéricas ainda não extraídas e conferidas."
+    },
+    {
+      "id": "methyltetrahydrofuran_2",
+      "nome": "2-metiltetraidrofurano",
+      "cas": "96-47-9",
+      "tipo": "substancia",
+      "propriedades": {
+        "densidade": null,
+        "viscosidadeDinamica": null,
+        "pontoEbulicao": null,
+        "corteUV": null,
+        "indicePolaridadeSnyder": null,
+        "forcaEluotropicaSilica": null
+      },
+      "miscibilidadeComAgua": null,
+      "seguranca": {
+        "status": "revisao_fispq_obrigatoria",
+        "usoAluno": "somente_simulacao_ate_revisao"
+      },
+      "observacoes": "Candidato ao catálogo; constantes numéricas ainda não extraídas e conferidas."
+    },
+    {
+      "id": "methyl_acetate",
+      "nome": "Acetato de metila",
+      "cas": "79-20-9",
+      "tipo": "substancia",
+      "propriedades": {
+        "densidade": null,
+        "viscosidadeDinamica": null,
+        "pontoEbulicao": null,
+        "corteUV": null,
+        "indicePolaridadeSnyder": null,
+        "forcaEluotropicaSilica": null
+      },
+      "miscibilidadeComAgua": null,
+      "seguranca": {
+        "status": "revisao_fispq_obrigatoria",
+        "usoAluno": "somente_simulacao_ate_revisao"
+      },
+      "observacoes": "Candidato ao catálogo; constantes numéricas ainda não extraídas e conferidas."
+    },
+    {
+      "id": "propylene_glycol",
+      "nome": "Propilenoglicol",
+      "cas": "57-55-6",
+      "tipo": "substancia",
+      "propriedades": {
+        "densidade": null,
+        "viscosidadeDinamica": null,
+        "pontoEbulicao": null,
+        "corteUV": null,
+        "indicePolaridadeSnyder": null,
+        "forcaEluotropicaSilica": null
+      },
+      "miscibilidadeComAgua": null,
+      "seguranca": {
+        "status": "revisao_fispq_obrigatoria",
+        "usoAluno": "somente_simulacao_ate_revisao"
+      },
+      "observacoes": "Candidato ao catálogo; constantes numéricas ainda não extraídas e conferidas."
+    },
+    {
+      "id": "anisole",
+      "nome": "Anisol",
+      "cas": "100-66-3",
+      "tipo": "substancia",
+      "propriedades": {
+        "densidade": null,
+        "viscosidadeDinamica": null,
+        "pontoEbulicao": null,
+        "corteUV": null,
+        "indicePolaridadeSnyder": null,
+        "forcaEluotropicaSilica": null
+      },
+      "miscibilidadeComAgua": null,
+      "seguranca": {
+        "status": "revisao_fispq_obrigatoria",
+        "usoAluno": "somente_simulacao_ate_revisao"
+      },
+      "observacoes": "Candidato ao catálogo; constantes numéricas ainda não extraídas e conferidas."
+    },
+    {
+      "id": "ethyl_methyl_carbonate",
+      "nome": "Carbonato de etilmetila",
+      "cas": "623-53-0",
+      "tipo": "substancia",
+      "propriedades": {
+        "densidade": null,
+        "viscosidadeDinamica": null,
+        "pontoEbulicao": null,
+        "corteUV": null,
+        "indicePolaridadeSnyder": null,
+        "forcaEluotropicaSilica": null
+      },
+      "miscibilidadeComAgua": null,
+      "seguranca": {
+        "status": "revisao_fispq_obrigatoria",
+        "usoAluno": "somente_simulacao_ate_revisao"
+      },
+      "observacoes": "Candidato ao catálogo; constantes numéricas ainda não extraídas e conferidas."
+    }
+  ],
+  "paresMiscibilidade": [
+    {
+      "solventes": [
+        "water",
+        "ethanol"
+      ],
+      "classificacao": "completa",
+      "sourceId": "SIGMA_MATRIX",
+      "temperaturaC": null,
+      "pressaoKPa": null,
+      "fonteQualitativa": true,
+      "observacoes": "Classificação visual/qualitativa; limites de mistura dependem da temperatura e composição."
+    },
+    {
+      "solventes": [
+        "water",
+        "methanol"
+      ],
+      "classificacao": "completa",
+      "sourceId": "SIGMA_MATRIX",
+      "temperaturaC": null,
+      "pressaoKPa": null,
+      "fonteQualitativa": true,
+      "observacoes": "Classificação visual/qualitativa; limites de mistura dependem da temperatura e composição."
+    },
+    {
+      "solventes": [
+        "water",
+        "acetonitrile"
+      ],
+      "classificacao": "completa",
+      "sourceId": "SIGMA_MATRIX",
+      "temperaturaC": null,
+      "pressaoKPa": null,
+      "fonteQualitativa": true,
+      "observacoes": "Classificação visual/qualitativa; limites de mistura dependem da temperatura e composição."
+    },
+    {
+      "solventes": [
+        "water",
+        "acetone"
+      ],
+      "classificacao": "completa",
+      "sourceId": "SIGMA_MATRIX",
+      "temperaturaC": null,
+      "pressaoKPa": null,
+      "fonteQualitativa": true,
+      "observacoes": "Classificação visual/qualitativa; limites de mistura dependem da temperatura e composição."
+    },
+    {
+      "solventes": [
+        "water",
+        "isopropanol"
+      ],
+      "classificacao": "completa",
+      "sourceId": "SIGMA_MATRIX",
+      "temperaturaC": null,
+      "pressaoKPa": null,
+      "fonteQualitativa": true,
+      "observacoes": "Classificação visual/qualitativa; limites de mistura dependem da temperatura e composição."
+    },
+    {
+      "solventes": [
+        "water",
+        "thf"
+      ],
+      "classificacao": "completa",
+      "sourceId": "SIGMA_MATRIX",
+      "temperaturaC": null,
+      "pressaoKPa": null,
+      "fonteQualitativa": true,
+      "observacoes": "Classificação visual/qualitativa; limites de mistura dependem da temperatura e composição."
+    },
+    {
+      "solventes": [
+        "water",
+        "dmso"
+      ],
+      "classificacao": "completa",
+      "sourceId": "SIGMA_MATRIX",
+      "temperaturaC": null,
+      "pressaoKPa": null,
+      "fonteQualitativa": true,
+      "observacoes": "Classificação visual/qualitativa; limites de mistura dependem da temperatura e composição."
+    },
+    {
+      "solventes": [
+        "water",
+        "dmf"
+      ],
+      "classificacao": "completa",
+      "sourceId": "SIGMA_MATRIX",
+      "temperaturaC": null,
+      "pressaoKPa": null,
+      "fonteQualitativa": true,
+      "observacoes": "Classificação visual/qualitativa; limites de mistura dependem da temperatura e composição."
+    },
+    {
+      "solventes": [
+        "water",
+        "dioxane_1_4"
+      ],
+      "classificacao": "completa",
+      "sourceId": "SIGMA_MATRIX",
+      "temperaturaC": null,
+      "pressaoKPa": null,
+      "fonteQualitativa": true,
+      "observacoes": "Classificação visual/qualitativa; limites de mistura dependem da temperatura e composição."
+    },
+    {
+      "solventes": [
+        "water",
+        "propanol_1"
+      ],
+      "classificacao": "completa",
+      "sourceId": "SIGMA_MATRIX",
+      "temperaturaC": null,
+      "pressaoKPa": null,
+      "fonteQualitativa": true,
+      "observacoes": "Classificação visual/qualitativa; limites de mistura dependem da temperatura e composição."
+    },
+    {
+      "solventes": [
+        "water",
+        "ethyl_acetate"
+      ],
+      "classificacao": "limitada",
+      "sourceId": "SIGMA_MATRIX",
+      "temperaturaC": null,
+      "pressaoKPa": null,
+      "fonteQualitativa": true,
+      "observacoes": "Classificação visual/qualitativa; limites de mistura dependem da temperatura e composição."
+    },
+    {
+      "solventes": [
+        "water",
+        "butanol_1"
+      ],
+      "classificacao": "limitada",
+      "sourceId": "SIGMA_MATRIX",
+      "temperaturaC": null,
+      "pressaoKPa": null,
+      "fonteQualitativa": true,
+      "observacoes": "Classificação visual/qualitativa; limites de mistura dependem da temperatura e composição."
+    },
+    {
+      "solventes": [
+        "water",
+        "diethyl_ether"
+      ],
+      "classificacao": "limitada",
+      "sourceId": "SIGMA_MATRIX",
+      "temperaturaC": null,
+      "pressaoKPa": null,
+      "fonteQualitativa": true,
+      "observacoes": "Classificação visual/qualitativa; limites de mistura dependem da temperatura e composição."
+    },
+    {
+      "solventes": [
+        "water",
+        "mtbe"
+      ],
+      "classificacao": "limitada",
+      "sourceId": "SIGMA_MATRIX",
+      "temperaturaC": null,
+      "pressaoKPa": null,
+      "fonteQualitativa": true,
+      "observacoes": "Classificação visual/qualitativa; limites de mistura dependem da temperatura e composição."
+    },
+    {
+      "solventes": [
+        "water",
+        "chloroform"
+      ],
+      "classificacao": "limitada",
+      "sourceId": "SIGMA_MATRIX",
+      "temperaturaC": null,
+      "pressaoKPa": null,
+      "fonteQualitativa": true,
+      "observacoes": "Classificação visual/qualitativa; limites de mistura dependem da temperatura e composição."
+    },
+    {
+      "solventes": [
+        "water",
+        "dcm"
+      ],
+      "classificacao": "limitada",
+      "sourceId": "SIGMA_MATRIX",
+      "temperaturaC": null,
+      "pressaoKPa": null,
+      "fonteQualitativa": true,
+      "observacoes": "Classificação visual/qualitativa; limites de mistura dependem da temperatura e composição."
+    },
+    {
+      "solventes": [
+        "water",
+        "heptane"
+      ],
+      "classificacao": "nao_completa",
+      "sourceId": "SIGMA_MATRIX",
+      "temperaturaC": null,
+      "pressaoKPa": null,
+      "fonteQualitativa": true,
+      "observacoes": "Classificação visual/qualitativa; limites de mistura dependem da temperatura e composição."
+    },
+    {
+      "solventes": [
+        "water",
+        "hexanes_mixture"
+      ],
+      "classificacao": "nao_completa",
+      "sourceId": "SIGMA_MATRIX",
+      "temperaturaC": null,
+      "pressaoKPa": null,
+      "fonteQualitativa": true,
+      "observacoes": "Classificação visual/qualitativa; limites de mistura dependem da temperatura e composição."
+    },
+    {
+      "solventes": [
+        "water",
+        "cyclohexane"
+      ],
+      "classificacao": "nao_completa",
+      "sourceId": "SIGMA_MATRIX",
+      "temperaturaC": null,
+      "pressaoKPa": null,
+      "fonteQualitativa": true,
+      "observacoes": "Classificação visual/qualitativa; limites de mistura dependem da temperatura e composição."
+    },
+    {
+      "solventes": [
+        "water",
+        "isooctane"
+      ],
+      "classificacao": "nao_completa",
+      "sourceId": "SIGMA_MATRIX",
+      "temperaturaC": null,
+      "pressaoKPa": null,
+      "fonteQualitativa": true,
+      "observacoes": "Classificação visual/qualitativa; limites de mistura dependem da temperatura e composição."
+    },
+    {
+      "solventes": [
+        "water",
+        "toluene"
+      ],
+      "classificacao": "nao_completa",
+      "sourceId": "SIGMA_MATRIX",
+      "temperaturaC": null,
+      "pressaoKPa": null,
+      "fonteQualitativa": true,
+      "observacoes": "Classificação visual/qualitativa; limites de mistura dependem da temperatura e composição."
+    },
+    {
+      "solventes": [
+        "water",
+        "pentane"
+      ],
+      "classificacao": "nao_completa",
+      "sourceId": "SIGMA_MATRIX",
+      "temperaturaC": null,
+      "pressaoKPa": null,
+      "fonteQualitativa": true,
+      "observacoes": "Classificação visual/qualitativa; limites de mistura dependem da temperatura e composição."
+    },
+    {
+      "solventes": [
+        "water",
+        "benzene"
+      ],
+      "classificacao": "nao_completa",
+      "sourceId": "SIGMA_MATRIX",
+      "temperaturaC": null,
+      "pressaoKPa": null,
+      "fonteQualitativa": true,
+      "observacoes": "Classificação visual/qualitativa; limites de mistura dependem da temperatura e composição."
+    },
+    {
+      "solventes": [
+        "acetonitrile",
+        "hexanes_mixture"
+      ],
+      "classificacao": "nao_completa",
+      "sourceId": "SIGMA_MATRIX",
+      "temperaturaC": null,
+      "pressaoKPa": null,
+      "fonteQualitativa": true,
+      "observacoes": "Classificação visual/qualitativa; limites de mistura dependem da temperatura e composição."
+    },
+    {
+      "solventes": [
+        "acetonitrile",
+        "heptane"
+      ],
+      "classificacao": "nao_completa",
+      "sourceId": "SIGMA_MATRIX",
+      "temperaturaC": null,
+      "pressaoKPa": null,
+      "fonteQualitativa": true,
+      "observacoes": "Classificação visual/qualitativa; limites de mistura dependem da temperatura e composição."
+    },
+    {
+      "solventes": [
+        "acetonitrile",
+        "cyclohexane"
+      ],
+      "classificacao": "nao_completa",
+      "sourceId": "SIGMA_MATRIX",
+      "temperaturaC": null,
+      "pressaoKPa": null,
+      "fonteQualitativa": true,
+      "observacoes": "Classificação visual/qualitativa; limites de mistura dependem da temperatura e composição."
+    },
+    {
+      "solventes": [
+        "acetonitrile",
+        "isooctane"
+      ],
+      "classificacao": "nao_completa",
+      "sourceId": "SIGMA_MATRIX",
+      "temperaturaC": null,
+      "pressaoKPa": null,
+      "fonteQualitativa": true,
+      "observacoes": "Classificação visual/qualitativa; limites de mistura dependem da temperatura e composição."
+    },
+    {
+      "solventes": [
+        "acetonitrile",
+        "pentane"
+      ],
+      "classificacao": "nao_completa",
+      "sourceId": "SIGMA_MATRIX",
+      "temperaturaC": null,
+      "pressaoKPa": null,
+      "fonteQualitativa": true,
+      "observacoes": "Classificação visual/qualitativa; limites de mistura dependem da temperatura e composição."
+    },
+    {
+      "solventes": [
+        "methanol",
+        "heptane"
+      ],
+      "classificacao": "nao_completa",
+      "sourceId": "SIGMA_MATRIX",
+      "temperaturaC": null,
+      "pressaoKPa": null,
+      "fonteQualitativa": true,
+      "observacoes": "Classificação visual/qualitativa; limites de mistura dependem da temperatura e composição."
+    },
+    {
+      "solventes": [
+        "methanol",
+        "hexanes_mixture"
+      ],
+      "classificacao": "nao_completa",
+      "sourceId": "SIGMA_MATRIX",
+      "temperaturaC": null,
+      "pressaoKPa": null,
+      "fonteQualitativa": true,
+      "observacoes": "Classificação visual/qualitativa; limites de mistura dependem da temperatura e composição."
+    },
+    {
+      "solventes": [
+        "methanol",
+        "cyclohexane"
+      ],
+      "classificacao": "nao_completa",
+      "sourceId": "SIGMA_MATRIX",
+      "temperaturaC": null,
+      "pressaoKPa": null,
+      "fonteQualitativa": true,
+      "observacoes": "Classificação visual/qualitativa; limites de mistura dependem da temperatura e composição."
+    },
+    {
+      "solventes": [
+        "methanol",
+        "isooctane"
+      ],
+      "classificacao": "nao_completa",
+      "sourceId": "SIGMA_MATRIX",
+      "temperaturaC": null,
+      "pressaoKPa": null,
+      "fonteQualitativa": true,
+      "observacoes": "Classificação visual/qualitativa; limites de mistura dependem da temperatura e composição."
+    },
+    {
+      "solventes": [
+        "methanol",
+        "pentane"
+      ],
+      "classificacao": "nao_completa",
+      "sourceId": "SIGMA_MATRIX",
+      "temperaturaC": null,
+      "pressaoKPa": null,
+      "fonteQualitativa": true,
+      "observacoes": "Classificação visual/qualitativa; limites de mistura dependem da temperatura e composição."
+    },
+    {
+      "solventes": [
+        "hexanes_mixture",
+        "ethyl_acetate"
+      ],
+      "classificacao": "completa",
+      "sourceId": "SIGMA_MATRIX",
+      "temperaturaC": null,
+      "pressaoKPa": null,
+      "fonteQualitativa": true,
+      "observacoes": "Classificação visual/qualitativa; limites de mistura dependem da temperatura e composição."
+    },
+    {
+      "solventes": [
+        "hexanes_mixture",
+        "toluene"
+      ],
+      "classificacao": "completa",
+      "sourceId": "SIGMA_MATRIX",
+      "temperaturaC": null,
+      "pressaoKPa": null,
+      "fonteQualitativa": true,
+      "observacoes": "Classificação visual/qualitativa; limites de mistura dependem da temperatura e composição."
+    },
+    {
+      "solventes": [
+        "toluene",
+        "ethyl_acetate"
+      ],
+      "classificacao": "completa",
+      "sourceId": "SIGMA_MATRIX",
+      "temperaturaC": null,
+      "pressaoKPa": null,
+      "fonteQualitativa": true,
+      "observacoes": "Classificação visual/qualitativa; limites de mistura dependem da temperatura e composição."
+    },
+    {
+      "solventes": [
+        "acetone",
+        "methanol"
+      ],
+      "classificacao": "completa",
+      "sourceId": "SIGMA_MATRIX",
+      "temperaturaC": null,
+      "pressaoKPa": null,
+      "fonteQualitativa": true,
+      "observacoes": "Classificação visual/qualitativa; limites de mistura dependem da temperatura e composição."
+    },
+    {
+      "solventes": [
+        "acetone",
+        "acetonitrile"
+      ],
+      "classificacao": "completa",
+      "sourceId": "SIGMA_MATRIX",
+      "temperaturaC": null,
+      "pressaoKPa": null,
+      "fonteQualitativa": true,
+      "observacoes": "Classificação visual/qualitativa; limites de mistura dependem da temperatura e composição."
+    },
+    {
+      "solventes": [
+        "methanol",
+        "ethanol"
+      ],
+      "classificacao": "completa",
+      "sourceId": "SIGMA_MATRIX",
+      "temperaturaC": null,
+      "pressaoKPa": null,
+      "fonteQualitativa": true,
+      "observacoes": "Classificação visual/qualitativa; limites de mistura dependem da temperatura e composição."
+    },
+    {
+      "solventes": [
+        "thf",
+        "hexanes_mixture"
+      ],
+      "classificacao": "completa",
+      "sourceId": "SIGMA_MATRIX",
+      "temperaturaC": null,
+      "pressaoKPa": null,
+      "fonteQualitativa": true,
+      "observacoes": "Classificação visual/qualitativa; limites de mistura dependem da temperatura e composição."
+    },
+    {
+      "solventes": [
+        "hexanes_mixture",
+        "chloroform"
+      ],
+      "classificacao": "completa",
+      "sourceId": "SIGMA_MATRIX",
+      "temperaturaC": null,
+      "pressaoKPa": null,
+      "fonteQualitativa": true,
+      "observacoes": "Classificação visual do gráfico para hexano+clorofórmio. O catálogo rotula 'hexanes_mixture' comercial; composição exata deve ser verificada, sem atribuir miscibilidade universal à mistura comercial."
+    }
+  ],
+  "notasQualidade": [
+    "Os 22 registros TF25 são exatamente valores declarados pelo fabricante. Incluem misturas comerciais, não 22 solventes puros.",
+    "Densidades TF25 são a 25 °C; viscosidades são a 20 °C; não converter silenciosamente à CNTP.",
+    "Solventes adicionais têm números nulos para evitar fabricar constantes.",
+    "Valores de miscibilidade não são frações mássicas nem solubilidades numéricas: 'nao_completa' inclui sistemas com solubilidade parcial.",
+    "Uma versão textual da tabela SIGMA_MATRIX apresentou erros de leitura: a classificação foi revisada na matriz visual, e todos os pares permanecem preliminares.",
+    "Índice de polaridade e força eluotrópica não fornecem Rf nem fator de retenção universal.",
+    "Não extrapolar o comportamento de soluções e amostras comerciais à substância pura.",
+    "Registros não autorizam uso real de reagentes; classificar segurança via SDS/FISPQ e condições institucionais antes de oferecer roteiro experimental."
+  ]
+}

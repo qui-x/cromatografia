@@ -15,6 +15,9 @@ on:
       - "tests/siac-metricas.test.cjs"
       - "tests/siac-coluna-browser.cjs"
       - "docs/SIAC-MOTOR-CROMATOGRAFICO.md"
+      - "data/siac/**"
+      - "tests/siac-banco-cientifico.test.cjs"
+      - "docs/SIAC-DOSSIE-CIENTIFICO-2026-11-23.md"
       - "docs/SIAC-AUDITORIA-LEGADO.md"
       - ".github/workflows/siac-motor.yml"
   pull_request:
@@ -32,6 +35,9 @@ on:
       - "tests/siac-metricas.test.cjs"
       - "tests/siac-coluna-browser.cjs"
       - "docs/SIAC-MOTOR-CROMATOGRAFICO.md"
+      - "data/siac/**"
+      - "tests/siac-banco-cientifico.test.cjs"
+      - "docs/SIAC-DOSSIE-CIENTIFICO-2026-11-23.md"
       - ".github/workflows/siac-motor.yml"
   workflow_dispatch:
 
@@ -54,6 +60,7 @@ jobs:
           node --check tests/siac-fracionamento.test.cjs
           node --check tests/siac-coluna.test.cjs
           node --check tests/siac-metricas.test.cjs
+          node --check tests/siac-banco-cientifico.test.cjs
           node --check tests/siac-coluna-browser.cjs
       - name: Contrato científico e reprodutibilidade
         run: |
@@ -61,6 +68,7 @@ jobs:
           node tests/siac-fracionamento.test.cjs
           node tests/siac-coluna.test.cjs
           node tests/siac-metricas.test.cjs
+          node tests/siac-banco-cientifico.test.cjs
       - name: Verificar isolamento do motor legado
         run: |
           node - <<'NODE'

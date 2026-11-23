@@ -1,0 +1,2185 @@
+{
+  "version": "0.1-research-2026-11-23",
+  "status": "PESQUISA_NAO_HOMOLOGADA",
+  "descricao": "Inventário de analitos/cromóforos candidatos e protocolos contextuais. Não confundir candidato, grupo e substância individual com amostra padronizada.",
+  "fontes": {
+    "amrita": "https://vlab.amrita.edu/index.php/images/theme/theme/amrita/MEC/?brch=63&cnt=2&sim=154&sub=3",
+    "quach": "https://doi.org/10.1021/ed081p385",
+    "quachTranscript": "https://gradebuddy.com/doc/98524/an-improved-method-for-the-extraction/",
+    "basf": "https://agriculture.basf.us/content/dam/cxm/agriculture/community-relations/kids-labs/Food_Dye_Chromatography_Student_Guide.pdf",
+    "hptlc": "https://www.hptlc-association.org/atlas/about-hptlc-atlas.cfm",
+    "rsc2024": "https://pubs.rsc.org/en/content/articlehtml/2024/ay/d4ay00082j",
+    "pubchem": "https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest",
+    "pubchemView": "https://pubchem.ncbi.nlm.nih.gov/docs/pug-view",
+    "reviewAmino": "https://scispace.com/papers/thin-layer-chromatography-of-amino-acids-a-review-2kz286kv4g"
+  },
+  "candidatos": [
+    {
+      "id": "tartrazina",
+      "nome": "Tartrazina (FD&C Yellow 5)",
+      "grupo": "corantes_alimenticios",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "sunset_yellow_fcf",
+      "nome": "Amarelo crepúsculo FCF (Yellow 6)",
+      "grupo": "corantes_alimenticios",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "allura_red_ac",
+      "nome": "Vermelho Allura AC (Red 40)",
+      "grupo": "corantes_alimenticios",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "brilliant_blue_fcf",
+      "nome": "Azul brilhante FCF (Blue 1)",
+      "grupo": "corantes_alimenticios",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "indigotine",
+      "nome": "Indigotina (Blue 2)",
+      "grupo": "corantes_alimenticios",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "erythrosine",
+      "nome": "Eritrosina (Red 3)",
+      "grupo": "corantes_alimenticios",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "fast_green_fcf",
+      "nome": "Verde rápido FCF (Green 3)",
+      "grupo": "corantes_alimenticios",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "ponceau_4r",
+      "nome": "Ponceau 4R",
+      "grupo": "corantes_alimenticios",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "amaranth",
+      "nome": "Amaranto (corante azo)",
+      "grupo": "corantes_alimenticios",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "patent_blue_v",
+      "nome": "Azul patente V",
+      "grupo": "corantes_alimenticios",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "quinoline_yellow",
+      "nome": "Amarelo de quinolina",
+      "grupo": "corantes_alimenticios",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "chlorophyll_a",
+      "nome": "Clorofila a",
+      "grupo": "pigmentos_vegetais",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "chlorophyll_b",
+      "nome": "Clorofila b",
+      "grupo": "pigmentos_vegetais",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "pheophytin_a",
+      "nome": "Feofitina a",
+      "grupo": "pigmentos_vegetais",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "pheophytin_b",
+      "nome": "Feofitina b",
+      "grupo": "pigmentos_vegetais",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "beta_carotene",
+      "nome": "β-caroteno",
+      "grupo": "pigmentos_vegetais",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "alpha_carotene",
+      "nome": "α-caroteno",
+      "grupo": "pigmentos_vegetais",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "lutein",
+      "nome": "Luteína",
+      "grupo": "pigmentos_vegetais",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "zeaxanthin",
+      "nome": "Zeaxantina",
+      "grupo": "pigmentos_vegetais",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "lycopene",
+      "nome": "Licopeno",
+      "grupo": "pigmentos_vegetais",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "violaxanthin",
+      "nome": "Violaxantina",
+      "grupo": "pigmentos_vegetais",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "neoxanthin",
+      "nome": "Neoxantina",
+      "grupo": "pigmentos_vegetais",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "beta_cryptoxanthin",
+      "nome": "β-criptoxantina",
+      "grupo": "pigmentos_vegetais",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "cyanidin_3_glucoside",
+      "nome": "Cianidina-3-O-glicosídeo",
+      "grupo": "pigmentos_vegetais",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "delphinidin_3_glucoside",
+      "nome": "Delfinidina-3-O-glicosídeo",
+      "grupo": "pigmentos_vegetais",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "quercetin",
+      "nome": "Quercetina",
+      "grupo": "pigmentos_vegetais",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "rutin",
+      "nome": "Rutina",
+      "grupo": "pigmentos_vegetais",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "curcumin",
+      "nome": "Curcumina",
+      "grupo": "pigmentos_vegetais",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "capsanthin",
+      "nome": "Capsantina",
+      "grupo": "pigmentos_vegetais",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "bixin",
+      "nome": "Bixina",
+      "grupo": "pigmentos_vegetais",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "norbixin",
+      "nome": "Norbixina",
+      "grupo": "pigmentos_vegetais",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "alanine",
+      "nome": "Alanina",
+      "grupo": "aminoacidos",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "arginine",
+      "nome": "Arginina",
+      "grupo": "aminoacidos",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "asparagine",
+      "nome": "Asparagina",
+      "grupo": "aminoacidos",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "aspartic_acid",
+      "nome": "Ácido aspártico",
+      "grupo": "aminoacidos",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "cysteine",
+      "nome": "Cisteína",
+      "grupo": "aminoacidos",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "glutamic_acid",
+      "nome": "Ácido glutâmico",
+      "grupo": "aminoacidos",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "glutamine",
+      "nome": "Glutamina",
+      "grupo": "aminoacidos",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "glycine",
+      "nome": "Glicina",
+      "grupo": "aminoacidos",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "histidine",
+      "nome": "Histidina",
+      "grupo": "aminoacidos",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "isoleucine",
+      "nome": "Isoleucina",
+      "grupo": "aminoacidos",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "leucine",
+      "nome": "Leucina",
+      "grupo": "aminoacidos",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "lysine",
+      "nome": "Lisina",
+      "grupo": "aminoacidos",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "methionine",
+      "nome": "Metionina",
+      "grupo": "aminoacidos",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "phenylalanine",
+      "nome": "Fenilalanina",
+      "grupo": "aminoacidos",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "proline",
+      "nome": "Prolina",
+      "grupo": "aminoacidos",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "serine",
+      "nome": "Serina",
+      "grupo": "aminoacidos",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "threonine",
+      "nome": "Treonina",
+      "grupo": "aminoacidos",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "tryptophan",
+      "nome": "Triptofano",
+      "grupo": "aminoacidos",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "tyrosine",
+      "nome": "Tirosina",
+      "grupo": "aminoacidos",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "valine",
+      "nome": "Valina",
+      "grupo": "aminoacidos",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "caffeine",
+      "nome": "Cafeína",
+      "grupo": "farmacos_e_organicos",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "theobromine",
+      "nome": "Teobromina",
+      "grupo": "farmacos_e_organicos",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "paracetamol",
+      "nome": "Paracetamol",
+      "grupo": "farmacos_e_organicos",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "acetylsalicylic_acid",
+      "nome": "Ácido acetilsalicílico",
+      "grupo": "farmacos_e_organicos",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "salicylic_acid",
+      "nome": "Ácido salicílico",
+      "grupo": "farmacos_e_organicos",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "ibuprofen",
+      "nome": "Ibuprofeno",
+      "grupo": "farmacos_e_organicos",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "naproxen",
+      "nome": "Naproxeno",
+      "grupo": "farmacos_e_organicos",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "benzoic_acid",
+      "nome": "Ácido benzoico",
+      "grupo": "farmacos_e_organicos",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "vanillin",
+      "nome": "Vanilina",
+      "grupo": "farmacos_e_organicos",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "ethyl_vanillin",
+      "nome": "Etilvanilina",
+      "grupo": "farmacos_e_organicos",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "coumarin",
+      "nome": "Cumarina",
+      "grupo": "farmacos_e_organicos",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "nicotinamide",
+      "nome": "Nicotinamida",
+      "grupo": "farmacos_e_organicos",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "riboflavin",
+      "nome": "Riboflavina",
+      "grupo": "farmacos_e_organicos",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "ascorbic_acid",
+      "nome": "Ácido ascórbico",
+      "grupo": "farmacos_e_organicos",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "fluorescein",
+      "nome": "Fluoresceína",
+      "grupo": "indicadores_e_traçadores",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "eosin_y",
+      "nome": "Eosina Y",
+      "grupo": "indicadores_e_traçadores",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "rhodamine_b",
+      "nome": "Rodamina B",
+      "grupo": "indicadores_e_traçadores",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "methylene_blue",
+      "nome": "Azul de metileno",
+      "grupo": "indicadores_e_traçadores",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "methyl_orange",
+      "nome": "Alaranjado de metila",
+      "grupo": "indicadores_e_traçadores",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "methyl_red",
+      "nome": "Vermelho de metila",
+      "grupo": "indicadores_e_traçadores",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "bromothymol_blue",
+      "nome": "Azul de bromotimol",
+      "grupo": "indicadores_e_traçadores",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "phenolphthalein",
+      "nome": "Fenolftaleína",
+      "grupo": "indicadores_e_traçadores",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "crystal_violet",
+      "nome": "Violeta cristal",
+      "grupo": "indicadores_e_traçadores",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "sudan_iii",
+      "nome": "Sudan III",
+      "grupo": "indicadores_e_traçadores",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    },
+    {
+      "id": "sudan_iv",
+      "nome": "Sudan IV",
+      "grupo": "indicadores_e_traçadores",
+      "identity": {
+        "cas": null,
+        "pubchemCID": null,
+        "verificadoIndividualmente": false
+      },
+      "propriedades": {
+        "densidade": null,
+        "solubilidades": null,
+        "pKa": null,
+        "logP": null,
+        "corObservavel": null,
+        "absorcaoUV": null
+      },
+      "homologacao": "candidato_sem_parametros",
+      "retencao": {
+        "rf": [],
+        "fatorK": [],
+        "isotermas": []
+      },
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+    }
+  ],
+  "protocolos": [
+    {
+      "id": "tlc_aminoacids_amrita_12_3_5",
+      "tecnica": "ccd",
+      "assuntos": [
+        "aminoacidos"
+      ],
+      "status": "referencia_didatica_com_rf_compilado",
+      "fonte": "amrita",
+      "faseEstacionaria": {
+        "classe": "placa_TLC",
+        "detalhamento": "não informado no trecho consultado"
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "butanol_1",
+            "partes": 12
+          },
+          {
+            "id": "acetic_acid",
+            "partes": 3
+          },
+          {
+            "id": "water",
+            "partes": 5
+          }
+        ],
+        "base": "v/v",
+        "mistura": "descrita pelo guia",
+        "solventeReal": "consultar fonte"
+      },
+      "aplicacao": {
+        "concentracaoPercentual": 2,
+        "base": "não explicitada no trecho; solução padrão",
+        "origemMm": 20,
+        "saturacaoCamaraMin": 30,
+        "detector": "ninhidrina pós-desenvolvimento"
+      },
+      "dadosRf": [
+        {
+          "analito": "alanine",
+          "rf": 0.24,
+          "classe": "reportado_no_guia",
+          "fonte": "amrita",
+          "temperaturaC": null
+        },
+        {
+          "analito": "glutamic_acid",
+          "rf": 0.25,
+          "classe": "reportado_no_guia",
+          "fonte": "amrita",
+          "temperaturaC": null
+        },
+        {
+          "analito": "glycine",
+          "rf": 0.2,
+          "classe": "reportado_no_guia",
+          "fonte": "amrita",
+          "temperaturaC": null
+        },
+        {
+          "analito": "leucine",
+          "rf": 0.58,
+          "classe": "reportado_no_guia",
+          "fonte": "amrita",
+          "temperaturaC": null
+        },
+        {
+          "analito": "valine",
+          "rf": 0.4,
+          "classe": "reportado_no_guia",
+          "fonte": "amrita",
+          "temperaturaC": null
+        },
+        {
+          "analito": "lysine",
+          "rf": 0.58,
+          "classe": "reportado_no_guia",
+          "fonte": "amrita",
+          "temperaturaC": null
+        },
+        {
+          "analito": "tyrosine",
+          "rf": 0.42,
+          "classe": "reportado_no_guia",
+          "fonte": "amrita",
+          "temperaturaC": null
+        }
+      ],
+      "nota": "Valores relatados para o sistema mencionado no guia, não universais; qualidade e condições completas de placa e amostra precisam de conferência antes da homologação."
+    },
+    {
+      "id": "tlc_spinach_quach_2004",
+      "tecnica": "ccd",
+      "assuntos": [
+        "pigmentos_vegetais"
+      ],
+      "status": "relato_de_literatura_pendente_de_conferencia_no_original",
+      "fonte": "quach",
+      "faseEstacionaria": {
+        "classe": "sílica gel sobre suporte poliéster",
+        "detalhamento": "indicador fluorescente citado no método"
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "petroleum_ether_mixture",
+            "partes": 60
+          },
+          {
+            "id": "cyclohexane",
+            "partes": 16
+          },
+          {
+            "id": "ethyl_acetate",
+            "partes": 10
+          },
+          {
+            "id": "acetone",
+            "partes": 10
+          },
+          {
+            "id": "methanol",
+            "partes": 4
+          }
+        ],
+        "base": "v/v",
+        "mistura": "soma 100 partes"
+      },
+      "aplicacao": {
+        "origemMm": null,
+        "detector": "visível",
+        "referenciaSecundaria": "quachTranscript"
+      },
+      "dadosRf": [
+        {
+          "analito": "carotene_band",
+          "rf": 0.95,
+          "classe": "transcricao_de_publicacao",
+          "fonte": "quachTranscript",
+          "temperaturaC": null
+        },
+        {
+          "analito": "chlorophyll_a",
+          "rf": 0.44,
+          "classe": "transcricao_de_publicacao",
+          "fonte": "quachTranscript",
+          "temperaturaC": null
+        },
+        {
+          "analito": "chlorophyll_b",
+          "rf": 0.32,
+          "classe": "transcricao_de_publicacao",
+          "fonte": "quachTranscript",
+          "temperaturaC": null
+        },
+        {
+          "analito": "xanthophyll_band",
+          "rf": 0.16,
+          "classe": "transcricao_de_publicacao",
+          "fonte": "quachTranscript",
+          "temperaturaC": null
+        }
+      ],
+      "nota": "Bandas 'caroteno' e 'xantofila' não identificam molécula única; conferir Rf no artigo original antes de validação. Resultados dependem de fase/suporte e da integridade do pigmento."
+    },
+    {
+      "id": "tlc_spinach_pheophytin_quach_2004",
+      "tecnica": "ccd",
+      "assuntos": [
+        "pigmentos_vegetais"
+      ],
+      "status": "relato_secundario_pendente_conferencia",
+      "fonte": "quach",
+      "faseEstacionaria": {
+        "classe": "sílica gel sobre poliéster",
+        "detalhamento": "conforme mesmo método da separação principal"
+      },
+      "faseMovel": {
+        "herdadaDe": "tlc_spinach_quach_2004"
+      },
+      "aplicacao": {
+        "preTratamento": "desmetalização de clorofilas por resina ácida (procedimento descrito pelo artigo)",
+        "detector": "visível"
+      },
+      "dadosRf": [
+        {
+          "analito": "pheophytin_a",
+          "rf": 0.6,
+          "classe": "transcricao_de_publicacao",
+          "fonte": "quachTranscript",
+          "temperaturaC": null
+        },
+        {
+          "analito": "pheophytin_b",
+          "rf": 0.49,
+          "classe": "transcricao_de_publicacao",
+          "fonte": "quachTranscript",
+          "temperaturaC": null
+        }
+      ],
+      "nota": "Não transferir estes valores à amostra fresca sem desmetalização ou a outra fase."
+    },
+    {
+      "id": "paper_food_dyes_basf",
+      "tecnica": "papel",
+      "assuntos": [
+        "corantes_alimenticios"
+      ],
+      "status": "procedimento_didatico_sem_rf",
+      "fonte": "basf",
+      "faseEstacionaria": {
+        "classe": "papel de filtro"
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "water",
+            "partes": null
+          },
+          {
+            "id": "sodium_chloride",
+            "partes": null
+          }
+        ],
+        "base": "solução aquosa salina, concentração não extraída"
+      },
+      "aplicacao": {
+        "detector": "visível"
+      },
+      "dadosRf": [],
+      "nota": "Cores e formulações comerciais não autorizam atribuição de identidade aos componentes nem coeficientes de retenção."
+    },
+    {
+      "id": "hptlc_atlas_herbal_fingerprint",
+      "tecnica": "hptlc",
+      "assuntos": [
+        "pigmentos_vegetais"
+      ],
+      "status": "plataforma_de_referencia_sem_dados_extraidos",
+      "fonte": "hptlc",
+      "faseEstacionaria": {
+        "classe": "sílica HPTLC Si60 F254",
+        "suporte": "vidro",
+        "dimensoesCm": [
+          20,
+          10
+        ]
+      },
+      "faseMovel": {
+        "componentes": [],
+        "base": null
+      },
+      "aplicacao": {
+        "detector": "UV 254 e demais conforme método"
+      },
+      "dadosRf": [],
+      "nota": "Atlas exige cadastro para downloads; não reproduzir fingerprints nem inferir Rf sem consulta ao método específico."
+    }
+  ],
+  "observacoes": [
+    "Sem verificação individual de CAS/CID não há associação automática entre nome candidato e estrutura química.",
+    "Mesmo dentro de uma classe, Rf e cor dependem do sistema experimental, suporte, solvente e detecção.",
+    "Rf da mesma molécula em outra fase não pode ser reutilizado; não existe valor canônico universal.",
+    "Banco não incorpora novas substâncias à simulação sem revisão independente das condições de retenção e risco."
+  ]
+}

@@ -1,0 +1,339 @@
+{
+  "status": "candidatos_nao_integrados",
+  "version": "2026-11-23",
+  "fontes": [
+    {
+      "id": "IUPAC_RETENTION",
+      "url": "https://goldbook.iupac.org/terms/view/R05359",
+      "tipo": "terminologia"
+    },
+    {
+      "id": "NIST_WEBBOOK",
+      "url": "https://webbook.nist.gov/chemistry/",
+      "tipo": "base_termodinamica"
+    },
+    {
+      "id": "PUBCHEM_PUG",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest",
+      "tipo": "api_quimica"
+    },
+    {
+      "id": "PUBCHEM_VIEW",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/docs/pug-view",
+      "tipo": "anotacoes_fisicoquimicas"
+    },
+    {
+      "id": "TF_SOLVENTS",
+      "url": "https://assets.thermofisher.com/TFS-Assets/ANZ/Application-Notes/chromatography-solvent-application-guide.pdf",
+      "tipo": "tabela_propriedades"
+    },
+    {
+      "id": "SIGMA_MIX",
+      "url": "https://www.sigmaaldrich.com/deepweb/assets/sigmaaldrich/marketing/global/documents/solvent-miscibility-rules-chart-ms.pdf",
+      "tipo": "matriz_miscibilidade"
+    },
+    {
+      "id": "WATERS",
+      "url": "https://help.waters.com/help/en/product-support/alliance-is-system-support/715008450/27BE872.html",
+      "tipo": "dados_mistura_e_solventes"
+    },
+    {
+      "id": "MERCk",
+      "url": "https://www.sigmaaldrich.com/ST/en/technical-documents/technical-article/analytical-chemistry/small-molecule-hplc/hplc-troubleshooting-guide",
+      "tipo": "seleção_solventes"
+    },
+    {
+      "id": "AMRITA_TLC",
+      "url": "https://vlab.amrita.edu/index.php/images/theme/theme/amrita/MEC/?brch=63&cnt=2&sim=154&sub=3",
+      "tipo": "protocolo_ensino"
+    },
+    {
+      "id": "QUACH2004",
+      "url": "https://doi.org/10.1021/ed081p385",
+      "tipo": "artigo"
+    },
+    {
+      "id": "QUACH_SECONDARY",
+      "url": "https://gradebuddy.com/doc/98524/an-improved-method-for-the-extraction/",
+      "tipo": "transcricao_pendente_conferencia"
+    },
+    {
+      "id": "BASF",
+      "url": "https://agriculture.basf.us/content/dam/cxm/agriculture/community-relations/kids-labs/Food_Dye_Chromatography_Student_Guide.pdf",
+      "tipo": "roteiro_didatico"
+    },
+    {
+      "id": "HPTLC_ATLAS",
+      "url": "https://www.hptlc-association.org/atlas/about-hptlc-atlas.cfm",
+      "tipo": "atlas_metodos"
+    },
+    {
+      "id": "CADET",
+      "url": "https://github.com/cadet/CADET-Core",
+      "tipo": "simulador_coluna"
+    },
+    {
+      "id": "THERMO_LIB",
+      "url": "https://thermo.readthedocs.io/",
+      "tipo": "biblioteca_modelos_equilibrio"
+    },
+    {
+      "id": "CHEMICALS_LIB",
+      "url": "https://github.com/CalebBell/chemicals",
+      "tipo": "biblioteca_propriedades"
+    },
+    {
+      "id": "PYGAPS",
+      "url": "https://pygaps.readthedocs.io/en/latest/index.html",
+      "tipo": "fitting_adsorcao"
+    },
+    {
+      "id": "OPENCHROM",
+      "url": "https://github.com/OpenChrom/openchrom",
+      "tipo": "software_analise"
+    },
+    {
+      "id": "LUCAS_WASHBURN",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8143474/",
+      "tipo": "modelo_capilaridade_papel"
+    },
+    {
+      "id": "DARCY_ENG",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0021967399004823",
+      "tipo": "hidrodinamica_coluna"
+    },
+    {
+      "id": "UNIFAC_COMPARE",
+      "url": "https://scispace.com/papers/prediction-of-infinite-dilution-activity-coefficients-using-5e27sydv3c",
+      "tipo": "comparacao_modelos"
+    },
+    {
+      "id": "TLC_AMINO_REVIEW",
+      "url": "https://scispace.com/papers/thin-layer-chromatography-of-amino-acids-a-review-2kz286kv4g",
+      "tipo": "revisao"
+    }
+  ],
+  "motores": [
+    {
+      "id": "SIAC_LOCAL",
+      "nome": "Motores de coluna e planar já presentes no SIAC",
+      "type": "implemented",
+      "runtime": "JavaScript no navegador",
+      "license": "GPL-3.0-only (repositório SIAC; conferir dependências)",
+      "url": "https://github.com/qui-x/cromatografia",
+      "adequacao": {
+        "coluna": "prototipo_didatico_parametrizado",
+        "planar": "prototipo_didatico_parametrizado",
+        "misturas": "sem_modelo_termodinamico"
+      },
+      "prioridade": 1,
+      "acao": "Manter como camada offline e conectar apenas parâmetros identificados e homologados; não inferir k por cor/nome."
+    },
+    {
+      "id": "CHEMICALS",
+      "nome": "chemicals (ChEDL)",
+      "type": "property_engine",
+      "runtime": "Python (pré-processamento local ou backend)",
+      "license": "MIT (verificar versão/arquivos)",
+      "url": "https://github.com/CalebBell/chemicals",
+      "adequacao": {
+        "densidade": "alta",
+        "viscosidade": "alta",
+        "tensaoSuperficial": "alta",
+        "misturas": "limitada_sem_termo_equilibrio",
+        "retencao": "nenhuma"
+      },
+      "prioridade": 1,
+      "acao": "Prototipar exportação de constantes com temperatura, método calculado e referência rastreável; nunca publicar dados sem conferência."
+    },
+    {
+      "id": "THERMO",
+      "nome": "thermo (ChEDL)",
+      "type": "phase_equilibrium_engine",
+      "runtime": "Python; gerador de dados offline",
+      "license": "MIT (verificar versão/arquivos)",
+      "url": "https://github.com/CalebBell/thermo",
+      "adequacao": {
+        "UNIFAC": "disponivel",
+        "NRTL": "disponivel",
+        "UNIQUAC": "disponivel",
+        "equilibrioLiquidoLiquido": "algoritmos_dependentes_de_parametros",
+        "retencao": "nao_fornece_Rf_automaticamente"
+      },
+      "prioridade": 1,
+      "acao": "Ensaiar miscibilidade/coexistência de fases e propriedades de misturas em 3 sistemas com dados confiáveis; registrar versão, grupos e parâmetros."
+    },
+    {
+      "id": "CADET_CORE",
+      "nome": "CADET-Core",
+      "type": "chromatography_engine",
+      "runtime": "C++/API; execução fora do browser ou pré-cálculo",
+      "license": "GPL-3.0-or-later / AGPL-3.0-or-later conforme arquivo",
+      "url": "https://github.com/cadet/CADET-Core",
+      "adequacao": {
+        "coluna": "muito_alta",
+        "adsorcao": "alta",
+        "transporte": "alta",
+        "TLC": "nao_e_foco"
+      },
+      "prioridade": 2,
+      "acao": "Prova de conceito de coluna com isoterma experimental e balanço de massa; revisar compatibilidade de licenças, custo de execução e reprodutibilidade."
+    },
+    {
+      "id": "PYGAPS",
+      "nome": "pyGAPS",
+      "type": "isotherm_fitter",
+      "runtime": "Python",
+      "license": "revisao_necessaria",
+      "url": "https://github.com/pauliacomi/pyGAPS",
+      "adequacao": {
+        "ajusteIsotermas": "alta",
+        "coeficientesAdsorcao": "alta_com_dados_experimentais",
+        "solventeMistura": "nao_e_motor_de_equilibrio_fase",
+        "coluna": "nao_e_simulador_de_eluição"
+      },
+      "prioridade": 2,
+      "acao": "Somente quando houver curvas de adsorção com unidades, temperatura, suporte e concentração."
+    },
+    {
+      "id": "OPENCHROM",
+      "nome": "OpenChrom",
+      "type": "chromatogram_analysis",
+      "runtime": "Java desktop",
+      "license": "EPL-2.0 (revisar integração)",
+      "url": "https://github.com/OpenChrom/openchrom",
+      "adequacao": {
+        "cromatogramas": "alta",
+        "importacao": "alta",
+        "simulacao_fisicoquimica": "nao_e_o_foco"
+      },
+      "prioridade": 3,
+      "acao": "Avaliar ferramentas de picos e formatos para Dados/Calcular, não substituir motor físico-químico."
+    },
+    {
+      "id": "NIST_WEBBOOK",
+      "nome": "NIST Chemistry WebBook",
+      "type": "data_source",
+      "runtime": "Site e exportações com termos de uso",
+      "license": "verificar direitos de dados e redistribuição",
+      "url": "https://webbook.nist.gov/chemistry/",
+      "adequacao": {
+        "densidades": "conjunto_limitado",
+        "dadosTermais": "alto_quando_disponivel",
+        "retencao": "nao_direta"
+      },
+      "prioridade": 1,
+      "acao": "Usar como verificação cruzada e estado da fonte; não afirmar cobertura total de compostos."
+    },
+    {
+      "id": "PUBCHEM",
+      "nome": "PubChem PUG-REST / PUG-View",
+      "type": "data_source",
+      "runtime": "API HTTPS com cache e rate limit",
+      "license": "metadados por depositante; verificar política de uso",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/docs/programmatic-access",
+      "adequacao": {
+        "identificadores": "alta",
+        "propriedadesBasicas": "alta",
+        "densidade": "anotacao_variavel",
+        "retencao": "nao_direta"
+      },
+      "prioridade": 1,
+      "acao": "Resolver CID/InChIKey e preservar depositante, seção, texto, unidade, condições e data de recuperação."
+    },
+    {
+      "id": "HPTLC_ATLAS",
+      "nome": "International HPTLC Atlas",
+      "type": "reference_methods",
+      "runtime": "Web/cadastro para download",
+      "license": "conteúdo com direitos específicos e exigência de cadastro",
+      "url": "https://www.hptlc-association.org/atlas/about-hptlc-atlas.cfm",
+      "adequacao": {
+        "metodosHPTLC": "alta",
+        "fingerprints": "alta",
+        "retencao": "dependente_de_metodo"
+      },
+      "prioridade": 2,
+      "acao": "Fazer curadoria manual dos metadados permitidos e links; não copiar imagens/fingerprints sem licença."
+    }
+  ],
+  "camadas": [
+    {
+      "nome": "Identidade química",
+      "requer": [
+        "nome",
+        "CAS",
+        "PubChem CID",
+        "SMILES/InChIKey",
+        "pureza/fonte"
+      ],
+      "limites": "Sinônimos não garantem identidade; misturas de solvente exigem composição."
+    },
+    {
+      "nome": "Termofísica",
+      "requer": [
+        "ρ(T,P)",
+        "μ(T,P)",
+        "γ(T)",
+        "ângulo de contato",
+        "pressão de vapor",
+        "constante dielétrica"
+      ],
+      "limites": "ρ puro ≠ ρ mistura, μ não mistura linearmente por padrão."
+    },
+    {
+      "nome": "Equilíbrio de fases",
+      "requer": [
+        "pares solventes",
+        "faixa de composição",
+        "temperatura",
+        "parâmetros UNIFAC/NRTL ou medição"
+      ],
+      "limites": "Uma matriz binária miscível/não miscível não contém curvas de equilíbrio."
+    },
+    {
+      "nome": "Retenção e adsorção",
+      "requer": [
+        "analito",
+        "fase estacionária",
+        "fase móvel e composição",
+        "temperatura",
+        "pH quando aplicável",
+        "isoterma ou medidas k/Rf"
+      ],
+      "limites": "logP, polaridade e miscibilidade não determinam k ou Rf universal."
+    },
+    {
+      "nome": "Transporte e capilaridade",
+      "requer": [
+        "porosidade e distribuição de poros",
+        "raio efetivo",
+        "molhabilidade",
+        "viscosidade",
+        "tensão superficial",
+        "geometria"
+      ],
+      "limites": "Lucas–Washburn descreve sistema ideal; papel real pode desviar por saturação/evaporação/heterogeneidade."
+    },
+    {
+      "nome": "Coluna e frações",
+      "requer": [
+        "vazão",
+        "permeabilidade",
+        "dispersão",
+        "cinética de troca",
+        "isoterma",
+        "massa de alimentação"
+      ],
+      "limites": "CADET precisa de parâmetros e validação; não existe predição automática do cromatograma por ID."
+    }
+  ],
+  "aceite": [
+    "Proibir preenchimento automático de k/Rf baseado apenas no nome, cor ou densidade.",
+    "Não permitir converter CIDs ou cores de pigmento em resultados de separação sem fonte contextual.",
+    "Qualquer parâmetro calculado exige T/P, método, versão da biblioteca, limite de validade, origem e incerteza quando disponível.",
+    "Simulação no navegador precisa ser offline e reproduzível; pré-cálculo pode gerar pacotes estáticos, nunca misturar com dados de usuário.",
+    "Executar validação cruzada em pelo menos três sistemas simples antes de introduzir UNIFAC/NRTL ou CADET.",
+    "Revisar licenças AGPL/GPL/EPL e proveniência de dados antes de copiar código para o SIAC."
+  ]
+}
