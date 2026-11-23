@@ -64,9 +64,12 @@ const delay=ms=>new Promise(resolve=>setTimeout(resolve,ms));
     assert.equal(await page.locator("#ver-itens [data-item=rf]").count(),1);
     assert.match(await page.locator("#ver-conteudo").textContent(),/0,327/);
     await page.locator("#overview-tab").click();
-    await page.locator("#overview-tab").click();
+    assert.match(await page.locator("#overview-tab").textContent(),/Papéis/,
+      "Retornar à visão geral deve conservar o último subconjunto");
     assert.match(await page.locator("#scene [data-pick=F7]").textContent(),/revelado/);
     assert.match(await page.locator("#scene [data-pick=F8]").textContent(),/vazio/);
+    await page.locator("#overview-tab").click();
+    assert.match(await page.locator("#overview-tab").textContent(),/Frascos/);
     await page.locator("#focus-tab").click();
     assert.match(await page.locator("#focus-tab").textContent(),/Amostra em foco/);
     const promise=page.waitForEvent("download");
