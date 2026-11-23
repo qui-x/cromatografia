@@ -1,0 +1,40 @@
+name: "SIAC - Auditoria de paridade e integridade"
+on:
+  push:
+    branches:
+      - main
+      - feat/siac-motor-cromatografico
+      - feat/siac-experiencia-didatica
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  paridade:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Auditar todos os 179 arquivos de origem
+        run: node scripts/siac-auditar-paridade.cjs
+      - name: Sintaxe do JavaScript modular e de scripts do SIAC
+        shell: bash
+        run: |
+          set -euo pipefail
+          find js -name '*.js' -print0 | xargs -0 -n1 node --check
+          node --check scripts/siac-auditar-paridade.cjs
+      - name: Conferir arquivos estruturais obrigatórios
+        shell: bash
+        run: |
+          set -euo pipefail
+          for file in index.html sw.js manifest.webmanifest a11y.js package.json \
+              js/core/namespace.js js/core/roteador.js js/core/persistencia.js \
+              js/ui/workspace.js js/ui/modulos.js js/telas/bancada.js \
+              js/telas/relatorios.js js/telas/caderno.js \
+              docs/MANUAL.md build_standalone.py; do
+            test -s "$file" || { echo "Ausente ou vazio: $file"; exit 1; }
+          done
+          echo "Estrutura preservada. Atenção: esta auditoria não homologa o motor cromatográfico."

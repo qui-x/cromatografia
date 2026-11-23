@@ -1,0 +1,101 @@
+name: "SIAC - Motor cromatográfico planar"
+on:
+  push:
+    branches: [feat/siac-motor-cromatografico]
+    paths:
+      - "js/simulation/siac-cromatografia.js"
+      - "js/simulation/siac-fracionamento.js"
+      - "js/simulation/siac-coluna.js"
+      - "js/simulation/siac-metricas.js"
+      - "previews/coluna-laboratorio.html"
+      - "scripts/siac-coluna-standalone.cjs"
+      - "tests/siac-cromatografia.test.cjs"
+      - "tests/siac-fracionamento.test.cjs"
+      - "tests/siac-coluna.test.cjs"
+      - "tests/siac-metricas.test.cjs"
+      - "tests/siac-coluna-browser.cjs"
+      - "docs/SIAC-MOTOR-CROMATOGRAFICO.md"
+      - "docs/SIAC-AUDITORIA-LEGADO.md"
+      - ".github/workflows/siac-motor.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "js/simulation/siac-cromatografia.js"
+      - "js/simulation/siac-fracionamento.js"
+      - "js/simulation/siac-coluna.js"
+      - "js/simulation/siac-metricas.js"
+      - "previews/coluna-laboratorio.html"
+      - "scripts/siac-coluna-standalone.cjs"
+      - "tests/siac-cromatografia.test.cjs"
+      - "tests/siac-fracionamento.test.cjs"
+      - "tests/siac-coluna.test.cjs"
+      - "tests/siac-metricas.test.cjs"
+      - "tests/siac-coluna-browser.cjs"
+      - "docs/SIAC-MOTOR-CROMATOGRAFICO.md"
+      - ".github/workflows/siac-motor.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  testar-motor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verificar sintaxe
+        run: |
+          node --check js/simulation/siac-cromatografia.js
+          node --check js/simulation/siac-fracionamento.js
+          node --check js/simulation/siac-coluna.js
+          node --check js/simulation/siac-metricas.js
+          node --check tests/siac-cromatografia.test.cjs
+          node --check tests/siac-fracionamento.test.cjs
+          node --check tests/siac-coluna.test.cjs
+          node --check tests/siac-metricas.test.cjs
+          node --check tests/siac-coluna-browser.cjs
+      - name: Contrato científico e reprodutibilidade
+        run: |
+          node tests/siac-cromatografia.test.cjs
+          node tests/siac-fracionamento.test.cjs
+          node tests/siac-coluna.test.cjs
+          node tests/siac-metricas.test.cjs
+      - name: Verificar isolamento do motor legado
+        run: |
+          node - <<'NODE'
+          const fs=require("fs");
+          const index=fs.readFileSync("index.html","utf8");
+          if(index.includes('src="js/simulation/siac-cromatografia.js"'))
+            throw Error("Não ativar motor não homologado na bancada legada.");
+          console.log("Motor SIAC científico isolado do SIAB legado: OK");
+          NODE
+
+  testar-interface:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@v4
+      - name: Preparar navegador
+        run: |
+          npm ci --ignore-scripts
+          npx playwright install --with-deps chromium
+      - name: Testar interface da coluna e coleta
+        run: node tests/siac-coluna-browser.cjs
+      - name: Preservar capturas
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: siac-coluna-previa
+          path: docs/evidencias/siac-coluna/
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Empacotar prévia executável offline
+        run: node scripts/siac-coluna-standalone.cjs
+      - name: Entregar HTML único de avaliação
+        uses: actions/upload-artifact@v4
+        with:
+          name: siac-coluna-html-executavel
+          path: dist/siac-coluna-previa-standalone.html
+          if-no-files-found: error
+          retention-days: 14

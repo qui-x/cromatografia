@@ -1,0 +1,1089 @@
+{
+  "projeto": "SIAC — A Identidade das Cores Ocultas",
+  "origem": {
+    "repositorio": "qui-x/acidobase",
+    "ref": "acidosebases1.0.0",
+    "commit": "6f2c56bae806e8d57418b5b787aa2fe22f342829"
+  },
+  "destino": {
+    "repositorio": "qui-x/cromatografia",
+    "commit_base": "6ecf811111206da0e119aacc11173e4b5dd9a8d5"
+  },
+  "politica": "Todas as 179 entradas do SIAB devem continuar presentes ou ter substituição registrada e validada.",
+  "arquivos": [
+    {
+      "origem": ".github/README.md",
+      "destino": ".github/README.md",
+      "sha": "fec367791fd1fb7c31e03f959ed360d9a4408774",
+      "bytes": 16127
+    },
+    {
+      "origem": ".github/midia/abertura.gif",
+      "destino": ".github/midia/abertura.gif",
+      "sha": "57623026886feeee6ca39bc648b284c054a9d7fa",
+      "bytes": 221816
+    },
+    {
+      "origem": ".github/midia/acessibilidade.png",
+      "destino": ".github/midia/acessibilidade.png",
+      "sha": "ae55720bb63da590f92d497528ece29a437e4cfa",
+      "bytes": 160808
+    },
+    {
+      "origem": ".github/midia/agitar-atual.gif",
+      "destino": ".github/midia/agitar-atual.gif",
+      "sha": "440b198b6059c8adb63ba8e4b594cf98499fec6f",
+      "bytes": 408078
+    },
+    {
+      "origem": ".github/midia/agitar.gif",
+      "destino": ".github/midia/agitar.gif",
+      "sha": "f75d650ee6f39a9987ed98d2bbb3b9b6dda04523",
+      "bytes": 435075
+    },
+    {
+      "origem": ".github/midia/arco-iris-atual.gif",
+      "destino": ".github/midia/arco-iris-atual.gif",
+      "sha": "ecccbb4d69f94de329b1d1771e26c737687de997",
+      "bytes": 372124
+    },
+    {
+      "origem": ".github/midia/arco-iris.gif",
+      "destino": ".github/midia/arco-iris.gif",
+      "sha": "6fbd23e08053bc2d97247d65752386fa300002eb",
+      "bytes": 171712
+    },
+    {
+      "origem": ".github/midia/bancada-atual.png",
+      "destino": ".github/midia/bancada-atual.png",
+      "sha": "fe2cd8e8876528793d54d83967e1e7f656681bcd",
+      "bytes": 355077
+    },
+    {
+      "origem": ".github/midia/celular-atual.gif",
+      "destino": ".github/midia/celular-atual.gif",
+      "sha": "b4d1670b16496a50da779ab707a860b99ec79bee",
+      "bytes": 246960
+    },
+    {
+      "origem": ".github/midia/celular-atual.png",
+      "destino": ".github/midia/celular-atual.png",
+      "sha": "da8dfd7719e474d934d339b0062b81ad91fcf683",
+      "bytes": 117633
+    },
+    {
+      "origem": ".github/midia/celular.gif",
+      "destino": ".github/midia/celular.gif",
+      "sha": "149e3cf35bca946799397c3419c44bef05ec1670",
+      "bytes": 386455
+    },
+    {
+      "origem": ".github/midia/escala-ph.svg",
+      "destino": ".github/midia/escala-ph.svg",
+      "sha": "98e86acfdf1d9c852acf92fd8d0671a9eb40365b",
+      "bytes": 2848
+    },
+    {
+      "origem": ".github/midia/icones/about.svg",
+      "destino": ".github/midia/icones/about.svg",
+      "sha": "122db7e30e0ec5e1de349619eaf45dfd1621c088",
+      "bytes": 520
+    },
+    {
+      "origem": ".github/midia/icones/accessibility.svg",
+      "destino": ".github/midia/icones/accessibility.svg",
+      "sha": "67f13367b053e8c47405c5195f0b9bd310a32d64",
+      "bytes": 533
+    },
+    {
+      "origem": ".github/midia/icones/chart.svg",
+      "destino": ".github/midia/icones/chart.svg",
+      "sha": "cc7edf5d2b48cc0ee7995e3518f87412738f3856",
+      "bytes": 494
+    },
+    {
+      "origem": ".github/midia/icones/explore.svg",
+      "destino": ".github/midia/icones/explore.svg",
+      "sha": "4ed7167a52da6093cb8f0e6b53a32c5f8843d169",
+      "bytes": 531
+    },
+    {
+      "origem": ".github/midia/icones/eye.svg",
+      "destino": ".github/midia/icones/eye.svg",
+      "sha": "453200e3966c94b808442d0cd32e718c6d44664b",
+      "bytes": 545
+    },
+    {
+      "origem": ".github/midia/icones/install.svg",
+      "destino": ".github/midia/icones/install.svg",
+      "sha": "51596e33a60467ee03c3c2a325d0a660e5bed42d",
+      "bytes": 501
+    },
+    {
+      "origem": ".github/midia/icones/lab.svg",
+      "destino": ".github/midia/icones/lab.svg",
+      "sha": "2677266991a9831cfe22e85d7f3277068bc143a0",
+      "bytes": 547
+    },
+    {
+      "origem": ".github/midia/icones/learn.svg",
+      "destino": ".github/midia/icones/learn.svg",
+      "sha": "33aa1876bf93af5fdad5cc702ef00ae89b2f925c",
+      "bytes": 547
+    },
+    {
+      "origem": ".github/midia/icones/meter.svg",
+      "destino": ".github/midia/icones/meter.svg",
+      "sha": "3732c780e08780217ed1b6df7294c6147774e4a9",
+      "bytes": 543
+    },
+    {
+      "origem": ".github/midia/icones/mission.svg",
+      "destino": ".github/midia/icones/mission.svg",
+      "sha": "387df12a0ba1e2ba6cc3afa035f48e6f9f064a68",
+      "bytes": 526
+    },
+    {
+      "origem": ".github/midia/icones/mount.svg",
+      "destino": ".github/midia/icones/mount.svg",
+      "sha": "efa442b1a7eb6c11027ba7a141c52918b5f7da16",
+      "bytes": 554
+    },
+    {
+      "origem": ".github/midia/icones/next.svg",
+      "destino": ".github/midia/icones/next.svg",
+      "sha": "b88ff8a150f6875a02d97cc659de7829f57fca6d",
+      "bytes": 499
+    },
+    {
+      "origem": ".github/midia/icones/notebook.svg",
+      "destino": ".github/midia/icones/notebook.svg",
+      "sha": "e7319b97e66c43644e40b5016a257fc4b852667e",
+      "bytes": 523
+    },
+    {
+      "origem": ".github/midia/icones/prepare.svg",
+      "destino": ".github/midia/icones/prepare.svg",
+      "sha": "d79a33d7cee1e547f44d91c226c4cd70f7920b6e",
+      "bytes": 573
+    },
+    {
+      "origem": ".github/midia/icones/professor.svg",
+      "destino": ".github/midia/icones/professor.svg",
+      "sha": "d0b73d457e329e4c05a2f1045aa146e5fac1436c",
+      "bytes": 569
+    },
+    {
+      "origem": ".github/midia/icones/projector.svg",
+      "destino": ".github/midia/icones/projector.svg",
+      "sha": "bb236dec8cdd5b67ffcda374636d4941b40c4c33",
+      "bytes": 501
+    },
+    {
+      "origem": ".github/midia/icones/report.svg",
+      "destino": ".github/midia/icones/report.svg",
+      "sha": "97da6c18c4c9ccbb11a18b49a0305201e3783a16",
+      "bytes": 507
+    },
+    {
+      "origem": ".github/midia/icones/tour.svg",
+      "destino": ".github/midia/icones/tour.svg",
+      "sha": "c04dad7658d63b7ee9eb06954c37a60f6de06a38",
+      "bytes": 522
+    },
+    {
+      "origem": ".github/midia/inicio-atual.png",
+      "destino": ".github/midia/inicio-atual.png",
+      "sha": "a9a8ab1042e0aacd78688d88b15f143027177178",
+      "bytes": 185493
+    },
+    {
+      "origem": ".github/midia/instalacao-desktop.png",
+      "destino": ".github/midia/instalacao-desktop.png",
+      "sha": "197a543d1f390365e5c21f80b8ad2213c0d9b7a9",
+      "bytes": 183456
+    },
+    {
+      "origem": ".github/midia/instalacao-mobile.png",
+      "destino": ".github/midia/instalacao-mobile.png",
+      "sha": "bb47fc2248ae8cf42dc37344f3983329df693125",
+      "bytes": 70834
+    },
+    {
+      "origem": ".github/midia/manual.png",
+      "destino": ".github/midia/manual.png",
+      "sha": "289aadd69062da0a04f90f2e0024fd45d75002d5",
+      "bytes": 205130
+    },
+    {
+      "origem": ".github/midia/menu-mobile-atual.png",
+      "destino": ".github/midia/menu-mobile-atual.png",
+      "sha": "9115d82b41ba00bac817d0ab319b1ab35ee92881",
+      "bytes": 42528
+    },
+    {
+      "origem": ".github/midia/missoes.png",
+      "destino": ".github/midia/missoes.png",
+      "sha": "0caabbc7d7c840a3f00fb0f4a3426e9de25f932d",
+      "bytes": 106772
+    },
+    {
+      "origem": ".github/midia/particulas-atual.gif",
+      "destino": ".github/midia/particulas-atual.gif",
+      "sha": "e8a3f3f04ef68ed536e52945bd61a2ce78615ed3",
+      "bytes": 581744
+    },
+    {
+      "origem": ".github/midia/particulas.gif",
+      "destino": ".github/midia/particulas.gif",
+      "sha": "305c9ea5711a9c273688b7c150ebc401d6813f85",
+      "bytes": 1709683
+    },
+    {
+      "origem": ".github/midia/professor.png",
+      "destino": ".github/midia/professor.png",
+      "sha": "f53cf29ff193ca724551a0dbc3b9707e4ae6e0ce",
+      "bytes": 73116
+    },
+    {
+      "origem": ".github/midia/roteiros-atual.png",
+      "destino": ".github/midia/roteiros-atual.png",
+      "sha": "f7aca4824a99fab387a97d8592b6eb34ef5422c5",
+      "bytes": 105690
+    },
+    {
+      "origem": ".github/midia/titulacao-atual.gif",
+      "destino": ".github/midia/titulacao-atual.gif",
+      "sha": "5d4094838311031b8d19c878e278a464bed98087",
+      "bytes": 537013
+    },
+    {
+      "origem": ".github/midia/titulacao.gif",
+      "destino": ".github/midia/titulacao.gif",
+      "sha": "07b36d2cf439600ec9689c38dcd771433eefbec0",
+      "bytes": 572695
+    },
+    {
+      "origem": ".github/workflows/capturar-readme.yml",
+      "destino": "docs/legado-siab/workflows/capturar-readme.yml",
+      "sha": "822fb655e95b3c63c0dfb6f2e62394c9dea2e6a1",
+      "bytes": 2660
+    },
+    {
+      "origem": ".github/workflows/publicar-siab-blender.yml",
+      "destino": "docs/legado-siab/workflows/publicar-siab-blender.yml",
+      "sha": "db290813e028e4e52791f6e33f46fd916170c00a",
+      "bytes": 4718
+    },
+    {
+      "origem": ".github/workflows/rebuild-distribution-integrity.yml",
+      "destino": "docs/legado-siab/workflows/rebuild-distribution-integrity.yml",
+      "sha": "c5d16941325efcf0a33d3ac2c91fc94e54e82983",
+      "bytes": 4502
+    },
+    {
+      "origem": ".github/workflows/regravar-gifs-readme.yml",
+      "destino": "docs/legado-siab/workflows/regravar-gifs-readme.yml",
+      "sha": "2f396303a5d1584d5ed8048b7a1f68a9e4a0938f",
+      "bytes": 2110
+    },
+    {
+      "origem": ".github/workflows/siab-storage-regression.yml",
+      "destino": "docs/legado-siab/workflows/siab-storage-regression.yml",
+      "sha": "da51a5a923c53fe3d6e9a4b08196802c7166c2d2",
+      "bytes": 3768
+    },
+    {
+      "origem": ".github/workflows/siab-ver-layout.yml",
+      "destino": "docs/legado-siab/workflows/siab-ver-layout.yml",
+      "sha": "3e79b70a41ae20c9a42889c4bde9e2f43935e0b5",
+      "bytes": 2273
+    },
+    {
+      "origem": ".github/workflows/siab-ver-regression.yml",
+      "destino": "docs/legado-siab/workflows/siab-ver-regression.yml",
+      "sha": "1e16f65c3951f361037de68dfda03f4fb49c8b9a",
+      "bytes": 1867
+    },
+    {
+      "origem": ".gitignore",
+      "destino": ".gitignore",
+      "sha": "b5b486af5f81394602ccc1121b0d7a5bf6e8661b",
+      "bytes": 559
+    },
+    {
+      "origem": ".nojekyll",
+      "destino": ".nojekyll",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0
+    },
+    {
+      "origem": "CHANGELOG.md",
+      "destino": "CHANGELOG.md",
+      "sha": "bb39ddc00a658e51bb76ddb5b48d504f126de7dd",
+      "bytes": 3686
+    },
+    {
+      "origem": "COMPATIBILIDADE.md",
+      "destino": "COMPATIBILIDADE.md",
+      "sha": "eaf2f0d35ee4fea03e14d01f99d963a53926e9b9",
+      "bytes": 1449
+    },
+    {
+      "origem": "DEPENDENCIAS.md",
+      "destino": "DEPENDENCIAS.md",
+      "sha": "ddad6c34be93f9ba0194b5a162a5781e2586134d",
+      "bytes": 1371
+    },
+    {
+      "origem": "FILES.txt",
+      "destino": "FILES.txt",
+      "sha": "4005f2302101b634862215947ede7492679fdd29",
+      "bytes": 2142
+    },
+    {
+      "origem": "LEIA-ME.md",
+      "destino": "LEIA-ME.md",
+      "sha": "6fb29c5c1cdf284f62168423fbb871c728cfa258",
+      "bytes": 4653
+    },
+    {
+      "origem": "LICENSE",
+      "destino": "LICENSE",
+      "sha": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
+      "bytes": 35149
+    },
+    {
+      "origem": "README.md",
+      "destino": "README.md",
+      "sha": "d830eb07e5eda448c56de18826255a8cc6166ed3",
+      "bytes": 5836
+    },
+    {
+      "origem": "SHA256SUMS.txt",
+      "destino": "SHA256SUMS.txt",
+      "sha": "1d9811e27d621e9a9b4286c14a90d5248d0a8cc2",
+      "bytes": 8976
+    },
+    {
+      "origem": "SHA512SUMS.txt",
+      "destino": "SHA512SUMS.txt",
+      "sha": "0e48ea4976a1b2881e354e90e06f3d4f50a2ff80",
+      "bytes": 15632
+    },
+    {
+      "origem": "SIAB-1.0.0-standalone.html",
+      "destino": "SIAB-1.0.0-standalone.html",
+      "sha": "d3c773591843da44a66e537d7cc6362754ad05b0",
+      "bytes": 1176453
+    },
+    {
+      "origem": "VALIDACAO.md",
+      "destino": "VALIDACAO.md",
+      "sha": "934bc8e137394942518ed0633a0d229ac72dd7f0",
+      "bytes": 7912
+    },
+    {
+      "origem": "a11y.js",
+      "destino": "a11y.js",
+      "sha": "253c582d88b8c9c8eb952038eac408edc0c9b299",
+      "bytes": 17346
+    },
+    {
+      "origem": "assets/icones/apple-touch-icon.png",
+      "destino": "assets/icones/apple-touch-icon.png",
+      "sha": "e0b78f8abb947ee298e15425c53705784d069eec",
+      "bytes": 5237
+    },
+    {
+      "origem": "assets/icones/icone-192.png",
+      "destino": "assets/icones/icone-192.png",
+      "sha": "4b899e502893338fe4761a03321cb936c80361b8",
+      "bytes": 6322
+    },
+    {
+      "origem": "assets/icones/icone-512.png",
+      "destino": "assets/icones/icone-512.png",
+      "sha": "0c83405469a1708f04f52c16a9a7786fd0668aa9",
+      "bytes": 26501
+    },
+    {
+      "origem": "assets/icones/icone-maskable-512.png",
+      "destino": "assets/icones/icone-maskable-512.png",
+      "sha": "eed2e3301418bfbd13e610de77c6508e80ea2d52",
+      "bytes": 16692
+    },
+    {
+      "origem": "assets/siab-icone.svg",
+      "destino": "assets/siab-icone.svg",
+      "sha": "dc23705d90be6e45e27f25add0196841a49780b7",
+      "bytes": 1460
+    },
+    {
+      "origem": "assets/sqab-icone.svg",
+      "destino": "assets/sqab-icone.svg",
+      "sha": "441808d1b985337640b5131eb3748604a56ec334",
+      "bytes": 1460
+    },
+    {
+      "origem": "build_icon_inventory.cjs",
+      "destino": "build_icon_inventory.cjs",
+      "sha": "c5d26f9f5dff720ecbe329402ffc6c5b6e65cdd5",
+      "bytes": 5649
+    },
+    {
+      "origem": "build_manual_docs.cjs",
+      "destino": "build_manual_docs.cjs",
+      "sha": "b122fbc8183c483e11cfdf797b24a7b151f9f8e6",
+      "bytes": 4078
+    },
+    {
+      "origem": "build_standalone.py",
+      "destino": "build_standalone.py",
+      "sha": "dfd98a5f0fb25af177594064ec015922fd7ec9ec",
+      "bytes": 2962
+    },
+    {
+      "origem": "css/aplicativo.css",
+      "destino": "css/aplicativo.css",
+      "sha": "50127abdfb91677259d5d84c200cfe5877ea4d3c",
+      "bytes": 2878
+    },
+    {
+      "origem": "css/investigacao.css",
+      "destino": "css/investigacao.css",
+      "sha": "f02bbaab96538a0faeb77715894d727342db056a",
+      "bytes": 31432
+    },
+    {
+      "origem": "css/manual.css",
+      "destino": "css/manual.css",
+      "sha": "a0a3edd9a4180360e7de65b405152e19866bd5a5",
+      "bytes": 24035
+    },
+    {
+      "origem": "css/mobile-controls.css",
+      "destino": "css/mobile-controls.css",
+      "sha": "503641441fbdca2c4c8b3aa55d60d1418adb4328",
+      "bytes": 4230
+    },
+    {
+      "origem": "css/mobile-study.css",
+      "destino": "css/mobile-study.css",
+      "sha": "9cc24f82f4e9e3972edc27c3dc3f2a0a5e563f2d",
+      "bytes": 11994
+    },
+    {
+      "origem": "css/refinements.css",
+      "destino": "css/refinements.css",
+      "sha": "de21732becf143b61bd403de40e40a641a9098fc",
+      "bytes": 7559
+    },
+    {
+      "origem": "css/stylesiab.css",
+      "destino": "css/stylesiab.css",
+      "sha": "c22acb2bf38656a92290857801c409e4ffcf698c",
+      "bytes": 112624
+    },
+    {
+      "origem": "css/stylesqab.css",
+      "destino": "css/stylesqab.css",
+      "sha": "9eca23ef0838bd7fa693e97b10ef96f554cc9696",
+      "bytes": 18195
+    },
+    {
+      "origem": "css/workspace.css",
+      "destino": "css/workspace.css",
+      "sha": "839b4b085c1f29f64651315b38442b8b6fca45fe",
+      "bytes": 37761
+    },
+    {
+      "origem": "docs/ICONOGRAFIA-RC5.html",
+      "destino": "docs/ICONOGRAFIA-RC5.html",
+      "sha": "f31a9725289e4aeb736ecc7dbd13c1ac2e1923db",
+      "bytes": 29582
+    },
+    {
+      "origem": "docs/ICONOGRAFIA-RC5.md",
+      "destino": "docs/ICONOGRAFIA-RC5.md",
+      "sha": "0545c862c9e894c55cbe96a70980d26d5f13264f",
+      "bytes": 1518
+    },
+    {
+      "origem": "docs/INDICE-BUSCA.json",
+      "destino": "docs/INDICE-BUSCA.json",
+      "sha": "6c2ee539f874cc32aa081b21da6c06ee61833dca",
+      "bytes": 89269
+    },
+    {
+      "origem": "docs/LIMITACOES.md",
+      "destino": "docs/LIMITACOES.md",
+      "sha": "cf61787fbfd6b9f5badc7ff9f052c2e49e5165ea",
+      "bytes": 4333
+    },
+    {
+      "origem": "docs/MANUAL.md",
+      "destino": "docs/MANUAL.md",
+      "sha": "d9b44b00a06c13219550d4e0b7f8638a9e3ab0af",
+      "bytes": 52559
+    },
+    {
+      "origem": "docs/MIGRACAO.md",
+      "destino": "docs/MIGRACAO.md",
+      "sha": "4e8707256861c350cf376eb54308b10088f34a0a",
+      "bytes": 2701
+    },
+    {
+      "origem": "docs/MODELO-CIENTIFICO.md",
+      "destino": "docs/MODELO-CIENTIFICO.md",
+      "sha": "74bec34c767458e8ae70b8a8b3fb936ea6346d35",
+      "bytes": 5964
+    },
+    {
+      "origem": "docs/PAGINAS-MANUAL.md",
+      "destino": "docs/PAGINAS-MANUAL.md",
+      "sha": "51fad2339877e4d5c4924a7eeae7556283746bae",
+      "bytes": 7223
+    },
+    {
+      "origem": "docs/TERMOS-BUSCA.md",
+      "destino": "docs/TERMOS-BUSCA.md",
+      "sha": "f278027c266578931ff3215e49e464fd50dff52a",
+      "bytes": 5197
+    },
+    {
+      "origem": "favicon-dark.svg",
+      "destino": "favicon-dark.svg",
+      "sha": "dc23705d90be6e45e27f25add0196841a49780b7",
+      "bytes": 1460
+    },
+    {
+      "origem": "favicon-light.svg",
+      "destino": "favicon-light.svg",
+      "sha": "dc23705d90be6e45e27f25add0196841a49780b7",
+      "bytes": 1460
+    },
+    {
+      "origem": "index.html",
+      "destino": "index.html",
+      "sha": "9cc2ebb02ab25fd5fe4dcab637637328ba0f6fdc",
+      "bytes": 98249
+    },
+    {
+      "origem": "js/a11y/preferencias.js",
+      "destino": "js/a11y/preferencias.js",
+      "sha": "4340946309ce7c84617d168497c375d81bd71933",
+      "bytes": 5714
+    },
+    {
+      "origem": "js/core/activity-context.js",
+      "destino": "js/core/activity-context.js",
+      "sha": "f52406d312f71004d0e23fec250a405a52b44ffa",
+      "bytes": 13652
+    },
+    {
+      "origem": "js/core/atividade-v2.js",
+      "destino": "js/core/atividade-v2.js",
+      "sha": "863a0dfba031322a932fc1f7c1fa3bc2847177f6",
+      "bytes": 13818
+    },
+    {
+      "origem": "js/core/atividades.js",
+      "destino": "js/core/atividades.js",
+      "sha": "01904ec59e3e1d90ee590cf1168343336b25a421",
+      "bytes": 18906
+    },
+    {
+      "origem": "js/core/compatibilidade.js",
+      "destino": "js/core/compatibilidade.js",
+      "sha": "b6d0ddbc2fb2dc2dd42cc16ffb1fc5d20f7d7476",
+      "bytes": 7247
+    },
+    {
+      "origem": "js/core/estado.js",
+      "destino": "js/core/estado.js",
+      "sha": "bdd9bfb5fe4d7ec242dc8347970538e845a5707a",
+      "bytes": 9368
+    },
+    {
+      "origem": "js/core/loja.js",
+      "destino": "js/core/loja.js",
+      "sha": "4aa74b03b22e4e35de319d1e2c7eb3c575121ec9",
+      "bytes": 753
+    },
+    {
+      "origem": "js/core/migracoes.js",
+      "destino": "js/core/migracoes.js",
+      "sha": "802a21097bd3eb3c02ceb6e82e1264dc850ff4ce",
+      "bytes": 2006
+    },
+    {
+      "origem": "js/core/namespace.js",
+      "destino": "js/core/namespace.js",
+      "sha": "6f583ca9a6d67a8b0abad497dc5f3ba98007e814",
+      "bytes": 81
+    },
+    {
+      "origem": "js/core/persistencia.js",
+      "destino": "js/core/persistencia.js",
+      "sha": "a1610a98c144cfc76f3ec4e077a52be43ed4bd63",
+      "bytes": 17074
+    },
+    {
+      "origem": "js/core/plataforma.js",
+      "destino": "js/core/plataforma.js",
+      "sha": "fdcbcbd45e1142212ea4b2484671f9f81ce5dfd9",
+      "bytes": 2480
+    },
+    {
+      "origem": "js/core/progresso.js",
+      "destino": "js/core/progresso.js",
+      "sha": "dc68ef3bf8c11fb134b5c86b71e5a283227376fe",
+      "bytes": 4430
+    },
+    {
+      "origem": "js/core/roteador.js",
+      "destino": "js/core/roteador.js",
+      "sha": "22aff99a986419d79100ddc6249334e99132a440",
+      "bytes": 2472
+    },
+    {
+      "origem": "js/core/util.js",
+      "destino": "js/core/util.js",
+      "sha": "97ecc0fd010611aa99e92d077ad44d480b21c5be",
+      "bytes": 3865
+    },
+    {
+      "origem": "js/data/ambiente-saude.js",
+      "destino": "js/data/ambiente-saude.js",
+      "sha": "dfdd011679c5d165f6b61661be26ff58307927d4",
+      "bytes": 3007
+    },
+    {
+      "origem": "js/data/amostras.js",
+      "destino": "js/data/amostras.js",
+      "sha": "efaf681f7032be72f172d512d3f5b25606f90539",
+      "bytes": 17455
+    },
+    {
+      "origem": "js/data/catalogo.js",
+      "destino": "js/data/catalogo.js",
+      "sha": "39356160029ceda0baddc25a408c975689018d42",
+      "bytes": 3510
+    },
+    {
+      "origem": "js/data/cotidiano.js",
+      "destino": "js/data/cotidiano.js",
+      "sha": "569fae2f77852fa8688c9c47531117afb9457316",
+      "bytes": 7807
+    },
+    {
+      "origem": "js/data/experimentos.js",
+      "destino": "js/data/experimentos.js",
+      "sha": "32ea002a3a6499cb1c45a3c3cbc8e16ee174e704",
+      "bytes": 8220
+    },
+    {
+      "origem": "js/data/funcoes.js",
+      "destino": "js/data/funcoes.js",
+      "sha": "d8d812e8e491963ce3f32e3d239628890193404d",
+      "bytes": 14198
+    },
+    {
+      "origem": "js/data/manual.js",
+      "destino": "js/data/manual.js",
+      "sha": "ed0e99b08910aadd8b34dbdbe2493868363d4eb0",
+      "bytes": 70895
+    },
+    {
+      "origem": "js/data/missoes.js",
+      "destino": "js/data/missoes.js",
+      "sha": "7eff798031c98ac9b4bd918ad3190e4fbe038ce1",
+      "bytes": 37307
+    },
+    {
+      "origem": "js/data/montagens.js",
+      "destino": "js/data/montagens.js",
+      "sha": "839c8ceb7566c1f068d780f88a79d2e65ccdbe61",
+      "bytes": 9563
+    },
+    {
+      "origem": "js/data/reagentes.js",
+      "destino": "js/data/reagentes.js",
+      "sha": "5b6f1429d8d5cebec4288b64e74daf9a386ed263",
+      "bytes": 38376
+    },
+    {
+      "origem": "js/data/sais.js",
+      "destino": "js/data/sais.js",
+      "sha": "dc45a85c984c7f0f377f017cbc26976c1943f754",
+      "bytes": 4182
+    },
+    {
+      "origem": "js/data/temas.js",
+      "destino": "js/data/temas.js",
+      "sha": "b9ef740c20333c608faf07fa7148d51a5bc5f811",
+      "bytes": 5757
+    },
+    {
+      "origem": "js/init/app.js",
+      "destino": "js/init/app.js",
+      "sha": "8ff4790883e4b0398cdd00981f19bf34cf8c48f3",
+      "bytes": 2589
+    },
+    {
+      "origem": "js/init/integracao.js",
+      "destino": "js/init/integracao.js",
+      "sha": "2bb6442e7ccb1a9368a2e7a795d12c7561111b5c",
+      "bytes": 5634
+    },
+    {
+      "origem": "js/init/pwa.js",
+      "destino": "js/init/pwa.js",
+      "sha": "0073729a9c021353e4248b1513912eb9d64c8d3d",
+      "bytes": 5372
+    },
+    {
+      "origem": "js/simulation/condutividade.js",
+      "destino": "js/simulation/condutividade.js",
+      "sha": "65a714ca2a14b45d1b836544854849ff424f34f2",
+      "bytes": 4286
+    },
+    {
+      "origem": "js/simulation/instrumentos.js",
+      "destino": "js/simulation/instrumentos.js",
+      "sha": "eb8fab629e07d407c4b1078bc475b65a47f12dca",
+      "bytes": 8147
+    },
+    {
+      "origem": "js/simulation/medicoes.js",
+      "destino": "js/simulation/medicoes.js",
+      "sha": "6aaa461c7a0191c91770fe475315602f09d217af",
+      "bytes": 8759
+    },
+    {
+      "origem": "js/simulation/motor-missoes.js",
+      "destino": "js/simulation/motor-missoes.js",
+      "sha": "bc5cf090013656d202e737e4d5758e3544415e71",
+      "bytes": 3395
+    },
+    {
+      "origem": "js/simulation/quimica.js",
+      "destino": "js/simulation/quimica.js",
+      "sha": "8dee5c134350bd49ca0ef71e458ced60eca70aa2",
+      "bytes": 26600
+    },
+    {
+      "origem": "js/telas/aprender.js",
+      "destino": "js/telas/aprender.js",
+      "sha": "cefc809ab06cbb5827938a36184d61fe4a2a8aa2",
+      "bytes": 2252
+    },
+    {
+      "origem": "js/telas/bancada.js",
+      "destino": "js/telas/bancada.js",
+      "sha": "03f235842dc78fcf29112a5cf81a3417895d4e4b",
+      "bytes": 43033
+    },
+    {
+      "origem": "js/telas/caderno.js",
+      "destino": "js/telas/caderno.js",
+      "sha": "c09516ef7fa07b843d180d344afc5dbb42c683d9",
+      "bytes": 6322
+    },
+    {
+      "origem": "js/telas/inicio.js",
+      "destino": "js/telas/inicio.js",
+      "sha": "3d0ef7b7adbc4b819424f42a9a7fad9ad487daa6",
+      "bytes": 651
+    },
+    {
+      "origem": "js/telas/laboratorio.js",
+      "destino": "js/telas/laboratorio.js",
+      "sha": "b98045e6af3287146061ed61d81471872a7a4f1d",
+      "bytes": 523
+    },
+    {
+      "origem": "js/telas/manual.js",
+      "destino": "js/telas/manual.js",
+      "sha": "3b0b9068edec0c50ff291278ed159b470cbbe0b3",
+      "bytes": 24477
+    },
+    {
+      "origem": "js/telas/missao.js",
+      "destino": "js/telas/missao.js",
+      "sha": "af79c35c2b092b101b487ea6467609ba11d33eb3",
+      "bytes": 4213
+    },
+    {
+      "origem": "js/telas/professor.js",
+      "destino": "js/telas/professor.js",
+      "sha": "a22b240ea86aa97932c40fe113d3c70b9033bf75",
+      "bytes": 17909
+    },
+    {
+      "origem": "js/telas/relatorios.js",
+      "destino": "js/telas/relatorios.js",
+      "sha": "edfe8699e5605618589c346d8d941a0cbd0b190c",
+      "bytes": 36865
+    },
+    {
+      "origem": "js/telas/roteiros.js",
+      "destino": "js/telas/roteiros.js",
+      "sha": "85f84a354d57ef4898fae92b876f195ef07bf037",
+      "bytes": 5090
+    },
+    {
+      "origem": "js/ui/abertura.js",
+      "destino": "js/ui/abertura.js",
+      "sha": "41c1724443707e5ac7f4ea964fd5d66451a40775",
+      "bytes": 6516
+    },
+    {
+      "origem": "js/ui/abrir-atividade.js",
+      "destino": "js/ui/abrir-atividade.js",
+      "sha": "da7d2dbbc5592cc3b4360d030524ae1cb977328b",
+      "bytes": 5220
+    },
+    {
+      "origem": "js/ui/activity-ui.js",
+      "destino": "js/ui/activity-ui.js",
+      "sha": "7d9f5f0fc5eea0b203148ebda7ab9048d3283dcf",
+      "bytes": 9247
+    },
+    {
+      "origem": "js/ui/condutimetro.js",
+      "destino": "js/ui/condutimetro.js",
+      "sha": "73ce15ccc4f290b90c144e11bfb006bf02b048e5",
+      "bytes": 9574
+    },
+    {
+      "origem": "js/ui/conta-gotas.js",
+      "destino": "js/ui/conta-gotas.js",
+      "sha": "96f32889ceb08bfe76d899fb6e9f96886b664854",
+      "bytes": 2962
+    },
+    {
+      "origem": "js/ui/equacao.js",
+      "destino": "js/ui/equacao.js",
+      "sha": "174a0debf9f86b5ae2d84004de114951289cd953",
+      "bytes": 18194
+    },
+    {
+      "origem": "js/ui/gaveta.js",
+      "destino": "js/ui/gaveta.js",
+      "sha": "1a978567caf4e356bee9b26aa9f2dc3c39894522",
+      "bytes": 5032
+    },
+    {
+      "origem": "js/ui/grafico.js",
+      "destino": "js/ui/grafico.js",
+      "sha": "02dd6abf91505525f42e21c0dbf930c53450223e",
+      "bytes": 15492
+    },
+    {
+      "origem": "js/ui/icons.js",
+      "destino": "js/ui/icons.js",
+      "sha": "e31945bebf416d6a495fe873497d5ede6c905c0a",
+      "bytes": 5299
+    },
+    {
+      "origem": "js/ui/impressao.js",
+      "destino": "js/ui/impressao.js",
+      "sha": "4b42c327483e79632c70c166363fa425bb6e43bf",
+      "bytes": 7011
+    },
+    {
+      "origem": "js/ui/layout-bancada.js",
+      "destino": "js/ui/layout-bancada.js",
+      "sha": "bb5abbf7a3a970bcae006a44a374de531094dc4a",
+      "bytes": 4694
+    },
+    {
+      "origem": "js/ui/lupa.js",
+      "destino": "js/ui/lupa.js",
+      "sha": "1cc5d3b210d160e96fa9b2f5d3d83d23dc5d7aa1",
+      "bytes": 17067
+    },
+    {
+      "origem": "js/ui/mobile-study.js",
+      "destino": "js/ui/mobile-study.js",
+      "sha": "9ac7713437ce81bdffcef0dced947cc84015abc3",
+      "bytes": 5559
+    },
+    {
+      "origem": "js/ui/modulos.js",
+      "destino": "js/ui/modulos.js",
+      "sha": "64c15d86feef79be112362bf0d2d3f1681ff8e71",
+      "bytes": 6470
+    },
+    {
+      "origem": "js/ui/prateleira.js",
+      "destino": "js/ui/prateleira.js",
+      "sha": "b0e7f1acb3fd5439fa83c7adb0e67f59f5ccb820",
+      "bytes": 9559
+    },
+    {
+      "origem": "js/ui/regua-ph.js",
+      "destino": "js/ui/regua-ph.js",
+      "sha": "4ae78e693852e3a29cb89a37333b0ec3a80c113e",
+      "bytes": 2958
+    },
+    {
+      "origem": "js/ui/render.js",
+      "destino": "js/ui/render.js",
+      "sha": "d9ddbecb73b8c6b01d39a7bdddefb1683409da00",
+      "bytes": 19718
+    },
+    {
+      "origem": "js/ui/segredo.js",
+      "destino": "js/ui/segredo.js",
+      "sha": "ef7ba1877cc60f75338ec82272f1620fad4931a5",
+      "bytes": 313
+    },
+    {
+      "origem": "js/ui/selecao-tubos.js",
+      "destino": "js/ui/selecao-tubos.js",
+      "sha": "ebd227cb31a1ca9be313e1fe12c499d6aa44c264",
+      "bytes": 7674
+    },
+    {
+      "origem": "js/ui/seletores.js",
+      "destino": "js/ui/seletores.js",
+      "sha": "0f2875c01fb55e61fa78ca8611d55485b9b86a16",
+      "bytes": 5743
+    },
+    {
+      "origem": "js/ui/som.js",
+      "destino": "js/ui/som.js",
+      "sha": "6efae2872978b30d284adcf1f7596cf4b63d490e",
+      "bytes": 1531
+    },
+    {
+      "origem": "js/ui/tour.js",
+      "destino": "js/ui/tour.js",
+      "sha": "53bed7583a1b473475bf287783a19a4ff484122c",
+      "bytes": 6605
+    },
+    {
+      "origem": "js/ui/trilho.js",
+      "destino": "js/ui/trilho.js",
+      "sha": "f53e8b0b3a6150d99ebf48d5207601dfa2ce2ce8",
+      "bytes": 777
+    },
+    {
+      "origem": "js/ui/tubo.js",
+      "destino": "js/ui/tubo.js",
+      "sha": "375d795cc2f9431c3ee3e5dbb1c8fa852b5bd3ec",
+      "bytes": 31540
+    },
+    {
+      "origem": "js/ui/ver-investigacao.js",
+      "destino": "js/ui/ver-investigacao.js",
+      "sha": "c91bd8c4dde26e6c6a7477168b6917533a4a8cf7",
+      "bytes": 19710
+    },
+    {
+      "origem": "js/ui/workspace.js",
+      "destino": "js/ui/workspace.js",
+      "sha": "e9580a0a3cf604ff1e3b4febbdc925c24cdc9839",
+      "bytes": 30353
+    },
+    {
+      "origem": "manifest.webmanifest",
+      "destino": "manifest.webmanifest",
+      "sha": "41b7713653c19e7aa388f997d6de8fc14a2ad385",
+      "bytes": 1616
+    },
+    {
+      "origem": "package-lock.json",
+      "destino": "package-lock.json",
+      "sha": "826cdcaf069f11c769a4437f15829a1a6439e746",
+      "bytes": 2642
+    },
+    {
+      "origem": "package.json",
+      "destino": "package.json",
+      "sha": "4198980fd1cd70c747c208f0eb32ad7cfc69d006",
+      "bytes": 2069
+    },
+    {
+      "origem": "scripts/capturar-readme.cjs",
+      "destino": "scripts/capturar-readme.cjs",
+      "sha": "fdbde4d8a00ba98e4b2f00661586be32942e3033",
+      "bytes": 6111
+    },
+    {
+      "origem": "scripts/montar-gifs-readme.py",
+      "destino": "scripts/montar-gifs-readme.py",
+      "sha": "314be663644f15f1faba12a819da13271aa6fe00",
+      "bytes": 1707
+    },
+    {
+      "origem": "scripts/regravar-gifs-readme.cjs",
+      "destino": "scripts/regravar-gifs-readme.cjs",
+      "sha": "5226477ec1a901c22d41ad43cf25eff5787e1be5",
+      "bytes": 7744
+    },
+    {
+      "origem": "sw.js",
+      "destino": "sw.js",
+      "sha": "aa7216714aea12b87179df2c9ed08755e8b885f7",
+      "bytes": 5939
+    },
+    {
+      "origem": "tests/instalacao-interface.test.cjs",
+      "destino": "tests/instalacao-interface.test.cjs",
+      "sha": "8b5f49912e62ae7ec5fc31090d42309227257e06",
+      "bytes": 4139
+    },
+    {
+      "origem": "tests/persistencia-browser.test.cjs",
+      "destino": "tests/persistencia-browser.test.cjs",
+      "sha": "341d85857a425ec48f496d95d9a0315d110fa164",
+      "bytes": 9576
+    },
+    {
+      "origem": "tests/persistencia-compacta.test.cjs",
+      "destino": "tests/persistencia-compacta.test.cjs",
+      "sha": "c11864564cb6f85ae3d76e3aba4c692557ee76c7",
+      "bytes": 8080
+    },
+    {
+      "origem": "tests/prever-gotejar.test.cjs",
+      "destino": "tests/prever-gotejar.test.cjs",
+      "sha": "23fa476f9aebcbcd18345f5cc71c4ad931c56b2c",
+      "bytes": 8331
+    },
+    {
+      "origem": "tests/ver-expand.test.cjs",
+      "destino": "tests/ver-expand.test.cjs",
+      "sha": "334ef70af831c260f48d626fa1ebf99dc53a3b3b",
+      "bytes": 7240
+    },
+    {
+      "origem": "tests/ver-layout.test.cjs",
+      "destino": "tests/ver-layout.test.cjs",
+      "sha": "8c013508de5214bcb86ba14622c28c50354a8322",
+      "bytes": 13293
+    },
+    {
+      "origem": "vendor/dialog-polyfill/LICENSE",
+      "destino": "vendor/dialog-polyfill/LICENSE",
+      "sha": "3d0f7d3edfd8146031e66dc3f45926920d3ded78",
+      "bytes": 1563
+    },
+    {
+      "origem": "vendor/dialog-polyfill/dialog-polyfill.css",
+      "destino": "vendor/dialog-polyfill/dialog-polyfill.css",
+      "sha": "a9903ffd11690e38026a45d22b2393be32a89eea",
+      "bytes": 2280
+    },
+    {
+      "origem": "vendor/dialog-polyfill/dialog-polyfill.js",
+      "destino": "vendor/dialog-polyfill/dialog-polyfill.js",
+      "sha": "4c63f6e49b017e4b427e9a5a578794b147c6ad2d",
+      "bytes": 30811
+    }
+  ]
+}
