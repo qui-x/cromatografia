@@ -1,0 +1,17 @@
+name: "SIAC — Integridade do standalone de referência"
+on:
+  push:
+    branches: [main, feat/siac-experiencia-didatica]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  referencia:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Confirmar standalone SIAB oficial imutável e controles de visualização
+        run: node tests/siac-referencia-standalone.test.cjs
