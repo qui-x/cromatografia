@@ -247,7 +247,7 @@ SIAB.workspace = (() => {
       if (state.presentation !== "fullscreen")
         state.presentation = presentations[state.activeTool] || "standard";
     }
-    if (!groups.length && state.source !== "dados") state.right = "collapsed";
+    if (!window.SIAC?.laboratorio?.active && !groups.length && state.source !== "dados") state.right = "collapsed";
     const dataAllowed =
       S.verDisponivel("historico") ||
       S.verDisponivel("tabela") ||
