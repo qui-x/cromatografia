@@ -11,6 +11,17 @@ on:
       - "js/simulation/siac-fracionamento.js"
       - "tests/siac-laboratorio-integrado-browser.cjs"
       - ".github/workflows/siac-laboratorio-integrado.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "index.html"
+      - "css/siac-laboratorio-integrado.css"
+      - "js/ui/siac-laboratorio-integrado.js"
+      - "js/ui/workspace.js"
+      - "js/simulation/siac-coluna.js"
+      - "js/simulation/siac-fracionamento.js"
+      - "tests/siac-laboratorio-integrado-browser.cjs"
+      - ".github/workflows/siac-laboratorio-integrado.yml"
   workflow_dispatch:
 permissions:
   contents: read
