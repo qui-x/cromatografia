@@ -1,9 +1,9 @@
 {
-  "versao": "2.1.0",
+  "versao": "2.2.0",
   "data": "2026-11-23",
   "titulo": "Matriz preliminar de cobertura científica do SIAC",
   "fonte": "data/siac/analitos-protocolos.v1.json",
-  "observacao": "Matriz calculada a partir dos nove protocolos locais e das tabelas de Rf rastreadas até 23/11/2026. Dezena(s) de resultados são tabelas didáticas, não medições primárias reprocessadas. Quatro pigmentos e 20 aminoácidos têm pelo menos um registro, 20 compostos possuem dois sistemas eluentes contrastantes em pesquisa; nenhum homologado. NÃO representa cruzamento de bases externas de centenas de milhares de linhas.",
+  "observacao": "Atualização: 10 métodos de pesquisa; 74 valores Rf pontuais e uma faixa. Dados de artigo de 2024 incluem as distâncias de oito aminoácidos, com divergência de arredondamento explicitada na valina. Duas condições cromatográficas reportadas NÃO significam método integralmente homologado; normas de evidência permanecem.",
   "regras": {
     "minimoMetodosIndependentesComRetencaoIndividual": 2,
     "minimoSolventesQuimicamenteDistintos": 2,
@@ -16,14 +16,14 @@
   "resumo": {
     "candidatos": 76,
     "comPeloMenosUmRfIndividual": 24,
-    "comDoisMetodosDocumentados": 20,
-    "comDoisMetodosESolventesDistintos": 20,
+    "comDoisMetodosDocumentados": 22,
+    "comDoisMetodosESolventesDistintos": 22,
     "homologadosNaRegraNova": 0,
     "faltamParaMetaMinima": 40,
     "faltamParaMetaAmpliada": 55,
-    "totaisRegistroRfPontual": 66,
+    "totaisRegistroRfPontual": 74,
     "totalRfIntervalos": 1,
-    "protocolos": 9
+    "protocolos": 10
   },
   "candidatos": [
     {
@@ -971,7 +971,7 @@
       "nome": "Alanina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 4,
+      "metodosComRetencaoIndividual": 5,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_amrita_12_3_5",
@@ -1126,6 +1126,50 @@
           ],
           "rfIntervalo": [],
           "estado": "tabela_referencia_comercial_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_padiyar2024_butanol_acetic_water_4_1_1",
+          "tecnica": "ccd",
+          "fonte": "padiyar2024",
+          "fonteUrl": "https://www.ijpsjournal.com/article/enhanced-thin-layer-chromatography-of-amino-acids-using-mixed-hydrotropic-solutions",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 4
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 1
+              },
+              {
+                "id": "water",
+                "partes": 1
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-butanol:ácido acético glacial:água 4:1:1; 33,3 mL butanol+8,3 mL acético e completar água para 50 mL",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel 60 F254 pré-revestida (Supelco/Aldrich)",
+          "detector": "ninhidrina 0,25% (w/v), aquecimento de revelação a 100 °C por 5 min após secagem a 50 °C por 20 min",
+          "rf": [
+            {
+              "valor": 0.57,
+              "classe": "reportado_com_distancias_tabela_2_artigo_2024",
+              "homologado": false,
+              "distanciaManchaCm": 2,
+              "distanciaFrenteCm": 3.5,
+              "diferencaRfDistancias": 0.0014
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "artigo_primario_com_discrepancias_a_auditar"
         }
       ],
       "minimoDoisMetodos": true,
@@ -1192,8 +1236,38 @@
         },
         {
           "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_padiyar2024_butanol_acetic_water_4_1_1"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
             "tlc_aminoacids_protechex_etanol96_water_7_3",
             "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "tlc_aminoacids_padiyar2024_butanol_acetic_water_4_1_1"
           ],
           "solventesA": [
             "ethanol",
@@ -1216,7 +1290,7 @@
       "nome": "Arginina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 1,
+      "metodosComRetencaoIndividual": 2,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
@@ -1253,15 +1327,73 @@
           ],
           "rfIntervalo": [],
           "estado": "referencia_primaria_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_padiyar2024_butanol_acetic_water_4_1_1",
+          "tecnica": "ccd",
+          "fonte": "padiyar2024",
+          "fonteUrl": "https://www.ijpsjournal.com/article/enhanced-thin-layer-chromatography-of-amino-acids-using-mixed-hydrotropic-solutions",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 4
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 1
+              },
+              {
+                "id": "water",
+                "partes": 1
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-butanol:ácido acético glacial:água 4:1:1; 33,3 mL butanol+8,3 mL acético e completar água para 50 mL",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel 60 F254 pré-revestida (Supelco/Aldrich)",
+          "detector": "ninhidrina 0,25% (w/v), aquecimento de revelação a 100 °C por 5 min após secagem a 50 °C por 20 min",
+          "rf": [
+            {
+              "valor": 0.23,
+              "classe": "reportado_com_distancias_tabela_2_artigo_2024",
+              "homologado": false,
+              "distanciaManchaCm": 0.8,
+              "distanciaFrenteCm": 3.5,
+              "diferencaRfDistancias": -0.0014
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "artigo_primario_com_discrepancias_a_auditar"
         }
       ],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
-      "paresDocumentados": [],
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_padiyar2024_butanol_acetic_water_4_1_1"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "metodo_2_documentado",
-        "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
@@ -1797,7 +1929,7 @@
       "nome": "Glutamina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 1,
+      "metodosComRetencaoIndividual": 2,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
@@ -1834,15 +1966,73 @@
           ],
           "rfIntervalo": [],
           "estado": "referencia_primaria_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_padiyar2024_butanol_acetic_water_4_1_1",
+          "tecnica": "ccd",
+          "fonte": "padiyar2024",
+          "fonteUrl": "https://www.ijpsjournal.com/article/enhanced-thin-layer-chromatography-of-amino-acids-using-mixed-hydrotropic-solutions",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 4
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 1
+              },
+              {
+                "id": "water",
+                "partes": 1
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-butanol:ácido acético glacial:água 4:1:1; 33,3 mL butanol+8,3 mL acético e completar água para 50 mL",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel 60 F254 pré-revestida (Supelco/Aldrich)",
+          "detector": "ninhidrina 0,25% (w/v), aquecimento de revelação a 100 °C por 5 min após secagem a 50 °C por 20 min",
+          "rf": [
+            {
+              "valor": 0.16,
+              "classe": "reportado_com_distancias_tabela_2_artigo_2024",
+              "homologado": false,
+              "distanciaManchaCm": 0.55,
+              "distanciaFrenteCm": 3.5,
+              "diferencaRfDistancias": -0.0029
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "artigo_primario_com_discrepancias_a_auditar"
         }
       ],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
-      "paresDocumentados": [],
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_padiyar2024_butanol_acetic_water_4_1_1"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "metodo_2_documentado",
-        "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
@@ -2096,7 +2286,7 @@
       "nome": "Histidina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 3,
+      "metodosComRetencaoIndividual": 4,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
@@ -2210,6 +2400,50 @@
           ],
           "rfIntervalo": [],
           "estado": "tabela_referencia_comercial_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_padiyar2024_butanol_acetic_water_4_1_1",
+          "tecnica": "ccd",
+          "fonte": "padiyar2024",
+          "fonteUrl": "https://www.ijpsjournal.com/article/enhanced-thin-layer-chromatography-of-amino-acids-using-mixed-hydrotropic-solutions",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 4
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 1
+              },
+              {
+                "id": "water",
+                "partes": 1
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-butanol:ácido acético glacial:água 4:1:1; 33,3 mL butanol+8,3 mL acético e completar água para 50 mL",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel 60 F254 pré-revestida (Supelco/Aldrich)",
+          "detector": "ninhidrina 0,25% (w/v), aquecimento de revelação a 100 °C por 5 min após secagem a 50 °C por 20 min",
+          "rf": [
+            {
+              "valor": 0.11,
+              "classe": "reportado_com_distancias_tabela_2_artigo_2024",
+              "homologado": false,
+              "distanciaManchaCm": 0.4,
+              "distanciaFrenteCm": 3.5,
+              "diferencaRfDistancias": 0.0043
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "artigo_primario_com_discrepancias_a_auditar"
         }
       ],
       "minimoDoisMetodos": true,
@@ -2246,8 +2480,38 @@
         },
         {
           "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_padiyar2024_butanol_acetic_water_4_1_1"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
             "tlc_aminoacids_protechex_etanol96_water_7_3",
             "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "tlc_aminoacids_padiyar2024_butanol_acetic_water_4_1_1"
           ],
           "solventesA": [
             "ethanol",
@@ -2689,7 +2953,7 @@
       "nome": "Lisina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 2,
+      "metodosComRetencaoIndividual": 3,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_amrita_12_3_5",
@@ -2767,6 +3031,50 @@
           ],
           "rfIntervalo": [],
           "estado": "referencia_primaria_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_padiyar2024_butanol_acetic_water_4_1_1",
+          "tecnica": "ccd",
+          "fonte": "padiyar2024",
+          "fonteUrl": "https://www.ijpsjournal.com/article/enhanced-thin-layer-chromatography-of-amino-acids-using-mixed-hydrotropic-solutions",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 4
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 1
+              },
+              {
+                "id": "water",
+                "partes": 1
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-butanol:ácido acético glacial:água 4:1:1; 33,3 mL butanol+8,3 mL acético e completar água para 50 mL",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel 60 F254 pré-revestida (Supelco/Aldrich)",
+          "detector": "ninhidrina 0,25% (w/v), aquecimento de revelação a 100 °C por 5 min após secagem a 50 °C por 20 min",
+          "rf": [
+            {
+              "valor": 0.23,
+              "classe": "reportado_com_distancias_tabela_2_artigo_2024",
+              "homologado": false,
+              "distanciaManchaCm": 0.8,
+              "distanciaFrenteCm": 3.5,
+              "diferencaRfDistancias": -0.0014
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "artigo_primario_com_discrepancias_a_auditar"
         }
       ],
       "minimoDoisMetodos": true,
@@ -2786,6 +3094,21 @@
             "propanol_1",
             "water"
           ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_padiyar2024_butanol_acetic_water_4_1_1"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
         }
       ],
       "homologacaoCompleta": false,
@@ -2798,7 +3121,7 @@
       "nome": "Metionina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 3,
+      "metodosComRetencaoIndividual": 4,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
@@ -2912,6 +3235,50 @@
           ],
           "rfIntervalo": [],
           "estado": "tabela_referencia_comercial_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_padiyar2024_butanol_acetic_water_4_1_1",
+          "tecnica": "ccd",
+          "fonte": "padiyar2024",
+          "fonteUrl": "https://www.ijpsjournal.com/article/enhanced-thin-layer-chromatography-of-amino-acids-using-mixed-hydrotropic-solutions",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 4
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 1
+              },
+              {
+                "id": "water",
+                "partes": 1
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-butanol:ácido acético glacial:água 4:1:1; 33,3 mL butanol+8,3 mL acético e completar água para 50 mL",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel 60 F254 pré-revestida (Supelco/Aldrich)",
+          "detector": "ninhidrina 0,25% (w/v), aquecimento de revelação a 100 °C por 5 min após secagem a 50 °C por 20 min",
+          "rf": [
+            {
+              "valor": 0.51,
+              "classe": "reportado_com_distancias_tabela_2_artigo_2024",
+              "homologado": false,
+              "distanciaManchaCm": 1.8,
+              "distanciaFrenteCm": 3.5,
+              "diferencaRfDistancias": 0.0043
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "artigo_primario_com_discrepancias_a_auditar"
         }
       ],
       "minimoDoisMetodos": true,
@@ -2948,8 +3315,38 @@
         },
         {
           "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_padiyar2024_butanol_acetic_water_4_1_1"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
             "tlc_aminoacids_protechex_etanol96_water_7_3",
             "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "tlc_aminoacids_padiyar2024_butanol_acetic_water_4_1_1"
           ],
           "solventesA": [
             "ethanol",
@@ -3668,7 +4065,7 @@
       "nome": "Triptofano",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 3,
+      "metodosComRetencaoIndividual": 4,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
@@ -3782,6 +4179,50 @@
           ],
           "rfIntervalo": [],
           "estado": "tabela_referencia_comercial_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_padiyar2024_butanol_acetic_water_4_1_1",
+          "tecnica": "ccd",
+          "fonte": "padiyar2024",
+          "fonteUrl": "https://www.ijpsjournal.com/article/enhanced-thin-layer-chromatography-of-amino-acids-using-mixed-hydrotropic-solutions",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 4
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 1
+              },
+              {
+                "id": "water",
+                "partes": 1
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-butanol:ácido acético glacial:água 4:1:1; 33,3 mL butanol+8,3 mL acético e completar água para 50 mL",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel 60 F254 pré-revestida (Supelco/Aldrich)",
+          "detector": "ninhidrina 0,25% (w/v), aquecimento de revelação a 100 °C por 5 min após secagem a 50 °C por 20 min",
+          "rf": [
+            {
+              "valor": 0.23,
+              "classe": "reportado_com_distancias_tabela_2_artigo_2024",
+              "homologado": false,
+              "distanciaManchaCm": 0.8,
+              "distanciaFrenteCm": 3.5,
+              "diferencaRfDistancias": -0.0014
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "artigo_primario_com_discrepancias_a_auditar"
         }
       ],
       "minimoDoisMetodos": true,
@@ -3818,8 +4259,38 @@
         },
         {
           "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_padiyar2024_butanol_acetic_water_4_1_1"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
             "tlc_aminoacids_protechex_etanol96_water_7_3",
             "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "tlc_aminoacids_padiyar2024_butanol_acetic_water_4_1_1"
           ],
           "solventesA": [
             "ethanol",
@@ -4087,7 +4558,7 @@
       "nome": "Valina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 4,
+      "metodosComRetencaoIndividual": 5,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_amrita_12_3_5",
@@ -4242,6 +4713,50 @@
           ],
           "rfIntervalo": [],
           "estado": "tabela_referencia_comercial_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_padiyar2024_butanol_acetic_water_4_1_1",
+          "tecnica": "ccd",
+          "fonte": "padiyar2024",
+          "fonteUrl": "https://www.ijpsjournal.com/article/enhanced-thin-layer-chromatography-of-amino-acids-using-mixed-hydrotropic-solutions",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 4
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 1
+              },
+              {
+                "id": "water",
+                "partes": 1
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-butanol:ácido acético glacial:água 4:1:1; 33,3 mL butanol+8,3 mL acético e completar água para 50 mL",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel 60 F254 pré-revestida (Supelco/Aldrich)",
+          "detector": "ninhidrina 0,25% (w/v), aquecimento de revelação a 100 °C por 5 min após secagem a 50 °C por 20 min",
+          "rf": [
+            {
+              "valor": 0.52,
+              "classe": "reportado_com_distancias_tabela_2_artigo_2024",
+              "homologado": false,
+              "distanciaManchaCm": 1.85,
+              "distanciaFrenteCm": 3.5,
+              "diferencaRfDistancias": 0.0086
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "artigo_primario_com_discrepancias_a_auditar"
         }
       ],
       "minimoDoisMetodos": true,
@@ -4308,8 +4823,38 @@
         },
         {
           "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_padiyar2024_butanol_acetic_water_4_1_1"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
             "tlc_aminoacids_protechex_etanol96_water_7_3",
             "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "tlc_aminoacids_padiyar2024_butanol_acetic_water_4_1_1"
           ],
           "solventesA": [
             "ethanol",
