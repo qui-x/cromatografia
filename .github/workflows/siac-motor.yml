@@ -7,6 +7,7 @@ on:
       - "js/simulation/siac-fracionamento.js"
       - "js/simulation/siac-coluna.js"
       - "previews/coluna-laboratorio.html"
+      - "scripts/siac-coluna-standalone.cjs"
       - "tests/siac-cromatografia.test.cjs"
       - "tests/siac-fracionamento.test.cjs"
       - "tests/siac-coluna.test.cjs"
@@ -21,6 +22,7 @@ on:
       - "js/simulation/siac-fracionamento.js"
       - "js/simulation/siac-coluna.js"
       - "previews/coluna-laboratorio.html"
+      - "scripts/siac-coluna-standalone.cjs"
       - "tests/siac-cromatografia.test.cjs"
       - "tests/siac-fracionamento.test.cjs"
       - "tests/siac-coluna.test.cjs"
@@ -80,4 +82,13 @@ jobs:
           name: siac-coluna-previa
           path: docs/evidencias/siac-coluna/
           if-no-files-found: warn
+          retention-days: 14
+      - name: Empacotar prévia executável offline
+        run: node scripts/siac-coluna-standalone.cjs
+      - name: Entregar HTML único de avaliação
+        uses: actions/upload-artifact@v4
+        with:
+          name: siac-coluna-html-executavel
+          path: dist/siac-coluna-previa-standalone.html
+          if-no-files-found: error
           retention-days: 14
