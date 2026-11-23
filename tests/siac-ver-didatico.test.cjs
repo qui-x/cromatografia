@@ -39,6 +39,7 @@ assert.match(tela.conteudo,/0,2/);
 assert(ver.setFerramenta("comparar"));
 tela=ver.render(sel("glycine"),metrics);
 assert.match(tela.conteudo,/Diferença absoluta/);
+assert.match(tela.conteudo,/Projeção geométrica/);
 assert.match(tela.conteudo,/não confirma identidade/);
 assert(ver.setFerramenta("coluna"));
 assert.match(ver.render(sel("glycine"),metrics).conteudo,/não pode ser convertido automaticamente/);
