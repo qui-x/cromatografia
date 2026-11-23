@@ -1,11 +1,11 @@
-/* Service worker do SIAB: guarda os arquivos do app para funcionar sem internet.
+/* Service worker do SIAC: guarda os arquivos do app para funcionar sem internet.
    Ao publicar uma versão nova, mude VERSAO (identificador do cache; uma revisão pode
-   manter SIAB.version): o navegador baixa tudo de novo, a versão nova assume e o app
+   manter SIAC.version): o navegador baixa tudo de novo, a versão nova assume e o app
    avisa "Recarregar". A lista ARQUIVOS precisa conter todo arquivo usado pela
    página. */
 // Abertura visual original restaurada. Nova versão do cache elimina modelos,
 // player de vídeo e bibliotecas de abertura 3D das cópias offline.
-const VERSAO = "siac-identidade-alfa-20261123";
+const VERSAO = "siac-v0.2.0-dev-interface-20261123";
 // Projetos do mesmo usuario.github.io compartilham a origem. Cada publicação
 // precisa de seu próprio cache; atualizar uma cópia não deve apagar outra.
 const BASE = new URL(self.registration.scope);
@@ -130,7 +130,7 @@ self.addEventListener("install", (evento) => {
 });
 
 // Remove somente versões antigas desta publicação. Caches legados sem escopo
-// são preservados: podem pertencer a outra cópia do SIAB no mesmo domínio.
+// são preservados: podem pertencer a outro aplicativo no mesmo domínio.
 self.addEventListener("activate", (evento) => {
   evento.waitUntil(
     caches

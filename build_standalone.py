@@ -1,7 +1,7 @@
 """Reúne a versão modular em um único HTML offline, sem dependências externas.
 
 Uso: python3 build_standalone.py [destino.html]
-Sem destino, grava SIAB-<versão>-standalone.html na pasta do projeto.
+Sem destino, grava SIAC-<versão>-standalone.html na pasta do projeto.
 O arquivo único funciona aberto direto no navegador, mas não é instalável:
 para instalar como aplicativo (PWA), publique a pasta em um endereço https.
 """
@@ -15,7 +15,7 @@ html = (root / 'index.html').read_text(encoding='utf-8')
 versao = re.search(r'version: "([^"]+)"', (root / 'js/core/namespace.js').read_text(encoding='utf-8'))[1]
 
 # Marca o arquivo único (o PWA fica desligado) e informa a versão.
-html = html.replace('<html lang=', '<html data-siab-standalone="true" lang=', 1)
+html = html.replace('<html lang=', '<html data-siac-standalone="true" lang=', 1)
 html = html.replace('<meta charset="utf-8" />', f'<meta charset="utf-8" />\n    <meta name="application-version" content="{versao}" />', 1)
 
 # Estilos e scripts entram no próprio HTML.
@@ -37,7 +37,7 @@ html = re.sub(r'<script\b[^>]*src="([^"]+)"[^>]*>\s*</script>',
 
 # Imagens viram data URI.
 uri = {}
-for asset in ['assets/siab-icone.svg', 'assets/siac-icone.svg', 'assets/siac-icone-app.svg', 'favicon-dark.svg', 'favicon-light.svg']:
+for asset in ['assets/siac-icone.svg', 'assets/siac-icone-app.svg', 'favicon-dark.svg', 'favicon-light.svg']:
     uri[asset] = 'data:image/svg+xml;base64,' + base64.b64encode((root / asset).read_bytes()).decode('ascii')
     html = html.replace('"' + asset + '"', '"' + uri[asset] + '"')
 
@@ -50,8 +50,8 @@ html = html.replace(favicon, "if (link && (link.getAttribute('href') || '').star
 # Sem service worker no arquivo único, nem servido por localhost.
 pwa = '      "serviceWorker" in navigator &&'
 assert pwa in html, 'pwa.js mudou: revise o bloqueio do service worker'
-html = html.replace(pwa, '      !document.documentElement.hasAttribute("data-siab-standalone") &&\n' + pwa, 1)
+html = html.replace(pwa, '      !document.documentElement.hasAttribute("data-siac-standalone") &&\n' + pwa, 1)
 
-destination = Path(sys.argv[1]) if len(sys.argv) > 1 else root / f'SIAB-{versao}-standalone.html'
+destination = Path(sys.argv[1]) if len(sys.argv) > 1 else root / f'SIAC-{versao}-standalone.html'
 destination.write_text(html, encoding='utf-8')
 print(destination)

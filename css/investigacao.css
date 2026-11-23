@@ -33,7 +33,7 @@
   height: 144px;
   flex: none;
   margin: 0 24px 0 0;
-  filter: drop-shadow(0 12px 28px #c026d326);
+  filter: drop-shadow(0 10px 24px #0B547224);
 }
 .inicio-secao {
   display: flex;
@@ -122,9 +122,8 @@
   grid-row: span 2;
   padding: 26px;
   overflow: hidden;
-  background:
-    radial-gradient(ellipse at 100% 0, #c026d329, transparent 65%), var(--panel);
-  border-color: #864496;
+  background: var(--panel);
+  border-color: var(--border);
 }
 .caminho-laboratorio::before {
   content: "";
@@ -179,7 +178,7 @@
   background: #60a5fa;
 }
 .inicio-lab-cores i:nth-child(5) {
-  background: #b778f6;
+  background: #A5D9E7;
 }
 .caminho .inicio-card-acao {
   display: flex;
@@ -266,13 +265,13 @@
 .startup-brand img {
   width: 208px;
   height: 208px;
-  filter: drop-shadow(0 8px 40px #c026d345);
+  filter: drop-shadow(0 8px 34px #0B547238);
 }
 .startup-brand .startup-nome {
   display: block;
   max-width: 24ch;
   margin-top: 10px;
-  color: #f3e8fa;
+  color: #F8F4EB;
   font-size: clamp(1.05rem, 1.45vw, 1.25rem);
   font-weight: 700;
   line-height: 1.25;
@@ -281,7 +280,7 @@
 .startup-brand em {
   display: block;
   margin-top: 8px;
-  color: #d5c9e4;
+  color: #C8DCD8;
   font-size: 0.85rem;
   font-style: normal;
 }

@@ -37,7 +37,7 @@ SIAB.rotear = () => {
     parametro = permitido.parametro;
   }
   if (!SIAB.telas[nome]) {
-    SIAB.notice("Tela não encontrada. Consulte a navegação do SIAB.");
+    SIAB.notice("Tela não encontrada. Consulte a navegação do SIAC.");
     nome = "inicio";
     parametro = "";
   }
