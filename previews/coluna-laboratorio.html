@@ -115,22 +115,46 @@ hr{border:0;border-top:1px solid #dde8eb;margin:16px 0}.dados button{width:100%}
  <div class="palco-cab"><div><h1 id="cena-titulo">Coluna cromatográfica</h1><span class="legenda">A cena responde ao modelo e ao volume eluído</span></div><div id="relogio" class="leitura">0,0 mL · 0,0 min</div></div>
  <div class="cena">
   <div class="coluna-box">
-   <svg id="coluna-svg" viewBox="0 0 220 330" role="img" aria-label="Coluna com leito estacionário e bandas de amostras visíveis">
-    <defs>
-     <clipPath id="leito"><rect x="76" y="55" width="68" height="215" rx="3"/></clipPath>
-     <linearGradient id="suporte-g" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#e2e1d9"/><stop offset=".42" stop-color="#fffaf0"/><stop offset="1" stop-color="#d5d8d2"/></linearGradient>
-     <filter id="difusao"><feGaussianBlur stdDeviation="1.8"/></filter>
-    </defs>
-    <text x="110" y="18" fill="#476777" text-anchor="middle" font-size="11">Entrada do eluente</text>
-    <path d="M95 26V53M125 26V53" fill="none" stroke="#3d7786" stroke-width="2.5"/>
-    <path d="M76 52H144V274Q144 282 135 282H85Q76 282 76 274Z" fill="url(#suporte-g)" stroke="#174e66" stroke-width="3"/>
-    <g id="bandas" clip-path="url(#leito)"></g>
-    <path d="M90 282Q90 290 104 293V309H116V293Q130 290 130 282" fill="none" stroke="#174e66" stroke-width="2.5"/>
-    <path d="M106 309V322" stroke="#27849c" stroke-width="3" stroke-linecap="round"/>
-    <path d="M73 55H147" stroke="#607f8e" stroke-width="1.3" stroke-dasharray="4 3"/>
-    <text x="60" y="60" fill="#597281" font-size="9" text-anchor="end">Início</text>
-    <text x="60" y="273" fill="#597281" font-size="9" text-anchor="end">Saída</text>
-   </svg>
+   <svg id="coluna-svg" viewBox="0 0 285 430" role="img" aria-label="Coluna de vidro montada com reservatório, leito de sílica, frita, torneira e haste de sustentação">
+<defs>
+<clipPath id="leito"><rect x="99" y="137" width="82" height="220" rx="2"/></clipPath>
+<linearGradient id="vidro"><stop stop-color="#7caab8" stop-opacity=".55"/><stop offset=".22" stop-color="#fff" stop-opacity=".86"/><stop offset=".78" stop-color="#d8edf0" stop-opacity=".25"/><stop offset="1" stop-color="#39778b" stop-opacity=".53"/></linearGradient>
+<linearGradient id="suporte-g"><stop stop-color="#c6b9a5"/><stop offset=".3" stop-color="#f9f3e7"/><stop offset="1" stop-color="#c7baa9"/></linearGradient>
+<linearGradient id="solvente-g" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#dff8f3" stop-opacity=".72"/><stop offset="1" stop-color="#8fd0c7" stop-opacity=".5"/></linearGradient>
+<filter id="difusao"><feGaussianBlur stdDeviation="2.2"/></filter>
+<pattern id="graos" width="13" height="15" patternUnits="userSpaceOnUse"><circle cx="3" cy="4" r=".7" fill="#887965" opacity=".29"/><circle cx="10" cy="11" r=".7" fill="#9f8c76" opacity=".24"/></pattern>
+</defs>
+<!-- Estrutura: haste, base e abraçadeira -->
+<rect x="30" y="17" width="6" height="380" rx="3" fill="#9db4bb" stroke="#456d7b" stroke-width="1.5"/>
+<path d="M13 399H83L92 412H4Z" fill="#d9e7e9" stroke="#466e7e" stroke-width="2"/>
+<path d="M36 161H76L96 168M36 179H76L96 174" stroke="#6b8893" stroke-width="5" fill="none" stroke-linecap="round"/>
+<circle cx="36" cy="169" r="7" fill="#c2d4d8" stroke="#3e6979" stroke-width="2"/>
+<!-- Reservatório de eluente e conexão -->
+<path d="M111 31H169V39L178 48V79Q178 96 163 107L159 115H121L117 107Q102 96 102 79V48L111 39Z" fill="url(#vidro)" stroke="#245c72" stroke-width="3"/>
+<path d="M110 76Q140 73 170 76V93Q166 103 160 108H120Q113 102 110 93Z" fill="url(#solvente-g)"/>
+<path d="M106 32H174M110 40H170" stroke="#88b7c2" stroke-width="2"/>
+<path d="M121 115H159V135H121Z" fill="#dcebed" stroke="#275d71" stroke-width="2.4"/>
+<!-- Tubo e leito empacotado -->
+<path d="M95 129Q95 125 101 125H179Q185 125 185 131V365Q185 374 177 381L153 394H127L103 381Q95 374 95 365Z" fill="url(#vidro)" stroke="#255b70" stroke-width="3.6"/>
+<rect x="99" y="137" width="82" height="220" fill="url(#suporte-g)"/>
+<rect x="99" y="137" width="82" height="220" fill="url(#graos)"/>
+<g id="bandas" clip-path="url(#leito)"></g>
+<path d="M99 137H181" stroke="#958d80" stroke-width="2" stroke-dasharray="2 2"/>
+<!-- Plugue/frita -->
+<rect x="99" y="359" width="82" height="11" rx="2" fill="#dce8e0" stroke="#77979c" stroke-width="1.5"/>
+<path d="M102 364H179M102 368H179" stroke="#9ab0b0" stroke-dasharray="3 3"/>
+<!-- Reflexo e escala física longitudinal -->
+<path d="M102 151V347" stroke="#fff" opacity=".78" stroke-width="3" stroke-linecap="round"/>
+<path d="M179 151V347" stroke="#306f85" opacity=".20" stroke-width="2"/>
+<g stroke="#376f7d" stroke-width="1" opacity=".72"><path d="M188 142H202M188 170H196M188 198H202M188 226H196M188 254H202M188 282H196M188 310H202M188 338H196"/></g>
+<g fill="#536f7a" font-size="9"><text x="206" y="146">0</text><text x="206" y="202">25</text><text x="206" y="258">50</text><text x="206" y="314">75</text><text x="206" y="342">100%</text></g>
+<!-- Torneira e saída -->
+<path d="M128 394H152V405H128Z" fill="#d9eeee" stroke="#245b71" stroke-width="2.4"/>
+<circle cx="140" cy="405" r="7" fill="#e9f3f3" stroke="#356777" stroke-width="2"/>
+<path d="M132 405H148" stroke="#316e82" stroke-width="4" stroke-linecap="round"/>
+<path d="M140 412V427" stroke="#22879a" stroke-width="3" stroke-linecap="round"/>
+<g font-size="10" fill="#4b6c78"><text x="140" y="17" text-anchor="middle">Reservatório</text><text x="211" y="374">Frita</text><text x="160" y="416">Torneira</text></g>
+</svg>
    <span class="legenda">Bandas coloridas são visíveis; regiões incolores não são inventadas na imagem.</span>
   </div>
   <div class="coleta-box">
