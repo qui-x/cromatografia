@@ -1,3 +1,14 @@
+# SIAC — Simulador Interativo de Análise Cromatográfica
+
+**A Identidade das Cores Ocultas** · Em desenvolvimento. A aplicação reutiliza infraestrutura do SIAB, mas ainda contém telas e experimentos ácido-base não migrados; estes não representam resultados cromatográficos.
+
+- [Prévia da experiência de foco e frações](previews/siac-alternancia-foco.html)
+- [Plano da experiência](docs/SIAC-PLANO-EXPERIENCIA.md)
+- [Motor de coluna e coleta na bancada](index.html#/laboratorio)
+- [PR científica em desenvolvimento](https://github.com/qui-x/cromatografia/pull/1)
+
+## Legado SIAB — documentação preservada
+
 # SIAB 1.0.0
 
 Simulador de Indicadores Ácido-Base. Aplicação educacional estática com 140 substâncias, módulos Explorar, Medir e Calcular, instrumentos, atividades, Manual, relatórios e Caderno local.

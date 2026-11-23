@@ -68,5 +68,20 @@
     "estado": "adaptado",
     "motivo": "Adequação comprovada da barra de Foco, Visão geral e lançadores do workspace à bancada SIAC, preservando organização e comandos SIAB.",
     "teste": "node tests/siac-coluna.test.cjs; node tests/siac-identidade.test.cjs"
+  },
+  "README.md": {
+    "estado": "adaptado",
+    "motivo": "Reidentificar documentação pública como SIAC, preservando separadamente o histórico SIAB para não declarar laboratório ácido-base como cromatografia.",
+    "teste": "node scripts/siac-auditar-paridade.cjs"
+  },
+  "package.json": {
+    "estado": "adaptado",
+    "motivo": "Atualizar identificador e descrição do pacote para SIAC sem alterar a versão ou dependências da base importada.",
+    "teste": "npm ci --ignore-scripts; node tests/siac-identidade.test.cjs"
+  },
+  "package-lock.json": {
+    "estado": "adaptado",
+    "motivo": "Sincronizar o nome do pacote no lockfile com package.json mantendo a resolução exata das dependências.",
+    "teste": "npm ci --ignore-scripts"
   }
 }

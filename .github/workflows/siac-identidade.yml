@@ -13,6 +13,7 @@ on:
       - "index.html"
       - "scripts/siac-capturar-abertura.cjs"
       - "scripts/siac-gerar-icones.py"
+      - "tests/siac-logo-png.py"
       - "tests/siac-identidade.test.cjs"
       - ".github/workflows/siac-identidade.yml"
   workflow_dispatch:
@@ -30,9 +31,11 @@ jobs:
           persist-credentials: true
       - name: Preparar conversão SVG para PNG
         run: |
-          python3 -m pip install --user --disable-pip-version-check cairosvg
+          python3 -m pip install --user --disable-pip-version-check Pillow
       - name: Gerar todos os ícones a partir do SVG
         run: python3 scripts/siac-gerar-icones.py
+      - name: Verificar canal alfa real dos PNGs do PWA
+        run: python3 tests/siac-logo-png.py
       - name: Verificar sintaxe e identidade
         run: |
           node --check js/ui/abertura.js

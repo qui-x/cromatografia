@@ -14,7 +14,7 @@ const manifest = JSON.parse(read("manifest.webmanifest"));
 const sw = read("sw.js");
 const standalone = read("build_standalone.py");
 const preview=read("previews/abertura-v4.html");
-// Uma marca, duas aplicações: transparência nas telas e fundo sólido no app.
+// A marca usa alfa nas telas e no SVG instalável; o PNG maskable conserva fundo seguro.
 assert.match(svg, /<svg[\s>]/);
 assert.match(svg, /cromatogr/i);
 assert.match(svg, /data:image\/webp;base64,/);
@@ -23,11 +23,15 @@ assert.match(svg, /Placa cromatográfica inclinada/);
 assert.match(app, /A mesma placa cromatográfica/);
 assert.match(js, /iconeOficial/);
 assert.doesNotMatch(svg, /<rect width="192" height="192" fill="#0B5472"/i);
-assert.match(app, /<rect width="160" height="160" rx="28" fill="#002e40"/i);
+assert.match(svg, /id="siac-fundo-transparente"/);
+assert.match(app, /id="siac-fundo-transparente"/);
+assert.match(svg, /filter="url\(#siac-fundo-transparente\)"/);
+assert.match(app, /filter="url\(#siac-fundo-transparente\)"/);
+assert.doesNotMatch(app, /<rect width="160" height="160" rx="28" fill="#002e40"/i);
 assert.match(html, /SIAC — A Identidade das Cores Ocultas/);
 assert.match(html, /<svg class="abertura-tubos"/);
 assert.doesNotMatch(html, /<div class="abertura-marca">\s*<img/);
-assert.match(html, /rel="icon" type="image\/svg\+xml" href="assets\/siac-icone\.svg"/);
+assert.match(html, /rel="icon" type="image\/svg\+xml" href="assets\/siac-icone\.svg(?:\?[^"]+)?"/);
 assert.match(js, /siac-v4-assinatura-simbolo/);
 assert.doesNotMatch(js, /siac-v4-arcos|data-arco/);
 assert.match(html, /css\/siac-identidade\.css/);

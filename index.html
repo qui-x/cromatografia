@@ -20,7 +20,7 @@
     />
     <title>SIAC — A Identidade das Cores Ocultas</title>
     <link rel="manifest" href="manifest.webmanifest" />
-    <link rel="icon" type="image/svg+xml" href="assets/siac-icone.svg" />
+    <link rel="icon" type="image/svg+xml" href="assets/siac-icone.svg?v=alpha-1" />
     <link rel="apple-touch-icon" href="assets/icones/apple-touch-icon.png" />
     <link
       rel="stylesheet"
@@ -51,7 +51,7 @@
   <body>
     <noscript
       ><p class="falha-abertura">
-        O SIAB precisa de JavaScript para os botões e os experimentos. Ative-o
+        O SIAC precisa de JavaScript para os botões e os experimentos. Ative-o
         no navegador e abra o endereço publicado do simulador.
       </p></noscript
     >
@@ -303,7 +303,7 @@
       </section>
       <section data-tela="atividade" class="tela" hidden>
         <p id="abrir-no-app" class="abrir-no-app" hidden>
-          <a class="primary-btn" href="#">Abrir no aplicativo SIAB</a>
+          <a class="primary-btn" href="#">Abrir no aplicativo SIAC</a>
           <span>Já tem o aplicativo? Toque no botão. Se não tiver, continue aqui.</span>
         </p>
         <div id="atividade-conteudo" class="reading-column"></div>
@@ -1990,7 +1990,7 @@
           ><button class="drawer-link quiet-btn" data-abrir-atividade>
             <span data-app-icon="professor"></span>Abrir atividade</button
           ><button class="drawer-link quiet-btn" id="about-btn">
-            <span data-app-icon="about"></span>Sobre o SIAB
+            <span data-app-icon="about"></span>Sobre o SIAC
           </button>
           <button class="drawer-link quiet-btn" type="button" id="drawer-storage-protect">
             <span data-app-icon="data"></span>Proteger dados offline
@@ -2002,10 +2002,10 @@
 
       <dialog id="install-choice-dialog" class="siab-dialog install-choice-dialog" aria-labelledby="install-choice-title">
         <div class="dialog-heading">
-          <h2 id="install-choice-title">Instalar o SIAB</h2>
+          <h2 id="install-choice-title">Instalar o SIAC</h2>
           <button class="icon-btn" type="button" data-close="install-choice-dialog" aria-label="Fechar opções de instalação">×</button>
         </div>
-        <p class="install-choice-intro">Escolha como deseja utilizar o SIAB neste dispositivo.</p>
+        <p class="install-choice-intro">Escolha como deseja utilizar o SIAC neste dispositivo.</p>
         <div class="install-choice-options">
           <button id="install-choice-pwa" class="install-choice-option" type="button" data-install-system="pwa">
             <span class="install-choice-name">Aplicativo pelo navegador (PWA)</span>
@@ -2099,7 +2099,7 @@
       </p>
       <p>Versão <span id="about-version"></span></p>
       <p>
-        SIAB · GNU GPL v3. Interface de diálogos com dialog-polyfill,
+        SIAC · GNU GPL v3. Interface de diálogos com dialog-polyfill,
         BSD-3-Clause.
       </p>
       <nav class="about-links" aria-label="Documentação">
@@ -2294,7 +2294,7 @@
         </div>
         <h2 id="startup-title" tabindex="-1" autofocus>Como deseja iniciar?</h2>
         <p id="startup-description">
-          Escolha a tela que vai receber você ao abrir o SIAB.
+          Escolha a tela que vai receber você ao abrir o SIAC.
         </p>
         <div class="startup-opcoes">
           <button class="startup-opcao" data-startup="inicio">
