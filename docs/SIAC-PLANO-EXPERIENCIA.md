@@ -90,3 +90,28 @@ Verificar, no mínimo: 320, 360, 375, 414, 768, 1024 e 1440 px; paisagem em altu
 Não inventar valores cromatográficos no front-end. A experiência consome apenas a API definida no ramo `feat/siac-motor-cromatografico`, que produzirá os eventos, as observações, as medições e os cálculos. Enquanto essa interface não estiver estável, manter o SIAB histórico funcional neste ramo e restringir mudanças a documentação/maquetes desacopladas.
 
 **Gate de aceite:** nenhum menu sem ação, nenhuma tela vazia, nenhuma rota perdida, nenhuma regressão de sessão/histórico, e nenhuma referência ácido-base em funcionalidades exibidas como “SIAC homologado”.
+
+## Em foco: coluna e seleção de frações
+
+**Regra do produto:** o painel atual `Tubo em foco` é um legado do SIAB. No SIAC, o conceito passa a ser **objeto de investigação em foco**, contextual à técnica. Na coluna, o objeto pode ser a coluna inteira, um segmento de sua fase estacionária, uma fração coletada ou um conjunto de frações.
+
+### Fluxo de investigação
+
+1. Configurar coluna, fase estacionária, fase móvel, amostra e vazão no menu **Montagem**.
+2. Acompanhar a separação ao longo da coluna no modo **Explorar**; registrar tempo ou volume de eluato (dependendo do modelo).
+3. Coletar o eluato em recipientes identificados `F1`, `F2`, `F3`... com intervalo ou volume de coleta explícito, exibindo posições/tempos e volumes de cada fração.
+4. Selecionar diretamente o recipiente ou cartão da fração no painel **Em foco**. O painel deve mostrar identificação, intervalo de coleta, volume, condições, observação/detecção e indicadores de possível mistura.
+5. Disponibilizar ações contextuais **Observar**, **Medir**, **Calcular**, **Comparar**, **Investigar por CCD**, sem duplicar controles nem gerar novos dados por troca de foco.
+6. Permitir seleção de duas ou mais frações para comparação e reunir/descartar frações apenas mediante ação explícita, com rastreabilidade.
+7. Guardar no Caderno e relatório a fração selecionada, suas condições, sinal de detecção, incerteza, proveniência e histórico de manipulação.
+
+### Requisitos científicos e de UX
+
+- Uma fração pode conter **mistura/coeluição**, e não deve ser automaticamente interpretada como substância pura.
+- Frações são saídas de **um motor próprio de coluna**, nunca resultado de aplicar `Rf` de cromatografia planar.
+- A composição real/estimada deve ser diferenciada daquilo que o detector permite observar; componentes incolores ou não detectados não podem ser inferidos apenas pelo aspecto visual.
+- O foco é único por padrão, mas admite comparação multisseleção quando solicitado. Trocar de foco **não reinicia nem altera** a eluição e não modifica a amostra.
+- O painel **Em foco** deve ser contextual: papel/CCD mostram a placa e suas manchas; coluna mostra o perfil de eluição, os recipientes coletados e a fração selecionada. Só habilitar `Investigar por CCD` quando houver um protocolo aplicável.
+- Usar rótulos, padrões e textos além de cores; controles acessíveis a mouse, toque e teclado; garantir uma leitura clara em mobile.
+
+**Estado:** contrato de experiência aprovado para desenvolvimento; interface atual ainda exibe `Tubo em foco` do SIAB e precisa ser substituída apenas quando houver motor de coluna e integração de bancada funcional.
