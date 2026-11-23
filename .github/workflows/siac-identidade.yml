@@ -59,5 +59,13 @@ jobs:
           git add assets/icones/icone-192.png assets/icones/icone-512.png assets/icones/icone-maskable-512.png assets/icones/apple-touch-icon.png
           if ! git diff --cached --quiet; then
             git commit -m "assets(siac): gerar ícones PWA a partir da identidade oficial"
-            git push origin "HEAD:${GITHUB_REF_NAME}"
+            for tentativa in 1 2 3; do
+              git fetch origin "refs/heads/${GITHUB_REF_NAME}"
+              git rebase "origin/${GITHUB_REF_NAME}"
+              if git push origin "HEAD:${GITHUB_REF_NAME}"; then
+                exit 0
+              fi
+            done
+            echo "Falha ao publicar PNGs PWA após três tentativas" >&2
+            exit 1
           fi
