@@ -11,7 +11,7 @@
  if(raiz){raiz.SIAC=raiz.SIAC||{};raiz.SIAC.homologacao=api;}
 })(typeof globalThis==="object"?globalThis:null,function(){
  const POLITICA=Object.freeze({
-  versao:"2.0.0",
+  versao:"2.1.0",
   metaMinimaSubstancias:40,
   metaAmpliadaSubstancias:55,
   minimoMetodosIndependentes:2,
@@ -97,6 +97,7 @@
    registrosRfIntervalos:medida.intervalos.length,
    registrosColuna:medida.coluna.length,
    prontoComoMetodo:deficits.length===0,
+   habilitadoNoMotor:deficits.length===0&&p.disponibilidadeSimulador?.habilitarCenaQuantitativa===true,
    pendencias:deficits
   };
  }
@@ -136,6 +137,7 @@
   const identidadeConferida=found.identity?.verificadoIndividualmente===true &&
    Boolean(found.identity?.cas||found.identity?.pubchemCID||found.identity?.inchiKey);
   const apto=identidadeConferida&&homologadosComContraste.length>0;
+  const paraCena=identidadeConferida&&contrastes(metodos.filter(m=>m.habilitadoNoMotor),true).length>0;
   const pendencias=[];
   if(!identidadeConferida)pendencias.push("identidade_quimica_nao_conferida");
   if(metodos.length<2)pendencias.push("menos_de_dois_metodos_com_retencao_individual");
@@ -147,6 +149,7 @@
     comparacoesPossiveis:candidatosComContraste,
     comparacoesHomologadas:homologadosComContraste,
     metodos,homologacaoCompleta:apto,
+    disponibilidadeSimulacaoReal:paraCena,
     pendencias};
  }
  function auditarCatalogo(base){
@@ -159,6 +162,7 @@
    comDoisOuMaisMetodosDeRetencao:linhas.filter(c=>c.metodosComRetencaoIndividual>=2).length,
    comDoisMetodosESolventesContrastantes:linhas.filter(c=>c.comparacoesPossiveis.length>0).length,
    completamenteHomologados:elegiveis.length,
+   liberadosParaSimulacaoReal:linhas.filter(x=>x.disponibilidadeSimulacaoReal).length,
    faltamParaMetaMinima:Math.max(0,POLITICA.metaMinimaSubstancias-elegiveis.length),
    faltamParaMetaAmpliada:Math.max(0,POLITICA.metaAmpliadaSubstancias-elegiveis.length)
   },candidatos:linhas};
