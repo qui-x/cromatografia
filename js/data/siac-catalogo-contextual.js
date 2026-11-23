@@ -692,13 +692,9 @@ function interfaceMontagem(container,onMode){
    '</p><p>Não há sistema eluente individual documentado no catálogo atual. Não é permitido atribuir um solvente ou estimar Rf por suposição.</p>';return;}
   if(!p){$("siac-catalogo-dados").innerHTML='<p><strong>'+escapeHTML(a.nome)+'</strong> · '+options.length+
    ' sistema(s) associado(s) em literatura. Escolha a fase móvel para consultar as condições.</p>';return;}
-  const projection=projetarDistancia(a.id,p.id,50);
   const rf=p.rf===null?'<p>Rf: ainda não documentado para este composto.</p>':
    '<p><strong>Rf bibliográfico: '+p.rf.toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:3})+
-   '</strong> · <span>não é valor medido no SIAC</span></p>'+
-   '<label>Frente hipotética para projeção (mm)<input id="siac-catalogo-frente" type="number" min="1" max="1000" step="1" value="50"></label>'+
-   '<p id="siac-catalogo-projecao">Projeção geométrica: '+projection.distanciaMm.toLocaleString("pt-BR",{maximumFractionDigits:2})+
-   ' mm (Rf bibliográfico × 50 mm).</p>';
+   '</strong> · <span>não é valor medido no SIAC. Use a régua e o cálculo na doca Ver.</span></p>';
   $("siac-catalogo-dados").innerHTML='<p><strong>'+escapeHTML(a.nome)+'</strong> · '+escapeHTML(p.tecnica.toUpperCase())+'</p>'+
    '<p>Suporte: '+escapeHTML(p.faseEstacionaria)+' · Detecção: '+escapeHTML(p.detector)+'</p>'+
    (p.preTratamento?'<p>Pré-tratamento: '+escapeHTML(p.preTratamento)+'</p>':"")+
@@ -715,12 +711,7 @@ function interfaceMontagem(container,onMode){
  });
  card.addEventListener("input",ev=>{
   if(ev.target.id==="siac-catalogo-busca"){updateCandidates();notify();}
-  if(ev.target.id==="siac-catalogo-frente"){
-   const p=projetarDistancia(state.substanciaId,state.sistemaId,Number(ev.target.value));
-   const el=$("siac-catalogo-projecao");if(el)el.textContent=p?
-    "Projeção geométrica: "+p.distanciaMm.toLocaleString("pt-BR",{maximumFractionDigits:2})+" mm (não é medição).":
-    "Frente inválida: informe de 1 a 1.000 mm.";
-  }
+
  });
  card.addEventListener("change",ev=>{
   if(ev.target.id==="siac-catalogo-familia"){updateCandidates();notify();}
