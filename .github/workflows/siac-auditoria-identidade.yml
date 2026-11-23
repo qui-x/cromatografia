@@ -13,6 +13,8 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+      - name: Proteger standalone SIAB original
+        run: node tests/siac-referencia-standalone.test.cjs
       - name: Inspecionar todos os arquivos versionados
         run: node scripts/siac-auditar-identidade.cjs
       - name: Publicar inventário integral

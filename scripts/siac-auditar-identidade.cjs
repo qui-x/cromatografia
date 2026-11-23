@@ -16,7 +16,7 @@ for(const name of paths){
    if(found)hits.push({line:i+1,count:found.length,sample:rows[i].trim().slice(0,150)});
  }
  if(!hits.length)continue;
- let group=legacy.test(name)?"historico":
+ let group=name==="SIAB-1.0.0-standalone.html"?"referencia-imutavel":legacy.test(name)?"historico":
  /^tests\//.test(name)?"testes":
  /^\.github\/workflows\//.test(name)?"workflows":
  /^docs\//.test(name)||/\.md$/.test(name)?"documentacao":

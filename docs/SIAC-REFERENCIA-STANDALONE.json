@@ -1,0 +1,17 @@
+{
+  "referencia": "SIAB 1.0.0 — standalone oficial congelado",
+  "arquivo": "SIAB-1.0.0-standalone.html",
+  "origem": "qui-x/acidobase",
+  "ref_origem": "acidosebases1.0.0",
+  "url_origem": "https://github.com/qui-x/acidobase/blob/acidosebases1.0.0/SIAB-1.0.0-standalone.html",
+  "git_blob_sha1": "d3c773591843da44a66e537d7cc6362754ad05b0",
+  "tamanho_bytes": 1176453,
+  "politica": "imutavel: não alterar, renomear ou substituir com SIAC; comparação funcional e visual SIAB versus SIAC",
+  "comportamentos_prioritarios": [
+    "Foco e Visão geral: ordem, posição e estilos na barra",
+    "Montagem e Ver: docas do workspace, abertura e fechamento",
+    "contexto de observar, medir e calcular",
+    "interação com mouse, teclado e toque",
+    "responsividade e acessibilidade"
+  ]
+}
