@@ -149,6 +149,22 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
     assert.equal(await page.locator("#siac-ver [data-ver=rf]").count(),1);
     assert.equal(await page.locator("#siac-ver [data-module=observar]").count(),1);
     assert.equal(await page.locator("#siac-stage .siac-perfil").count(),0);
+    // A coluna deve exibir gráfico APENAS no Ver > Calcular.
+    await page.locator("#focus-tab").click({force:true}); // geral -> foco (amostra)
+    await page.locator("#focus-tab").click({force:true}); // amostra -> coluna
+    assert.match(await page.locator("#focus-tab").textContent(),/Coluna em foco/);
+    await page.locator("#siac-ver [data-module=calcular]").click({force:true});
+    assert.equal(await page.locator("#siac-ver [data-ver=grafico]").count(),1);
+    await page.locator("#siac-ver [data-ver=grafico]").click({force:true});
+    assert.equal(await page.locator("#siac-ver-dados .siac-perfil svg").count(),1,
+      "O perfil de eluição deve estar dentro da doca Ver");
+    assert.equal(await page.locator("#siac-stage .siac-perfil").count(),0,
+      "O gráfico nunca deve voltar à cena");
+    await page.locator("#siac-ver [data-module=medir]").click({force:true});
+    assert.equal(await page.locator("#siac-ver [data-ver=tempo]").count(),1);
+    assert.equal(await page.locator("#siac-ver [data-ver=vazao]").count(),1);
+    await page.locator("#siac-ver [data-module=observar]").click({force:true});
+    assert.equal(await page.locator("#siac-ver [data-ver=bandas]").count(),1);
     const folder=path.join(root,"docs/evidencias/siac-laboratorio");
     fs.mkdirSync(folder,{recursive:true});
     await page.screenshot({path:path.join(folder,"desktop.png"),fullPage:true});
