@@ -116,6 +116,71 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
     assert.match(await page.locator("#overview-tab").textContent(),/Papéis/);
     assert.equal(await page.locator("#siac-stage .siac-card").count(),2);
     assert.match(await page.locator('#siac-stage [data-open-fraction=F7]').textContent(),/P7/);
+    // A visão geral deve usar o espaço visível, não 5 colunas/ícones de 94x85.
+    const medirGrade=()=>page.evaluate(()=>{
+      const stage=document.querySelector("#siac-stage");
+      const grid=document.querySelector("#siac-stage .siac-grid");
+      const cards=[...grid.querySelectorAll(".siac-card")];
+      const ret=el=>{const r=el.getBoundingClientRect();return {x:r.x,y:r.y,width:r.width,height:r.height}};
+      return {stage:ret(stage),grid:ret(grid),cards:cards.map(ret),
+        art:cards.map(el=>ret(el.querySelector("svg"))),
+        pageOverflow:document.documentElement.scrollWidth-document.documentElement.clientWidth};
+    });
+    const gradePapel=await medirGrade();
+    assert(gradePapel.grid.width>=gradePapel.stage.width*.87,
+      "Grade deve preencher a largura do palco: "+JSON.stringify(gradePapel));
+    assert(gradePapel.cards.every(c=>c.width>=300&&c.height>=220),
+      "Cartões de papel devem ampliar com a área desktop: "+JSON.stringify(gradePapel));
+    assert(gradePapel.art.every(c=>c.height>150&&c.width>200),
+      "Papéis não devem permanecer limitados a 94 × 85 px: "+JSON.stringify(gradePapel));
+    // Teste só de layout com cópias temporárias de DOM: não cria frações
+    // sintéticas nem altera o motor, o volume ou a montagem científica.
+    const cenarios=await page.evaluate(()=>{
+      const grid=document.querySelector("#siac-stage .siac-grid");
+      const originals=[...grid.children];
+      const probes=[];
+      const positions=()=>{
+        const c=[...grid.children].map(el=>el.getBoundingClientRect());
+        return {cols:new Set(c.map(x=>Math.round(x.x))).size,
+          rows:new Set(c.map(x=>Math.round(x.y))).size,
+          width:grid.getBoundingClientRect().width,
+          bodyOverflow:document.documentElement.scrollWidth-document.documentElement.clientWidth};
+      };
+      while(grid.children.length<3){
+        const clone=originals[0].cloneNode(true);clone.dataset.testOnly="true";
+        grid.append(clone);probes.push(clone);
+      }
+      const three=positions();
+      while(grid.children.length<10){
+        const clone=originals[0].cloneNode(true);clone.dataset.testOnly="true";
+        grid.append(clone);probes.push(clone);
+      }
+      const ten=positions();
+      probes.forEach(el=>el.remove());
+      return {three,ten};
+    });
+    assert(cenarios.three.cols===3,
+      "Três papéis devem aproveitar três posições na largura desktop: "+JSON.stringify(cenarios));
+    assert(cenarios.ten.cols>=3&&cenarios.ten.rows>=2,
+      "Dez papéis devem adaptar linhas e colunas: "+JSON.stringify(cenarios));
+    assert(cenarios.ten.bodyOverflow<=4,"Cenário de dez papéis sem rolagem horizontal");
+    await page.setViewportSize({width:768,height:860});
+    const gradeTablet=await medirGrade();
+    assert(gradeTablet.cards.every(c=>c.width>=220)&&gradeTablet.art.every(c=>c.height>=125),
+      "Papéis precisam continuar legíveis em tablet: "+JSON.stringify(gradeTablet));
+    assert(gradeTablet.pageOverflow<=4,"Tablet não deve gerar rolagem horizontal");
+    await page.setViewportSize({width:360,height:860});
+    const gradeMobile=await medirGrade();
+    assert(gradeMobile.cards.every(c=>c.width>=145)&&gradeMobile.art.every(c=>c.height>=100),
+      "Papéis devem se adaptar à largura do celular: "+JSON.stringify(gradeMobile));
+    assert(gradeMobile.pageOverflow<=4,"Celular não deve gerar rolagem horizontal");
+    await page.setViewportSize({width:1360,height:860});
+    // Frascos e papéis compartilham o mesmo dimensionamento responsivo.
+    await page.locator("#overview-tab").click({force:true});
+    const gradeFrascos=await medirGrade();
+    assert(gradeFrascos.art.every(c=>c.height>150&&c.width>200),
+      "Frascos devem crescer tanto quanto os papéis: "+JSON.stringify(gradeFrascos));
+    await page.locator("#overview-tab").click({force:true});
     // Clique no papel da visão geral transfere para o papel em foco.
     await page.locator('#siac-stage [data-open-fraction=F7]').click({force:true});
     assert.match(await page.locator("#focus-tab").textContent(),/Amostra em foco/);
