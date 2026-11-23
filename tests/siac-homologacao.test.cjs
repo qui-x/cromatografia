@@ -11,6 +11,10 @@ assert.equal(report.resumo.comDoisMetodosESolventesContrastantes,40);
 assert.equal(report.resumo.completamenteHomologados,2,
  "cafeína e paracetamol têm dados HPTLC com dois eluentes e fonte primária conferida");
 assert.equal(report.resumo.faltamParaMetaMinima,38);
+assert.equal(report.resumo.liberadosParaSimulacaoReal,0,
+ "validação científica de HPTLC NÃO autoriza cena física de CCD, papel nem coluna");
+assert(report.candidatos.every(x=>x.disponibilidadeSimulacaoReal===false));
+
 assert.equal(report.resumo.faltamParaMetaAmpliada,53);
 assert.deepEqual(report.candidatos.filter(c=>c.homologacaoCompleta).map(c=>c.id).sort(),["caffeine","paracetamol"]);
 const novos40=["methyl_orange","sudan_iv","quercetin","curcumin","caffeine","paracetamol",
@@ -45,6 +49,9 @@ assert.deepEqual(
  "pares de métodos em pesquisa precisam coincidir entre a matriz publicada e o motor");
 assert.deepEqual(matriz.candidatos.filter(c=>c.homologacaoCompleta).map(c=>c.id).sort(),["caffeine","paracetamol"]);
 assert.equal(matriz.resumo.liberadosParaSimulacaoReal,0,"HPTLC não pode abrir a cena de CCD ou coluna");
+assert.equal(matriz.resumo.liberadosParaSimulacaoReal,report.resumo.liberadosParaSimulacaoReal);
+assert.equal(matriz.resumo.identidadesQuimicasConferidas,2);
+
 assert(matriz.candidatos.every(c=>!c.homologacaoCompleta||c.disponibilidadeSimulacaoReal===false));
 
 assert.equal(h.avaliarSubstancia("glycine",base).metodosComRetencaoIndividual,4);
