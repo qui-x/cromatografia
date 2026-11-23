@@ -93,7 +93,9 @@ hr{border:0;border-top:1px solid #dde8eb;margin:16px 0}.dados button{width:100%}
    <div><label class="rotulo" for="vazao">Vazão (mL/min)</label><input id="vazao" type="number" min=".01" max="100" step=".01" value=".8"></div>
    <div><label class="rotulo" for="volumeTotal">Escala (mL)</label><input id="volumeTotal" type="number" min=".1" max="1000" step=".1" value="9"></div>
   </div>
- </details>
+  <div class="parametros"><div><label class="rotulo" for="capacidade">Capacidade de cada frasco (mL)</label><input id="capacidade" type="number" min=".1" max="1000" step=".1" value="20"></div>
+  <div><label class="rotulo" for="velocidade">Aceleração da coleta</label><select id="velocidade"><option value="1">1× · tempo real</option><option value="30">30×</option><option value="120" selected>120×</option><option value="600">600×</option><option value="1800">1800×</option></select></div></div>
+  </details>
  <div class="acoes"><button id="montar" class="primario">Montar coluna</button></div>
  <hr class="separador">
  <div class="cabecalho"><h2 style="margin:0">Frações F1–F10</h2><span class="selo">10 tubos disponíveis</span></div>
