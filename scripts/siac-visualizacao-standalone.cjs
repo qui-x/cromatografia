@@ -1,0 +1,17 @@
+"use strict";
+const fs=require("node:fs"),path=require("node:path");
+const root=path.join(__dirname,"..");
+let html=fs.readFileSync(path.join(root,"previews","siac-alternancia-foco.html"),"utf8");
+const src='<script src="../js/ui/siac-estado-visualizacao.js"></script>';
+if(!html.includes(src))throw Error("Arquivo de estados ausente na prévia");
+const js=fs.readFileSync(path.join(root,"js/ui/siac-estado-visualizacao.js"),"utf8");
+html=html.replace(src,"<script>\n"+js.replace(/<\/script/gi,"<\\/script")+"\n</script>");
+const svg=fs.readFileSync(path.join(root,"assets/siac-icone.svg"),"utf8");
+const uri="data:image/svg+xml,"+encodeURIComponent(svg);
+html=html.replace('href="../assets/siac-icone.svg"', 'href="'+uri+'"');
+html=html.replace('src="../assets/siac-icone.svg"', 'src="'+uri+'"');
+if(html.includes('src="../js/ui/siac-estado-visualizacao.js"'))throw Error("Dependência não embutida");
+fs.mkdirSync(path.join(root,"dist"),{recursive:true});
+const destino=path.join(root,"dist/siac-alternancia-foco.html");
+fs.writeFileSync(destino,html);
+console.log("Protótipo HTML único de foco:",destino,fs.statSync(destino).size,"bytes");
