@@ -691,8 +691,14 @@ function interfaceMontagem(container,onMode){
   const comRf=options.filter(x=>x.rf!==null).length;
   const cobertura='<p class="siac-hint"><strong>Cobertura científica: '+comRf+
    '/2 métodos com retenção individual.</strong> Homologação exige dois métodos independentes com sistemas de solventes quimicamente diferentes, identidade e condições conferidas. Nenhum desses candidatos está homologado para simulação quantitativa real nesta base.</p>';
-  if(!options.length){$("siac-catalogo-dados").innerHTML='<p><strong>'+escapeHTML(a.nome)+'</strong> · '+escapeHTML(FAMILIAS[a.grupo])+
-   '</p><p>Não há sistema eluente individual documentado no catálogo atual. Não é permitido atribuir um solvente ou estimar Rf por suposição.</p>'+cobertura;return;}
+  if(!options.length){
+   const temHptlc=a.id==="caffeine"||a.id==="paracetamol";
+   const atalho=temHptlc?
+    '<p>Dois métodos HPTLC homologados cientificamente para condições específicas. A cena atual permite consultar somente as referências, não medir a amostra.</p>'+
+    '<button type="button" data-siac-open-hptlc="'+escapeHTML(a.id)+'" class="secondary-btn">Consultar métodos HPTLC</button>':"";
+   $("siac-catalogo-dados").innerHTML='<p><strong>'+escapeHTML(a.nome)+'</strong> · '+escapeHTML(FAMILIAS[a.grupo])+
+    '</p><p>Não há sistema eluente individual documentado no catálogo contextual atual. Não é permitido atribuir um solvente ou estimar Rf por suposição.</p>'+atalho+cobertura;return;
+  }
   if(!p){$("siac-catalogo-dados").innerHTML='<p><strong>'+escapeHTML(a.nome)+'</strong> · '+options.length+
    ' sistema(s) associado(s) em literatura. Escolha a fase móvel para consultar as condições.</p>'+cobertura;return;}
   const rf=p.rf===null?'<p>Rf: ainda não documentado para este composto.</p>':
