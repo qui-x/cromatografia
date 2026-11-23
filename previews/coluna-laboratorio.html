@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0B5472">
+<title>SIAC — Prévia da coluna cromatográfica</title>
+<link rel="icon" href="../assets/siac-icone.svg" type="image/svg+xml">
+<style>
+:root{color-scheme:light;--azul:#0b5472;--navy:#17384d;--tinta:#17334b;--agua:#168da7;--menta:#2e9b8f;--ouro:#d79b32;--papel:#f9fbfc;--superficie:#fff;--linha:#d7e4e8;--sombra:0 8px 26px #17384d10}
+*{box-sizing:border-box}body{margin:0;color:var(--tinta);background:#f1f6f7;font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}button,input,select{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #de9131;outline-offset:2px}
+header{display:flex;align-items:center;gap:13px;padding:12px clamp(14px,3vw,42px);background:#0b5472;color:#fff;border-bottom:4px solid #7fcabf}header img{width:41px;height:41px;object-fit:contain}header .marca{font-size:22px;font-weight:800;letter-spacing:.1em}header .desc{display:block;font-size:12px;opacity:.89}header .estado{margin-left:auto;background:#ffffff1b;padding:7px 10px;border:1px solid #ffffff3a;border-radius:7px;font-size:12px}
+main{display:grid;grid-template-columns:minmax(255px,295px) minmax(365px,1fr) minmax(215px,260px);min-height:calc(100vh - 76px);max-width:1600px;margin:auto;gap:12px;padding:12px}
+section,aside{min-width:0}
+.doca,.palco,.dados{background:var(--superficie);border:1px solid var(--linha);border-radius:15px;box-shadow:var(--sombra)}
+.doca,.dados{padding:18px}.cabecalho{display:flex;align-items:center;justify-content:space-between;gap:7px;margin-bottom:13px}
+h1,h2,h3,p{margin-top:0}h1{font-size:18px;margin-bottom:3px}h2{font-size:16px;margin-bottom:10px}h3{font-size:13px;letter-spacing:.02em;margin-bottom:7px}small,.explicacao,.legenda{font-size:12px;color:#516879}
+.selo{font-size:10px;border:1px solid #a7d6d4;color:#126f79;border-radius:999px;padding:3px 8px;font-weight:700;white-space:nowrap}
+.rotulo{display:block;font-size:12px;font-weight:700;margin:12px 0 5px;color:#284659}select,input[type=number]{display:block;width:100%;padding:9px 10px;border:1px solid #b8ccd3;border-radius:9px;background:#fff;color:var(--tinta)}
+button.primario{border:0;background:var(--azul);color:#fff;font-weight:700;border-radius:9px;padding:11px 15px}
+button.secundario{border:1px solid #96b9c3;background:#f7fbfc;color:var(--azul);font-weight:650;border-radius:9px;padding:8px 12px}
+button:disabled{opacity:.45;cursor:not-allowed}.acoes{display:flex;gap:7px;flex-wrap:wrap;margin:14px 0}
+details{margin:12px 0;background:#f5f9fa;border:1px solid #d7e6e8;border-radius:10px;padding:9px 11px}
+summary{cursor:pointer;font-weight:700;font-size:12px}.parametros{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.separador{border:0;border-top:1px solid var(--linha);margin:20px 0 15px}
+.fracoes{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;margin-bottom:12px}
+.frasco{border:1px solid #c8d9df;border-radius:10px;background:#fafcfd;padding:8px 2px 6px;min-height:72px;display:flex;align-items:center;flex-direction:column;justify-content:space-around;color:var(--tinta)}
+.frasco.ativo{border:2px solid #0b5472;background:#e7f4f4;padding:7px 1px 5px}.frasco span{font-size:12px;font-weight:750}.frasco svg{width:27px;height:37px}
+.coldupla{display:grid;grid-template-columns:1fr 1fr;gap:8px}.coldupla .rotulo{margin-top:4px}
+.estado-tubo{border-left:3px solid var(--menta);padding:5px 10px;background:#f1f8f7;margin:10px 0;font-size:12px}
+.aviso{min-height:30px;margin:9px 0 0;font-size:12px;color:#80531c}.avisoverde{color:#146751}
+.palco{padding:17px 19px;display:flex;flex-direction:column;gap:12px}
+.palco-cab{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.palco-cab h1{margin:0}.leitura{font-variant-numeric:tabular-nums;color:#37586b;font-size:12px}
+.cena{background:linear-gradient(180deg,#fcfaf6,#eef5f6);border:1px solid #d5e2e4;border-radius:13px;min-height:330px;display:grid;grid-template-columns:minmax(0,1fr) minmax(140px,.9fr);padding:12px;align-items:center;gap:8px;overflow:hidden}
+.coluna-box{text-align:center}.coluna-box svg{display:block;width:100%;max-width:250px;height:300px;margin:auto}
+.coleta-box{text-align:left;align-self:stretch;display:flex;flex-direction:column;justify-content:center;gap:9px}
+.saida{padding:12px;background:#ffffffb8;border:1px solid #d0dfe3;border-radius:9px;font-size:13px}
+.saida strong{display:block;font-size:14px}.saida div{font-size:12px;color:#607582}
+.progresso{height:10px;background:#dbe9eb;border-radius:999px;overflow:hidden}.progresso span{height:100%;display:block;width:0;background:linear-gradient(90deg,#168da7,#2e9b8f);transition:width .13s}
+.grafico-wrap{margin-top:4px}.graficos{border:1px solid #d7e6e8;border-radius:12px;background:#fcfefe;padding:8px}
+.graficos svg{width:100%;height:180px;display:block}
+.eixos{display:flex;justify-content:space-between;color:#526a79;font-size:11px;padding:0 12px 0 37px}.chaves{display:flex;gap:12px;flex-wrap:wrap;font-size:12px;color:#3e5867}
+.chave{display:inline-flex;align-items:center;gap:5px}.bolinha{width:9px;height:9px;display:inline-block;border-radius:2px}
+.controles{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.controles button{min-width:95px}.controles .tempo{font-variant-numeric:tabular-nums;font-size:12px;color:#476273}
+.dados h2{margin-bottom:12px}.medida{display:flex;justify-content:space-between;border-bottom:1px solid #e0ebed;padding:9px 0;gap:10px}
+.medida dt{font-size:12px;color:#647d8b}.medida dd{margin:0;font-variant-numeric:tabular-nums;font-weight:750;font-size:13px;text-align:right}
+.dados dl{margin:0 0 16px}.nota{background:#edf7f5;border-left:3px solid #4baf9b;padding:11px;border-radius:6px;font-size:12px;color:#214e54;margin:12px 0}
+hr{border:0;border-top:1px solid #dde8eb;margin:16px 0}.dados button{width:100%}
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+@media(max-width:1050px){main{grid-template-columns:260px minmax(360px,1fr)}.dados{grid-column:1/-1}.dados dl{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.medida{display:block}}
+@media(max-width:720px){main{grid-template-columns:1fr;gap:10px;padding:9px}.dados{grid-column:1}.doca,.dados{padding:15px}.cena{min-height:300px}.dados dl{grid-template-columns:1fr 1fr}header .estado{display:none}header{padding:11px 15px}.palco{padding:14px}}
+@media(max-width:390px){.cena{grid-template-columns:1fr 1fr;padding:6px}.coluna-box svg{height:260px}.saida{padding:8px}.palco{padding:10px}}
+@media(prefers-reduced-motion:reduce){.progresso span{transition:none}}
+</style>
+</head>
+<body>
+<header>
+<img src="../assets/siac-icone.svg" alt="" aria-hidden="true">
+<div><span class="marca">SIAC</span><span class="desc">Simulador Interativo de Análise Cromatográfica</span></div>
+<div class="estado">Prévia experimental · Motor v0.1 · Dados hipotéticos</div>
+</header>
+<main>
+<section class="doca" aria-labelledby="montagem-titulo">
+ <div class="cabecalho"><div><h1 id="montagem-titulo">Montagem</h1><small>Preparação da coluna e coleta</small></div><span class="selo">Explorar</span></div>
+ <label class="rotulo" for="amostra">Amostra</label>
+ <select id="amostra">
+  <option value="mistura1">Mistura-modelo I · três componentes</option>
+  <option value="mistura2">Mistura-modelo II · três componentes</option>
+ </select>
+ <label class="rotulo" for="eluente">Fase móvel</label>
+ <select id="eluente">
+  <option value="eluente1">Eluente didático A</option>
+  <option value="eluente2">Eluente didático B</option>
+ </select>
+ <label class="rotulo" for="suporte">Fase estacionária</label>
+ <select id="suporte">
+  <option value="silica">Sílica (modelo parametrizado)</option>
+  <option value="alumina">Alumina (modelo parametrizado)</option>
+ </select>
+ <details>
+  <summary>Geometria e condições da coluna</summary>
+  <div class="parametros">
+   <div><label class="rotulo" for="comprimento">Comprimento (mm)</label><input id="comprimento" type="number" min="20" max="200" step="5" value="80"></div>
+   <div><label class="rotulo" for="diametro">Diâmetro interno (mm)</label><input id="diametro" type="number" min="2" max="20" step="1" value="8"></div>
+   <div><label class="rotulo" for="porosidade">Porosidade</label><input id="porosidade" type="number" min=".1" max=".75" step=".05" value=".45"></div>
+   <div><label class="rotulo" for="vazao">Vazão (mL/min)</label><input id="vazao" type="number" min=".1" max="3" step=".1" value=".8"></div>
+   <div><label class="rotulo" for="volumeTotal">Escala (mL)</label><input id="volumeTotal" type="number" min=".1" max="10" step=".1" value="9"></div>
+  </div>
+ </details>
+ <div class="acoes"><button id="montar" class="primario">Montar coluna</button></div>
+ <hr class="separador">
+ <div class="cabecalho"><h2 style="margin:0">Frações F1–F10</h2><span class="selo">10 tubos disponíveis</span></div>
+ <p class="explicacao">Escolha um tubo e marque somente o início e o fim da coleta. Não há posições fixas para substâncias.</p>
+ <div class="fracoes" id="frascos" role="group" aria-label="Seleção dos dez tubos de coleta"></div>
+ <div class="estado-tubo" id="estado-tubo" aria-live="polite"></div>
+ <form id="janela-form">
+  <div class="coldupla">
+   <div><label class="rotulo" for="inicio">Início (mL)</label><input id="inicio" type="number" step=".1" min="0" max="10" placeholder="Definir" required></div>
+   <div><label class="rotulo" for="fim">Fim (mL)</label><input id="fim" type="number" step=".1" min=".1" max="10" placeholder="Definir" required></div>
+  </div>
+  <div class="acoes"><button class="primario" type="submit">Aplicar janela</button><button class="secundario" id="limpar" type="button">Limpar</button></div>
+ </form>
+ <p id="mensagem" class="aviso" role="status" aria-live="polite">Defina as janelas antes da eluição.</p>
+</section>
+<section class="palco" aria-labelledby="cena-titulo">
+ <div class="palco-cab"><div><h1 id="cena-titulo">Coluna cromatográfica</h1><span class="legenda">A cena responde ao modelo e ao volume eluído</span></div><div id="relogio" class="leitura">0,0 mL · 0,0 min</div></div>
+ <div class="cena">
+  <div class="coluna-box">
+   <svg id="coluna-svg" viewBox="0 0 220 330" role="img" aria-label="Coluna com leito estacionário e bandas de amostras visíveis">
+    <defs>
+     <clipPath id="leito"><rect x="76" y="55" width="68" height="215" rx="3"/></clipPath>
+     <linearGradient id="suporte-g" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#e2e1d9"/><stop offset=".42" stop-color="#fffaf0"/><stop offset="1" stop-color="#d5d8d2"/></linearGradient>
+     <filter id="difusao"><feGaussianBlur stdDeviation="1.8"/></filter>
+    </defs>
+    <text x="110" y="18" fill="#476777" text-anchor="middle" font-size="11">Entrada do eluente</text>
+    <path d="M95 26V53M125 26V53" fill="none" stroke="#3d7786" stroke-width="2.5"/>
+    <path d="M76 52H144V274Q144 282 135 282H85Q76 282 76 274Z" fill="url(#suporte-g)" stroke="#174e66" stroke-width="3"/>
+    <g id="bandas" clip-path="url(#leito)"></g>
+    <path d="M90 282Q90 290 104 293V309H116V293Q130 290 130 282" fill="none" stroke="#174e66" stroke-width="2.5"/>
+    <path d="M106 309V322" stroke="#27849c" stroke-width="3" stroke-linecap="round"/>
+    <path d="M73 55H147" stroke="#607f8e" stroke-width="1.3" stroke-dasharray="4 3"/>
+    <text x="60" y="60" fill="#597281" font-size="9" text-anchor="end">Início</text>
+    <text x="60" y="273" fill="#597281" font-size="9" text-anchor="end">Saída</text>
+   </svg>
+   <span class="legenda">Bandas coloridas são visíveis; regiões incolores não são inventadas na imagem.</span>
+  </div>
+  <div class="coleta-box">
+   <div class="saida"><strong id="saida-destino">Saída → descarte</strong><div id="saida-conc">Aguardando eluição</div></div>
+   <div><h3>Progresso da eluição</h3><div class="progresso"><span id="progresso"></span></div></div>
+   <div class="legenda">O volume acumulado orienta a coleta. A aparência dentro da coluna não indica diretamente o volume de saída.</div>
+   <div class="nota">Coleta efetiva somente na saída da coluna. O capilar poderá transferir uma alíquota do frasco para papel/CCD na próxima integração.</div>
+  </div>
+ </div>
+ <div class="grafico-wrap">
+  <div class="cabecalho"><h2 style="margin:0">Perfil de eluição</h2><small>Concentração modelada × volume acumulado</small></div>
+  <div class="graficos"><svg id="perfil-svg" viewBox="0 0 630 185" role="img" aria-label="Curvas calculadas de eluição e janelas individuais F1 a F10"></svg><div class="eixos"><span>0 mL</span><span id="eixo-max">9 mL · volume eluído</span></div></div>
+  <div class="chaves" id="chaves"></div>
+ </div>
+ <div class="controles"><button class="primario" id="executar" type="button">Iniciar eluição</button><button class="secundario" id="reiniciar" type="button">Voltar ao início</button><span class="tempo" id="texto-progresso">Preparado para coleta</span></div>
+</section>
+<aside class="dados" aria-labelledby="dados-titulo">
+ <div class="cabecalho"><h2 id="dados-titulo">Dados da corrida</h2><span class="selo">Modelo</span></div>
+ <dl id="dados-medidas"></dl>
+ <hr>
+ <h3>Registro da fração em foco</h3>
+ <div id="foco-resumo" class="nota">Selecione um tubo na Montagem e configure sua janela.</div>
+ <h3>Registro gráfico</h3>
+ <p class="explicacao">O registro preserva a coluna, o perfil calculado e as janelas coletadas. É uma evidência simulada, não uma fotografia experimental.</p>
+ <button id="registrar" class="secundario" type="button">Exportar registro SVG</button>
+ <hr>
+ <h3>Continuação do experimento</h3>
+ <p class="explicacao">Capilar → aplicação em papel/CCD → desenvolvimento → detecção UV → relatório ilustrado. Integração com a bancada principal ainda pendente.</p>
+ <div class="nota">Dados de demonstração hipotéticos. Mudanças de suporte/eluente utilizam parâmetros de teste declarados; não há previsão universal de retenção química.</div>
+</aside>
+</main>
+<script src="../js/simulation/siac-coluna.js"></script>
+<script src="../js/simulation/siac-fracionamento.js"></script>
+<script>
+(function(){
+"use strict";
+const C=window.SIAC.column,F=window.SIAC.fractionCollector;
+const $=id=>document.getElementById(id);
+const fmt=(v,n=2)=>Number(v).toLocaleString("pt-BR",{minimumFractionDigits:n,maximumFractionDigits:n});
+const amostras={
+ mistura1:{nome:"Mistura-modelo I",analitos:[
+  {id:"A",nome:"Corante-modelo azul",massa:2,cor:"#0072b2",deteccao:{visivel:true}},
+  {id:"B",nome:"Corante-modelo verde",massa:2.5,cor:"#009e73",deteccao:{visivel:true}},
+  {id:"C",nome:"Analito-modelo incolor",massa:1.2,cor:null,deteccao:{uv365:true}}
+ ]},
+ mistura2:{nome:"Mistura-modelo II",analitos:[
+  {id:"A",nome:"Pigmento-modelo azul",massa:1.1,cor:"#0072b2",deteccao:{visivel:true}},
+  {id:"B",nome:"Pigmento-modelo verde",massa:2.8,cor:"#009e73",deteccao:{visivel:true}},
+  {id:"C",nome:"Analito-modelo incolor",massa:.9,cor:null,deteccao:{uv365:true}}
+ ]}
+};
+// Cada combinação contém k EXPLÍCITO e hipotético. Nomes não determinam retenções.
+const cenarios={
+ eluente1:{silica:{A:.15,B:1.5,C:3},alumina:{A:.6,B:.9,C:2.0}},
+ eluente2:{silica:{A:.7,B:.45,C:1.45},alumina:{A:1.3,B:.3,C:2.65}}
+};
+let estado,plano,perfil,selecionado="F1",volume=0,rodando=false,ultimo=0,aviso="";
+function configurar(){
+ const a=amostras[$("amostra").value],sol=$("eluente").value,sup=$("suporte").value,
+  k=cenarios[sol][sup];
+ const config={
+  amostra:{id:$("amostra").value,nome:a.nome},
+  faseEstacionaria:{id:sup,tipo:sup,indicadorFluorescente254:false},
+  faseMovel:{id:sol,nome:sol},
+  geometria:{comprimentoMm:Number($("comprimento").value),
+   diametroInternoMm:Number($("diametro").value),porosidade:Number($("porosidade").value)},
+  vazaoMlMin:Number($("vazao").value),volumeTotalMl:Number($("volumeTotal").value),
+  componentes:a.analitos.map(x=>({id:x.id,nome:x.nome,massaInicialMg:x.massa,
+   retencao:{modo:"fator",k:k[x.id]},pratosTeoricos:48,
+   corVisivel:x.cor,deteccao:x.deteccao,
+   proveniencia:{classe:"hipotetico",fonte:"Parâmetros didáticos internos não calibrados"}}))
+ };
+ estado=C.prepare(config);
+ plano=F.prepare({volumeTotalMl:config.volumeTotalMl,resolucaoMl:.1});
+ perfil=C.profile(estado,{passos:300});
+ volume=0;rodando=false;selecionado="F1";$("inicio").value="";$("fim").value="";
+ $("inicio").max=config.volumeTotalMl;$("fim").max=config.volumeTotalMl;
+ $("executar").textContent="Iniciar eluição";
+ aviso="Coluna montada. Configure as janelas antes de iniciar.";render();
+}
+function calculoNoVolume(id,ateVolume){
+ const j=plano.janelas.find(j=>j.frasco===id);if(!j)return {volume:0,massas:{}};
+ const limite=Math.min(j.fimMl,Math.max(j.inicioMl,ateVolume));
+ if(limite<=j.inicioMl)return {volume:0,massas:{}};
+ const massas={};
+ for(const t of perfil.trechos){
+  const dv=Math.max(0,Math.min(limite,t.fimMl)-Math.max(j.inicioMl,t.inicioMl));
+  if(!dv)continue;
+  for(const [id,c] of Object.entries(t.concentracoesMgPorMl))
+   massas[id]=(massas[id]||0)+dv*c;
+ }
+ return {volume:limite-j.inicioMl,massas};
+}
+function corDaFracao(massas){
+ const mapa=Object.fromEntries(estado.config.componentes.filter(x=>x.corVisivel).map(x=>[x.id,x.corVisivel]));
+ const disponiveis=Object.entries(massas).filter(([id,m])=>m>0.0001&&mapa[id]);
+ if(!disponiveis.length)return "#bed8dc";
+ let soma=0,r=0,g=0,b=0;
+ for(const [id,m] of disponiveis){
+  const h=mapa[id];soma+=m;
+  r+=parseInt(h.slice(1,3),16)*m;
+  g+=parseInt(h.slice(3,5),16)*m;
+  b+=parseInt(h.slice(5,7),16)*m;
+ }
+ return "rgb("+[r,g,b].map(v=>Math.round(v/soma)).join(",")+")";
+}
+function desenharTubos(){
+ const f=$("frascos");f.innerHTML="";
+ for(let i=1;i<=10;i++){
+  const id="F"+i,j=plano.janelas.find(j=>j.frasco===id),fill=calculoNoVolume(id,volume);
+  const max=j?j.volumeMl:1, altura=fill.volume>0?Math.max(1,25*Math.min(1,fill.volume/max)):0;
+  const bot=document.createElement("button");
+  bot.type="button";bot.className="frasco"+(selecionado===id?" ativo":"");
+  bot.setAttribute("aria-pressed",selecionado===id?"true":"false");
+  bot.setAttribute("aria-label",id+(j?" · coleta "+fmt(j.inicioMl,1)+" a "+fmt(j.fimMl,1)+" mL":" · sem janela definida"));
+  bot.innerHTML='<svg viewBox="0 0 32 44" aria-hidden="true">'+
+   '<defs><clipPath id="clip'+i+'"><path d="M7 3V27Q7 39 16 39Q25 39 25 27V3Z"/></clipPath></defs>'+
+   '<g clip-path="url(#clip'+i+')"><rect x="9" y="'+(39-altura)+'" width="14" height="'+altura+'" fill="'+corDaFracao(fill.massas)+'" opacity=".82"/></g>'+
+   '<path d="M7 3H25M9 3V28Q9 39 16 39Q23 39 23 28V3" fill="none" stroke="#24576d" stroke-width="2.3" stroke-linecap="round"/></svg>'+
+   '<span>'+id+(j?" ●":"")+'</span>';
+  bot.onclick=()=>{selecionado=id;const x=plano.janelas.find(j=>j.frasco===id);
+   $("inicio").value=x?String(x.inicioMl):"";$("fim").value=x?String(x.fimMl):"";render();};
+  f.appendChild(bot);
+ }
+}
+function desenharBandas(obs){
+ const g=$("bandas");g.innerHTML="";
+ for(const banda of obs.bandasVisiveis){
+  const intensidades=banda.distribuicao,max=Math.max(0.00000001,...intensidades);
+  for(let i=0;i<intensidades.length;i++){
+   const rel=intensidades[i]/max;
+   if(rel<.008)continue;
+   const y=55+215*i/intensidades.length,h=215/intensidades.length+2.5;
+   const desvio=2.7*Math.sin(i*2.11+banda.id.charCodeAt(0)*.1);
+   const largura=58+8*Math.sin(i*.8+banda.id.charCodeAt(0));
+   const esquerda=110-largura/2+desvio,direita=110+largura/2+desvio;
+   const d="M"+esquerda.toFixed(2)+" "+y.toFixed(2)+" Q"+(110+desvio).toFixed(2)+" "+(y-2).toFixed(2)+" "+direita.toFixed(2)+" "+(y+1).toFixed(2)+
+      " L"+(direita+1).toFixed(2)+" "+(y+h).toFixed(2)+" Q"+(110+desvio).toFixed(2)+" "+(y+h-1).toFixed(2)+" "+(esquerda-2).toFixed(2)+" "+(y+h).toFixed(2)+"Z";
+   const el=document.createElementNS("http://www.w3.org/2000/svg","path");
+   el.setAttribute("d",d);el.setAttribute("fill",banda.corVisivel);
+   el.setAttribute("opacity",String(.03+.79*Math.sqrt(rel)));
+   el.setAttribute("filter","url(#difusao)");
+   g.appendChild(el);
+  }
+ }
+}
+function perfilSvg(){
+ const svg=$("perfil-svg"),p={x:42,y:12,w:566,h:145},maxV=estado.config.volumeTotalMl;
+ const cores=Object.fromEntries(estado.config.componentes.map(x=>[x.id,x.corVisivel||"#788b96"]));
+ const pontos=perfil.trechos,maior=Math.max(.02,...pontos.flatMap(t=>Object.values(t.concentracoesMgPorMl)));
+ let out='<rect x="0" y="0" width="630" height="185" fill="#fcfefe"/>';
+ for(let i=0;i<=4;i++){
+  const y=p.y+p.h*i/4;out+='<path d="M'+p.x+' '+y+'H'+(p.x+p.w)+'" stroke="#e0ebee" stroke-width="1"/>';
+ }
+ for(const j of plano.janelas){
+  const x=p.x+p.w*j.inicioMl/maxV,w=p.w*j.volumeMl/maxV;
+  out+='<rect x="'+x+'" y="'+p.y+'" width="'+w+'" height="'+p.h+'" fill="#0b5472" opacity=".10"/>';
+  out+='<text x="'+(x+2)+'" y="23" font-size="10" fill="#0b5472">'+j.frasco+'</text>';
+ }
+ for(const c of estado.config.componentes){
+  let d="";
+  for(let i=0;i<pontos.length;i++){
+   const t=pontos[i],x=p.x+p.w*((t.inicioMl+t.fimMl)/2)/maxV;
+   const y=p.y+p.h-p.h*(t.concentracoesMgPorMl[c.id]||0)/maior;
+   d+=(i?"L":"M")+x.toFixed(2)+" "+y.toFixed(2);
+  }
+  out+='<path d="'+d+'" stroke="'+cores[c.id]+'" stroke-width="'+(c.corVisivel?2.5:2)+'"'+
+    (c.corVisivel?'':' stroke-dasharray="5 4"')+' fill="none" opacity=".9"/>';
+ }
+ const vx=p.x+p.w*volume/maxV;
+ out+='<path d="M'+vx+' '+p.y+'V'+(p.y+p.h)+'" stroke="#0b5472" stroke-width="2" stroke-dasharray="4 3"/>';
+ out+='<path d="M'+p.x+' '+p.y+'V'+(p.y+p.h)+'H'+(p.x+p.w)+'" fill="none" stroke="#64828e" stroke-width="1.5"/>';
+ out+='<text x="9" y="13" font-size="10" fill="#516a76">mg/mL</text>';
+ svg.innerHTML=out;
+ $("eixo-max").textContent=fmt(maxV,1)+" mL · volume eluído";
+ const legend=$("chaves");legend.innerHTML="";
+ for(const c of estado.config.componentes){
+  const span=document.createElement("span");span.className="chave";
+  span.innerHTML='<i class="bolinha" style="background:'+(c.corVisivel||"#788b96")+'"></i>'+c.id+(c.corVisivel?"":" · incolor (modelo)");
+  legend.appendChild(span);
+ }
+}
+function render(){
+ if(!estado)return;
+ const s=C.advance(estado,volume/estado.config.vazaoMlMin),obs=C.observe(s);
+ desenharBandas(obs);desenharTubos();perfilSvg();
+ $("relogio").textContent=fmt(volume,2)+" mL · "+fmt(s.tempoMin,2)+" min";
+ $("progresso").style.width=(100*volume/estado.config.volumeTotalMl)+"%";
+ const destino=volume>=estado.config.volumeTotalMl?"concluído":F.routeAt(plano,volume);
+ $("saida-destino").textContent="Saída → "+(destino==="descarte"?"descarte":destino);
+ const saida=C.outlet(estado,volume);
+ $("saida-conc").textContent="Concentração total modelada: "+fmt(Object.values(saida.concentracoesMgPorMl).reduce((a,b)=>a+b,0),3)+" mg/mL";
+ const selected=plano.janelas.find(j=>j.frasco===selecionado),colhido=calculoNoVolume(selecionado,volume);
+ $("estado-tubo").textContent=selecionado+(selected?" · "+fmt(selected.inicioMl,1)+"–"+fmt(selected.fimMl,1)+" mL · coletado "+fmt(colhido.volume,2)+" mL":" · sem intervalo de coleta");
+ $("foco-resumo").textContent=selecionado+(selected?": janela "+fmt(selected.inicioMl,1)+"–"+fmt(selected.fimMl,1)+" mL. Coleta atual: "+fmt(colhido.volume,3)+" mL.":" não tem coleta programada.");
+ $("mensagem").textContent=aviso;
+ $("mensagem").className="aviso"+(aviso.includes("definida")||aviso.includes("montada")||aviso.includes("atualizada")?" avisoverde":"");
+ $("executar").textContent=volume>=estado.config.volumeTotalMl?"Eluição concluída":rodando?"Pausar":"Iniciar eluição";
+ $("executar").disabled=volume>=estado.config.volumeTotalMl;
+ $("inicio").disabled=rodando||volume>0;$("fim").disabled=rodando||volume>0;
+ $("janela-form").querySelector('button[type=submit]').disabled=rodando||volume>0;
+ $("limpar").disabled=rodando||volume>0;
+ $("montar").disabled=rodando;
+ $("texto-progresso").textContent=rodando?"Eluindo":volume>0?"Eluição "+fmt(100*volume/estado.config.volumeTotalMl,0)+"%":"Preparado";
+ const d=$("dados-medidas");
+ const dados=[
+  ["Volume morto",fmt(estado.config.geometria.volumeMortoMl,3)+" mL"],
+  ["Vazão",fmt(estado.config.vazaoMlMin,2)+" mL/min"],
+  ["Escala da corrida",fmt(estado.config.volumeTotalMl,1)+" mL"],
+  ["Retenção/eficiência","k e N parametrizados"],
+  ["Frações configuradas",String(plano.janelas.length)+" / 10"]
+ ];
+ d.innerHTML=dados.map(x=>'<div class="medida"><dt>'+x[0]+'</dt><dd>'+x[1]+'</dd></div>').join("");
+}
+$("montar").addEventListener("click",()=>{try{configurar()}catch(e){aviso=e.message;render();}});
+$("janela-form").addEventListener("submit",e=>{
+ e.preventDefault();
+ if(volume>0)return;
+ try{
+  plano=F.setWindow(plano,selecionado,Number($("inicio").value),Number($("fim").value));
+  aviso="Janela de "+selecionado+" atualizada.";render();
+ }catch(err){aviso=err.message;render();}
+});
+$("limpar").addEventListener("click",()=>{
+ if(volume>0)return;
+ plano=F.clearWindow(plano,selecionado);$("inicio").value="";$("fim").value="";
+ aviso="Janela removida de "+selecionado+".";render();
+});
+$("executar").addEventListener("click",()=>{
+ if(volume>=estado.config.volumeTotalMl)return;
+ rodando=!rodando;ultimo=0;
+ aviso=plano.janelas.length?"Eluição iniciada com coleta seletiva.":"Eluição iniciada: todo eluato seguirá ao descarte.";
+ render();
+});
+$("reiniciar").addEventListener("click",()=>{
+ rodando=false;ultimo=0;volume=0;aviso="Eluição reiniciada. Janelas preservadas.";render();
+});
+function frame(t){
+ if(rodando){
+  if(ultimo){
+   const dt=Math.min(.13,(t-ultimo)/1000);
+   volume=Math.min(estado.config.volumeTotalMl,volume+dt*estado.config.volumeTotalMl/24);
+   if(volume>=estado.config.volumeTotalMl){rodando=false;aviso="Eluição terminada. Selecione uma fração para analisar.";}
+   render();
+  }
+  ultimo=t;
+ }else ultimo=0;
+ requestAnimationFrame(frame);
+}
+$("registrar").addEventListener("click",()=>{
+ const coleta=F.integrate(plano,perfil.trechos);
+ const linhas=coleta.frascos.filter(f=>f.ativo).map((f,i)=>'<text x="38" y="'+(535+i*19)+'" fill="#17384d" font-size="13">'+
+  f.frasco+' · '+fmt(f.inicioMl,1)+'–'+fmt(f.fimMl,1)+' mL · '+fmt(f.volumeMl,2)+' mL</text>').join("");
+ const dados='Eluição: '+fmt(volume,2)+' / '+fmt(estado.config.volumeTotalMl,2)+' mL · Descarte final planejado: '+fmt(coleta.descarte.volumeMl,2)+' mL';
+ const documento='<?xml version="1.0" encoding="UTF-8"?>'+
+ '<svg xmlns="http://www.w3.org/2000/svg" width="900" height="820" viewBox="0 0 900 820">'+
+ '<rect width="900" height="820" fill="#fff"/>'+
+ '<text x="32" y="45" fill="#0b5472" font-size="28" font-weight="bold">SIAC · Registro gráfico da coluna</text>'+
+ '<text x="32" y="72" fill="#415f71" font-size="14">Amostra: '+amostras[$("amostra").value].nome+' · Modelo hipotético não calibrado</text>'+
+ '<svg x="20" y="95" width="270" height="390" viewBox="0 0 220 330">'+$("coluna-svg").innerHTML+'</svg>'+
+ '<svg x="292" y="136" width="585" height="280" viewBox="0 0 630 185">'+$("perfil-svg").innerHTML+'</svg>'+
+ '<text x="32" y="505" fill="#0b5472" font-size="17" font-weight="bold">Janelas coletoras F1–F10</text>'+linhas+
+ '<text x="32" y="766" fill="#385568" font-size="13">'+dados+'</text>'+
+ '<text x="32" y="791" fill="#667c87" font-size="12">Registro digital ilustrativo: não é fotografia nem laudo de identificação.</text></svg>';
+ const blob=new Blob([documento],{type:"image/svg+xml;charset=utf-8"}),url=URL.createObjectURL(blob);
+ const a=document.createElement("a");a.href=url;a.download="siac-coluna-registro.svg";a.click();
+ setTimeout(()=>URL.revokeObjectURL(url),500);
+ aviso="Registro gráfico gerado com as janelas da corrida.";render();
+});
+configurar();
+requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
