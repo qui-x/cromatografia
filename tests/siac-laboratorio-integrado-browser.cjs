@@ -18,6 +18,8 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
    page.on("pageerror",e=>errors.push(e.message));
    await page.goto("http://127.0.0.1:"+port+"/index.html#/laboratorio",{waitUntil:"domcontentloaded"});
    await page.waitForFunction(()=>window.SIAC?.laboratorio?.active===true,{timeout:15000});
+   // A Montagem é uma doca SIAB e inicia recolhida; abrir pelo botão existente.
+   await page.locator("#workspace-montagem").click({force:true});
    await page.locator("#siac-montagem #siac-seletor button").first().waitFor({timeout:5000});
    assert.equal(await page.locator("#siac-seletor button").count(),10);
    assert.match(await page.locator("#focus-tab").textContent(),/Coluna em foco/);
