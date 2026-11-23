@@ -1,7 +1,7 @@
 name: "SIAC - Ícone e identidade inicial"
 on:
   push:
-    branches: [feat/siac-experiencia-didatica]
+    branches: [main, feat/siac-experiencia-didatica]
     paths:
       - "assets/siac-icone.svg"
       - "assets/siac-icone-app.svg"
@@ -52,6 +52,7 @@ jobs:
           retention-days: 14
           if-no-files-found: warn
       - name: Guardar ícones PWA no branch visual
+        if: github.ref == 'refs/heads/feat/siac-experiencia-didatica'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
