@@ -1,16 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192" role="img" aria-labelledby="siac-t siac-d">
-<title id="siac-t">SIAC — A Identidade das Cores Ocultas</title>
-<desc id="siac-d">Papel cromatográfico com três bandas separadas, linha de origem e câmara com solvente.</desc>
-
-<rect x="69" y="18" width="54" height="152" rx="7" fill="#F4E9D8" stroke="#1F2D3D" stroke-width="4"/>
-<rect x="79" y="48" width="34" height="12" rx="5" fill="#16839A"/>
-<rect x="79" y="75" width="34" height="12" rx="5" fill="#D96C1F"/>
-<rect x="79" y="102" width="34" height="12" rx="5" fill="#2E9B8F"/>
-<path d="M79 35h34" stroke="#1F2D3D" stroke-width="3" stroke-dasharray="5 4"/>
-<path d="M78 137h36" stroke="#1F2D3D" stroke-width="3" stroke-linecap="round"/>
-<circle cx="96" cy="137" r="4" fill="#1F2D3D"/>
-<path d="M52 108V72m-10 10 10-11 10 11" fill="none" stroke="#F4E9D8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M43 139v20c0 9 7 16 16 16h74c9 0 16-7 16-16v-20" fill="none" stroke="#F4E9D8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M48 154h96v5c0 6-5 11-11 11H59c-6 0-11-5-11-11z" fill="#59B5BB"/>
-<path d="M69 170h54" stroke="#1F2D3D" stroke-width="3"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="192" height="192" fill="none" role="img" aria-labelledby="siac-icon-title siac-icon-desc">
+<title id="siac-icon-title">SIAC — Cromatograma Orgânico</title>
+<desc id="siac-icon-desc">Placa cromatográfica com contorno intenso em degradê azul, verde e âmbar; três faixas de pigmento separadas e organicamente irregulares.</desc>
+<defs>
+<linearGradient id="siac-contour" x1="9" y1="3" x2="24" y2="30" gradientUnits="userSpaceOnUse"><stop stop-color="#0072B2"/><stop offset=".51" stop-color="#009E73"/><stop offset="1" stop-color="#E69F00"/></linearGradient>
+<linearGradient id="siac-blue" x1="10.3" y1="9.4" x2="22.0" y2="10.2" gradientUnits="userSpaceOnUse"><stop stop-color="#0072B2" stop-opacity=".17"/><stop offset=".18" stop-color="#0072B2" stop-opacity=".78"/><stop offset=".46" stop-color="#0072B2" stop-opacity=".98"/><stop offset=".73" stop-color="#0072B2" stop-opacity=".84"/><stop offset="1" stop-color="#38BDF8" stop-opacity=".10"/></linearGradient>
+<linearGradient id="siac-green" x1="10.7" y1="16.4" x2="21.7" y2="15.7" gradientUnits="userSpaceOnUse"><stop stop-color="#009E73" stop-opacity=".13"/><stop offset=".20" stop-color="#009E73" stop-opacity=".80"/><stop offset=".55" stop-color="#009E73" stop-opacity=".98"/><stop offset=".80" stop-color="#009E73" stop-opacity=".65"/><stop offset="1" stop-color="#2E9B8F" stop-opacity=".13"/></linearGradient>
+<linearGradient id="siac-amber" x1="11.3" y1="22.5" x2="21.4" y2="23.1" gradientUnits="userSpaceOnUse"><stop stop-color="#E69F00" stop-opacity=".11"/><stop offset=".21" stop-color="#E69F00" stop-opacity=".79"/><stop offset=".55" stop-color="#D96C1F" stop-opacity=".98"/><stop offset=".78" stop-color="#E69F00" stop-opacity=".80"/><stop offset="1" stop-color="#E69F00" stop-opacity=".12"/></linearGradient>
+</defs>
+<path d="M10.2 3.2H21.7a1.6 1.6 0 0 1 1.6 1.6v22.5a1.6 1.6 0 0 1-1.6 1.6H10.2a1.6 1.6 0 0 1-1.6-1.6V4.8a1.6 1.6 0 0 1 1.6-1.6Z" stroke="url(#siac-contour)" stroke-width="1.8" stroke-linejoin="round"/>
+<path d="M10.5 9.3c1.2-1.2 2.6-.5 3.9-.8 1.4-.5 2.9-.3 4.2.1 1.2-.3 2-.2 2.9-.7l.1 3.1c-1.1.4-2.5.1-3.8.6-1.5.4-2.3-.2-3.7-.1-1.5.2-2.4-.7-3.6.1Z" fill="url(#siac-blue)"/>
+<path d="M11.2 15.5c.7-.8 2.3-1.1 3.7-.6 1.4-.1 2.3-.7 3.5-.5 1.3-.3 2.2.1 3.1.6l-.4 2.5c-1.2-.3-2.4.6-3.7.3-1.2-.2-2.2.5-3.4 0-1.1-.2-1.9-.1-2.9-.4Z" fill="url(#siac-green)"/>
+<path d="M10.9 22.3c1.1-.8 2.2-1.1 3.5-1 1.4-.4 2.5-.2 3.8.2 1-.4 2.1-.1 3 .5l-.3 2.3c-1.2-.4-2.4-.1-3.6.2-1.5-.2-2.3.4-3.5-.1-1.1.2-2.2-.2-3.2-.2Z" fill="url(#siac-amber)"/>
 </svg>
