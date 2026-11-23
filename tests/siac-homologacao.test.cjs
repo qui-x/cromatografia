@@ -62,7 +62,8 @@ assert.equal(h.avaliarSubstancia("quinoline_yellow",base).metodosComRetencaoIndi
  "não atribuir o Rf de uma mistura comercial a um único analito");
 assert.equal(h.avaliarSubstancia("glutamine",base).metodosComRetencaoIndividual,2,
  "glutamina tem dois sistemas de solventes em pesquisa");
-assert.equal(h.avaliarSubstancia("caffeine",base).metodosComRetencaoIndividual,0);
+assert.equal(h.avaliarSubstancia("caffeine",base).metodosComRetencaoIndividual,4,
+ "cafeína tem métodos HPTLC e CCD registrados em pesquisa");
 assert.throws(()=>h.avaliarSubstancia("inventado",base),RangeError);
 const candidate={...base.candidatos.find(c=>c.id==="glycine"),
  identity:{cas:"56-40-6",verificadoIndividualmente:true}};
