@@ -167,7 +167,7 @@ SIAC.laboratorio=(()=>{
  }
  function filled(){return Array.from({length:10},(_,i)=>fraction("F"+(i+1))).filter(Boolean);}
  function paper(id){
-  return papers[id]||(papers[id]={etapa:"vazio",origem:null,frenteMm:0,tempoS:0,sinais:[],uv:[]});
+  return papers[id]||(papers[id]={etapa:"vazio",origem:null,frenteMm:0,tempoS:0,sinais:[],uv:[],aliquotaMg:{}});
  }
  function current(){return fraction(selected);}
  function choose(id,nextFocus){
@@ -216,15 +216,53 @@ SIAC.laboratorio=(()=>{
    '<text x="85" y="199" text-anchor="middle" font-size="15" fill="currentColor">'+esc(f?.id||selected)+'</text></svg>';
  }
  function paperSVG(p,id,large=true){
-  let marks='';
-  if(p.origem)marks+='<ellipse cx="'+(90+p.origem.x*2)+'" cy="204" rx="5" ry="3" fill="#829aa1" opacity=".25"/>';
-  if(p.frenteMm>0)marks+='<path d="M62 '+(204-p.frenteMm*1.7)+'H156" stroke="#336e7d" stroke-width="1.5" stroke-dasharray="4 4"/>';
-  for(const m of p.sinais){marks+='<ellipse cx="108" cy="'+(204-m.distanciaMm*1.7)+'" rx="12" ry="5" fill="'+m.cor+'" opacity=".72"/>';}
-  for(const m of p.uv){marks+='<ellipse cx="108" cy="'+(204-m.distanciaMm*1.7)+'" rx="11" ry="6" fill="#52677b" opacity=".58"/>';}
-  return '<svg viewBox="0 0 220 265" role="img" aria-label="Papel '+id+' '+p.etapa+'">'+
-   '<rect x="57" y="19" width="103" height="215" rx="3" fill="'+(p.uv.length?"#d9f1e4":"#fff9e9")+'" stroke="#447687" stroke-width="3"/>'+
-   '<path d="M62 204H156" stroke="#7b929c" stroke-width="2" stroke-dasharray="4 4"/>'+marks+
-   '<text x="110" y="252" text-anchor="middle" fill="currentColor" font-size="14">'+id+'</text></svg>';
+  const imerso=p.etapa==="desenvolvendo";
+  const origemY=204,frenteY=origemY-Math.min(55,p.frenteMm)*1.7;
+  const amostra=col.config.componentes.filter(c=>(p.aliquotaMg||{})[c.id]>1e-12);
+  const dominante=amostra.filter(c=>c.corVisivel).sort((a,b)=>
+   p.aliquotaMg[b.id]-p.aliquotaMg[a.id])[0];
+  let marcas="";
+  if(p.frenteMm>0){
+   marcas+='<rect x="58" y="'+frenteY.toFixed(2)+'" width="101" height="'+
+    (origemY-frenteY).toFixed(2)+'" fill="#8ebdc4" opacity=".13"/>';
+   marcas+='<path d="M62 '+frenteY.toFixed(2)+
+    'H156" stroke="#336e7d" stroke-width="1.5" stroke-dasharray="4 4"/>';
+  }
+  if(p.origem){
+   const x=90+p.origem.x*2;
+   marcas+='<ellipse cx="'+x+'" cy="'+origemY+
+    '" rx="9" ry="4" fill="'+(dominante?.corVisivel||"#7f9da5")+'" opacity=".35"/>';
+  }
+  for(const m of p.sinais){
+   marcas+='<ellipse cx="108" cy="'+(origemY-m.distanciaMm*1.7).toFixed(2)+
+    '" rx="13" ry="6" fill="'+m.cor+'" opacity=".25"/>';
+   marcas+='<ellipse cx="108" cy="'+(origemY-m.distanciaMm*1.7).toFixed(2)+
+    '" rx="9" ry="4" fill="'+m.cor+'" opacity=".52"/>';
+  }
+  for(const m of p.uv){
+   marcas+='<ellipse cx="108" cy="'+(origemY-m.distanciaMm*1.7).toFixed(2)+
+    '" rx="11" ry="6" fill="#52677b" opacity=".55"/>';
+  }
+  // Câmara por trás do papel; a face frontal de vidro é desenhada DEPOIS
+  // do suporte. A linha de aplicação fica acima do nível do solvente.
+  const fundo=imerso?
+   '<path d="M37 117H185L178 231Q176 246 160 246H62Q48 246 45 231Z" fill="#badde5" fill-opacity=".18"/>':"";
+  const solvente=imerso?
+   '<path d="M47 222Q111 218 177 222L174 235Q172 241 160 241H62Q52 241 50 235Z" fill="#69b8c7" opacity=".42"/>'+
+   '<path d="M47 222Q111 218 177 222" fill="none" stroke="#368a9c" stroke-width="1.5"/>':"";
+  const vidro=imerso?
+   '<path d="M42 117L47 230Q48 245 62 246H161Q176 245 178 230L183 117" fill="#d0f3f7" fill-opacity=".12" stroke="#5795a7" stroke-width="3"/>'+
+   '<ellipse cx="112.5" cy="117" rx="71" ry="6" fill="none" stroke="#75aab6" stroke-width="2.5"/>'+
+   '<path d="M51 130L55 228" stroke="#fff" stroke-opacity=".52" stroke-width="4"/>':"";
+  return '<svg viewBox="0 0 220 265" role="img" aria-label="Papel '+esc(id)+
+   (imerso?", imerso no béquer com solvente abaixo da linha de origem":", fora da câmara")+
+   ', '+esc(p.etapa)+'">'+fundo+
+   '<rect x="57" y="19" width="103" height="215" rx="3" fill="'+
+    (p.uv.length?"#d9f1e4":"#fff9e9")+'" stroke="#447687" stroke-width="2.5"/>'+
+   '<path d="M62 204H156" stroke="#7b929c" stroke-width="2" stroke-dasharray="4 4"/>'+
+   marcas+solvente+vidro+
+   '<text x="110" y="258" text-anchor="middle" fill="currentColor" font-size="14">'+
+   esc(id)+'</text></svg>';
  }
  function drawGraph(){
   if(!col)return "";
@@ -265,7 +303,8 @@ SIAC.laboratorio=(()=>{
    paperSVG(p,"P"+f.id.slice(1))+'</div>'+
    '<div><p>Etapa: <strong>'+p.etapa+'</strong></p>'+
    '<p>'+(capillary?"Capilar carregado: clique na linha de origem do papel ou pressione Enter.":"Selecione o capilar no Tubo em foco.")+'</p>'+
-   (p.etapa==="aplicado"||p.etapa==="desenvolvendo"?'<button id="siac-desenvolver" class="primary-btn">Desenvolver por 60 s (modelo)</button>':"")+
+   (p.etapa==="aplicado"?'<button id="siac-desenvolver" class="primary-btn">Mergulhar o papel na câmara e desenvolver</button>':"")+
+   (p.etapa==="desenvolvendo"?'<label class="siac-tempo-desenvolvimento">Frente do solvente · '+displaySec(p.tempoS)+' / 00:01:00 (tempo simulado)<progress max="60" value="'+p.tempoS.toFixed(1)+'"></progress></label>':"")+
    (p.etapa==="desenvolvido"||p.etapa==="revelado"?'<button id="siac-uv" class="secondary-btn">Ligar luz UV 254 nm</button>':"")+
    '<p class="siac-hint">A análise só usa componentes que foram efetivamente coletados no frasco.</p></div></div>';
  }
@@ -368,14 +407,16 @@ SIAC.laboratorio=(()=>{
   if(btn?.id==="siac-reiniciar"){running=false;lastFrame=0;volume=0;withdrawn={};papers={};capillary=null;development=null;
    status="Corrida reiniciada. Janelas preservadas; os frascos começam vazios.";render();return;}
   if(btn?.id==="siac-retirar"){const f=current();if(!f||f.disponivelMl<.01){status="Aguarde coleta suficiente para carregar o capilar.";render();return;}
-   withdrawn[f.id]=(withdrawn[f.id]||0)+.01;capillary={id:f.id,volumeMl:.01,masses:f.componentesMg};
+   withdrawn[f.id]=(withdrawn[f.id]||0)+.01;
+   capillary={id:f.id,volumeMl:.01,masses:Object.fromEntries(Object.entries(f.componentesMg)
+    .map(([id,m])=>[id,m*.01/f.volumeMl]))};
    focus="amostra";render();return;}
   if(btn?.id==="siac-desenvolver"){
    const p=paper(selected);if(p.etapa!=="aplicado")return;
    p.etapa="desenvolvendo";p.tempoS=0;development={id:selected};status="Desenvolvimento cromatográfico em andamento.";render();return;}
   if(btn?.id==="siac-uv"){const p=paper(selected);if(!["desenvolvido","revelado"].includes(p.etapa))return;
-   const f=current(),all=Object.entries(f?.componentesMg||{});
-   p.uv=all.filter(([id,m])=>m>1e-9&&col.config.componentes.find(c=>c.id===id)?.deteccao.uv254)
+   p.uv=Object.entries(p.aliquotaMg||{}).filter(([id,m])=>m>1e-12&&
+    col.config.componentes.find(c=>c.id===id)?.deteccao.uv254)
     .map(([id,m])=>({distanciaMm:MODELOS.find(c=>c.id===id).rf*p.frenteMm}));
    p.etapa="revelado";status="UV aplicado: sinais hipotéticos, sem identificação confirmada.";render();return;}
   const target=e.target.closest("#siac-paper-target");
@@ -393,7 +434,9 @@ SIAC.laboratorio=(()=>{
   if(capillary.id!==selected){status="Capilar e papel devem corresponder ao mesmo frasco.";render();return;}
   const p=paper(selected);
   if(p.etapa!=="vazio"&&p.etapa!=="aplicado"){status="O papel já foi desenvolvido.";render();return;}
-  p.origem={x,tempoS:0};p.etapa="aplicado";capillary=null;
+  p.origem={x,tempoS:0};
+  for(const [id,m] of Object.entries(capillary.masses))p.aliquotaMg[id]=(p.aliquotaMg[id]||0)+m;
+  p.etapa="aplicado";capillary=null;
   status="Amostra aplicada em P"+selected.slice(1)+". Desenvolva para observar as manchas.";render();
  }
  function frame(now){
@@ -405,14 +448,17 @@ SIAC.laboratorio=(()=>{
     if(volume>=col.config.volumeTotalMl){running=false;status="Eluição concluída.";}}
    if(development){
     const p=paper(development.id);
-    p.tempoS=Math.min(60,p.tempoS+dt*speed);
+    // O desenvolvimento mantém um tempo didático observável, independente da
+    // aceleração muito maior que pode ser usada na coleta da coluna.
+    p.tempoS=Math.min(60,p.tempoS+dt*Math.min(speed,6));
     p.frenteMm=55*p.tempoS/60;
+    p.sinais=Object.entries(p.aliquotaMg||{}).filter(([id,m])=>m>1e-12&&
+      col.config.componentes.find(c=>c.id===id)?.deteccao.visivel)
+      .map(([id,m])=>({distanciaMm:MODELOS.find(x=>x.id===id).rf*p.frenteMm,
+        cor:MODELOS.find(x=>x.id===id).cor}));
     if(p.tempoS>=60){
      p.etapa="desenvolvido";development=null;
-     const f=fraction(selected);
-     p.sinais=Object.entries(f?.componentesMg||{}).filter(([id,m])=>m>1e-9&&col.config.componentes.find(c=>c.id===id)?.deteccao.visivel)
-      .map(([id,m])=>({distanciaMm:MODELOS.find(x=>x.id===id).rf*p.frenteMm,cor:MODELOS.find(x=>x.id===id).cor}));
-     status="Desenvolvimento finalizado; manchas visíveis não identificam espécies.";}}
+     status="Papel retirado do béquer. Desenvolvimento finalizado; as manchas não confirmam identidades.";}}
    if(now-lastDraw>160||!running){renderStage();renderVer();renderMontagem();lastDraw=now;}
   }else lastFrame=0;
   requestAnimationFrame(frame);
