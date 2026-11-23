@@ -15,6 +15,7 @@ on:
       - "scripts/siac-gerar-icones.py"
       - "tests/siac-logo-png.py"
       - "tests/siac-identidade.test.cjs"
+      - "tests/siac-titulo-abertura.test.cjs"
       - "tests/siac-independencia.test.cjs"
       - "tests/siac-home-browser.cjs"
       - "css/investigacao.css"
