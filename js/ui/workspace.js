@@ -252,7 +252,7 @@ SIAB.workspace = (() => {
       S.verDisponivel("historico") ||
       S.verDisponivel("tabela") ||
       S.ActivityContext.allows("report.view");
-    $("workspace-ver").hidden = !groups.length || !S.current();
+    $("workspace-ver").hidden = !window.SIAC?.laboratorio?.active && (!groups.length || !S.current());
     $("workspace-dados").hidden = !dataAllowed || !S.current();
     nodes.data
       .querySelectorAll("[data-dock-tool]")
@@ -344,7 +344,7 @@ SIAB.workspace = (() => {
       else el.removeAttribute("aria-modal");
     }
     $("ver-panel").hidden =
-      !S.verFamiliasDisponiveis().length && state.source !== "dados";
+      !window.SIAC?.laboratorio?.active && !S.verFamiliasDisponiveis().length && state.source !== "dados";
     $("ver-panel").dataset.presentation = state.presentation;
     $("ver-panel").dataset.tool = state.activeTool || "";
     $("ver-panel").dataset.level = state.level;
@@ -453,6 +453,7 @@ SIAB.workspace = (() => {
     sync();
     if (
       side === "right" &&
+      !window.SIAC?.laboratorio?.active &&
       !S.verFamiliasDisponiveis().length &&
       option !== "dados"
     )
