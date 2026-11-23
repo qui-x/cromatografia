@@ -132,6 +132,22 @@ Não inventar valores cromatográficos no front-end. A experiência consome apen
 
 **Dependência:** o coletor por janelas é uma mecânica de fluxo; os perfis químicos/retentivos precisarão vir de um motor próprio de coluna validado. **Nenhuma substância fica cadastrada em uma posição volumétrica fixa.** A escolha do intervalo altera o que é *interceptado* da eluição; não altera o comportamento químico nem cria ou move os compostos.
 
+### Primeira prévia funcional e contrato de integração
+
+Na branch **`feat/siac-motor-cromatografico`** estão implementados `js/simulation/siac-coluna.js`, `tests/siac-coluna.test.cjs` e a página `previews/coluna-laboratorio.html`. **Essa é uma prévia técnica isolada** para verificar a concepção do usuário; o `index.html` principal ainda contém elementos legados do SIAB.
+
+**Organização a transportar do protótipo para o aplicativo principal:**
+
+1. A doca esquerda **Montagem** oferece escolha da amostra, solvente, fase estacionária e comando **Montar coluna**. Os parâmetros geométricos ficam em uma seção condensada; não inserir nova doca contextual.
+2. A **coluna ocupa a área central** de observação, com suporte, zonas de migração e saída; as bandas visíveis são derivadas da distribuição calculada por pratos teóricos. Um componente incolor não deve tornar-se visível só para ajudar a interface.
+3. A mesma Montagem oferece **grade F1–F10**. O aluno escolhe um frasco e define seu intervalo em mL, na escala **configurável de cada corrida**. A ausência de janela significa que o tubo não é usado. Não existe preset de fração ou associação a substância.
+4. A curva de saída mostra as concentrações do **modelo**, as janelas programadas e o progresso atual. Separar graficamente **valores preditos** de informações efetivamente observadas/detectadas para não revelar a composição de modo indevido.
+5. A evolução da eluição determina quando cada fração passa a receber líquido e quanto de cada componente é recuperado; o restante vai para descarte/recuperação, sem violar conservação de massa.
+6. O **registro gráfico SVG** deve incluir a coluna, o perfil de eluição e a coleta efetivamente realizada **até o momento da exportação**, distinguindo janelas futuras e realizadas. A implementação integral em Caderno/Relatórios ainda está pendente.
+7. A cena deverá seguir para **capilar no frasco → aplicação em papel/CCD → desenvolvimento → revelação UV** quando o adaptador entre motor de coluna e planar estiver validado. Não adicionar botões inertes enquanto essas etapas não existirem.
+
+**Validações disponíveis no ramo científico:** modelo de coluna, conservação de massa, integração com coletor F1–F10, confirmação de janelas dinâmicas e teste de navegador da prévia em 320, 360, 768, 1024 e 1440 px. CI e capturas de tela devem aprovar antes de portar a prévia à bancada ativa.
+
 ### Aceite e limites
 
 - O SIAB já oferece uma área Montagem e uma base de trabalho com tubos; isso é **infraestrutura a reaproveitar**, não a afirmação de que a coluna já funciona.
