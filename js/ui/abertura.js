@@ -188,16 +188,10 @@ SIAB.abertura = (() => {
           <text x="${x}" y="41" class="siac-v4-numero">${a.id}</text>
           <text x="${x}" y="61" class="siac-v4-nome">${a.nome}</text>
         </g>
+        <!-- Parede posterior do béquer; o papel será inserido à frente dela. -->
         <g class="siac-v4-bequer">
           <path d="M${x-108} 175h216m-209 1v226a18 18 0 0 0 18 18h164a18 18 0 0 0 18-18V176"
             class="siac-v4-vidro"/>
-          <path d="M${x-99} 372h198v29a17 17 0 0 1-17 17h-164a17 17 0 0 1-17-17Z"
-            fill="url(#siac-v4-solvente)" class="siac-v4-poco-solvente"/>
-          <path d="M${x-98} 372Q${x-51} 370 ${x} 372T${x+98} 372"
-            class="siac-v4-menisco"/>
-          <path d="M${x-94} 222v139M${x+93} 220v115" class="siac-v4-reflexo-vidro"/>
-          <path d="M${x+78} 300h10M${x+78} 323h10M${x+78} 347h10"
-            class="siac-v4-graduacao"/>
         </g>
         <g class="siac-v4-papel" data-papel="${i}">
           <rect x="${papelX}" y="98" width="${len}" height="289" rx="3" class="siac-v4-folha"/>
@@ -226,6 +220,21 @@ SIAB.abertura = (() => {
             </g>
           </g>
           <path d="M${papelX+7} 106v6M${papelX+123} 106v6" class="siac-v4-folha-detalhe"/>
+        </g>
+        <!-- A parede frontal e o solvente ficam acima do papel na ordem SVG:
+             a faixa inferior da folha fica imersa, e não colada na frente do vidro. -->
+        <g class="siac-v4-bequer-frontal" aria-hidden="true">
+          <path d="M${x-101} 177v225a17 17 0 0 0 17 17h168a17 17 0 0 0 17-17V177Z"
+            class="siac-v4-parede-frontal"/>
+          <path d="M${x-99} 372h198v29a17 17 0 0 1-17 17h-164a17 17 0 0 1-17-17Z"
+            fill="url(#siac-v4-solvente)" class="siac-v4-poco-solvente"/>
+          <path d="M${x-98} 372Q${x-51} 370 ${x} 372T${x+98} 372"
+            class="siac-v4-menisco"/>
+          <path d="M${x-108} 176Q${x} 192 ${x+108} 176"
+            class="siac-v4-borda-frontal"/>
+          <path d="M${x-94} 222v139M${x+93} 220v115" class="siac-v4-reflexo-vidro"/>
+          <path d="M${x+78} 300h10M${x+78} 323h10M${x+78} 347h10"
+            class="siac-v4-graduacao"/>
         </g>
         <g class="siac-v4-capilar" data-capilar="${i}">
           <path d="M${x-5} 93V${ORIGEM-6}" class="siac-v4-capilar-vidro"/>
