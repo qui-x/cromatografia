@@ -47,6 +47,26 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
    assert.match(await page.locator("#siac-catalogo-dados").textContent(),/Rf bibliográfico:\s*0,20/);
    assert.equal(await page.evaluate(()=>SIAC.laboratorio.snapshot.substanciaId),"glycine");
    assert.match(await page.locator("#siac-stage").textContent(),/não são um motor validado/);
+   // As ferramentas de Ver permanecem no mesmo painel e usam somente o
+   // método selecionado; não criam botões flutuantes na cena.
+   assert.equal(await page.locator("#siac-modulos [data-module]").count(),3);
+   await page.locator('#siac-ver [data-ver="ninhidrina"]').evaluate(el=>el.click());
+   assert.match(await page.locator("#siac-ver-dados").textContent(),/Técnica descrita no método/);
+   await page.locator('#siac-ver [data-ver="uv254"]').evaluate(el=>el.click());
+   assert.match(await page.locator("#siac-ver-dados").textContent(),/Técnica não confirmada/);
+   await page.locator('#siac-ver [data-module="medir"]').evaluate(el=>el.click());
+   await page.locator('#siac-ver [data-siac-medicao="frente"]').evaluate(el=>{
+     el.value="50";el.dispatchEvent(new Event("input",{bubbles:true}));
+   });
+   await page.locator('#siac-ver [data-siac-medicao="mancha"]').evaluate(el=>{
+     el.value="10";el.dispatchEvent(new Event("input",{bubbles:true}));
+   });
+   assert.match(await page.locator("#siac-medicao-feedback").textContent(),/Distâncias registradas/);
+   await page.locator('#siac-ver [data-module="calcular"]').evaluate(el=>el.click());
+   assert.match(await page.locator("#siac-ver-dados").textContent(),/Rf do exercício/);
+   assert.match(await page.locator("#siac-ver-dados").textContent(),/0,2/);
+   await page.locator('#siac-ver [data-ver="comparar"]').evaluate(el=>el.click());
+   assert.match(await page.locator("#siac-ver-dados").textContent(),/não confirma identidade/);
    await page.locator("#siac-catalogo-substancia").selectOption("caffeine");
    assert.equal(await page.locator("#siac-catalogo-solvente").isDisabled(),true);
    assert.match(await page.locator("#siac-catalogo-dados").textContent(),/Não há sistema eluente/);
