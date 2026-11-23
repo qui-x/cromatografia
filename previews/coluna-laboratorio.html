@@ -39,7 +39,7 @@ summary{cursor:pointer;font-weight:700;font-size:12px}.parametros{display:grid;g
 .saida strong{display:block;font-size:14px}.saida div{font-size:12px;color:#607582}
 .progresso{height:10px;background:#dbe9eb;border-radius:999px;overflow:hidden}.progresso span{height:100%;display:block;width:0;background:linear-gradient(90deg,#168da7,#2e9b8f);transition:width .13s}
 .grafico-wrap{margin-top:4px}.graficos{border:1px solid #d7e6e8;border-radius:12px;background:#fcfefe;padding:8px}
-.graficos svg{width:100%;height:180px;display:block}
+.graficos svg{width:100%;height:180px;display:block;touch-action:none;cursor:crosshair}
 .eixos{display:flex;justify-content:space-between;color:#526a79;font-size:11px;padding:0 12px 0 37px}.chaves{display:flex;gap:12px;flex-wrap:wrap;font-size:12px;color:#3e5867}
 .chave{display:inline-flex;align-items:center;gap:5px}.bolinha{width:9px;height:9px;display:inline-block;border-radius:2px}
 .controles{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.controles button{min-width:95px}.controles .tempo{font-variant-numeric:tabular-nums;font-size:12px;color:#476273}
@@ -91,7 +91,7 @@ hr{border:0;border-top:1px solid #dde8eb;margin:16px 0}.dados button{width:100%}
  <div class="acoes"><button id="montar" class="primario">Montar coluna</button></div>
  <hr class="separador">
  <div class="cabecalho"><h2 style="margin:0">Frações F1–F10</h2><span class="selo">10 tubos disponíveis</span></div>
- <p class="explicacao">Escolha um tubo e marque somente o início e o fim da coleta. Não há posições fixas para substâncias.</p>
+ <p class="explicacao">Escolha um tubo e arraste uma faixa no perfil de eluição, ou informe início e fim em mL. Não há posições fixas para substâncias.</p>
  <div class="fracoes" id="frascos" role="group" aria-label="Seleção dos dez tubos de coleta"></div>
  <div class="estado-tubo" id="estado-tubo" aria-live="polite"></div>
  <form id="janela-form">
@@ -179,7 +179,7 @@ const cenarios={
  eluente1:{silica:{A:.15,B:1.5,C:3},alumina:{A:.6,B:.9,C:2.0}},
  eluente2:{silica:{A:.7,B:.45,C:1.45},alumina:{A:1.3,B:.3,C:2.65}}
 };
-let estado,plano,perfil,selecionado="F1",volume=0,rodando=false,ultimo=0,aviso="";
+let estado,plano,perfil,selecionado="F1",volume=0,rodando=false,ultimo=0,aviso="",arraste=null;
 function configurar(){
  const a=amostras[$("amostra").value],sol=$("eluente").value,sup=$("suporte").value,
   k=cenarios[sol][sup];
@@ -200,7 +200,7 @@ function configurar(){
  perfil=C.profile(estado,{passos:300});
  volume=0;rodando=false;selecionado="F1";$("inicio").value="";$("fim").value="";
  $("inicio").max=config.volumeTotalMl;$("fim").max=config.volumeTotalMl;
- $("executar").textContent="Iniciar eluição";
+ $("executar").textContent="Iniciar eluição";arraste=null;
  aviso="Coluna montada. Configure as janelas antes de iniciar.";render();
 }
 function calculoNoVolume(id,ateVolume){
@@ -282,6 +282,11 @@ function perfilSvg(){
   out+='<rect x="'+x+'" y="'+p.y+'" width="'+w+'" height="'+p.h+'" fill="#0b5472" opacity=".10"/>';
   out+='<text x="'+(x+2)+'" y="23" font-size="10" fill="#0b5472">'+j.frasco+'</text>';
  }
+ if(arraste){
+  const xs=p.x+p.w*Math.min(arraste.inicioMl,arraste.fimMl)/maxV;
+  const xf=p.x+p.w*Math.max(arraste.inicioMl,arraste.fimMl)/maxV;
+  out+='<rect x="'+xs+'" y="'+p.y+'" width="'+Math.max(2,xf-xs)+'" height="'+p.h+'" fill="#2e9b8f" opacity=".20"/>';
+ }
  for(const c of estado.config.componentes){
   let d="";
   for(let i=0;i<pontos.length;i++){
@@ -351,6 +356,42 @@ $("limpar").addEventListener("click",()=>{
  plano=F.clearWindow(plano,selecionado);$("inicio").value="";$("fim").value="";
  aviso="Janela removida de "+selecionado+".";render();
 });
+// Seleção direta na curva: mesma janela editável numericamente por teclado.
+function volumeDoPonteiro(e){
+ const svg=$("perfil-svg"),rect=svg.getBoundingClientRect();
+ const localX=(e.clientX-rect.left)*630/rect.width;
+ const total=estado.config.volumeTotalMl;
+ const v=Math.max(0,Math.min(total,(localX-42)/566*total));
+ return Math.max(0,Math.min(total,Math.round(v/0.1)*0.1));
+}
+$("perfil-svg").addEventListener("pointerdown",e=>{
+ if(volume>0||rodando){aviso="Reinicie antes de redefinir janelas de coleta.";render();return;}
+ arraste={inicioMl:volumeDoPonteiro(e),fimMl:volumeDoPonteiro(e)};
+ $("perfil-svg").setPointerCapture(e.pointerId);
+ e.preventDefault();render();
+});
+$("perfil-svg").addEventListener("pointermove",e=>{
+ if(!arraste)return;
+ arraste.fimMl=volumeDoPonteiro(e);
+ $("inicio").value=String(Math.min(arraste.inicioMl,arraste.fimMl));
+ $("fim").value=String(Math.max(arraste.inicioMl,arraste.fimMl));
+ render();
+});
+$("perfil-svg").addEventListener("pointerup",e=>{
+ if(!arraste)return;
+ arraste.fimMl=volumeDoPonteiro(e);
+ let inicio=Math.min(arraste.inicioMl,arraste.fimMl),fim=Math.max(arraste.inicioMl,arraste.fimMl);
+ arraste=null;
+ if(fim-inicio<0.0999){
+  fim=Math.min(estado.config.volumeTotalMl,inicio+0.1);
+  inicio=Math.max(0,fim-0.1);
+ }
+ $("inicio").value=String(inicio);$("fim").value=String(fim);
+ try{plano=F.setWindow(plano,selecionado,inicio,fim);aviso="Janela de "+selecionado+" definida diretamente no perfil.";}
+ catch(err){aviso=err.message;}
+ render();
+});
+$("perfil-svg").addEventListener("pointercancel",()=>{arraste=null;render();});
 $("executar").addEventListener("click",()=>{
  if(volume>=estado.config.volumeTotalMl)return;
  rodando=!rodando;ultimo=0;
