@@ -124,6 +124,10 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
     const snapshot=await page.evaluate(()=>window.SIAC.laboratorio.snapshot);
     assert(snapshot.preenchidos.includes("F1"));
     assert(snapshot.preenchidos.includes("F7"));
+    // Reabrir a doca para testar uma tentativa real de remontagem:
+    // no desktop a Montagem havia sido recolhida antes da eluição.
+    if(await page.locator("#workspace-montagem").getAttribute("aria-expanded")!=="true")
+      await page.locator("#workspace-montagem").click({force:true});
     await page.locator("#siac-montar").click({force:true});
     const afterMountAttempt=await page.evaluate(()=>window.SIAC.laboratorio.snapshot);
     assert.equal(afterMountAttempt.volumeMl,snapshot.volumeMl,
@@ -131,6 +135,8 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
     assert.deepEqual(afterMountAttempt.janelas,janelasAntes,
       "Reconstrução durante a corrida não deve apagar os intervalos");
     assert.match(await page.locator("#siac-montagem-status").textContent(),/reinicie a corrida/);
+    if(await page.locator("#close-controls").isVisible())
+      await page.locator("#close-controls").click();
     assert.equal(snapshot.preenchidos.length,2,"Só frascos preenchidos devem estar montados");
     await page.locator("#overview-tab").click({force:true});
     assert.match(await page.locator("#overview-tab").textContent(),/Papéis/);
