@@ -11,7 +11,10 @@
     "rsc2024": "https://pubs.rsc.org/en/content/articlehtml/2024/ay/d4ay00082j",
     "pubchem": "https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest",
     "pubchemView": "https://pubchem.ncbi.nlm.nih.gov/docs/pug-view",
-    "reviewAmino": "https://scispace.com/papers/thin-layer-chromatography-of-amino-acids-a-review-2kz286kv4g"
+    "reviewAmino": "https://scispace.com/papers/thin-layer-chromatography-of-amino-acids-a-review-2kz286kv4g",
+    "ukil2013": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+    "dobado2024": "https://www.chemistry-online.com/lab/experiments/separation-pigments-spinach-leaf/",
+    "protechex2025": "https://5.imimg.com/data5/SELLER/Doc/2025/6/518306737/JX/IU/GS/9824300/pro-techex-thin-layer-chromatography-teaching-kit.pdf"
   },
   "candidatos": [
     {
@@ -2174,12 +2177,659 @@
       },
       "dadosRf": [],
       "nota": "Atlas exige cadastro para downloads; não reproduzir fingerprints nem inferir Rf sem consulta ao método específico."
+    },
+    {
+      "id": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+      "tecnica": "ccd",
+      "assuntos": [
+        "aminoacidos"
+      ],
+      "status": "referencia_primaria_nao_homologada",
+      "fonte": "ukil2013",
+      "ano": 2013,
+      "referenciaSecao": "Ukil, Samanta & Laskar (2013), Materials and Methods + Table 1",
+      "faseEstacionaria": {
+        "classe": "sílica gel G, Merck",
+        "detalhamento": "placas preparadas de 20 x 20 cm, espessura de 0,1 mm"
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "propanol_1",
+            "partes": 70
+          },
+          {
+            "id": "water",
+            "partes": 30
+          }
+        ],
+        "base": "v/v",
+        "mistura": "1-propanol:água 70:30",
+        "homologada": false
+      },
+      "aplicacao": {
+        "volumeAmostraUl": 1,
+        "solucaoPadraoMgMl": 5,
+        "tampao": "fosfato 0,01 mol/L, pH 8,0",
+        "detector": "4-dimetilaminobenzaldeído 1% em acetona, aquecimento 110°C 10 min; isatina 0,4% em etanol, novo aquecimento 110°C 10 min",
+        "leitura": "cor observada visualmente após revelação",
+        "detectorHomologado": false
+      },
+      "dadosRf": [
+        {
+          "analito": "arginine",
+          "rf": 0.02,
+          "classe": "valor_experimental_tabela_1_artigo_2013",
+          "fonte": "ukil2013",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "cysteine",
+          "rf": 0.38,
+          "classe": "valor_experimental_tabela_1_artigo_2013",
+          "fonte": "ukil2013",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "histidine",
+          "rf": 0.2,
+          "classe": "valor_experimental_tabela_1_artigo_2013",
+          "fonte": "ukil2013",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "isoleucine",
+          "rf": 0.53,
+          "classe": "valor_experimental_tabela_1_artigo_2013",
+          "fonte": "ukil2013",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "glutamine",
+          "rf": 0.15,
+          "classe": "valor_experimental_tabela_1_artigo_2013",
+          "fonte": "ukil2013",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "lysine",
+          "rf": 0.03,
+          "classe": "valor_experimental_tabela_1_artigo_2013",
+          "fonte": "ukil2013",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "asparagine",
+          "rf": 0.14,
+          "classe": "valor_experimental_tabela_1_artigo_2013",
+          "fonte": "ukil2013",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "phenylalanine",
+          "rf": 0.58,
+          "classe": "valor_experimental_tabela_1_artigo_2013",
+          "fonte": "ukil2013",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "serine",
+          "rf": 0.35,
+          "classe": "valor_experimental_tabela_1_artigo_2013",
+          "fonte": "ukil2013",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "threonine",
+          "rf": 0.37,
+          "classe": "valor_experimental_tabela_1_artigo_2013",
+          "fonte": "ukil2013",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "alanine",
+          "rf": 0.37,
+          "classe": "valor_experimental_tabela_1_artigo_2013",
+          "fonte": "ukil2013",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "glutamic_acid",
+          "rf": 0.35,
+          "classe": "valor_experimental_tabela_1_artigo_2013",
+          "fonte": "ukil2013",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "valine",
+          "rf": 0.45,
+          "classe": "valor_experimental_tabela_1_artigo_2013",
+          "fonte": "ukil2013",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "methionine",
+          "rf": 0.51,
+          "classe": "valor_experimental_tabela_1_artigo_2013",
+          "fonte": "ukil2013",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "aspartic_acid",
+          "rf": 0.33,
+          "classe": "valor_experimental_tabela_1_artigo_2013",
+          "fonte": "ukil2013",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "tyrosine",
+          "rf": 0.57,
+          "classe": "valor_experimental_tabela_1_artigo_2013",
+          "fonte": "ukil2013",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "leucine",
+          "rf": 0.55,
+          "classe": "valor_experimental_tabela_1_artigo_2013",
+          "fonte": "ukil2013",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "glycine",
+          "rf": 0.32,
+          "classe": "valor_experimental_tabela_1_artigo_2013",
+          "fonte": "ukil2013",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "proline",
+          "rf": 0.26,
+          "classe": "valor_experimental_tabela_1_artigo_2013",
+          "fonte": "ukil2013",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "tryptophan",
+          "rf": 0.62,
+          "classe": "valor_experimental_tabela_1_artigo_2013",
+          "fonte": "ukil2013",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        }
+      ],
+      "nota": "A revelação descrita não é apenas ninhidrina; a tabela também compara limites de detecção da ninhidrina, mas não relata suas cores como cores da tabela. Distâncias de frente/mancha e temperatura de eluição não informadas. Fonte primária inspecionada, homologação ainda requer identidade e conferência de condições completas."
+    },
+    {
+      "id": "tlc_spinach_dobado_hexane_acetone_7_3",
+      "tecnica": "ccd",
+      "assuntos": [
+        "pigmentos_vegetais"
+      ],
+      "status": "protocolo_educacional_online_nao_homologado",
+      "fonte": "dobado2024",
+      "referenciaSecao": "Dobado, Separation of pigments from spinach leaves; Procedure B and Table 1, revisado em maio de 2024",
+      "faseEstacionaria": {
+        "classe": "sílica gel 60F em alumínio",
+        "detalhamento": "placa de 5 x 7,5 cm, linha de aplicação a cerca de 5 mm da base"
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "hexanes_mixture",
+            "partes": 7
+          },
+          {
+            "id": "acetone",
+            "partes": 3
+          }
+        ],
+        "base": "v/v",
+        "mistura": "hexano:acetona 7:3, composição do hexano não especificada",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "visível após secagem",
+        "detectorHomologado": false,
+        "amostra": "extrato filtrado de folhas de espinafre; pigmentos podem sofrer degradação e alteração de cor; amostra não é padrão puro",
+        "corAssociadaAFonte": true
+      },
+      "dadosRf": [
+        {
+          "analito": "chlorophyll_a",
+          "rf": 0.46,
+          "classe": "valor_reportado_em_tabela_educacional",
+          "fonte": "dobado2024",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "chlorophyll_b",
+          "rf": 0.42,
+          "classe": "valor_reportado_em_tabela_educacional",
+          "fonte": "dobado2024",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "pheophytin_a",
+          "rf": 0.55,
+          "classe": "valor_reportado_em_tabela_educacional",
+          "fonte": "dobado2024",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        }
+      ],
+      "dadosRfIntervalos": [
+        {
+          "analito": "pheophytin_b",
+          "rfMin": 0.47,
+          "rfMax": 0.54,
+          "fonte": "dobado2024",
+          "classe": "intervalo_reportado_em_tabela_educacional",
+          "homologado": false,
+          "temperaturaC": null,
+          "nota": "Fonte apresenta intervalo, não valor pontual. Cor cinza; pode não ser visível. Não interpolar, arredondar ou substituir por ponto médio."
+        }
+      ],
+      "nota": "A fonte apresenta feofitina b como Rf 0,47–0,54, sem número único; os valores da mistura não provam individualização por padrão autenticado. Hexano é descrito genericamente, sem atribuir pureza de n-hexano."
+    },
+    {
+      "id": "tlc_aminoacids_protechex_etanol96_water_7_3",
+      "tecnica": "ccd",
+      "assuntos": [
+        "aminoacidos"
+      ],
+      "status": "tabela_referencia_comercial_nao_homologada",
+      "fonte": "protechex2025",
+      "referenciaSecao": "Pro-Techex Thin-Layer Chromatography Teaching Kit, quadro Rf Value Standard Chart Sheet, p. 5, Solvent I",
+      "faseEstacionaria": {
+        "classe": "placa TLC do kit",
+        "detalhamento": "material adsorvente e espessura não especificados no documento"
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "ethanol",
+            "partes": 7
+          },
+          {
+            "id": "water",
+            "partes": 3
+          }
+        ],
+        "base": "v/v",
+        "mistura": "etanol comercial 96%:água, 7:3; conteúdo adicional de água no etanol não resolvido",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "ninhidrina aplicada em spray após desenvolvimento, secagem e aquecimento leve",
+        "detectorHomologado": false,
+        "amostra": "10 mg de aminoácido em 3 mL de água, aplicação aproximada de 1 µL segundo guia do kit"
+      },
+      "dadosRf": [
+        {
+          "analito": "tryptophan",
+          "rf": 0.65,
+          "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+          "fonte": "protechex2025",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "phenylalanine",
+          "rf": 0.63,
+          "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+          "fonte": "protechex2025",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "leucine",
+          "rf": 0.61,
+          "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+          "fonte": "protechex2025",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "isoleucine",
+          "rf": 0.6,
+          "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+          "fonte": "protechex2025",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "tyrosine",
+          "rf": 0.65,
+          "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+          "fonte": "protechex2025",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "methionine",
+          "rf": 0.59,
+          "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+          "fonte": "protechex2025",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "valine",
+          "rf": 0.55,
+          "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+          "fonte": "protechex2025",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "alanine",
+          "rf": 0.47,
+          "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+          "fonte": "protechex2025",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "threonine",
+          "rf": 0.5,
+          "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+          "fonte": "protechex2025",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "serine",
+          "rf": 0.48,
+          "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+          "fonte": "protechex2025",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "glycine",
+          "rf": 0.43,
+          "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+          "fonte": "protechex2025",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "proline",
+          "rf": 0.35,
+          "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+          "fonte": "protechex2025",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "glutamic_acid",
+          "rf": 0.63,
+          "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+          "fonte": "protechex2025",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "aspartic_acid",
+          "rf": 0.55,
+          "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+          "fonte": "protechex2025",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "histidine",
+          "rf": 0.6,
+          "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+          "fonte": "protechex2025",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        }
+      ],
+      "nota": "Tabela de kit comercial, não artigo com registros experimentais completos; suporte TLC não especificado, sem desvios/incertezas. Rf não pode ser rotulado medido verificado nem homologado."
+    },
+    {
+      "id": "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2",
+      "tecnica": "ccd",
+      "assuntos": [
+        "aminoacidos"
+      ],
+      "status": "tabela_referencia_comercial_nao_homologada",
+      "fonte": "protechex2025",
+      "referenciaSecao": "Pro-Techex Thin-Layer Chromatography Teaching Kit, quadro Rf Value Standard Chart Sheet, p. 5, Solvent II",
+      "faseEstacionaria": {
+        "classe": "placa TLC do kit",
+        "detalhamento": "material adsorvente e espessura não especificados no documento"
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "butanol_1",
+            "partes": 8
+          },
+          {
+            "id": "acetic_acid",
+            "partes": 2
+          },
+          {
+            "id": "water",
+            "partes": 2
+          }
+        ],
+        "base": "v/v",
+        "mistura": "1-butanol:ácido acético:água, 8:2:2",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "ninhidrina aplicada em spray após desenvolvimento, secagem e aquecimento leve",
+        "detectorHomologado": false,
+        "amostra": "10 mg de aminoácido em 3 mL de água, aplicação aproximada de 1 µL segundo guia do kit"
+      },
+      "dadosRf": [
+        {
+          "analito": "tryptophan",
+          "rf": 0.56,
+          "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+          "fonte": "protechex2025",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "phenylalanine",
+          "rf": 0.49,
+          "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+          "fonte": "protechex2025",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "leucine",
+          "rf": 0.47,
+          "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+          "fonte": "protechex2025",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "isoleucine",
+          "rf": 0.46,
+          "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+          "fonte": "protechex2025",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "tyrosine",
+          "rf": 0.47,
+          "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+          "fonte": "protechex2025",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "methionine",
+          "rf": 0.4,
+          "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+          "fonte": "protechex2025",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "valine",
+          "rf": 0.35,
+          "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+          "fonte": "protechex2025",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "alanine",
+          "rf": 0.27,
+          "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+          "fonte": "protechex2025",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "threonine",
+          "rf": 0.25,
+          "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+          "fonte": "protechex2025",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "serine",
+          "rf": 0.22,
+          "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+          "fonte": "protechex2025",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "glycine",
+          "rf": 0.22,
+          "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+          "fonte": "protechex2025",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "proline",
+          "rf": 0.19,
+          "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+          "fonte": "protechex2025",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "glutamic_acid",
+          "rf": 0.27,
+          "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+          "fonte": "protechex2025",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "aspartic_acid",
+          "rf": 0.21,
+          "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+          "fonte": "protechex2025",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        },
+        {
+          "analito": "histidine",
+          "rf": 0.25,
+          "classe": "tabela_de_referencia_didatica_sem_dados_brutos",
+          "fonte": "protechex2025",
+          "temperaturaC": null,
+          "homologado": false,
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+        }
+      ],
+      "nota": "Segundo eluente de mesmo kit, distinto de etanol/água (Solvent I). Repetir somente a mistura BAW 12:3:5 da Amrita com proporções 8:2:2 não conta como contraste de solventes entre si; usar o sistema etanol/água para comparação. Não homologado."
     }
   ],
   "observacoes": [
     "Sem verificação individual de CAS/CID não há associação automática entre nome candidato e estrutura química.",
     "Mesmo dentro de uma classe, Rf e cor dependem do sistema experimental, suporte, solvente e detecção.",
     "Rf da mesma molécula em outra fase não pode ser reutilizado; não existe valor canônico universal.",
-    "Banco não incorpora novas substâncias à simulação sem revisão independente das condições de retenção e risco."
+    "Banco não incorpora novas substâncias à simulação sem revisão independente das condições de retenção e risco.",
+    "Pesquisa 23/11/2026: adicionados quatro protocolos rastreáveis (Ukil 2013, Dobado 2024, Pro-Techex solventes I/II), totalizando dados de 20 aminoácidos e 4 pigmentos em condições adicionais, inclusive intervalo não pontual de feofitina b. Nenhum registro foi homologado e nenhum ponto médio de faixa foi inventado."
   ]
 }
