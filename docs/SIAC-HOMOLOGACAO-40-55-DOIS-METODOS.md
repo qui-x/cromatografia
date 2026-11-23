@@ -24,8 +24,8 @@
 - **123 registros pontuais de Rf** e **um intervalo de Rf** preservado como intervalo original (feofitina b: 0,47–0,54). Quantidade de linhas ≠ quantidade de substâncias.
 - **42 substâncias** com pelo menos um método de retenção individual reportado: 20 aminoácidos, 8 corantes alimentícios, 8 pigmentos vegetais, 4 fármacos/orgânicos e 2 indicadores.
 - **40 substâncias** com pelo menos dois métodos individuais e sistemas de solventes realmente diferentes: **18 aminoácidos + 8 corantes alimentícios + 8 pigmentos + 4 fármacos/orgânicos + 2 indicadores**.
-- **Zero substâncias homologadas** pela regra estrita, pois os registros ainda não têm identidade individual e condição experimental homologadas. Especialmente, valores de uma **tabela comercial de referência didática** não equivalem a medições primárias verificadas.
-- O quadro abaixo informa **cobertura bibliográfica preliminar**, não autorização automática para o motor. Cada protocolo continua com `status != homologado`.
+- **Duas substâncias com homologação científica restrita a HPTLC**: cafeína e paracetamol, após conferir CAS/CID e dois métodos NP/RP do artigo primário de Alam et al. 2022. **Nenhuma cena do SIAC está liberada para reproduzir HPTLC**; 38 outras com dois eluentes permanecem em pesquisa. Valores de tabela didática comercial não equivalem a medições primárias verificadas.
+- O quadro abaixo informa **cobertura bibliográfica preliminar** e, agora, a exceção científica de dois métodos HPTLC conferidos; apenas esses dois protocolos têm `status = homologado` **nas condições HPTLC de origem**. Todos os demais permanecem não homologados. **Nenhum método habilita automaticamente a cena física**.
 - Projeções geométricas e bancos de solubilidade não completam lacunas de retenção.
 
 ### Fontes e métodos incorporados
@@ -67,9 +67,26 @@
 - N-hexano puro (**CAS 110-54-3**) foi incluído separadamente da mistura comercial de hexanos. Os valores físicos permanecem **nulos até encontrar fonte com pureza e temperatura adequadas**. Não transferir parâmetros de mistura comercial.
 - Nenhum destes registros é transformado automaticamente em **cor, UV, parâmetros de coluna ou previsão quantitativa** fora das condições da fonte.
 
-**Cobertura por grupo na matriz atual:** 18/20 aminoácidos; 8/11 corantes alimentícios; 8/20 pigmentos vegetais; 4/14 fármacos e orgânicos; 2/11 indicadores e traçadores. **40 com dois métodos bibliograficamente documentados; 0 completamente homologados.**
+**Cobertura por grupo na matriz atual:** 18/20 aminoácidos; 8/11 corantes alimentícios; 8/20 pigmentos vegetais; 4/14 fármacos e orgânicos; 2/11 indicadores e traçadores. **40 com dois métodos bibliograficamente documentados; 2 homologados cientificamente apenas para HPTLC; 0 liberados para cenas quantitativas.**
 
 A matriz auditável em `data/siac/matriz-cobertura-dois-metodos.v2.json` identifica, por candidato, quais métodos, sistemas eluentes, fontes, números e intervalos estão disponíveis e as pendências antes da homologação.
+
+## Lote 01: revisão de literatura primária, identidade e método (23/11/2026)
+
+**Concluídos no ramo científico, mas não disponíveis nas cenas atuais:**
+
+| Substância e identidade confirmada | NP-HPTLC em sílica gel 60F254S | RP-HPTLC em sílica de fase reversa 60F254S | Detector |
+|---|---|---|---|
+| Cafeína — PubChem CID 2519, CAS 58-08-2 | acetato de etila/etanol 85:15; Rf **0,40 ± 0,01** (n=3) | etanol/água 50:50; Rf **0,43 ± 0,01** (n=3) | densitometria de absorbância **260 nm** |
+| Paracetamol — PubChem CID 1983, CAS 103-90-2 | acetato de etila/etanol 85:15; Rf **0,59 ± 0,02** (n=3) | etanol/água 50:50; Rf **0,57 ± 0,02** (n=3) | densitometria de absorbância **260 nm** |
+
+**Fonte validada:** Alam et al., *Molecules* (2022), 27(2):405, DOI [10.3390/molecules27020405](https://doi.org/10.3390/molecules27020405), seções 2 e 3 e Tabelas 3–10; padrões Sigma-Aldrich, varredura CAMAG, desenvolvimento até 80 mm, câmara saturada 30 minutos a 22°C. Fontes de identidade molecular: [PubChem Cafeína](https://pubchem.ncbi.nlm.nih.gov/compound/2519) e [PubChem Paracetamol](https://pubchem.ncbi.nlm.nih.gov/compound/1983).
+
+**Limites obrigatórios:** RP usa outro suporte além de outro solvente; o artigo não comprova ligação C18 no suporte específico empregado, por isso **não rotular como C18**. O estudo não caracteriza pureza de cada lote de padrão, e seu resultado não é autorização para calcular concentração sem reconstruir o instrumento. Os dados de Rf e de calibração referem-se só a HPTLC nas condições descritas. Usar os números em papel cromatográfico, CCD genérica, coluna ou outra fase móvel seria extrapolação indevida.
+
+**Fonte primária conferida, mas sem homologação de repetibilidade:** Shakarova et al., *Separations* (2026) 13(11):336, [DOI 10.3390/separations13110336](https://doi.org/10.3390/separations13110336). Os resultados de alaranjado de metila (0,73 e 0,49) e Sudan IV (0,33 e 0,86) sob HFSA e duas fases móveis foram conferidos diretamente na Tabela 2. O texto registra **uma medida de Rf por condição**, sem replicatas para determinar desvio padrão; a camada HFSA teve espessura de 100 µm medida em pontos selecionados e sua homogeneidade não foi comprovada. Esses valores podem ser usados como **referência experimental individual**, sem construir tolerância ou variabilidade inexistente. A cena do SIAC não reproduz a fase HFSA.
+
+**Classificação operacional:** (1) *referência bibliográfica cadastrada*, (2) *fonte primária conferida*, (3) *homologado cientificamente para técnica e condições específicas*, (4) *habilitado no motor de simulação*. Os estados 3 e 4 **não são sinônimos**; dois registros chegaram ao 3, nenhum ao 4.
 
 ## Auditoria executável
 - Motor: `js/simulation/siac-homologacao.js`.
