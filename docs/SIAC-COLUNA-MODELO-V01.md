@@ -82,3 +82,32 @@ A prévia em `previews/coluna-laboratorio.html` é **uma página de teste intera
 - Chemistry Teaching Labs, University of York — **Loading, running & identifying fractions**: https://chemtl.york.ac.uk/techniques/purification/flash-columns/loading-running-identifying-fractions
 
 **Importante:** as equações do sistema de pratos em série e a parametrização dos exemplos são **escolhas explícitas deste modelo didático**, não resultados experimentais atribuídos a essas fontes.
+
+
+## Integração das funções Medir e Calcular
+
+O arquivo \`js/simulation/siac-metricas.js\` formaliza o contrato de análise quantitativa **sem criar medidas**. A interface só pode chamar cada função quando as observações e os dados de origem forem suficientes. Há quatro APIs independentes:
+
+| API | Entradas exigidas | Resultados | Quando NÃO executar |
+|---|---|---|---|
+| \`planarRf\` | distâncias em mm da frente e do centro das manchas, medidas da mesma origem | Rf adimensional | papel não desenvolvido, frente nula, nenhuma mancha detectada |
+| \`compareStandards\` | Rf medido, padrões com Rf, mesma fase estacionária, mesma fase móvel e detector, tolerância **declarada** | comparação de compatibilidade e diferenças | condições não comparáveis, nenhum padrão, tolerância não fundamentada |
+| \`columnMetrics\` | V_M, comprimento e volumes de retenção; largura na base se disponível | k, seletividade, Rs, N/H aproximados, tempo de retenção se vazão informada | ausência de picos, ausência de volume morto, falta de largura para Rs e N |
+| \`massRecovery\` | massa introduzida e massas coletadas nos tubos; descarte/leito se conhecidos | massa recuperada, fração percentual, massa não atribuída | massa introduzida desconhecida; nunca confundir recuperação com pureza |
+
+### Instrumentos no módulo Medir
+
+**Régua:** marca o início da aplicação, a frente da fase móvel e o centro das manchas no papel. **Cronômetro e volumetria:** leitura de intervalo de eluição, vazão, tempo de retenção. **Largura:** extensão de bandas e picos do cromatograma, com resolução/condições. **Padrões:** comparação qualitativa de resultados quando houver bibliografia/experimento de referência com método compatível; uma comparação é hipótese, não laudo de identificação.
+
+### Cálculos no módulo Calcular
+
+- **Planar:** \`Rf = d_mancha/d_frente\`.
+- **Coluna:** \`k=(V_R - V_M)/V_M\`, com \`V_R ≥ V_M > 0\`.
+- **Seletividade:** \`α=k_2/k_1\`, somente para \`k_1 > 0\`, em sistema comum.
+- **Resolução de picos:** \`Rs = 2(V_R2 - V_R1)/(w_b1+w_b2)\`, larguras no mesmo sistema e volume.
+- **Platos/eficiência:** \`N ≈ 16(V_R/w_b)²\`; \`H=L/N\`, sob hipótese de pico aproximadamente gaussiano e medidas adequadas.
+- **Recuperação:** \`100 × massa_recolhida/massa_introduzida\`; rastrear descarte e material ainda na coluna.
+
+A partir da mesma coleta F_i, o painel **Tubo em foco** mostra o resultado efetivamente recolhido; **Amostra em foco** mostra P_i, com Rf condicionado ao desenvolvimento e revelação; **Coluna em foco** exibe o sistema e seus dados de retenção. A Visão geral alterna entre os dez tubos e os dez papéis. Este estado de UI está isolado em \`feat/siac-experiencia-didatica\`, não conectado ainda à bancada principal.
+
+**Fontes:** IUPAC Recommendations 2017 (https://doi.org/10.1515/pac-2017-0111); Merck TLC Evaluation (https://www.merckmillipore.com/MY/en/analytics-sample-preparation/learning-center-thin-layer-chromatography/tlc-process/TLC-Evaluation/4tab.qB.RXkAAAFVN.VDx07e%2Cnav). Estas fórmulas são válidas somente com seus pressupostos e dimensões explícitos.
