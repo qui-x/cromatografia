@@ -1,0 +1,134 @@
+/* SIAC · módulo HPTLC: diagrama didático de posições Rf bibliográficas.
+ * Não representa foto de placa, densitograma medido ou intensidade experimental.
+ */
+#siac-catalogo .siac-catalogo-modos {grid-template-columns:repeat(3,minmax(0,1fr));}
+#siac-catalogo .siac-catalogo-modos [data-siac-modo="hptlc"]{line-height:1.15}
+#siac-hptlc-controls[hidden]{display:none!important}
+#siac-hptlc-controls .siac-hptlc-actions {display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+#siac-hptlc-controls .siac-hptlc-actions button{flex:1;min-height:38px;min-width:100px}
+#siac-hptlc-controls .siac-hptlc-actions button:disabled{opacity:.5;cursor:not-allowed}
+#siac-hptlc-stage-note{padding:8px 9px;margin-top:8px;border-radius:7px;border:1px dashed var(--border)}
+#siac-stage .siac-hptlc-scene{
+ box-sizing:border-box;width:min(100%,1040px);margin:clamp(8px,2vh,24px) auto;
+ padding:clamp(12px,2.3vw,22px);border:1px solid var(--border);
+ border-radius:14px;background:var(--panel);color:var(--text);line-height:1.45;
+}
+#siac-stage .siac-hptlc-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap}
+#siac-stage .siac-hptlc-heading h2{font-size:clamp(1.02rem,1.8vw,1.35rem);margin:0 0 5px}
+#siac-stage .siac-hptlc-heading p{font-size:.84rem;margin:0 0 12px}
+#siac-stage .siac-hptlc-heading small{
+ font-size:.7rem;color:var(--muted);border:1px solid var(--border);border-radius:6px;padding:4px 6px;
+}
+#siac-stage .siac-hptlc-bench{display:grid;grid-template-columns:minmax(240px,1.1fr) minmax(190px,.9fr);gap:clamp(12px,2vw,24px);align-items:stretch}
+#siac-stage .siac-hptlc-unit{
+ border-radius:13px;border:1px solid var(--border);
+ background:linear-gradient(150deg,#182b3b,#273b4b 62%,#142735);
+ padding:12px;box-shadow:inset 0 3px 9px #0004;
+ color:#f3f8fa;min-width:0;
+}
+#siac-stage .siac-hptlc-unit-head{
+ display:flex;align-items:center;gap:9px;font-size:.76rem;font-weight:650;
+ margin-bottom:12px;padding:7px 9px;background:#071723b0;border-radius:8px;letter-spacing:.015em;
+}
+#siac-stage .siac-hptlc-light{
+ width:8px;height:8px;border-radius:50%;background:#78d6bb;box-shadow:0 0 10px #7de4ce9c;flex:none;
+}
+#siac-stage .siac-hptlc-plate{
+ min-height:310px;border:1px solid #dce5e9;border-radius:7px;
+ background:linear-gradient(160deg,#f2f4ef,#e2e8e8);
+ box-shadow:0 2px 8px #0003,inset 0 0 14px #cbd0cf;
+ display:flex;justify-content:space-evenly;gap:10px;padding:13px 11px;
+}
+#siac-stage .siac-hptlc-lane{
+ flex:1;min-width:0;max-width:160px;display:flex;flex-direction:column;align-items:stretch;gap:4px;
+ color:#243545;font-size:.73rem;text-align:center;
+}
+#siac-stage .siac-hptlc-lane-name{font-size:.77rem;white-space:normal}
+#siac-stage .siac-hptlc-lane small{font-size:.7rem;line-height:1.3;font-variant-numeric:tabular-nums}
+#siac-stage .siac-hptlc-glass{
+ position:relative;flex:1;min-height:230px;max-height:240px;border-inline:1px dashed #9aaab266;
+ background:linear-gradient(90deg,transparent,#b3bcc229,transparent);
+}
+#siac-stage .siac-hptlc-origin,#siac-stage .siac-hptlc-front{
+ position:absolute;left:4%;right:4%;height:1px;z-index:1;pointer-events:none;
+}
+#siac-stage .siac-hptlc-origin{bottom:12%;border-bottom:2px dashed #636f7a}
+#siac-stage .siac-hptlc-front{bottom:86%;border-top:2px dashed #849a9f}
+#siac-stage .siac-hptlc-applied{
+ position:absolute;left:calc(50% - 4px);bottom:calc(12% - 4px);width:8px;height:8px;
+ background:#506270;border-radius:50%;animation:siac-hptlc-appear .5s ease-out;
+}
+#siac-stage .siac-hptlc-band{
+ position:absolute;left:8%;right:8%;height:15px;cursor:pointer;
+ border:2px solid #237a87;border-radius:60% 55% 50% 40%;
+ background:#80d3cc80;box-shadow:0 0 0 1px #ffffffa0;z-index:2;
+ transform:translateY(50%);animation:siac-hptlc-appear .7s ease-out;
+}
+#siac-stage .siac-hptlc-lane:nth-child(even) .siac-hptlc-band{
+ border-color:#8664b7;background:#ba9be090;
+}
+#siac-stage .siac-hptlc-lane.is-focused .siac-hptlc-band,
+#siac-stage .siac-hptlc-band:focus-visible{outline:3px solid #e9a12d;outline-offset:3px}
+#siac-stage .siac-hptlc-band-mark{position:absolute;inset:0}
+#siac-stage .siac-hptlc-side{display:flex;flex-direction:column;gap:6px}
+#siac-stage .siac-hptlc-side h3{font-size:1rem;margin:4px 0}
+#siac-stage .siac-hptlc-side p{margin:3px 0 8px;font-size:.82rem}
+#siac-stage .siac-hptlc-waiting{
+ flex:1;min-height:135px;display:grid;place-items:center;
+ border:1px dashed var(--border);border-radius:9px;padding:12px;text-align:center;
+ font-size:.81rem;color:var(--muted)
+}
+#siac-stage .siac-hptlc-profile{
+ margin-top:auto;padding:12px 9px;background:var(--panel2);border:1px solid var(--border);
+ border-radius:10px;min-width:0;
+}
+#siac-stage .siac-hptlc-axis{display:flex;justify-content:space-between;font-size:.68rem;color:var(--muted)}
+#siac-stage .siac-hptlc-track{
+ position:relative;border-bottom:2px solid var(--muted);margin:6px 7px 9px;height:40px;
+ background:repeating-linear-gradient(to right,transparent 0%,transparent 19.6%,var(--border) 20%);
+}
+#siac-stage .siac-hptlc-marker{
+ position:absolute;bottom:-3px;width:3px;height:33px;border:0;background:#14888b;
+ padding:0;cursor:pointer;transform:translateX(-50%);
+ box-shadow:0 0 0 2px var(--panel2);border-radius:3px;
+}
+#siac-stage .siac-hptlc-marker:nth-child(even){background:#9770bd;height:25px}
+#siac-stage .siac-hptlc-marker:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+#siac-stage .siac-hptlc-hint,#siac-stage .siac-hptlc-source,
+#siac-ver .siac-hptlc-source,#siac-dados .siac-hptlc-hint{font-size:.75rem;color:var(--muted)}
+#siac-stage .siac-hptlc-hint{margin:7px 0 0}
+#siac-stage .siac-hptlc-unit .siac-hptlc-hint{color:#d5e4e9}
+#siac-stage .siac-hptlc-source{margin:13px 0 0;overflow-wrap:anywhere}
+#siac-stage .siac-hptlc-source a,#siac-ver .siac-hptlc-source a,#siac-dados a{color:var(--accent)}
+#siac-stage .siac-hptlc-comparison{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+#siac-stage .siac-hptlc-comparison article{border:1px solid var(--border);border-radius:11px;padding:13px;background:var(--panel2)}
+#siac-stage .siac-hptlc-comparison h3{font-size:.97rem;margin:0 0 7px}
+#siac-stage .siac-hptlc-comparison p{margin:6px 0;font-size:.82rem}
+#siac-stage .siac-hptlc-comparison-values{border-top:1px solid var(--border);margin-top:9px;padding-top:6px}
+#siac-dados .siac-hptlc-dl{font-size:.82rem}
+#siac-dados .siac-hptlc-dl>div{display:grid;grid-template-columns:minmax(82px,38%) 1fr;gap:8px;padding:7px 2px;border-bottom:1px solid var(--border)}
+#siac-dados .siac-hptlc-dl dt{font-weight:700}
+#siac-dados .siac-hptlc-dl dd{margin:0;overflow-wrap:anywhere}
+#siac-ver .siac-hptlc-tabela,#siac-dados .siac-hptlc-tabela{width:100%;border-collapse:collapse;font-size:.8rem;font-variant-numeric:tabular-nums}
+#siac-ver .siac-hptlc-tabela th,#siac-ver .siac-hptlc-tabela td,
+#siac-dados .siac-hptlc-tabela th,#siac-dados .siac-hptlc-tabela td{
+ padding:8px 6px;border-bottom:1px solid var(--border);text-align:left
+}
+@keyframes siac-hptlc-appear{from{opacity:0;scale:.75}to{opacity:1;scale:1}}
+@container siac-bancada (max-width:730px){
+ #siac-stage .siac-hptlc-bench{grid-template-columns:1fr}
+ #siac-stage .siac-hptlc-plate{min-height:280px}
+ #siac-stage .siac-hptlc-glass{min-height:210px}
+}
+@media (max-width:540px){
+ #siac-stage .siac-hptlc-scene{padding:11px;margin:8px auto}
+ #siac-stage .siac-hptlc-bench,#siac-stage .siac-hptlc-comparison{grid-template-columns:minmax(0,1fr)}
+ #siac-stage .siac-hptlc-unit{padding:9px}
+ #siac-stage .siac-hptlc-plate{min-height:250px;padding:9px 7px}
+ #siac-stage .siac-hptlc-glass{min-height:190px}
+ #siac-catalogo .siac-catalogo-modos{gap:4px}
+ #siac-catalogo .siac-catalogo-modos button{font-size:.69rem;padding:6px 2px;overflow-wrap:anywhere}
+}
+@media (prefers-reduced-motion:reduce){
+ #siac-stage .siac-hptlc-band,#siac-stage .siac-hptlc-applied{animation:none}
+}
