@@ -258,3 +258,23 @@ Cada propriedade deve ter campos mínimos: valor, unidade, temperatura, pressão
 ---
 
 **Natureza deste registro:** resultado de pesquisa e curadoria preliminar com valores e fontes explicitamente documentados; não significa que os compostos estejam disponíveis na interface, nem que a simulação já seja preditiva.
+
+## 12. Fases estacionárias: complemento do registro
+
+**A pesquisa foi ampliada para 18 classes e produtos de fases estacionárias**, documentados em `data/siac/fases-estacionarias.v1.json`. O catálogo cobre papel/celulose, sílica e sílica F254/F366, aluminas, fases reversas RP-8 e RP-18, sílica para coluna, resinas de troca iônica, resinas de exclusão por tamanho e carbono grafítico poroso.
+
+Todos os atributos genéricos **permanecem nulos** — granulometria, porosidade, espessura, molhabilidade, capacidade e permeabilidade exigem referência do produto, lote e método. Uma fase F254 não é sinônimo de “qualquer sílica”, assim como a resina de troca iônica não deve usar coeficientes de adsorção de sílica.
+
+### Único exemplo de especificação com parâmetros numéricos neste lote
+
+A ficha da **Cytiva PD MiniTrap G-25** indica resina Sephadex G-25, partículas de **85–260 µm** e limite de exclusão próximo de **massa molar relativa 5.000**. Esses números pertencem **ao produto específico**, não à família inteira. A ficha também contém condições de coluna, volume e pH; são registrados apenas quando houver interesse em simular aquele produto, sem converter automaticamente à geometria da coluna atual.
+
+### Referências adicionais
+
+- Merck, camadas e sistemas TLC: https://www.merckmillipore.com/INTL/en/analytics-sample-preparation/learning-center-thin-layer-chromatography/tlc-process/tlc-tips-tricks/d4Kb.qB.r4MAAAFViSVDx07i%2Cnav
+- Merck, fases reversas RP-2/RP-8/RP-18: https://www.merckmillipore.com/CH/de/products/analytics-sample-prep/chromatography-for-analysis/thin-layer-chromatography/tlc-plates-thin-layer-chromatography/rp-modified-silica-plates/rdmb.qB.ITwAAAFAjvtkiQpx%2Cnav
+- Cytiva, PD MiniTrap G-25, instrução 28922529 (p. 14): https://d3.cytivalifesciences.com/prod/IFU/28922529.pdf
+- Cytiva, cromatografia de troca iônica: https://www.mz-at.de/media/fileadmin/user_upload/Downloads/cytiva/Technical-Support_Datasheets_Anwendungen/cytiva_ion-exchange-chromatography-handbook_hplc_technical-support.pdf
+- Thermo Fisher, carbono grafítico poroso (Hypercarb): https://www.thermofisher.com/us/en/home/industrial/chromatography/liquid-chromatography-lc/hplc-uhplc-columns/hypercarb-hplc-uhplc-columns.html
+
+**Status:** as 18 entradas são classificações de pesquisa com fontes, não resultados de retenção calculados, métodos homologados ou novos itens visíveis na bancada. 

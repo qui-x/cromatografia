@@ -1,0 +1,598 @@
+{
+  "version": "0.1-research-2026-11-23",
+  "status": "PESQUISA_NAO_HOMOLOGADA",
+  "advertencia": "Catálogo de tipos e um exemplo de produto; NÃO são medidas generalizáveis para toda a fase estacionária, e não calculam Rf/retencao.",
+  "fontes": {
+    "MERCK_TLC": {
+      "url": "https://www.merckmillipore.com/INTL/en/analytics-sample-preparation/learning-center-thin-layer-chromatography/tlc-process/tlc-tips-tricks/d4Kb.qB.r4MAAAFViSVDx07i%2Cnav",
+      "observacao": "Família de adsorventes citados no guia; não constitui especificação de todos os produtos."
+    },
+    "MERCK_PLC": {
+      "url": "https://www.sigmaaldrich.com/US/en/technical-documents/protocol/analytical-chemistry/thin-layer-chromatography/plc-plates",
+      "observacao": "Referência de produtos PLC; família não determina espessura, desempenho ou grau específico."
+    },
+    "CYTIVA_G25": {
+      "url": "https://d3.cytivalifesciences.com/prod/IFU/28922529.pdf",
+      "observacao": "Instrução de uso de produto Sephadex G-25; propriedades dependem do grau/suporte."
+    },
+    "CYTIVA_SEC": {
+      "url": "https://cdn.cytivalifesciences.com.cn/api/public/content/digi-14230-pdf",
+      "observacao": "Catálogo de exclusão por tamanho; conferir fabricante, grau e solução."
+    },
+    "HPTLC_ATLAS": {
+      "url": "https://www.hptlc-association.org/atlas/about-hptlc-atlas.cfm",
+      "observacao": "Atlas/protocolo genérico; a existência de categoria não certifica catálogo de produtos."
+    },
+    "CYTIVA_ION_EXCHANGE": {
+      "url": "https://www.mz-at.de/media/fileadmin/user_upload/Downloads/cytiva/Technical-Support_Datasheets_Anwendungen/cytiva_ion-exchange-chromatography-handbook_hplc_technical-support.pdf",
+      "observacao": "Handbook da Cytiva: Q/SP Sepharose e classes de troca iônica; parâmetros por produto."
+    },
+    "MERCK_RP": {
+      "url": "https://www.merckmillipore.com/CH/de/products/analytics-sample-prep/chromatography-for-analysis/thin-layer-chromatography/tlc-plates-thin-layer-chromatography/rp-modified-silica-plates/rdmb.qB.ITwAAAFAjvtkiQpx%2Cnav",
+      "observacao": "RP-2, RP-8, RP-18 são sílicas funcionalizadas; retenção depende da cadeia e grau de modificação."
+    },
+    "THERMO_CARBON": {
+      "url": "https://www.thermofisher.com/us/en/home/industrial/chromatography/liquid-chromatography-lc/hplc-uhplc-columns/hypercarb-hplc-uhplc-columns.html",
+      "observacao": "Exemplo de fase estacionária de carbono grafítico poroso em LC, não carvão ativado granular genérico."
+    }
+  },
+  "fasesEstacionarias": [
+    {
+      "id": "paper_filter_cellulose",
+      "nome": "Papel de filtro à base de celulose",
+      "material": "celulose",
+      "forma": "papel",
+      "principio": "particao_adsorcao",
+      "tecnicas": [
+        "papel"
+      ],
+      "sourceId": "MERCK_TLC",
+      "estado": "candidato_sem_parametros",
+      "propriedades": {
+        "granulometriaUm": null,
+        "areaSuperficialM2g": null,
+        "diametroPoroNm": null,
+        "porosidade": null,
+        "camadaEspessuraMm": null,
+        "capacidadeAdsorcao": null,
+        "permeabilidadeM2": null,
+        "molhabilidadeAnguloContatoGrau": null,
+        "coeficienteCapilaridade": null,
+        "faixaPH": null
+      },
+      "deteccao": {
+        "indicadorF254": null,
+        "indicadorF366": null
+      },
+      "observacao": "Classe de fase estacionária. Parâmetros de leito e afinidade de soluto–fase devem ser fornecidos por lote/protocolo, não inferidos pela classe."
+    },
+    {
+      "id": "paper_chromatography_cellulose",
+      "nome": "Papel cromatográfico de celulose",
+      "material": "celulose",
+      "forma": "papel",
+      "principio": "particao_adsorcao",
+      "tecnicas": [
+        "papel"
+      ],
+      "sourceId": "HPTLC_ATLAS",
+      "estado": "candidato_sem_parametros",
+      "propriedades": {
+        "granulometriaUm": null,
+        "areaSuperficialM2g": null,
+        "diametroPoroNm": null,
+        "porosidade": null,
+        "camadaEspessuraMm": null,
+        "capacidadeAdsorcao": null,
+        "permeabilidadeM2": null,
+        "molhabilidadeAnguloContatoGrau": null,
+        "coeficienteCapilaridade": null,
+        "faixaPH": null
+      },
+      "deteccao": {
+        "indicadorF254": null,
+        "indicadorF366": null
+      },
+      "observacao": "Classe de fase estacionária. Parâmetros de leito e afinidade de soluto–fase devem ser fornecidos por lote/protocolo, não inferidos pela classe."
+    },
+    {
+      "id": "tlc_cellulose",
+      "nome": "Camada delgada de celulose",
+      "material": "celulose",
+      "forma": "placa",
+      "principio": "particao_adsorcao",
+      "tecnicas": [
+        "ccd",
+        "hptlc"
+      ],
+      "sourceId": "MERCK_TLC",
+      "estado": "candidato_sem_parametros",
+      "propriedades": {
+        "granulometriaUm": null,
+        "areaSuperficialM2g": null,
+        "diametroPoroNm": null,
+        "porosidade": null,
+        "camadaEspessuraMm": null,
+        "capacidadeAdsorcao": null,
+        "permeabilidadeM2": null,
+        "molhabilidadeAnguloContatoGrau": null,
+        "coeficienteCapilaridade": null,
+        "faixaPH": null
+      },
+      "deteccao": {
+        "indicadorF254": null,
+        "indicadorF366": null
+      },
+      "observacao": "Classe de fase estacionária. Parâmetros de leito e afinidade de soluto–fase devem ser fornecidos por lote/protocolo, não inferidos pela classe."
+    },
+    {
+      "id": "tlc_silica_gel_60",
+      "nome": "Sílica gel 60 normal",
+      "material": "sílica",
+      "forma": "placa",
+      "principio": "adsorcao_polar",
+      "tecnicas": [
+        "ccd",
+        "hptlc",
+        "coluna"
+      ],
+      "sourceId": "MERCK_TLC",
+      "estado": "candidato_sem_parametros",
+      "propriedades": {
+        "granulometriaUm": null,
+        "areaSuperficialM2g": null,
+        "diametroPoroNm": null,
+        "porosidade": null,
+        "camadaEspessuraMm": null,
+        "capacidadeAdsorcao": null,
+        "permeabilidadeM2": null,
+        "molhabilidadeAnguloContatoGrau": null,
+        "coeficienteCapilaridade": null,
+        "faixaPH": null
+      },
+      "deteccao": {
+        "indicadorF254": null,
+        "indicadorF366": null
+      },
+      "observacao": "Classe de fase estacionária. Parâmetros de leito e afinidade de soluto–fase devem ser fornecidos por lote/protocolo, não inferidos pela classe."
+    },
+    {
+      "id": "tlc_silica_gel_60_f254",
+      "nome": "Sílica gel 60 F254",
+      "material": "sílica",
+      "forma": "placa",
+      "principio": "adsorcao_polar",
+      "tecnicas": [
+        "ccd",
+        "hptlc",
+        "coluna"
+      ],
+      "sourceId": "MERCK_PLC",
+      "estado": "candidato_sem_parametros",
+      "propriedades": {
+        "granulometriaUm": null,
+        "areaSuperficialM2g": null,
+        "diametroPoroNm": null,
+        "porosidade": null,
+        "camadaEspessuraMm": null,
+        "capacidadeAdsorcao": null,
+        "permeabilidadeM2": null,
+        "molhabilidadeAnguloContatoGrau": null,
+        "coeficienteCapilaridade": null,
+        "faixaPH": null
+      },
+      "deteccao": {
+        "indicadorF254": true,
+        "indicadorF366": null
+      },
+      "observacao": "Classe de fase estacionária. Parâmetros de leito e afinidade de soluto–fase devem ser fornecidos por lote/protocolo, não inferidos pela classe."
+    },
+    {
+      "id": "tlc_silica_gel_60_f254_366",
+      "nome": "Sílica gel 60 F254 + F366",
+      "material": "sílica",
+      "forma": "placa",
+      "principio": "adsorcao_polar",
+      "tecnicas": [
+        "ccd",
+        "hptlc"
+      ],
+      "sourceId": "MERCK_PLC",
+      "estado": "candidato_sem_parametros",
+      "propriedades": {
+        "granulometriaUm": null,
+        "areaSuperficialM2g": null,
+        "diametroPoroNm": null,
+        "porosidade": null,
+        "camadaEspessuraMm": null,
+        "capacidadeAdsorcao": null,
+        "permeabilidadeM2": null,
+        "molhabilidadeAnguloContatoGrau": null,
+        "coeficienteCapilaridade": null,
+        "faixaPH": null
+      },
+      "deteccao": {
+        "indicadorF254": true,
+        "indicadorF366": true
+      },
+      "observacao": "Classe de fase estacionária. Parâmetros de leito e afinidade de soluto–fase devem ser fornecidos por lote/protocolo, não inferidos pela classe."
+    },
+    {
+      "id": "tlc_silica_rp18",
+      "nome": "Sílica RP-18 (C18)",
+      "material": "sílica_funcionalizada",
+      "forma": "placa",
+      "principio": "fase_reversa",
+      "tecnicas": [
+        "ccd",
+        "hptlc",
+        "coluna"
+      ],
+      "sourceId": "MERCK_RP",
+      "estado": "candidato_sem_parametros",
+      "propriedades": {
+        "granulometriaUm": null,
+        "areaSuperficialM2g": null,
+        "diametroPoroNm": null,
+        "porosidade": null,
+        "camadaEspessuraMm": null,
+        "capacidadeAdsorcao": null,
+        "permeabilidadeM2": null,
+        "molhabilidadeAnguloContatoGrau": null,
+        "coeficienteCapilaridade": null,
+        "faixaPH": null
+      },
+      "deteccao": {
+        "indicadorF254": null,
+        "indicadorF366": null
+      },
+      "observacao": "Classe de fase estacionária. Parâmetros de leito e afinidade de soluto–fase devem ser fornecidos por lote/protocolo, não inferidos pela classe."
+    },
+    {
+      "id": "tlc_silica_rp8",
+      "nome": "Sílica RP-8 (C8)",
+      "material": "sílica_funcionalizada",
+      "forma": "placa",
+      "principio": "fase_reversa",
+      "tecnicas": [
+        "ccd",
+        "hptlc",
+        "coluna"
+      ],
+      "sourceId": "MERCK_RP",
+      "estado": "candidato_sem_parametros",
+      "propriedades": {
+        "granulometriaUm": null,
+        "areaSuperficialM2g": null,
+        "diametroPoroNm": null,
+        "porosidade": null,
+        "camadaEspessuraMm": null,
+        "capacidadeAdsorcao": null,
+        "permeabilidadeM2": null,
+        "molhabilidadeAnguloContatoGrau": null,
+        "coeficienteCapilaridade": null,
+        "faixaPH": null
+      },
+      "deteccao": {
+        "indicadorF254": null,
+        "indicadorF366": null
+      },
+      "observacao": "Classe de fase estacionária. Parâmetros de leito e afinidade de soluto–fase devem ser fornecidos por lote/protocolo, não inferidos pela classe."
+    },
+    {
+      "id": "tlc_alumina_neutral",
+      "nome": "Alumina neutra",
+      "material": "alumina",
+      "forma": "placa",
+      "principio": "adsorcao_polar",
+      "tecnicas": [
+        "ccd",
+        "coluna"
+      ],
+      "sourceId": "MERCK_TLC",
+      "estado": "candidato_sem_parametros",
+      "propriedades": {
+        "granulometriaUm": null,
+        "areaSuperficialM2g": null,
+        "diametroPoroNm": null,
+        "porosidade": null,
+        "camadaEspessuraMm": null,
+        "capacidadeAdsorcao": null,
+        "permeabilidadeM2": null,
+        "molhabilidadeAnguloContatoGrau": null,
+        "coeficienteCapilaridade": null,
+        "faixaPH": null
+      },
+      "deteccao": {
+        "indicadorF254": null,
+        "indicadorF366": null
+      },
+      "observacao": "Classe de fase estacionária. Parâmetros de leito e afinidade de soluto–fase devem ser fornecidos por lote/protocolo, não inferidos pela classe."
+    },
+    {
+      "id": "tlc_alumina_acid",
+      "nome": "Alumina ácida",
+      "material": "alumina",
+      "forma": "placa",
+      "principio": "adsorcao_polar",
+      "tecnicas": [
+        "ccd",
+        "coluna"
+      ],
+      "sourceId": "MERCK_TLC",
+      "estado": "candidato_sem_parametros",
+      "propriedades": {
+        "granulometriaUm": null,
+        "areaSuperficialM2g": null,
+        "diametroPoroNm": null,
+        "porosidade": null,
+        "camadaEspessuraMm": null,
+        "capacidadeAdsorcao": null,
+        "permeabilidadeM2": null,
+        "molhabilidadeAnguloContatoGrau": null,
+        "coeficienteCapilaridade": null,
+        "faixaPH": null
+      },
+      "deteccao": {
+        "indicadorF254": null,
+        "indicadorF366": null
+      },
+      "observacao": "Classe de fase estacionária. Parâmetros de leito e afinidade de soluto–fase devem ser fornecidos por lote/protocolo, não inferidos pela classe."
+    },
+    {
+      "id": "tlc_alumina_basic",
+      "nome": "Alumina básica",
+      "material": "alumina",
+      "forma": "placa",
+      "principio": "adsorcao_polar",
+      "tecnicas": [
+        "ccd",
+        "coluna"
+      ],
+      "sourceId": "MERCK_TLC",
+      "estado": "candidato_sem_parametros",
+      "propriedades": {
+        "granulometriaUm": null,
+        "areaSuperficialM2g": null,
+        "diametroPoroNm": null,
+        "porosidade": null,
+        "camadaEspessuraMm": null,
+        "capacidadeAdsorcao": null,
+        "permeabilidadeM2": null,
+        "molhabilidadeAnguloContatoGrau": null,
+        "coeficienteCapilaridade": null,
+        "faixaPH": null
+      },
+      "deteccao": {
+        "indicadorF254": null,
+        "indicadorF366": null
+      },
+      "observacao": "Classe de fase estacionária. Parâmetros de leito e afinidade de soluto–fase devem ser fornecidos por lote/protocolo, não inferidos pela classe."
+    },
+    {
+      "id": "column_silica",
+      "nome": "Sílica gel para coluna",
+      "material": "sílica",
+      "forma": "leito",
+      "principio": "adsorcao_polar",
+      "tecnicas": [
+        "coluna"
+      ],
+      "sourceId": "MERCK_PLC",
+      "estado": "candidato_sem_parametros",
+      "propriedades": {
+        "granulometriaUm": null,
+        "areaSuperficialM2g": null,
+        "diametroPoroNm": null,
+        "porosidade": null,
+        "camadaEspessuraMm": null,
+        "capacidadeAdsorcao": null,
+        "permeabilidadeM2": null,
+        "molhabilidadeAnguloContatoGrau": null,
+        "coeficienteCapilaridade": null,
+        "faixaPH": null
+      },
+      "deteccao": {
+        "indicadorF254": null,
+        "indicadorF366": null
+      },
+      "observacao": "Classe de fase estacionária. Parâmetros de leito e afinidade de soluto–fase devem ser fornecidos por lote/protocolo, não inferidos pela classe."
+    },
+    {
+      "id": "column_c18",
+      "nome": "Sílica C18 para coluna",
+      "material": "sílica_funcionalizada",
+      "forma": "leito",
+      "principio": "fase_reversa",
+      "tecnicas": [
+        "coluna"
+      ],
+      "sourceId": "MERCK_PLC",
+      "estado": "candidato_sem_parametros",
+      "propriedades": {
+        "granulometriaUm": null,
+        "areaSuperficialM2g": null,
+        "diametroPoroNm": null,
+        "porosidade": null,
+        "camadaEspessuraMm": null,
+        "capacidadeAdsorcao": null,
+        "permeabilidadeM2": null,
+        "molhabilidadeAnguloContatoGrau": null,
+        "coeficienteCapilaridade": null,
+        "faixaPH": null
+      },
+      "deteccao": {
+        "indicadorF254": null,
+        "indicadorF366": null
+      },
+      "observacao": "Classe de fase estacionária. Parâmetros de leito e afinidade de soluto–fase devem ser fornecidos por lote/protocolo, não inferidos pela classe."
+    },
+    {
+      "id": "column_ion_exchange_cation",
+      "nome": "Resina trocadora de cátions",
+      "material": "resina",
+      "forma": "leito",
+      "principio": "troca_ionica",
+      "tecnicas": [
+        "coluna"
+      ],
+      "sourceId": "CYTIVA_ION_EXCHANGE",
+      "estado": "candidato_sem_parametros",
+      "propriedades": {
+        "granulometriaUm": null,
+        "areaSuperficialM2g": null,
+        "diametroPoroNm": null,
+        "porosidade": null,
+        "camadaEspessuraMm": null,
+        "capacidadeAdsorcao": null,
+        "permeabilidadeM2": null,
+        "molhabilidadeAnguloContatoGrau": null,
+        "coeficienteCapilaridade": null,
+        "faixaPH": null
+      },
+      "deteccao": {
+        "indicadorF254": null,
+        "indicadorF366": null
+      },
+      "observacao": "Classe de fase estacionária. Parâmetros de leito e afinidade de soluto–fase devem ser fornecidos por lote/protocolo, não inferidos pela classe."
+    },
+    {
+      "id": "column_ion_exchange_anion",
+      "nome": "Resina trocadora de ânions",
+      "material": "resina",
+      "forma": "leito",
+      "principio": "troca_ionica",
+      "tecnicas": [
+        "coluna"
+      ],
+      "sourceId": "CYTIVA_ION_EXCHANGE",
+      "estado": "candidato_sem_parametros",
+      "propriedades": {
+        "granulometriaUm": null,
+        "areaSuperficialM2g": null,
+        "diametroPoroNm": null,
+        "porosidade": null,
+        "camadaEspessuraMm": null,
+        "capacidadeAdsorcao": null,
+        "permeabilidadeM2": null,
+        "molhabilidadeAnguloContatoGrau": null,
+        "coeficienteCapilaridade": null,
+        "faixaPH": null
+      },
+      "deteccao": {
+        "indicadorF254": null,
+        "indicadorF366": null
+      },
+      "observacao": "Classe de fase estacionária. Parâmetros de leito e afinidade de soluto–fase devem ser fornecidos por lote/protocolo, não inferidos pela classe."
+    },
+    {
+      "id": "column_sephadex_g25",
+      "nome": "Sephadex G-25 (resina de exclusão)",
+      "material": "dextrana_reticulada",
+      "forma": "leito",
+      "principio": "exclusao_por_tamanho",
+      "tecnicas": [
+        "coluna"
+      ],
+      "sourceId": "CYTIVA_G25",
+      "estado": "candidato_sem_parametros",
+      "propriedades": {
+        "granulometriaUm": null,
+        "areaSuperficialM2g": null,
+        "diametroPoroNm": null,
+        "porosidade": null,
+        "camadaEspessuraMm": null,
+        "capacidadeAdsorcao": null,
+        "permeabilidadeM2": null,
+        "molhabilidadeAnguloContatoGrau": null,
+        "coeficienteCapilaridade": null,
+        "faixaPH": null
+      },
+      "deteccao": {
+        "indicadorF254": null,
+        "indicadorF366": null
+      },
+      "observacao": "Classe de fase estacionária. Parâmetros de leito e afinidade de soluto–fase devem ser fornecidos por lote/protocolo, não inferidos pela classe.",
+      "exemploProduto": {
+        "descricao": "PD MiniTrap G-25 pré-empacotada, Cytiva (somente esta apresentação)",
+        "fonte": "CYTIVA_G25",
+        "tamanhoParticulaUm": {
+          "min": 85,
+          "max": 260,
+          "medicao": "faixa informada pela instrução de uso"
+        },
+        "limiteExclusaoMassaMolarAproxDa": {
+          "value": 5000,
+          "nota": "limite aproximado por massa molar; molécula e meio importam"
+        },
+        "validacao": "Dados extraídos do quadro de características da IFU 28922529, p. 14; não extrapolar para toda a família Sephadex G-25."
+      }
+    },
+    {
+      "id": "column_polymer_sec",
+      "nome": "Resina polimérica de exclusão por tamanho",
+      "material": "resina",
+      "forma": "leito",
+      "principio": "exclusao_por_tamanho",
+      "tecnicas": [
+        "coluna"
+      ],
+      "sourceId": "CYTIVA_SEC",
+      "estado": "candidato_sem_parametros",
+      "propriedades": {
+        "granulometriaUm": null,
+        "areaSuperficialM2g": null,
+        "diametroPoroNm": null,
+        "porosidade": null,
+        "camadaEspessuraMm": null,
+        "capacidadeAdsorcao": null,
+        "permeabilidadeM2": null,
+        "molhabilidadeAnguloContatoGrau": null,
+        "coeficienteCapilaridade": null,
+        "faixaPH": null
+      },
+      "deteccao": {
+        "indicadorF254": null,
+        "indicadorF366": null
+      },
+      "observacao": "Classe de fase estacionária. Parâmetros de leito e afinidade de soluto–fase devem ser fornecidos por lote/protocolo, não inferidos pela classe."
+    },
+    {
+      "id": "column_porous_graphitic_carbon",
+      "nome": "Carbono grafítico poroso para cromatografia líquida",
+      "material": "carbono_grafitico_poroso",
+      "forma": "leito",
+      "principio": "adsorcao",
+      "tecnicas": [
+        "coluna"
+      ],
+      "sourceId": "THERMO_CARBON",
+      "estado": "candidato_sem_parametros",
+      "propriedades": {
+        "granulometriaUm": null,
+        "areaSuperficialM2g": null,
+        "diametroPoroNm": null,
+        "porosidade": null,
+        "camadaEspessuraMm": null,
+        "capacidadeAdsorcao": null,
+        "permeabilidadeM2": null,
+        "molhabilidadeAnguloContatoGrau": null,
+        "coeficienteCapilaridade": null,
+        "faixaPH": null
+      },
+      "deteccao": {
+        "indicadorF254": null,
+        "indicadorF366": null
+      },
+      "observacao": "Fase de carbono grafítico poroso (PGC), não equivalente a carvão ativado granular; retenção e seletividade dependem do sistema experimental."
+    }
+  ],
+  "recomendacoes": [
+    "Catálogo de suporte inclui papel e placa (planar) e leitos de coluna. O modelo de coluna não deve herdar valores Rf do suporte planar.",
+    "F254 e F366 são propriedades de indicador em placas específicas, não atributo obrigatório de toda sílica.",
+    "Porosidade, diâmetro de poro e permeabilidade não são valores universais da categoria de adsorvente.",
+    "Deixar parâmetros ausentes como null: não construir retenção com propriedades arbitrárias do suporte.",
+    "A interação depende de solvente, analito, pH quando aplicável, adsorvente, temperatura e condições de preparo.",
+    "Para resinas de exclusão por tamanho ou troca iônica deve ser escolhido modelo de mecanismo distinto de adsorção normal e parâmetros próprios."
+  ]
+}
