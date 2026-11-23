@@ -26,9 +26,9 @@ unique(stationary.fasesEstacionarias,"fases estacionárias");
 assert.equal(solvents.status,"PESQUISA_NAO_HOMOLOGADA");
 assert.equal(analytes.status,"PESQUISA_NAO_HOMOLOGADA");
 assert.equal(engines.status,"candidatos_nao_integrados");
-assert.equal(solvents.solventes.length,41);
+assert.equal(solvents.solventes.length,42);
 assert.equal(analytes.candidatos.length,76);
-assert.equal(analytes.protocolos.length,15);
+assert.equal(analytes.protocolos.length,29);
 assert.equal(engines.motores.length,9);
 assert.equal(stationary.status,"PESQUISA_NAO_HOMOLOGADA");
 assert.equal(stationary.fasesEstacionarias.length,18);
@@ -53,6 +53,13 @@ for(const [id,source] of Object.entries(analytes.fontes))url(source);
 for(const item of engines.fontes)url(item.url);
 const completeDensity=solvents.solventes.filter(s=>s.propriedades.densidade);
 assert.equal(completeDensity.length,23);
+const nhex=solvents.solventes.find(s=>s.id==="n_hexane");
+assert(nhex&&nhex.cas==="110-54-3"&&nhex.tipo==="substancia");
+assert.notEqual(nhex.id,"hexanes_mixture");
+assert(Object.values(nhex.propriedades).every(v=>v===null),
+ "n-hexano não deve herdar propriedades da mistura comercial");
+assert.equal(nhex.miscibilidadeComAgua,null);
+
 for(const s of solvents.solventes){
   assert(s.seguranca?.status.includes("revisao"),"Revisão de segurança faltando: "+s.id);
   for(const [prop,obs] of Object.entries(s.propriedades)){
@@ -104,7 +111,7 @@ for(const p of analytes.protocolos){
     rfs++;
   }
 }
-assert.equal(rfs,98);
+assert.equal(rfs,123);
 let intervalos=0;
 for(const p of analytes.protocolos){
  for(const r of (p.dadosRfIntervalos||[])){
@@ -126,6 +133,41 @@ assert.equal(jecfa.length,3);
 assert.equal(sobanska.length,2);
 assert.equal(jecfa.reduce((n,p)=>n+p.dadosRf.length,0),16);
 assert.equal(sobanska.reduce((n,p)=>n+p.dadosRf.length,0),8);
+const novos=[
+ "tlc_hfsa_2026_mph1_hexane_isopropanol",
+ "tlc_hfsa_2026_mph2_hexane_isopropanol_water_acetic",
+ "tlc_quercetin2010_system1_toluene_ethylacetate_acetic",
+ "tlc_quercetin2010_system4_toluene_acetic",
+ "tlc_curcumin2017_toluene_ethylacetate_95_5",
+ "tlc_curcumin2017_dcm_methanol_95_5",
+ "hptlc_green2022_normal_ethylacetate_ethanol_85_15",
+ "hptlc_green2022_reverse_ethanol_water_50_50",
+ "tlc_ibuprofen2016_chloroform_acetone_8_2",
+ "tlc_ibuprofen2016_ethylacetate_pure",
+ "tlc_analgesics_stevens_ethyacetate_pure",
+ "tlc_analgesics_bentonite2021_mixed_eluent",
+ "tlc_carotenoids_yuangsoi2008_petroleumether_diethylether_acetone",
+ "tlc_carotenoids_adedoyin2017_acetone_nhexane_30_70"
+];
+const newMethods=analytes.protocolos.filter(p=>novos.includes(p.id));
+assert.equal(newMethods.length,14);
+assert.equal(newMethods.reduce((n,p)=>n+p.dadosRf.length,0),25);
+assert(newMethods.every(p=>p.status!=="homologado"&&p.faseMovel.homologada===false));
+assert(newMethods.every(p=>p.dadosRf.every(x=>x.homologado===false&&analytes.fontes[x.fonte])));
+assert(newMethods.some(p=>p.dadosRf.some(x=>Number.isFinite(x.desvioPadraoRf))),
+ "conservar desvio padrão de estudo experimental HPTLC");
+assert(newMethods.some(p=>p.dadosRf.some(x=>x.identificacaoTentativa)),
+ "marcar banda de extrato identificada provisoriamente");
+const usedSolvents=new Set(solvents.solventes.map(x=>x.id));
+for(const p of analytes.protocolos){
+ const mobile=p.faseMovel?.componentes||[];
+ for(const reagent of mobile){
+  assert(
+   usedSolvents.has(reagent.id) || reagent.id==="aqueous_ammonia_sg0880",
+   "solvente químico sem registro no catálogo: "+reagent.id+" em "+p.id);
+ }
+}
+
 assert(analytes.protocolos.every(p=>p.status!=="homologado"));
 assert.equal(
  analytes.protocolos.find(p=>p.id==="tlc_food_dyes_fao_system_10_butanol_acetic_water")
