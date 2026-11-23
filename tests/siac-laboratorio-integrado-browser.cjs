@@ -77,7 +77,15 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
     // O seletor SIAB substitui o <select> nativo por um controle próprio.
     await page.locator("#siac-velocidade").evaluate(el=>{el.value="1800";el.dispatchEvent(new Event("change",{bubbles:true}));});
     await page.locator("#siac-executar").click({force:true});
-    await page.waitForFunction(()=>window.SIAC?.laboratorio?.snapshot?.volumeMl>1.7,{timeout:5000});
+    await page.waitForTimeout(1300);
+    console.log("SIAC APÓS EXECUTAR",JSON.stringify(await page.evaluate(()=>({
+      estado:window.SIAC?.laboratorio?.snapshot,
+      legenda:document.querySelector("#siac-executar")?.textContent,
+      message:document.querySelector("#siac-stage-status")?.textContent,
+      acceleration:document.querySelector("#siac-velocidade")?.value,
+      visible:!document.querySelector("#siac-stage")?.hidden
+    }))),"pageErrors:",errors);
+    await page.waitForFunction(()=>window.SIAC?.laboratorio?.snapshot?.volumeMl>1.7,null,{timeout:5000});
     await page.locator("#siac-executar").click({force:true});
     const snapshot=await page.evaluate(()=>window.SIAC.laboratorio.snapshot);
     assert(snapshot.preenchidos.includes("F1"));
@@ -100,7 +108,7 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
     await page.locator("#siac-paper-target").click({force:true});
     assert.match(await page.locator("#siac-stage").textContent(),/aplicado/);
     await page.locator("#siac-desenvolver").click({force:true});
-    await page.waitForFunction(()=>window.SIAC?.laboratorio?.snapshot?.papeis?.F7==="desenvolvido",{timeout:5000});
+    await page.waitForFunction(()=>window.SIAC?.laboratorio?.snapshot?.papeis?.F7==="desenvolvido",null,{timeout:5000});
     await page.locator("#siac-uv").click({force:true});
     assert.equal(await page.evaluate(()=>window.SIAC.laboratorio.snapshot.papeis.F7),"revelado");
     await page.locator("#overview-tab").click({force:true});
