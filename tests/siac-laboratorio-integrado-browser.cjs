@@ -125,10 +125,25 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
     await page.locator("#focus-tab").click({force:true});
     assert.match(await page.locator("#focus-tab").textContent(),/Tubo em foco/);
     await page.locator("#siac-retirar").click({force:true});
+    assert.equal(await page.evaluate(()=>window.SIAC.laboratorio.snapshot.capilar),"aspirando");
+    assert.equal(await page.locator("#siac-stage .siac-capillary-uptake").count(),1,
+      "O capilar de vidro deve mergulhar no frasco antes da transferência");
+    await page.waitForFunction(()=>window.SIAC?.laboratorio?.snapshot?.capilar==="carregado"
+      && window.SIAC.laboratorio.snapshot.foco==="amostra",null,{timeout:5000});
     assert.match(await page.locator("#focus-tab").textContent(),/Amostra em foco/);
+    assert.equal(await page.locator("#siac-paper-target .siac-capillary-applicator").count(),1,
+      "O capilar carregado deve acompanhar o papel para a aplicação");
     await page.locator("#siac-paper-target").click({force:true});
+    assert.equal(await page.locator("#siac-stage .siac-capillary-applicator").count(),0,
+      "O capilar deve desaparecer depois da transferência da alíquota");
+    assert.equal(await page.evaluate(()=>window.SIAC.laboratorio.snapshot.capilar),"vazio");
     assert.match(await page.locator("#siac-stage").textContent(),/aplicado/);
     await page.locator("#siac-desenvolver").click({force:true});
+    await page.waitForFunction(()=>window.SIAC?.laboratorio?.snapshot?.frenteMm>1,null,{timeout:7000});
+    const front=await page.evaluate(()=>window.SIAC.laboratorio.snapshot.frenteMm);
+    assert(front<=55&&front>0,"Frente úmida deve surgir gradualmente na fase estacionária");
+    assert.equal(await page.locator("#siac-stage .siac-paper-wet").count(),1,
+      "A região umedecida pelo eluente deve estar visível no papel");
     await page.waitForFunction(()=>window.SIAC?.laboratorio?.snapshot?.papeis?.F7==="desenvolvido",null,{polling:250,timeout:20000});
     await page.locator("#siac-uv").click({force:true});
     assert.equal(await page.evaluate(()=>window.SIAC.laboratorio.snapshot.papeis.F7),"revelado");

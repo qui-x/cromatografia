@@ -22,7 +22,7 @@ assert.match(pwa,/Nova versão do SIAC instalada/);
 assert.match(pwa,/SIAC instalado\./);
 assert.doesNotMatch(pwa,/"siab@"|c\.indexOf\("siab@"\)/);
 assert.match(pwa,/r\.scope === new URL\("\.\/", location\.href\)\.href/);
-assert.match(sw,/siac-v0\.2\.0-dev-interface-20261123/);
+assert.match(sw,/const VERSAO = "siac-v0\.2\.0-dev-[^"]+";/);
 assert.doesNotMatch(sw,/Service worker do SIAB/);
 assert.match(maker,/f'SIAC-\{versao\}-standalone\.html'/);
 assert.doesNotMatch(maker,/f'SIAB-\{versao\}-standalone\.html'/);
