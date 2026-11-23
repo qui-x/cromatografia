@@ -258,17 +258,12 @@ function configurar(){
  aviso="Coluna montada. Configure as janelas antes de iniciar.";render();
 }
 function calculoNoVolume(id,ateVolume){
- const j=plano.janelas.find(j=>j.frasco===id);if(!j)return {volume:0,massas:{}};
- const limite=Math.min(j.fimMl,Math.max(j.inicioMl,ateVolume));
- if(limite<=j.inicioMl)return {volume:0,massas:{}};
- const massas={};
- for(const t of perfil.trechos){
-  const dv=Math.max(0,Math.min(limite,t.fimMl)-Math.max(j.inicioMl,t.inicioMl));
-  if(!dv)continue;
-  for(const [id,c] of Object.entries(t.concentracoesMgPorMl))
-   massas[id]=(massas[id]||0)+dv*c;
- }
- return {volume:limite-j.inicioMl,massas};
+ const j=plano.janelas.find(j=>j.frasco===id);
+ if(!j)return {volume:0,massas:{}};
+ const fim=Math.min(j.fimMl,Math.max(j.inicioMl,ateVolume));
+ if(fim<=j.inicioMl)return {volume:0,massas:{}};
+ const result=C.massBetween(estado,j.inicioMl,fim);
+ return {volume:result.volumeMl,massas:result.componentesMg};
 }
 function corDaFracao(massas){
  const mapa=Object.fromEntries(estado.config.componentes.filter(x=>x.corVisivel).map(x=>[x.id,x.corVisivel]));
@@ -362,12 +357,19 @@ function perfilSvg(){
  $("chaves").innerHTML='<span class="chave"><i class="bolinha" style="background:#0b7990"></i>Sinal combinado já observado (modelo)</span>'+
  '<span class="chave"><i class="bolinha" style="background:#b6d4d9"></i>Janelas de coleta</span>';
 }
+function mostrarTempo(minutos){
+ const secs=Math.floor(Math.max(0,minutos)*60);
+ const h=Math.floor(secs/3600),m=Math.floor((secs%3600)/60),ss=secs%60;
+ return [h,m,ss].map(x=>String(x).padStart(2,"0")).join(":");
+}
 function render(){
  if(!estado)return;
  const s=C.advance(estado,volume/estado.config.vazaoMlMin),obs=C.observe(s);
  desenharBandas(obs);desenharTubos();perfilSvg();
  $("relogio").textContent=fmt(volume,2)+" mL · "+fmt(s.tempoMin,2)+" min";
  $("progresso").style.width=(100*volume/estado.config.volumeTotalMl)+"%";
+ $("tempo-didatico").textContent="Tempo da corrida "+mostrarTempo(s.tempoMin)+" / "+
+   mostrarTempo(estado.config.tempoTotalMin)+" · "+Number($("velocidade").value)+"×";
  const destino=volume>=estado.config.volumeTotalMl?"concluído":F.routeAt(plano,volume);
  $("saida-destino").textContent="Saída → "+(destino==="descarte"?"descarte":destino);
  const saida=C.outlet(estado,volume);
@@ -459,7 +461,10 @@ function frame(t){
  if(rodando){
   if(ultimo){
    const dt=Math.min(.13,(t-ultimo)/1000);
-   volume=Math.min(estado.config.volumeTotalMl,volume+dt*estado.config.volumeTotalMl/24);
+   // Cronômetro = vazão × tempo, com acelerador alterando apenas a espera didática.
+   const dtDidaticoMin=dt*Number($("velocidade").value)/60;
+   volume=Math.min(estado.config.volumeTotalMl,
+     volume+dtDidaticoMin*estado.config.vazaoMlMin);
    if(volume>=estado.config.volumeTotalMl){rodando=false;aviso="Eluição terminada. Selecione uma fração para analisar.";}
    render();
   }
@@ -481,7 +486,7 @@ $("registrar").addEventListener("click",()=>{
  '<rect width="900" height="820" fill="#fff"/>'+
  '<text x="32" y="45" fill="#0b5472" font-size="28" font-weight="bold">SIAC · Registro gráfico da coluna</text>'+
  '<text x="32" y="72" fill="#415f71" font-size="14">Amostra: '+estado.config.amostra.nome+' · Modelo hipotético não calibrado</text>'+
- '<svg x="20" y="95" width="270" height="390" viewBox="0 0 220 330">'+$("coluna-svg").innerHTML+'</svg>'+
+ '<svg x="20" y="95" width="270" height="390" viewBox="0 0 285 430">'+$("coluna-svg").innerHTML+'</svg>'+
  '<svg x="292" y="136" width="585" height="280" viewBox="0 0 630 185">'+$("perfil-svg").innerHTML+'</svg>'+
  '<text x="32" y="505" fill="#0b5472" font-size="17" font-weight="bold">Janelas coletoras F1–F10</text>'+linhas+
  '<text x="32" y="766" fill="#385568" font-size="13">'+dados+'</text>'+
