@@ -101,7 +101,7 @@ Não inventar valores cromatográficos no front-end. A experiência consome apen
 2. Selecionar a **amostra ou mistura** no catálogo e o **solvente/fase móvel**. A fase estacionária, sua compatibilidade e condições de fluxo devem constar da montagem, com padrões iniciais válidos e opção de ajuste quando o motor permitir.
 3. A coluna aparece montada diretamente no palco central. **Preparar/Iniciar eluição** são comandos da própria Montagem, não controles redundantes sobre a cena.
 4. Acompanhar as bandas e a evolução da eluição no palco. A coleta acontece **na saída da coluna, durante a eluição**, por volume ou intervalo de tempo definido pelo modelo.
-5. O sistema distribui as frações em **exatamente dez recipientes numerados F1–F10** como primeira experiência didática. A animação revela o enchimento sucessivo dos tubos; **após a animação**, a Montagem disponibiliza sua seleção direta em uma grade/lista de 10 tubos, sem menu contextual.
+5. A Montagem exibe **dez recipientes disponíveis F1–F10**, cada um com **janela própria de coleta** definida pelo estudante. Nenhum tubo é preenchido automaticamente só porque é o próximo: a saída da coluna é encaminhada ao tubo ativo apenas enquanto o volume acumulado estiver no intervalo escolhido. Fora dessas janelas, o fluxo segue para descarte/recuperação conforme a configuração. A seleção visual das amostras colhidas fica disponível ao final.
 6. Escolher um tubo na própria Montagem coloca a **fração coletada** em investigação. Exibir a identificação F1–F10, o volume e intervalo de coleta e apenas os sinais realmente detectáveis; um tubo pode conter vários componentes, um único componente ou nenhum analito detectável.
 7. Para análise planar, usar o **capilar móvel para retirar uma alíquota do tubo selecionado**, não perfurar a fase estacionária da coluna. Ao levar o capilar até a região do papel/CCD, a cena transita suavemente para o suporte de aplicação sem mudar de módulo nem abrir modal.
 8. Aplicar a alíquota na linha de origem, desenvolver a placa e, se adequado, usar detecção UV/revelação. Marcar o início e o fim do percurso e enviar o cromatograma visual ao relatório.
@@ -112,10 +112,25 @@ Não inventar valores cromatográficos no front-end. A experiência consome apen
 - **Palco central:** exibe primeiro a coluna e depois, por transição espacial, a bancada de tubos e o papel/placa; o capilar é manipulado por mouse, toque ou teclado.
 - **Ver:** mostra somente observações, detecção e enquadramentos da cena; não duplica seletor de fração ou comandos de preparo.
 - **Dados:** recebe as medidas, curvas, Rf planar e registros do processo; a mudança de tubo selecionado não recalcula nem reinicia a eluição.
-- **Coleta:** dez recipientes são uma decisão didática de UI; o motor de coluna deve conservar dados de eluição contínua, divididos em intervalos/volumes explícitos. Atribuir frações durante a eluição, mesmo que a seleção seja habilitada ao final.
+- **Coleta:** dez recipientes são uma decisão didática de UI, **não dez frações necessariamente consecutivas**. Cada tubo pode ser configurado individualmente para coletar em um intervalo de volume acumulado (ex.: F1, início 0,6 mL, fim 0,8 mL; F2, início 3,5 mL, fim 3,7 mL). O motor deve registrar a eluição contínua, os intervalos efetivamente coletados e o volume descartado entre janelas; nenhum fluido pode saltar a ordem de saída da coluna.
 - **Seleção:** destacar o tubo escolhido diretamente na grade de Montagem, mantendo contexto visual de sua posição e conteúdo. Não afirmar pureza pela cor do tubo nem pela escolha de uma única banda.
 - **Análise:** a fração escolhida gera uma **amostra derivada**, com composição, origem (coluna, intervalo e tubo), detector, condições e proveniência preservadas. Só então é aplicada no papel ou CCD.
 - **Relatório gráfico:** registrar imagem/diagrama da coluna com intervalos de coleta, sequência F1–F10, fração selecionada, trajetória da aplicação, origem, frente móvel, manchas antes/depois de UV e medidas; textos são legendas breves, não substitutos das evidências visuais.
+
+### Controle individual da janela de coleta (F1–F10)
+
+**Fluxo dentro da própria Montagem:** a régua/representação da eluição ocupa a cena central; na doca Montagem fica uma grade compacta com F1–F10. Ao selecionar um frasco, o estudante pode **arrastar início e fim sobre o perfil** ou editar dois campos numéricos dedicados ao frasco ativo, sem abrir menu contextual e sem exibir vinte controles permanentes.
+
+- **Escala didática inicial:** 0,1 a 10,0 mL de **volume cumulativo de eluato**, com resolução inicial de 0,1 mL; o limite total é configurável pelo experimento/coluna e não representa uma escala válida para todos os tipos de coluna.
+- **Cada frasco tem intervalo próprio**, `inicioMl` e `fimMl`, com `fimMl > inicioMl`; um frasco pode permanecer inativo. O valor é o instante volumétrico em que o coletor começa/termina de encaminhar o eluato àquele tubo, **não** o volume pré-existente dentro do tubo.
+- **Exemplo:** F1 recebe o eluato de 0,6 a 0,8 mL (0,2 mL); F2 recebe o eluato de 3,5 a 3,7 mL (0,2 mL). O trecho entre 0,8 e 3,5 mL é escoado para descarte/recuperação, explicitamente mostrado na animação e no balanço de material. Não é possível retirar instantaneamente uma fração do futuro.
+- **Janelas não sobrepostas** para uma única saída; a coleta respeita a ordem de eluição. A numeração dos frascos deve permanecer estável e a apresentação visual ordenada por início de coleta.
+- **Interação por faixa na coluna:** o usuário pode apontar para uma zona cromática da coluna como sugestão visual, mas o motor converte a escolha em janela de **eluato na saída**, com previsão de chegada conforme vazão e cinética de retenção. A zona interna e o volume de saída **não são coordenadas equivalentes**.
+- **Modo manual:** o aluno também pode marcar abertura/fechamento da coleta durante a eluição; o simulador guarda o volume no momento da ação. Ajustes retrospectivos só são permitidos ao reproduzir uma corrida virtual gravada, nunca apresentados como intervenções reais retroativas.
+- **Registro gráfico:** a curva de eluição recebe regiões destacadas correspondentes às janelas F1–F10, áreas de descarte e bandas detectadas; o relatório apresenta a quantidade efetivamente coletada, inclusive tubos vazios ou com mistura/coeluição, e o volume descartado.
+- **Acessibilidade:** usar arrasto com teclado/toque/mouse e oferecer entrada numérica de início/fim para precisão; em mobile mostrar somente o tubo ativo e sua janela, preservando a cena central.
+
+**Dependência:** o coletor por janelas é uma mecânica de fluxo; os perfis químicos/retentivos precisarão vir de um motor próprio de coluna validado. A seleção da janela nunca determina artificialmente qual substância está presente.
 
 ### Aceite e limites
 
