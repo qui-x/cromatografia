@@ -61,7 +61,9 @@ const {chromium}=require("playwright");
     assert.equal(erros.length,0,"Erros após interações: "+erros.join("; "));
     await page.locator("#reiniciar").click();
     const info=await page.locator("#estado-tubo").textContent();
-    assert.match(info,/F2/);
+    assert.match(info,/F3/,"A seleção corrente após arrastar deve permanecer em F3");
+    assert.match(await page.locator("#frascos button").nth(1).getAttribute("aria-label"),/F2 · coleta/,
+      "A janela F2 deve continuar cadastrada");
     const capturas=path.join(__dirname,"..","docs","evidencias","siac-coluna");
     fs.mkdirSync(capturas,{recursive:true});
     await page.screenshot({path:path.join(capturas,"desktop-1440.png"),fullPage:true});
