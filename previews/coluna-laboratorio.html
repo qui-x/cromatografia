@@ -33,7 +33,7 @@ summary{cursor:pointer;font-weight:700;font-size:12px}.parametros{display:grid;g
 .palco-cab{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:10px}
 .palco-cab h1{margin:0}.leitura{font-variant-numeric:tabular-nums;color:#37586b;font-size:12px}
 .cena{background:linear-gradient(180deg,#fcfaf6,#eef5f6);border:1px solid #d5e2e4;border-radius:13px;min-height:330px;display:grid;grid-template-columns:minmax(0,1fr) minmax(140px,.9fr);padding:12px;align-items:center;gap:8px;overflow:hidden}
-.coluna-box{text-align:center}.coluna-box svg{display:block;width:100%;max-width:250px;height:300px;margin:auto}
+.coluna-box{text-align:center}.coluna-box svg{display:block;width:100%;max-width:285px;height:390px;margin:auto}
 .coleta-box{text-align:left;align-self:stretch;display:flex;flex-direction:column;justify-content:center;gap:9px}
 .saida{padding:12px;background:#ffffffb8;border:1px solid #d0dfe3;border-radius:9px;font-size:13px}
 .saida strong{display:block;font-size:14px}.saida div{font-size:12px;color:#607582}
@@ -50,8 +50,12 @@ hr{border:0;border-top:1px solid #dde8eb;margin:16px 0}.dados button{width:100%}
 .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 @media(max-width:1050px){main{grid-template-columns:260px minmax(360px,1fr)}.dados{grid-column:1/-1}.dados dl{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.medida{display:block}}
 @media(max-width:720px){main{grid-template-columns:1fr;gap:10px;padding:9px}.dados{grid-column:1}.doca,.dados{padding:15px}.cena{min-height:300px}.dados dl{grid-template-columns:1fr 1fr}header .estado{display:none}header{padding:11px 15px}.palco{padding:14px}}
-@media(max-width:390px){.cena{grid-template-columns:1fr 1fr;padding:6px}.coluna-box svg{height:260px}.saida{padding:8px}.palco{padding:10px}}
+@media(max-width:390px){.cena{grid-template-columns:1fr 1fr;padding:6px}.coluna-box svg{height:310px}.saida{padding:8px}.palco{padding:10px}}
 @media(prefers-reduced-motion:reduce){.progresso span{transition:none}}
+.composicao-grid{display:grid;gap:6px;margin:9px 0;padding:9px;border:1px solid #d2e5e6;border-radius:8px;background:#f4faf9}
+.composicao-linha{display:flex;align-items:center;gap:7px;font-size:12px;justify-content:space-between}
+.composicao-linha input[type=number]{width:65px;padding:4px;font-size:12px}
+#tempo-didatico{border-left:2px solid #7ab8b1;padding-left:8px;font-size:12px;font-weight:600}
 </style>
 </head>
 <body>
@@ -67,8 +71,10 @@ hr{border:0;border-top:1px solid #dde8eb;margin:16px 0}.dados button{width:100%}
  <select id="amostra">
   <option value="mistura1">Mistura-modelo I · três componentes</option>
   <option value="mistura2">Mistura-modelo II · três componentes</option>
+  <option value="personalizada">Mistura livre · escolher componentes</option>
  </select>
- <label class="rotulo" for="eluente">Fase móvel</label>
+ <div id="composicao" hidden aria-label="Composição da mistura"></div>
+  <label class="rotulo" for="eluente">Fase móvel</label>
  <select id="eluente">
   <option value="eluente1">Eluente didático A</option>
   <option value="eluente2">Eluente didático B</option>
@@ -81,11 +87,11 @@ hr{border:0;border-top:1px solid #dde8eb;margin:16px 0}.dados button{width:100%}
  <details>
   <summary>Geometria e condições da coluna</summary>
   <div class="parametros">
-   <div><label class="rotulo" for="comprimento">Comprimento (mm)</label><input id="comprimento" type="number" min="20" max="200" step="5" value="80"></div>
-   <div><label class="rotulo" for="diametro">Diâmetro interno (mm)</label><input id="diametro" type="number" min="2" max="20" step="1" value="8"></div>
+   <div><label class="rotulo" for="comprimento">Comprimento (mm)</label><input id="comprimento" type="number" min="20" max="2000" step="5" value="80"></div>
+   <div><label class="rotulo" for="diametro">Diâmetro interno (mm)</label><input id="diametro" type="number" min="2" max="100" step="1" value="8"></div>
    <div><label class="rotulo" for="porosidade">Porosidade</label><input id="porosidade" type="number" min=".1" max=".75" step=".05" value=".45"></div>
-   <div><label class="rotulo" for="vazao">Vazão (mL/min)</label><input id="vazao" type="number" min=".1" max="3" step=".1" value=".8"></div>
-   <div><label class="rotulo" for="volumeTotal">Escala (mL)</label><input id="volumeTotal" type="number" min=".1" max="10" step=".1" value="9"></div>
+   <div><label class="rotulo" for="vazao">Vazão (mL/min)</label><input id="vazao" type="number" min=".01" max="100" step=".01" value=".8"></div>
+   <div><label class="rotulo" for="volumeTotal">Escala (mL)</label><input id="volumeTotal" type="number" min=".1" max="1000" step=".1" value="9"></div>
   </div>
  </details>
  <div class="acoes"><button id="montar" class="primario">Montar coluna</button></div>
@@ -96,8 +102,8 @@ hr{border:0;border-top:1px solid #dde8eb;margin:16px 0}.dados button{width:100%}
  <div class="estado-tubo" id="estado-tubo" aria-live="polite"></div>
  <form id="janela-form">
   <div class="coldupla">
-   <div><label class="rotulo" for="inicio">Início (mL)</label><input id="inicio" type="number" step=".1" min="0" max="10" placeholder="Definir" required></div>
-   <div><label class="rotulo" for="fim">Fim (mL)</label><input id="fim" type="number" step=".1" min=".1" max="10" placeholder="Definir" required></div>
+   <div><label class="rotulo" for="inicio">Início (mL)</label><input id="inicio" type="number" step=".1" min="0" max="1000" placeholder="Definir" required></div>
+   <div><label class="rotulo" for="fim">Fim (mL)</label><input id="fim" type="number" step=".1" min=".1" max="1000" placeholder="Definir" required></div>
   </div>
   <div class="acoes"><button class="primario" type="submit">Aplicar janela</button><button class="secundario" id="limpar" type="button">Limpar</button></div>
  </form>
@@ -128,16 +134,16 @@ hr{border:0;border-top:1px solid #dde8eb;margin:16px 0}.dados button{width:100%}
   <div class="coleta-box">
    <div class="saida"><strong id="saida-destino">Saída → descarte</strong><div id="saida-conc">Aguardando eluição</div></div>
    <div><h3>Progresso da eluição</h3><div class="progresso"><span id="progresso"></span></div></div>
-   <div class="legenda">O volume acumulado orienta a coleta. A aparência dentro da coluna não indica diretamente o volume de saída.</div>
+   <div class="legenda">O tempo de eluição depende da vazão. A aceleração didática altera apenas o relógio da apresentação.</div>
    <div class="nota">Coleta efetiva somente na saída da coluna. O capilar poderá transferir uma alíquota do frasco para papel/CCD na próxima integração.</div>
   </div>
  </div>
  <div class="grafico-wrap">
-  <div class="cabecalho"><h2 style="margin:0">Perfil de eluição</h2><small>Concentração modelada × volume acumulado</small></div>
-  <div class="graficos"><svg id="perfil-svg" viewBox="0 0 630 185" role="img" aria-label="Curvas calculadas de eluição e janelas individuais F1 a F10"></svg><div class="eixos"><span>0 mL</span><span id="eixo-max">9 mL · volume eluído</span></div></div>
+  <div class="cabecalho"><h2 style="margin:0">Perfil de eluição</h2><small>Sinal óptico já observado × volume acumulado (sem identificar componentes)</small></div>
+  <div class="graficos"><svg id="perfil-svg" viewBox="0 0 630 185" role="img" aria-label="Sinal total observado na saída e janelas F1–F10, sem identidades"></svg><div class="eixos"><span>0 mL</span><span id="eixo-max">9 mL · volume eluído</span></div></div>
   <div class="chaves" id="chaves"></div>
  </div>
- <div class="controles"><button class="primario" id="executar" type="button">Iniciar eluição</button><button class="secundario" id="reiniciar" type="button">Voltar ao início</button><span class="tempo" id="texto-progresso">Preparado para coleta</span></div>
+ <div class="controles"><button class="primario" id="executar" type="button">Iniciar eluição</button><button class="secundario" id="reiniciar" type="button">Voltar ao início</button><span class="tempo" id="texto-progresso">Preparado para coleta</span><span class="tempo" id="tempo-didatico">Tempo simulado 00:00 · 120×</span></div>
 </section>
 <aside class="dados" aria-labelledby="dados-titulo">
  <div class="cabecalho"><h2 id="dados-titulo">Dados da corrida</h2><span class="selo">Modelo</span></div>
@@ -151,7 +157,7 @@ hr{border:0;border-top:1px solid #dde8eb;margin:16px 0}.dados button{width:100%}
  <hr>
  <h3>Continuação do experimento</h3>
  <p class="explicacao">Capilar → aplicação em papel/CCD → desenvolvimento → detecção UV → relatório ilustrado. Integração com a bancada principal ainda pendente.</p>
- <div class="nota">Dados de demonstração hipotéticos. Mudanças de suporte/eluente utilizam parâmetros de teste declarados; não há previsão universal de retenção química.</div>
+ <div class="nota">Sinal sem identidades: não há previsão universal de substâncias reais. Curvas futuras permanecem ocultas.</div>
 </aside>
 </main>
 <script src="../js/simulation/siac-coluna.js"></script>
