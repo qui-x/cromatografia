@@ -29,6 +29,41 @@ async function main(){
     assert(loaded,"Servidor local não iniciou");
     await page.waitForSelector("#abertura .siac-v4-bequer",{timeout:4000});
     assert.equal(await page.locator("#abertura [data-placa]").count(),3);
+    // Profundidade SVG: traseira → papel → parede frontal + solvente → capilar.
+    // O papel não pode ser pintado por cima do vidro frontal ou do eluente.
+    const camadas=await page.locator("#abertura [data-placa]").evaluateAll(placas=>
+      placas.map(placa=>{
+        const classes=Array.from(placa.children).map(el=>el.getAttribute("class")||"");
+        const pos=c=>classes.findIndex(x=>x.split(/\\s+/).includes(c));
+        const papel=placa.querySelector(".siac-v4-folha");
+        const frente=placa.querySelector(".siac-v4-bequer-frontal");
+        const solvente=frente?.querySelector(".siac-v4-poco-solvente");
+        return {
+          classes,
+          indiceTraseiro:pos("siac-v4-bequer"),
+          indicePapel:pos("siac-v4-papel"),
+          indiceFrontal:pos("siac-v4-bequer-frontal"),
+          indiceCapilar:pos("siac-v4-capilar"),
+          fundoPapel:papel?.y.baseVal.value+papel?.height.baseVal.value,
+          topoSolvente:372,
+          fundoBequer:420,
+          solventeFrontal:!!solvente,
+          opacidadeSolvente:solvente?Number(getComputedStyle(solvente).opacity):0
+        };
+      })
+    );
+    assert.equal(camadas.length,3);
+    for(const [i,c] of camadas.entries()){
+      assert(c.indiceTraseiro<c.indicePapel && c.indicePapel<c.indiceFrontal &&
+        c.indiceFrontal<c.indiceCapilar,
+        "Papel "+i+" precisa estar fisicamente ENTRE as paredes do béquer");
+      assert(c.solventeFrontal,"Solvente frontal ausente no béquer "+i);
+      assert(c.fundoPapel>c.topoSolvente&&c.fundoPapel<c.fundoBequer,
+        "A folha "+i+" deve mergulhar no eluente e terminar antes do fundo");
+      assert(c.opacidadeSolvente>0&&c.opacidadeSolvente<1,
+        "Solvente frontal translúcido para revelar papel imerso");
+    }
+
     assert.equal(await page.locator("#abertura [data-frente]").count(),3);
     assert.equal(await page.locator("#abertura [data-umidade]").count(),3);
     assert.equal(await page.locator("#abertura [data-mancha]").count(),10);
