@@ -78,7 +78,10 @@ SIAC.laboratorio=(()=>{
   $("overview-tab").addEventListener("click",e=>{if(!enabled)return;e.stopImmediatePropagation();e.preventDefault();
    if(view==="geral")group=GROUPS[(GROUPS.indexOf(group)+1)%2];else view="geral";render();},true);
   for(const b of [$("focus-tab"),$("overview-tab")]){
-   new MutationObserver(()=>{if(enabled&&b.disabled)b.disabled=false;}).observe(b,{attributes:true,attributeFilter:["disabled"]});
+   // O renderizador SIAB legado pode reescrever rótulos e aria após a entrada.
+   new MutationObserver(()=>sincronizarAbas())
+     .observe(b,{attributes:true,attributeFilter:["disabled","aria-pressed"],
+       childList:true,subtree:true,characterData:true});
   }
   $("siac-velocidade").addEventListener("change",()=>{speed=Number($("siac-velocidade").value);render();});
   document.addEventListener("siab:rota",route);
@@ -94,6 +97,11 @@ SIAC.laboratorio=(()=>{
   document.body.classList.toggle("siac-active",available);
   if($("controls-title"))$("controls-title").textContent=available?"Montagem":"Prateleira";
   if(available){mount();if(!col)build();if($("workspace-ver"))$("workspace-ver").hidden=false;render();}
+  else if(ready){
+   // Restaurar rótulos convencionais do SIAB ao sair do laboratório cromatográfico.
+   $("focus-tab").textContent="Tubo em foco";
+   $("overview-tab").innerHTML='Visão geral <span id="overview-count"></span>';
+  }
  }
  function configuration(){
   const comp=MODELOS.filter(x=>uiQuery('[data-siac-comp="'+x.id+'"]').checked).map(x=>({
@@ -272,13 +280,28 @@ SIAC.laboratorio=(()=>{
      '<small>'+(isPaper?esc(p.etapa):fmt(f.volumeMl)+" mL")+'</small></button>';
   }).join("")+'</div>':'<p class="siac-empty">Nenhum frasco preenchido até agora. Os tubos aparecerão conforme o eluato for coletado.</p>');
  }
+ function sincronizarAbas(){
+  if(!enabled)return;
+  const a=$("focus-tab"),b=$("overview-tab");
+  const focusLabel={coluna:"Coluna em foco",tubo:"Tubo em foco",amostra:"Amostra em foco"}[focus];
+  if(a.textContent!==focusLabel)a.textContent=focusLabel;
+  const groupLabel="Visão geral · "+(group==="frascos"?"Frascos":"Papéis")+" ";
+  let text=[...b.childNodes].find(n=>n.nodeType===3);
+  if(!text){text=document.createTextNode("");b.insertBefore(text,b.firstChild);}
+  if(text.nodeValue!==groupLabel)text.nodeValue=groupLabel;
+  if(!$("overview-count")){
+   const span=document.createElement("span");span.id="overview-count";b.append(span);
+  }
+  if(a.getAttribute("aria-pressed")!==String(view==="foco"))
+   a.setAttribute("aria-pressed",String(view==="foco"));
+  if(b.getAttribute("aria-pressed")!==String(view==="geral"))
+   b.setAttribute("aria-pressed",String(view==="geral"));
+  if(a.disabled)a.disabled=false;
+  if(b.disabled)b.disabled=false;
+ }
  function renderStage(){
   const stage=$("siac-stage");if(!stage||!col)return;
-  $("focus-tab").disabled=false;$("overview-tab").disabled=false;
-  $("focus-tab").textContent={coluna:"Coluna em foco",tubo:"Tubo em foco",amostra:"Amostra em foco"}[focus];
-  $("overview-tab").textContent="Visão geral · "+(group==="frascos"?"Frascos":"Papéis");
-  $("focus-tab").setAttribute("aria-pressed",String(view==="foco"));
-  $("overview-tab").setAttribute("aria-pressed",String(view==="geral"));
+  sincronizarAbas();
   const fracs=filled();
   const t=volume/col.config.vazaoMlMin*60,all=col.config.tempoTotalMin*60;
   stage.innerHTML='<header class="siac-stage-head"><span>Investigação cromatográfica · '+(view==="foco"?"Foco":"Visão geral")+'</span>'+
