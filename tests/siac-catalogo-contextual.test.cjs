@@ -34,4 +34,10 @@ assert(index.indexOf("js/data/siac-catalogo-contextual.js")<index.indexOf("js/ui
   "o catálogo deve carregar antes da bancada");
 const ui=fs.readFileSync(path.join(root,"js/ui/siac-laboratorio-integrado.js"),"utf8");
 assert(ui.includes("if(catalogMode)return;"),"modo científico deve bloquear interações do modelo hipotético");
+const sw=fs.readFileSync(path.join(root,"sw.js"),"utf8");
+for(const source of ["js/data/siac-catalogo-contextual.js","js/simulation/siac-metricas.js","js/ui/siac-ver-didatico.js"])
+ assert(sw.includes(source),"arquivo precisa ser preservado offline: "+source);
+const catalogCode=fs.readFileSync(path.join(root,"js/data/siac-catalogo-contextual.js"),"utf8");
+assert.match(catalogCode,/Cobertura científica:/);
+assert.match(catalogCode,/2 métodos com retenção individual/);
 console.log("SIAC Catálogo: 76 candidatos, 5 famílias, 11 Rf de referência, 11 procedimentos de classe, 54 sem vínculo individual/familiar documentado.");
