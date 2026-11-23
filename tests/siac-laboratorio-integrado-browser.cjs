@@ -112,6 +112,8 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
     const visible=await page.evaluate(()=>!document.querySelector("#workspace-ver").hidden);
     assert(visible,"O painel Ver deve ser acessível no SIAC");
     assert.equal(await page.locator("#siac-ver [data-module=medir]").count(),1);
+    if(await page.locator("#workspace-ver").isVisible())await page.locator("#workspace-ver").click();
+    else await page.evaluate(()=>SIAB.workspace.open("right"));
     await page.locator("#siac-ver [data-module=medir]").click({force:true});
     assert.equal(await page.locator("#siac-ver [data-ver=regua]").count(),1);
     await page.locator("#siac-ver [data-module=calcular]").click({force:true});
