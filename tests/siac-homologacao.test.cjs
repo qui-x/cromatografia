@@ -77,6 +77,8 @@ const candidate={...base.candidatos.find(c=>c.id==="glycine"),
  identity:{cas:"56-40-6",verificadoIndividualmente:true}};
 const method=(id,components,valor,options={})=>({
  id,tecnica:"ccd",status:options.status||"homologado",fonte:"exemplo",
+ auditoriaCientifica:{fontePrimaria:"https://example.org/dados-experimentais",
+  secoesConferidas:"Tabela de ensaio para fixture de teste",dataConferencia:"2026-11-23"},
  faseEstacionaria:{classe:"sílica gel 60",detalhamento:"placa de 0,25 mm",
   homologada:true},
  faseMovel:{componentes:components.map(c=>({id:c[0],partes:c[1]})),base:"v/v",
@@ -119,6 +121,19 @@ assert.equal(h.auditarCatalogo(source).resumo.completamenteHomologados,0,
 source.candidatos[0].identity.verificadoIndividualmente=true;
 source.protocolos[0].faseMovel.componentes=[{id:"water",partes:60},{id:"sodium_chloride",partes:40}];
 source.protocolos[1].faseMovel.componentes=[{id:"water",partes:100}];
+assert.equal(h.auditarCatalogo(source).resumo.liberadosParaSimulacaoReal,0);
+
 assert.equal(h.auditarCatalogo(source).resumo.completamenteHomologados,0,
  "sal de cozinha é aditivo, não um segundo solvente químico");
+
+// Não basta mudar booleanos manualmente: a fonte primária precisa coincidir com o catálogo.
+source.protocolos[0]=method("protocolo-A",[["water",10],["butanol_1",90]],.23);
+source.protocolos[1]=method("protocolo-B",[["ethyl_acetate",70],["methanol",30]],.44);
+source.protocolos[1].auditoriaCientifica.fontePrimaria="https://example.org/outro-artigo";
+assert.equal(h.auditarCatalogo(source).resumo.completamenteHomologados,0,
+ "fonte primária alterada deve impedir homologação");
+source.protocolos[1].auditoriaCientifica.fontePrimaria="https://example.org/dados-experimentais";
+assert.equal(h.auditarCatalogo(source).resumo.completamenteHomologados,1,
+ "fonte original conferida e dois protocolos aptos devem habilitar só dado científico");
+
 console.log("SIAC homologação: mínimo dois métodos e solventes contrastantes, dados e identidade homologados — OK");
