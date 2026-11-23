@@ -3481,13 +3481,13 @@
       "assuntos": [
         "indicadores_e_traçadores"
       ],
-      "status": "referencia_primaria_em_revisao_nao_homologada",
+      "status": "referencia_primaria_conferida_sem_replicatas",
       "fonte": "fibroin2026",
       "ano": 2026,
       "referenciaSecao": "Shakarova et al. 2026, Table 2, MPh1: HFSA",
       "faseEstacionaria": {
         "classe": "HFSA (fibroína-sílica híbrida)",
-        "detalhamento": "Camada ~100 µm sobre vidro; adsorvente híbrido específico; não substituir por sílica comercial",
+        "detalhamento": "HFSA adsorvente híbrido fibroína-sílica, camada seca medida 100 µm em pontos selecionados sobre vidro 10×10 cm, sem aglutinante; ativação 110°C por 1h30",
         "homologada": false
       },
       "faseMovel": {
@@ -3506,12 +3506,18 @@
         "homologada": false
       },
       "aplicacao": {
-        "detector": "luz visível após secagem",
+        "detector": "inspeção visual das bandas coloridas após secagem",
         "detectorHomologado": false,
         "concentracaoPadraoMgMl": 15,
         "volumeAmostraUl": 1,
         "saturacaoCamaraMin": 30,
-        "descricaoAmostra": "padrões de corante, não amostras ambientais"
+        "descricaoAmostra": "padrões de corante, não amostras ambientais",
+        "solventePreparoAmostra": "ethanol",
+        "origemMm": 15,
+        "aplicacaoAmostra": "mistura de padrões 1 µL por placa; não é amostra ambiental",
+        "secagem": "ao ar durante a noite após desenvolvimento",
+        "temperaturaC": null,
+        "umidadeRelativa": null
       },
       "dadosRf": [
         {
@@ -3520,7 +3526,11 @@
           "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
           "fonte": "fibroin2026",
           "temperaturaC": null,
-          "homologado": false
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "replicatas": null,
+          "desvioPadraoRf": null,
+          "observacao": "Um Rf por condição: sem média/DP/tolerância experimental reportada."
         },
         {
           "analito": "sudan_iv",
@@ -3528,10 +3538,40 @@
           "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
           "fonte": "fibroin2026",
           "temperaturaC": null,
-          "homologado": false
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "replicatas": null,
+          "desvioPadraoRf": null,
+          "observacao": "Um Rf por condição: sem média/DP/tolerância experimental reportada."
         }
       ],
-      "nota": "Um Rf individual reportado sem replicatas; NÃO copiar a coluna MSS, que usa suporte diferente; n-hexano ainda não normalizado no catálogo de solventes."
+      "nota": "Um Rf individual reportado sem replicatas; NÃO copiar a coluna MSS, que usa suporte diferente; n-hexano ainda não normalizado no catálogo de solventes.",
+      "auditoriaCientifica": {
+        "estado": "fonte_primaria_conferida_sem_replicatas",
+        "fontePrimaria": "https://www.mdpi.com/2297-8739/13/11/336",
+        "doi": "10.3390/separations13110336",
+        "secoesConferidas": "2.4 Chromatographic Procedure; 3.2; Table 2",
+        "dataConferencia": "2026-11-23",
+        "evidencias": [
+          "Rf na Table 2 sob HFSA, não coluna MSS",
+          "Composição dos dois eluentes",
+          "Camada de 100 µm medida em posições limitadas",
+          "Padrões 15 mg/mL em etanol, 1 µL, origem 15 mm",
+          "Câmara saturada 30 min; revelação visual"
+        ],
+        "lacunas": [
+          "Sem replicatas independentes por condição; variabilidade não estimada",
+          "Uniformidade e aderência da camada não quantificadas",
+          "Temperatura e umidade não sistematicamente testadas",
+          "Identidade molecular ainda não revisada individualmente no SIAC"
+        ],
+        "criterio": "Dado experimental primário conferido; sem homologação reprodutível para motor de cena"
+      },
+      "disponibilidadeSimulador": {
+        "habilitarCenaQuantitativa": false,
+        "tipo": "ccd_hibrida_hfsa",
+        "motivo": "SIAC não reproduz camada HFSA; um Rf por condição sem incerteza"
+      }
     },
     {
       "id": "tlc_hfsa_2026_mph2_hexane_isopropanol_water_acetic",
@@ -3539,13 +3579,13 @@
       "assuntos": [
         "indicadores_e_traçadores"
       ],
-      "status": "referencia_primaria_em_revisao_nao_homologada",
+      "status": "referencia_primaria_conferida_sem_replicatas",
       "fonte": "fibroin2026",
       "ano": 2026,
       "referenciaSecao": "Shakarova et al. 2026, Table 2, MPh2: HFSA",
       "faseEstacionaria": {
         "classe": "HFSA (fibroína-sílica híbrida)",
-        "detalhamento": "Camada ~100 µm sobre vidro; adsorvente híbrido específico; não substituir por sílica comercial",
+        "detalhamento": "HFSA adsorvente híbrido fibroína-sílica, camada seca medida 100 µm em pontos selecionados sobre vidro 10×10 cm, sem aglutinante; ativação 110°C por 1h30",
         "homologada": false
       },
       "faseMovel": {
@@ -3572,11 +3612,17 @@
         "homologada": false
       },
       "aplicacao": {
-        "detector": "luz visível após secagem",
+        "detector": "inspeção visual das bandas coloridas após secagem",
         "detectorHomologado": false,
         "concentracaoPadraoMgMl": 15,
         "volumeAmostraUl": 1,
-        "saturacaoCamaraMin": 30
+        "saturacaoCamaraMin": 30,
+        "solventePreparoAmostra": "ethanol",
+        "origemMm": 15,
+        "aplicacaoAmostra": "mistura de padrões 1 µL por placa; não é amostra ambiental",
+        "secagem": "ao ar durante a noite após desenvolvimento",
+        "temperaturaC": null,
+        "umidadeRelativa": null
       },
       "dadosRf": [
         {
@@ -3585,7 +3631,11 @@
           "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
           "fonte": "fibroin2026",
           "temperaturaC": null,
-          "homologado": false
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "replicatas": null,
+          "desvioPadraoRf": null,
+          "observacao": "Um Rf por condição: sem média/DP/tolerância experimental reportada."
         },
         {
           "analito": "sudan_iv",
@@ -3593,10 +3643,40 @@
           "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
           "fonte": "fibroin2026",
           "temperaturaC": null,
-          "homologado": false
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "replicatas": null,
+          "desvioPadraoRf": null,
+          "observacao": "Um Rf por condição: sem média/DP/tolerância experimental reportada."
         }
       ],
-      "nota": "Mesmo suporte HFSA do método MPh1; adição REAL de água e ácido acético. Sem replicatas independentes, não inferir desvio padrão ou comportamento sob outros suportes."
+      "nota": "Mesmo suporte HFSA do método MPh1; adição REAL de água e ácido acético. Sem replicatas independentes, não inferir desvio padrão ou comportamento sob outros suportes.",
+      "auditoriaCientifica": {
+        "estado": "fonte_primaria_conferida_sem_replicatas",
+        "fontePrimaria": "https://www.mdpi.com/2297-8739/13/11/336",
+        "doi": "10.3390/separations13110336",
+        "secoesConferidas": "2.4 Chromatographic Procedure; 3.2; Table 2",
+        "dataConferencia": "2026-11-23",
+        "evidencias": [
+          "Rf na Table 2 sob HFSA, não coluna MSS",
+          "Composição dos dois eluentes",
+          "Camada de 100 µm medida em posições limitadas",
+          "Padrões 15 mg/mL em etanol, 1 µL, origem 15 mm",
+          "Câmara saturada 30 min; revelação visual"
+        ],
+        "lacunas": [
+          "Sem replicatas independentes por condição; variabilidade não estimada",
+          "Uniformidade e aderência da camada não quantificadas",
+          "Temperatura e umidade não sistematicamente testadas",
+          "Identidade molecular ainda não revisada individualmente no SIAC"
+        ],
+        "criterio": "Dado experimental primário conferido; sem homologação reprodutível para motor de cena"
+      },
+      "disponibilidadeSimulador": {
+        "habilitarCenaQuantitativa": false,
+        "tipo": "ccd_hibrida_hfsa",
+        "motivo": "SIAC não reproduz camada HFSA; um Rf por condição sem incerteza"
+      }
     },
     {
       "id": "tlc_quercetin2010_system1_toluene_ethylacetate_acetic",
