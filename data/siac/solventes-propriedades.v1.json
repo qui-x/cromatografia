@@ -1898,6 +1898,26 @@
         "usoAluno": "somente_simulacao_ate_revisao"
       },
       "observacoes": "Candidato ao catálogo; constantes numéricas ainda não extraídas e conferidas."
+    },
+    {
+      "id": "n_hexane",
+      "nome": "n-hexano (puro, não confundir com hexanos comerciais)",
+      "cas": "110-54-3",
+      "tipo": "substancia",
+      "propriedades": {
+        "densidade": null,
+        "viscosidadeDinamica": null,
+        "pontoEbulicao": null,
+        "corteUV": null,
+        "indicePolaridadeSnyder": null,
+        "forcaEluotropicaSilica": null
+      },
+      "miscibilidadeComAgua": null,
+      "seguranca": {
+        "status": "revisao_fispq_obrigatoria",
+        "usoAluno": "somente_simulacao_ate_revisao"
+      },
+      "observacoes": "Incluído por exigência de identidade de protocolos n-hexano/2-propanol e acetona/n-hexano; não reutilizar dados compilados de hexanos comerciais nem assumir miscibilidade/viscosidade sem fonte específica. Propriedades numéricas em pesquisa."
     }
   ],
   "paresMiscibilidade": [
@@ -2402,6 +2422,7 @@
     "Uma versão textual da tabela SIGMA_MATRIX apresentou erros de leitura: a classificação foi revisada na matriz visual, e todos os pares permanecem preliminares.",
     "Índice de polaridade e força eluotrópica não fornecem Rf nem fator de retenção universal.",
     "Não extrapolar o comportamento de soluções e amostras comerciais à substância pura.",
-    "Registros não autorizam uso real de reagentes; classificar segurança via SDS/FISPQ e condições institucionais antes de oferecer roteiro experimental."
+    "Registros não autorizam uso real de reagentes; classificar segurança via SDS/FISPQ e condições institucionais antes de oferecer roteiro experimental.",
+    "23/11/2026: n-hexano (CAS 110-54-3) incluído como identidade separada de hexanos comerciais. Valores físicos deixados nulos e miscibilidade não homologada; dados de misturas comerciais não são transferidos a um composto puro."
   ]
 }
