@@ -7,6 +7,10 @@ on:
       - "js/simulation/siac-fracionamento.js"
       - "js/simulation/siac-coluna.js"
       - "js/simulation/siac-metricas.js"
+      - "js/simulation/siac-homologacao.js"
+      - "tests/siac-homologacao.test.cjs"
+      - "scripts/siac-auditar-homologacao.cjs"
+      - "docs/SIAC-HOMOLOGACAO-40-55-DOIS-METODOS.md"
       - "previews/coluna-laboratorio.html"
       - "scripts/siac-coluna-standalone.cjs"
       - "tests/siac-cromatografia.test.cjs"
@@ -27,6 +31,10 @@ on:
       - "js/simulation/siac-fracionamento.js"
       - "js/simulation/siac-coluna.js"
       - "js/simulation/siac-metricas.js"
+      - "js/simulation/siac-homologacao.js"
+      - "tests/siac-homologacao.test.cjs"
+      - "scripts/siac-auditar-homologacao.cjs"
+      - "docs/SIAC-HOMOLOGACAO-40-55-DOIS-METODOS.md"
       - "previews/coluna-laboratorio.html"
       - "scripts/siac-coluna-standalone.cjs"
       - "tests/siac-cromatografia.test.cjs"
@@ -56,6 +64,9 @@ jobs:
           node --check js/simulation/siac-fracionamento.js
           node --check js/simulation/siac-coluna.js
           node --check js/simulation/siac-metricas.js
+          node --check js/simulation/siac-homologacao.js
+          node --check scripts/siac-auditar-homologacao.cjs
+          node --check tests/siac-homologacao.test.cjs
           node --check tests/siac-cromatografia.test.cjs
           node --check tests/siac-fracionamento.test.cjs
           node --check tests/siac-coluna.test.cjs
@@ -68,7 +79,16 @@ jobs:
           node tests/siac-fracionamento.test.cjs
           node tests/siac-coluna.test.cjs
           node tests/siac-metricas.test.cjs
+          node tests/siac-homologacao.test.cjs
+          node scripts/siac-auditar-homologacao.cjs --write --check
           node tests/siac-banco-cientifico.test.cjs
+      - name: Registrar matriz científica por substância
+        uses: actions/upload-artifact@v4
+        with:
+          name: siac-matriz-homologacao-76
+          path: docs/evidencias/siac-ciencia/matriz-homologacao-76.json
+          if-no-files-found: error
+          retention-days: 21
       - name: Verificar isolamento do motor legado
         run: |
           node - <<'NODE'
