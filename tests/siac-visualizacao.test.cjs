@@ -1,0 +1,98 @@
+"use strict";
+const assert=require("node:assert/strict");
+const M=require("../js/ui/siac-estado-visualizacao.js");
+assert.equal(M.versao,"0.2.0");
+let s=M.create();
+assert(Object.isFrozen(s));
+assert.equal(s.visao,"foco");assert.equal(s.foco,"coluna");assert.equal(s.geral,"frascos");
+assert.equal(Object.keys(s.papeis).length,10);
+assert.equal(Object.keys(s.frascos).length,10);
+for(let i=1;i<=10;i++){
+ const id="F"+i,p=s.papeis[id];assert.equal(p.id,"P"+i);
+ assert.equal(p.frascoOrigem,id);assert.equal(p.etapa,"vazio");
+ assert.equal(p.aplicacoes.length,0);assert.equal(p.frenteMm,null);
+}
+assert.deepEqual(M.focos,["coluna","tubo","amostra"]);
+assert.deepEqual(M.gerais,["frascos","papeis"]);
+const initial=s;
+s=M.clickFocus(s);assert.equal(s.foco,"tubo");
+s=M.clickFocus(s);assert.equal(s.foco,"amostra");
+s=M.clickFocus(s);assert.equal(s.foco,"coluna");
+s=M.clickOverview(s);assert.equal(s.visao,"geral");assert.equal(s.geral,"frascos");
+s=M.clickOverview(s);assert.equal(s.geral,"papeis");
+s=M.clickFocus(s);assert.equal(s.visao,"foco");assert.equal(s.foco,"coluna");
+s=M.clickOverview(s);assert.equal(s.geral,"papeis","reabrir não avança");
+s=M.clickOverview(s);assert.equal(s.geral,"frascos");
+assert.equal(initial.foco,"coluna","estado original imutável");
+assert.throws(()=>M.selectFraction(s,"F11"),/frasco inválido/);
+s=M.selectFraction(s,"F7");assert.equal(s.frascoSelecionado,"F7");
+assert.equal(s.papeis.F7.etapa,"vazio");
+assert.equal(s.papeis.F6.etapa,"vazio");
+assert.throws(()=>M.loadCapillary(s,0.01),/fração insuficiente/);
+assert.throws(()=>M.spot(s,{origemMm:8}),/capilar vazio/);
+assert.throws(()=>M.develop(s,{frenteMm:20,tempoS:30,completo:true,sinaisVisiveis:[],proveniencia:"modelo"}),/papel sem amostra/);
+assert.throws(()=>M.reveal(s,{detector:"uv254",sinaisDetectados:[],proveniencia:"modelo"}),/desenvolva o papel/);
+s=M.receiveFraction(s,{frasco:"F7",volumeMl:0.38,componentesMg:{x:0.002,y:0.001},
+  corObservada:null,proveniencia:"teste hipotético"});
+assert.equal(s.frascos.F7.volumeColetadoMl,0.38);
+assert.equal(s.frascos.F7.volumeDisponivelMl,0.38);
+assert.equal(s.papeis.F7.etapa,"vazio","coletar não preenche papel");
+s=M.loadCapillary(s,0.02);
+assert.equal(s.capilar.frascoOrigem,"F7");
+assert.equal(s.capilar.volumeMl,0.02);
+assert.equal(s.frascos.F7.volumeDisponivelMl,0.36);
+assert.throws(()=>M.loadCapillary(s,0.01),/já contém/);
+assert.equal(s.papeis.F7.etapa,"vazio","carregar capilar não aplica");
+const backup=s;
+s=M.returnCapillary(s);
+assert.equal(s.capilar,null);assert.equal(s.frascos.F7.volumeDisponivelMl,0.38);
+s=M.loadCapillary(s,0.02);
+s=M.selectFraction(s,"F8");
+assert.throws(()=>M.spot(s,{origemMm:8}),/frasco de origem/);
+s=M.selectFraction(s,"F7");
+s=M.spot(s,{origemMm:8,larguraMm:0.8,tempoS:14});
+assert.equal(s.capilar,null);
+assert.equal(s.papeis.F7.etapa,"aplicado");
+assert.equal(s.papeis.F7.aplicacoes.length,1);
+assert.equal(s.papeis.F7.aplicacoes[0].corObservada,null);
+assert.equal(s.papeis.F8.etapa,"vazio","P8 permanece vazio");
+const antesDesenvolver=s;
+s=M.develop(s,{frenteMm:15,tempoS:48,completo:false,sinaisVisiveis:[],
+  proveniencia:"resultado de motor hipotético"});
+assert.equal(s.papeis.F7.etapa,"desenvolvendo");
+assert.equal(s.papeis.F7.sinaisVisiveis.length,0,"não inventar pigmento");
+assert.throws(()=>M.reveal(s,{detector:"uv254",sinaisDetectados:[],proveniencia:"modelo"}),/desenvolva o papel/);
+assert.throws(()=>M.develop(s,{frenteMm:13,tempoS:49,completo:false,sinaisVisiveis:[],proveniencia:"modelo"}),/frente não pode recuar/);
+s=M.develop(s,{frenteMm:42,tempoS:120,completo:true,sinaisVisiveis:[],
+  proveniencia:"resultado de motor hipotético"});
+assert.equal(s.papeis.F7.etapa,"desenvolvido");
+assert.throws(()=>M.reveal(s,{detector:"uv",sinaisDetectados:[],proveniencia:"modelo"}),/detector UV/);
+assert.throws(()=>M.reveal(s,{detector:"uv254",sinaisDetectados:[{distanciaMm:43,tipo:"extincao"}],proveniencia:"modelo"}),/distanciaMm/);
+s=M.reveal(s,{detector:"uv254",
+  sinaisDetectados:[{distanciaMm:18,tipo:"extincao",intensidade:0.6},
+    {distanciaMm:33,tipo:"extincao",intensidade:0.3}],
+  proveniencia:"fixtures hipotéticas de detector, NÃO espécies confirmadas"});
+assert.equal(s.papeis.F7.etapa,"revelado");
+assert.equal(s.papeis.F7.modoRevelacao,"uv254");
+assert.equal(s.papeis.F7.sinaisRevelados.length,2);
+assert.equal(s.papeis.F8.etapa,"vazio");
+assert.equal(s.papeis.F7.aplicacoes[0].origemMm,8);
+assert.equal(antesDesenvolver.papeis.F7.frenteMm,null,"não mutar histórico");
+assert.equal(backup.capilar.frascoOrigem,"F7","não mutar estado com capilar");
+let mod=M.setModule(s,"medir");
+assert.equal(mod.modulo,"medir");assert.equal(mod.ver,"regua");
+mod=M.setVer(mod,"comparar-padroes");
+assert.equal(mod.ver,"comparar-padroes");
+assert.throws(()=>M.setVer(mod,"particulas"),/indisponível/);
+mod=M.setModule(mod,"calcular");assert.equal(mod.ver,"rf");
+mod=M.setVer(mod,"resolucao");assert.equal(mod.ver,"resolucao");
+mod=M.setModule(mod,"explorar");assert.equal(mod.ver,"aparencia");
+mod=M.setVer(mod,"especies");assert.equal(mod.ver,"especies");
+assert.equal(s.modulo,"explorar","mudar módulo não altera pesquisa");
+assert.equal(s.papeis.F7.etapa,"revelado","não destruir papéis ao trocar módulos");
+assert(s.eventos.some(e=>e.tipo==="aplicar-capilar"));
+assert(s.eventos.some(e=>e.tipo==="revelar-papel"));
+assert.throws(()=>M.receiveFraction(s,{frasco:"F1",volumeMl:0.1,componentesMg:{},proveniencia:""}),/proveniência/);
+assert.throws(()=>M.receiveFraction(s,{frasco:"F1",volumeMl:0.1,componentesMg:{q:-1},proveniencia:"motor"}),/massa/);
+assert.throws(()=>M.setModule(s,"titracao"),/módulo desconhecido/);
+console.log("SIAC UX: triplo foco, duas visões gerais, F7→P7, papel vazio, capilar, UV e Ver por módulo OK.");

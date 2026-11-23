@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SIAC — Prévia da alternância de visualização</title>
+<link rel="icon" href="../assets/siac-icone.svg" type="image/svg+xml">
+<style>
+:root{--az:#0b5472;--verde:#16897c;--ink:#193e51;--suave:#617b87;--pale:#f1f6f7;--bord:#d3e2e6;--paper:#fff9e9;--amber:#d7a147}
+*{box-sizing:border-box}body{margin:0;font:14px/1.5 system-ui,Segoe UI,Arial,sans-serif;color:var(--ink);background:var(--pale)}
+button{font:inherit;cursor:pointer}button:disabled{opacity:.4;cursor:not-allowed}button:focus-visible,svg[tabindex]:focus-visible{outline:3px solid #df991e;outline-offset:2px}
+header{background:var(--az);padding:13px clamp(14px,3vw,35px);color:#fff;display:flex;align-items:center;gap:11px}
+header img{width:39px;height:39px}header strong{font-size:19px;letter-spacing:.08em}
+header small{display:block;color:#d3eef2;font-size:12px}header .marcador{margin-left:auto;border:1px solid #92c9cb;padding:5px 9px;border-radius:16px;font-size:11px}
+main{max-width:1550px;margin:auto;padding:12px;display:grid;grid-template-columns:minmax(230px,270px) minmax(360px,1fr) minmax(225px,295px);gap:12px;min-height:calc(100vh - 72px)}
+aside,.palco{background:#fff;border:1px solid var(--bord);border-radius:14px;min-width:0;padding:16px;box-shadow:0 4px 20px #10374e0a}
+h1,h2,h3,p{margin:0}h1{font-size:19px;margin-bottom:5px}h2{font-size:15px;margin-bottom:9px}h3{font-size:13px;margin-bottom:8px}
+.muted{color:var(--suave);font-size:12px}.caps{text-transform:uppercase;font-size:10px;font-weight:800;letter-spacing:.07em;color:#668592}
+.boxnote{border-left:3px solid var(--verde);background:#edf7f4;border-radius:6px;padding:9px 11px;margin-top:12px;font-size:12px}
+.rule{border:0;border-top:1px solid var(--bord);margin:17px 0}
+.btn{border:1px solid #a9c6ce;background:#f7fbfb;color:var(--az);padding:8px 9px;border-radius:8px;font-weight:650}
+.btn.prim{background:var(--az);color:white;border-color:var(--az)}
+.btn.active{background:#dff1ef;border:2px solid var(--az);padding:7px 8px}
+.tabs{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.tabs button{flex:1;min-width:150px;white-space:normal}
+.fgrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;margin-top:10px}
+.fgrid button{display:grid;justify-items:center;gap:2px;padding:8px 2px;border-radius:8px;border:1px solid #c9dce0;background:#fbfdfd;color:var(--ink);font-size:11px}
+.fgrid button[aria-pressed=true]{border:2px solid var(--az);background:#e3f2f4;padding:7px 1px}
+.tubo-mini{width:19px;height:26px;border:2px solid #3c7282;border-top-width:1px;border-radius:2px 2px 9px 9px;position:relative;overflow:hidden}
+.tubo-mini i{display:block;position:absolute;bottom:0;left:0;width:100%;background:#9bc6cd;height:40%}
+label{font-size:12px;font-weight:700;display:block;margin-bottom:5px}
+.operacoes{display:grid;gap:8px;margin-top:12px}
+.operacoes p{font-size:12px;color:var(--suave)}
+.doca-linha{margin-top:10px;display:flex;justify-content:space-between;gap:8px;font-size:12px}
+.cab-cena{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 0 11px}
+.cab-cena h1{margin-bottom:0}.tag{border:1px solid #b0d2d0;border-radius:999px;padding:3px 8px;color:#1a756d;font-size:11px;white-space:nowrap}
+.cena{position:relative;border:1px solid #dce7e8;background:linear-gradient(140deg,#fafafa,#ecf4f5);border-radius:12px;min-height:365px;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:12px;overflow:hidden}
+.cena svg{width:min(100%,480px);height:300px;display:block}
+.cena.animar{animation:transicao .28s ease}
+@keyframes transicao{from{opacity:.58;transform:translateX(9px)}to{opacity:1;transform:none}}
+.cena .hint{text-align:center;font-size:12px;color:#567480;margin-top:7px;max-width:460px}
+.cena p.large{font-weight:700;font-size:15px}
+.fracao-cards{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px;width:100%;max-width:670px}
+.fracao-card{border:1px solid #c4d9dc;border-radius:12px;background:white;min-height:109px;padding:8px 3px;display:grid;align-items:center;justify-items:center;gap:3px;color:var(--ink)}
+.fracao-card strong{font-size:14px}.fracao-card small{font-size:10px;color:var(--suave);text-align:center}
+.fracao-card svg{width:47px;height:52px}
+.destaque{outline:2px solid #0b5472}
+.escala{border-top:1px solid #d9e6e8;padding-top:11px;display:flex;justify-content:space-between;gap:7px;color:#54737d;font-size:12px}
+.ver-modulos{display:flex;gap:6px;margin:10px 0}
+.ver-modulos button{flex:1;min-width:0;font-size:11px;padding:8px 4px}
+.ver-itens{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.ver-itens button{font-size:11px;padding:8px 5px;line-height:1.3}
+.ver-conteudo{margin-top:13px;min-height:150px;border:1px solid #d5e5e7;border-radius:10px;background:#f6fbfa;padding:12px;font-size:12px}
+.ver-conteudo p{margin-top:7px}.ver-conteudo .btn{margin-top:9px}
+.dado{display:flex;justify-content:space-between;gap:10px;border-top:1px solid #dbe8ea;padding:8px 0;font-size:12px}
+.dado strong{font-variant-numeric:tabular-nums}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}.acoes .btn{margin-top:7px}
+#papel-interativo{cursor:crosshair;touch-action:manipulation}
+#status{min-height:30px;font-size:12px;margin-top:12px;color:#315963}
+@media(max-width:1060px){main{grid-template-columns:minmax(220px,260px) minmax(350px,1fr)}aside.ver{grid-column:1/-1}.ver-itens{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:730px){main{grid-template-columns:1fr;padding:8px;gap:8px}.palco{grid-row:1}.montagem{grid-row:2}.ver{grid-row:3}.cena{min-height:320px}.fracao-cards{gap:5px}.fracao-card{min-height:96px}.fracao-card svg{width:33px;height:41px}.marcador{display:none}}
+@media(prefers-reduced-motion:reduce){.cena.animar{animation:none}}
+</style></head>
+<body>
+<header><img src="../assets/siac-icone.svg" alt="" aria-hidden="true"><div><strong>SIAC</strong><small>Prévia da bancada: alternância de visualização</small></div><span class="marcador">Estado de interação · química ainda não conectada</span></header>
+<main>
+<aside class="montagem" aria-label="Montagem do experimento">
+<h1>Montagem</h1><p class="muted">Mesma doca: frascos, capilar e papel correspondente.</p>
+<hr class="rule">
+<h2>Frações da coluna</h2><p class="muted">Os frascos começam vazios. Nenhuma fração possui substância predeterminada.</p>
+<div id="grade-frascos" class="fgrid" role="group" aria-label="Frascos F1 a F10"></div>
+<div id="resumo-frasco" class="boxnote" aria-live="polite"></div>
+<div class="operacoes">
+<button id="coletar-demo" class="btn" type="button">Inserir coleta de teste no frasco</button>
+<p>Ferramenta exclusiva desta prévia: adiciona uma fração hipotética ao frasco selecionado, sem simular o motor da coluna.</p>
+<button id="carregar-capilar" class="btn prim" type="button">Retirar alíquota com capilar</button>
+<button id="desenvolver" class="btn" type="button">Desenvolver papel</button>
+</div>
+<p id="status" role="status" aria-live="polite">Escolha um frasco para iniciar o teste da interface.</p>
+</aside>
+<section class="palco" aria-labelledby="palco-titulo">
+<div class="cab-cena"><div><h1 id="palco-titulo">Bancada de investigação</h1><p class="muted">Os dois controles existentes alternam as visualizações.</p></div><span class="tag" id="nome-selecao">F1 ↔ P1</span></div>
+<nav class="tabs" aria-label="Visualizações da bancada">
+<button class="btn active" id="focus-tab" aria-pressed="true" type="button">Coluna em foco</button>
+<button class="btn" id="overview-tab" aria-pressed="false" type="button">Visão geral · Frascos</button>
+</nav>
+<p class="muted" style="margin:8px 0 10px">Clique novamente no botão ativo para percorrer suas visualizações; a fração escolhida é preservada.</p>
+<div id="scene" class="cena" aria-live="polite"></div>
+<div class="escala"><span id="etapa-papel">P1: vazio</span><span id="indicador-cena">Coluna</span></div>
+</section>
+<aside class="ver" aria-label="Painel Ver">
+<h1>Ver</h1><p class="muted">As funções são específicas do módulo ativo, sem duplicar a Montagem.</p>
+<nav id="modulos" class="ver-modulos" aria-label="Módulos da bancada"></nav>
+<h2 id="ver-cabecalho">Explorar · Observar</h2>
+<nav id="ver-itens" class="ver-itens" aria-label="Opções contextuais de Ver"></nav>
+<div id="ver-conteudo" class="ver-conteudo"></div>
+<hr class="rule">
+<h2>Registro gráfico</h2>
+<p class="muted">Exporta o suporte atual com origem, frente e manchas apenas quando realmente existem no estado do experimento.</p>
+<div class="actions"><button id="registro-svg" class="btn" type="button">Exportar papel SVG</button></div>
+<div class="boxnote">Todo sinal de UV desta prévia vem de uma **fixture hipotética explicitamente rotulada**. A identificação de espécies exige padrões e condições de referência.</div>
+</aside>
+</main>
+<script src="../js/ui/siac-estado-visualizacao.js"></script>
+<script>
+(function(){
+"use strict";
+const M=window.SIAC.visualizacao,$=id=>document.getElementById(id),fmt=(n,k=2)=>Number(n).toLocaleString("pt-BR",{maximumFractionDigits:k,minimumFractionDigits:k});
+let s=M.create(),luzUV=false,mensagem="Prévia de estados: nenhuma fração coletada nem papel analisado.";
+const nomes={coluna:"Coluna em foco",tubo:"Tubo em foco",amostra:"Amostra em foco",
+ frascos:"Frascos",papeis:"Papéis"};
+const funcoes={
+ aparencia:"Aparência ocular e estado do recipiente. Não revelar componentes incolores artificialmente.",
+ uv:"Alternar iluminação UV para o papel desenvolvido. A visibilidade depende do detector e do suporte.",
+ bandas:"Bandas observáveis na coluna ou sobre o papel, conforme a técnica e a detecção disponível.",
+ particulas:"Representação microscópica calculada: não observável diretamente a olho nu e dependente do motor físico.",
+ especies:"Distribuição hipotética das espécies do modelo. Não equivale a uma identificação analítica.",
+ trajetoria:"Histórico dos movimentos, aplicação, início e fim do desenvolvimento, sem inventar medições.",
+ regua:"Medição da linha de origem, frente do solvente e centro das manchas. Valores sempre em mm.",
+ "volume-tempo":"Volume de eluato, tempo e vazão da corrida. Exige dados reais do motor de coluna.",
+ "comparar-padroes":"Compare manchas e Rf com padrões obtidos sob as mesmas condições: apenas identificação candidata.",
+ rf:"Calcule Rf apenas a partir das distâncias registradas no mesmo papel.",
+ retencao:"Volume e tempo de retenção da coluna, fator k e volume morto: requer dados da corrida.",
+ eficiencia:"Eficiência N e altura equivalente H: requer largura de pico e retenção adequadas.",
+ resolucao:"Resolução Rs entre dois picos: requer larguras e tempos na mesma unidade.",
+ recuperacao:"Massa e percentagem de recuperação, com origem e incerteza. Não confundir com pureza."
+};
+const escapar=x=>String(x).replace(/[&<>"']/g,t=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[t]));
+function run(fn){try{s=fn();mensagem="";render();}catch(e){mensagem=e.message;render();}}
+function irFoco(foco){
+ if(s.visao!=="foco")s=M.clickFocus(s);
+ for(let i=0;i<3&&s.foco!==foco;i++)s=M.clickFocus(s);
+}
+function svgTubo(id,grande=false){
+ const f=s.frascos[id],has=f.volumeColetadoMl>0;
+ const width=grande?400:55,height=grande?300:70;
+ const fill=has?'<path d="M118 178 Q153 185 181 179V219Q179 247 150 247Q121 247 118 219Z" fill="'+(f.corObservada||"#a8c4cb")+'" opacity=".65"/>':'';
+ return '<svg viewBox="0 0 300 280" role="img" aria-label="Frasco '+id+(has?' com eluato coletado':' vazio')+'" width="'+width+'" height="'+height+'">'+
+ '<path d="M115 33H185M118 33V215Q118 250 150 250Q182 250 182 215V33" fill="#f9fbfc" fill-opacity=".6" stroke="#2b687c" stroke-width="4"/>'+
+ fill+'<path d="M114 33H186" stroke="#2b687c" stroke-width="4"/>'+
+ '<text x="150" y="272" text-anchor="middle" font-size="15" font-weight="700" fill="#174f66">'+id+'</text></svg>';
+}
+function papelSvg(id,pequeno=false){
+ const p=s.papeis[id],uv=luzUV&&p.modoRevelacao!==null;
+ const marca=p.aplicacoes.map(a=>{
+  const x=90+a.posicaoLateralMm*3.6;
+  return '<ellipse cx="'+x+'" cy="238" rx="5" ry="3.5" fill="'+(a.corObservada||"#809ba8")+'" opacity="'+(a.corObservada?".8":".2")+'"/>';
+ }).join("");
+ const linhaFrente=p.frenteMm===null?"":'<path d="M84 '+(238-p.frenteMm*2.1)+'H204" stroke="#155a72" stroke-dasharray="5 4" stroke-width="2"/>';
+ const manchas=(uv?p.sinaisRevelados:p.sinaisVisiveis).map(a=>{
+  const y=238-a.distanciaMm*2.1;
+  return '<ellipse cx="144" cy="'+y+'" rx="15" ry="5" fill="'+(a.cor||"#243c57")+'" opacity=".65"/>';
+ }).join("");
+ const fundo=uv?'#caf0e2':'#fff9e9';
+ return '<svg '+(!pequeno?'id="papel-interativo" tabindex="0" role="button" aria-label="Papel '+p.id+'; posicionar capilar na origem"':'role="img" aria-label="Papel '+p.id+'"')+
+  ' viewBox="0 0 290 310">'+
+  '<rect x="75" y="20" width="145" height="266" rx="4" fill="'+fundo+'" stroke="#1f5e72" stroke-width="3"/>'+
+  (uv?'<rect x="80" y="24" width="136" height="256" fill="#67b99e" opacity=".2"/>':'')+
+  '<path d="M83 238H212" stroke="#607e88" stroke-width="2" stroke-dasharray="3 4"/>'+
+  linhaFrente+marca+manchas+
+  '<text x="152" y="299" text-anchor="middle" font-size="13" fill="#245670">'+p.id+' · '+p.etapa+'</text></svg>';
+}
+function colunaSvg(){
+ return '<svg viewBox="0 0 420 320" role="img" aria-label="Coluna esquemática sem bandas inventadas">'+
+ '<text x="210" y="24" text-anchor="middle" fill="#476878" font-size="15">Entrada do eluente</text>'+
+ '<path d="M190 38V62H230V38" fill="none" stroke="#31677a" stroke-width="4"/>'+
+ '<rect x="170" y="62" width="80" height="184" fill="#f2ead8" stroke="#19516a" stroke-width="4" rx="4"/>'+
+ '<path d="M185 246Q185 266 199 274V297H219V274Q235 266 235 246" fill="none" stroke="#19516a" stroke-width="4"/>'+
+ '<path d="M209 297V311" stroke="#168da7" stroke-width="4"/>'+
+ '<text x="265" y="157" fill="#476879" font-size="14">Leito estacionário</text>'+
+ '<text x="132" y="234" text-anchor="end" fill="#476879" font-size="14">Saída</text></svg>';
+}
+function renderScene(){
+ const id=s.frascoSelecionado,p=s.papeis[id];
+ const focus=s.visao==="foco",screen=focus?s.foco:s.geral;
+ let html="";
+ if(focus){
+  if(screen==="coluna")html=colunaSvg()+'<p class="large">Coluna cromatográfica</p><p class="hint">A separação e as janelas F1–F10 virão do motor científico; este protótipo não calcula bandas.</p>';
+  if(screen==="tubo")html=svgTubo(id,true)+'<p class="large">'+id+' · '+fmt(s.frascos[id].volumeColetadoMl,2)+' mL coletados</p><p class="hint">Amostra derivada da coleta, sem identificação química presumida.</p>';
+  if(screen==="amostra")html=papelSvg(id)+'<p class="large">'+p.id+' · '+p.etapa+'</p><p class="hint">'+
+    (s.capilar&&s.capilar.frascoOrigem===id?"Capilar carregado. Clique no papel, perto da linha de origem, para depositar a amostra.":
+    p.etapa==="vazio"?"O papel começa vazio. Retire uma alíquota do frasco com o capilar para aplicar.":
+    "Origem, frente e manchas são registradas conforme as ações e os resultados fornecidos pelo modelo.")+'</p>';
+ }else{
+  html='<div class="fracao-cards">'+Array.from({length:10},(_,i)=>{
+   const f="F"+(i+1),t=s.frascos[f],pap=s.papeis[f];
+   const sub=screen==="frascos"?fmt(t.volumeColetadoMl,2)+" mL":pap.etapa;
+   return '<button type="button" class="fracao-card '+(f===id?"destaque":"")+'" data-pick="'+f+'" aria-label="'+(screen==="frascos"?f:pap.id)+', '+sub+'">'+
+    '<strong>'+(screen==="frascos"?f:pap.id)+'</strong>'+
+    (screen==="frascos"?svgTubo(f):papelSvg(f,true))+'<small>'+sub+'</small></button>';
+  }).join("")+'</div><p class="hint">Selecione um '+(screen==="frascos"?"frasco":"papel")+' para abrir seu foco. Os resultados dos papéis não são copiados automaticamente dos frascos.</p>';
+ }
+ const el=$("scene");el.innerHTML=html;el.classList.remove("animar");void el.offsetWidth;el.classList.add("animar");
+ if(focus&&screen==="amostra"){
+  const folha=$("papel-interativo");
+  folha.addEventListener("click",e=>{
+   if(!s.capilar){mensagem="Carregue primeiro o capilar com a fração "+id+".";render();return;}
+   const box=folha.getBoundingClientRect(),x=(e.clientX-box.left)/box.width;
+   const lateral=Math.max(0,Math.min(30,Math.round(((x*290-90)/3.6)*10)/10));
+   run(()=>M.spot(s,{origemMm:8,posicaoLateralMm:lateral,larguraMm:1,tempoS:0}));
+  });
+  folha.addEventListener("keydown",e=>{
+   if(e.key==="Enter"||e.key===" "){e.preventDefault();run(()=>M.spot(s,{origemMm:8,posicaoLateralMm:15,larguraMm:1,tempoS:0}));}
+  });
+ }
+ for(const bot of el.querySelectorAll("[data-pick]")){
+  bot.addEventListener("click",()=>{
+   s=M.selectFraction(s,bot.dataset.pick);
+   irFoco(screen==="frascos"?"tubo":"amostra");render();
+  });
+ }
+ $("indicador-cena").textContent=focus?nomes[screen]:"Visão geral · "+nomes[screen];
+ $("etapa-papel").textContent=p.id+": "+p.etapa;
+}
+function renderMontagem(){
+ const id=s.frascoSelecionado,f=s.frascos[id];
+ $("nome-selecao").textContent=id+" ↔ "+s.papeis[id].id;
+ $("resumo-frasco").textContent=id+": "+fmt(f.volumeColetadoMl,2)+" mL coletados; "+fmt(f.volumeDisponivelMl,2)+" mL disponíveis.";
+ const grid=$("grade-frascos");
+ grid.innerHTML=Array.from({length:10},(_,i)=>{
+  const n="F"+(i+1),v=s.frascos[n];
+  return '<button type="button" data-f="'+n+'" aria-pressed="'+(n===id)+'" aria-label="'+n+', '+fmt(v.volumeColetadoMl,2)+' mL">'+
+   '<span class="tubo-mini"><i style="height:'+(v.volumeColetadoMl>0?"38":"0")+'%"></i></span>'+n+'</button>';
+ }).join("");
+ grid.querySelectorAll("[data-f]").forEach(b=>b.addEventListener("click",()=>{
+  s=M.selectFraction(s,b.dataset.f);render();
+ }));
+ $("carregar-capilar").disabled=f.volumeDisponivelMl<=0||!!s.capilar;
+ $("desenvolver").disabled=!["aplicado","desenvolvendo"].includes(s.papeis[id].etapa);
+ $("status").textContent=mensagem||"Fração "+id+" selecionada. O estado do papel correspondente é independente.";
+}
+function renderVer(){
+ const modules={explorar:"Explorar",medir:"Medir",calcular:"Calcular"};
+ $("ver-cabecalho").textContent=modules[s.modulo]+" · Ver";
+ $("modulos").innerHTML=Object.entries(modules).map(([id,label])=>
+  '<button class="btn '+(s.modulo===id?"active":"")+'" type="button" data-mod="'+id+'" aria-pressed="'+(s.modulo===id)+'">'+label+'</button>').join("");
+ $("modulos").querySelectorAll("[data-mod]").forEach(b=>b.addEventListener("click",()=>run(()=>M.setModule(s,b.dataset.mod))));
+ const nomesItens={"volume-tempo":"Volume/tempo","comparar-padroes":"Comparar padrões","regua":"Régua","uv":"Luz UV","particulas":"Partículas","especies":"Espécies"};
+ $("ver-itens").innerHTML=M.secoes[s.modulo].map(id=>
+  '<button type="button" class="btn '+(s.ver===id?"active":"")+'" data-item="'+id+'" aria-pressed="'+(s.ver===id)+'">'+(nomesItens[id]||id.charAt(0).toUpperCase()+id.slice(1))+'</button>').join("");
+ $("ver-itens").querySelectorAll("[data-item]").forEach(b=>b.addEventListener("click",()=>run(()=>M.setVer(s,b.dataset.item))));
+ const id=s.frascoSelecionado,p=s.papeis[id];
+ let text='<strong>'+escapar(nomesItens[s.ver]||s.ver)+'</strong><p>'+escapar(funcoes[s.ver])+'</p>';
+ if(s.ver==="uv"){
+  text+='<div class="actions"><button class="btn prim" type="button" id="uv254">Ligar UV 254 nm</button>'+
+   '<button class="btn" type="button" id="uv365">Ligar UV 365 nm</button>'+
+   '<button class="btn" type="button" id="uv-off">Desligar</button></div><p>Resultado sob UV proveniente de uma fixture hipotética desta prévia.</p>';
+ }
+ if(s.ver==="regua"||s.ver==="rf"){
+  text+='<div class="dado"><span>Frente</span><strong>'+(p.frenteMm===null?"—":fmt(p.frenteMm,1)+" mm")+'</strong></div>';
+  if(p.sinaisRevelados.length)for(const [i,m] of p.sinaisRevelados.entries()){
+   text+='<div class="dado"><span>Mancha '+(i+1)+(s.ver==="rf"?" · Rf":" · centro")+'</span><strong>'+
+    (s.ver==="rf"?fmt(m.distanciaMm/p.frenteMm,3):fmt(m.distanciaMm,1)+" mm")+'</strong></div>';
+  }
+  if(!p.sinaisRevelados.length)text+='<p>Sem manchas detectadas ou sem referência válida para cálculo.</p>';
+ }
+ if(s.ver==="trajetoria")text+='<p>'+s.eventos.slice(-6).map(e=>escapar(e.tipo)).join(" · ")+'</p>';
+ if(s.ver==="comparar-padroes")text+='<p>Nenhum padrão de referência carregado. Candidatos não são identificações conclusivas.</p>';
+ $("ver-conteudo").innerHTML=text;
+ if(s.ver==="uv"){
+  $("uv254").onclick=()=>acionarUV("uv254");
+  $("uv365").onclick=()=>acionarUV("uv365");
+  $("uv-off").onclick=()=>{luzUV=false;mensagem="Iluminação UV desligada; o histórico de revelação permanece.";render();};
+ }
+}
+function acionarUV(modo){
+ if(!["desenvolvido","revelado"].includes(s.papeis[s.frascoSelecionado].etapa)){
+  mensagem="Desenvolva primeiro o papel escolhido para examinar sob luz UV.";render();return;
+ }
+ // Fixtures de detector de demonstração, NÃO resultados de substâncias reais.
+ const sinais=modo==="uv254"?
+  [{distanciaMm:18,tipo:"extincao",intensidade:.65},{distanciaMm:33,tipo:"extincao",intensidade:.35}]:[];
+ run(()=>M.reveal(s,{detector:modo,sinaisDetectados:sinais,
+  proveniencia:"fixture visual hipotética; não confirma identidade"}));
+ luzUV=true;irFoco("amostra");render();
+}
+function render(){
+ $("focus-tab").textContent=nomes[s.foco];
+ $("overview-tab").textContent="Visão geral · "+nomes[s.geral];
+ for(const [id,active] of [["focus-tab",s.visao==="foco"],["overview-tab",s.visao==="geral"]]){
+  $(id).classList.toggle("active",active);$(id).setAttribute("aria-pressed",String(active));
+ }
+ renderScene();renderMontagem();renderVer();
+}
+$("focus-tab").addEventListener("click",()=>run(()=>M.clickFocus(s)));
+$("overview-tab").addEventListener("click",()=>run(()=>M.clickOverview(s)));
+$("coletar-demo").addEventListener("click",()=>run(()=>M.receiveFraction(s,{
+ frasco:s.frascoSelecionado,volumeMl:.4,componentesMg:{A:.006,B:.002},
+ corObservada:null,proveniencia:"coleta de interface hipotética, sem química"})));
+$("carregar-capilar").addEventListener("click",()=>{
+ const id=s.frascoSelecionado;
+ try{s=M.loadCapillary(s,.01);irFoco("amostra");mensagem="Capilar do "+id+" carregado. Clique na origem do papel "+s.papeis[id].id+".";render();}
+ catch(e){mensagem=e.message;render();}
+});
+$("desenvolver").addEventListener("click",()=>{
+ const id=s.frascoSelecionado;
+ run(()=>M.develop(s,{frenteMm:55,tempoS:90,completo:true,sinaisVisiveis:[],
+  proveniencia:"distância e tempo hipotéticos de demonstração, não medidos"}));
+ irFoco("amostra");render();
+});
+$("registro-svg").addEventListener("click",()=>{
+ const p=s.papeis[s.frascoSelecionado];
+ const figura=papelSvg(s.frascoSelecionado);
+ const extra='<text x="20" y="34" font-size="23" fill="#0b5472" font-weight="bold">SIAC · Registro gráfico</text>'+
+  '<text x="20" y="59" font-size="12" fill="#435f70">Papel '+p.id+' · '+p.etapa+' · origem: '+p.frascoOrigem+'</text>'+
+  '<text x="20" y="360" font-size="13" fill="#526e7c">Frente: '+(p.frenteMm===null?"não desenvolvida":fmt(p.frenteMm,1)+" mm")+'</text>'+
+  '<text x="20" y="386" font-size="11" fill="#526e7c">Registro gerado a partir dos estados de interação. Dados de teste hipotéticos.</text>';
+ const svg='<?xml version="1.0" encoding="UTF-8"?>'+
+  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 410" width="900" height="820">'+
+  '<rect width="450" height="410" fill="#fff"/>'+extra+
+  '<svg x="65" y="65" width="320" height="290" viewBox="0 0 290 310">'+
+  figura.replace(/^<svg[^>]*>/,"").replace(/<\/svg>$/,"")+
+  '</svg></svg>';
+ const url=URL.createObjectURL(new Blob([svg],{type:"image/svg+xml"}));
+ const link=document.createElement("a");link.href=url;link.download="siac-"+p.id+"-registro.svg";link.click();
+ setTimeout(()=>URL.revokeObjectURL(url),1000);
+ mensagem="Registro gráfico de "+p.id+" exportado.";render();
+});
+render();
+})();
+</script></body></html>

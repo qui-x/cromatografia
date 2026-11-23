@@ -47,6 +47,20 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
      rota:window.SIAB?.rota?.nome
    }))),"erros:",errors);
    assert.match(await page.locator("#focus-tab").textContent(),/Coluna em foco/);
+   // A paridade visual com SIAB exige botões compactos, estáveis e ordenados.
+   const nav=await page.evaluate(()=>{
+     const a=document.getElementById("focus-tab").getBoundingClientRect();
+     const b=document.getElementById("overview-tab").getBoundingClientRect();
+     return {a:{x:a.x,right:a.right,width:a.width,y:a.y},b:{x:b.x,right:b.right,width:b.width,y:b.y}};
+   });
+   assert(nav.b.x>=nav.a.right-2,"Visão geral deve permanecer à direita do foco");
+   if(width===1360){
+     assert(nav.a.width<=190&&nav.b.width<=190,
+       "Foco/Visão geral não devem expandir para preencher a barra: "+JSON.stringify(nav));
+   }
+   assert.equal(await page.locator("#siac-stage .siac-perfil").count(),0,
+     "Gráfico analítico pertence exclusivamente à doca Ver");
+
    assert.equal(await page.locator("#siac-stage .siac-card").count(),0);
    assert.equal(await page.locator("#siac-stage").isVisible(),true);
    assert.equal(await page.locator("#siac-montagem").isVisible(),true);
@@ -133,6 +147,24 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
     assert.equal(await page.locator("#siac-ver [data-ver=regua]").count(),1);
     await page.locator("#siac-ver [data-module=calcular]").click({force:true});
     assert.equal(await page.locator("#siac-ver [data-ver=rf]").count(),1);
+    assert.equal(await page.locator("#siac-ver [data-module=observar]").count(),1);
+    assert.equal(await page.locator("#siac-stage .siac-perfil").count(),0);
+    // A coluna deve exibir gráfico APENAS no Ver > Calcular.
+    await page.locator("#focus-tab").click({force:true}); // geral -> foco (amostra)
+    await page.locator("#focus-tab").click({force:true}); // amostra -> coluna
+    assert.match(await page.locator("#focus-tab").textContent(),/Coluna em foco/);
+    await page.locator("#siac-ver [data-module=calcular]").click({force:true});
+    assert.equal(await page.locator("#siac-ver [data-ver=grafico]").count(),1);
+    await page.locator("#siac-ver [data-ver=grafico]").click({force:true});
+    assert.equal(await page.locator("#siac-ver-dados .siac-perfil svg").count(),1,
+      "O perfil de eluição deve estar dentro da doca Ver");
+    assert.equal(await page.locator("#siac-stage .siac-perfil").count(),0,
+      "O gráfico nunca deve voltar à cena");
+    await page.locator("#siac-ver [data-module=medir]").click({force:true});
+    assert.equal(await page.locator("#siac-ver [data-ver=tempo]").count(),1);
+    assert.equal(await page.locator("#siac-ver [data-ver=vazao]").count(),1);
+    await page.locator("#siac-ver [data-module=observar]").click({force:true});
+    assert.equal(await page.locator("#siac-ver [data-ver=bandas]").count(),1);
     const folder=path.join(root,"docs/evidencias/siac-laboratorio");
     fs.mkdirSync(folder,{recursive:true});
     await page.screenshot({path:path.join(folder,"desktop.png"),fullPage:true});

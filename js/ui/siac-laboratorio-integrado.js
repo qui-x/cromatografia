@@ -16,12 +16,23 @@ SIAC.laboratorio=(()=>{
   faseA:{silica:{A:.22,B:1.1,C:2.8,D:1.75},alumina:{A:.5,B:1.6,C:2.2,D:.6}},
   faseB:{silica:{A:.83,B:.34,C:1.4,D:2.2},alumina:{A:1.1,B:.5,C:2.5,D:.3}}
  };
- const VIEWS=["coluna","tubo","amostra"],GROUPS=["frascos","papeis"],
- MODULES={explorar:["aparencia","bandas","especies","particulas","uv"],
-  medir:["regua","volume","referencias"],calcular:["rf","retencao","recuperacao"]};
+ const VIEWS=["coluna","tubo","amostra"],GROUPS=["frascos","papeis"];
+ // A doca Ver adapta a ferramenta ao objeto em foco, sem criar novos controles
+ // fora da infraestrutura existente do workspace.
+ const MODULES={
+  observar:["aparencia","bandas","especies","particulas","uv"],
+  medir:["regua","volume","tempo","vazao","janelas","referencias"],
+  calcular:["grafico","rf","retencao","recuperacao"]
+ };
+ const CONTEXT={
+  coluna:{observar:["aparencia","bandas","especies"],medir:["tempo","volume","vazao","janelas","regua"],calcular:["grafico","retencao","recuperacao","rf"]},
+  tubo:{observar:["aparencia","especies","uv"],medir:["volume","tempo","regua","referencias"],calcular:["recuperacao","rf"]},
+  amostra:{observar:["aparencia","bandas","uv"],medir:["regua","volume","referencias"],calcular:["rf","recuperacao"]}
+ };
+ const availableItems=()=>CONTEXT[focus]?.[module]||MODULES[module];
  let ready=false,enabled=false,col=null,plan=null,volume=0,speed=120,
   running=false,lastFrame=0,view="foco",focus="coluna",group="frascos",
-  selected="F1",capillary=null,development=null,module="explorar",
+  selected="F1",capillary=null,development=null,module="observar",
   item="aparencia",papers={},withdrawn={},status="",lastDraw=0;
  const fmt=(n,d=2)=>Number(n).toLocaleString("pt-BR",{minimumFractionDigits:d,maximumFractionDigits:d});
  const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
@@ -65,7 +76,7 @@ SIAC.laboratorio=(()=>{
   ui.innerHTML='<h2>Montagem cromatográfica</h2>'+elements();
   left.prepend(ui);
   const ver=document.createElement("section");ver.id="siac-ver";ver.innerHTML=
-   '<h2>Ver · Cromatografia</h2><div id="siac-modulos" class="siac-modulos"></div>'+
+   '<h2>Ver · Cromatografia</h2><p id="siac-ver-contexto" class="siac-ver-contexto" aria-live="polite"></p><div id="siac-modulos" class="siac-modulos"></div>'+
    '<div id="siac-ver-itens" class="siac-itens"></div><div id="siac-ver-dados" aria-live="polite"></div>';
   right.prepend(ver);
   const stage=document.createElement("section");stage.id="siac-stage";stage.setAttribute("aria-label","Bancada cromatográfica");
@@ -286,10 +297,9 @@ SIAC.laboratorio=(()=>{
  }
  function spotlight(){
   if(focus==="coluna")return '<h2>Coluna em foco</h2><div class="siac-coluna-centro">'+chromatographySVG()+
-   '<div><p>Volume eluído: <strong>'+fmt(volume)+' mL</strong> / '+fmt(col.config.volumeTotalMl,1)+' mL</p>'+
-   '<p>Tempo de eluição: '+displaySec(volume/col.config.vazaoMlMin*60)+'</p>'+
-   '<p>Saída agora: '+(plan?.janelas.find(j=>volume>=j.inicioMl&&volume<j.fimMl)?.frasco||"descarte")+'</p>'+
-   '<p class="siac-hint">Programe as janelas e o frasco na Montagem.</p></div></div>';
+   '<div class="siac-leituras-rapidas"><span>Volume <strong>'+fmt(volume)+' / '+fmt(col.config.volumeTotalMl,1)+' mL</strong></span>'+
+   '<span>Tempo <strong>'+displaySec(volume/col.config.vazaoMlMin*60)+'</strong></span>'+
+   '<span>Saída <strong>'+(plan?.janelas.find(j=>volume>=j.inicioMl&&volume<j.fimMl)?.frasco||"Descarte")+'</strong></span></div></div>';
   const f=current();
   if(!f)return '<h2>'+(focus==="tubo"?"Tubo em foco":"Amostra em foco")+'</h2>'+
    '<p class="siac-empty">Ainda não existe frasco montado nesta posição. Aguarde a eluição ou selecione um frasco já preenchido na Visão geral.</p>';
@@ -341,18 +351,15 @@ SIAC.laboratorio=(()=>{
  function renderStage(){
   const stage=$("siac-stage");if(!stage||!col)return;
   sincronizarAbas();
-  const fracs=filled();
-  const t=volume/col.config.vazaoMlMin*60,all=col.config.tempoTotalMin*60;
-  stage.innerHTML='<header class="siac-stage-head"><span>Investigação cromatográfica · '+(view==="foco"?"Foco":"Visão geral")+'</span>'+
-   '<strong>'+fmt(volume)+' / '+fmt(col.config.volumeTotalMl,1)+' mL</strong></header>'+
-   (view==="foco"?spotlight():overviewMarkup())+
-   '<section class="siac-perfil"><h3>Sinal de eluição observado</h3>'+drawGraph()+
-   '<p class="siac-hint">Sinal óptico combinado do modelo. Nenhuma identidade ou pico futuro é revelado.</p></section>'+
-   '<div class="siac-relogio"><button id="siac-executar" class="primary-btn" type="button">'+
+  const t=volume/col.config.vazaoMlMin*60;
+  const all=col.config.tempoTotalMin*60;
+  stage.innerHTML=(view==="foco"?spotlight():overviewMarkup())+
+   '<div class="siac-relogio" role="group" aria-label="Controle da corrida cromatográfica">'+
+   '<button id="siac-executar" class="primary-btn" type="button">'+
     (running?"Pausar":volume>=col.config.volumeTotalMl?"Finalizado":"Iniciar eluição")+'</button>'+
-   '<button id="siac-reiniciar" class="secondary-btn" type="button">Reiniciar corrida</button>'+
-   '<span>Tempo simulado '+displaySec(t)+' / '+displaySec(all)+' · '+speed+'×</span></div>'+
-   '<p id="siac-stage-status" role="status" aria-live="polite">'+esc(status)+'</p>';
+   '<button id="siac-reiniciar" class="secondary-btn" type="button" title="Reiniciar a corrida, preservando as janelas">Reiniciar</button>'+
+   '<span aria-label="Tempo simulado de eluição">'+displaySec(t)+' / '+displaySec(all)+'</span></div>'+
+   '<p id="siac-stage-status" class="siac-sr-only" role="status" aria-live="polite">'+esc(status)+'</p>';
   $("siac-executar").disabled=volume>=col.config.volumeTotalMl;
  }
  function renderMontagem(){
@@ -369,34 +376,63 @@ SIAC.laboratorio=(()=>{
  }
  function renderVer(){
   const el=$("siac-ver");if(!el)return;
-  $("siac-modulos").innerHTML=Object.keys(MODULES).map(m=>'<button type="button" data-module="'+m+
-   '" aria-pressed="'+(module===m)+'">'+m.charAt(0).toUpperCase()+m.slice(1)+'</button>').join("");
-  $("siac-ver-itens").innerHTML=MODULES[module].map(k=>'<button type="button" data-ver="'+k+
-    '" aria-pressed="'+(item===k)+'">'+({uv:"Luz UV",referencias:"Padrões",regua:"Régua",especies:"Espécies",particulas:"Partículas"}[k]||k)+'</button>').join("");
+  const itens=availableItems();
+  if(!itens.includes(item))item=itens[0];
+  const labels={coluna:"Coluna",tubo:"Tubo "+selected,amostra:"Papel P"+selected.slice(1)};
+  $("siac-ver-contexto").textContent=labels[focus]+" · "+({observar:"Observar",medir:"Medir",calcular:"Calcular"}[module]);
+  $("siac-modulos").innerHTML=Object.keys(MODULES).map(m=>
+   '<button type="button" data-module="'+m+'" aria-pressed="'+(module===m)+'">'+
+   m.charAt(0).toUpperCase()+m.slice(1)+'</button>').join("");
+  $("siac-ver-itens").innerHTML=itens.map(k=>'<button type="button" data-ver="'+k+
+   '" aria-pressed="'+(item===k)+'">'+({
+    uv:"Luz UV",referencias:"Padrões",regua:"Régua",especies:"Espécies",
+    particulas:"Partículas",grafico:"Perfil de eluição",tempo:"Cronômetro",
+    vazao:"Vazão",janelas:"Janelas",retencao:"Retenção",recuperacao:"Recuperação",
+    rf:"Fator Rf",volume:"Volume",aparencia:"Aparência",bandas:"Bandas"
+   }[k]||k)+'</button>').join("");
   const p=papers[selected];
-  let desc={
-   aparencia:"Aparência da coluna, do eluato e do papel: somente o que é visível.",
-   bandas:"Bandas cromáticas visíveis e sua evolução no leito. Não equivalem a identificação.",
-   especies:"Distribuição interna prevista das espécies-modelo. Não observável a olho nu.",
-   particulas:"Representação calculada das partículas: não é uma imagem microscópica medida.",
-   uv:"A detecção UV depende do papel desenvolvido e das propriedades declaradas.",
-   regua:"Medição da origem, da frente do solvente e das manchas no mesmo suporte.",
-   volume:"Vazão, volume acumulado e tempo do experimento.",
-   referencias:"Comparações precisam de padrões equivalentes. Rf isolado não identifica substâncias.",
-   rf:"Rf = distância da mancha ÷ distância da frente. Disponível apenas após revelação.",
-   retencao:"Volume morto e fator de retenção calculado a partir dos parâmetros do modelo.",
-   recuperacao:"Recuperação: massa coletada / massa inicial × 100. Não é pureza."
-  }[item];
-  if(item==="rf"&&p?.frenteMm>0)desc+="\nFrente: "+fmt(p.frenteMm,1)+" mm. "+
-   (p.sinais.concat(p.uv).length?p.sinais.concat(p.uv).map(x=>"Rf "+fmt(x.distanciaMm/p.frenteMm,3)).join(" · "):"Nenhuma mancha detectada.");
-  if(item==="volume")desc+="\n"+fmt(volume)+" mL em "+displaySec(volume/col.config.vazaoMlMin*60)+
-   " · vazão "+fmt(col.config.vazaoMlMin)+" mL/min.";
-  $("siac-ver-dados").textContent=desc;
+  const descricoes={
+   aparencia:"Observe somente a aparência visível na cena.",
+   bandas:"Bandas visíveis no suporte: não confirmam identidades.",
+   especies:"Distribuição calculada de componentes-modelo, não observável diretamente.",
+   particulas:"Representação didática calculada; não é microscopia experimental.",
+   uv:"A observação em UV depende do detector e do suporte utilizado.",
+   regua:"Medições da frente, origem e manchas no mesmo suporte.",
+   volume:"Volume acumulado durante a eluição.",
+   tempo:"Tempo decorrido e previsto da corrida.",
+   vazao:"Vazão configurada para o eluente.",
+   janelas:"Intervalos definidos para os frascos F1 a F10.",
+   referencias:"Compare apenas padrões obtidos em condições compatíveis.",
+   rf:"Rf = distância da mancha / distância da frente do solvente.",
+   retencao:"Retenção derivada dos parâmetros hipotéticos do modelo.",
+   recuperacao:"Recuperação de massa não equivale à pureza.",
+   grafico:"Sinal de eluição observado até o volume atual, sem antecipar identidades."
+  };
+  const box=$("siac-ver-dados");
+  let desc=descricoes[item]||"";
+  if(item==="grafico"&&focus==="coluna"){
+   box.innerHTML='<section class="siac-perfil" aria-label="Gráfico de eluição da coluna">'+
+    '<h3>Eluição observada</h3>'+drawGraph()+
+    '<p class="siac-ver-hint">'+desc+'</p></section>';
+   return;
+  }
+  if(item==="rf"&&p?.frenteMm>0){
+   desc+="\nFrente: "+fmt(p.frenteMm,1)+" mm. "+
+    (p.sinais.concat(p.uv).length?p.sinais.concat(p.uv)
+     .map(x=>"Rf "+fmt(x.distanciaMm/p.frenteMm,3)).join(" · "):"Nenhuma mancha detectada.");
+  }
+  if(item==="volume")desc+="\n"+fmt(volume)+" / "+fmt(col.config.volumeTotalMl,1)+" mL.";
+  if(item==="tempo")desc+="\n"+displaySec(volume/col.config.vazaoMlMin*60)+" / "+
+    displaySec(col.config.tempoTotalMin*60);
+  if(item==="vazao")desc+="\n"+fmt(col.config.vazaoMlMin)+" mL/min.";
+  if(item==="janelas")desc+="\n"+(plan.janelas.length?plan.janelas.map(j=>
+    j.frasco+": "+fmt(j.inicioMl,1)+"–"+fmt(j.fimMl,1)+" mL").join("\n"):"Nenhuma janela programada.");
+  box.textContent=desc;
  }
  function render(){if(!enabled||!col)return;renderMontagem();renderStage();renderVer();}
  function verClick(e){
   const m=e.target.closest("[data-module]"),v=e.target.closest("[data-ver]");
-  if(m){module=m.dataset.module;item=MODULES[module][0];render();}
+  if(m&&MODULES[m.dataset.module]){module=m.dataset.module;item=availableItems()[0];render();}
   if(v){item=v.dataset.ver;render();}
  }
  function stageClick(e){

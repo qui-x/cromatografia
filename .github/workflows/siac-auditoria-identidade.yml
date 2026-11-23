@@ -1,0 +1,26 @@
+name: "SIAC — Auditoria total da nomenclatura"
+on:
+  push:
+    branches: [main, feat/siac-experiencia-didatica]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  nomenclatura:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Proteger standalone SIAB original
+        run: node tests/siac-referencia-standalone.test.cjs
+      - name: Inspecionar todos os arquivos versionados
+        run: node scripts/siac-auditar-identidade.cjs
+      - name: Publicar inventário integral
+        uses: actions/upload-artifact@v4
+        with:
+          name: siac-auditoria-identidade
+          path: docs/evidencias/siac-identidade/referencias.json
+          retention-days: 14
+          if-no-files-found: error
