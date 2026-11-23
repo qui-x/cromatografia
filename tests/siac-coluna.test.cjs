@@ -103,7 +103,22 @@ assert(coluna.prepare(rapido).config.componentes[0].volumeRetencaoMl>origem.conf
 const outro=config();outro.faseMovel.id="nome-mudado-sem-parametro";
 perto(coluna.prepare(outro).config.componentes[0].volumeRetencaoMl,origem.config.componentes[0].volumeRetencaoMl);
 assert.throws(()=>coluna.prepare({...config(),volumeTotalMl:0}),/volumeTotalMl/);
-assert.throws(()=>coluna.prepare({...config(),volumeTotalMl:11}),/volumeTotalMl/);
+// Maior domínio volumétrico: retenção depende dos parâmetros, não da janela de coleta.
+const escalaGrande=config();
+escalaGrande.volumeTotalMl=1000;
+escalaGrande.geometria={comprimentoMm:400,diametroInternoMm:50,porosidade:0.5};
+escalaGrande.vazaoMlMin=5;
+const colunaGrande=coluna.prepare(escalaGrande);
+assert.equal(colunaGrande.config.volumeTotalMl,1000);
+const corridaGrande=coluna.advance(colunaGrande,200);
+assert.equal(corridaGrande.volumeEluidoMl,1000);
+const curvaGrande=coluna.profile(corridaGrande,{passos:1000});
+const janelaGrande=coletor.prepare({volumeTotalMl:1000,resolucaoMl:0.1,
+ janelas:[{frasco:"F4",inicioMl:300,fimMl:350}]});
+const saidaGrande=coletor.integrate(janelaGrande,curvaGrande.trechos);
+assert(Math.abs(saidaGrande.frascos[3].volumeMl-50)<1e-8);
+assert(Math.abs(saidaGrande.descarte.volumeMl-950)<1e-8);
+assert.throws(()=>coluna.prepare({...config(),volumeTotalMl:1000.1}),/volumeTotalMl/);
 assert.throws(()=>coluna.prepare({...config(),vazaoMlMin:0}),/vazaoMlMin/);
 const errado=config();errado.componentes[0].retencao.k=-1;
 assert.throws(()=>coluna.prepare(errado),/\.k/);
