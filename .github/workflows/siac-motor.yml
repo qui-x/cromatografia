@@ -4,7 +4,9 @@ on:
     branches: [feat/siac-motor-cromatografico]
     paths:
       - "js/simulation/siac-cromatografia.js"
+      - "js/simulation/siac-fracionamento.js"
       - "tests/siac-cromatografia.test.cjs"
+      - "tests/siac-fracionamento.test.cjs"
       - "docs/SIAC-MOTOR-CROMATOGRAFICO.md"
       - "docs/SIAC-AUDITORIA-LEGADO.md"
       - ".github/workflows/siac-motor.yml"
@@ -12,7 +14,9 @@ on:
     branches: [main]
     paths:
       - "js/simulation/siac-cromatografia.js"
+      - "js/simulation/siac-fracionamento.js"
       - "tests/siac-cromatografia.test.cjs"
+      - "tests/siac-fracionamento.test.cjs"
       - "docs/SIAC-MOTOR-CROMATOGRAFICO.md"
       - ".github/workflows/siac-motor.yml"
   workflow_dispatch:
@@ -29,9 +33,13 @@ jobs:
       - name: Verificar sintaxe
         run: |
           node --check js/simulation/siac-cromatografia.js
+          node --check js/simulation/siac-fracionamento.js
           node --check tests/siac-cromatografia.test.cjs
+          node --check tests/siac-fracionamento.test.cjs
       - name: Contrato científico e reprodutibilidade
-        run: node tests/siac-cromatografia.test.cjs
+        run: |
+          node tests/siac-cromatografia.test.cjs
+          node tests/siac-fracionamento.test.cjs
       - name: Verificar isolamento do motor legado
         run: |
           node - <<'NODE'
