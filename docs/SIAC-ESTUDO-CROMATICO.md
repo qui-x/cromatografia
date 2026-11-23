@@ -53,3 +53,8 @@ As capturas v4.1 mostraram trilhas excessivamente retas. Na v4.2 reduzimos a con
 Cada béquer tem uma única identificação superior: **A — Tinta**, **B — Pigmentos**, **C — Corantes**. As repetições inferiores `AMOSTRA A/B/C` e suas linhas decorativas foram removidas.
 
 O degradê das manchas passou de 6 para **9 pontos tonais** (núcleo profundo, cor original, tons progressivamente mais claros até a borda translúcida) e o rastro de 5 para **7 pontos**. Os tons são derivados do pigmento da própria banda; isso representa concentração e dispersão visual, não uma composição química adicional. O halo também foi ampliado e recebeu transição da própria banda para o papel. Nenhuma modificação na paleta estrutural do SIAB/SIAC.
+
+## Revisão v4.5 — centro orgânico e absorção no papel
+A abertura passa a tratar a mancha como **pigmento distribuído sobre uma superfície porosa**, não como um oval sobreposto com efeito luminoso. Foram removidas as elipses centrais, substituídas por **dois caminhos orgânicos, assimétricos**: um halo fraco e uma área principal difusa. O gradiente radial mantém nove transições, mas com intensidade máxima reduzida a 0,74 e expansão tonal progressiva. As manchas se misturam ao branco-gelo/creme do papel (modo multiply), preservando a cor do analito.
+
+O rastro continua com sete transições tonais, mas aparece com opacidade bem menor, alongamento contínuo e largura decrescente. A posição das bandas continua ligada à frente da fase móvel; pequenas assimetrias são fixas por banda para evitar formas repetidas. A cena preserva três béqueres independentes, rótulos sem repetição e o desvanecimento final do SIAB. **A aparência é artística e não fornece medições cromatográficas.**

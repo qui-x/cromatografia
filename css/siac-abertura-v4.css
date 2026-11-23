@@ -157,12 +157,13 @@
   stroke: none;
   pointer-events: none;
 }
-.siac-v4-trilha-nevoa { opacity:.22; }
-.siac-v4-trilha { opacity:.42; }
+.siac-v4-trilha-nevoa { opacity:.14; }
+.siac-v4-trilha { opacity:.20; }
 .siac-v4-manchas {
   transform-box: view-box;
   will-change: transform, opacity;
-  /* Manter os centros com gradiente, sem contornos sólidos artificiais. */
+  mix-blend-mode: multiply;
+  /* Pigmento absorvido: contornos orgânicos e variação de densidade. */
 }
 .siac-v4-ponto {
   transform-box: fill-box;
