@@ -28,7 +28,8 @@
     "semIdentidadeMolecularUnica": 1,
     "exigemEspecificacao": 49,
     "idsDuplicados": 0,
-    "homologadasParaMotor": 0
+    "homologadasParaMotor": 0,
+    "identidadesConferidas": 2
   },
   "candidatos": [
     {
@@ -1262,20 +1263,23 @@
       "referenciaQuimica": {
         "pubchemCID": 2519,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/2519",
-        "classe": "cid_candidato_localizado",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": null,
-        "casConferido": null,
+        "classe": "identidade_molecular_individual_conferida",
+        "status": "identidade_quimica_confirmada_pubchem",
+        "nota": "Nome, CID, CAS e fórmula compatíveis; não comprova pureza do padrão usado no estudo HPTLC.",
+        "casConferido": "58-08-2",
         "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "estruturaEFormaConferidas": true,
+        "fonteConferencia": "https://pubchem.ncbi.nlm.nih.gov/compound/2519",
+        "dataConferencia": "2026-11-23"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {
         "corObservadaSobCondicoes": null,
         "uv254": null,
         "uv365": null,
-        "rfHomologado": false,
-        "kColunaHomologado": false
+        "rfHomologado": true,
+        "kColunaHomologado": false,
+        "rfHomologadoRestricao": "somente os dois métodos HPTLC verdes de Alam et al. 2022; NÃO transferir para outras técnicas"
       },
       "autorizacaoSimulacaoReal": false
     },
@@ -1310,20 +1314,23 @@
       "referenciaQuimica": {
         "pubchemCID": 1983,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/1983",
-        "classe": "cid_candidato_localizado",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": null,
-        "casConferido": null,
+        "classe": "identidade_molecular_individual_conferida",
+        "status": "identidade_quimica_confirmada_pubchem",
+        "nota": "Nome, CID, CAS e fórmula compatíveis; não comprova pureza do padrão usado no estudo HPTLC.",
+        "casConferido": "103-90-2",
         "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "estruturaEFormaConferidas": true,
+        "fonteConferencia": "https://pubchem.ncbi.nlm.nih.gov/compound/1983",
+        "dataConferencia": "2026-11-23"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {
         "corObservadaSobCondicoes": null,
         "uv254": null,
         "uv365": null,
-        "rfHomologado": false,
-        "kColunaHomologado": false
+        "rfHomologado": true,
+        "kColunaHomologado": false,
+        "rfHomologadoRestricao": "somente os dois métodos HPTLC verdes de Alam et al. 2022; NÃO transferir para outras técnicas"
       },
       "autorizacaoSimulacaoReal": false
     },
