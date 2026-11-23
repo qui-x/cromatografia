@@ -12,11 +12,11 @@ const initial=html.match(/<div class="startup-brand" aria-hidden="true">([\s\S]*
 assert(screen,"Marca da vinheta não encontrada");
 assert(initial,"Marca do diálogo inicial não encontrada");
 const headline=initial[1].match(/<strong class="startup-titulo">([^<]+)<\/strong>/);
-const splashTitle=screen[1].match(/<strong>([^<]+)<\/strong>/);
+const splashTitle=screen[1].match(/<strong>([^<]+)<\/strong\s*>/);
 assert.equal(headline?.[1],expected,"Título principal do diálogo");
 assert.equal(splashTitle?.[1],expected,"Título principal da vinheta");
 assert.match(initial[1],/class="startup-nome">SIAC · Simulador Interativo de Análise Cromatográfica/);
-assert.match(screen[1],/<span>SIAC<\/span>/);
+assert.match(screen[1],/<span>SIAC<\/span\s*>/);
 assert.match(html,/<h1 id="inicio-titulo"[\s\S]*?A identidade <span>das cores oculta<\/span>/);
 assert.match(html,/<title>A identidade das cores oculta — SIAC<\/title>/);
 assert.match(css,/\.startup-brand \.startup-titulo\s*\{[\s\S]*?font-size: clamp\(1\.6rem, 2\.7vw, 2\.5rem\)/);
