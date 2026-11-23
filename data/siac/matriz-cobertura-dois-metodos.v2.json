@@ -1,9 +1,9 @@
 {
-  "versao": "2.2.0",
+  "versao": "2.3.0",
   "data": "2026-11-23",
   "titulo": "Matriz preliminar de cobertura científica do SIAC",
   "fonte": "data/siac/analitos-protocolos.v1.json",
-  "observacao": "Atualização: 10 métodos de pesquisa; 74 valores Rf pontuais e uma faixa. Dados de artigo de 2024 incluem as distâncias de oito aminoácidos, com divergência de arredondamento explicitada na valina. Duas condições cromatográficas reportadas NÃO significam método integralmente homologado; normas de evidência permanecem.",
+  "observacao": "Atualização: 15 protocolos com 98 Rf pontuais + um intervalo sem interpolação. Novas referências de oito corantes vêm do compêndio FAO/JECFA (tabela histórica de Rf esperado, não medições primárias reprocessadas) e do artigo Sobańska et al. 2017 (triagem de 20 eluentes). Subsidiários e misturas comerciais não equivalem a composto único. Zero homologações completas.",
   "regras": {
     "minimoMetodosIndependentesComRetencaoIndividual": 2,
     "minimoSolventesQuimicamenteDistintos": 2,
@@ -15,15 +15,15 @@
   },
   "resumo": {
     "candidatos": 76,
-    "comPeloMenosUmRfIndividual": 24,
-    "comDoisMetodosDocumentados": 22,
-    "comDoisMetodosESolventesDistintos": 22,
+    "comPeloMenosUmRfIndividual": 32,
+    "comDoisMetodosDocumentados": 30,
+    "comDoisMetodosESolventesDistintos": 30,
     "homologadosNaRegraNova": 0,
     "faltamParaMetaMinima": 40,
     "faltamParaMetaAmpliada": 55,
-    "totaisRegistroRfPontual": 74,
+    "totaisRegistroRfPontual": 98,
     "totalRfIntervalos": 1,
-    "protocolos": 10
+    "protocolos": 15
   },
   "candidatos": [
     {
@@ -31,15 +31,269 @@
       "nome": "Tartrazina (FD&C Yellow 5)",
       "grupo": "corantes_alimenticios",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 0,
-      "metodos": [],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
-      "paresDocumentados": [],
+      "metodosComRetencaoIndividual": 4,
+      "metodos": [
+        {
+          "protocoloId": "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
+          "tecnica": "ccd",
+          "fonte": "fao_jecfa_colours",
+          "fonteUrl": "https://www.fao.org/4/a0691e/A0691E07.htm",
+          "solventes": [
+            "isopropanol",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "isopropanol",
+                "partes": 7
+              },
+              {
+                "id": "aqueous_ammonia_sg0880",
+                "partes": 2,
+                "tipo": "solucao_aquosa_reagente"
+              },
+              {
+                "id": "water",
+                "partes": 1
+              }
+            ],
+            "base": "v/v",
+            "mistura": "2-propanol:amônia aquosa (densidade 0,880):água 7:2:1",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel G",
+          "detector": "avaliação visual da coloração em luz incidente/transmitida, comparação com padrão",
+          "rf": [
+            {
+              "valor": 0.66,
+              "classe": "Rf principal em tabela de compêndio, sistema 1",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "compendio_fao_republicado_nao_homologado"
+        },
+        {
+          "protocoloId": "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water",
+          "tecnica": "ccd",
+          "fonte": "fao_jecfa_colours",
+          "fonteUrl": "https://www.fao.org/4/a0691e/A0691E07.htm",
+          "solventes": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "acetone",
+                "partes": 60
+              },
+              {
+                "id": "methyl_ethyl_ketone",
+                "partes": 140
+              },
+              {
+                "id": "aqueous_ammonia_sg0880",
+                "partes": 1,
+                "tipo": "solucao_aquosa_reagente"
+              },
+              {
+                "id": "water",
+                "partes": 60
+              }
+            ],
+            "base": "v/v",
+            "mistura": "acetona:2-butanona:amônia aquosa (d=0,880):água 60:140:1:60",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel G",
+          "detector": "avaliação visual da coloração e comparação com padrão",
+          "rf": [
+            {
+              "valor": 0.52,
+              "classe": "Rf principal em tabela de compêndio, sistema 7",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "compendio_fao_republicado_nao_homologado"
+        },
+        {
+          "protocoloId": "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9",
+          "tecnica": "ccd",
+          "fonte": "sobanska2017",
+          "fonteUrl": "https://onlinelibrary.wiley.com/doi/10.1155/2017/9528472",
+          "solventes": [
+            "methanol",
+            "toluene"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "methanol",
+                "partes": 11
+              },
+              {
+                "id": "toluene",
+                "partes": 9
+              }
+            ],
+            "base": "v/v",
+            "mistura": "metanol:tolueno 11:9",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel 60 Merck",
+          "detector": "densitometria por refletância em comprimentos de onda adequados para cada corante",
+          "rf": [
+            {
+              "valor": 0.42,
+              "classe": "Rf medido durante triagem de solventes, Tabela 2, sistema 15",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "tabela_artigo_primario_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water",
+          "tecnica": "ccd",
+          "fonte": "sobanska2017",
+          "fonteUrl": "https://onlinelibrary.wiley.com/doi/10.1155/2017/9528472",
+          "solventes": [
+            "ethyl_acetate",
+            "isopropanol",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "ethyl_acetate",
+                "partes": 75
+              },
+              {
+                "id": "isopropanol",
+                "partes": 35
+              },
+              {
+                "id": "water",
+                "partes": 30
+              }
+            ],
+            "base": "v/v",
+            "mistura": "acetato de etila:2-propanol:água 75:35:30",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel 60 Merck",
+          "detector": "densitometria por refletância em comprimentos de onda adequados",
+          "rf": [
+            {
+              "valor": 0.06,
+              "classe": "Rf medido durante triagem de solventes, Tabela 2, sistema 18",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "tabela_artigo_primario_nao_homologada"
+        }
+      ],
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
+            "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water"
+          ],
+          "solventesA": [
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
+            "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9"
+          ],
+          "solventesA": [
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "methanol",
+            "toluene"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
+            "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water"
+          ],
+          "solventesA": [
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "ethyl_acetate",
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water",
+            "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9"
+          ],
+          "solventesA": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ],
+          "solventesB": [
+            "methanol",
+            "toluene"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water",
+            "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water"
+          ],
+          "solventesA": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ],
+          "solventesB": [
+            "ethyl_acetate",
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9",
+            "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water"
+          ],
+          "solventesA": [
+            "methanol",
+            "toluene"
+          ],
+          "solventesB": [
+            "ethyl_acetate",
+            "isopropanol",
+            "water"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "metodo_2_documentado",
-        "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
@@ -48,15 +302,269 @@
       "nome": "Amarelo crepúsculo FCF (Yellow 6)",
       "grupo": "corantes_alimenticios",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 0,
-      "metodos": [],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
-      "paresDocumentados": [],
+      "metodosComRetencaoIndividual": 4,
+      "metodos": [
+        {
+          "protocoloId": "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
+          "tecnica": "ccd",
+          "fonte": "fao_jecfa_colours",
+          "fonteUrl": "https://www.fao.org/4/a0691e/A0691E07.htm",
+          "solventes": [
+            "isopropanol",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "isopropanol",
+                "partes": 7
+              },
+              {
+                "id": "aqueous_ammonia_sg0880",
+                "partes": 2,
+                "tipo": "solucao_aquosa_reagente"
+              },
+              {
+                "id": "water",
+                "partes": 1
+              }
+            ],
+            "base": "v/v",
+            "mistura": "2-propanol:amônia aquosa (densidade 0,880):água 7:2:1",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel G",
+          "detector": "avaliação visual da coloração em luz incidente/transmitida, comparação com padrão",
+          "rf": [
+            {
+              "valor": 0.75,
+              "classe": "Rf principal em tabela de compêndio, sistema 1",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "compendio_fao_republicado_nao_homologado"
+        },
+        {
+          "protocoloId": "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water",
+          "tecnica": "ccd",
+          "fonte": "fao_jecfa_colours",
+          "fonteUrl": "https://www.fao.org/4/a0691e/A0691E07.htm",
+          "solventes": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "acetone",
+                "partes": 60
+              },
+              {
+                "id": "methyl_ethyl_ketone",
+                "partes": 140
+              },
+              {
+                "id": "aqueous_ammonia_sg0880",
+                "partes": 1,
+                "tipo": "solucao_aquosa_reagente"
+              },
+              {
+                "id": "water",
+                "partes": 60
+              }
+            ],
+            "base": "v/v",
+            "mistura": "acetona:2-butanona:amônia aquosa (d=0,880):água 60:140:1:60",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel G",
+          "detector": "avaliação visual da coloração e comparação com padrão",
+          "rf": [
+            {
+              "valor": 0.65,
+              "classe": "Rf principal em tabela de compêndio, sistema 7",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "compendio_fao_republicado_nao_homologado"
+        },
+        {
+          "protocoloId": "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9",
+          "tecnica": "ccd",
+          "fonte": "sobanska2017",
+          "fonteUrl": "https://onlinelibrary.wiley.com/doi/10.1155/2017/9528472",
+          "solventes": [
+            "methanol",
+            "toluene"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "methanol",
+                "partes": 11
+              },
+              {
+                "id": "toluene",
+                "partes": 9
+              }
+            ],
+            "base": "v/v",
+            "mistura": "metanol:tolueno 11:9",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel 60 Merck",
+          "detector": "densitometria por refletância em comprimentos de onda adequados para cada corante",
+          "rf": [
+            {
+              "valor": 0.8,
+              "classe": "Rf medido durante triagem de solventes, Tabela 2, sistema 15",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "tabela_artigo_primario_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water",
+          "tecnica": "ccd",
+          "fonte": "sobanska2017",
+          "fonteUrl": "https://onlinelibrary.wiley.com/doi/10.1155/2017/9528472",
+          "solventes": [
+            "ethyl_acetate",
+            "isopropanol",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "ethyl_acetate",
+                "partes": 75
+              },
+              {
+                "id": "isopropanol",
+                "partes": 35
+              },
+              {
+                "id": "water",
+                "partes": 30
+              }
+            ],
+            "base": "v/v",
+            "mistura": "acetato de etila:2-propanol:água 75:35:30",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel 60 Merck",
+          "detector": "densitometria por refletância em comprimentos de onda adequados",
+          "rf": [
+            {
+              "valor": 0.42,
+              "classe": "Rf medido durante triagem de solventes, Tabela 2, sistema 18",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "tabela_artigo_primario_nao_homologada"
+        }
+      ],
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
+            "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water"
+          ],
+          "solventesA": [
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
+            "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9"
+          ],
+          "solventesA": [
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "methanol",
+            "toluene"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
+            "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water"
+          ],
+          "solventesA": [
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "ethyl_acetate",
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water",
+            "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9"
+          ],
+          "solventesA": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ],
+          "solventesB": [
+            "methanol",
+            "toluene"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water",
+            "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water"
+          ],
+          "solventesA": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ],
+          "solventesB": [
+            "ethyl_acetate",
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9",
+            "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water"
+          ],
+          "solventesA": [
+            "methanol",
+            "toluene"
+          ],
+          "solventesB": [
+            "ethyl_acetate",
+            "isopropanol",
+            "water"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "metodo_2_documentado",
-        "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
@@ -82,15 +590,269 @@
       "nome": "Azul brilhante FCF (Blue 1)",
       "grupo": "corantes_alimenticios",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 0,
-      "metodos": [],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
-      "paresDocumentados": [],
+      "metodosComRetencaoIndividual": 4,
+      "metodos": [
+        {
+          "protocoloId": "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
+          "tecnica": "ccd",
+          "fonte": "fao_jecfa_colours",
+          "fonteUrl": "https://www.fao.org/4/a0691e/A0691E07.htm",
+          "solventes": [
+            "isopropanol",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "isopropanol",
+                "partes": 7
+              },
+              {
+                "id": "aqueous_ammonia_sg0880",
+                "partes": 2,
+                "tipo": "solucao_aquosa_reagente"
+              },
+              {
+                "id": "water",
+                "partes": 1
+              }
+            ],
+            "base": "v/v",
+            "mistura": "2-propanol:amônia aquosa (densidade 0,880):água 7:2:1",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel G",
+          "detector": "avaliação visual da coloração em luz incidente/transmitida, comparação com padrão",
+          "rf": [
+            {
+              "valor": 0.64,
+              "classe": "Rf principal em tabela de compêndio, sistema 1",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "compendio_fao_republicado_nao_homologado"
+        },
+        {
+          "protocoloId": "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water",
+          "tecnica": "ccd",
+          "fonte": "fao_jecfa_colours",
+          "fonteUrl": "https://www.fao.org/4/a0691e/A0691E07.htm",
+          "solventes": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "acetone",
+                "partes": 60
+              },
+              {
+                "id": "methyl_ethyl_ketone",
+                "partes": 140
+              },
+              {
+                "id": "aqueous_ammonia_sg0880",
+                "partes": 1,
+                "tipo": "solucao_aquosa_reagente"
+              },
+              {
+                "id": "water",
+                "partes": 60
+              }
+            ],
+            "base": "v/v",
+            "mistura": "acetona:2-butanona:amônia aquosa (d=0,880):água 60:140:1:60",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel G",
+          "detector": "avaliação visual da coloração e comparação com padrão",
+          "rf": [
+            {
+              "valor": 0.61,
+              "classe": "Rf principal em tabela de compêndio, sistema 7",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "compendio_fao_republicado_nao_homologado"
+        },
+        {
+          "protocoloId": "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9",
+          "tecnica": "ccd",
+          "fonte": "sobanska2017",
+          "fonteUrl": "https://onlinelibrary.wiley.com/doi/10.1155/2017/9528472",
+          "solventes": [
+            "methanol",
+            "toluene"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "methanol",
+                "partes": 11
+              },
+              {
+                "id": "toluene",
+                "partes": 9
+              }
+            ],
+            "base": "v/v",
+            "mistura": "metanol:tolueno 11:9",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel 60 Merck",
+          "detector": "densitometria por refletância em comprimentos de onda adequados para cada corante",
+          "rf": [
+            {
+              "valor": 0.74,
+              "classe": "Rf medido durante triagem de solventes, Tabela 2, sistema 15",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "tabela_artigo_primario_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water",
+          "tecnica": "ccd",
+          "fonte": "sobanska2017",
+          "fonteUrl": "https://onlinelibrary.wiley.com/doi/10.1155/2017/9528472",
+          "solventes": [
+            "ethyl_acetate",
+            "isopropanol",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "ethyl_acetate",
+                "partes": 75
+              },
+              {
+                "id": "isopropanol",
+                "partes": 35
+              },
+              {
+                "id": "water",
+                "partes": 30
+              }
+            ],
+            "base": "v/v",
+            "mistura": "acetato de etila:2-propanol:água 75:35:30",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel 60 Merck",
+          "detector": "densitometria por refletância em comprimentos de onda adequados",
+          "rf": [
+            {
+              "valor": 0.19,
+              "classe": "Rf medido durante triagem de solventes, Tabela 2, sistema 18",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "tabela_artigo_primario_nao_homologada"
+        }
+      ],
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
+            "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water"
+          ],
+          "solventesA": [
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
+            "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9"
+          ],
+          "solventesA": [
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "methanol",
+            "toluene"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
+            "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water"
+          ],
+          "solventesA": [
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "ethyl_acetate",
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water",
+            "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9"
+          ],
+          "solventesA": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ],
+          "solventesB": [
+            "methanol",
+            "toluene"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water",
+            "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water"
+          ],
+          "solventesA": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ],
+          "solventesB": [
+            "ethyl_acetate",
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9",
+            "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water"
+          ],
+          "solventesA": [
+            "methanol",
+            "toluene"
+          ],
+          "solventesB": [
+            "ethyl_acetate",
+            "isopropanol",
+            "water"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "metodo_2_documentado",
-        "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
@@ -99,15 +861,117 @@
       "nome": "Indigotina (Blue 2)",
       "grupo": "corantes_alimenticios",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 0,
-      "metodos": [],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
-      "paresDocumentados": [],
+      "metodosComRetencaoIndividual": 2,
+      "metodos": [
+        {
+          "protocoloId": "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
+          "tecnica": "ccd",
+          "fonte": "fao_jecfa_colours",
+          "fonteUrl": "https://www.fao.org/4/a0691e/A0691E07.htm",
+          "solventes": [
+            "isopropanol",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "isopropanol",
+                "partes": 7
+              },
+              {
+                "id": "aqueous_ammonia_sg0880",
+                "partes": 2,
+                "tipo": "solucao_aquosa_reagente"
+              },
+              {
+                "id": "water",
+                "partes": 1
+              }
+            ],
+            "base": "v/v",
+            "mistura": "2-propanol:amônia aquosa (densidade 0,880):água 7:2:1",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel G",
+          "detector": "avaliação visual da coloração em luz incidente/transmitida, comparação com padrão",
+          "rf": [
+            {
+              "valor": 0.56,
+              "classe": "Rf principal em tabela de compêndio, sistema 1",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "compendio_fao_republicado_nao_homologado"
+        },
+        {
+          "protocoloId": "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water",
+          "tecnica": "ccd",
+          "fonte": "fao_jecfa_colours",
+          "fonteUrl": "https://www.fao.org/4/a0691e/A0691E07.htm",
+          "solventes": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "acetone",
+                "partes": 60
+              },
+              {
+                "id": "methyl_ethyl_ketone",
+                "partes": 140
+              },
+              {
+                "id": "aqueous_ammonia_sg0880",
+                "partes": 1,
+                "tipo": "solucao_aquosa_reagente"
+              },
+              {
+                "id": "water",
+                "partes": 60
+              }
+            ],
+            "base": "v/v",
+            "mistura": "acetona:2-butanona:amônia aquosa (d=0,880):água 60:140:1:60",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel G",
+          "detector": "avaliação visual da coloração e comparação com padrão",
+          "rf": [
+            {
+              "valor": 0.66,
+              "classe": "Rf principal em tabela de compêndio, sistema 7",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "compendio_fao_republicado_nao_homologado"
+        }
+      ],
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
+            "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water"
+          ],
+          "solventesA": [
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "metodo_2_documentado",
-        "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
@@ -116,15 +980,112 @@
       "nome": "Eritrosina (Red 3)",
       "grupo": "corantes_alimenticios",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 0,
-      "metodos": [],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
-      "paresDocumentados": [],
+      "metodosComRetencaoIndividual": 2,
+      "metodos": [
+        {
+          "protocoloId": "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
+          "tecnica": "ccd",
+          "fonte": "fao_jecfa_colours",
+          "fonteUrl": "https://www.fao.org/4/a0691e/A0691E07.htm",
+          "solventes": [
+            "isopropanol",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "isopropanol",
+                "partes": 7
+              },
+              {
+                "id": "aqueous_ammonia_sg0880",
+                "partes": 2,
+                "tipo": "solucao_aquosa_reagente"
+              },
+              {
+                "id": "water",
+                "partes": 1
+              }
+            ],
+            "base": "v/v",
+            "mistura": "2-propanol:amônia aquosa (densidade 0,880):água 7:2:1",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel G",
+          "detector": "avaliação visual da coloração em luz incidente/transmitida, comparação com padrão",
+          "rf": [
+            {
+              "valor": 0.85,
+              "classe": "Rf principal em tabela de compêndio, sistema 1",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "compendio_fao_republicado_nao_homologado"
+        },
+        {
+          "protocoloId": "tlc_food_dyes_fao_system_10_butanol_acetic_water",
+          "tecnica": "ccd",
+          "fonte": "fao_jecfa_colours",
+          "fonteUrl": "https://www.fao.org/4/a0691e/A0691E07.htm",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 10
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 5
+              },
+              {
+                "id": "water",
+                "partes": 6
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-butanol:ácido acético glacial:água 10:5:6",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel G",
+          "detector": "avaliação visual da coloração e comparação com padrão",
+          "rf": [
+            {
+              "valor": 1,
+              "classe": "Rf principal em tabela de compêndio, sistema 10",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "compendio_fao_republicado_nao_homologado"
+        }
+      ],
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
+            "tlc_food_dyes_fao_system_10_butanol_acetic_water"
+          ],
+          "solventesA": [
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "metodo_2_documentado",
-        "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
@@ -150,15 +1111,269 @@
       "nome": "Ponceau 4R",
       "grupo": "corantes_alimenticios",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 0,
-      "metodos": [],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
-      "paresDocumentados": [],
+      "metodosComRetencaoIndividual": 4,
+      "metodos": [
+        {
+          "protocoloId": "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
+          "tecnica": "ccd",
+          "fonte": "fao_jecfa_colours",
+          "fonteUrl": "https://www.fao.org/4/a0691e/A0691E07.htm",
+          "solventes": [
+            "isopropanol",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "isopropanol",
+                "partes": 7
+              },
+              {
+                "id": "aqueous_ammonia_sg0880",
+                "partes": 2,
+                "tipo": "solucao_aquosa_reagente"
+              },
+              {
+                "id": "water",
+                "partes": 1
+              }
+            ],
+            "base": "v/v",
+            "mistura": "2-propanol:amônia aquosa (densidade 0,880):água 7:2:1",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel G",
+          "detector": "avaliação visual da coloração em luz incidente/transmitida, comparação com padrão",
+          "rf": [
+            {
+              "valor": 0.66,
+              "classe": "Rf principal em tabela de compêndio, sistema 1",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "compendio_fao_republicado_nao_homologado"
+        },
+        {
+          "protocoloId": "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water",
+          "tecnica": "ccd",
+          "fonte": "fao_jecfa_colours",
+          "fonteUrl": "https://www.fao.org/4/a0691e/A0691E07.htm",
+          "solventes": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "acetone",
+                "partes": 60
+              },
+              {
+                "id": "methyl_ethyl_ketone",
+                "partes": 140
+              },
+              {
+                "id": "aqueous_ammonia_sg0880",
+                "partes": 1,
+                "tipo": "solucao_aquosa_reagente"
+              },
+              {
+                "id": "water",
+                "partes": 60
+              }
+            ],
+            "base": "v/v",
+            "mistura": "acetona:2-butanona:amônia aquosa (d=0,880):água 60:140:1:60",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel G",
+          "detector": "avaliação visual da coloração e comparação com padrão",
+          "rf": [
+            {
+              "valor": 0.6,
+              "classe": "Rf principal em tabela de compêndio, sistema 7",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "compendio_fao_republicado_nao_homologado"
+        },
+        {
+          "protocoloId": "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9",
+          "tecnica": "ccd",
+          "fonte": "sobanska2017",
+          "fonteUrl": "https://onlinelibrary.wiley.com/doi/10.1155/2017/9528472",
+          "solventes": [
+            "methanol",
+            "toluene"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "methanol",
+                "partes": 11
+              },
+              {
+                "id": "toluene",
+                "partes": 9
+              }
+            ],
+            "base": "v/v",
+            "mistura": "metanol:tolueno 11:9",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel 60 Merck",
+          "detector": "densitometria por refletância em comprimentos de onda adequados para cada corante",
+          "rf": [
+            {
+              "valor": 0.59,
+              "classe": "Rf medido durante triagem de solventes, Tabela 2, sistema 15",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "tabela_artigo_primario_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water",
+          "tecnica": "ccd",
+          "fonte": "sobanska2017",
+          "fonteUrl": "https://onlinelibrary.wiley.com/doi/10.1155/2017/9528472",
+          "solventes": [
+            "ethyl_acetate",
+            "isopropanol",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "ethyl_acetate",
+                "partes": 75
+              },
+              {
+                "id": "isopropanol",
+                "partes": 35
+              },
+              {
+                "id": "water",
+                "partes": 30
+              }
+            ],
+            "base": "v/v",
+            "mistura": "acetato de etila:2-propanol:água 75:35:30",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel 60 Merck",
+          "detector": "densitometria por refletância em comprimentos de onda adequados",
+          "rf": [
+            {
+              "valor": 0.13,
+              "classe": "Rf medido durante triagem de solventes, Tabela 2, sistema 18",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "tabela_artigo_primario_nao_homologada"
+        }
+      ],
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
+            "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water"
+          ],
+          "solventesA": [
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
+            "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9"
+          ],
+          "solventesA": [
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "methanol",
+            "toluene"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
+            "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water"
+          ],
+          "solventesA": [
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "ethyl_acetate",
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water",
+            "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9"
+          ],
+          "solventesA": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ],
+          "solventesB": [
+            "methanol",
+            "toluene"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water",
+            "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water"
+          ],
+          "solventesA": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ],
+          "solventesB": [
+            "ethyl_acetate",
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9",
+            "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water"
+          ],
+          "solventesA": [
+            "methanol",
+            "toluene"
+          ],
+          "solventesB": [
+            "ethyl_acetate",
+            "isopropanol",
+            "water"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "metodo_2_documentado",
-        "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
@@ -167,15 +1382,117 @@
       "nome": "Amaranto (corante azo)",
       "grupo": "corantes_alimenticios",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 0,
-      "metodos": [],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
-      "paresDocumentados": [],
+      "metodosComRetencaoIndividual": 2,
+      "metodos": [
+        {
+          "protocoloId": "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
+          "tecnica": "ccd",
+          "fonte": "fao_jecfa_colours",
+          "fonteUrl": "https://www.fao.org/4/a0691e/A0691E07.htm",
+          "solventes": [
+            "isopropanol",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "isopropanol",
+                "partes": 7
+              },
+              {
+                "id": "aqueous_ammonia_sg0880",
+                "partes": 2,
+                "tipo": "solucao_aquosa_reagente"
+              },
+              {
+                "id": "water",
+                "partes": 1
+              }
+            ],
+            "base": "v/v",
+            "mistura": "2-propanol:amônia aquosa (densidade 0,880):água 7:2:1",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel G",
+          "detector": "avaliação visual da coloração em luz incidente/transmitida, comparação com padrão",
+          "rf": [
+            {
+              "valor": 0.62,
+              "classe": "Rf principal em tabela de compêndio, sistema 1",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "compendio_fao_republicado_nao_homologado"
+        },
+        {
+          "protocoloId": "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water",
+          "tecnica": "ccd",
+          "fonte": "fao_jecfa_colours",
+          "fonteUrl": "https://www.fao.org/4/a0691e/A0691E07.htm",
+          "solventes": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "acetone",
+                "partes": 60
+              },
+              {
+                "id": "methyl_ethyl_ketone",
+                "partes": 140
+              },
+              {
+                "id": "aqueous_ammonia_sg0880",
+                "partes": 1,
+                "tipo": "solucao_aquosa_reagente"
+              },
+              {
+                "id": "water",
+                "partes": 60
+              }
+            ],
+            "base": "v/v",
+            "mistura": "acetona:2-butanona:amônia aquosa (d=0,880):água 60:140:1:60",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel G",
+          "detector": "avaliação visual da coloração e comparação com padrão",
+          "rf": [
+            {
+              "valor": 0.4,
+              "classe": "Rf principal em tabela de compêndio, sistema 7",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "compendio_fao_republicado_nao_homologado"
+        }
+      ],
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
+            "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water"
+          ],
+          "solventesA": [
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "metodo_2_documentado",
-        "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
@@ -184,15 +1501,118 @@
       "nome": "Azul patente V",
       "grupo": "corantes_alimenticios",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 0,
-      "metodos": [],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
-      "paresDocumentados": [],
+      "metodosComRetencaoIndividual": 2,
+      "metodos": [
+        {
+          "protocoloId": "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water",
+          "tecnica": "ccd",
+          "fonte": "fao_jecfa_colours",
+          "fonteUrl": "https://www.fao.org/4/a0691e/A0691E07.htm",
+          "solventes": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "acetone",
+                "partes": 60
+              },
+              {
+                "id": "methyl_ethyl_ketone",
+                "partes": 140
+              },
+              {
+                "id": "aqueous_ammonia_sg0880",
+                "partes": 1,
+                "tipo": "solucao_aquosa_reagente"
+              },
+              {
+                "id": "water",
+                "partes": 60
+              }
+            ],
+            "base": "v/v",
+            "mistura": "acetona:2-butanona:amônia aquosa (d=0,880):água 60:140:1:60",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel G",
+          "detector": "avaliação visual da coloração e comparação com padrão",
+          "rf": [
+            {
+              "valor": 0.69,
+              "classe": "Rf principal em tabela de compêndio, sistema 7",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "compendio_fao_republicado_nao_homologado"
+        },
+        {
+          "protocoloId": "tlc_food_dyes_fao_system_10_butanol_acetic_water",
+          "tecnica": "ccd",
+          "fonte": "fao_jecfa_colours",
+          "fonteUrl": "https://www.fao.org/4/a0691e/A0691E07.htm",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 10
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 5
+              },
+              {
+                "id": "water",
+                "partes": 6
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-butanol:ácido acético glacial:água 10:5:6",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel G",
+          "detector": "avaliação visual da coloração e comparação com padrão",
+          "rf": [
+            {
+              "valor": 0.59,
+              "classe": "Rf principal em tabela de compêndio, sistema 10",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "compendio_fao_republicado_nao_homologado"
+        }
+      ],
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water",
+            "tlc_food_dyes_fao_system_10_butanol_acetic_water"
+          ],
+          "solventesA": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "metodo_2_documentado",
-        "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
