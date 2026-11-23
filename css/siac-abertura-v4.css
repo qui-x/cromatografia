@@ -165,9 +165,11 @@
   mix-blend-mode: multiply;
   /* Pigmento absorvido: contornos orgânicos e variação de densidade. */
 }
-.siac-v4-ponto {
-  transform-box: fill-box;
-  transform-origin: center;
+.siac-v4-deposito {
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  will-change: transform, opacity;
+  /* O registro inicial é uma impregnação gradual no papel. */
 }
 .siac-v4-capilar-vidro {
   fill: none;

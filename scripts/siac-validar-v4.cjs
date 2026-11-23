@@ -32,6 +32,17 @@ async function main(){
     assert.equal(await page.locator("#abertura [data-frente]").count(),3);
     assert.equal(await page.locator("#abertura [data-umidade]").count(),3);
     assert.equal(await page.locator("#abertura [data-mancha]").count(),10);
+    assert.equal(await page.locator("#abertura [data-deposito]").count(),3,
+      "Cada placa deve apresentar uma mancha inicial difusa");
+    assert.equal(await page.locator("#abertura [data-ponto]").count(),0,
+      "Não pode haver círculo sólido sobre a origem");
+    assert.equal(await page.locator('#abertura radialGradient[id^="siac-v4-deposito-"]').count(),3);
+    assert.equal(await page.locator("#abertura [data-deposito] path").count(),6,
+      "Cada registro de amostra precisa de dois contornos difusos");
+    assert.equal(await page.locator("#abertura [data-deposito] circle").count(),0);
+    const depositBlend = await page.locator('[data-deposito="0"]')
+      .evaluate(el => getComputedStyle(el).mixBlendMode);
+    assert.equal(depositBlend,"multiply","O depósito deve se integrar à fibra do papel");
     assert.equal(await page.locator("#abertura [data-trilha]").count(),10);
     assert.equal(await page.locator("#abertura [data-nevoa]").count(),10);
     assert.equal(await page.locator('#abertura radialGradient[id^="siac-v4-mancha"]').count(),10);
