@@ -50,14 +50,14 @@ SIAC.laboratorio=(()=>{
     '<details><summary>Estrutura da coluna</summary><div class="siac-pares">'+
     [['siac-comprimento','Comprimento (mm)',80,20,2000,1],
      ['siac-diametro','Diâmetro (mm)',8,2,100,1],['siac-porosidade','Porosidade efetiva',.45,.1,.85,.05],
-     ['siac-vazao','Vazão (mL/min)',.8,.01,100,.01],['siac-total','Volume de eluição (mL)',9,.1,1000,.1],
-     ['siac-capacidade','Capacidade/fr. (mL)',20,.1,1000,.1]].map(([id,label,value,min,max,step])=>
+     ['siac-vazao','Vazão (mL/min)',.8,.01,100,.01],['siac-total','Volume de eluição (mL)',9,.1,1000,.1]].map(([id,label,value,min,max,step])=>
      '<label>'+label+'<input id="'+id+'" type="number" value="'+value+'" min="'+min+'" max="'+max+'" step="'+step+'"></label>').join("")+
      '</div><label>Aceleração didática<select id="siac-velocidade">'+
      [1,30,120,600,1800].map(x=>'<option value="'+x+'" '+(x===120?'selected':'')+'>'+x+'×</option>').join("")+
      '</select></label></details><button id="siac-montar" type="button" class="primary-btn">Montar coluna</button>'+
     '<details open><summary>Fracionamento e coleta</summary>'+
-     '<p class="siac-hint">Escolha os intervalos de F1 a F10. Os tubos só aparecem na bancada quando receberem eluato.</p>'+
+     '<p class="siac-hint">A programação dos frascos é independente da montagem da coluna. A coleta só começa durante a eluição.</p>'+
+     '<label>Capacidade por frasco (mL)<input id="siac-capacidade" type="number" value="20" min=".1" max="1000" step=".1"></label>'+
      '<div id="siac-seletor" class="siac-seletor" role="group" aria-label="Programar intervalos dos dez frascos"></div>'+
      '<div class="siac-pares"><label>Início (mL)<input id="siac-inicio" type="number" min="0" max="1000" step=".1" placeholder="0,0"></label>'+
      '<label>Fim (mL)<input id="siac-fim" type="number" min=".1" max="1000" step=".1" placeholder="0,1"></label></div>'+
@@ -79,6 +79,11 @@ SIAC.laboratorio=(()=>{
    '<h2>Ver · Cromatografia</h2><p id="siac-ver-contexto" class="siac-ver-contexto" aria-live="polite"></p><div id="siac-modulos" class="siac-modulos"></div>'+
    '<div id="siac-ver-itens" class="siac-itens"></div><div id="siac-ver-dados" aria-live="polite"></div>';
   right.prepend(ver);
+  const dados=document.createElement("section");
+  dados.id="siac-dados";
+  dados.className="siac-dados";
+  dados.setAttribute("aria-label","Dados cromatográficos da investigação");
+  right.prepend(dados);
   const stage=document.createElement("section");stage.id="siac-stage";stage.setAttribute("aria-label","Bancada cromatográfica");
   $("experiment").append(stage);
   ui.addEventListener("click",montagemClick);
@@ -105,10 +110,13 @@ SIAC.laboratorio=(()=>{
   }
   $("siac-velocidade").addEventListener("change",()=>{speed=Number($("siac-velocidade").value);render();});
   document.addEventListener("siab:rota",route);
-  // A disponibilidade do painel Ver não depende de existir tubo SIAB legado.
-  const launcher=$("workspace-ver");
-  if(launcher)new MutationObserver(()=>{if(enabled&&launcher.hidden)launcher.hidden=false;})
-    .observe(launcher,{attributes:true,attributeFilter:["hidden"]});
+  // A visibilidade de Ver e Dados no SIAC independe de tubo ácido-base.
+  // A doca e suas posições são mantidas pelo workspace original do SIAB.
+  for(const id of ["workspace-ver","workspace-dados"]){
+   const launcher=$(id);
+   if(launcher)new MutationObserver(()=>{if(enabled&&launcher.hidden)launcher.hidden=false;})
+     .observe(launcher,{attributes:true,attributeFilter:["hidden"]});
+  }
   ready=true;
  }
  function route(){
@@ -116,8 +124,15 @@ SIAC.laboratorio=(()=>{
   enabled=available;
   document.body.classList.toggle("siac-active",available);
   if($("controls-title"))$("controls-title").textContent=available?"Montagem":"Prateleira";
-  if(available){mount();if(!col)build();if($("workspace-ver"))$("workspace-ver").hidden=false;render();}
+  if(available){
+   mount();if(!col)build();
+   for(const id of ["workspace-ver","workspace-dados","siac-ver","siac-dados"])
+    if($(id))$(id).hidden=false;
+   render();
+  }
   else if(ready){
+   // O conteúdo SIAC não deve vazar para docas de rotas legadas do SIAB.
+   for(const id of ["siac-ver","siac-dados"])if($(id))$(id).hidden=true;
    // Restaurar rótulos convencionais do SIAB ao sair do laboratório cromatográfico.
    $("focus-tab").textContent="Tubo em foco";
    $("overview-tab").innerHTML='Visão geral <span id="overview-count"></span>';
@@ -139,16 +154,29 @@ SIAC.laboratorio=(()=>{
  }
  const uiQuery=q=>$("siac-montagem").querySelector(q);
  function build(){
-  running=false;lastFrame=0;
+  // Montar a coluna altera APENAS o sistema cromatográfico. Uma corrida já
+  // iniciada nunca perde amostras e alíquotas por um clique inadvertido.
+  if(volume>0||running||development||capillaryLoading){
+   status="A corrida contém dados. Para montar outra coluna, reinicie a corrida explicitamente. As janelas de coleta serão preservadas.";
+   return;
+  }
   try{
-   const conf=configuration();const prepared=C.prepare(conf);
-   const p=F.prepare({volumeTotalMl:conf.volumeTotalMl,capacidadeFrascoMl:Number($("siac-capacidade").value),resolucaoMl:.1});
-   col=prepared;plan=p;volume=0;papers={};withdrawn={};capillary=null;development=null;
-   view="foco";focus="coluna";selected="F1";
-   $("siac-inicio").value="";$("siac-fim").value="";
-   $("siac-inicio").max=conf.volumeTotalMl;$("siac-fim").max=conf.volumeTotalMl;
-   status="Coluna montada. Defina as janelas de F1 a F10 em Montagem.";
-  }catch(e){status=e.message;}
+   const conf=configuration();
+   const prepared=C.prepare(conf);
+   // Validar primeiro: se alguma janela exceder o novo volume ou capacidade,
+   // não alterar a coluna nem o plano; solicitar ajuste no Fracionamento.
+   const updatedPlan=F.prepare({
+    volumeTotalMl:conf.volumeTotalMl,
+    capacidadeFrascoMl:plan?.capacidadeFrascoMl??Number($("siac-capacidade").value),
+    resolucaoMl:plan?.resolucaoMl??.1,
+    janelas:plan?.janelas??[]
+   });
+   col=prepared;plan=updatedPlan;
+   // Mantém seleção e campos dos frascos, sem recriar a bancada de coleta.
+   $("siac-inicio").max=conf.volumeTotalMl;
+   $("siac-fim").max=conf.volumeTotalMl;
+   status="Coluna montada. Programação dos frascos preservada ("+plan.janelas.length+" janelas).";
+  }catch(e){status="Não foi possível montar a coluna sem alterar os frascos: "+e.message;}
  }
  function montagemClick(e){
   if(e.target.closest("#siac-montar")){build();render();return;}
@@ -161,16 +189,23 @@ SIAC.laboratorio=(()=>{
    render();return;
   }
   if(e.target.closest("#siac-janela")){
-   if(volume>0){status="Para mudar as janelas após iniciar, monte uma nova corrida.";render();return;}
+   if(volume>0){status="A coleta já iniciou. Reinicie a corrida para editar os intervalos; o plano será preservado.";render();return;}
    try{
-    plan=F.setWindow(plan,selected,Number($("siac-inicio").value),Number($("siac-fim").value));
+    // Capacidade é da vidraria, não da geometria ou do motor da coluna.
+    const capacity=Number($("siac-capacidade").value);
+    const candidate=F.prepare({volumeTotalMl:plan.volumeTotalMl,resolucaoMl:plan.resolucaoMl,
+     capacidadeFrascoMl:capacity,janelas:plan.janelas});
+    plan=F.setWindow(candidate,selected,Number($("siac-inicio").value),Number($("siac-fim").value));
     status=selected+" programado. A coleta começará quando a eluição alcançar a janela.";
    }catch(err){status=err.message;}
    render();return;
   }
   if(e.target.closest("#siac-limpar")){
    if(volume>0){status="Janelas bloqueadas durante a corrida.";render();return;}
-   try{plan=F.clearWindow(plan,selected);$("siac-inicio").value="";$("siac-fim").value="";
+   try{
+    const candidate=F.prepare({volumeTotalMl:plan.volumeTotalMl,resolucaoMl:plan.resolucaoMl,
+      capacidadeFrascoMl:Number($("siac-capacidade").value),janelas:plan.janelas});
+    plan=F.clearWindow(candidate,selected);$("siac-inicio").value="";$("siac-fim").value="";
     status="Janela de "+selected+" retirada.";}catch(err){status=err.message;}
    render();
   }
@@ -417,6 +452,7 @@ SIAC.laboratorio=(()=>{
   $("siac-montagem-status").textContent=status;
   $("siac-janela").disabled=volume>0;$("siac-limpar").disabled=volume>0;
   $("siac-inicio").disabled=volume>0;$("siac-fim").disabled=volume>0;
+  $("siac-capacidade").disabled=volume>0;
  }
  function renderVer(){
   const el=$("siac-ver");if(!el)return;
@@ -473,7 +509,80 @@ SIAC.laboratorio=(()=>{
     j.frasco+": "+fmt(j.inicioMl,1)+"–"+fmt(j.fimMl,1)+" mL").join("\n"):"Nenhuma janela programada.");
   box.textContent=desc;
  }
- function render(){if(!enabled||!col)return;renderMontagem();renderStage();renderVer();}
+
+ function renderDados(){
+  const el=$("siac-dados");
+  if(!el||!col)return;
+  const c=col.config,p=paper(selected),f=current();
+  const focoLabel={coluna:"Coluna cromatográfica",tubo:"Frasco "+selected,
+   amostra:"Papel P"+selected.slice(1)}[focus];
+  const dadosLinha=linhas=>'<dl class="siac-dados-lista">'+linhas.map(([a,b])=>
+   '<div><dt>'+esc(a)+'</dt><dd>'+esc(b)+'</dd></div>').join("")+'</dl>';
+  const tempo=displaySec(volume/c.vazaoMlMin*60);
+  let html='<h2>Dados · '+esc(focoLabel)+'</h2>'+
+   '<p class="siac-dados-nota">Cenário parametrizado hipotético. Valores calculados não constituem identificação química.</p>';
+  if(focus==="coluna"){
+   html+=dadosLinha([
+    ["Volume eluído",fmt(volume)+" / "+fmt(c.volumeTotalMl,1)+" mL"],
+    ["Tempo decorrido",tempo],
+    ["Vazão configurada",fmt(c.vazaoMlMin)+" mL/min"],
+    ["Fase móvel",c.faseMovel.id],
+    ["Fase estacionária",c.faseEstacionaria.id],
+    ["Leito",fmt(c.geometria.comprimentoMm,1)+" mm"],
+    ["Diâmetro interno",fmt(c.geometria.diametroInternoMm,1)+" mm"]
+   ]);
+   const janelas=plan?.janelas||[];
+   html+='<h3>Frações e janelas</h3>';
+   html+=janelas.length?'<div class="siac-dados-scroll"><table class="siac-dados-tabela">'+
+    '<thead><tr><th>Frasco</th><th>Janela (mL)</th><th>Coletado (mL)</th></tr></thead><tbody>'+
+    janelas.map(j=>{
+     const fr=fraction(j.frasco);
+     return '<tr><th scope="row">'+esc(j.frasco)+'</th><td>'+
+      fmt(j.inicioMl,1)+'–'+fmt(j.fimMl,1)+'</td><td>'+fmt(fr?.volumeMl||0)+'</td></tr>';
+    }).join("")+'</tbody></table></div>':
+    '<p class="siac-dados-vazio">Nenhuma janela programada.</p>';
+  }else if(focus==="tubo"){
+   html+=dadosLinha([
+    ["Frasco",selected],
+    ["Volume coletado",fmt(f?.volumeMl||0)+" mL"],
+    ["Volume disponível",fmt(f?.disponivelMl||0)+" mL"],
+    ["Alíquotas retiradas",fmt(withdrawn[selected]||0)+" mL"],
+    ["Faixa de coleta",plan?.janelas.find(j=>j.frasco===selected)?
+      fmt(plan.janelas.find(j=>j.frasco===selected).inicioMl,1)+"–"+
+      fmt(plan.janelas.find(j=>j.frasco===selected).fimMl,1)+" mL":"Não programada"]
+   ]);
+   const masses=Object.entries(f?.componentesMg||{}).filter(([,m])=>m>0);
+   if(masses.length){
+    html+='<h3>Composição do modelo</h3>'+
+     '<p class="siac-dados-nota">Estimativas por balanço de massa, sem identificação laboratorial.</p>'+
+     '<div class="siac-dados-scroll"><table class="siac-dados-tabela"><thead>'+
+     '<tr><th>Componente-modelo</th><th>Massa estimada (mg)</th></tr></thead><tbody>'+
+     masses.map(([id,m])=>'<tr><th scope="row">'+esc(id)+'</th><td>'+fmt(m,4)+
+     '</td></tr>').join("")+'</tbody></table></div>';
+   }
+  }else{
+   html+=dadosLinha([
+    ["Suporte","Papel P"+selected.slice(1)],
+    ["Fração de origem",p.origem||selected],
+    ["Etapa",p.etapa],
+    ["Tempo no desenvolvimento",displaySec(p.tempoS)],
+    ["Distância da frente",fmt(p.frenteMm,1)+" mm"]
+   ]);
+   const manchas=p.sinais.map(x=>({tipo:"Visível",dist:x.distanciaMm}))
+    .concat(p.uv.map(x=>({tipo:"UV",dist:x.distanciaMm})));
+   if(manchas.length&&p.frenteMm>0){
+    html+='<h3>Manchas registradas</h3>'+
+     '<div class="siac-dados-scroll"><table class="siac-dados-tabela"><thead><tr>'+
+     '<th>Detecção</th><th>Distância (mm)</th><th>Rf do modelo</th></tr></thead><tbody>'+
+     manchas.map(x=>'<tr><th scope="row">'+x.tipo+'</th><td>'+fmt(x.dist,1)+
+      '</td><td>'+fmt(x.dist/p.frenteMm,3)+'</td></tr>').join("")+
+     '</tbody></table></div>';
+   }
+  }
+  el.innerHTML=html;
+ }
+
+ function render(){if(!enabled||!col)return;renderMontagem();renderStage();renderVer();renderDados();}
  function verClick(e){
   const m=e.target.closest("[data-module]"),v=e.target.closest("[data-ver]");
   if(m&&MODULES[m.dataset.module]){module=m.dataset.module;item=availableItems()[0];render();}
@@ -554,7 +663,7 @@ SIAC.laboratorio=(()=>{
    if(now-lastDraw>160||!running){
     // Preserva a animação de aspiração mesmo com a coluna ainda eluindo.
     if(!capillaryLoading)renderStage();
-    renderVer();renderMontagem();lastDraw=now;
+    renderVer();renderMontagem();renderDados();lastDraw=now;
    }
   }else lastFrame=0;
   requestAnimationFrame(frame);
@@ -577,6 +686,7 @@ SIAC.laboratorio=(()=>{
    preenchidos:filled().map(f=>f.id),capilar:capillaryLoading?"aspirando":capillary?"carregado":"vazio",
    frenteMm:development?paper(development.id).frenteMm:null,
    preenchidosDetalhe:filled().map(f=>({id:f.id,volumeMl:f.volumeMl})),
+   janelas:plan?.janelas.map(j=>({frasco:j.frasco,inicioMl:j.inicioMl,fimMl:j.fimMl}))||[],
    papeis:Object.fromEntries(Object.entries(papers).map(([id,p])=>[id,p.etapa]))
   };},render});
 })();

@@ -253,7 +253,10 @@ SIAB.workspace = (() => {
       S.verDisponivel("tabela") ||
       S.ActivityContext.allows("report.view");
     $("workspace-ver").hidden = !window.SIAC?.laboratorio?.active && (!groups.length || !S.current());
-    $("workspace-dados").hidden = !dataAllowed || !S.current();
+    // SIAC mantém dados da corrida mesmo sem qualquer tubo SIAB selecionado.
+    // No SIAB original, a disponibilidade continua dependente dos registros legados.
+    $("workspace-dados").hidden =
+      !window.SIAC?.laboratorio?.active && (!dataAllowed || !S.current());
     nodes.data
       .querySelectorAll("[data-dock-tool]")
       .forEach((b) => (b.hidden = !S.verDisponivel(b.dataset.dockTool)));
@@ -349,7 +352,9 @@ SIAB.workspace = (() => {
     $("ver-panel").dataset.tool = state.activeTool || "";
     $("ver-panel").dataset.level = state.level;
     $("ver-panel").dataset.source = state.source;
-    nodes.data.hidden = state.level !== "data";
+    // Não apresentar histórico de pH ou os instrumentos SIAB como dados
+    // cromatográficos. O SIAC fornece seu próprio painel, sem mudar a doca.
+    nodes.data.hidden = Boolean(window.SIAC?.laboratorio?.active) || state.level !== "data";
     $("ver-tabs").classList.toggle(
       "dock-content-hidden",
       state.level === "data",
@@ -362,11 +367,12 @@ SIAB.workspace = (() => {
     const tool = family?.items.find((t) => t.id === state.activeTool);
     $("ver-title").textContent =
       state.level === "data"
-        ? "Dados da investigação"
+        ? window.SIAC?.laboratorio?.active ? "Dados cromatográficos" : "Dados da investigação"
         : mobile.matches && state.level === "tool"
           ? tool?.label || "Ver"
           : "Investigar";
-    nodes.back.hidden = !(state.level === "data"
+    nodes.back.hidden = Boolean(window.SIAC?.laboratorio?.active && state.source === "dados") ||
+      !(state.level === "data"
       ? false
       : state.source === "dados" ||
         (mobile.matches && state.level !== "families"));

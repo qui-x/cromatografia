@@ -1,0 +1,44 @@
+name: "SIAC — Auditoria Playwright tela a tela"
+on:
+  pull_request:
+    branches: [main]
+    paths: ["index.html", "js/ui/**", "js/core/roteador.js", "css/**", "tests/siac-auditoria-telas-browser.cjs", ".github/workflows/siac-auditoria-telas.yml"]
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  telas:
+    name: "${{ matrix.browser }} — ${{ matrix.widths }}"
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - browser: chromium
+            widths: "360,768,1360"
+          - browser: firefox
+            widths: "1360"
+          - browser: webkit
+            widths: "390,1024"
+    steps:
+      - uses: actions/checkout@v4
+      - name: Preparar Playwright e motor
+        run: |
+          npm ci --ignore-scripts
+          npx playwright install --with-deps ${{ matrix.browser }}
+      - name: Verificar 8 telas, docas e espaço útil
+        env:
+          SIAC_BROWSER: ${{ matrix.browser }}
+          SIAC_WIDTHS: ${{ matrix.widths }}
+        run: node tests/siac-auditoria-telas-browser.cjs
+      - name: Publicar capturas e diagnóstico
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: "siac-telas-${{ matrix.browser }}"
+          path: docs/evidencias/siac-auditoria-telas/${{ matrix.browser }}/
+          if-no-files-found: warn
+          retention-days: 21
