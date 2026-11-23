@@ -1,9 +1,9 @@
 {
-  "versao": "2.3.0",
+  "versao": "2.4.0",
   "data": "2026-11-23",
   "titulo": "Matriz preliminar de cobertura científica do SIAC",
   "fonte": "data/siac/analitos-protocolos.v1.json",
-  "observacao": "Atualização: 15 protocolos com 98 Rf pontuais + um intervalo sem interpolação. Novas referências de oito corantes vêm do compêndio FAO/JECFA (tabela histórica de Rf esperado, não medições primárias reprocessadas) e do artigo Sobańska et al. 2017 (triagem de 20 eluentes). Subsidiários e misturas comerciais não equivalem a composto único. Zero homologações completas.",
+  "observacao": "29 protocolos em pesquisa, 123 Rf pontuais e 1 intervalo. 40 candidatos com pares de métodos e solventes contrastantes, MAS zero homologações científicas. Suportes heterogêneos (fibroína-sílica, bentonita, sílica normal e C18 reversa), relatórios didáticos, Rf de bandas de extrato e solvente n-hexano ainda fora do catálogo básico exigem revisão. Contagem bibliográfica não equivale a motor validado.",
   "regras": {
     "minimoMetodosIndependentesComRetencaoIndividual": 2,
     "minimoSolventesQuimicamenteDistintos": 2,
@@ -15,15 +15,15 @@
   },
   "resumo": {
     "candidatos": 76,
-    "comPeloMenosUmRfIndividual": 32,
-    "comDoisMetodosDocumentados": 30,
-    "comDoisMetodosESolventesDistintos": 30,
+    "comPeloMenosUmRfIndividual": 42,
+    "comDoisMetodosDocumentados": 40,
+    "comDoisMetodosESolventesDistintos": 40,
     "homologadosNaRegraNova": 0,
     "faltamParaMetaMinima": 40,
     "faltamParaMetaAmpliada": 55,
-    "totaisRegistroRfPontual": 98,
+    "totaisRegistroRfPontual": 123,
     "totalRfIntervalos": 1,
-    "protocolos": 15
+    "protocolos": 29
   },
   "candidatos": [
     {
@@ -580,6 +580,7 @@
       "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
+        "sem_retencao_experimental",
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
@@ -1101,6 +1102,7 @@
       "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
+        "sem_retencao_experimental",
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
@@ -1628,6 +1630,7 @@
       "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
+        "sem_retencao_experimental",
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
@@ -2119,15 +2122,108 @@
       "nome": "β-caroteno",
       "grupo": "pigmentos_vegetais",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 0,
-      "metodos": [],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
-      "paresDocumentados": [],
+      "metodosComRetencaoIndividual": 2,
+      "metodos": [
+        {
+          "protocoloId": "tlc_carotenoids_yuangsoi2008_petroleumether_diethylether_acetone",
+          "tecnica": "ccd",
+          "fonte": "carotenoid2008",
+          "fonteUrl": "https://sjst.psu.ac.th/index.php/article/915/PaperPDFw-Links/download",
+          "solventes": [
+            "acetone",
+            "diethyl_ether",
+            "petroleum_ether_mixture"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "petroleum_ether_mixture",
+                "partes": 75
+              },
+              {
+                "id": "diethyl_ether",
+                "partes": 15
+              },
+              {
+                "id": "acetone",
+                "partes": 10
+              }
+            ],
+            "base": "v/v",
+            "mistura": "éter de petróleo:éter dietílico:acetona 75:15:10",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel 60 em vidro",
+          "detector": "densitometria de absorbância a 450 nm",
+          "rf": [
+            {
+              "valor": 0.97,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_em_revisao_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_carotenoids_adedoyin2017_acetone_nhexane_30_70",
+          "tecnica": "ccd",
+          "fonte": "microalgae2017",
+          "fonteUrl": "https://researchspace.ukzn.ac.za/server/api/core/bitstreams/9a07f1d3-0158-4a58-8c4e-1bdcc923bd98/content",
+          "solventes": [
+            "acetone",
+            "n_hexane"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "acetone",
+                "partes": 30
+              },
+              {
+                "id": "n_hexane",
+                "partes": 70
+              }
+            ],
+            "base": "v/v",
+            "mistura": "acetona:n-hexano 30:70 (v/v)",
+            "homologada": false
+          },
+          "faseEstacionaria": "CCD em extrato de microalgas com padrão β-caroteno",
+          "detector": "pigmentos por inspeção visual e confirmação espectral UV-Vis da fração isolada",
+          "rf": [
+            {
+              "valor": 0.95,
+              "classe": "Rf_de_banda_de_extrato_com_atribuicao_bibliografica",
+              "homologado": false,
+              "rfPadraoAutenticoMesmoSistema": 0.98
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_em_revisao_nao_homologada"
+        }
+      ],
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "tlc_carotenoids_yuangsoi2008_petroleumether_diethylether_acetone",
+            "tlc_carotenoids_adedoyin2017_acetone_nhexane_30_70"
+          ],
+          "solventesA": [
+            "acetone",
+            "diethyl_ether",
+            "petroleum_ether_mixture"
+          ],
+          "solventesB": [
+            "acetone",
+            "n_hexane"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "metodo_2_documentado",
-        "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
@@ -2143,6 +2239,7 @@
       "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
+        "sem_retencao_experimental",
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
@@ -2153,15 +2250,108 @@
       "nome": "Luteína",
       "grupo": "pigmentos_vegetais",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 0,
-      "metodos": [],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
-      "paresDocumentados": [],
+      "metodosComRetencaoIndividual": 2,
+      "metodos": [
+        {
+          "protocoloId": "tlc_carotenoids_yuangsoi2008_petroleumether_diethylether_acetone",
+          "tecnica": "ccd",
+          "fonte": "carotenoid2008",
+          "fonteUrl": "https://sjst.psu.ac.th/index.php/article/915/PaperPDFw-Links/download",
+          "solventes": [
+            "acetone",
+            "diethyl_ether",
+            "petroleum_ether_mixture"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "petroleum_ether_mixture",
+                "partes": 75
+              },
+              {
+                "id": "diethyl_ether",
+                "partes": 15
+              },
+              {
+                "id": "acetone",
+                "partes": 10
+              }
+            ],
+            "base": "v/v",
+            "mistura": "éter de petróleo:éter dietílico:acetona 75:15:10",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel 60 em vidro",
+          "detector": "densitometria de absorbância a 450 nm",
+          "rf": [
+            {
+              "valor": 0.17,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_em_revisao_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_carotenoids_adedoyin2017_acetone_nhexane_30_70",
+          "tecnica": "ccd",
+          "fonte": "microalgae2017",
+          "fonteUrl": "https://researchspace.ukzn.ac.za/server/api/core/bitstreams/9a07f1d3-0158-4a58-8c4e-1bdcc923bd98/content",
+          "solventes": [
+            "acetone",
+            "n_hexane"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "acetone",
+                "partes": 30
+              },
+              {
+                "id": "n_hexane",
+                "partes": 70
+              }
+            ],
+            "base": "v/v",
+            "mistura": "acetona:n-hexano 30:70 (v/v)",
+            "homologada": false
+          },
+          "faseEstacionaria": "CCD em extrato de microalgas com padrão β-caroteno",
+          "detector": "pigmentos por inspeção visual e confirmação espectral UV-Vis da fração isolada",
+          "rf": [
+            {
+              "valor": 0.54,
+              "classe": "Rf_de_banda_de_extrato_com_atribuicao_bibliografica",
+              "homologado": false,
+              "identificacaoTentativa": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_em_revisao_nao_homologada"
+        }
+      ],
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "tlc_carotenoids_yuangsoi2008_petroleumether_diethylether_acetone",
+            "tlc_carotenoids_adedoyin2017_acetone_nhexane_30_70"
+          ],
+          "solventesA": [
+            "acetone",
+            "diethyl_ether",
+            "petroleum_ether_mixture"
+          ],
+          "solventesB": [
+            "acetone",
+            "n_hexane"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "metodo_2_documentado",
-        "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
@@ -2177,6 +2367,7 @@
       "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
+        "sem_retencao_experimental",
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
@@ -2194,6 +2385,7 @@
       "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
+        "sem_retencao_experimental",
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
@@ -2211,6 +2403,7 @@
       "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
+        "sem_retencao_experimental",
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
@@ -2228,6 +2421,7 @@
       "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
+        "sem_retencao_experimental",
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
@@ -2245,6 +2439,7 @@
       "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
+        "sem_retencao_experimental",
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
@@ -2262,6 +2457,7 @@
       "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
+        "sem_retencao_experimental",
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
@@ -2279,6 +2475,7 @@
       "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
+        "sem_retencao_experimental",
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
@@ -2289,15 +2486,107 @@
       "nome": "Quercetina",
       "grupo": "pigmentos_vegetais",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 0,
-      "metodos": [],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
-      "paresDocumentados": [],
+      "metodosComRetencaoIndividual": 2,
+      "metodos": [
+        {
+          "protocoloId": "tlc_quercetin2010_system1_toluene_ethylacetate_acetic",
+          "tecnica": "ccd",
+          "fonte": "quercetin2010",
+          "fonteUrl": "https://www.itmedicalteam.pl/pdfdownload.php?aid=0&download=articles/effect-of-sample-preparation-and-tlc-methods-on-thequantitation-of-quercetin-content-in-asthma-weed.pdf",
+          "solventes": [
+            "acetic_acid",
+            "ethyl_acetate",
+            "toluene"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "toluene",
+                "partes": 30
+              },
+              {
+                "id": "ethyl_acetate",
+                "partes": 40
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 5
+              }
+            ],
+            "base": "v/v",
+            "mistura": "tolueno:acetato de etila:ácido acético 30:40:5",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel Whatman K6F 60Å",
+          "detector": "UV de onda curta 254 nm OU aspersão de FeCl3 1% e ferricianeto de potássio 1% (1:1); não afirmar que os dois reveladores foram usados simultaneamente",
+          "rf": [
+            {
+              "valor": 0.62,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_em_revisao_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_quercetin2010_system4_toluene_acetic",
+          "tecnica": "ccd",
+          "fonte": "quercetin2010",
+          "fonteUrl": "https://www.itmedicalteam.pl/pdfdownload.php?aid=0&download=articles/effect-of-sample-preparation-and-tlc-methods-on-thequantitation-of-quercetin-content-in-asthma-weed.pdf",
+          "solventes": [
+            "acetic_acid",
+            "toluene"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "toluene",
+                "partes": 40
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 20
+              }
+            ],
+            "base": "v/v",
+            "mistura": "tolueno:ácido acético 40:20",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel Whatman K6F 60Å",
+          "detector": "UV de onda curta 254 nm OU aspersão de FeCl3 1% e ferricianeto de potássio 1% (1:1); não afirmar que os dois reveladores foram usados simultaneamente",
+          "rf": [
+            {
+              "valor": 0.86,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_em_revisao_nao_homologada"
+        }
+      ],
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "tlc_quercetin2010_system1_toluene_ethylacetate_acetic",
+            "tlc_quercetin2010_system4_toluene_acetic"
+          ],
+          "solventesA": [
+            "acetic_acid",
+            "ethyl_acetate",
+            "toluene"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "toluene"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "metodo_2_documentado",
-        "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
@@ -2313,6 +2602,7 @@
       "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
+        "sem_retencao_experimental",
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
@@ -2323,15 +2613,101 @@
       "nome": "Curcumina",
       "grupo": "pigmentos_vegetais",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 0,
-      "metodos": [],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
-      "paresDocumentados": [],
+      "metodosComRetencaoIndividual": 2,
+      "metodos": [
+        {
+          "protocoloId": "tlc_curcumin2017_toluene_ethylacetate_95_5",
+          "tecnica": "ccd",
+          "fonte": "curcumin2017",
+          "fonteUrl": "https://acta.pharmaceutica.farmaceut.org/materials/pdf/38517.pdf",
+          "solventes": [
+            "ethyl_acetate",
+            "toluene"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "toluene",
+                "partes": 95
+              },
+              {
+                "id": "ethyl_acetate",
+                "partes": 5
+              }
+            ],
+            "base": "v/v",
+            "mistura": "tolueno:acetato de etila 95:5",
+            "homologada": false
+          },
+          "faseEstacionaria": "CCD de curcuminoides de pó de cúrcuma",
+          "detector": "visualização TLC de curcuminoides (revelador e comprimento de onda não especificados na Tabela II)",
+          "rf": [
+            {
+              "valor": 0.92,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_em_revisao_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_curcumin2017_dcm_methanol_95_5",
+          "tecnica": "ccd",
+          "fonte": "curcumin2017",
+          "fonteUrl": "https://acta.pharmaceutica.farmaceut.org/materials/pdf/38517.pdf",
+          "solventes": [
+            "dcm",
+            "methanol"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "dcm",
+                "partes": 95
+              },
+              {
+                "id": "methanol",
+                "partes": 5
+              }
+            ],
+            "base": "v/v",
+            "mistura": "diclorometano:metanol 95:5",
+            "homologada": false
+          },
+          "faseEstacionaria": "CCD de curcuminoides de pó de cúrcuma",
+          "detector": "visualização TLC de curcuminoides (revelador não especificado na Tabela II)",
+          "rf": [
+            {
+              "valor": 0.54,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_em_revisao_nao_homologada"
+        }
+      ],
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "tlc_curcumin2017_toluene_ethylacetate_95_5",
+            "tlc_curcumin2017_dcm_methanol_95_5"
+          ],
+          "solventesA": [
+            "ethyl_acetate",
+            "toluene"
+          ],
+          "solventesB": [
+            "dcm",
+            "methanol"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "metodo_2_documentado",
-        "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
@@ -2347,6 +2723,7 @@
       "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
+        "sem_retencao_experimental",
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
@@ -2364,6 +2741,7 @@
       "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
+        "sem_retencao_experimental",
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
@@ -2381,6 +2759,7 @@
       "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
+        "sem_retencao_experimental",
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
@@ -2582,10 +2961,7 @@
             {
               "valor": 0.57,
               "classe": "reportado_com_distancias_tabela_2_artigo_2024",
-              "homologado": false,
-              "distanciaManchaCm": 2,
-              "distanciaFrenteCm": 3.5,
-              "diferencaRfDistancias": 0.0014
+              "homologado": false
             }
           ],
           "rfIntervalo": [],
@@ -2783,10 +3159,7 @@
             {
               "valor": 0.23,
               "classe": "reportado_com_distancias_tabela_2_artigo_2024",
-              "homologado": false,
-              "distanciaManchaCm": 0.8,
-              "distanciaFrenteCm": 3.5,
-              "diferencaRfDistancias": -0.0014
+              "homologado": false
             }
           ],
           "rfIntervalo": [],
@@ -3422,10 +3795,7 @@
             {
               "valor": 0.16,
               "classe": "reportado_com_distancias_tabela_2_artigo_2024",
-              "homologado": false,
-              "distanciaManchaCm": 0.55,
-              "distanciaFrenteCm": 3.5,
-              "diferencaRfDistancias": -0.0029
+              "homologado": false
             }
           ],
           "rfIntervalo": [],
@@ -3856,10 +4226,7 @@
             {
               "valor": 0.11,
               "classe": "reportado_com_distancias_tabela_2_artigo_2024",
-              "homologado": false,
-              "distanciaManchaCm": 0.4,
-              "distanciaFrenteCm": 3.5,
-              "diferencaRfDistancias": 0.0043
+              "homologado": false
             }
           ],
           "rfIntervalo": [],
@@ -4487,10 +4854,7 @@
             {
               "valor": 0.23,
               "classe": "reportado_com_distancias_tabela_2_artigo_2024",
-              "homologado": false,
-              "distanciaManchaCm": 0.8,
-              "distanciaFrenteCm": 3.5,
-              "diferencaRfDistancias": -0.0014
+              "homologado": false
             }
           ],
           "rfIntervalo": [],
@@ -4691,10 +5055,7 @@
             {
               "valor": 0.51,
               "classe": "reportado_com_distancias_tabela_2_artigo_2024",
-              "homologado": false,
-              "distanciaManchaCm": 1.8,
-              "distanciaFrenteCm": 3.5,
-              "diferencaRfDistancias": 0.0043
+              "homologado": false
             }
           ],
           "rfIntervalo": [],
@@ -5635,10 +5996,7 @@
             {
               "valor": 0.23,
               "classe": "reportado_com_distancias_tabela_2_artigo_2024",
-              "homologado": false,
-              "distanciaManchaCm": 0.8,
-              "distanciaFrenteCm": 3.5,
-              "diferencaRfDistancias": -0.0014
+              "homologado": false
             }
           ],
           "rfIntervalo": [],
@@ -6169,10 +6527,7 @@
             {
               "valor": 0.52,
               "classe": "reportado_com_distancias_tabela_2_artigo_2024",
-              "homologado": false,
-              "distanciaManchaCm": 1.85,
-              "distanciaFrenteCm": 3.5,
-              "diferencaRfDistancias": 0.0086
+              "homologado": false
             }
           ],
           "rfIntervalo": [],
@@ -6297,15 +6652,255 @@
       "nome": "Cafeína",
       "grupo": "farmacos_e_organicos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 0,
-      "metodos": [],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
-      "paresDocumentados": [],
+      "metodosComRetencaoIndividual": 4,
+      "metodos": [
+        {
+          "protocoloId": "hptlc_green2022_normal_ethylacetate_ethanol_85_15",
+          "tecnica": "hptlc",
+          "fonte": "hptlcGreen2022",
+          "fonteUrl": "https://www.mdpi.com/1420-3049/27/2/405",
+          "solventes": [
+            "ethanol",
+            "ethyl_acetate"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "ethyl_acetate",
+                "partes": 85
+              },
+              {
+                "id": "ethanol",
+                "partes": 15
+              }
+            ],
+            "base": "v/v",
+            "mistura": "acetato de etila:etanol 85:15",
+            "homologada": false
+          },
+          "faseEstacionaria": "HPTLC de fase normal, sílica gel 60 F254",
+          "detector": "densitometria em absorbância a 260 nm",
+          "rf": [
+            {
+              "valor": 0.4,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "desvioPadraoRf": 0.01,
+              "replicatas": 3
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_em_revisao_nao_homologada"
+        },
+        {
+          "protocoloId": "hptlc_green2022_reverse_ethanol_water_50_50",
+          "tecnica": "hptlc",
+          "fonte": "hptlcGreen2022",
+          "fonteUrl": "https://www.mdpi.com/1420-3049/27/2/405",
+          "solventes": [
+            "ethanol",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "ethanol",
+                "partes": 50
+              },
+              {
+                "id": "water",
+                "partes": 50
+              }
+            ],
+            "base": "v/v",
+            "mistura": "etanol:água 50:50",
+            "homologada": false
+          },
+          "faseEstacionaria": "HPTLC de fase reversa C18",
+          "detector": "densitometria em absorbância a 260 nm",
+          "rf": [
+            {
+              "valor": 0.43,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "desvioPadraoRf": 0.01,
+              "replicatas": 3
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_em_revisao_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_analgesics_stevens_ethyacetate_pure",
+          "tecnica": "ccd",
+          "fonte": "stevensLipsy",
+          "fonteUrl": "https://web.stevens.edu/wit/research/samples/plipsy_organic_chemistry_lab_report",
+          "solventes": [
+            "ethyl_acetate"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "ethyl_acetate",
+                "partes": 1
+              }
+            ],
+            "base": "v/v",
+            "mistura": "acetato de etila puro",
+            "homologada": false
+          },
+          "faseEstacionaria": "placa plástica recoberta com sílica (relatório de aula)",
+          "detector": "manchas observadas; procedimento de revelação não descrito",
+          "rf": [
+            {
+              "valor": 0.08,
+              "classe": "Rf_de_relatorio_educacional_nao_revisado",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "relatorio_discente_nao_homologado"
+        },
+        {
+          "protocoloId": "tlc_analgesics_bentonite2021_mixed_eluent",
+          "tecnica": "ccd",
+          "fonte": "bentonite2021",
+          "fonteUrl": "https://rjptonline.org/HTML_Papers/Research%20Journal%20of%20Pharmacy%20and%20Technology__PID__2021-14-4-51.html",
+          "solventes": [
+            "acetic_acid",
+            "chloroform",
+            "cyclohexane",
+            "methanol"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "cyclohexane",
+                "partes": 14
+              },
+              {
+                "id": "chloroform",
+                "partes": 5
+              },
+              {
+                "id": "methanol",
+                "partes": 0.25
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 0.75
+              }
+            ],
+            "base": "v/v",
+            "mistura": "ciclo-hexano:clorofórmio:metanol:ácido acético 14:5:0,25:0,75",
+            "homologada": false
+          },
+          "faseEstacionaria": "bentonita síria modificada por tratamento térmico/ácido B500AW",
+          "detector": "densitometria: paracetamol 250 nm, cafeína 275 nm, ácido acetilsalicílico 200 nm",
+          "rf": [
+            {
+              "valor": 0.21,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_em_revisao_nao_homologada"
+        }
+      ],
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "hptlc_green2022_normal_ethylacetate_ethanol_85_15",
+            "hptlc_green2022_reverse_ethanol_water_50_50"
+          ],
+          "solventesA": [
+            "ethanol",
+            "ethyl_acetate"
+          ],
+          "solventesB": [
+            "ethanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "hptlc_green2022_normal_ethylacetate_ethanol_85_15",
+            "tlc_analgesics_stevens_ethyacetate_pure"
+          ],
+          "solventesA": [
+            "ethanol",
+            "ethyl_acetate"
+          ],
+          "solventesB": [
+            "ethyl_acetate"
+          ]
+        },
+        {
+          "metodos": [
+            "hptlc_green2022_normal_ethylacetate_ethanol_85_15",
+            "tlc_analgesics_bentonite2021_mixed_eluent"
+          ],
+          "solventesA": [
+            "ethanol",
+            "ethyl_acetate"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "chloroform",
+            "cyclohexane",
+            "methanol"
+          ]
+        },
+        {
+          "metodos": [
+            "hptlc_green2022_reverse_ethanol_water_50_50",
+            "tlc_analgesics_stevens_ethyacetate_pure"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "ethyl_acetate"
+          ]
+        },
+        {
+          "metodos": [
+            "hptlc_green2022_reverse_ethanol_water_50_50",
+            "tlc_analgesics_bentonite2021_mixed_eluent"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "chloroform",
+            "cyclohexane",
+            "methanol"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_analgesics_stevens_ethyacetate_pure",
+            "tlc_analgesics_bentonite2021_mixed_eluent"
+          ],
+          "solventesA": [
+            "ethyl_acetate"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "chloroform",
+            "cyclohexane",
+            "methanol"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "metodo_2_documentado",
-        "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
@@ -6321,6 +6916,7 @@
       "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
+        "sem_retencao_experimental",
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
@@ -6331,15 +6927,255 @@
       "nome": "Paracetamol",
       "grupo": "farmacos_e_organicos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 0,
-      "metodos": [],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
-      "paresDocumentados": [],
+      "metodosComRetencaoIndividual": 4,
+      "metodos": [
+        {
+          "protocoloId": "hptlc_green2022_normal_ethylacetate_ethanol_85_15",
+          "tecnica": "hptlc",
+          "fonte": "hptlcGreen2022",
+          "fonteUrl": "https://www.mdpi.com/1420-3049/27/2/405",
+          "solventes": [
+            "ethanol",
+            "ethyl_acetate"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "ethyl_acetate",
+                "partes": 85
+              },
+              {
+                "id": "ethanol",
+                "partes": 15
+              }
+            ],
+            "base": "v/v",
+            "mistura": "acetato de etila:etanol 85:15",
+            "homologada": false
+          },
+          "faseEstacionaria": "HPTLC de fase normal, sílica gel 60 F254",
+          "detector": "densitometria em absorbância a 260 nm",
+          "rf": [
+            {
+              "valor": 0.59,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "desvioPadraoRf": 0.02,
+              "replicatas": 3
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_em_revisao_nao_homologada"
+        },
+        {
+          "protocoloId": "hptlc_green2022_reverse_ethanol_water_50_50",
+          "tecnica": "hptlc",
+          "fonte": "hptlcGreen2022",
+          "fonteUrl": "https://www.mdpi.com/1420-3049/27/2/405",
+          "solventes": [
+            "ethanol",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "ethanol",
+                "partes": 50
+              },
+              {
+                "id": "water",
+                "partes": 50
+              }
+            ],
+            "base": "v/v",
+            "mistura": "etanol:água 50:50",
+            "homologada": false
+          },
+          "faseEstacionaria": "HPTLC de fase reversa C18",
+          "detector": "densitometria em absorbância a 260 nm",
+          "rf": [
+            {
+              "valor": 0.57,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "desvioPadraoRf": 0.02,
+              "replicatas": 3
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_em_revisao_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_analgesics_stevens_ethyacetate_pure",
+          "tecnica": "ccd",
+          "fonte": "stevensLipsy",
+          "fonteUrl": "https://web.stevens.edu/wit/research/samples/plipsy_organic_chemistry_lab_report",
+          "solventes": [
+            "ethyl_acetate"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "ethyl_acetate",
+                "partes": 1
+              }
+            ],
+            "base": "v/v",
+            "mistura": "acetato de etila puro",
+            "homologada": false
+          },
+          "faseEstacionaria": "placa plástica recoberta com sílica (relatório de aula)",
+          "detector": "manchas observadas; procedimento de revelação não descrito",
+          "rf": [
+            {
+              "valor": 0.24,
+              "classe": "Rf_de_relatorio_educacional_nao_revisado",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "relatorio_discente_nao_homologado"
+        },
+        {
+          "protocoloId": "tlc_analgesics_bentonite2021_mixed_eluent",
+          "tecnica": "ccd",
+          "fonte": "bentonite2021",
+          "fonteUrl": "https://rjptonline.org/HTML_Papers/Research%20Journal%20of%20Pharmacy%20and%20Technology__PID__2021-14-4-51.html",
+          "solventes": [
+            "acetic_acid",
+            "chloroform",
+            "cyclohexane",
+            "methanol"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "cyclohexane",
+                "partes": 14
+              },
+              {
+                "id": "chloroform",
+                "partes": 5
+              },
+              {
+                "id": "methanol",
+                "partes": 0.25
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 0.75
+              }
+            ],
+            "base": "v/v",
+            "mistura": "ciclo-hexano:clorofórmio:metanol:ácido acético 14:5:0,25:0,75",
+            "homologada": false
+          },
+          "faseEstacionaria": "bentonita síria modificada por tratamento térmico/ácido B500AW",
+          "detector": "densitometria: paracetamol 250 nm, cafeína 275 nm, ácido acetilsalicílico 200 nm",
+          "rf": [
+            {
+              "valor": 0.1,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_em_revisao_nao_homologada"
+        }
+      ],
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "hptlc_green2022_normal_ethylacetate_ethanol_85_15",
+            "hptlc_green2022_reverse_ethanol_water_50_50"
+          ],
+          "solventesA": [
+            "ethanol",
+            "ethyl_acetate"
+          ],
+          "solventesB": [
+            "ethanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "hptlc_green2022_normal_ethylacetate_ethanol_85_15",
+            "tlc_analgesics_stevens_ethyacetate_pure"
+          ],
+          "solventesA": [
+            "ethanol",
+            "ethyl_acetate"
+          ],
+          "solventesB": [
+            "ethyl_acetate"
+          ]
+        },
+        {
+          "metodos": [
+            "hptlc_green2022_normal_ethylacetate_ethanol_85_15",
+            "tlc_analgesics_bentonite2021_mixed_eluent"
+          ],
+          "solventesA": [
+            "ethanol",
+            "ethyl_acetate"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "chloroform",
+            "cyclohexane",
+            "methanol"
+          ]
+        },
+        {
+          "metodos": [
+            "hptlc_green2022_reverse_ethanol_water_50_50",
+            "tlc_analgesics_stevens_ethyacetate_pure"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "ethyl_acetate"
+          ]
+        },
+        {
+          "metodos": [
+            "hptlc_green2022_reverse_ethanol_water_50_50",
+            "tlc_analgesics_bentonite2021_mixed_eluent"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "chloroform",
+            "cyclohexane",
+            "methanol"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_analgesics_stevens_ethyacetate_pure",
+            "tlc_analgesics_bentonite2021_mixed_eluent"
+          ],
+          "solventesA": [
+            "ethyl_acetate"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "chloroform",
+            "cyclohexane",
+            "methanol"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "metodo_2_documentado",
-        "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
@@ -6348,15 +7184,107 @@
       "nome": "Ácido acetilsalicílico",
       "grupo": "farmacos_e_organicos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 0,
-      "metodos": [],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
-      "paresDocumentados": [],
+      "metodosComRetencaoIndividual": 2,
+      "metodos": [
+        {
+          "protocoloId": "tlc_analgesics_stevens_ethyacetate_pure",
+          "tecnica": "ccd",
+          "fonte": "stevensLipsy",
+          "fonteUrl": "https://web.stevens.edu/wit/research/samples/plipsy_organic_chemistry_lab_report",
+          "solventes": [
+            "ethyl_acetate"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "ethyl_acetate",
+                "partes": 1
+              }
+            ],
+            "base": "v/v",
+            "mistura": "acetato de etila puro",
+            "homologada": false
+          },
+          "faseEstacionaria": "placa plástica recoberta com sílica (relatório de aula)",
+          "detector": "manchas observadas; procedimento de revelação não descrito",
+          "rf": [
+            {
+              "valor": 0.45,
+              "classe": "Rf_de_relatorio_educacional_nao_revisado",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "relatorio_discente_nao_homologado"
+        },
+        {
+          "protocoloId": "tlc_analgesics_bentonite2021_mixed_eluent",
+          "tecnica": "ccd",
+          "fonte": "bentonite2021",
+          "fonteUrl": "https://rjptonline.org/HTML_Papers/Research%20Journal%20of%20Pharmacy%20and%20Technology__PID__2021-14-4-51.html",
+          "solventes": [
+            "acetic_acid",
+            "chloroform",
+            "cyclohexane",
+            "methanol"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "cyclohexane",
+                "partes": 14
+              },
+              {
+                "id": "chloroform",
+                "partes": 5
+              },
+              {
+                "id": "methanol",
+                "partes": 0.25
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 0.75
+              }
+            ],
+            "base": "v/v",
+            "mistura": "ciclo-hexano:clorofórmio:metanol:ácido acético 14:5:0,25:0,75",
+            "homologada": false
+          },
+          "faseEstacionaria": "bentonita síria modificada por tratamento térmico/ácido B500AW",
+          "detector": "densitometria: paracetamol 250 nm, cafeína 275 nm, ácido acetilsalicílico 200 nm",
+          "rf": [
+            {
+              "valor": 0.4,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_em_revisao_nao_homologada"
+        }
+      ],
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "tlc_analgesics_stevens_ethyacetate_pure",
+            "tlc_analgesics_bentonite2021_mixed_eluent"
+          ],
+          "solventesA": [
+            "ethyl_acetate"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "chloroform",
+            "cyclohexane",
+            "methanol"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "metodo_2_documentado",
-        "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
@@ -6372,6 +7300,7 @@
       "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
+        "sem_retencao_experimental",
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
@@ -6382,15 +7311,139 @@
       "nome": "Ibuprofeno",
       "grupo": "farmacos_e_organicos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 0,
-      "metodos": [],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
-      "paresDocumentados": [],
+      "metodosComRetencaoIndividual": 3,
+      "metodos": [
+        {
+          "protocoloId": "tlc_ibuprofen2016_chloroform_acetone_8_2",
+          "tecnica": "ccd",
+          "fonte": "ibuprofen2016",
+          "fonteUrl": "https://www.researchgate.net/publication/296331814_Development_and_validation_of_analysis_method_for_tablet_ibuprofen_by_thin_layer_chromatography-densitometry",
+          "solventes": [
+            "acetone",
+            "chloroform"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "chloroform",
+                "partes": 8
+              },
+              {
+                "id": "acetone",
+                "partes": 2
+              }
+            ],
+            "base": "v/v",
+            "mistura": "clorofórmio:acetona 8:2",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel 60 F254 Merck",
+          "detector": "mancha sob UV 254 nm e densitometria UV (texto menciona 320 nm na otimização e 222 nm na quantificação)",
+          "rf": [
+            {
+              "valor": 0.62,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_em_revisao_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_ibuprofen2016_ethylacetate_pure",
+          "tecnica": "ccd",
+          "fonte": "ibuprofen2016",
+          "fonteUrl": "https://www.researchgate.net/publication/296331814_Development_and_validation_of_analysis_method_for_tablet_ibuprofen_by_thin_layer_chromatography-densitometry",
+          "solventes": [
+            "ethyl_acetate"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "ethyl_acetate",
+                "partes": 10
+              }
+            ],
+            "base": "v/v",
+            "mistura": "acetato de etila puro, 10 partes de solvente",
+            "homologada": false
+          },
+          "faseEstacionaria": "sílica gel 60 F254 Merck",
+          "detector": "mancha sob UV 254 nm e densitometria UV (texto menciona 320 nm na otimização e 222 nm na quantificação)",
+          "rf": [
+            {
+              "valor": 0.87,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_em_revisao_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_analgesics_stevens_ethyacetate_pure",
+          "tecnica": "ccd",
+          "fonte": "stevensLipsy",
+          "fonteUrl": "https://web.stevens.edu/wit/research/samples/plipsy_organic_chemistry_lab_report",
+          "solventes": [
+            "ethyl_acetate"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "ethyl_acetate",
+                "partes": 1
+              }
+            ],
+            "base": "v/v",
+            "mistura": "acetato de etila puro",
+            "homologada": false
+          },
+          "faseEstacionaria": "placa plástica recoberta com sílica (relatório de aula)",
+          "detector": "manchas observadas; procedimento de revelação não descrito",
+          "rf": [
+            {
+              "valor": 0.6,
+              "classe": "Rf_de_relatorio_educacional_nao_revisado",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "relatorio_discente_nao_homologado"
+        }
+      ],
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "tlc_ibuprofen2016_chloroform_acetone_8_2",
+            "tlc_ibuprofen2016_ethylacetate_pure"
+          ],
+          "solventesA": [
+            "acetone",
+            "chloroform"
+          ],
+          "solventesB": [
+            "ethyl_acetate"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_ibuprofen2016_chloroform_acetone_8_2",
+            "tlc_analgesics_stevens_ethyacetate_pure"
+          ],
+          "solventesA": [
+            "acetone",
+            "chloroform"
+          ],
+          "solventesB": [
+            "ethyl_acetate"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "metodo_2_documentado",
-        "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
@@ -6406,6 +7459,7 @@
       "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
+        "sem_retencao_experimental",
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
@@ -6423,6 +7477,7 @@
       "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
+        "sem_retencao_experimental",
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
@@ -6440,6 +7495,7 @@
       "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
+        "sem_retencao_experimental",
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
@@ -6457,6 +7513,7 @@
       "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
+        "sem_retencao_experimental",
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
@@ -6474,6 +7531,7 @@
       "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
+        "sem_retencao_experimental",
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
@@ -6491,6 +7549,7 @@
       "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
+        "sem_retencao_experimental",
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
@@ -6508,6 +7567,7 @@
       "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
+        "sem_retencao_experimental",
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
@@ -6525,6 +7585,7 @@
       "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
+        "sem_retencao_experimental",
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
@@ -6542,6 +7603,7 @@
       "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
+        "sem_retencao_experimental",
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
@@ -6559,6 +7621,7 @@
       "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
+        "sem_retencao_experimental",
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
@@ -6576,6 +7639,7 @@
       "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
+        "sem_retencao_experimental",
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
@@ -6593,6 +7657,7 @@
       "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
+        "sem_retencao_experimental",
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
@@ -6603,15 +7668,113 @@
       "nome": "Alaranjado de metila",
       "grupo": "indicadores_e_traçadores",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 0,
-      "metodos": [],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
-      "paresDocumentados": [],
+      "metodosComRetencaoIndividual": 2,
+      "metodos": [
+        {
+          "protocoloId": "tlc_hfsa_2026_mph1_hexane_isopropanol",
+          "tecnica": "ccd",
+          "fonte": "fibroin2026",
+          "fonteUrl": "https://www.mdpi.com/2297-8739/13/11/336",
+          "solventes": [
+            "isopropanol",
+            "n_hexane"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "n_hexane",
+                "partes": 1
+              },
+              {
+                "id": "isopropanol",
+                "partes": 1
+              }
+            ],
+            "base": "v/v",
+            "mistura": "n-hexano:2-propanol 1:1",
+            "homologada": false
+          },
+          "faseEstacionaria": "HFSA (fibroína-sílica híbrida)",
+          "detector": "luz visível após secagem",
+          "rf": [
+            {
+              "valor": 0.73,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_em_revisao_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_hfsa_2026_mph2_hexane_isopropanol_water_acetic",
+          "tecnica": "ccd",
+          "fonte": "fibroin2026",
+          "fonteUrl": "https://www.mdpi.com/2297-8739/13/11/336",
+          "solventes": [
+            "acetic_acid",
+            "isopropanol",
+            "n_hexane",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "n_hexane",
+                "partes": 1
+              },
+              {
+                "id": "isopropanol",
+                "partes": 1
+              },
+              {
+                "id": "water",
+                "partes": 0.5
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 0.1
+              }
+            ],
+            "base": "v/v",
+            "mistura": "n-hexano:2-propanol:água:ácido acético glacial 1:1:0,5:0,1",
+            "homologada": false
+          },
+          "faseEstacionaria": "HFSA (fibroína-sílica híbrida)",
+          "detector": "luz visível após secagem",
+          "rf": [
+            {
+              "valor": 0.49,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_em_revisao_nao_homologada"
+        }
+      ],
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "tlc_hfsa_2026_mph1_hexane_isopropanol",
+            "tlc_hfsa_2026_mph2_hexane_isopropanol_water_acetic"
+          ],
+          "solventesA": [
+            "isopropanol",
+            "n_hexane"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "isopropanol",
+            "n_hexane",
+            "water"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "metodo_2_documentado",
-        "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
       ]
     },
@@ -6627,6 +7790,7 @@
       "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
+        "sem_retencao_experimental",
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
@@ -6644,6 +7808,7 @@
       "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
+        "sem_retencao_experimental",
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
@@ -6661,6 +7826,7 @@
       "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
+        "sem_retencao_experimental",
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
@@ -6678,6 +7844,7 @@
       "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
+        "sem_retencao_experimental",
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
@@ -6695,6 +7862,7 @@
       "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
+        "sem_retencao_experimental",
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
@@ -6705,15 +7873,113 @@
       "nome": "Sudan IV",
       "grupo": "indicadores_e_traçadores",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 0,
-      "metodos": [],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
-      "paresDocumentados": [],
+      "metodosComRetencaoIndividual": 2,
+      "metodos": [
+        {
+          "protocoloId": "tlc_hfsa_2026_mph1_hexane_isopropanol",
+          "tecnica": "ccd",
+          "fonte": "fibroin2026",
+          "fonteUrl": "https://www.mdpi.com/2297-8739/13/11/336",
+          "solventes": [
+            "isopropanol",
+            "n_hexane"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "n_hexane",
+                "partes": 1
+              },
+              {
+                "id": "isopropanol",
+                "partes": 1
+              }
+            ],
+            "base": "v/v",
+            "mistura": "n-hexano:2-propanol 1:1",
+            "homologada": false
+          },
+          "faseEstacionaria": "HFSA (fibroína-sílica híbrida)",
+          "detector": "luz visível após secagem",
+          "rf": [
+            {
+              "valor": 0.33,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_em_revisao_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_hfsa_2026_mph2_hexane_isopropanol_water_acetic",
+          "tecnica": "ccd",
+          "fonte": "fibroin2026",
+          "fonteUrl": "https://www.mdpi.com/2297-8739/13/11/336",
+          "solventes": [
+            "acetic_acid",
+            "isopropanol",
+            "n_hexane",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "n_hexane",
+                "partes": 1
+              },
+              {
+                "id": "isopropanol",
+                "partes": 1
+              },
+              {
+                "id": "water",
+                "partes": 0.5
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 0.1
+              }
+            ],
+            "base": "v/v",
+            "mistura": "n-hexano:2-propanol:água:ácido acético glacial 1:1:0,5:0,1",
+            "homologada": false
+          },
+          "faseEstacionaria": "HFSA (fibroína-sílica híbrida)",
+          "detector": "luz visível após secagem",
+          "rf": [
+            {
+              "valor": 0.86,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_em_revisao_nao_homologada"
+        }
+      ],
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "tlc_hfsa_2026_mph1_hexane_isopropanol",
+            "tlc_hfsa_2026_mph2_hexane_isopropanol_water_acetic"
+          ],
+          "solventesA": [
+            "isopropanol",
+            "n_hexane"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "isopropanol",
+            "n_hexane",
+            "water"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "metodo_2_documentado",
-        "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
       ]
     }
