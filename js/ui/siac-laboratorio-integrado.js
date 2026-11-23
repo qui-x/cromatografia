@@ -33,7 +33,8 @@ SIAC.laboratorio=(()=>{
  let ready=false,enabled=false,col=null,plan=null,volume=0,speed=120,
   running=false,lastFrame=0,view="foco",focus="coluna",group="frascos",
   selected="F1",capillary=null,capillaryLoading=null,development=null,module="observar",
-  item="aparencia",papers={},withdrawn={},status="",lastDraw=0;
+  item="aparencia",papers={},withdrawn={},status="",lastDraw=0,
+  catalogMode=true,catalogSelection=null;
  const fmt=(n,d=2)=>Number(n).toLocaleString("pt-BR",{minimumFractionDigits:d,maximumFractionDigits:d});
  const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
  const esc=v=>String(v).replace(/[&<>"']/g,k=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[k]));
@@ -75,6 +76,15 @@ SIAC.laboratorio=(()=>{
   ui.id="siac-montagem";ui.className="siac-montagem";
   ui.innerHTML='<h2>Montagem cromatográfica</h2>'+elements();
   left.prepend(ui);
+  if(SIAC.catalogo?.interfaceMontagem){
+    SIAC.catalogo.interfaceMontagem(ui,selecionado=>{
+      catalogSelection=selecionado;
+      catalogMode=selecionado.modo==="pesquisa";
+      if(catalogMode)running=false;
+      ui.classList.toggle("siac-catalogo-ativo",catalogMode);
+      if(ready&&enabled)render();
+    });
+  }
   const ver=document.createElement("section");ver.id="siac-ver";ver.innerHTML=
    '<h2>Ver · Cromatografia</h2><p id="siac-ver-contexto" class="siac-ver-contexto" aria-live="polite"></p><div id="siac-modulos" class="siac-modulos"></div>'+
    '<div id="siac-ver-itens" class="siac-itens"></div><div id="siac-ver-dados" aria-live="polite"></div>';
@@ -179,7 +189,10 @@ SIAC.laboratorio=(()=>{
   }catch(e){status="Não foi possível montar a coluna sem alterar os frascos: "+e.message;}
  }
  function montagemClick(e){
-  if(e.target.closest("#siac-montar")){build();render();return;}
+  if(e.target.closest("#siac-montar")){
+   if(catalogMode){status="Esta seleção possui dados planares de referência, mas não parâmetros de coluna homologados. Use a demonstração separadamente.";render();return;}
+   build();render();return;
+  }
   const chosen=e.target.closest("[data-fraction]");
   if(chosen){
    selected=chosen.dataset.fraction;
@@ -429,6 +442,20 @@ SIAC.laboratorio=(()=>{
  }
  function renderStage(){
   const stage=$("siac-stage");if(!stage||!col)return;
+  if(catalogMode){
+   const a=catalogSelection?.substancia,m=catalogSelection?.sistema;
+   const info=!a?"Escolha uma substância na doca Montagem. A fase móvel ficará disponível após a seleção.":
+     !m?"Selecione um sistema eluente relacionado a "+esc(a.nome)+". Se nenhum estiver disponível, faltam condições científicas para sua indicação.":
+     "Sistema documentado: "+esc(m.faseMovel)+". "+(m.rf===null?
+       "O protocolo não informa Rf individual para esta substância.":
+       "Rf bibliográfico "+fmt(m.rf,2)+"; consulte as condições na doca Montagem. A projeção não substitui medição.");
+   stage.innerHTML='<section class="siac-catalogo-stage" aria-label="Planejamento científico">'+
+    '<h2>'+(a?'Investigar · '+esc(a.nome):'Catálogo científico · 76 substâncias')+'</h2>'+
+    '<p>'+info+'</p>'+
+    '<p class="siac-hint">Os dados de literatura não são um motor validado de cromatografia em coluna. Nenhuma banda ou amostra real será simulada por suposição.</p>'+
+    '<p class="siac-hint">Para estudar a mecânica de coluna e F1–F10 com parâmetros fictícios, selecione Demonstração na doca Montagem.</p></section>';
+   return;
+  }
   sincronizarAbas();
   const t=volume/col.config.vazaoMlMin*60;
   const all=col.config.tempoTotalMin*60;
@@ -443,6 +470,7 @@ SIAC.laboratorio=(()=>{
  }
  function renderMontagem(){
   if(!plan)return;
+  if($("siac-montar"))$("siac-montar").disabled=catalogMode;
   $("siac-seletor").innerHTML=Array.from({length:10},(_,i)=>{
    const id="F"+(i+1),j=plan.janelas.find(x=>x.frasco===id),f=fraction(id);
    return '<button type="button" data-fraction="'+id+'" aria-pressed="'+(id===selected)+'" title="'+
@@ -456,6 +484,19 @@ SIAC.laboratorio=(()=>{
  }
  function renderVer(){
   const el=$("siac-ver");if(!el)return;
+  if(catalogMode){
+   $("siac-ver-contexto").textContent="Consulta científica · "+(catalogSelection?.substancia?.nome||"selecione uma substância");
+   $("siac-modulos").innerHTML="";
+   $("siac-ver-itens").innerHTML="";
+   $("siac-ver-dados").textContent=catalogSelection?.sistema?
+    (catalogSelection.sistema.rf===null?
+     "Não há Rf individual publicado para este sistema. A opção é um procedimento de grupo, não prova de migração do composto.":
+     "Rf bibliográfico "+fmt(catalogSelection.sistema.rf,3)+
+     ". A posição de uma mancha pode ser projetada para uma frente escolhida, mas a previsão química de Rf permanece indisponível.")+
+    " Não inferir k de coluna, identificação ou cor.":
+    "Escolha primeiro uma substância e depois um sistema de referência. Medir e Calcular exigem amostras e resultados observados em condições compatíveis.";
+   return;
+  }
   const itens=availableItems();
   if(!itens.includes(item))item=itens[0];
   const labels={coluna:"Coluna",tubo:"Tubo "+selected,amostra:"Papel P"+selected.slice(1)};
@@ -513,6 +554,18 @@ SIAC.laboratorio=(()=>{
  function renderDados(){
   const el=$("siac-dados");
   if(!el||!col)return;
+  if(catalogMode){
+   const a=catalogSelection?.substancia,m=catalogSelection?.sistema;
+   el.innerHTML='<h2>Dados · investigação</h2>'+
+    '<p class="siac-dados-nota">Catálogo preliminar de 76 substâncias. O sistema móvel só é habilitado após a escolha da substância.</p>'+
+    (a?'<p><strong>'+esc(a.nome)+'</strong></p>':'<p>Selecione uma substância.</p>')+
+    (m?'<p>Fase móvel: '+esc(m.faseMovel)+'</p><p>Fase estacionária: '+esc(m.faseEstacionaria)+'</p>'+
+      '<p>Detecção de referência: '+esc(m.detector)+'</p>'+
+      '<p>Rf bibliográfico: '+(m.rf===null?'não disponível':fmt(m.rf,3))+'</p>'+
+      '<p class="siac-hint">Dados preliminares; não existe fator k de coluna validado para esta associação.</p>':
+     '<p>Não há experimento habilitado: o vínculo solvente–composto ainda precisa de revisão.</p>');
+   return;
+  }
   const c=col.config,p=paper(selected),f=current();
   const focoLabel={coluna:"Coluna cromatográfica",tubo:"Frasco "+selected,
    amostra:"Papel P"+selected.slice(1)}[focus];
@@ -589,6 +642,7 @@ SIAC.laboratorio=(()=>{
   if(v){item=v.dataset.ver;render();}
  }
  function stageClick(e){
+  if(catalogMode)return;
   const btn=e.target.closest("button");
   const pick=btn?.closest("[data-open-fraction]");
   if(pick){choose(pick.dataset.openFraction,pick.dataset.openFocus);return;}
@@ -683,6 +737,8 @@ SIAC.laboratorio=(()=>{
  else setTimeout(start,0);
  return Object.freeze({get active(){return enabled;},get snapshot(){return {
    volumeMl:volume,visao:view,foco:focus,geral:group,selecionado:selected,
+   modo:catalogMode?"pesquisa":"demonstracao",substanciaId:catalogSelection?.substanciaId||null,
+   sistemaId:catalogSelection?.sistemaId||null,
    preenchidos:filled().map(f=>f.id),capilar:capillaryLoading?"aspirando":capillary?"carregado":"vazio",
    frenteMm:development?paper(development.id).frenteMm:null,
    preenchidosDetalhe:filled().map(f=>({id:f.id,volumeMl:f.volumeMl})),
