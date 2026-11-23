@@ -97,6 +97,15 @@
   card.querySelector(".siac-catalogo-modos").append(btn);
   card.insertAdjacentHTML("beforeend",controlsHTML());
   card.addEventListener("click",e=>{
+   const shortcut=e.target.closest("[data-siac-open-hptlc]");
+   if(shortcut){
+    if(change("np",shortcut.dataset.siacOpenHptlc)){
+     syncControls(card);
+     card.querySelector('[data-siac-modo="hptlc"]')?.click();
+     onUpdate?.();
+    }
+    return;
+   }
    if(e.target.closest("[data-siac-modo]")){
     card.querySelector("#siac-hptlc-controls").hidden=
       !card.querySelector('[data-siac-modo="hptlc"][aria-pressed="true"]');
@@ -109,6 +118,8 @@
    if(e.target.id==="siac-hptlc-sample"){change(state.phase,e.target.value);syncControls(card);onUpdate?.();}
   });
   syncControls(card);
+  // Aplicar os mesmos controles tematizados do SIAB também aos selects HPTLC.
+  if(typeof globalThis==="object")globalThis.SIAB?.refreshSelects?.();
   return true;
  }
  function plateFor(id,phase=state.phase){
