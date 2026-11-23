@@ -50,6 +50,7 @@ jobs:
           node --check js/ui/abertura.js
           node tests/siac-identidade.test.cjs
           node tests/siac-independencia.test.cjs
+          node tests/siac-titulo-abertura.test.cjs
       - name: Instalar navegador para inspeção da abertura
         run: |
           npm ci --ignore-scripts

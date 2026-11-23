@@ -267,22 +267,26 @@
   height: 208px;
   filter: drop-shadow(0 8px 34px #0B547238);
 }
-.startup-brand .startup-nome {
+.startup-brand .startup-titulo {
   display: block;
-  max-width: 24ch;
-  margin-top: 10px;
+  max-width: 21ch;
+  margin-top: 12px;
   color: #F8F4EB;
-  font-size: clamp(1.05rem, 1.45vw, 1.25rem);
-  font-weight: 700;
-  line-height: 1.25;
+  font-size: clamp(1.6rem, 2.7vw, 2.5rem);
+  font-weight: 850;
+  line-height: 1.12;
+  letter-spacing: -.045em;
   text-wrap: balance;
 }
-.startup-brand em {
+.startup-brand .startup-nome {
   display: block;
-  margin-top: 8px;
+  max-width: 32ch;
+  margin-top: 13px;
   color: #C8DCD8;
-  font-size: 0.85rem;
-  font-style: normal;
+  font-size: clamp(.8rem, 1.06vw, .98rem);
+  font-weight: 530;
+  line-height: 1.46;
+  text-wrap: balance;
 }
 .startup-panel {
   position: relative;
@@ -451,7 +455,7 @@
   border-color: var(--border);
 }
 :root[data-contrast="on"] .startup-brand .startup-nome,
-:root[data-contrast="on"] .startup-brand em {
+:root[data-contrast="on"] .startup-brand .startup-titulo {
   color: #fff;
 }
 @media (max-width: 960px) {
@@ -599,15 +603,17 @@
     width: 76px;
     height: 76px;
   }
-  .startup-brand .startup-nome {
-    max-width: 26ch;
+  .startup-brand .startup-titulo {
+    max-width: 23ch;
     margin-top: 6px;
-    font-size: 0.95rem;
-    line-height: 1.25;
+    font-size: clamp(1.38rem, 5.3vw, 1.9rem);
+    line-height: 1.1;
   }
-  .startup-brand em {
-    margin-top: 4px;
-    font-size: 0.75rem;
+  .startup-brand .startup-nome {
+    max-width: 30ch;
+    margin-top: 7px;
+    font-size: .73rem;
+    line-height: 1.4;
   }
   .startup-panel {
     padding: 20px;
