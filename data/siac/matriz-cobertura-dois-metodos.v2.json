@@ -1,0 +1,1532 @@
+{
+  "versao": "2.0.0",
+  "data": "2026-11-23",
+  "titulo": "Matriz preliminar de cobertura científica do SIAC",
+  "fonte": "data/siac/analitos-protocolos.v1.json",
+  "observacao": "A matriz usa EXCLUSIVAMENTE métodos já registrados no catálogo local. Não representa cruzamento completo com bancos externos ou pesquisa de artigos recentes.",
+  "regras": {
+    "minimoMetodosIndependentesComRetencaoIndividual": 2,
+    "minimoSolventesQuimicamenteDistintos": 2,
+    "exigeSolventesDiferentesEntreMetodos": true,
+    "aceitaApenasAlteracaoDeProporcao": false,
+    "exigeIdentidadeDetectorSuporteEvidencia": true,
+    "metaMinimaSubstancias": 40,
+    "metaAmpliadaSubstancias": 55
+  },
+  "resumo": {
+    "candidatos": 76,
+    "comPeloMenosUmRfIndividual": 11,
+    "comDoisMetodosDocumentados": 0,
+    "homologadosNaRegraNova": 0,
+    "faltamParaMetaMinima": 40,
+    "faltamParaMetaAmpliada": 55
+  },
+  "candidatos": [
+    {
+      "id": "tartrazina",
+      "nome": "Tartrazina (FD&C Yellow 5)",
+      "grupo": "corantes_alimenticios",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "sunset_yellow_fcf",
+      "nome": "Amarelo crepúsculo FCF (Yellow 6)",
+      "grupo": "corantes_alimenticios",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "allura_red_ac",
+      "nome": "Vermelho Allura AC (Red 40)",
+      "grupo": "corantes_alimenticios",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "brilliant_blue_fcf",
+      "nome": "Azul brilhante FCF (Blue 1)",
+      "grupo": "corantes_alimenticios",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "indigotine",
+      "nome": "Indigotina (Blue 2)",
+      "grupo": "corantes_alimenticios",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "erythrosine",
+      "nome": "Eritrosina (Red 3)",
+      "grupo": "corantes_alimenticios",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "fast_green_fcf",
+      "nome": "Verde rápido FCF (Green 3)",
+      "grupo": "corantes_alimenticios",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "ponceau_4r",
+      "nome": "Ponceau 4R",
+      "grupo": "corantes_alimenticios",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "amaranth",
+      "nome": "Amaranto (corante azo)",
+      "grupo": "corantes_alimenticios",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "patent_blue_v",
+      "nome": "Azul patente V",
+      "grupo": "corantes_alimenticios",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "quinoline_yellow",
+      "nome": "Amarelo de quinolina",
+      "grupo": "corantes_alimenticios",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "chlorophyll_a",
+      "nome": "Clorofila a",
+      "grupo": "pigmentos_vegetais",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 1,
+      "metodos": [
+        {
+          "protocoloId": "tlc_spinach_quach_2004",
+          "tecnica": "ccd",
+          "fonte": "quach",
+          "rf": 0.44,
+          "sistemaFaseMovel": {
+            "componentes": [
+              {
+                "id": "petroleum_ether_mixture",
+                "partes": 60
+              },
+              {
+                "id": "cyclohexane",
+                "partes": 16
+              },
+              {
+                "id": "ethyl_acetate",
+                "partes": 10
+              },
+              {
+                "id": "acetone",
+                "partes": 10
+              },
+              {
+                "id": "methanol",
+                "partes": 4
+              }
+            ],
+            "base": "v/v",
+            "mistura": "soma 100 partes"
+          },
+          "detector": "visível",
+          "estado": "nao_homologado"
+        }
+      ],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "chlorophyll_b",
+      "nome": "Clorofila b",
+      "grupo": "pigmentos_vegetais",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 1,
+      "metodos": [
+        {
+          "protocoloId": "tlc_spinach_quach_2004",
+          "tecnica": "ccd",
+          "fonte": "quach",
+          "rf": 0.32,
+          "sistemaFaseMovel": {
+            "componentes": [
+              {
+                "id": "petroleum_ether_mixture",
+                "partes": 60
+              },
+              {
+                "id": "cyclohexane",
+                "partes": 16
+              },
+              {
+                "id": "ethyl_acetate",
+                "partes": 10
+              },
+              {
+                "id": "acetone",
+                "partes": 10
+              },
+              {
+                "id": "methanol",
+                "partes": 4
+              }
+            ],
+            "base": "v/v",
+            "mistura": "soma 100 partes"
+          },
+          "detector": "visível",
+          "estado": "nao_homologado"
+        }
+      ],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "pheophytin_a",
+      "nome": "Feofitina a",
+      "grupo": "pigmentos_vegetais",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 1,
+      "metodos": [
+        {
+          "protocoloId": "tlc_spinach_pheophytin_quach_2004",
+          "tecnica": "ccd",
+          "fonte": "quach",
+          "rf": 0.6,
+          "sistemaFaseMovel": {
+            "herdadaDe": "tlc_spinach_quach_2004"
+          },
+          "detector": "visível",
+          "estado": "nao_homologado"
+        }
+      ],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "pheophytin_b",
+      "nome": "Feofitina b",
+      "grupo": "pigmentos_vegetais",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 1,
+      "metodos": [
+        {
+          "protocoloId": "tlc_spinach_pheophytin_quach_2004",
+          "tecnica": "ccd",
+          "fonte": "quach",
+          "rf": 0.49,
+          "sistemaFaseMovel": {
+            "herdadaDe": "tlc_spinach_quach_2004"
+          },
+          "detector": "visível",
+          "estado": "nao_homologado"
+        }
+      ],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "beta_carotene",
+      "nome": "β-caroteno",
+      "grupo": "pigmentos_vegetais",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "alpha_carotene",
+      "nome": "α-caroteno",
+      "grupo": "pigmentos_vegetais",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "lutein",
+      "nome": "Luteína",
+      "grupo": "pigmentos_vegetais",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "zeaxanthin",
+      "nome": "Zeaxantina",
+      "grupo": "pigmentos_vegetais",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "lycopene",
+      "nome": "Licopeno",
+      "grupo": "pigmentos_vegetais",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "violaxanthin",
+      "nome": "Violaxantina",
+      "grupo": "pigmentos_vegetais",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "neoxanthin",
+      "nome": "Neoxantina",
+      "grupo": "pigmentos_vegetais",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "beta_cryptoxanthin",
+      "nome": "β-criptoxantina",
+      "grupo": "pigmentos_vegetais",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "cyanidin_3_glucoside",
+      "nome": "Cianidina-3-O-glicosídeo",
+      "grupo": "pigmentos_vegetais",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "delphinidin_3_glucoside",
+      "nome": "Delfinidina-3-O-glicosídeo",
+      "grupo": "pigmentos_vegetais",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "quercetin",
+      "nome": "Quercetina",
+      "grupo": "pigmentos_vegetais",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "rutin",
+      "nome": "Rutina",
+      "grupo": "pigmentos_vegetais",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "curcumin",
+      "nome": "Curcumina",
+      "grupo": "pigmentos_vegetais",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "capsanthin",
+      "nome": "Capsantina",
+      "grupo": "pigmentos_vegetais",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "bixin",
+      "nome": "Bixina",
+      "grupo": "pigmentos_vegetais",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "norbixin",
+      "nome": "Norbixina",
+      "grupo": "pigmentos_vegetais",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "alanine",
+      "nome": "Alanina",
+      "grupo": "aminoacidos",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 1,
+      "metodos": [
+        {
+          "protocoloId": "tlc_aminoacids_amrita_12_3_5",
+          "tecnica": "ccd",
+          "fonte": "amrita",
+          "rf": 0.24,
+          "sistemaFaseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 12
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 3
+              },
+              {
+                "id": "water",
+                "partes": 5
+              }
+            ],
+            "base": "v/v",
+            "mistura": "descrita pelo guia",
+            "solventeReal": "consultar fonte"
+          },
+          "detector": "ninhidrina pós-desenvolvimento",
+          "estado": "nao_homologado"
+        }
+      ],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "arginine",
+      "nome": "Arginina",
+      "grupo": "aminoacidos",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "asparagine",
+      "nome": "Asparagina",
+      "grupo": "aminoacidos",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "aspartic_acid",
+      "nome": "Ácido aspártico",
+      "grupo": "aminoacidos",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "cysteine",
+      "nome": "Cisteína",
+      "grupo": "aminoacidos",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "glutamic_acid",
+      "nome": "Ácido glutâmico",
+      "grupo": "aminoacidos",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 1,
+      "metodos": [
+        {
+          "protocoloId": "tlc_aminoacids_amrita_12_3_5",
+          "tecnica": "ccd",
+          "fonte": "amrita",
+          "rf": 0.25,
+          "sistemaFaseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 12
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 3
+              },
+              {
+                "id": "water",
+                "partes": 5
+              }
+            ],
+            "base": "v/v",
+            "mistura": "descrita pelo guia",
+            "solventeReal": "consultar fonte"
+          },
+          "detector": "ninhidrina pós-desenvolvimento",
+          "estado": "nao_homologado"
+        }
+      ],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "glutamine",
+      "nome": "Glutamina",
+      "grupo": "aminoacidos",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "glycine",
+      "nome": "Glicina",
+      "grupo": "aminoacidos",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 1,
+      "metodos": [
+        {
+          "protocoloId": "tlc_aminoacids_amrita_12_3_5",
+          "tecnica": "ccd",
+          "fonte": "amrita",
+          "rf": 0.2,
+          "sistemaFaseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 12
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 3
+              },
+              {
+                "id": "water",
+                "partes": 5
+              }
+            ],
+            "base": "v/v",
+            "mistura": "descrita pelo guia",
+            "solventeReal": "consultar fonte"
+          },
+          "detector": "ninhidrina pós-desenvolvimento",
+          "estado": "nao_homologado"
+        }
+      ],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "histidine",
+      "nome": "Histidina",
+      "grupo": "aminoacidos",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "isoleucine",
+      "nome": "Isoleucina",
+      "grupo": "aminoacidos",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "leucine",
+      "nome": "Leucina",
+      "grupo": "aminoacidos",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 1,
+      "metodos": [
+        {
+          "protocoloId": "tlc_aminoacids_amrita_12_3_5",
+          "tecnica": "ccd",
+          "fonte": "amrita",
+          "rf": 0.58,
+          "sistemaFaseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 12
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 3
+              },
+              {
+                "id": "water",
+                "partes": 5
+              }
+            ],
+            "base": "v/v",
+            "mistura": "descrita pelo guia",
+            "solventeReal": "consultar fonte"
+          },
+          "detector": "ninhidrina pós-desenvolvimento",
+          "estado": "nao_homologado"
+        }
+      ],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "lysine",
+      "nome": "Lisina",
+      "grupo": "aminoacidos",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 1,
+      "metodos": [
+        {
+          "protocoloId": "tlc_aminoacids_amrita_12_3_5",
+          "tecnica": "ccd",
+          "fonte": "amrita",
+          "rf": 0.58,
+          "sistemaFaseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 12
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 3
+              },
+              {
+                "id": "water",
+                "partes": 5
+              }
+            ],
+            "base": "v/v",
+            "mistura": "descrita pelo guia",
+            "solventeReal": "consultar fonte"
+          },
+          "detector": "ninhidrina pós-desenvolvimento",
+          "estado": "nao_homologado"
+        }
+      ],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "methionine",
+      "nome": "Metionina",
+      "grupo": "aminoacidos",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "phenylalanine",
+      "nome": "Fenilalanina",
+      "grupo": "aminoacidos",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "proline",
+      "nome": "Prolina",
+      "grupo": "aminoacidos",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "serine",
+      "nome": "Serina",
+      "grupo": "aminoacidos",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "threonine",
+      "nome": "Treonina",
+      "grupo": "aminoacidos",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "tryptophan",
+      "nome": "Triptofano",
+      "grupo": "aminoacidos",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "tyrosine",
+      "nome": "Tirosina",
+      "grupo": "aminoacidos",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 1,
+      "metodos": [
+        {
+          "protocoloId": "tlc_aminoacids_amrita_12_3_5",
+          "tecnica": "ccd",
+          "fonte": "amrita",
+          "rf": 0.42,
+          "sistemaFaseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 12
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 3
+              },
+              {
+                "id": "water",
+                "partes": 5
+              }
+            ],
+            "base": "v/v",
+            "mistura": "descrita pelo guia",
+            "solventeReal": "consultar fonte"
+          },
+          "detector": "ninhidrina pós-desenvolvimento",
+          "estado": "nao_homologado"
+        }
+      ],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "valine",
+      "nome": "Valina",
+      "grupo": "aminoacidos",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 1,
+      "metodos": [
+        {
+          "protocoloId": "tlc_aminoacids_amrita_12_3_5",
+          "tecnica": "ccd",
+          "fonte": "amrita",
+          "rf": 0.4,
+          "sistemaFaseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 12
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 3
+              },
+              {
+                "id": "water",
+                "partes": 5
+              }
+            ],
+            "base": "v/v",
+            "mistura": "descrita pelo guia",
+            "solventeReal": "consultar fonte"
+          },
+          "detector": "ninhidrina pós-desenvolvimento",
+          "estado": "nao_homologado"
+        }
+      ],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "caffeine",
+      "nome": "Cafeína",
+      "grupo": "farmacos_e_organicos",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "theobromine",
+      "nome": "Teobromina",
+      "grupo": "farmacos_e_organicos",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "paracetamol",
+      "nome": "Paracetamol",
+      "grupo": "farmacos_e_organicos",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "acetylsalicylic_acid",
+      "nome": "Ácido acetilsalicílico",
+      "grupo": "farmacos_e_organicos",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "salicylic_acid",
+      "nome": "Ácido salicílico",
+      "grupo": "farmacos_e_organicos",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "ibuprofen",
+      "nome": "Ibuprofeno",
+      "grupo": "farmacos_e_organicos",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "naproxen",
+      "nome": "Naproxeno",
+      "grupo": "farmacos_e_organicos",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "benzoic_acid",
+      "nome": "Ácido benzoico",
+      "grupo": "farmacos_e_organicos",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "vanillin",
+      "nome": "Vanilina",
+      "grupo": "farmacos_e_organicos",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "ethyl_vanillin",
+      "nome": "Etilvanilina",
+      "grupo": "farmacos_e_organicos",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "coumarin",
+      "nome": "Cumarina",
+      "grupo": "farmacos_e_organicos",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "nicotinamide",
+      "nome": "Nicotinamida",
+      "grupo": "farmacos_e_organicos",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "riboflavin",
+      "nome": "Riboflavina",
+      "grupo": "farmacos_e_organicos",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "ascorbic_acid",
+      "nome": "Ácido ascórbico",
+      "grupo": "farmacos_e_organicos",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "fluorescein",
+      "nome": "Fluoresceína",
+      "grupo": "indicadores_e_traçadores",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "eosin_y",
+      "nome": "Eosina Y",
+      "grupo": "indicadores_e_traçadores",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "rhodamine_b",
+      "nome": "Rodamina B",
+      "grupo": "indicadores_e_traçadores",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "methylene_blue",
+      "nome": "Azul de metileno",
+      "grupo": "indicadores_e_traçadores",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "methyl_orange",
+      "nome": "Alaranjado de metila",
+      "grupo": "indicadores_e_traçadores",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "methyl_red",
+      "nome": "Vermelho de metila",
+      "grupo": "indicadores_e_traçadores",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "bromothymol_blue",
+      "nome": "Azul de bromotimol",
+      "grupo": "indicadores_e_traçadores",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "phenolphthalein",
+      "nome": "Fenolftaleína",
+      "grupo": "indicadores_e_traçadores",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "crystal_violet",
+      "nome": "Violeta cristal",
+      "grupo": "indicadores_e_traçadores",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "sudan_iii",
+      "nome": "Sudan III",
+      "grupo": "indicadores_e_traçadores",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    },
+    {
+      "id": "sudan_iv",
+      "nome": "Sudan IV",
+      "grupo": "indicadores_e_traçadores",
+      "identidadeConfirmada": false,
+      "metodosComRfIndividual": 0,
+      "metodos": [],
+      "minimoDoisMetodos": false,
+      "doisSolventesContrastantesEmDoisMetodos": false,
+      "homologacaoCompleta": false,
+      "pendencias": [
+        "metodo_2_documentado",
+        "solventes_contrastantes",
+        "identidade_e_condicoes_a_homologar"
+      ]
+    }
+  ]
+}
