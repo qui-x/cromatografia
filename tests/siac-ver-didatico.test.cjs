@@ -6,7 +6,7 @@ const catalog=require("../js/data/siac-catalogo-contextual.js");
 const ver=require("../js/ui/siac-ver-didatico.js");
 const metrics=require("../js/simulation/siac-metricas.js");
 const sel=id=>({substanciaId:id,sistemaId:catalog.sistemasPara(id)[0]?.id||"",
-  substancia:catalog.substantia(id),sistema:catalog.sistemasPara(id)[0]||null});
+  substancia:catalog.substancia(id),sistema:catalog.sistemasPara(id)[0]||null});
 let tela=ver.render(sel("glycine"),metrics);
 assert.match(tela.contexto,/Glicina/);
 assert.equal((tela.modulos.match(/data-module=/g)||[]).length,3);
