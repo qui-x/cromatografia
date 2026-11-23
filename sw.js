@@ -5,7 +5,7 @@
    página. */
 // Abertura visual original restaurada. Nova versão do cache elimina modelos,
 // player de vídeo e bibliotecas de abertura 3D das cópias offline.
-const VERSAO = "siac-v0.2.0-dev-grade-responsiva-20261123";
+const VERSAO = "siac-v0.2.0-dev-docas-dados-coleta-20261123";
 // Projetos do mesmo usuario.github.io compartilham a origem. Cada publicação
 // precisa de seu próprio cache; atualizar uma cópia não deve apagar outra.
 const BASE = new URL(self.registration.scope);
@@ -35,7 +35,6 @@ const ARQUIVOS = [
   "./css/siac-abertura-v4.css",
   "./css/siac-laboratorio-integrado.css",
   "./previews/abertura-v4.html",
-  "./previews/coluna-laboratorio.html",
   "./js/simulation/siac-coluna.js",
   "./js/simulation/siac-fracionamento.js",
   "./js/ui/siac-laboratorio-integrado.js",
