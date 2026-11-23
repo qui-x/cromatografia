@@ -1,9 +1,9 @@
 {
-  "versao": "2.4.0",
+  "versao": "2.5.0",
   "data": "2026-11-23",
   "titulo": "Matriz preliminar de cobertura científica do SIAC",
   "fonte": "data/siac/analitos-protocolos.v1.json",
-  "observacao": "29 protocolos em pesquisa, 123 Rf pontuais e 1 intervalo. 40 candidatos com pares de métodos e solventes contrastantes, MAS zero homologações científicas. Suportes heterogêneos (fibroína-sílica, bentonita, sílica normal e C18 reversa), relatórios didáticos, Rf de bandas de extrato e solvente n-hexano ainda fora do catálogo básico exigem revisão. Contagem bibliográfica não equivale a motor validado.",
+  "observacao": "40 substâncias têm dois sistemas bibliográficos contrastantes; 2 (cafeína e paracetamol) com método científico NP/RP-HPTLC conferido em literatura primária e identidade molecular CAS/CID verificada, mas nenhum liberado para cena física do SIAC. Não aplicar HPTLC a CCD genérica, papel ou coluna.",
   "regras": {
     "minimoMetodosIndependentesComRetencaoIndividual": 2,
     "minimoSolventesQuimicamenteDistintos": 2,
@@ -18,12 +18,15 @@
     "comPeloMenosUmRfIndividual": 42,
     "comDoisMetodosDocumentados": 40,
     "comDoisMetodosESolventesDistintos": 40,
-    "homologadosNaRegraNova": 0,
-    "faltamParaMetaMinima": 40,
-    "faltamParaMetaAmpliada": 55,
+    "homologadosNaRegraNova": 2,
+    "faltamParaMetaMinima": 38,
+    "faltamParaMetaAmpliada": 53,
     "totaisRegistroRfPontual": 123,
     "totalRfIntervalos": 1,
-    "protocolos": 29
+    "protocolos": 29,
+    "liberadosParaSimulacaoReal": 0,
+    "metodosHptlcComFontePrimariaHomologada": 2,
+    "identidadesQuimicasConferidas": 2
   },
   "candidatos": [
     {
@@ -6651,7 +6654,7 @@
       "id": "caffeine",
       "nome": "Cafeína",
       "grupo": "farmacos_e_organicos",
-      "identidadeConfirmada": false,
+      "identidadeConfirmada": true,
       "metodosComRetencaoIndividual": 4,
       "metodos": [
         {
@@ -6678,19 +6681,61 @@
             "mistura": "acetato de etila:etanol 85:15",
             "homologada": false
           },
-          "faseEstacionaria": "HPTLC de fase normal, sílica gel 60 F254",
-          "detector": "densitometria em absorbância a 260 nm",
+          "faseEstacionaria": "HPTLC de fase normal — sílica gel 60 F254S sobre vidro, grãos de 5 µm",
+          "detector": "densitometria em absorbância a 260 nm; comparar espectros UV a padrões",
           "rf": [
             {
               "valor": 0.4,
-              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
-              "homologado": false,
+              "classe": "Rf_medido_replicado_n3_artigo_primario_conferido",
+              "homologado": true,
               "desvioPadraoRf": 0.01,
-              "replicatas": 3
+              "replicatas": 3,
+              "condicoes": {
+                "tecnica": "hptlc",
+                "faseEstacionaria": "HPTLC de fase normal — sílica gel 60 F254S sobre vidro, grãos de 5 µm",
+                "faseMovel": "acetato de etila:etanol 85:15 v/v",
+                "detectorNm": 260,
+                "temperaturaC": 22,
+                "saturacaoCamaraMin": 30,
+                "frenteMm": 80,
+                "nota": "Referência experimental, não distância observada na cena"
+              }
             }
           ],
           "rfIntervalo": [],
-          "estado": "referencia_primaria_em_revisao_nao_homologada"
+          "estado": "homologado",
+          "auditoriaCientifica": {
+            "estado": "metodo_experimental_revisado_e_homologado_somente_hptlc",
+            "fontePrimaria": "https://www.mdpi.com/1420-3049/27/2/405",
+            "doi": "10.3390/molecules27020405",
+            "secoesConferidas": "Seção 3.2; seção 3.3; Tabela 3 (adequação); Figura 2; Tabelas 1,5,7,9 (validação)",
+            "dataConferencia": "2026-11-23",
+            "categoriasValidadas": [
+              "identidade_molecular",
+              "retencao_em_hptlc",
+              "eluente",
+              "suporte_hptlc",
+              "detector_260nm",
+              "repetibilidade_n3",
+              "curva_calibracao",
+              "robustez",
+              "precisao",
+              "recuperacao"
+            ],
+            "ressalvas": [
+              "Não interpolar entre NP e RP; mudança de suporte E eluente",
+              "Não extrapolar Rf a CCD didática/papel/coluna",
+              "Pureza do lote padrão não quantificada no artigo",
+              "Suporte de fase reversa descrito como sílica RP 60F254S; química C18 não comprovada pelo estudo"
+            ],
+            "licencaDados": "transcrição factual dos valores medidos; não reproduzir figuras do artigo"
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "hptlc",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false,
+            "motivo": "Simulador não reproduz suporte HPTLC NP/RP nem calibração de detector; não permite inferência de Rf em papel, CCD genérica ou coluna."
+          }
         },
         {
           "protocoloId": "hptlc_green2022_reverse_ethanol_water_50_50",
@@ -6716,19 +6761,61 @@
             "mistura": "etanol:água 50:50",
             "homologada": false
           },
-          "faseEstacionaria": "HPTLC de fase reversa C18",
-          "detector": "densitometria em absorbância a 260 nm",
+          "faseEstacionaria": "HPTLC de fase reversa — sílica gel 60 F254S sobre vidro, grãos de 5 µm; química do ligante não especificada no artigo",
+          "detector": "densitometria em absorbância a 260 nm; comparar espectros UV a padrões",
           "rf": [
             {
               "valor": 0.43,
-              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
-              "homologado": false,
+              "classe": "Rf_medido_replicado_n3_artigo_primario_conferido",
+              "homologado": true,
               "desvioPadraoRf": 0.01,
-              "replicatas": 3
+              "replicatas": 3,
+              "condicoes": {
+                "tecnica": "hptlc",
+                "faseEstacionaria": "HPTLC de fase reversa — sílica gel 60 F254S sobre vidro, grãos de 5 µm; química do ligante não especificada no artigo",
+                "faseMovel": "etanol:água 50:50 v/v",
+                "detectorNm": 260,
+                "temperaturaC": 22,
+                "saturacaoCamaraMin": 30,
+                "frenteMm": 80,
+                "nota": "Referência experimental, não distância observada na cena"
+              }
             }
           ],
           "rfIntervalo": [],
-          "estado": "referencia_primaria_em_revisao_nao_homologada"
+          "estado": "homologado",
+          "auditoriaCientifica": {
+            "estado": "metodo_experimental_revisado_e_homologado_somente_hptlc",
+            "fontePrimaria": "https://www.mdpi.com/1420-3049/27/2/405",
+            "doi": "10.3390/molecules27020405",
+            "secoesConferidas": "Seção 3.2; seção 3.3; Tabela 4 (adequação); Figura 4; Tabelas 2,6,8,10 (validação)",
+            "dataConferencia": "2026-11-23",
+            "categoriasValidadas": [
+              "identidade_molecular",
+              "retencao_em_hptlc",
+              "eluente",
+              "suporte_hptlc",
+              "detector_260nm",
+              "repetibilidade_n3",
+              "curva_calibracao",
+              "robustez",
+              "precisao",
+              "recuperacao"
+            ],
+            "ressalvas": [
+              "Não interpolar entre NP e RP; mudança de suporte E eluente",
+              "Não extrapolar Rf a CCD didática/papel/coluna",
+              "Pureza do lote padrão não quantificada no artigo",
+              "Suporte de fase reversa descrito como sílica RP 60F254S; química C18 não comprovada pelo estudo"
+            ],
+            "licencaDados": "transcrição factual dos valores medidos; não reproduzir figuras do artigo"
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "hptlc",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false,
+            "motivo": "Simulador não reproduz suporte HPTLC NP/RP nem calibração de detector; não permite inferência de Rf em papel, CCD genérica ou coluna."
+          }
         },
         {
           "protocoloId": "tlc_analgesics_stevens_ethyacetate_pure",
@@ -6899,10 +6986,11 @@
           ]
         }
       ],
-      "homologacaoCompleta": false,
-      "pendencias": [
-        "identidade_primaria_e_condicoes_a_homologar"
-      ]
+      "homologacaoCompleta": true,
+      "pendencias": [],
+      "condicaoHomologacao": "exclusivamente dois sistemas HPTLC NP/RP do artigo Alam et al. 2022, detector de absorbância a 260 nm",
+      "disponibilidadeSimulacaoReal": false,
+      "dadosHomologadosEmFontesPrimarias": 2
     },
     {
       "id": "theobromine",
@@ -6926,7 +7014,7 @@
       "id": "paracetamol",
       "nome": "Paracetamol",
       "grupo": "farmacos_e_organicos",
-      "identidadeConfirmada": false,
+      "identidadeConfirmada": true,
       "metodosComRetencaoIndividual": 4,
       "metodos": [
         {
@@ -6953,19 +7041,61 @@
             "mistura": "acetato de etila:etanol 85:15",
             "homologada": false
           },
-          "faseEstacionaria": "HPTLC de fase normal, sílica gel 60 F254",
-          "detector": "densitometria em absorbância a 260 nm",
+          "faseEstacionaria": "HPTLC de fase normal — sílica gel 60 F254S sobre vidro, grãos de 5 µm",
+          "detector": "densitometria em absorbância a 260 nm; comparar espectros UV a padrões",
           "rf": [
             {
               "valor": 0.59,
-              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
-              "homologado": false,
+              "classe": "Rf_medido_replicado_n3_artigo_primario_conferido",
+              "homologado": true,
               "desvioPadraoRf": 0.02,
-              "replicatas": 3
+              "replicatas": 3,
+              "condicoes": {
+                "tecnica": "hptlc",
+                "faseEstacionaria": "HPTLC de fase normal — sílica gel 60 F254S sobre vidro, grãos de 5 µm",
+                "faseMovel": "acetato de etila:etanol 85:15 v/v",
+                "detectorNm": 260,
+                "temperaturaC": 22,
+                "saturacaoCamaraMin": 30,
+                "frenteMm": 80,
+                "nota": "Referência experimental, não distância observada na cena"
+              }
             }
           ],
           "rfIntervalo": [],
-          "estado": "referencia_primaria_em_revisao_nao_homologada"
+          "estado": "homologado",
+          "auditoriaCientifica": {
+            "estado": "metodo_experimental_revisado_e_homologado_somente_hptlc",
+            "fontePrimaria": "https://www.mdpi.com/1420-3049/27/2/405",
+            "doi": "10.3390/molecules27020405",
+            "secoesConferidas": "Seção 3.2; seção 3.3; Tabela 3 (adequação); Figura 2; Tabelas 1,5,7,9 (validação)",
+            "dataConferencia": "2026-11-23",
+            "categoriasValidadas": [
+              "identidade_molecular",
+              "retencao_em_hptlc",
+              "eluente",
+              "suporte_hptlc",
+              "detector_260nm",
+              "repetibilidade_n3",
+              "curva_calibracao",
+              "robustez",
+              "precisao",
+              "recuperacao"
+            ],
+            "ressalvas": [
+              "Não interpolar entre NP e RP; mudança de suporte E eluente",
+              "Não extrapolar Rf a CCD didática/papel/coluna",
+              "Pureza do lote padrão não quantificada no artigo",
+              "Suporte de fase reversa descrito como sílica RP 60F254S; química C18 não comprovada pelo estudo"
+            ],
+            "licencaDados": "transcrição factual dos valores medidos; não reproduzir figuras do artigo"
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "hptlc",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false,
+            "motivo": "Simulador não reproduz suporte HPTLC NP/RP nem calibração de detector; não permite inferência de Rf em papel, CCD genérica ou coluna."
+          }
         },
         {
           "protocoloId": "hptlc_green2022_reverse_ethanol_water_50_50",
@@ -6991,19 +7121,61 @@
             "mistura": "etanol:água 50:50",
             "homologada": false
           },
-          "faseEstacionaria": "HPTLC de fase reversa C18",
-          "detector": "densitometria em absorbância a 260 nm",
+          "faseEstacionaria": "HPTLC de fase reversa — sílica gel 60 F254S sobre vidro, grãos de 5 µm; química do ligante não especificada no artigo",
+          "detector": "densitometria em absorbância a 260 nm; comparar espectros UV a padrões",
           "rf": [
             {
               "valor": 0.57,
-              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
-              "homologado": false,
+              "classe": "Rf_medido_replicado_n3_artigo_primario_conferido",
+              "homologado": true,
               "desvioPadraoRf": 0.02,
-              "replicatas": 3
+              "replicatas": 3,
+              "condicoes": {
+                "tecnica": "hptlc",
+                "faseEstacionaria": "HPTLC de fase reversa — sílica gel 60 F254S sobre vidro, grãos de 5 µm; química do ligante não especificada no artigo",
+                "faseMovel": "etanol:água 50:50 v/v",
+                "detectorNm": 260,
+                "temperaturaC": 22,
+                "saturacaoCamaraMin": 30,
+                "frenteMm": 80,
+                "nota": "Referência experimental, não distância observada na cena"
+              }
             }
           ],
           "rfIntervalo": [],
-          "estado": "referencia_primaria_em_revisao_nao_homologada"
+          "estado": "homologado",
+          "auditoriaCientifica": {
+            "estado": "metodo_experimental_revisado_e_homologado_somente_hptlc",
+            "fontePrimaria": "https://www.mdpi.com/1420-3049/27/2/405",
+            "doi": "10.3390/molecules27020405",
+            "secoesConferidas": "Seção 3.2; seção 3.3; Tabela 4 (adequação); Figura 4; Tabelas 2,6,8,10 (validação)",
+            "dataConferencia": "2026-11-23",
+            "categoriasValidadas": [
+              "identidade_molecular",
+              "retencao_em_hptlc",
+              "eluente",
+              "suporte_hptlc",
+              "detector_260nm",
+              "repetibilidade_n3",
+              "curva_calibracao",
+              "robustez",
+              "precisao",
+              "recuperacao"
+            ],
+            "ressalvas": [
+              "Não interpolar entre NP e RP; mudança de suporte E eluente",
+              "Não extrapolar Rf a CCD didática/papel/coluna",
+              "Pureza do lote padrão não quantificada no artigo",
+              "Suporte de fase reversa descrito como sílica RP 60F254S; química C18 não comprovada pelo estudo"
+            ],
+            "licencaDados": "transcrição factual dos valores medidos; não reproduzir figuras do artigo"
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "hptlc",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false,
+            "motivo": "Simulador não reproduz suporte HPTLC NP/RP nem calibração de detector; não permite inferência de Rf em papel, CCD genérica ou coluna."
+          }
         },
         {
           "protocoloId": "tlc_analgesics_stevens_ethyacetate_pure",
@@ -7174,10 +7346,11 @@
           ]
         }
       ],
-      "homologacaoCompleta": false,
-      "pendencias": [
-        "identidade_primaria_e_condicoes_a_homologar"
-      ]
+      "homologacaoCompleta": true,
+      "pendencias": [],
+      "condicaoHomologacao": "exclusivamente dois sistemas HPTLC NP/RP do artigo Alam et al. 2022, detector de absorbância a 260 nm",
+      "disponibilidadeSimulacaoReal": false,
+      "dadosHomologadosEmFontesPrimarias": 2
     },
     {
       "id": "acetylsalicylic_acid",
