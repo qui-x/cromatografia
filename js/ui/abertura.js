@@ -253,20 +253,17 @@ SIAB.abertura = (() => {
     svg.setAttribute("role","img");
     svg.setAttribute("aria-label",
       "Três béqueres independentes com amostras A, B e C. Cada placa desenvolve bandas e rastros cromatográficos distintos.");
+    const iconeOficial = location.pathname.includes("/previews/")
+      ? "../assets/siac-icone.svg" : "assets/siac-icone.svg";
     svg.innerHTML = definicoes() + `
       <g class="siac-v4-cena">
         <path d="M41 430H1019" class="siac-v4-bancada"/>
         <path d="M41 439H1019" class="siac-v4-bancada-secundaria"/>
         ${AMOSTRAS.map(construirPlaca).join("")}
         <g class="siac-v4-assinatura-simbolo">
-          <rect x="497" y="113" width="66" height="162" rx="5" fill="#F4E9D8" stroke="#1F2D3D" stroke-width="3"/>
-          <path d="M503 137H557" stroke="#0B5472" stroke-width="2.5" stroke-dasharray="5 4"/>
-          <rect x="506" y="167" width="48" height="13" rx="5" fill="#168DA7"/>
-          <rect x="506" y="194" width="48" height="13" rx="5" fill="#D79B32"/>
-          <rect x="506" y="221" width="48" height="13" rx="5" fill="#3EAA76"/>
-          <path d="M502 254H558" stroke="#1F2D3D" stroke-width="2"/>
-          <path d="M476 242v26q0 18 18 18h72q18 0 18-18v-26" fill="none"
-            stroke="#81D9CE" stroke-width="5" stroke-linecap="round"/>
+          <image href="${iconeOficial}" x="462" y="110" width="136" height="176"
+            preserveAspectRatio="xMidYMid meet"
+            aria-label="Ícone oficial do SIAC: placa com faixas azul, verde e âmbar"/>
         </g>
       </g>
     `;
