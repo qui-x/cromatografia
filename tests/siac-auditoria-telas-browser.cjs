@@ -115,27 +115,34 @@ async function inspectDock(page,width){
    mark("docas",width,"critical","Arte ultrapassa espaço útil entre docas",JSON.stringify(g));
   report.docas.push({width,context:"montagem+dados",geometry:g});
   await photo(page,width,"montagem-e-dados");
-  await page.locator("#focus-tab").click({force:true});
+  // Bottom sheets tornam a cena inerte: alterar o foco exige primeiro
+  // fechar a doca, trocar o objeto e reabrir Dados. Em desktop, foco direto.
+  const closeRight=async()=>{
+   await page.locator("#dock-close-right").click({force:true});
+   await page.waitForFunction(()=>
+    document.getElementById("ver-panel")?.classList.contains("dock-collapsed"),
+    null,{timeout:4000});
+  };
+  const focusNext=async()=>{
+   if(width<=900)await closeRight();
+   await page.locator("#focus-tab").click({force:true});
+   if(width<=900)await open(page,"workspace-dados");
+  };
+  await focusNext();
   if(!/Frasco F1/.test(await data.textContent()))
    mark("dados",width,"critical","Dados não seguem Tubo em foco");
   await photo(page,width,"dados-tubo");
-  await page.locator("#focus-tab").click({force:true});
+  await focusNext();
   if(!/Papel P1/.test(await data.textContent()))
    mark("dados",width,"critical","Dados não seguem Papel em foco");
   await photo(page,width,"dados-papel");
-  await page.locator("#focus-tab").click({force:true});
-  if(width<=900){
-   // Na bottom sheet só o botão de fechar fica interativo; a barra de
-   // lançamento está inerte enquanto ela estiver aberta.
-   await page.locator("#dock-close-right").click({force:true});
-   await page.waitForFunction(()=>
-    document.getElementById("workspace-dados")?.getAttribute("aria-expanded")==="false",
-    null,{timeout:4000});
-  }
+  await focusNext();
+  if(width<=900)await closeRight();
   await open(page,"workspace-ver");
   if(!(await page.locator("#siac-ver").isVisible())||await data.isVisible())
    mark("ver",width,"critical","Ver não substitui Dados corretamente");
   await photo(page,width,"ver-aberto");
+  if(width<=900)await closeRight();
   await page.locator("#overview-tab").click({force:true});
   await photo(page,width,"visao-geral-frascos");
   await page.locator("#overview-tab").click({force:true});
