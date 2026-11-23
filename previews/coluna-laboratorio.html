@@ -299,10 +299,17 @@ function desenharBandas(obs){
   }
  }
 }
+function sinalObservavel(concentracoes){
+ const vis=estado.config.componentes.filter(c=>c.corVisivel&&c.deteccao.visivel===true);
+ return vis.reduce((s,c)=>s+(concentracoes[c.id]||0),0);
+}
+// O gráfico NÃO tem identificadores, curvas por espécie nem perfil futuro.
+// É um sinal agregado óptico hipotético. Componentes incolores são invisíveis.
 function perfilSvg(){
  const svg=$("perfil-svg"),p={x:42,y:12,w:566,h:145},maxV=estado.config.volumeTotalMl;
- const cores=Object.fromEntries(estado.config.componentes.map(x=>[x.id,x.corVisivel||"#788b96"]));
- const pontos=perfil.trechos,maior=Math.max(.02,...pontos.flatMap(t=>Object.values(t.concentracoesMgPorMl)));
+ const pontos=perfil.trechos;
+ const vistos=pontos.filter(t=>(t.inicioMl+t.fimMl)/2<=volume+1e-10);
+ const maxSinal=Math.max(.01,...vistos.map(t=>sinalObservavel(t.concentracoesMgPorMl)));
  let out='<rect x="0" y="0" width="630" height="185" fill="#fcfefe"/>';
  for(let i=0;i<=4;i++){
   const y=p.y+p.h*i/4;out+='<path d="M'+p.x+' '+y+'H'+(p.x+p.w)+'" stroke="#e0ebee" stroke-width="1"/>';
@@ -315,30 +322,23 @@ function perfilSvg(){
  if(arraste){
   const xs=p.x+p.w*Math.min(arraste.inicioMl,arraste.fimMl)/maxV;
   const xf=p.x+p.w*Math.max(arraste.inicioMl,arraste.fimMl)/maxV;
-  out+='<rect x="'+xs+'" y="'+p.y+'" width="'+Math.max(2,xf-xs)+'" height="'+p.h+'" fill="#2e9b8f" opacity=".20"/>';
+  out+='<rect x="'+xs+'" y="'+p.y+'" width="'+Math.max(2,xf-xs)+'" height="'+p.h+'" fill="#2e9b8f" opacity=".21"/>';
  }
- for(const c of estado.config.componentes){
-  let d="";
-  for(let i=0;i<pontos.length;i++){
-   const t=pontos[i],x=p.x+p.w*((t.inicioMl+t.fimMl)/2)/maxV;
-   const y=p.y+p.h-p.h*(t.concentracoesMgPorMl[c.id]||0)/maior;
-   d+=(i?"L":"M")+x.toFixed(2)+" "+y.toFixed(2);
-  }
-  out+='<path d="'+d+'" stroke="'+cores[c.id]+'" stroke-width="'+(c.corVisivel?2.5:2)+'"'+
-    (c.corVisivel?'':' stroke-dasharray="5 4"')+' fill="none" opacity=".9"/>';
+ let d="";
+ for(const t of vistos){
+  const x=p.x+p.w*((t.inicioMl+t.fimMl)/2)/maxV;
+  const y=p.y+p.h-p.h*sinalObservavel(t.concentracoesMgPorMl)/maxSinal;
+  d+=(d?"L":"M")+x.toFixed(2)+" "+y.toFixed(2)+" ";
  }
+ if(d)out+='<path d="'+d+'" stroke="#0b7990" stroke-width="2.7" fill="none" stroke-linejoin="round"/>';
  const vx=p.x+p.w*volume/maxV;
  out+='<path d="M'+vx+' '+p.y+'V'+(p.y+p.h)+'" stroke="#0b5472" stroke-width="2" stroke-dasharray="4 3"/>';
  out+='<path d="M'+p.x+' '+p.y+'V'+(p.y+p.h)+'H'+(p.x+p.w)+'" fill="none" stroke="#64828e" stroke-width="1.5"/>';
- out+='<text x="9" y="13" font-size="10" fill="#516a76">mg/mL</text>';
+ out+='<text x="5" y="13" font-size="10" fill="#516a76">Sinal (u.a.)</text>';
  svg.innerHTML=out;
- $("eixo-max").textContent=fmt(maxV,1)+" mL · volume eluído";
- const legend=$("chaves");legend.innerHTML="";
- for(const c of estado.config.componentes){
-  const span=document.createElement("span");span.className="chave";
-  span.innerHTML='<i class="bolinha" style="background:'+(c.corVisivel||"#788b96")+'"></i>'+c.id+(c.corVisivel?"":" · incolor (modelo)");
-  legend.appendChild(span);
- }
+ $("eixo-max").textContent=fmt(maxV,1)+" mL · volume acumulado";
+ $("chaves").innerHTML='<span class="chave"><i class="bolinha" style="background:#0b7990"></i>Sinal combinado já observado (modelo)</span>'+
+ '<span class="chave"><i class="bolinha" style="background:#b6d4d9"></i>Janelas de coleta</span>';
 }
 function render(){
  if(!estado)return;
@@ -349,7 +349,7 @@ function render(){
  const destino=volume>=estado.config.volumeTotalMl?"concluído":F.routeAt(plano,volume);
  $("saida-destino").textContent="Saída → "+(destino==="descarte"?"descarte":destino);
  const saida=C.outlet(estado,volume);
- $("saida-conc").textContent="Concentração total modelada: "+fmt(Object.values(saida.concentracoesMgPorMl).reduce((a,b)=>a+b,0),3)+" mg/mL";
+ $("saida-conc").textContent="Sinal visual agregado (modelo): "+fmt(sinalObservavel(saida.concentracoesMgPorMl),3)+" u.a. · sem identificar espécies";
  const selected=plano.janelas.find(j=>j.frasco===selecionado),colhido=calculoNoVolume(selecionado,volume);
  $("estado-tubo").textContent=selecionado+(selected?" · "+fmt(selected.inicioMl,1)+"–"+fmt(selected.fimMl,1)+" mL · coletado "+fmt(colhido.volume,2)+" mL":" · sem intervalo de coleta");
  $("foco-resumo").textContent=selecionado+(selected?": janela "+fmt(selected.inicioMl,1)+"–"+fmt(selected.fimMl,1)+" mL. Coleta atual: "+fmt(colhido.volume,3)+" mL.":" não tem coleta programada.");
