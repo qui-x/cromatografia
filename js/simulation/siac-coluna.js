@@ -215,6 +215,20 @@
     }
     return {volumeMl,concentracoesMgPorMl,tempoMin:volumeMl/estado.config.vazaoMlMin};
   }
+  // Integração analítica do conteúdo de uma janela: independe da malha do gráfico.
+  function conteudoEntre(estado,inicioMl,fimMl){
+    checarEstado(estado);
+    const max=estado.config.volumeTotalMl;
+    numero(inicioMl,"inicioMl",0,max);
+    numero(fimMl,"fimMl",inicioMl,max);
+    const componentesMg={};
+    for(const c of estado.config.componentes){
+      componentesMg[c.id]=Math.max(0,c.massaInicialMg*
+        (fracaoEluida(c,fimMl)-fracaoEluida(c,inicioMl)));
+    }
+    return {inicioMl,fimMl,volumeMl:fimMl-inicioMl,componentesMg,
+      nota:"Integração exata do modelo de pratos; não revela identidades ao usuário."};
+  }
   return Object.freeze({versao:VERSAO,prepare:preparar,advance:avancar,
-    observe:observar,profile:perfil,outlet:avaliarSaida});
+    observe:observar,profile:perfil,outlet:avaliarSaida,massBetween:conteudoEntre});
 });
