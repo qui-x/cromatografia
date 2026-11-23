@@ -9,6 +9,9 @@ on:
       - "js/data/siac-catalogo-contextual.js"
       - "tests/siac-catalogo-contextual.test.cjs"
       - "js/ui/siac-ver-didatico.js"
+      - "js/ui/siac-hptlc-didatico.js"
+      - "css/siac-hptlc-didatico.css"
+      - "tests/siac-hptlc-didatico.test.cjs"
       - "tests/siac-ver-didatico.test.cjs"
       - "js/simulation/siac-metricas.js"
       - "js/ui/workspace.js"
@@ -44,6 +47,9 @@ jobs:
           node --check js/ui/siac-ver-didatico.js
           node --check tests/siac-ver-didatico.test.cjs
           node tests/siac-ver-didatico.test.cjs
+          node --check js/ui/siac-hptlc-didatico.js
+          node --check tests/siac-hptlc-didatico.test.cjs
+          node tests/siac-hptlc-didatico.test.cjs
           node --check js/ui/siac-laboratorio-integrado.js
           node --check js/simulation/siac-coluna.js
           node --check js/simulation/siac-fracionamento.js
