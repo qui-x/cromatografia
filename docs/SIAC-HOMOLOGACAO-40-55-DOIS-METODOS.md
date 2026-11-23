@@ -20,10 +20,10 @@
 
 ## Situação da base local — atualização da pesquisa de 23/11/2026
 - **76** compostos candidatos (catálogo estável; nenhum candidato novo por nome aproximado).
-- **15 protocolos** cadastrados, incluindo 10 métodos adicionais incorporados nesta rodada de pesquisa.
-- **98 registros pontuais de Rf** e **um intervalo de Rf** preservado como intervalo original (feofitina b: 0,47–0,54). Quantidade de linhas ≠ quantidade de substâncias.
-- **32 substâncias** com pelo menos um método de retenção individual reportado: 20 aminoácidos, 8 corantes alimentícios e 4 pigmentos vegetais.
-- **30 substâncias** com pelo menos dois métodos individuais e sistemas de solventes realmente diferentes: **18 aminoácidos + 8 corantes alimentícios + 4 pigmentos**.
+- **29 protocolos** cadastrados, dos quais 14 foram acrescentados na etapa para atingir 40 candidatos com dois eluentes.
+- **123 registros pontuais de Rf** e **um intervalo de Rf** preservado como intervalo original (feofitina b: 0,47–0,54). Quantidade de linhas ≠ quantidade de substâncias.
+- **42 substâncias** com pelo menos um método de retenção individual reportado: 20 aminoácidos, 8 corantes alimentícios, 8 pigmentos vegetais, 4 fármacos/orgânicos e 2 indicadores.
+- **40 substâncias** com pelo menos dois métodos individuais e sistemas de solventes realmente diferentes: **18 aminoácidos + 8 corantes alimentícios + 8 pigmentos + 4 fármacos/orgânicos + 2 indicadores**.
 - **Zero substâncias homologadas** pela regra estrita, pois os registros ainda não têm identidade individual e condição experimental homologadas. Especialmente, valores de uma **tabela comercial de referência didática** não equivalem a medições primárias verificadas.
 - O quadro abaixo informa **cobertura bibliográfica preliminar**, não autorização automática para o motor. Cada protocolo continua com `status != homologado`.
 - Projeções geométricas e bancos de solubilidade não completam lacunas de retenção.
@@ -40,7 +40,34 @@
 5. **FAO/JECFA**, [Combined Compendium, FOOD COLOURS: Identification by chromatography](https://www.fao.org/4/a0691e/A0691E07.htm): tabela histórica reimpressa (Pearson 1973/IARC 1981) com **valores esperados de Rf** em dez eluentes para corantes alimentícios. Foram cadastrados **sistemas 1, 7 e 10** para oito corantes do SIAC, em sílica gel G. Os números entre parênteses são **manchas subsidiárias de menor intensidade** (não são Rf da molécula principal); `quinoline_yellow` permanece sem valor individual por ser mistura de composição variável. Corantes como eritrosina aparecem com **Rf 1,00 em certas condições**, valor na frente do solvente e pouco discriminatório. Fonte de compêndio, **não medições primárias reprocessadas**, exigindo padrão.
 6. **Sobańska et al. (2017)**, [artigo primário](https://onlinelibrary.wiley.com/doi/10.1155/2017/9528472), *Journal of Analytical Methods in Chemistry*: otimização com 20 sistemas de fase móvel, dos quais cadastramos dois para tartrazina, amarelo crepúsculo FCF, Ponceau 4R e azul brilhante FCF: **metanol/tolueno 11:9** e **acetato de etila/2-propanol/água 75:35:30**. Valores da triagem não recebem automaticamente as condições do **protocolo analítico final**, que usa outra fase móvel.
 
-**Cobertura por grupo na matriz atual:** 18/20 aminoácidos com dois métodos; 8/11 corantes alimentícios com dois; 4/20 pigmentos vegetais com dois; 0/14 fármacos e orgânicos, 0/11 indicadores e traçadores. Essa distribuição indica onde priorizar as próximas buscas, mas **nenhum dos 30 está totalmente homologado**.
+
+### 10 novas substâncias com pelo menos dois sistemas (lote 23/11/2026)
+
+| Grupo | Analito | Métodos rastreados (sistemas eluentes) | Valores Rf de referência |
+| --- | --- | --- | --- |
+| Indicadores | Alaranjado de metila | HFSA em n-hexano/2-propanol (1:1); HFSA em n-hexano/2-propanol/água/ácido acético (1:1:0,5:0,1) | 0,73 / 0,49 |
+| Indicadores | Sudan IV | Mesmos dois sistemas e mesmo suporte HFSA | 0,33 / 0,86 |
+| Pigmentos | Quercetina | Sílica K6F: tolueno/acetato de etila/ácido acético (30:40:5); tolueno/ácido acético (40:20) | 0,62 / 0,86 |
+| Pigmentos | Curcumina | Tolueno/acetato de etila (95:5); diclorometano/metanol (95:5) | 0,92 / 0,54 |
+| Fármacos | Cafeína | NP-HPTLC sílica: acetato de etila/etanol (85:15); RP-HPTLC C18: etanol/água (50:50) | 0,40 ± 0,01 / 0,43 ± 0,01 |
+| Fármacos | Paracetamol | Mesmos sistemas NP e RP, com suportes distintos | 0,59 ± 0,02 / 0,57 ± 0,02 |
+| Fármacos | Ibuprofeno | Sílica F254: clorofórmio/acetona (8:2); acetato de etila puro | 0,62 / 0,87 |
+| Fármacos | Ácido acetilsalicílico | Relatório discente em acetato de etila; artigo em bentonita tratada e ciclo-hexano/clorofórmio/metanol/ácido acético (14:5:0,25:0,75) | 0,45 / 0,40 |
+| Pigmentos | β-caroteno | Sílica em éter de petróleo/éter dietílico/acetona (75:15:10); amostra de microalga em acetona/n-hexano (30:70) | 0,97 (padrão) / 0,95 (extrato; padrão 0,98) |
+| Pigmentos | Luteína | Sílica em éter de petróleo/éter dietílico/acetona (75:15:10); banda de microalga em acetona/n-hexano (30:70) | 0,17 (padrão) / 0,54 (banda de extrato) |
+
+**Fontes primárias ou técnicas consultadas:** [Shakarova et al., *Separations* 2026](https://www.mdpi.com/2297-8739/13/11/336); [Vairavasundaram & Senthil 2010, quercetina](https://www.itmedicalteam.pl/pdfdownload.php?aid=0&download=articles/effect-of-sample-preparation-and-tlc-methods-on-thequantitation-of-quercetin-content-in-asthma-weed.pdf); [Ahmed et al., *Acta Pharm.* 2017](https://acta.pharmaceutica.farmaceut.org/materials/pdf/38517.pdf); [Alam et al., *Molecules* 2022](https://www.mdpi.com/1420-3049/27/2/405); [Rivai et al. 2016, ibuprofeno](https://www.researchgate.net/publication/296331814_Development_and_validation_of_analysis_method_for_tablet_ibuprofen_by_thin_layer_chromatography-densitometry); [Lipsy, relatório discente](https://web.stevens.edu/wit/research/samples/plipsy_organic_chemistry_lab_report); [Alhaj Sakur et al. 2021, bentonita](https://rjptonline.org/HTML_Papers/Research%20Journal%20of%20Pharmacy%20and%20Technology__PID__2021-14-4-51.html); [Yuangsoi et al. 2008, carotenoides](https://sjst.psu.ac.th/index.php/article/915/PaperPDFw-Links/download); [Adedoyin, dissertação UKZN 2017](https://researchspace.ukzn.ac.za/server/api/core/bitstreams/9a07f1d3-0158-4a58-8c4e-1bdcc923bd98/content).
+
+**Limitações indispensáveis antes da homologação:**
+- Os métodos de cafeína/paracetamol comparam **sílica de fase normal** e **C18 de fase reversa**; duas condições cromatográficas, mas a variação de Rf **não é causada apenas pelo solvente**.
+- As bandas de β-caroteno e luteína na dissertação são de **extrato biológico**, sem a mesma força de identificação que um padrão autêntico. A luteína é identificação mais incerta; não converter esse registro em padrão confirmado.
+- Ácido acetilsalicílico: o método com acetato de etila vem de **relatório de laboratório de graduação**, de evidência mais fraca. No segundo método usa-se **bentonita tratada**, não sílica.
+- O artigo de 2026 relata **um Rf por condição, sem replicatas**. Não criar erro estatístico estimado.
+- O trabalho de curcumina não informa na tabela todos os detalhes de suporte e detector; suas lacunas permanecem explícitas.
+- N-hexano puro (**CAS 110-54-3**) foi incluído separadamente da mistura comercial de hexanos. Os valores físicos permanecem **nulos até encontrar fonte com pureza e temperatura adequadas**. Não transferir parâmetros de mistura comercial.
+- Nenhum destes registros é transformado automaticamente em **cor, UV, parâmetros de coluna ou previsão quantitativa** fora das condições da fonte.
+
+**Cobertura por grupo na matriz atual:** 18/20 aminoácidos; 8/11 corantes alimentícios; 8/20 pigmentos vegetais; 4/14 fármacos e orgânicos; 2/11 indicadores e traçadores. **40 com dois métodos bibliograficamente documentados; 0 completamente homologados.**
 
 A matriz auditável em `data/siac/matriz-cobertura-dois-metodos.v2.json` identifica, por candidato, quais métodos, sistemas eluentes, fontes, números e intervalos estão disponíveis e as pendências antes da homologação.
 
