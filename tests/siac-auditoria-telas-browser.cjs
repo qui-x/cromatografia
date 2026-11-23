@@ -50,6 +50,8 @@ async function visit(page,width,screen){
   if(errors.length)mark(screen,width,"critical","Erros JavaScript",errors.join(" ; "));
   if(info.legacy)mark(screen,width,"warning","Conteúdo SIAB ainda visível");
   if(info.content<25)mark(screen,width,"warning","Conteúdo pouco preenchido");
+  if(screen==="inicio"&&await page.locator('a[href*="previews/coluna-laboratorio.html"]').count())
+   mark(screen,width,"critical","Página oficial ainda apresenta prévia experimental");
   if(!info.title.includes("SIAC"))mark(screen,width,"warning","Título sem SIAC");
   report.routes.push({screen,width,...info,errors});
   await photo(page,width,screen);
@@ -88,6 +90,16 @@ async function inspectDock(page,width){
   await photo(page,width,"bancada-coluna");
   await open(page,"workspace-montagem");
   await photo(page,width,"montagem-aberta");
+  // Em mobile a doca é uma bottom sheet modal: fechar Montagem antes de
+  // tocar Dados. Dois painéis simultâneos só fazem sentido em desktop largo.
+  if(width<1280){
+   const close=page.locator("#close-controls");
+   if(await close.isVisible())await close.click({force:true});
+   else await page.keyboard.press("Escape");
+   await page.waitForFunction(()=>
+    document.getElementById("workspace-montagem")?.getAttribute("aria-expanded")==="false",
+    null,{timeout:4000});
+  }
   await open(page,"workspace-dados");
   const g=await geometry(page);
   const data=page.locator("#siac-dados");
@@ -112,6 +124,14 @@ async function inspectDock(page,width){
    mark("dados",width,"critical","Dados não seguem Papel em foco");
   await photo(page,width,"dados-papel");
   await page.locator("#focus-tab").click({force:true});
+  if(width<=900){
+   // Na bottom sheet só o botão de fechar fica interativo; a barra de
+   // lançamento está inerte enquanto ela estiver aberta.
+   await page.locator("#dock-close-right").click({force:true});
+   await page.waitForFunction(()=>
+    document.getElementById("workspace-dados")?.getAttribute("aria-expanded")==="false",
+    null,{timeout:4000});
+  }
   await open(page,"workspace-ver");
   if(!(await page.locator("#siac-ver").isVisible())||await data.isVisible())
    mark("ver",width,"critical","Ver não substitui Dados corretamente");
