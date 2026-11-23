@@ -3,7 +3,7 @@
  * SIAC — coletor volumétrico seletivo de dez tubos (v0.1).
  * Apenas roteamento físico e balanço de matéria, SEM estimar cinética de coluna.
  * Entrada: perfil de eluato (volume cumulativo e concentrações) fornecido
- * futuramente pelo motor de coluna. O alvo F1/F2 não altera a química.
+ * futuramente pelo motor de coluna. A janela nunca determina a química.
  *
  * Janelas [início, fim) em mL do volume ELUÍDO na saída da coluna.
  * Fora das janelas o fluxo segue para descarte/recuperação.
@@ -37,7 +37,8 @@
   }
   function preparar(c={}) {
     if(!c || typeof c!=="object" || Array.isArray(c)) erro("configuração");
-    const total=numero(c.volumeTotalMl??10,"volumeTotalMl",0.1);
+    // Escala inicial de operação fornecida pela coluna: nunca impor 10 mL como valor fixo.
+    const total=numero(c.volumeTotalMl,"volumeTotalMl",0.1,10);
     const resolucao=numero(c.resolucaoMl??0.1,"resolucaoMl",Number.MIN_VALUE);
     if(total/resolucao<1-EPS)erro("volume total deve conter pelo menos um passo");
     if(!Array.isArray(c.janelas??[]))erro("janelas devem ser uma lista");
@@ -48,7 +49,7 @@
       valorChave(frasco);
       if(origem.has(frasco))erro("janela duplicada para "+frasco);
       origem.add(frasco);
-      const inicio=numero(j.inicioMl,frasco+".inicioMl",resolucao,total);
+      const inicio=numero(j.inicioMl,frasco+".inicioMl",0,total);
       const fim=numero(j.fimMl,frasco+".fimMl",resolucao,total);
       if(fim-inicio<EPS)erro(frasco+": fim deve exceder início");
       const emGrade=x=>Math.abs(x/resolucao-Math.round(x/resolucao))<1e-7;
@@ -83,6 +84,20 @@
     if(x>=plano.volumeTotalMl-EPS)return "concluido";
     const j=plano.janelas.find(v=>x>=v.inicioMl-EPS && x<v.fimMl-EPS);
     return j?j.frasco:"descarte";
+  }
+  // Alterar janelas na Montagem não altera o perfil da mistura ou da eluição.
+  // A interface deve bloquear reconfigurações retroativas durante uma corrida ativa.
+  function definirJanela(plano,frasco,inicioMl,fimMl) {
+    conferirPlano(plano);
+    valorChave(frasco);
+    return preparar({volumeTotalMl:plano.volumeTotalMl,resolucaoMl:plano.resolucaoMl,
+      janelas:plano.janelas.filter(j=>j.frasco!==frasco).concat([{frasco,inicioMl,fimMl}])});
+  }
+  function limparJanela(plano,frasco) {
+    conferirPlano(plano);
+    valorChave(frasco);
+    return preparar({volumeTotalMl:plano.volumeTotalMl,resolucaoMl:plano.resolucaoMl,
+      janelas:plano.janelas.filter(j=>j.frasco!==frasco)});
   }
   function soma(mapa,id,valor) { mapa[id]=(mapa[id]||0)+valor; }
   function copiarMapa(m) { return Object.fromEntries(Object.entries(m).sort(([a],[b])=>a.localeCompare(b))); }
@@ -153,6 +168,6 @@
       frascos,descarte:descarteFinal,total:totalFinal,
       limite:"Perfis hipotéticos fornecidos externamente; concentrações médias por trecho; não infere pureza nem identidade."});
   }
-  return Object.freeze({versao:VERSAO,prepare:preparar,routeAt:destinoEm,
-    integrate:integrar});
+  return Object.freeze({versao:VERSAO,prepare:preparar,setWindow:definirJanela,
+    clearWindow:limparJanela,routeAt:destinoEm,integrate:integrar});
 });
