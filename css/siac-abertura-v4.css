@@ -49,20 +49,31 @@
   background: none;
   -webkit-background-clip: initial;
   background-clip: initial;
-  font-size: clamp(1.6rem,3.4vw,2.2rem);
-  font-weight: 800;
-  line-height: 1.07;
-  letter-spacing: .18em;
+  display:block;
+  max-width: 30ch;
+  font-size: clamp(1.8rem,4vw,3.1rem);
+  font-weight: 850;
+  line-height: 1.09;
+  letter-spacing: -.04em;
+  text-wrap: balance;
 }
 .siac-v4 .abertura-marca span {
-  font-size: clamp(.73rem,1.6vw,1rem);
-  opacity: 1;
+  display:block;
+  margin-top:12px;
+  font-size:clamp(.86rem,1.6vw,1.1rem);
+  font-weight:800;
+  letter-spacing:.16em;
+  color:var(--accent);
+  opacity:1;
 }
 .siac-v4 .abertura-marca em {
-  color: var(--secondary);
-  font-size: clamp(.72rem,1.4vw,.87rem);
-  font-weight: 500;
-  opacity: 1;
+  display:block;
+  margin-top:3px;
+  color:var(--secondary);
+  font-size:clamp(.73rem,1.3vw,.88rem);
+  font-weight:500;
+  font-style:normal;
+  opacity:1;
 }
 .siac-v4 .abertura-pular {
   opacity: 1;
@@ -230,9 +241,9 @@
   }
   .siac-v4 .abertura-marca { gap: 10px; padding: 7px 8px; max-width: 96vw; }
   
-  .siac-v4 .abertura-marca strong { font-size: 1.5rem; letter-spacing:.1em; }
-  .siac-v4 .abertura-marca span { font-size: .72rem; }
-  .siac-v4 .abertura-marca em { font-size: .70rem; }
+  .siac-v4 .abertura-marca strong { font-size:clamp(1.38rem,5.7vw,1.9rem);letter-spacing:-.04em; }
+  .siac-v4 .abertura-marca span { font-size:.82rem; margin-top:8px; }
+  .siac-v4 .abertura-marca em { font-size:.70rem; }
   .siac-v4 .abertura-pular { font-size:.72rem; }
 }
 @media (max-height:510px) {

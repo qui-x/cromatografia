@@ -15,7 +15,16 @@ on:
       - "scripts/siac-gerar-icones.py"
       - "tests/siac-logo-png.py"
       - "tests/siac-identidade.test.cjs"
+      - "tests/siac-independencia.test.cjs"
+      - "tests/siac-home-browser.cjs"
+      - "css/investigacao.css"
+      - "js/core/namespace.js"
+      - "js/init/pwa.js"
+      - "sw.js"
+      - "build_standalone.py"
       - ".github/workflows/siac-identidade.yml"
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -40,10 +49,14 @@ jobs:
         run: |
           node --check js/ui/abertura.js
           node tests/siac-identidade.test.cjs
+          node tests/siac-independencia.test.cjs
+          node tests/siac-titulo-abertura.test.cjs
       - name: Instalar navegador para inspeção da abertura
         run: |
           npm ci --ignore-scripts
           npx playwright install --with-deps chromium
+      - name: Validar aparência do card Laboratório nos temas escuro e claro
+        run: node tests/siac-home-browser.cjs
       - name: Verificar abertura real no navegador e salvar quadros
         run: node scripts/siac-validar-v4.cjs
       - name: Preservar evidências visuais

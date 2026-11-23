@@ -78,6 +78,19 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
     await page.locator("#siac-inicio").fill("1.0");
     await page.locator("#siac-fim").fill("1.6");
     await page.locator("#siac-janela").click({force:true});
+    // Montar a coluna NÃO pode redefinir a programação de F1/F7.
+    const janelasAntes=await page.evaluate(()=>window.SIAC.laboratorio.snapshot.janelas);
+    assert.equal(janelasAntes.length,2);
+    // Estrutura da coluna é um <details> fechado inicialmente; abri-lo
+    // antes de alterar o comprimento exercita a interface real.
+    await page.locator("#siac-comprimento").evaluate(el=>{el.closest("details").open=true;});
+    await page.locator("#siac-comprimento").fill("120");
+    await page.locator("#siac-montar").click({force:true});
+    assert.deepEqual(await page.evaluate(()=>window.SIAC.laboratorio.snapshot.janelas),janelasAntes,
+      "Montagem da coluna não deve zerar ou reescrever as janelas dos frascos");
+    assert.equal(Number(await page.locator("#siac-inicio").inputValue()),1,
+      "A seleção e os campos do frasco devem permanecer na Montagem");
+    assert.match(await page.locator("#siac-montagem-status").textContent(),/preservada/);
     // Programação não cria recipientes na bancada.
     await page.locator("#overview-tab").click({force:true});
     assert.match(await page.locator("#overview-tab").textContent(),/Frascos/);
@@ -111,11 +124,94 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
     const snapshot=await page.evaluate(()=>window.SIAC.laboratorio.snapshot);
     assert(snapshot.preenchidos.includes("F1"));
     assert(snapshot.preenchidos.includes("F7"));
+    // Reabrir a doca para testar uma tentativa real de remontagem:
+    // no desktop a Montagem havia sido recolhida antes da eluição.
+    if(await page.locator("#workspace-montagem").getAttribute("aria-expanded")!=="true")
+      await page.locator("#workspace-montagem").click({force:true});
+    await page.locator("#siac-montar").click({force:true});
+    const afterMountAttempt=await page.evaluate(()=>window.SIAC.laboratorio.snapshot);
+    assert.equal(afterMountAttempt.volumeMl,snapshot.volumeMl,
+      "Reconstrução durante a corrida não deve apagar o volume já coletado");
+    assert.deepEqual(afterMountAttempt.janelas,janelasAntes,
+      "Reconstrução durante a corrida não deve apagar os intervalos");
+    assert.match(await page.locator("#siac-montagem-status").textContent(),/reinicie a corrida/);
+    if(await page.locator("#close-controls").isVisible())
+      await page.locator("#close-controls").click();
     assert.equal(snapshot.preenchidos.length,2,"Só frascos preenchidos devem estar montados");
     await page.locator("#overview-tab").click({force:true});
     assert.match(await page.locator("#overview-tab").textContent(),/Papéis/);
     assert.equal(await page.locator("#siac-stage .siac-card").count(),2);
     assert.match(await page.locator('#siac-stage [data-open-fraction=F7]').textContent(),/P7/);
+    // A visão geral deve usar o espaço visível, não 5 colunas/ícones de 94x85.
+    const medirGrade=()=>page.evaluate(()=>{
+      const stage=document.querySelector("#siac-stage");
+      const grid=document.querySelector("#siac-stage .siac-grid");
+      const cards=[...grid.querySelectorAll(".siac-card")];
+      const ret=el=>{const r=el.getBoundingClientRect();return {x:r.x,y:r.y,width:r.width,height:r.height}};
+      return {stage:ret(stage),grid:ret(grid),cards:cards.map(ret),
+        art:cards.map(el=>ret(el.querySelector("svg"))),
+        pageOverflow:document.documentElement.scrollWidth-document.documentElement.clientWidth};
+    });
+    const gradePapel=await medirGrade();
+    assert(gradePapel.grid.width>=gradePapel.stage.width*.87,
+      "Grade deve preencher a largura do palco: "+JSON.stringify(gradePapel));
+    assert(gradePapel.cards.every(c=>c.width>=300&&c.height>=220),
+      "Cartões de papel devem ampliar com a área desktop: "+JSON.stringify(gradePapel));
+    assert(gradePapel.art.every(c=>c.height>150&&c.width>200),
+      "Papéis não devem permanecer limitados a 94 × 85 px: "+JSON.stringify(gradePapel));
+    const visualFolder=path.join(root,"docs/evidencias/siac-laboratorio");
+    fs.mkdirSync(visualFolder,{recursive:true});
+    await page.screenshot({path:path.join(visualFolder,"visao-papeis-desktop.png"),fullPage:false});
+    // Teste só de layout com cópias temporárias de DOM: não cria frações
+    // sintéticas nem altera o motor, o volume ou a montagem científica.
+    const cenarios=await page.evaluate(()=>{
+      const grid=document.querySelector("#siac-stage .siac-grid");
+      const originals=[...grid.children];
+      const probes=[];
+      const positions=()=>{
+        const c=[...grid.children].map(el=>el.getBoundingClientRect());
+        return {cols:new Set(c.map(x=>Math.round(x.x))).size,
+          rows:new Set(c.map(x=>Math.round(x.y))).size,
+          width:grid.getBoundingClientRect().width,
+          bodyOverflow:document.documentElement.scrollWidth-document.documentElement.clientWidth};
+      };
+      while(grid.children.length<3){
+        const clone=originals[0].cloneNode(true);clone.dataset.testOnly="true";
+        grid.append(clone);probes.push(clone);
+      }
+      const three=positions();
+      while(grid.children.length<10){
+        const clone=originals[0].cloneNode(true);clone.dataset.testOnly="true";
+        grid.append(clone);probes.push(clone);
+      }
+      const ten=positions();
+      probes.forEach(el=>el.remove());
+      return {three,ten};
+    });
+    assert(cenarios.three.cols===3,
+      "Três papéis devem aproveitar três posições na largura desktop: "+JSON.stringify(cenarios));
+    assert(cenarios.ten.cols>=3&&cenarios.ten.rows>=2,
+      "Dez papéis devem adaptar linhas e colunas: "+JSON.stringify(cenarios));
+    assert(cenarios.ten.bodyOverflow<=4,"Cenário de dez papéis sem rolagem horizontal");
+    await page.setViewportSize({width:768,height:860});
+    const gradeTablet=await medirGrade();
+    assert(gradeTablet.cards.every(c=>c.width>=220)&&gradeTablet.art.every(c=>c.height>=125),
+      "Papéis precisam continuar legíveis em tablet: "+JSON.stringify(gradeTablet));
+    assert(gradeTablet.pageOverflow<=4,"Tablet não deve gerar rolagem horizontal");
+    await page.setViewportSize({width:360,height:860});
+    const gradeMobile=await medirGrade();
+    assert(gradeMobile.cards.every(c=>c.width>=145)&&gradeMobile.art.every(c=>c.height>=100),
+      "Papéis devem se adaptar à largura do celular: "+JSON.stringify(gradeMobile));
+    assert(gradeMobile.pageOverflow<=4,"Celular não deve gerar rolagem horizontal");
+    await page.screenshot({path:path.join(visualFolder,"visao-papeis-mobile.png"),fullPage:true});
+    await page.setViewportSize({width:1360,height:860});
+    // Frascos e papéis compartilham o mesmo dimensionamento responsivo.
+    await page.locator("#overview-tab").click({force:true});
+    const gradeFrascos=await medirGrade();
+    assert(gradeFrascos.art.every(c=>c.height>150&&c.width>200),
+      "Frascos devem crescer tanto quanto os papéis: "+JSON.stringify(gradeFrascos));
+    await page.screenshot({path:path.join(visualFolder,"visao-frascos-desktop.png"),fullPage:false});
+    await page.locator("#overview-tab").click({force:true});
     // Clique no papel da visão geral transfere para o papel em foco.
     await page.locator('#siac-stage [data-open-fraction=F7]').click({force:true});
     assert.match(await page.locator("#focus-tab").textContent(),/Amostra em foco/);
@@ -125,10 +221,25 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
     await page.locator("#focus-tab").click({force:true});
     assert.match(await page.locator("#focus-tab").textContent(),/Tubo em foco/);
     await page.locator("#siac-retirar").click({force:true});
+    assert.equal(await page.evaluate(()=>window.SIAC.laboratorio.snapshot.capilar),"aspirando");
+    assert.equal(await page.locator("#siac-stage .siac-capillary-uptake").count(),1,
+      "O capilar de vidro deve mergulhar no frasco antes da transferência");
+    await page.waitForFunction(()=>window.SIAC?.laboratorio?.snapshot?.capilar==="carregado"
+      && window.SIAC.laboratorio.snapshot.foco==="amostra",null,{timeout:5000});
     assert.match(await page.locator("#focus-tab").textContent(),/Amostra em foco/);
+    assert.equal(await page.locator("#siac-paper-target .siac-capillary-applicator").count(),1,
+      "O capilar carregado deve acompanhar o papel para a aplicação");
     await page.locator("#siac-paper-target").click({force:true});
+    assert.equal(await page.locator("#siac-stage .siac-capillary-applicator").count(),0,
+      "O capilar deve desaparecer depois da transferência da alíquota");
+    assert.equal(await page.evaluate(()=>window.SIAC.laboratorio.snapshot.capilar),"vazio");
     assert.match(await page.locator("#siac-stage").textContent(),/aplicado/);
     await page.locator("#siac-desenvolver").click({force:true});
+    await page.waitForFunction(()=>window.SIAC?.laboratorio?.snapshot?.frenteMm>1,null,{timeout:7000});
+    const front=await page.evaluate(()=>window.SIAC.laboratorio.snapshot.frenteMm);
+    assert(front<=55&&front>0,"Frente úmida deve surgir gradualmente na fase estacionária");
+    assert.equal(await page.locator("#siac-stage .siac-paper-wet").count(),1,
+      "A região umedecida pelo eluente deve estar visível no papel");
     await page.waitForFunction(()=>window.SIAC?.laboratorio?.snapshot?.papeis?.F7==="desenvolvido",null,{polling:250,timeout:20000});
     await page.locator("#siac-uv").click({force:true});
     assert.equal(await page.evaluate(()=>window.SIAC.laboratorio.snapshot.papeis.F7),"revelado");

@@ -2,7 +2,7 @@
 /* Aplicativo instalável (PWA): registra o service worker, oferece a
    instalação e avisa quando há uma versão nova.
    Só funciona aberto por HTTPS ou localhost; aberto como arquivo
-   (file://) o SIAB continua funcionando, mas sem instalação. */
+   (file://) o SIAC continua funcionando, mas sem instalação. */
 SIAB.pwa = (() => {
   let pedidoInstalacao = null;
 
@@ -20,7 +20,7 @@ SIAB.pwa = (() => {
   function avisarAtualizacao() {
     const toast = SIAB.$("toast");
     toast.innerHTML =
-      'Nova versão do SIAB instalada. <button type="button" class="text-btn" id="pwa-recarregar">Recarregar</button>';
+      'Nova versão do SIAC instalada. <button type="button" class="text-btn" id="pwa-recarregar">Recarregar</button>';
     toast.hidden = false;
     SIAB.$("pwa-recarregar").addEventListener("click", () => location.reload());
   }
@@ -48,14 +48,16 @@ SIAB.pwa = (() => {
         if ("serviceWorker" in navigator)
           navigator.serviceWorker
             .getRegistrations()
-            .then((lista) => lista.forEach((r) => r.unregister()))
+            .then((lista) => lista.filter((r) =>
+              r.scope === new URL("./", location.href).href
+            ).forEach((r) => r.unregister()))
             .catch(() => {});
         if (window.caches)
           caches
             .keys()
             .then((chaves) =>
               chaves
-                .filter((c) => c.indexOf("siab@") === 0)
+                .filter((c) => c.startsWith("siac@" + new URL("./", location.href).href + "::"))
                 .forEach((c) => caches.delete(c)),
             )
             .catch(() => {});
@@ -106,7 +108,7 @@ SIAB.pwa = (() => {
         instalado = escolha.outcome === "accepted";
         if (instalado)
           SIAB.notice(
-            "SIAB instalado. Abra uma vez com internet antes de usar offline.",
+            "SIAC instalado. Abra uma vez com internet antes de usar offline.",
           );
       } catch (erro) {
         SIAB.irPara("#/manual/app");

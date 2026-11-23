@@ -33,7 +33,7 @@
   height: 144px;
   flex: none;
   margin: 0 24px 0 0;
-  filter: drop-shadow(0 12px 28px #c026d326);
+  filter: drop-shadow(0 10px 24px #0B547224);
 }
 .inicio-secao {
   display: flex;
@@ -122,9 +122,8 @@
   grid-row: span 2;
   padding: 26px;
   overflow: hidden;
-  background:
-    radial-gradient(ellipse at 100% 0, #c026d329, transparent 65%), var(--panel);
-  border-color: #864496;
+  background: var(--panel);
+  border-color: var(--border);
 }
 .caminho-laboratorio::before {
   content: "";
@@ -179,7 +178,7 @@
   background: #60a5fa;
 }
 .inicio-lab-cores i:nth-child(5) {
-  background: #b778f6;
+  background: #A5D9E7;
 }
 .caminho .inicio-card-acao {
   display: flex;
@@ -266,24 +265,28 @@
 .startup-brand img {
   width: 208px;
   height: 208px;
-  filter: drop-shadow(0 8px 40px #c026d345);
+  filter: drop-shadow(0 8px 34px #0B547238);
+}
+.startup-brand .startup-titulo {
+  display: block;
+  max-width: 21ch;
+  margin-top: 12px;
+  color: #F8F4EB;
+  font-size: clamp(1.6rem, 2.7vw, 2.5rem);
+  font-weight: 850;
+  line-height: 1.12;
+  letter-spacing: -.045em;
+  text-wrap: balance;
 }
 .startup-brand .startup-nome {
   display: block;
-  max-width: 24ch;
-  margin-top: 10px;
-  color: #f3e8fa;
-  font-size: clamp(1.05rem, 1.45vw, 1.25rem);
-  font-weight: 700;
-  line-height: 1.25;
+  max-width: 32ch;
+  margin-top: 13px;
+  color: #C8DCD8;
+  font-size: clamp(.8rem, 1.06vw, .98rem);
+  font-weight: 530;
+  line-height: 1.46;
   text-wrap: balance;
-}
-.startup-brand em {
-  display: block;
-  margin-top: 8px;
-  color: #d5c9e4;
-  font-size: 0.85rem;
-  font-style: normal;
 }
 .startup-panel {
   position: relative;
@@ -452,7 +455,7 @@
   border-color: var(--border);
 }
 :root[data-contrast="on"] .startup-brand .startup-nome,
-:root[data-contrast="on"] .startup-brand em {
+:root[data-contrast="on"] .startup-brand .startup-titulo {
   color: #fff;
 }
 @media (max-width: 960px) {
@@ -600,15 +603,17 @@
     width: 76px;
     height: 76px;
   }
-  .startup-brand .startup-nome {
-    max-width: 26ch;
+  .startup-brand .startup-titulo {
+    max-width: 23ch;
     margin-top: 6px;
-    font-size: 0.95rem;
-    line-height: 1.25;
+    font-size: clamp(1.38rem, 5.3vw, 1.9rem);
+    line-height: 1.1;
   }
-  .startup-brand em {
-    margin-top: 4px;
-    font-size: 0.75rem;
+  .startup-brand .startup-nome {
+    max-width: 30ch;
+    margin-top: 7px;
+    font-size: .73rem;
+    line-height: 1.4;
   }
   .startup-panel {
     padding: 20px;
