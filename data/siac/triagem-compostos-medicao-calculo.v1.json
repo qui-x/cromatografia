@@ -1,0 +1,2863 @@
+{
+  "versao": "1.0-pesquisa-auditoria-2026-11-23",
+  "status": "TRIAGEM_CATALOGO_LOCAL_SEM_INGESTAO_EXTERNA",
+  "disclaimer": "Derivado EXCLUSIVAMENTE dos 76 registros locais e seus cinco protocolos; nao representa cruzamento real de bases externas nem homologacao de cor, detector ou Rf para simular.",
+  "fonteOriginal": "data/siac/analitos-protocolos.v1.json",
+  "confirmacaoComparacao": "Rf da literatura nao substitui distancias medidas pelo estudante; as referencias so permitem teste de padrao sob condicoes equivalentes, nao identificacao conclusiva.",
+  "fontesExternasInventariadas": [
+    "TLCexp",
+    "BigSolDB 2.2",
+    "MixtureSolDB",
+    "Xu TLC 2022 / Xu coluna 2025"
+  ],
+  "resumo": {
+    "candidatos": 76,
+    "identidadesCASConferidas": 0,
+    "candidatosComRf": 11,
+    "totalRegistrosRf": 13,
+    "rfSemIdentidadeUnica": [
+      "carotene_band",
+      "xanthophyll_band"
+    ],
+    "coloracaoHomologada": 0,
+    "retencaoColunaHomologada": 0,
+    "candidatosComTodosOsCamposMedirCalcular": 0
+  },
+  "candidatos": [
+    {
+      "id": "tartrazina",
+      "nome": "Tartrazina (FD&C Yellow 5)",
+      "grupo": "corantes_alimenticios",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "sunset_yellow_fcf",
+      "nome": "Amarelo crepúsculo FCF (Yellow 6)",
+      "grupo": "corantes_alimenticios",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "allura_red_ac",
+      "nome": "Vermelho Allura AC (Red 40)",
+      "grupo": "corantes_alimenticios",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "brilliant_blue_fcf",
+      "nome": "Azul brilhante FCF (Blue 1)",
+      "grupo": "corantes_alimenticios",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "indigotine",
+      "nome": "Indigotina (Blue 2)",
+      "grupo": "corantes_alimenticios",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "erythrosine",
+      "nome": "Eritrosina (Red 3)",
+      "grupo": "corantes_alimenticios",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "fast_green_fcf",
+      "nome": "Verde rápido FCF (Green 3)",
+      "grupo": "corantes_alimenticios",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "ponceau_4r",
+      "nome": "Ponceau 4R",
+      "grupo": "corantes_alimenticios",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "amaranth",
+      "nome": "Amaranto (corante azo)",
+      "grupo": "corantes_alimenticios",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "patent_blue_v",
+      "nome": "Azul patente V",
+      "grupo": "corantes_alimenticios",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "quinoline_yellow",
+      "nome": "Amarelo de quinolina",
+      "grupo": "corantes_alimenticios",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "chlorophyll_a",
+      "nome": "Clorofila a",
+      "grupo": "pigmentos_vegetais",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [
+          {
+            "protocoloId": "tlc_spinach_quach_2004",
+            "rf": 0.44,
+            "fonte": "quach",
+            "classe": "transcricao_de_publicacao",
+            "adsorventeDescrito": "sílica gel sobre suporte poliéster",
+            "detector": "visível"
+          }
+        ],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "rf_transcrito_pendente_primaria"
+    },
+    {
+      "id": "chlorophyll_b",
+      "nome": "Clorofila b",
+      "grupo": "pigmentos_vegetais",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [
+          {
+            "protocoloId": "tlc_spinach_quach_2004",
+            "rf": 0.32,
+            "fonte": "quach",
+            "classe": "transcricao_de_publicacao",
+            "adsorventeDescrito": "sílica gel sobre suporte poliéster",
+            "detector": "visível"
+          }
+        ],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "rf_transcrito_pendente_primaria"
+    },
+    {
+      "id": "pheophytin_a",
+      "nome": "Feofitina a",
+      "grupo": "pigmentos_vegetais",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [
+          {
+            "protocoloId": "tlc_spinach_pheophytin_quach_2004",
+            "rf": 0.6,
+            "fonte": "quach",
+            "classe": "transcricao_de_publicacao",
+            "adsorventeDescrito": "sílica gel sobre poliéster",
+            "detector": "visível"
+          }
+        ],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "rf_transcrito_pendente_primaria"
+    },
+    {
+      "id": "pheophytin_b",
+      "nome": "Feofitina b",
+      "grupo": "pigmentos_vegetais",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [
+          {
+            "protocoloId": "tlc_spinach_pheophytin_quach_2004",
+            "rf": 0.49,
+            "fonte": "quach",
+            "classe": "transcricao_de_publicacao",
+            "adsorventeDescrito": "sílica gel sobre poliéster",
+            "detector": "visível"
+          }
+        ],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "rf_transcrito_pendente_primaria"
+    },
+    {
+      "id": "beta_carotene",
+      "nome": "β-caroteno",
+      "grupo": "pigmentos_vegetais",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "alpha_carotene",
+      "nome": "α-caroteno",
+      "grupo": "pigmentos_vegetais",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "lutein",
+      "nome": "Luteína",
+      "grupo": "pigmentos_vegetais",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "zeaxanthin",
+      "nome": "Zeaxantina",
+      "grupo": "pigmentos_vegetais",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "lycopene",
+      "nome": "Licopeno",
+      "grupo": "pigmentos_vegetais",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "violaxanthin",
+      "nome": "Violaxantina",
+      "grupo": "pigmentos_vegetais",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "neoxanthin",
+      "nome": "Neoxantina",
+      "grupo": "pigmentos_vegetais",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "beta_cryptoxanthin",
+      "nome": "β-criptoxantina",
+      "grupo": "pigmentos_vegetais",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "cyanidin_3_glucoside",
+      "nome": "Cianidina-3-O-glicosídeo",
+      "grupo": "pigmentos_vegetais",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "delphinidin_3_glucoside",
+      "nome": "Delfinidina-3-O-glicosídeo",
+      "grupo": "pigmentos_vegetais",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "quercetin",
+      "nome": "Quercetina",
+      "grupo": "pigmentos_vegetais",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "rutin",
+      "nome": "Rutina",
+      "grupo": "pigmentos_vegetais",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "curcumin",
+      "nome": "Curcumina",
+      "grupo": "pigmentos_vegetais",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "capsanthin",
+      "nome": "Capsantina",
+      "grupo": "pigmentos_vegetais",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "bixin",
+      "nome": "Bixina",
+      "grupo": "pigmentos_vegetais",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "norbixin",
+      "nome": "Norbixina",
+      "grupo": "pigmentos_vegetais",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "alanine",
+      "nome": "Alanina",
+      "grupo": "aminoacidos",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [
+          {
+            "protocoloId": "tlc_aminoacids_amrita_12_3_5",
+            "rf": 0.24,
+            "fonte": "amrita",
+            "classe": "reportado_no_guia",
+            "adsorventeDescrito": "placa_TLC",
+            "detector": "ninhidrina pós-desenvolvimento"
+          }
+        ],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "rf_referencia_didatica_condicoes_incompletas"
+    },
+    {
+      "id": "arginine",
+      "nome": "Arginina",
+      "grupo": "aminoacidos",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "asparagine",
+      "nome": "Asparagina",
+      "grupo": "aminoacidos",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "aspartic_acid",
+      "nome": "Ácido aspártico",
+      "grupo": "aminoacidos",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "cysteine",
+      "nome": "Cisteína",
+      "grupo": "aminoacidos",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "glutamic_acid",
+      "nome": "Ácido glutâmico",
+      "grupo": "aminoacidos",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [
+          {
+            "protocoloId": "tlc_aminoacids_amrita_12_3_5",
+            "rf": 0.25,
+            "fonte": "amrita",
+            "classe": "reportado_no_guia",
+            "adsorventeDescrito": "placa_TLC",
+            "detector": "ninhidrina pós-desenvolvimento"
+          }
+        ],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "rf_referencia_didatica_condicoes_incompletas"
+    },
+    {
+      "id": "glutamine",
+      "nome": "Glutamina",
+      "grupo": "aminoacidos",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "glycine",
+      "nome": "Glicina",
+      "grupo": "aminoacidos",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [
+          {
+            "protocoloId": "tlc_aminoacids_amrita_12_3_5",
+            "rf": 0.2,
+            "fonte": "amrita",
+            "classe": "reportado_no_guia",
+            "adsorventeDescrito": "placa_TLC",
+            "detector": "ninhidrina pós-desenvolvimento"
+          }
+        ],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "rf_referencia_didatica_condicoes_incompletas"
+    },
+    {
+      "id": "histidine",
+      "nome": "Histidina",
+      "grupo": "aminoacidos",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "isoleucine",
+      "nome": "Isoleucina",
+      "grupo": "aminoacidos",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "leucine",
+      "nome": "Leucina",
+      "grupo": "aminoacidos",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [
+          {
+            "protocoloId": "tlc_aminoacids_amrita_12_3_5",
+            "rf": 0.58,
+            "fonte": "amrita",
+            "classe": "reportado_no_guia",
+            "adsorventeDescrito": "placa_TLC",
+            "detector": "ninhidrina pós-desenvolvimento"
+          }
+        ],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "rf_referencia_didatica_condicoes_incompletas"
+    },
+    {
+      "id": "lysine",
+      "nome": "Lisina",
+      "grupo": "aminoacidos",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [
+          {
+            "protocoloId": "tlc_aminoacids_amrita_12_3_5",
+            "rf": 0.58,
+            "fonte": "amrita",
+            "classe": "reportado_no_guia",
+            "adsorventeDescrito": "placa_TLC",
+            "detector": "ninhidrina pós-desenvolvimento"
+          }
+        ],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "rf_referencia_didatica_condicoes_incompletas"
+    },
+    {
+      "id": "methionine",
+      "nome": "Metionina",
+      "grupo": "aminoacidos",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "phenylalanine",
+      "nome": "Fenilalanina",
+      "grupo": "aminoacidos",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "proline",
+      "nome": "Prolina",
+      "grupo": "aminoacidos",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "serine",
+      "nome": "Serina",
+      "grupo": "aminoacidos",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "threonine",
+      "nome": "Treonina",
+      "grupo": "aminoacidos",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "tryptophan",
+      "nome": "Triptofano",
+      "grupo": "aminoacidos",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "tyrosine",
+      "nome": "Tirosina",
+      "grupo": "aminoacidos",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [
+          {
+            "protocoloId": "tlc_aminoacids_amrita_12_3_5",
+            "rf": 0.42,
+            "fonte": "amrita",
+            "classe": "reportado_no_guia",
+            "adsorventeDescrito": "placa_TLC",
+            "detector": "ninhidrina pós-desenvolvimento"
+          }
+        ],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "rf_referencia_didatica_condicoes_incompletas"
+    },
+    {
+      "id": "valine",
+      "nome": "Valina",
+      "grupo": "aminoacidos",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [
+          {
+            "protocoloId": "tlc_aminoacids_amrita_12_3_5",
+            "rf": 0.4,
+            "fonte": "amrita",
+            "classe": "reportado_no_guia",
+            "adsorventeDescrito": "placa_TLC",
+            "detector": "ninhidrina pós-desenvolvimento"
+          }
+        ],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "rf_referencia_didatica_condicoes_incompletas"
+    },
+    {
+      "id": "caffeine",
+      "nome": "Cafeína",
+      "grupo": "farmacos_e_organicos",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "theobromine",
+      "nome": "Teobromina",
+      "grupo": "farmacos_e_organicos",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "paracetamol",
+      "nome": "Paracetamol",
+      "grupo": "farmacos_e_organicos",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "acetylsalicylic_acid",
+      "nome": "Ácido acetilsalicílico",
+      "grupo": "farmacos_e_organicos",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "salicylic_acid",
+      "nome": "Ácido salicílico",
+      "grupo": "farmacos_e_organicos",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "ibuprofen",
+      "nome": "Ibuprofeno",
+      "grupo": "farmacos_e_organicos",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "naproxen",
+      "nome": "Naproxeno",
+      "grupo": "farmacos_e_organicos",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "benzoic_acid",
+      "nome": "Ácido benzoico",
+      "grupo": "farmacos_e_organicos",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "vanillin",
+      "nome": "Vanilina",
+      "grupo": "farmacos_e_organicos",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "ethyl_vanillin",
+      "nome": "Etilvanilina",
+      "grupo": "farmacos_e_organicos",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "coumarin",
+      "nome": "Cumarina",
+      "grupo": "farmacos_e_organicos",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "nicotinamide",
+      "nome": "Nicotinamida",
+      "grupo": "farmacos_e_organicos",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "riboflavin",
+      "nome": "Riboflavina",
+      "grupo": "farmacos_e_organicos",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "ascorbic_acid",
+      "nome": "Ácido ascórbico",
+      "grupo": "farmacos_e_organicos",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "fluorescein",
+      "nome": "Fluoresceína",
+      "grupo": "indicadores_e_traçadores",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "eosin_y",
+      "nome": "Eosina Y",
+      "grupo": "indicadores_e_traçadores",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "rhodamine_b",
+      "nome": "Rodamina B",
+      "grupo": "indicadores_e_traçadores",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "methylene_blue",
+      "nome": "Azul de metileno",
+      "grupo": "indicadores_e_traçadores",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "methyl_orange",
+      "nome": "Alaranjado de metila",
+      "grupo": "indicadores_e_traçadores",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "methyl_red",
+      "nome": "Vermelho de metila",
+      "grupo": "indicadores_e_traçadores",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "bromothymol_blue",
+      "nome": "Azul de bromotimol",
+      "grupo": "indicadores_e_traçadores",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "phenolphthalein",
+      "nome": "Fenolftaleína",
+      "grupo": "indicadores_e_traçadores",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "crystal_violet",
+      "nome": "Violeta cristal",
+      "grupo": "indicadores_e_traçadores",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "sudan_iii",
+      "nome": "Sudan III",
+      "grupo": "indicadores_e_traçadores",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    },
+    {
+      "id": "sudan_iv",
+      "nome": "Sudan IV",
+      "grupo": "indicadores_e_traçadores",
+      "identidade": {
+        "cas": null,
+        "cid": null,
+        "verificada": false
+      },
+      "marcacoes": {
+        "corNaFonte": null,
+        "detectorValidado": null,
+        "luminosidadeUV": null
+      },
+      "retencao": {
+        "registrosRf": [],
+        "registrosColuna": 0
+      },
+      "condicaoParaMedir": {
+        "distanciaFrenteMm": null,
+        "distanciaManchaMm": null
+      },
+      "condicaoParaColuna": {
+        "volumeMortoMl": null,
+        "volumeRetencaoMl": null,
+        "larguraBaseMl": null,
+        "massasColetadasMg": null
+      },
+      "cruzamentoExterno": {
+        "TLCexp": "nao_verificado",
+        "BigSolDB_2_2": "nao_verificado",
+        "MixtureSolDB": "nao_verificado",
+        "Xu_TLC_CC": "nao_verificado"
+      },
+      "classeTriagem": "sem_rf_catalogado"
+    }
+  ]
+}
