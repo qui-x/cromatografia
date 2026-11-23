@@ -283,21 +283,19 @@ function desenharTubos(){
 function desenharBandas(obs){
  const g=$("bandas");g.innerHTML="";
  for(const banda of obs.bandasVisiveis){
-  const intensidades=banda.distribuicao,max=Math.max(0.00000001,...intensidades);
-  for(let i=0;i<intensidades.length;i++){
-   const rel=intensidades[i]/max;
-   if(rel<.008)continue;
-   const y=55+215*i/intensidades.length,h=215/intensidades.length+2.5;
-   const desvio=2.7*Math.sin(i*2.11+banda.id.charCodeAt(0)*.1);
-   const largura=58+8*Math.sin(i*.8+banda.id.charCodeAt(0));
-   const esquerda=110-largura/2+desvio,direita=110+largura/2+desvio;
-   const d="M"+esquerda.toFixed(2)+" "+y.toFixed(2)+" Q"+(110+desvio).toFixed(2)+" "+(y-2).toFixed(2)+" "+direita.toFixed(2)+" "+(y+1).toFixed(2)+
-      " L"+(direita+1).toFixed(2)+" "+(y+h).toFixed(2)+" Q"+(110+desvio).toFixed(2)+" "+(y+h-1).toFixed(2)+" "+(esquerda-2).toFixed(2)+" "+(y+h).toFixed(2)+"Z";
+  const xs=banda.distribuicao,max=Math.max(1e-9,...xs);
+  for(let i=0;i<xs.length;i++){
+   const rel=xs[i]/max;if(rel<.009)continue;
+   const y=137+220*i/xs.length,h=220/xs.length+2.2;
+   const off=1.8*Math.sin(i*2.1+banda.id.charCodeAt(0)*.13),wide=71+5*Math.sin(i*.65);
+   const left=140-wide/2+off,right=140+wide/2+off;
+   const d="M"+left.toFixed(2)+" "+y.toFixed(2)+" Q"+(140+off).toFixed(2)+" "+(y-1.6).toFixed(2)+
+     " "+right.toFixed(2)+" "+(y+1).toFixed(2)+" L"+(right+1).toFixed(2)+" "+(y+h).toFixed(2)+
+     " Q"+(140+off).toFixed(2)+" "+(y+h-1).toFixed(2)+" "+(left-2).toFixed(2)+" "+(y+h).toFixed(2)+"Z";
    const el=document.createElementNS("http://www.w3.org/2000/svg","path");
    el.setAttribute("d",d);el.setAttribute("fill",banda.corVisivel);
-   el.setAttribute("opacity",String(.03+.79*Math.sqrt(rel)));
-   el.setAttribute("filter","url(#difusao)");
-   g.appendChild(el);
+   el.setAttribute("opacity",String(.025+.8*Math.sqrt(rel)));
+   el.setAttribute("filter","url(#difusao)");g.appendChild(el);
   }
  }
 }
