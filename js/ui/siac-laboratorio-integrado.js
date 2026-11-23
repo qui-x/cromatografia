@@ -361,14 +361,17 @@ SIAC.laboratorio=(()=>{
  }
  function overviewMarkup(){
   const fracs=filled();
-  return '<h2>Visão geral · '+(group==="frascos"?"Frascos preenchidos":"Papéis correspondentes")+'</h2>'+
-  (fracs.length?'<div class="siac-grid">'+fracs.map(f=>{
+  return '<div class="siac-overview-scene" aria-label="Visão geral da bancada">'+
+   '<h2>Visão geral · '+(group==="frascos"?"Frascos preenchidos":"Papéis correspondentes")+'</h2>'+
+  (fracs.length?'<div class="siac-grid" role="group" aria-label="'+
+   (group==="frascos"?"Frascos coletados":"Papéis das frações")+'">'+fracs.map(f=>{
    const p=paper(f.id),isPaper=group==="papeis";
    return '<button class="siac-card" type="button" data-open-fraction="'+f.id+'" data-open-focus="'+(isPaper?"amostra":"tubo")+'">'+
      (isPaper?paperSVG(p,"P"+f.id.slice(1),false):tubeSVG(f))+
      '<strong>'+(isPaper?"P"+f.id.slice(1):f.id)+'</strong>'+
      '<small>'+(isPaper?esc(p.etapa):fmt(f.volumeMl)+" mL")+'</small></button>';
-  }).join("")+'</div>':'<p class="siac-empty">Nenhum frasco preenchido até agora. Os tubos aparecerão conforme o eluato for coletado.</p>');
+  }).join("")+'</div>':'<p class="siac-empty">Nenhum frasco preenchido até agora. Os tubos aparecerão conforme o eluato for coletado.</p>')+
+  '</div>';
  }
  function sincronizarAbas(){
   if(!enabled)return;
