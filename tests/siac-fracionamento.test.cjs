@@ -91,8 +91,8 @@ assert.throws(()=>coletor.integrate(p,[{inicioMl:0,fimMl:10,concentracoesMgPorMl
 // Os valores 0,6 mL e 3,5 mL acima são fixtures de teste, NÃO posições
 // padronizadas dos frascos ou volumes onde uma substância necessariamente elui.
 assert.throws(()=>coletor.prepare({}),/volumeTotalMl/);
-assert.throws(()=>coletor.prepare({volumeTotalMl:10.1}),/volumeTotalMl/);
-for(const volumeTotalMl of [0.1,0.5,1.2,2.7,5.4,10]){
+assert.throws(()=>coletor.prepare({volumeTotalMl:1000.1}),/volumeTotalMl/);
+for(const volumeTotalMl of [0.1,0.5,1.2,2.7,5.4,10,100,500,1000]){
   const varivel=coletor.prepare({volumeTotalMl,janelas:[
     {frasco:"F8",inicioMl:0,fimMl:0.1}
   ]});
@@ -137,4 +137,22 @@ assert.throws(()=>coletor.setWindow(corrida,"F7",2.2,2.6),/sobrepostas/);
 assert.throws(()=>coletor.setWindow(corrida,"F11",1,2),/frasco/);
 assert.throws(()=>coletor.clearWindow(corrida,"F0"),/frasco/);
 
+
+const escalaLonga=coletor.prepare({volumeTotalMl:1000,resolucaoMl:0.1,capacidadeFrascoMl:50,
+ janelas:[{frasco:"F10",inicioMl:870.3,fimMl:894.8},{frasco:"F1",inicioMl:0.1,fimMl:2.5}]});
+assert.equal(escalaLonga.janelas.length,2);
+assert.equal(coletor.routeAt(escalaLonga,880),"F10");
+assert.equal(coletor.routeAt(escalaLonga,700),"descarte");
+assert.equal(coletor.setWindow(escalaLonga,"F10",900.1,925.1).janelas[1].inicioMl,900.1);
+assert.throws(()=>coletor.setWindow(escalaLonga,"F10",800,870),/capacidade/);
+const perfLongo=[
+ {inicioMl:0,fimMl:400,concentracoesMgPorMl:{a:.01,b:0}},
+ {inicioMl:400,fimMl:800,concentracoesMgPorMl:{a:0,b:.03}},
+ {inicioMl:800,fimMl:1000,concentracoesMgPorMl:{a:.001,b:.01}}
+];
+const coletadoLongo=coletor.integrate(escalaLonga,perfLongo);
+assert(coletadoLongo.frascos[9].componentesMg.b>0);
+assert(coletadoLongo.frascos[0].componentesMg.a>0);
+perto(coletadoLongo.total.volumeMl,1000);
+perto(coletadoLongo.frascos.reduce((t,f)=>t+f.volumeMl,coletadoLongo.descarte.volumeMl),1000);
 console.log("SIAC fracionamento: F1-F10 independentes, janelas, descarte, mistura, massa e validações OK.");
