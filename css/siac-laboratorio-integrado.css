@@ -412,3 +412,25 @@ body.siac-active #workspace #siac-stage{
   min-width:0;
  }
 }
+
+/* Catálogo científico contextual: usa a doca Montagem existente, não cria nova doca. */
+#siac-catalogo {border:1px solid var(--border);border-radius:10px;padding:11px;margin:0 0 12px;background:var(--panel);}
+#siac-catalogo .siac-catalogo-modos {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;}
+#siac-catalogo .siac-catalogo-modos button {min-height:36px;padding:7px 5px;border:1px solid var(--border);
+ border-radius:8px;color:var(--text);background:var(--panel2);font:inherit;font-size:.8rem;cursor:pointer;}
+#siac-catalogo .siac-catalogo-modos button[aria-pressed=true] {background:var(--hover);border-color:var(--accent);font-weight:700}
+#siac-catalogo label {display:grid;gap:4px;margin:9px 0;font-weight:650;font-size:.82rem}
+#siac-catalogo input,#siac-catalogo select {color:var(--text);background:var(--panel2);border:1px solid var(--border);
+ border-radius:7px;min-height:36px;padding:6px 8px;width:100%;max-width:100%;font:inherit}
+#siac-catalogo select:disabled {opacity:.6;cursor:not-allowed}
+#siac-catalogo .siac-catalogo-dados {font-size:.82rem;line-height:1.5;overflow-wrap:anywhere;border-top:1px solid var(--border);margin-top:10px;padding-top:8px}
+#siac-catalogo .siac-catalogo-dados p {margin:6px 0}
+#siac-catalogo [hidden] {display:none!important}
+#siac-montagem.siac-catalogo-ativo > details,
+#siac-montagem.siac-catalogo-ativo > #siac-montar {display:none!important}
+#siac-stage .siac-catalogo-stage {max-width:690px;margin:clamp(20px,5vh,75px) auto;
+ padding:clamp(18px,3vw,34px);border:1px solid var(--border);border-radius:12px;
+ background:var(--panel);line-height:1.6}
+#siac-stage .siac-catalogo-stage p {margin:10px 0}
+@media(max-width:560px){#siac-catalogo {padding:8px}#siac-catalogo .siac-catalogo-modos button {font-size:.74rem}
+ #siac-stage .siac-catalogo-stage {margin:10px auto;padding:13px}}
