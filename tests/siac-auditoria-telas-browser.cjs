@@ -85,6 +85,15 @@ async function inspectDock(page,width){
   await page.goto("http://127.0.0.1:"+port+"/index.html#/laboratorio",
    {waitUntil:"domcontentloaded",timeout:20000});
   await page.waitForFunction(()=>window.SIAC?.laboratorio?.active===true,null,{timeout:12000});
+  // A experiência atual começa no catálogo científico (sem simulações reais).
+  // O diagnóstico de coluna/frascos/papéis só é válido após optar pela
+  // Demonstração hipotética. Não alterar o modo padrão da aplicação.
+  const initialMode=await page.evaluate(()=>window.SIAC?.laboratorio?.snapshot?.modo);
+  if(initialMode!=="pesquisa")mark("laboratorio",width,"critical","O catálogo deve iniciar como pesquisa",initialMode);
+  await photo(page,width,"catalogo-cientifico");
+  await page.locator('[data-siac-modo="demo"]').evaluate(el=>el.click());
+  await page.waitForFunction(()=>window.SIAC?.laboratorio?.snapshot?.modo==="demonstracao",
+    null,{timeout:4000});
   for(const id of ["workspace-montagem","workspace-ver","workspace-dados"])
    if(await page.locator("#"+id).isHidden())mark("docas",width,"critical","Lançador oculto",id);
   await photo(page,width,"bancada-coluna");
