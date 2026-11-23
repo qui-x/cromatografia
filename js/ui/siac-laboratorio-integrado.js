@@ -73,7 +73,6 @@ SIAC.laboratorio=(()=>{
   ui.addEventListener("click",montagemClick);
   ver.addEventListener("click",verClick);
   stage.addEventListener("click",stageClick);
-  stage.addEventListener("pointerdown",spotPointer);
   $("focus-tab").addEventListener("click",e=>{if(!enabled)return;e.stopImmediatePropagation();e.preventDefault();
    if(view==="foco")focus=VIEWS[(VIEWS.indexOf(focus)+1)%3];else view="foco";render();},true);
   $("overview-tab").addEventListener("click",e=>{if(!enabled)return;e.stopImmediatePropagation();e.preventDefault();
@@ -83,13 +82,18 @@ SIAC.laboratorio=(()=>{
   }
   $("siac-velocidade").addEventListener("change",()=>{speed=Number($("siac-velocidade").value);render();});
   document.addEventListener("siab:rota",route);
+  // A disponibilidade do painel Ver não depende de existir tubo SIAB legado.
+  const launcher=$("workspace-ver");
+  if(launcher)new MutationObserver(()=>{if(enabled&&launcher.hidden)launcher.hidden=false;})
+    .observe(launcher,{attributes:true,attributeFilter:["hidden"]});
   ready=true;
  }
  function route(){
   const available=SIAB.rota?.nome==="laboratorio";
   enabled=available;
   document.body.classList.toggle("siac-active",available);
-  if(available){mount();if(!col)build();render();}
+  if($("controls-title"))$("controls-title").textContent=available?"Montagem":"Prateleira";
+  if(available){mount();if(!col)build();if($("workspace-ver"))$("workspace-ver").hidden=false;render();}
  }
  function configuration(){
   const comp=MODELOS.filter(x=>uiQuery('[data-siac-comp="'+x.id+'"]').checked).map(x=>({
@@ -276,7 +280,6 @@ SIAC.laboratorio=(()=>{
   $("focus-tab").setAttribute("aria-pressed",String(view==="foco"));
   $("overview-tab").setAttribute("aria-pressed",String(view==="geral"));
   const fracs=filled();
-  if(fracs.length&&!fraction(selected)){selected=fracs[0].id;}
   const t=volume/col.config.vazaoMlMin*60,all=col.config.tempoTotalMin*60;
   stage.innerHTML='<header class="siac-stage-head"><span>Investigação cromatográfica · '+(view==="foco"?"Foco":"Visão geral")+'</span>'+
    '<strong>'+fmt(volume)+' / '+fmt(col.config.volumeTotalMl,1)+' mL</strong></header>'+
@@ -352,7 +355,8 @@ SIAC.laboratorio=(()=>{
    p.uv=all.filter(([id,m])=>m>1e-9&&col.config.componentes.find(c=>c.id===id)?.deteccao.uv254)
     .map(([id,m])=>({distanciaMm:MODELOS.find(c=>c.id===id).rf*p.frenteMm}));
    p.etapa="revelado";status="UV aplicado: sinais hipotéticos, sem identificação confirmada.";render();return;}
-  if(e.target.closest("#siac-paper-target"))spotAt(15);
+  const target=e.target.closest("#siac-paper-target");
+  if(target){const b=target.getBoundingClientRect();spotAt(Math.round(clamp((e.clientX-b.left)/b.width,0,1)*30));}
  }
  function spotPointer(e){
   const target=e.target.closest("#siac-paper-target");
