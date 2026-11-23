@@ -86,12 +86,20 @@ hr{border:0;border-top:1px solid #dde8eb;margin:16px 0}.dados button{width:100%}
  </select>
  <details>
   <summary>Geometria e condições da coluna</summary>
+  <label class="rotulo" for="porte">Referência de montagem</label>
+  <select id="porte" aria-label="Perfil de coluna sugerido">
+   <option value="compacta">Compacta · leito estreito</option>
+   <option value="media">Intermediária · maior capacidade</option>
+   <option value="preparativa">Preparativa · até 1.000 mL</option>
+   <option value="livre">Dimensões livres</option>
+  </select>
+  <small>Perfis sugeridos, não limites fixos. Comprimento, diâmetro, vazão e volume continuam editáveis.</small>
   <div class="parametros">
    <div><label class="rotulo" for="comprimento">Comprimento (mm)</label><input id="comprimento" type="number" min="20" max="2000" step="5" value="80"></div>
    <div><label class="rotulo" for="diametro">Diâmetro interno (mm)</label><input id="diametro" type="number" min="2" max="100" step="1" value="8"></div>
    <div><label class="rotulo" for="porosidade">Porosidade</label><input id="porosidade" type="number" min=".1" max=".75" step=".05" value=".45"></div>
    <div><label class="rotulo" for="vazao">Vazão (mL/min)</label><input id="vazao" type="number" min=".01" max="100" step=".01" value=".8"></div>
-   <div><label class="rotulo" for="volumeTotal">Escala (mL)</label><input id="volumeTotal" type="number" min=".1" max="1000" step=".1" value="9"></div>
+   <div><label class="rotulo" for="volumeTotal">Volume acumulado da corrida (mL)</label><input id="volumeTotal" type="number" min=".1" max="1000" step=".1" value="9"></div>
   </div>
   <div class="parametros"><div><label class="rotulo" for="capacidade">Capacidade de cada frasco (mL)</label><input id="capacidade" type="number" min=".1" max="1000" step=".1" value="20"></div>
   <div><label class="rotulo" for="velocidade">Aceleração da coleta</label><select id="velocidade"><option value="1">1× · tempo real</option><option value="30">30×</option><option value="120" selected>120×</option><option value="600">600×</option><option value="1800">1800×</option></select></div></div>
@@ -396,6 +404,18 @@ function render(){
  ];
  d.innerHTML=dados.map(x=>'<div class="medida"><dt>'+x[0]+'</dt><dd>'+x[1]+'</dd></div>').join("");
 }
+const perfisColuna={
+ compacta:{comprimento:80,diametro:8,vazao:.8,volumeTotal:9,capacidade:20},
+ media:{comprimento:150,diametro:20,vazao:2.5,volumeTotal:100,capacidade:50},
+ preparativa:{comprimento:400,diametro:50,vazao:5,volumeTotal:1000,capacidade:250}
+};
+$("porte").addEventListener("change",()=>{
+ const perfil=perfisColuna[$("porte").value];
+ if(!perfil)return;
+ for(const [id,v] of Object.entries(perfil))$(id).value=String(v);
+ aviso="Perfil geométrico sugerido: monte a coluna para atualizar a corrida.";
+ render();
+});
 $("amostra").addEventListener("change",configurarEditor);
 configurarEditor();
 $("montar").addEventListener("click",()=>{try{configurar()}catch(e){aviso=e.message;render();}});
