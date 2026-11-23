@@ -14,7 +14,8 @@
     "reviewAmino": "https://scispace.com/papers/thin-layer-chromatography-of-amino-acids-a-review-2kz286kv4g",
     "ukil2013": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
     "dobado2024": "https://www.chemistry-online.com/lab/experiments/separation-pigments-spinach-leaf/",
-    "protechex2025": "https://5.imimg.com/data5/SELLER/Doc/2025/6/518306737/JX/IU/GS/9824300/pro-techex-thin-layer-chromatography-teaching-kit.pdf"
+    "protechex2025": "https://5.imimg.com/data5/SELLER/Doc/2025/6/518306737/JX/IU/GS/9824300/pro-techex-thin-layer-chromatography-teaching-kit.pdf",
+    "padiyar2024": "https://www.ijpsjournal.com/article/enhanced-thin-layer-chromatography-of-amino-acids-using-mixed-hydrotropic-solutions"
   },
   "candidatos": [
     {
@@ -2823,6 +2824,147 @@
         }
       ],
       "nota": "Segundo eluente de mesmo kit, distinto de etanol/água (Solvent I). Repetir somente a mistura BAW 12:3:5 da Amrita com proporções 8:2:2 não conta como contraste de solventes entre si; usar o sistema etanol/água para comparação. Não homologado."
+    },
+    {
+      "id": "tlc_aminoacids_padiyar2024_butanol_acetic_water_4_1_1",
+      "tecnica": "ccd",
+      "assuntos": [
+        "aminoacidos"
+      ],
+      "status": "artigo_primario_com_discrepancias_a_auditar",
+      "fonte": "padiyar2024",
+      "ano": 2024,
+      "referenciaSecao": "Padiyar et al. (2024), Materials and Method + Table 2, organic phase; DOI 10.5281/zenodo.14244007",
+      "faseEstacionaria": {
+        "classe": "sílica gel 60 F254 pré-revestida (Supelco/Aldrich)",
+        "detalhamento": "placas 20x20 cm cortadas para 5x2,5 cm; linha de aplicação 1 cm da base"
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "butanol_1",
+            "partes": 4
+          },
+          {
+            "id": "acetic_acid",
+            "partes": 1
+          },
+          {
+            "id": "water",
+            "partes": 1
+          }
+        ],
+        "base": "v/v",
+        "mistura": "1-butanol:ácido acético glacial:água 4:1:1; 33,3 mL butanol+8,3 mL acético e completar água para 50 mL",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "ninhidrina 0,25% (w/v), aquecimento de revelação a 100 °C por 5 min após secagem a 50 °C por 20 min",
+        "detectorHomologado": false,
+        "notaPreparoRevelador": "O texto da fonte alterna 'em etanol' e dissolução/completação em água: ambiguidade a resolver antes de homologar.",
+        "solucaoPadraoMgMl": 20,
+        "origemMm": 10,
+        "frenteSolventeCmReportada": 3.5
+      },
+      "dadosRf": [
+        {
+          "analito": "glutamine",
+          "rf": 0.16,
+          "classe": "reportado_com_distancias_tabela_2_artigo_2024",
+          "fonte": "padiyar2024",
+          "temperaturaC": null,
+          "homologado": false,
+          "distanciaManchaCm": 0.55,
+          "distanciaFrenteCm": 3.5,
+          "diferencaRfDistancias": -0.0029,
+          "nota": null
+        },
+        {
+          "analito": "histidine",
+          "rf": 0.11,
+          "classe": "reportado_com_distancias_tabela_2_artigo_2024",
+          "fonte": "padiyar2024",
+          "temperaturaC": null,
+          "homologado": false,
+          "distanciaManchaCm": 0.4,
+          "distanciaFrenteCm": 3.5,
+          "diferencaRfDistancias": 0.0043,
+          "nota": null
+        },
+        {
+          "analito": "alanine",
+          "rf": 0.57,
+          "classe": "reportado_com_distancias_tabela_2_artigo_2024",
+          "fonte": "padiyar2024",
+          "temperaturaC": null,
+          "homologado": false,
+          "distanciaManchaCm": 2,
+          "distanciaFrenteCm": 3.5,
+          "diferencaRfDistancias": 0.0014,
+          "nota": null
+        },
+        {
+          "analito": "arginine",
+          "rf": 0.23,
+          "classe": "reportado_com_distancias_tabela_2_artigo_2024",
+          "fonte": "padiyar2024",
+          "temperaturaC": null,
+          "homologado": false,
+          "distanciaManchaCm": 0.8,
+          "distanciaFrenteCm": 3.5,
+          "diferencaRfDistancias": -0.0014,
+          "nota": null
+        },
+        {
+          "analito": "methionine",
+          "rf": 0.51,
+          "classe": "reportado_com_distancias_tabela_2_artigo_2024",
+          "fonte": "padiyar2024",
+          "temperaturaC": null,
+          "homologado": false,
+          "distanciaManchaCm": 1.8,
+          "distanciaFrenteCm": 3.5,
+          "diferencaRfDistancias": 0.0043,
+          "nota": null
+        },
+        {
+          "analito": "valine",
+          "rf": 0.52,
+          "classe": "reportado_com_distancias_tabela_2_artigo_2024",
+          "fonte": "padiyar2024",
+          "temperaturaC": null,
+          "homologado": false,
+          "distanciaManchaCm": 1.85,
+          "distanciaFrenteCm": 3.5,
+          "diferencaRfDistancias": 0.0086,
+          "nota": "Tabela reporta 0,52; 1,85/3,5 = 0,5286 (aproxima 0,53 com duas casas). Preservar o valor publicado e sinalizar discrepância de arredondamento."
+        },
+        {
+          "analito": "lysine",
+          "rf": 0.23,
+          "classe": "reportado_com_distancias_tabela_2_artigo_2024",
+          "fonte": "padiyar2024",
+          "temperaturaC": null,
+          "homologado": false,
+          "distanciaManchaCm": 0.8,
+          "distanciaFrenteCm": 3.5,
+          "diferencaRfDistancias": -0.0014,
+          "nota": null
+        },
+        {
+          "analito": "tryptophan",
+          "rf": 0.23,
+          "classe": "reportado_com_distancias_tabela_2_artigo_2024",
+          "fonte": "padiyar2024",
+          "temperaturaC": null,
+          "homologado": false,
+          "distanciaManchaCm": 0.8,
+          "distanciaFrenteCm": 3.5,
+          "diferencaRfDistancias": -0.0014,
+          "nota": null
+        }
+      ],
+      "nota": "Artigo apresenta dados experimentais, inclusive distâncias mensuradas. Há ambiguidade no solvente de preparo da ninhidrina e inconsistência de arredondamento para valina: isso impede homologação automática. Não considerar sistemas aquosos com hidrótopos como solventes diferentes sem substâncias solventes distintas."
     }
   ],
   "observacoes": [
