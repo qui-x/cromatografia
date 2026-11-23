@@ -36,6 +36,24 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
    }else{
      await page.evaluate(()=>SIAB.workspace.open("left"));
    }
+   // O catálogo é o modo padrão: sem substância não há solvente habilitado.
+   await page.locator("#siac-catalogo-substancia").waitFor({timeout:5000});
+   assert.equal(await page.locator("#siac-catalogo-substancia option").count(),77);
+   assert.equal(await page.locator("#siac-catalogo-solvente").isDisabled(),true);
+   assert.equal(await page.evaluate(()=>SIAC.laboratorio.snapshot.modo),"pesquisa");
+   await page.locator("#siac-catalogo-substancia").selectOption("glycine");
+   assert.equal(await page.locator("#siac-catalogo-solvente").isEnabled(),true);
+   await page.locator("#siac-catalogo-solvente").selectOption("tlc_aminoacids_amrita_12_3_5");
+   assert.match(await page.locator("#siac-catalogo-dados").textContent(),/Rf bibliográfico:\s*0,20/);
+   assert.equal(await page.evaluate(()=>SIAC.laboratorio.snapshot.substanciaId),"glycine");
+   assert.match(await page.locator("#siac-stage").textContent(),/não são um motor validado/);
+   await page.locator("#siac-catalogo-substancia").selectOption("caffeine");
+   assert.equal(await page.locator("#siac-catalogo-solvente").isDisabled(),true);
+   assert.match(await page.locator("#siac-catalogo-dados").textContent(),/Não há sistema eluente/);
+   // O modo de demonstração precisa ser explicitamente escolhido antes de
+   // simular k e desenhar bandas hipotéticas; o fluxo legado continua disponível.
+   await page.locator('[data-siac-modo="demo"]').click();
+   assert.equal(await page.evaluate(()=>SIAC.laboratorio.snapshot.modo),"demonstracao");
    await page.locator("#siac-montagem #siac-seletor button").first().waitFor({timeout:5000});
    assert.equal(await page.locator("#siac-seletor button").count(),10);
    console.log("SIAC DIAGNÓSTICO",width,JSON.stringify(await page.evaluate(()=>({
