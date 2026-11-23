@@ -91,27 +91,35 @@ Não inventar valores cromatográficos no front-end. A experiência consome apen
 
 **Gate de aceite:** nenhum menu sem ação, nenhuma tela vazia, nenhuma rota perdida, nenhuma regressão de sessão/histórico, e nenhuma referência ácido-base em funcionalidades exibidas como “SIAC homologado”.
 
-## Em foco: coluna e seleção de frações
+## Coluna cromatográfica na área Montagem — coleta em dez tubos
 
-**Regra do produto:** o painel atual `Tubo em foco` é um legado do SIAB. No SIAC, o conceito passa a ser **objeto de investigação em foco**, contextual à técnica. Na coluna, o objeto pode ser a coluna inteira, um segmento de sua fase estacionária, uma fração coletada ou um conjunto de frações.
+**Decisão de interface:** reutilizar a área **Montagem** do SIAB/SIAC, mantendo suas docas, hierarquia, controles de teclado e fluxo de laboratório. **Não criar menu contextual, painel paralelo ou comandos flutuantes para frações.** A coluna é montada na própria área Montagem; sua animação ocupa a cena central.
 
-### Fluxo de investigação
+### Preparação pela área Montagem
 
-1. Configurar coluna, fase estacionária, fase móvel, amostra e vazão no menu **Montagem**.
-2. Acompanhar a separação ao longo da coluna no modo **Explorar**; registrar tempo ou volume de eluato (dependendo do modelo).
-3. Coletar o eluato em recipientes identificados `F1`, `F2`, `F3`... com intervalo ou volume de coleta explícito, exibindo posições/tempos e volumes de cada fração.
-4. Selecionar diretamente o recipiente ou cartão da fração no painel **Em foco**. O painel deve mostrar identificação, intervalo de coleta, volume, condições, observação/detecção e indicadores de possível mistura.
-5. Disponibilizar ações contextuais **Observar**, **Medir**, **Calcular**, **Comparar**, **Investigar por CCD**, sem duplicar controles nem gerar novos dados por troca de foco.
-6. Permitir seleção de duas ou mais frações para comparação e reunir/descartar frações apenas mediante ação explícita, com rastreabilidade.
-7. Guardar no Caderno e relatório a fração selecionada, suas condições, sinal de detecção, incerteza, proveniência e histórico de manipulação.
+1. Escolher **Técnica: Coluna cromatográfica**.
+2. Selecionar a **amostra ou mistura** no catálogo e o **solvente/fase móvel**. A fase estacionária, sua compatibilidade e condições de fluxo devem constar da montagem, com padrões iniciais válidos e opção de ajuste quando o motor permitir.
+3. A coluna aparece montada diretamente no palco central. **Preparar/Iniciar eluição** são comandos da própria Montagem, não controles redundantes sobre a cena.
+4. Acompanhar as bandas e a evolução da eluição no palco. A coleta acontece **na saída da coluna, durante a eluição**, por volume ou intervalo de tempo definido pelo modelo.
+5. O sistema distribui as frações em **exatamente dez recipientes numerados F1–F10** como primeira experiência didática. A animação revela o enchimento sucessivo dos tubos; **após a animação**, a Montagem disponibiliza sua seleção direta em uma grade/lista de 10 tubos, sem menu contextual.
+6. Escolher um tubo na própria Montagem coloca a **fração coletada** em investigação. Exibir a identificação F1–F10, o volume e intervalo de coleta e apenas os sinais realmente detectáveis; um tubo pode conter vários componentes, um único componente ou nenhum analito detectável.
+7. Para análise planar, usar o **capilar móvel para retirar uma alíquota do tubo selecionado**, não perfurar a fase estacionária da coluna. Ao levar o capilar até a região do papel/CCD, a cena transita suavemente para o suporte de aplicação sem mudar de módulo nem abrir modal.
+8. Aplicar a alíquota na linha de origem, desenvolver a placa e, se adequado, usar detecção UV/revelação. Marcar o início e o fim do percurso e enviar o cromatograma visual ao relatório.
 
-### Requisitos científicos e de UX
+### Comportamento dos dez tubos e controles
 
-- Uma fração pode conter **mistura/coeluição**, e não deve ser automaticamente interpretada como substância pura.
-- Frações são saídas de **um motor próprio de coluna**, nunca resultado de aplicar `Rf` de cromatografia planar.
-- A composição real/estimada deve ser diferenciada daquilo que o detector permite observar; componentes incolores ou não detectados não podem ser inferidos apenas pelo aspecto visual.
-- O foco é único por padrão, mas admite comparação multisseleção quando solicitado. Trocar de foco **não reinicia nem altera** a eluição e não modifica a amostra.
-- O painel **Em foco** deve ser contextual: papel/CCD mostram a placa e suas manchas; coluna mostra o perfil de eluição, os recipientes coletados e a fração selecionada. Só habilitar `Investigar por CCD` quando houver um protocolo aplicável.
-- Usar rótulos, padrões e textos além de cores; controles acessíveis a mouse, toque e teclado; garantir uma leitura clara em mobile.
+- **Montagem:** contém seleção de amostra, solvente, suporte, preparo, comando de eluição, conjunto de tubos F1–F10 e seleção da fração. Não criar uma segunda doca para isso.
+- **Palco central:** exibe primeiro a coluna e depois, por transição espacial, a bancada de tubos e o papel/placa; o capilar é manipulado por mouse, toque ou teclado.
+- **Ver:** mostra somente observações, detecção e enquadramentos da cena; não duplica seletor de fração ou comandos de preparo.
+- **Dados:** recebe as medidas, curvas, Rf planar e registros do processo; a mudança de tubo selecionado não recalcula nem reinicia a eluição.
+- **Coleta:** dez recipientes são uma decisão didática de UI; o motor de coluna deve conservar dados de eluição contínua, divididos em intervalos/volumes explícitos. Atribuir frações durante a eluição, mesmo que a seleção seja habilitada ao final.
+- **Seleção:** destacar o tubo escolhido diretamente na grade de Montagem, mantendo contexto visual de sua posição e conteúdo. Não afirmar pureza pela cor do tubo nem pela escolha de uma única banda.
+- **Análise:** a fração escolhida gera uma **amostra derivada**, com composição, origem (coluna, intervalo e tubo), detector, condições e proveniência preservadas. Só então é aplicada no papel ou CCD.
+- **Relatório gráfico:** registrar imagem/diagrama da coluna com intervalos de coleta, sequência F1–F10, fração selecionada, trajetória da aplicação, origem, frente móvel, manchas antes/depois de UV e medidas; textos são legendas breves, não substitutos das evidências visuais.
 
-**Estado:** contrato de experiência aprovado para desenvolvimento; interface atual ainda exibe `Tubo em foco` do SIAB e precisa ser substituída apenas quando houver motor de coluna e integração de bancada funcional.
+### Aceite e limites
+
+- O SIAB já oferece uma área Montagem e uma base de trabalho com tubos; isso é **infraestrutura a reaproveitar**, não a afirmação de que a coluna já funciona.
+- Não é fisicamente apropriado representar a coleta rotineira como uma perfuração da banda dentro de uma coluna empacotada; coletar **eluato pela saída da coluna** e usar o capilar na alíquota coletada preserva a lógica laboratorial.
+- O motor de **coluna** será independente do modelo de Rf planar e fornecerá os conteúdos de cada uma das dez frações.
+- **Estado:** especificação de experiência, ainda não implementada/homologada em bancada. A lógica legado do SIAB deve permanecer isolada até haver motor e testes próprios.
