@@ -4,15 +4,28 @@ const h=require("../js/simulation/siac-homologacao.js");
 const base=require("../data/siac/analitos-protocolos.v1.json");
 const report=h.auditarCatalogo(base);
 assert.equal(report.resumo.catalogados,76);
-assert.equal(report.resumo.comUmOuMaisMetodosDeRetencao,32);
-assert.equal(report.resumo.comDoisOuMaisMetodosDeRetencao,30,
+assert.equal(report.resumo.comUmOuMaisMetodosDeRetencao,42);
+assert.equal(report.resumo.comDoisOuMaisMetodosDeRetencao,40,
   "os 20 candidatos com dois métodos devem ter evidência individual");
-assert.equal(report.resumo.comDoisMetodosESolventesContrastantes,30);
+assert.equal(report.resumo.comDoisMetodosESolventesContrastantes,40);
 assert.equal(report.resumo.completamenteHomologados,0,
   "catálogo experimental ainda não homologado segundo a política de dois métodos");
 assert.equal(report.resumo.faltamParaMetaMinima,40);
 assert.equal(report.resumo.faltamParaMetaAmpliada,55);
 assert(report.candidatos.every(c=>!c.homologacaoCompleta));
+const novos40=["methyl_orange","sudan_iv","quercetin","curcumin","caffeine","paracetamol",
+ "ibuprofen","acetylsalicylic_acid","beta_carotene","lutein"];
+for(const id of novos40){
+ const x=h.avaliarSubstancia(id,base);
+ assert(x.metodosComRetencaoIndividual>=2,"dois métodos faltando: "+id);
+ assert(x.comparacoesPossiveis.length>0,"solventes sem contraste real: "+id);
+ assert.equal(x.homologacaoCompleta,false,"não homologar cientificamente apenas por bibliografia");
+}
+const porGrupo=report.candidatos.filter(c=>c.comparacoesPossiveis.length>0)
+ .reduce((acc,c)=>(acc[c.grupo]=(acc[c.grupo]||0)+1,acc),{});
+assert.deepEqual(porGrupo,{corantes_alimenticios:8,pigmentos_vegetais:8,
+ aminoacidos:18,farmacos_e_organicos:4,"indicadores_e_traçadores":2});
+
 
 const matriz=require("../data/siac/matriz-cobertura-dois-metodos.v2.json");
 assert.equal(matriz.resumo.candidatos,report.resumo.catalogados,"matriz e motor divergem: catálogo");
@@ -24,7 +37,7 @@ assert.equal(matriz.resumo.totaisRegistroRfPontual,
  base.protocolos.reduce((n,p)=>n+(p.dadosRf?.length||0),0));
 assert.equal(matriz.resumo.totalRfIntervalos,
  base.protocolos.reduce((n,p)=>n+(p.dadosRfIntervalos?.length||0),0));
-assert.equal(matriz.resumo.totaisRegistroRfPontual,98);
+assert.equal(matriz.resumo.totaisRegistroRfPontual,123);
 assert.equal(matriz.resumo.totalRfIntervalos,1);
 assert.deepEqual(
  matriz.candidatos.filter(c=>c.doisSolventesContrastantesEmDoisMetodos).map(c=>c.id).sort(),
