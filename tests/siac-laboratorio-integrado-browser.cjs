@@ -76,6 +76,48 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
    });
    assert.equal(await page.locator("#siac-catalogo-solvente").isDisabled(),true);
    assert.match(await page.locator("#siac-catalogo-dados").textContent(),/Não há sistema eluente/);
+   // HPTLC científica é consulta dos Rf publicados; não substitui demonstração de coluna.
+   await page.locator('[data-siac-modo="hptlc"]').evaluate(el=>el.click());
+   assert.equal(await page.evaluate(()=>SIAC.laboratorio.snapshot.modo),"hptlc");
+   assert.equal(await page.locator("#siac-hptlc-controls").isVisible(),true);
+   assert.match(await page.locator("#siac-stage").textContent(),/não é uma corrida no SIAC/);
+   assert.equal(await page.locator("#siac-stage .siac-hptlc-band").count(),0);
+   assert.match(await page.locator("#siac-dados").textContent(),/260 nm/);
+   await page.locator("#siac-hptlc-next").evaluate(el=>el.click());
+   assert.equal(await page.evaluate(()=>SIAC.laboratorio.snapshot.hptlc.step),1);
+   assert.equal(await page.locator("#siac-stage .siac-hptlc-applied").count(),2);
+   await page.locator("#siac-hptlc-next").evaluate(el=>el.click());
+   assert.equal(await page.locator("#siac-stage .siac-hptlc-band").count(),2);
+   assert.equal(await page.locator("#siac-stage .siac-hptlc-marker").count(),2);
+   assert.match(await page.locator("#siac-stage").textContent(),/não representam sinais de absorbância/);
+   await page.locator('#siac-ver [data-module="medir"]').evaluate(el=>el.click());
+   assert.match(await page.locator("#siac-ver-dados").textContent(),/Rf experimental/);
+   assert.match(await page.locator("#siac-ver-dados").textContent(),/0,40 ± 0,01/);
+   await page.locator("#siac-hptlc-phase").evaluate(el=>{
+    el.value="rp";el.dispatchEvent(new Event("change",{bubbles:true}));
+   });
+   assert.equal(await page.evaluate(()=>SIAC.laboratorio.snapshot.hptlc.phase),"rp");
+   assert.equal(await page.evaluate(()=>SIAC.laboratorio.snapshot.hptlc.step),0);
+   await page.locator("#siac-hptlc-next").evaluate(el=>el.click());
+   await page.locator("#siac-hptlc-next").evaluate(el=>el.click());
+   assert.match(await page.locator("#siac-ver-dados").textContent(),/0,43 ± 0,01/);
+   await page.locator("#siac-stage .siac-hptlc-band").first().evaluate(el=>el.click());
+   assert.equal(await page.evaluate(()=>SIAC.laboratorio.snapshot.hptlc.focus),"caffeine");
+   await page.locator("#overview-tab").evaluate(el=>el.click());
+   assert.equal(await page.evaluate(()=>SIAC.laboratorio.snapshot.hptlc.view),"comparar");
+   assert.match(await page.locator("#siac-stage").textContent(),/A fase estacionária também muda/);
+   await page.locator("#focus-tab").evaluate(el=>el.click());
+   assert.equal(await page.evaluate(()=>SIAC.laboratorio.snapshot.hptlc.view),"placa");
+   assert.match(await page.locator("#siac-dados").textContent(),/não implementada fisicamente/);
+   if(width===360){
+     const dims=await page.locator("#siac-stage .siac-hptlc-scene").evaluate(el=>({
+       client:el.clientWidth,scroll:el.scrollWidth
+     }));
+     assert(dims.scroll<=dims.client+5,
+      "HPTLC deve caber no palco mobile sem rolagem horizontal interna: "+JSON.stringify(dims));
+   }
+   await page.locator("#siac-hptlc-restart").evaluate(el=>el.click());
+   assert.equal(await page.evaluate(()=>SIAC.laboratorio.snapshot.hptlc.step),0);
    // O modo de demonstração precisa ser explicitamente escolhido antes de
    // simular k e desenhar bandas hipotéticas; o fluxo legado continua disponível.
    await page.locator('[data-siac-modo="demo"]').click();
