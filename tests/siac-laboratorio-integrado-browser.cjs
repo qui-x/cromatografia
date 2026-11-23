@@ -74,7 +74,8 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
     await page.locator("#focus-tab").click({force:true});
     assert.match(await page.locator("#focus-tab").textContent(),/Coluna em foco/);
     // O cronômetro deve realmente avançar o volume a partir da vazão.
-    await page.locator("#siac-velocidade").selectOption("1800");
+    // O seletor SIAB substitui o <select> nativo por um controle próprio.
+    await page.locator("#siac-velocidade").evaluate(el=>{el.value="1800";el.dispatchEvent(new Event("change",{bubbles:true}));});
     await page.locator("#siac-executar").click({force:true});
     await page.waitForFunction(()=>window.SIAC?.laboratorio?.snapshot?.volumeMl>1.7,{timeout:5000});
     await page.locator("#siac-executar").click({force:true});
