@@ -1,8 +1,8 @@
 {
   "index.html": {
     "estado": "adaptado",
-    "motivo": "Apresentação SIAC e carregamento da nova abertura v4 em três béqueres.",
-    "teste": "node tests/siac-identidade.test.cjs"
+    "motivo": "Retirar as 88 assinaturas de recurso e versão SIAB 1.0.0 da página pública, corrigir Sobre e apresentação do Laboratório.",
+    "teste": "node tests/siac-independencia.test.cjs; node tests/siac-identidade.test.cjs"
   },
   "js/ui/abertura.js": {
     "estado": "adaptado",
@@ -16,8 +16,8 @@
   },
   "sw.js": {
     "estado": "adaptado",
-    "motivo": "Novo cache PWA para abertura v4 e página isolada de prévia; sem interferir no cache SIAB.",
-    "teste": "node tests/siac-identidade.test.cjs"
+    "motivo": "Renovar cache único do SIAC e excluir mensagens herdadas sem apagar outras publicações.",
+    "teste": "node tests/siac-independencia.test.cjs"
   },
   "js/a11y/preferencias.js": {
     "estado": "adaptado",
@@ -56,8 +56,8 @@
   },
   "build_standalone.py": {
     "estado": "adaptado",
-    "motivo": "Incorporar SVGs SIAC transparente e de aplicativo ao HTML standalone para evitar ícones quebrados offline.",
-    "teste": "node tests/siac-identidade.test.cjs"
+    "motivo": "Gerar somente novo standalone SIAC com nome próprio; jamais sobrescrever a prova histórica SIAB 1.0.0.",
+    "teste": "node tests/siac-referencia-standalone.test.cjs; node tests/siac-independencia.test.cjs"
   },
   "js/core/roteador.js": {
     "estado": "adaptado",
@@ -76,12 +76,32 @@
   },
   "package.json": {
     "estado": "adaptado",
-    "motivo": "Atualizar identificador e descrição do pacote para SIAC sem alterar a versão ou dependências da base importada.",
-    "teste": "npm ci --ignore-scripts; node tests/siac-identidade.test.cjs"
+    "motivo": "Usar versionamento SIAC 0.2.0-dev.0 e descrição independente.",
+    "teste": "node tests/siac-independencia.test.cjs"
   },
   "package-lock.json": {
     "estado": "adaptado",
-    "motivo": "Sincronizar o nome do pacote no lockfile com package.json mantendo a resolução exata das dependências.",
-    "teste": "npm ci --ignore-scripts"
+    "motivo": "Sincronizar versionamento e dependências do SIAC.",
+    "teste": "node tests/siac-independencia.test.cjs"
+  },
+  "css/investigacao.css": {
+    "estado": "adaptado",
+    "motivo": "Remover gradiente violeta e halo roxo herdado do card Laboratório; usar tokens de superfície SIAC.",
+    "teste": "node tests/siac-independencia.test.cjs; node tests/siac-home-browser.cjs"
+  },
+  "js/core/namespace.js": {
+    "estado": "adaptado",
+    "motivo": "Criar estado SIAC e número de versão próprios, mantendo alias SIAB temporário para preservar paridade dos módulos legados.",
+    "teste": "node tests/siac-independencia.test.cjs; node tests/siac-laboratorio-integrado-browser.cjs"
+  },
+  "js/core/compatibilidade.js": {
+    "estado": "adaptado",
+    "motivo": "Atualizar mensagens de recuperação de inicialização à marca SIAC sem alterar API legada.",
+    "teste": "node tests/siac-independencia.test.cjs"
+  },
+  "js/init/pwa.js": {
+    "estado": "adaptado",
+    "motivo": "Atualizar mensagens e limitar limpeza de PWA ao escopo do SIAC, sem afetar outros simuladores.",
+    "teste": "node tests/siac-independencia.test.cjs; node tests/siac-home-browser.cjs"
   }
 }

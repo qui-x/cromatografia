@@ -83,9 +83,9 @@
     aviso.setAttribute("role", "alert");
     var noApp = window.SIABPlataforma && window.SIABPlataforma.empacotado;
     aviso.innerHTML =
-      "<strong>Não foi possível concluir a abertura do SIAB.</strong>" +
+      "<strong>Não foi possível concluir a abertura do SIAC.</strong>" +
       (noApp
-        ? "<p>Feche o aplicativo e abra de novo. Se continuar, reinstale a versão mais recente do SIAB neste dispositivo.</p>"
+        ? "<p>Feche o aplicativo e abra de novo. Se continuar, reinstale a versão mais recente do SIAC neste dispositivo.</p>"
         : "<p>Recarregue a página com internet. Se continuar, abra o endereço publicado no Safari, Chrome, Firefox ou Edge atualizado. No iPhone e iPad, atualize também o sistema e evite a prévia de arquivos ou de aplicativos de mensagens.</p>") +
       '<button type="button" class="secondary-btn">Recarregar página</button>';
     aviso.querySelector("button").addEventListener("click", function () {

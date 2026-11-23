@@ -20,17 +20,17 @@
     />
     <title>SIAC — A Identidade das Cores Ocultas</title>
     <link rel="manifest" href="manifest.webmanifest" />
-    <link rel="icon" type="image/svg+xml" href="assets/siac-icone.svg?v=alpha-1" />
+    <link rel="icon" type="image/svg+xml" href="assets/siac-icone.svg" />
     <link rel="apple-touch-icon" href="assets/icones/apple-touch-icon.png" />
     <link
       rel="stylesheet"
-      href="vendor/dialog-polyfill/dialog-polyfill.css?v=1.0.0+20261012"
+      href="vendor/dialog-polyfill/dialog-polyfill.css"
     />
-    <script src="js/core/plataforma.js?v=1.0.0+20261012"></script>
-    <link rel="stylesheet" href="css/stylesiab.css?v=1.0.0+20261012" />
-    <link rel="stylesheet" href="css/mobile-study.css?v=1.0.0+20261012" />
-    <script src="js/core/compatibilidade.js?v=1.0.0+20261111-indexeddb100"></script>
-    <script src="a11y.js?v=1.0.0+20261012"></script>
+    <script src="js/core/plataforma.js"></script>
+    <link rel="stylesheet" href="css/stylesiab.css" />
+    <link rel="stylesheet" href="css/mobile-study.css" />
+    <script src="js/core/compatibilidade.js"></script>
+    <script src="a11y.js"></script>
     <!-- Animação de abertura desligada pelo usuário: esconde antes de desenhar (ver js/ui/abertura.js). -->
     <script>
       try {
@@ -38,15 +38,15 @@
           document.documentElement.dataset.abertura = "off";
       } catch (erro) {}
     </script>
-    <link rel="stylesheet" href="css/investigacao.css?v=1.0.0+20261012" />
-    <link rel="stylesheet" href="css/workspace.css?v=1.0.0+20261012" />
-    <link rel="stylesheet" href="css/manual.css?v=1.0.0+20261012" />
-    <link rel="stylesheet" href="css/mobile-controls.css?v=1.0.0+20261012" />
-    <link rel="stylesheet" href="css/refinements.css?v=1.0.0+20261012" />
-    <link rel="stylesheet" href="css/aplicativo.css?v=1.0.0+20261012" />
-    <link rel="stylesheet" href="css/siac-identidade.css?v=siac-0.1.0" />
-    <link rel="stylesheet" href="css/siac-abertura-v4.css?v=siac-v4.7-profundidade-20261122" />
-    <link rel="stylesheet" href="css/siac-laboratorio-integrado.css?v=siac-papel-bequer-1" />
+    <link rel="stylesheet" href="css/investigacao.css" />
+    <link rel="stylesheet" href="css/workspace.css" />
+    <link rel="stylesheet" href="css/manual.css" />
+    <link rel="stylesheet" href="css/mobile-controls.css" />
+    <link rel="stylesheet" href="css/refinements.css" />
+    <link rel="stylesheet" href="css/aplicativo.css" />
+    <link rel="stylesheet" href="css/siac-identidade.css" />
+    <link rel="stylesheet" href="css/siac-abertura-v4.css" />
+    <link rel="stylesheet" href="css/siac-laboratorio-integrado.css" />
   </head>
   <body>
     <noscript
@@ -197,8 +197,8 @@
             <span class="inicio-lab-convite">Explore na prática</span>
             <strong>Laboratório</strong>
             <span class="inicio-card-descricao"
-              >Monte sua bancada, combine soluções e acompanhe as
-              transformações.</span
+              >Monte a coluna, acompanhe a separação e colete as
+              frações cromatográficas.</span
             >
             <span class="inicio-lab-cores" aria-hidden="true"
               ><i></i><i></i><i></i><i></i><i></i
@@ -2082,7 +2082,7 @@
       aria-labelledby="about-title"
     >
       <div class="dialog-heading">
-        <h2 id="about-title">Sobre o SIAB</h2>
+        <h2 id="about-title">Sobre o SIAC</h2>
         <button
           type="button"
           class="icon-btn"
@@ -2092,10 +2092,10 @@
           ×
         </button>
       </div>
-      <p><strong>Simulador de Indicadores Ácido-Base</strong></p>
+      <p><strong>Simulador Interativo de Análise Cromatográfica</strong></p>
       <p>
-        Uma bancada virtual para investigar soluções, observar transformações e
-        interpretar evidências.
+        Uma bancada virtual para estudar separações, acompanhar a eluição e
+        interpretar evidências cromatográficas.
       </p>
       <p>Versão <span id="about-version"></span></p>
       <p>
@@ -2420,78 +2420,78 @@
         </button>
       </form>
     </dialog>
-    <script src="vendor/dialog-polyfill/dialog-polyfill.js?v=1.0.0+20261012"></script>
-    <script src="js/core/namespace.js?v=1.0.0+20261012"></script>
-    <script src="js/ui/icons.js?v=1.0.0+20261012"></script>
-    <script src="js/core/util.js?v=1.0.0+20261012"></script>
-    <script src="js/data/catalogo.js?v=1.0.0+20261012"></script>
-    <script src="js/data/cotidiano.js?v=1.0.0+20261012"></script>
-    <script src="js/data/sais.js?v=1.0.0+20261012"></script>
-    <script src="js/data/ambiente-saude.js?v=1.0.0+20261012"></script>
-    <script src="js/data/reagentes.js?v=1.0.0+20261012"></script>
-    <script src="js/data/amostras.js?v=1.0.0+20261012"></script>
-    <script src="js/data/funcoes.js?v=1.0.0+20261012"></script>
-    <script src="js/simulation/quimica.js?v=1.0.0+20261012"></script>
-    <script src="js/simulation/condutividade.js?v=1.0.0+20261012"></script>
-    <script src="js/core/estado.js?v=1.0.0+20261012"></script>
-    <script src="js/ui/abertura.js?v=siac-v4.7-profundidade-20261122"></script>
-    <script src="js/core/loja.js?v=1.0.0+20261012"></script>
-    <script src="js/core/persistencia.js?v=1.0.0+20261111-indexeddb100"></script>
-    <script src="js/core/migracoes.js?v=1.0.0+20261012"></script>
-    <script src="js/core/progresso.js?v=1.0.0+20261111-indexeddb100"></script>
-    <script src="js/core/roteador.js?v=1.0.0+20261012"></script>
-    <script src="js/data/missoes.js?v=1.0.0+20261012"></script>
-    <script src="js/data/temas.js?v=1.0.0+20261012"></script>
-    <script src="js/data/montagens.js?v=1.0.0+20261012"></script>
-    <script src="js/data/experimentos.js?v=1.0.0+20261012"></script>
-    <script src="js/data/manual.js?v=1.0.0+20261012"></script>
-    <script src="js/core/activity-context.js?v=1.0.0+20261012"></script>
-    <script src="js/simulation/motor-missoes.js?v=1.0.0+20261012"></script>
-    <script src="js/ui/tubo.js?v=1.0.0+20261012"></script>
-    <script src="js/ui/regua-ph.js?v=1.0.0+20261012"></script>
-    <script src="js/ui/grafico.js?v=1.0.0+20261012"></script>
-    <script src="js/ui/lupa.js?v=1.0.0+20261012"></script>
-    <script src="js/ui/condutimetro.js?v=1.0.0+20261012"></script>
-    <script src="js/ui/equacao.js?v=1.0.0+20261012"></script>
-    <script src="js/ui/som.js?v=1.0.0+20261012"></script>
-    <script src="js/ui/conta-gotas.js?v=1.0.0+20261012"></script>
-    <script src="js/ui/seletores.js?v=1.0.0+20261012"></script>
-    <script src="js/ui/prateleira.js?v=1.0.0+20261012"></script>
-    <script src="js/ui/modulos.js?v=1.0.0+20261012"></script>
-    <script src="js/ui/layout-bancada.js?v=1.0.0+20261012"></script>
-    <script src="js/simulation/instrumentos.js?v=1.0.0+20261012"></script>
-    <script src="js/ui/render.js?v=1.0.0+20261012"></script>
-    <script src="js/simulation/medicoes.js?v=1.0.0+20261012"></script>
-    <script src="js/ui/ver-investigacao.js?v=1.0.0+20261012"></script>
-    <script src="js/ui/gaveta.js?v=1.0.0+20261111-indexeddb100"></script>
-    <script src="js/ui/workspace.js?v=1.0.0+20261012"></script>
-    <script src="js/ui/trilho.js?v=1.0.0+20261012"></script>
-    <script src="js/ui/tour.js?v=1.0.0+20261012"></script>
-    <script src="js/ui/segredo.js?v=1.0.0+20261012"></script>
-    <script src="js/ui/impressao.js?v=1.0.0+20261012"></script>
-    <script src="js/ui/selecao-tubos.js?v=1.0.0+20261012"></script>
-    <script src="js/telas/bancada.js?v=1.0.0+20261012"></script>
-    <script src="js/telas/laboratorio.js?v=1.0.0+20261012"></script>
-    <script src="js/telas/missao.js?v=1.0.0+20261012"></script>
-    <script src="js/telas/inicio.js?v=1.0.0+20261012"></script>
-    <script src="js/telas/aprender.js?v=1.0.0+20261012"></script>
-    <script src="js/telas/roteiros.js?v=1.0.0+20261012"></script>
-    <script src="js/telas/relatorios.js?v=1.0.0+20261012"></script>
-    <script src="js/core/atividade-v2.js?v=1.0.0+20261012"></script>
-    <script src="js/core/atividades.js?v=1.0.0+20261012"></script>
-    <script src="js/telas/professor.js?v=1.0.0+20261012"></script>
-    <script src="js/telas/caderno.js?v=1.0.0+20261012"></script>
-    <script src="js/telas/manual.js?v=1.0.0+20261012"></script>
-    <script src="js/a11y/preferencias.js?v=1.0.0+20261012"></script>
-    <script src="js/init/pwa.js?v=1.0.0+20261012"></script>
-    <script src="js/ui/activity-ui.js?v=1.0.0+20261012"></script>
-    <script src="js/ui/abrir-atividade.js?v=1.0.0+20261012"></script>
-    <script src="js/init/integracao.js?v=1.0.0+20261012"></script>
-    <script src="js/simulation/siac-coluna.js?v=siac-integra-1"></script>
-    <script src="js/simulation/siac-fracionamento.js?v=siac-integra-1"></script>
-    <script src="js/ui/siac-laboratorio-integrado.js?v=siac-papel-bequer-1"></script>
-    <script src="js/init/app.js?v=1.0.0+20261111-indexeddb100"></script>
-    <script src="js/ui/mobile-study.js?v=1.0.0+20261012"></script>
+    <script src="vendor/dialog-polyfill/dialog-polyfill.js"></script>
+    <script src="js/core/namespace.js"></script>
+    <script src="js/ui/icons.js"></script>
+    <script src="js/core/util.js"></script>
+    <script src="js/data/catalogo.js"></script>
+    <script src="js/data/cotidiano.js"></script>
+    <script src="js/data/sais.js"></script>
+    <script src="js/data/ambiente-saude.js"></script>
+    <script src="js/data/reagentes.js"></script>
+    <script src="js/data/amostras.js"></script>
+    <script src="js/data/funcoes.js"></script>
+    <script src="js/simulation/quimica.js"></script>
+    <script src="js/simulation/condutividade.js"></script>
+    <script src="js/core/estado.js"></script>
+    <script src="js/ui/abertura.js"></script>
+    <script src="js/core/loja.js"></script>
+    <script src="js/core/persistencia.js"></script>
+    <script src="js/core/migracoes.js"></script>
+    <script src="js/core/progresso.js"></script>
+    <script src="js/core/roteador.js"></script>
+    <script src="js/data/missoes.js"></script>
+    <script src="js/data/temas.js"></script>
+    <script src="js/data/montagens.js"></script>
+    <script src="js/data/experimentos.js"></script>
+    <script src="js/data/manual.js"></script>
+    <script src="js/core/activity-context.js"></script>
+    <script src="js/simulation/motor-missoes.js"></script>
+    <script src="js/ui/tubo.js"></script>
+    <script src="js/ui/regua-ph.js"></script>
+    <script src="js/ui/grafico.js"></script>
+    <script src="js/ui/lupa.js"></script>
+    <script src="js/ui/condutimetro.js"></script>
+    <script src="js/ui/equacao.js"></script>
+    <script src="js/ui/som.js"></script>
+    <script src="js/ui/conta-gotas.js"></script>
+    <script src="js/ui/seletores.js"></script>
+    <script src="js/ui/prateleira.js"></script>
+    <script src="js/ui/modulos.js"></script>
+    <script src="js/ui/layout-bancada.js"></script>
+    <script src="js/simulation/instrumentos.js"></script>
+    <script src="js/ui/render.js"></script>
+    <script src="js/simulation/medicoes.js"></script>
+    <script src="js/ui/ver-investigacao.js"></script>
+    <script src="js/ui/gaveta.js"></script>
+    <script src="js/ui/workspace.js"></script>
+    <script src="js/ui/trilho.js"></script>
+    <script src="js/ui/tour.js"></script>
+    <script src="js/ui/segredo.js"></script>
+    <script src="js/ui/impressao.js"></script>
+    <script src="js/ui/selecao-tubos.js"></script>
+    <script src="js/telas/bancada.js"></script>
+    <script src="js/telas/laboratorio.js"></script>
+    <script src="js/telas/missao.js"></script>
+    <script src="js/telas/inicio.js"></script>
+    <script src="js/telas/aprender.js"></script>
+    <script src="js/telas/roteiros.js"></script>
+    <script src="js/telas/relatorios.js"></script>
+    <script src="js/core/atividade-v2.js"></script>
+    <script src="js/core/atividades.js"></script>
+    <script src="js/telas/professor.js"></script>
+    <script src="js/telas/caderno.js"></script>
+    <script src="js/telas/manual.js"></script>
+    <script src="js/a11y/preferencias.js"></script>
+    <script src="js/init/pwa.js"></script>
+    <script src="js/ui/activity-ui.js"></script>
+    <script src="js/ui/abrir-atividade.js"></script>
+    <script src="js/init/integracao.js"></script>
+    <script src="js/simulation/siac-coluna.js"></script>
+    <script src="js/simulation/siac-fracionamento.js"></script>
+    <script src="js/ui/siac-laboratorio-integrado.js"></script>
+    <script src="js/init/app.js"></script>
+    <script src="js/ui/mobile-study.js"></script>
     <!-- O verificador de abertura é concluído pelo bootstrap assíncrono. -->
   </body>
 </html>
