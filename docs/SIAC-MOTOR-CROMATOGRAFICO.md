@@ -69,3 +69,39 @@ Os valores são **exemplos matemáticos artificiais**. Não têm vinculação co
 - University of Delhi, material de técnica e revelação UV: https://chemistry.du.ac.in/wp-content/uploads/2023/01/Thin-Layer-Chromatography-TLC.pdf
 
 As equações de migração e largura acima são escolhas de modelo didático parametrizado, **não afirmações extraídas da IUPAC**.
+
+## Coletor de frações F1–F10 — módulo independente v0.1
+
+**Arquivo:** `js/simulation/siac-fracionamento.js`. Este arquivo **não implementa a química ou a cinética da coluna**: recebe um perfil de saída externo, em concentração (mg/mL) ao longo de volume acumulado (mL), e distribui o eluato em dez tubos ou descarte. Isso permite validar a mecânica de coleta sem inventar dados de retenção.
+
+**Controle individual:** o estudante define para cada tubo F1–F10 uma janela `[inicioMl, fimMl)` do **volume cumulativo de eluato**, com um passo de 0,1 mL por padrão e extensão 0,1–10 mL no experimento didático inicial. Os dez tubos são vagas disponíveis; tubos sem janela permanecem inativos. Janelas não podem se sobrepor para uma saída única.
+
+**Exemplo:** F1 recebe de 0,6 a 0,8 mL; F2 recebe de 3,5 a 3,7 mL. O líquido entre esses intervalos é desviado para descarte/recuperação e contabilizado, mesmo quando contém analitos. O frasco não é preenchido artificialmente no momento do clique: o conteúdo só chega após a eluição atingir a janela configurada.
+
+```js
+const F=SIAC.fractionCollector;
+const plano=F.prepare({volumeTotalMl:10,resolucaoMl:0.1,janelas:[
+  {frasco:"F1",inicioMl:0.6,fimMl:0.8},
+  {frasco:"F2",inicioMl:3.5,fimMl:3.7}
+]});
+const destino=F.routeAt(plano,3.6); // "F2"
+const saida=F.integrate(plano,[
+  {inicioMl:0,fimMl:10,concentracoesMgPorMl:{A:1,B:0.5}}
+]);
+// saida.frascos[0], saida.frascos[1], saida.descarte
+```
+
+**Premissas da integração:** concentrações constantes em cada trecho de perfil, com unidades explícitas. Cada massa é obtida por concentração × volume coletado no intervalo. O algoritmo preserva volume e massa entre tubos e descarte e não interpreta o conteúdo como puro por uma cor ou pelo instante de coleta.
+
+### Pendente
+
+- **Motor físico-químico da coluna:** resolver bandas, tempos de retenção, fluxo, dispersão e perfil de composição do eluato em função de condições reais e proveniência.
+- **Mapeamento visual:** apontar para uma banda **dentro da coluna** deve informar uma estimativa de chegada à saída com incerteza, e não mapear altura diretamente em mL. A coleta efetiva ocorre na saída.
+- **Coleta manual ao vivo:** registrar início/fim pelo volume atual (e atrasos de válvula/transporte, se modelados); mudanças após a corrida apenas em modo de reprodução/gravação.
+- **Interface:** na doca Montagem exibir dez tubos e dois controles **somente do tubo selecionado**, por arrasto sobre o perfil ou entrada numérica acessível. Registrar o perfil, o descarte e cada intervalo no relatório gráfico.
+- **Transição para capilar/papel:** criar uma amostra derivada do tubo realmente coletado e preservá-la com proveniência antes de habilitar análise planar.
+
+**Ensaios automatizados:** `node tests/siac-fracionamento.test.cjs`. Testam os exemplos F1 0,6 mL e F2 3,5 mL, frascos inativos, limites, ausência de janelas sobrepostas, coeluição, descarte, volumes e conservação de massa.
+
+**Base técnica de coletores reais:** Gilson FC 204/FC 203 (coleta por janelas e desvio fora delas), Bio-Rad BioFrac (tempo, volume ou gotas), Thermo Fisher (frações e válvula de desvio). O uso de dez tubos fixos e a resolução de 0,1 mL são decisões didáticas do SIAC, não valores universais de instrumentação.
+
