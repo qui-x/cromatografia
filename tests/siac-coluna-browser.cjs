@@ -73,6 +73,16 @@ const {chromium}=require("playwright");
    }
    await page.close();
   }
+  cp.execFileSync("node",["scripts/siac-coluna-standalone.cjs"],{cwd:path.join(__dirname,"..")});
+  const offline=await navegador.newPage({viewport:{width:1024,height:768}});
+  const errosOffline=[];
+  offline.on("pageerror",e=>errosOffline.push(e.message));
+  const arquivo="file://"+path.join(__dirname,"..","dist","siac-coluna-previa-standalone.html");
+  await offline.goto(arquivo,{waitUntil:"load"});
+  await offline.locator("#frascos button").first().waitFor();
+  assert.equal(await offline.locator("#frascos button").count(),10);
+  assert.equal(errosOffline.length,0,"Falha no HTML standalone: "+errosOffline.join("; "));
+  await offline.close();
   console.log("SIAC coluna: 320, 360, 768, 1024, 1440px; interação F2, animação e relatório SVG aprovados.");
  }finally{
   await navegador?.close();servidor.kill();
