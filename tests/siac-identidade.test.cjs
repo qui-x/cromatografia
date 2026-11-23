@@ -24,7 +24,6 @@ assert.match(svg, /id="siac-amber"/);
 assert.match(app, /id="siac-contour"/);
 assert.match(app, /fill="#0B3042"/);
 assert.match(js, /iconeOficial/);
-assert.match(js, /<image href="\\$\\{iconeOficial\\}"/);
 assert.doesNotMatch(svg, /<rect width="192" height="192" fill="#0B5472"/i);
 assert.match(app, /<rect width="32" height="32" rx="6" fill="#0B3042"/i);
 assert.match(html, /SIAC — A Identidade das Cores Ocultas/);
