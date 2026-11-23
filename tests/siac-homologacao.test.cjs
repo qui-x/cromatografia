@@ -13,6 +13,26 @@ assert.equal(report.resumo.completamenteHomologados,0,
 assert.equal(report.resumo.faltamParaMetaMinima,40);
 assert.equal(report.resumo.faltamParaMetaAmpliada,55);
 assert(report.candidatos.every(c=>!c.homologacaoCompleta));
+
+const matriz=require("../data/siac/matriz-cobertura-dois-metodos.v2.json");
+assert.equal(matriz.resumo.candidatos,report.resumo.catalogados,"matriz e motor divergem: catálogo");
+assert.equal(matriz.resumo.comPeloMenosUmRfIndividual,report.resumo.comUmOuMaisMetodosDeRetencao);
+assert.equal(matriz.resumo.comDoisMetodosDocumentados,report.resumo.comDoisOuMaisMetodosDeRetencao);
+assert.equal(matriz.resumo.comDoisMetodosESolventesDistintos,report.resumo.comDoisMetodosESolventesContrastantes);
+assert.equal(matriz.resumo.homologadosNaRegraNova,report.resumo.completamenteHomologados);
+assert.equal(matriz.resumo.totaisRegistroRfPontual,
+ base.protocolos.reduce((n,p)=>n+(p.dadosRf?.length||0),0));
+assert.equal(matriz.resumo.totalRfIntervalos,
+ base.protocolos.reduce((n,p)=>n+(p.dadosRfIntervalos?.length||0),0));
+assert.equal(matriz.resumo.totaisRegistroRfPontual,66);
+assert.equal(matriz.resumo.totalRfIntervalos,1);
+assert.deepEqual(
+ matriz.candidatos.filter(c=>c.doisSolventesContrastantesEmDoisMetodos).map(c=>c.id).sort(),
+ report.candidatos.filter(c=>c.comparacoesPossiveis.length>0).map(c=>c.id).sort(),
+ "pares de métodos em pesquisa precisam coincidir entre a matriz publicada e o motor");
+assert(matriz.candidatos.every(c=>!c.homologacaoCompleta),
+ "não promover tabela didática para homologação");
+
 assert.equal(h.avaliarSubstancia("glycine",base).metodosComRetencaoIndividual,4);
 assert.equal(h.avaliarSubstancia("chlorophyll_a",base).metodosComRetencaoIndividual,2);
 assert.equal(h.avaliarSubstancia("pheophytin_b",base).metodosComRetencaoIndividual,2);
