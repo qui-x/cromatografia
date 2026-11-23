@@ -28,7 +28,7 @@ assert.match(app, /id="siac-fundo-transparente"/);
 assert.match(svg, /filter="url\(#siac-fundo-transparente\)"/);
 assert.match(app, /filter="url\(#siac-fundo-transparente\)"/);
 assert.doesNotMatch(app, /<rect width="160" height="160" rx="28" fill="#002e40"/i);
-assert.match(html, /<title>A identidade das cores oculta — SIAC<\/title>/);
+assert.match(html, /<title>A Identidade das Cores Ocultas — SIAC<\/title>/);
 assert.match(html, /<svg class="abertura-tubos"/);
 assert.doesNotMatch(html, /<div class="abertura-marca">\s*<img/);
 assert.match(html, /rel="icon" type="image\/svg\+xml" href="assets\/siac-icone\.svg(?:\?[^"]+)?"/);

@@ -5,7 +5,7 @@
    página. */
 // Abertura visual original restaurada. Nova versão do cache elimina modelos,
 // player de vídeo e bibliotecas de abertura 3D das cópias offline.
-const VERSAO = "siac-v0.2.0-dev-titulo-identidade-20261123";
+const VERSAO = "siac-v0.2.0-dev-titulo-plural-20261123";
 // Projetos do mesmo usuario.github.io compartilham a origem. Cada publicação
 // precisa de seu próprio cache; atualizar uma cópia não deve apagar outra.
 const BASE = new URL(self.registration.scope);
