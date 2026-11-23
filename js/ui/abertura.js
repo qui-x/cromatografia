@@ -104,6 +104,17 @@ SIAB.abertura = (() => {
         </linearGradient>`
       ])
     ).join("");
+    // O depósito inicial é uma região de concentração difusa, não um círculo.
+    // Cada amostra recebe o próprio gradiente, seguindo sua cor de partida.
+    const depositos=AMOSTRAS.map((amostra,i)=>`
+      <radialGradient id="siac-v4-deposito-${i}" cx="45%" cy="44%" r="82%" fx="40%" fy="39%">
+        <stop offset="0%" stop-color="${amostra.cor}" stop-opacity=".48"/>
+        <stop offset="19%" stop-color="${amostra.cor}" stop-opacity=".40"/>
+        <stop offset="43%" stop-color="${misturar(amostra.cor,"#FFFFFF",.18)}" stop-opacity=".27"/>
+        <stop offset="66%" stop-color="${misturar(amostra.cor,"#FFFFFF",.42)}" stop-opacity=".13"/>
+        <stop offset="85%" stop-color="${misturar(amostra.cor,"#FFFFFF",.70)}" stop-opacity=".045"/>
+        <stop offset="100%" stop-color="${misturar(amostra.cor,"#FFFFFF",.85)}" stop-opacity="0"/>
+      </radialGradient>`).join("");
     return `
       <defs>
         <pattern id="siac-v4-papel-fibra" width="17" height="19" patternUnits="userSpaceOnUse">
@@ -133,6 +144,7 @@ SIAB.abertura = (() => {
             <rect x="${cx-65}" y="100" width="130" height="289" rx="2"/>
           </clipPath>`).join("")}
         ${pigmentos}
+        ${depositos}
       </defs>
     `;
   }
@@ -199,8 +211,19 @@ SIAB.abertura = (() => {
             <g class="siac-v4-regua">
               ${Array.from({length:8},(_,k)=>`<path d="M${papelX+5} ${138+k*25}h${k%2?4:9}"/>`).join("")}
             </g>
-            <circle data-ponto="${i}" cx="${x}" cy="${ORIGEM}" r="5.5"
-              fill="${a.cor}" class="siac-v4-ponto"/>
+            <g data-deposito="${i}" class="siac-v4-deposito"
+              transform="translate(${x} ${ORIGEM})">
+              <path d="M-22 -2 C-20 -9 -9 -13 3 -11
+                C13 -12 21 -7 23 2 C19 9 8 12 -5 11
+                C-14 10 -22 5 -22 -2Z"
+                fill="url(#siac-v4-deposito-${i})"
+                filter="url(#siac-v4-absorvido)"/>
+              <path d="M-29 -1 C-26 -12 -9 -17 6 -15
+                C17 -14 29 -8 30 2 C25 14 10 17 -4 15
+                C-19 13 -28 8 -29 -1Z"
+                fill="url(#siac-v4-deposito-${i})" opacity=".28"
+                filter="url(#siac-v4-borda-difusa)"/>
+            </g>
           </g>
           <path d="M${papelX+7} 106v6M${papelX+123} 106v6" class="siac-v4-folha-detalhe"/>
         </g>
@@ -243,7 +266,7 @@ SIAB.abertura = (() => {
       conjunto:svg.querySelector(`[data-placa="${a.id}"]`),
       frente:svg.querySelector(`[data-frente="${i}"]`),
       molhado:svg.querySelector(`[data-umidade="${i}"]`),
-      ponto:svg.querySelector(`[data-ponto="${i}"]`),
+      deposito:svg.querySelector(`[data-deposito="${i}"]`),
       capilar:svg.querySelector(`[data-capilar="${i}"]`),
       bandas:a.bandas.map((_,j)=>({
         grupo:svg.querySelector(`[data-mancha="${i}-${j}"]`),
@@ -264,7 +287,12 @@ SIAB.abertura = (() => {
       // Cada placa entra na própria câmara, sem afetar as demais.
       r.papel.setAttribute("transform",`translate(0 ${(-34*(1-k.imersao)).toFixed(2)})`);
       r.conjunto.style.opacity=String(entrada*(1-corte));
-      r.ponto.style.opacity=String(aplicado*(1-suave(faixa(p.u,0,.38))));
+      // Aplicação inicial impregnada: crescimento difuso e desaparecimento
+      // progressivo à medida que a fase móvel carrega os componentes.
+      r.deposito.style.opacity=String(aplicado*(1-suave(faixa(p.u,0,.38))));
+      const espalhamento=.76+.24*aplicado;
+      r.deposito.setAttribute("transform",
+        `translate(${cx} ${ORIGEM}) scale(${espalhamento.toFixed(3)} ${(.82+.18*aplicado).toFixed(3)})`);
       // O capilar se aproxima, toca a linha de origem e sai antes da imersão.
       const entre=faixa(t,410+i*225,880+i*225);
       const inout=entre<.34?suave(entre/.34):1-suave((entre-.34)/.66);

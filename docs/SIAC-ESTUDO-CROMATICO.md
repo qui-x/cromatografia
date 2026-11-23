@@ -58,3 +58,8 @@ O degradê das manchas passou de 6 para **9 pontos tonais** (núcleo profundo, c
 A abertura passa a tratar a mancha como **pigmento distribuído sobre uma superfície porosa**, não como um oval sobreposto com efeito luminoso. Foram removidas as elipses centrais, substituídas por **dois caminhos orgânicos, assimétricos**: um halo fraco e uma área principal difusa. O gradiente radial mantém nove transições, mas com intensidade máxima reduzida a 0,74 e expansão tonal progressiva. As manchas se misturam ao branco-gelo/creme do papel (modo multiply), preservando a cor do analito.
 
 O rastro continua com sete transições tonais, mas aparece com opacidade bem menor, alongamento contínuo e largura decrescente. A posição das bandas continua ligada à frente da fase móvel; pequenas assimetrias são fixas por banda para evitar formas repetidas. A cena preserva três béqueres independentes, rótulos sem repetição e o desvanecimento final do SIAB. **A aparência é artística e não fornece medições cromatográficas.**
+
+## Revisão v4.6 — registro inicial somente em degradê
+O círculo central sólido que indicava a amostra na linha de origem foi **removido integralmente**. O registro inicial passa a usar duas regiões orgânicas sobrepostas, com um gradiente radial próprio para cada amostra, menor intensidade no núcleo e bordas que se dissolvem no papel. A amostra surge com o contato do capilar e desaparece gradualmente durante a migração, sem formar um ponto gráfico rígido.
+
+Os três béqueres, as 10 bandas já difusas, o ícone oficial central e o desvanecimento final do SIAB permanecem inalterados. Os gradientes indicam concentração visual ilustrativa, não valores experimentais calibrados.
