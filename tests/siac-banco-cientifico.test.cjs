@@ -28,7 +28,7 @@ assert.equal(analytes.status,"PESQUISA_NAO_HOMOLOGADA");
 assert.equal(engines.status,"candidatos_nao_integrados");
 assert.equal(solvents.solventes.length,41);
 assert.equal(analytes.candidatos.length,76);
-assert.equal(analytes.protocolos.length,5);
+assert.equal(analytes.protocolos.length,9);
 assert.equal(engines.motores.length,9);
 assert.equal(stationary.status,"PESQUISA_NAO_HOMOLOGADA");
 assert.equal(stationary.fasesEstacionarias.length,18);
@@ -104,7 +104,23 @@ for(const p of analytes.protocolos){
     rfs++;
   }
 }
-assert.equal(rfs,13);
+assert.equal(rfs,66);
+let intervalos=0;
+for(const p of analytes.protocolos){
+ for(const r of (p.dadosRfIntervalos||[])){
+  assert(r.analito&&candidates.has(r.analito),"Rf em intervalo precisa de identidade no catálogo");
+  assert(Number.isFinite(r.rfMin)&&Number.isFinite(r.rfMax),"extremos de Rf não numéricos");
+  assert(r.rfMin>=0&&r.rfMin<=r.rfMax&&r.rfMax<=1,"Rf intervalo inconsistente");
+  assert(analytes.fontes[r.fonte],"intervalo sem fonte própria");
+  assert.equal(r.homologado,false,"intervalo em pesquisa não pode estar homologado");
+  intervalos++;
+ }
+}
+assert.equal(intervalos,1,"conservar o intervalo original de feofitina b");
+for(const id of ["tlc_aminoacids_ukil_2013_propanol_water_70_30","tlc_spinach_dobado_hexane_acetone_7_3",
+ "tlc_aminoacids_protechex_etanol96_water_7_3","tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"])
+ assert(analytes.protocolos.some(p=>p.id===id&&p.status!=="homologado"),
+ "método rastreado sem homologação automática: "+id);
 assert.deepEqual(analytes.protocolos.find(x=>x.id==="tlc_aminoacids_amrita_12_3_5").faseMovel.componentes.map(x=>x.partes),[12,3,5]);
 assert.deepEqual(analytes.protocolos.find(x=>x.id==="tlc_spinach_quach_2004").faseMovel.componentes.map(x=>x.partes),[60,16,10,10,4]);
 for(const model of engines.motores){url(model.url);assert(model.acao&&model.adequacao&&model.license);}
