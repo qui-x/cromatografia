@@ -59,7 +59,8 @@ jobs:
           npm ci --ignore-scripts
           npx playwright install --with-deps chromium
       - name: Navegar em sete dimensões de tela
-        run: node tests/siac-visualizacao-browser.cjs
+        run: |
+          node tests/siac-visualizacao-browser.cjs
           node tests/siac-logo-browser.cjs
       - name: Guardar capturas
         if: always()
