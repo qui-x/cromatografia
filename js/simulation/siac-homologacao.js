@@ -59,14 +59,17 @@
    typeof d.volumeRetencaoMl==="number"&&d.volumeRetencaoMl>0&&
    typeof d.volumeMortoMl==="number"&&d.volumeMortoMl>0&&
    d.volumeRetencaoMl>=d.volumeMortoMl);
-  return {rf:individual,coluna};
+  const intervalos=(metodo?.dadosRfIntervalos||[]).filter(d=>d.analito===analito&&
+   Number.isFinite(d.rfMin)&&Number.isFinite(d.rfMax)&&
+   d.rfMin>=0&&d.rfMin<=d.rfMax&&d.rfMax<=1);
+  return {rf:individual,intervalos,coluna};
  }
  function metodoCandidato(analito,p,porId,fonteCatalogo){
   const fm=faseMovel(p,porId);
   const medida=compostoEspecifico(analito,p);
   const configuracao=solventes(fm);
   const deficits=[];
-  if(!medida.rf.length&&!medida.coluna.length)deficits.push("sem_retencao_individual");
+  if(!medida.rf.length&&!medida.intervalos.length&&!medida.coluna.length)deficits.push("sem_retencao_individual");
   if(!sistemaBemDescrito(fm))deficits.push("fase_movel_incompleta");
   if(!p.faseEstacionaria?.classe||
      !p.faseEstacionaria?.detalhamento||
@@ -79,10 +82,10 @@
   if(p.faseEstacionaria?.homologada!==true)deficits.push("suporte_nao_homologado");
   if(fm?.homologada!==true)deficits.push("eluente_nao_homologado");
   if(p.aplicacao?.detectorHomologado!==true)deficits.push("detector_nao_homologado");
-  if(!medida.rf.some(x=>x.homologado===true&&
-     x.classe!=="estimado"&&x.classe!=="predito"&&x.classe!=="simulado")&&
-     !medida.coluna.some(x=>x.homologado===true&&
-       x.classe!=="estimado"&&x.classe!=="predito"&&x.classe!=="simulado"))
+  const naoPredito=x=>x.homologado===true&&
+   x.classe!=="estimado"&&x.classe!=="predito"&&x.classe!=="simulado";
+  if(!medida.rf.some(naoPredito)&&!medida.intervalos.some(naoPredito)&&
+     !medida.coluna.some(naoPredito))
    deficits.push("retencao_nao_homologada");
   return {
    protocoloId:p.id,
@@ -91,6 +94,7 @@
    solventes:configuracao,
    sistemaDescrito:sistemaBemDescrito(fm),
    registrosRf:medida.rf.length,
+   registrosRfIntervalos:medida.intervalos.length,
    registrosColuna:medida.coluna.length,
    prontoComoMetodo:deficits.length===0,
    pendencias:deficits
@@ -125,7 +129,7 @@
   const porId=indexar(base.protocolos);
   const metodos=base.protocolos.filter(p=>{
    const m=compostoEspecifico(analito,p);
-   return m.rf.length+m.coluna.length>0;
+   return m.rf.length+m.intervalos.length+m.coluna.length>0;
   }).map(p=>metodoCandidato(analito,p,porId,base.fontes||{}));
   const candidatosComContraste=contrastes(metodos,false);
   const homologadosComContraste=contrastes(metodos,true);
