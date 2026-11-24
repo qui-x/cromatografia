@@ -50,7 +50,7 @@ assert.deepEqual(
 assert.deepEqual(matriz.candidatos.filter(c=>c.homologacaoCompleta).map(c=>c.id).sort(),["caffeine","paracetamol"]);
 assert.equal(matriz.resumo.liberadosParaSimulacaoReal,0,"HPTLC não pode abrir a cena de CCD ou coluna");
 assert.equal(matriz.resumo.liberadosParaSimulacaoReal,report.resumo.liberadosParaSimulacaoReal);
-assert.equal(matriz.resumo.identidadesQuimicasConferidas,6);
+assert.equal(matriz.resumo.identidadesQuimicasConferidas,8);
 
 assert(matriz.candidatos.every(c=>!c.homologacaoCompleta||c.disponibilidadeSimulacaoReal===false));
 
