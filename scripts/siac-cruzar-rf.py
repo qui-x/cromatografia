@@ -100,8 +100,9 @@ except Exception as e:sources["TLCexp"]={"status":"falha","erro":str(e)}
 try:
     url="https://raw.githubusercontent.com/woshixuhao/Discovery_of_column_chromatography/main/data/TLC_dataset.xlsx"
     data=get(url);df=pd.read_excel(io.BytesIO(data))
-    assert {"smiles","Rf","H","EA","DCM","MeOH","Et2O"}.issubset(df.columns),list(df.columns)
-    sources["Xu"]={"status":"ok","url":url,"sha256":hashlib.sha256(data).hexdigest(),**cross(df,"Xu","smiles","Rf",xu_sol)}
+    smilescol=next((col for col in ("COMPOUND_SMILES","smiles","SMILES") if col in df.columns),None)
+    assert smilescol and {"Rf","H","EA","DCM","MeOH","Et2O"}.issubset(df.columns),list(df.columns)
+    sources["Xu"]={"status":"ok","url":url,"sha256":hashlib.sha256(data).hexdigest(),**cross(df,"Xu",smilescol,"Rf",xu_sol)}
 except Exception as e:sources["Xu"]={"status":"falha","erro":str(e)}
 byid=collections.defaultdict(list)
 for row in results:byid[row["analito"]].append(row)
