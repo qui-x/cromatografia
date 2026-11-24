@@ -1899,9 +1899,17 @@
       "nome": "Alaranjado de metila",
       "grupo": "indicadores_e_traçadores",
       "identity": {
-        "cas": null,
-        "pubchemCID": null,
-        "verificadoIndividualmente": false
+        "cas": "547-58-0",
+        "pubchemCID": 23673835,
+        "verificadoIndividualmente": true,
+        "formulaMolecular": "C14H14N3NaO3S",
+        "formaInvestigada": "alaranjado de metila, sal monossódico (forma de referência)",
+        "fontesIdentidade": [
+          "https://pubchem.ncbi.nlm.nih.gov/compound/23673835",
+          "https://www.mdpi.com/2297-8739/13/11/336"
+        ],
+        "dataConferencia": "2026-11-23",
+        "observacao": "Estrutura principal conferida por PubChem e fórmula/denominação no artigo Shakarova et al. 2026. Padrão comercial tem pureza/lote não detalhados; Rf pontual sem replicatas não é método cromatográfico homologado."
       },
       "propriedades": {
         "densidade": null,
@@ -1917,7 +1925,19 @@
         "fatorK": [],
         "isotermas": []
       },
-      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
+      "auditoriaRetencao": {
+        "estado": "dois_rf_individuais_fonte_primaria_conferidos_sem_replicatas",
+        "metodos": [
+          "tlc_hfsa_2026_mph1_hexane_isopropanol",
+          "tlc_hfsa_2026_mph2_hexane_isopropanol_water_acetic"
+        ],
+        "fontePrimaria": "https://www.mdpi.com/2297-8739/13/11/336",
+        "escopo": "consulta_Rf_em_HFSA",
+        "homologacaoMetodoQuantitativo": false,
+        "homologacaoCena": false,
+        "nota": "Mesma fase estacionária HFSA sob duas fases móveis contrastantes; sem réplicas independentes, sem estabilidade da película e sem estudo de recuperação em amostra real."
+      }
     },
     {
       "id": "methyl_red",
@@ -2049,9 +2069,17 @@
       "nome": "Sudan IV",
       "grupo": "indicadores_e_traçadores",
       "identity": {
-        "cas": null,
-        "pubchemCID": null,
-        "verificadoIndividualmente": false
+        "cas": "85-83-6",
+        "pubchemCID": 62330,
+        "verificadoIndividualmente": true,
+        "formulaMolecular": "C24H20N4O",
+        "formaInvestigada": "Sudan IV, corante bis-azo neutro; estrutura molecular principal",
+        "fontesIdentidade": [
+          "https://pubchem.ncbi.nlm.nih.gov/compound/62330",
+          "https://www.mdpi.com/2297-8739/13/11/336"
+        ],
+        "dataConferencia": "2026-11-23",
+        "observacao": "Estrutura principal conferida por PubChem e fórmula/denominação no artigo Shakarova et al. 2026. Padrão comercial tem pureza/lote não detalhados; Rf pontual sem replicatas não é método cromatográfico homologado."
       },
       "propriedades": {
         "densidade": null,
@@ -2067,7 +2095,19 @@
         "fatorK": [],
         "isotermas": []
       },
-      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
+      "auditoriaRetencao": {
+        "estado": "dois_rf_individuais_fonte_primaria_conferidos_sem_replicatas",
+        "metodos": [
+          "tlc_hfsa_2026_mph1_hexane_isopropanol",
+          "tlc_hfsa_2026_mph2_hexane_isopropanol_water_acetic"
+        ],
+        "fontePrimaria": "https://www.mdpi.com/2297-8739/13/11/336",
+        "escopo": "consulta_Rf_em_HFSA",
+        "homologacaoMetodoQuantitativo": false,
+        "homologacaoCena": false,
+        "nota": "Mesma fase estacionária HFSA sob duas fases móveis contrastantes; sem réplicas independentes, sem estabilidade da película e sem estudo de recuperação em amostra real."
+      }
     }
   ],
   "protocolos": [
