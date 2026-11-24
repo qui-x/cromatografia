@@ -95,7 +95,7 @@ for(const p of solvents.paresMiscibilidade){
 }
 const candidates=new Set(analytes.candidatos.map(a=>a.id));
 assert.equal(analytes.candidatos.filter(a=>a.homologacao==="homologado_hptlc_condicional").length,2);
-assert.equal(analytes.candidatos.filter(a=>a.identity.verificadoIndividualmente).length,6);
+assert.equal(analytes.candidatos.filter(a=>a.identity.verificadoIndividualmente).length,8);
 assert(analytes.candidatos.every(a=>a.propriedades.densidade===null));
 assert.equal(analytes.candidatos.filter(a=>a.retencao.rf.length===2).length,2);
 let rfs=0;
@@ -223,6 +223,11 @@ assert.equal(hfsa.reduce((n,p)=>n+p.dadosRf.filter(r=>r.fontePrimariaConferida).
 assert.equal(padiyar.dadosRf.filter(r=>r.fontePrimariaConferida).length,8);
 assert.equal(padiyar.dadosRf.find(r=>r.analito==="valine").vereditoAritmetico,
  "divergencia_de_arredondamento_no_artigo_0_52_vs_0_53");
+for(const [id,cas,cid] of [["methyl_orange","547-58-0",23673835],["sudan_iv","85-83-6",62330]]){
+ const c=analytes.candidatos.find(x=>x.id===id);
+ assert(c.identity.verificadoIndividualmente&&c.identity.cas===cas&&c.identity.pubchemCID===cid);
+ assert.equal(c.auditoriaRetencao.homologacaoMetodoQuantitativo,false);
+}
 assert.equal(analytes.protocolos.filter(p=>p.status==="homologado").length,2);
 
 console.log("SIAC BANCO — OK:",solvents.solventes.length,"solventes,",completeDensity.length,"densidades,",solvents.paresMiscibilidade.length,
