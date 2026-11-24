@@ -7,7 +7,8 @@
     "CIDs indicam candidatos químicos localizados, não prova de amostra pura, sal, isômero, CAS ou método cromatográfico. Estatutos de homologação prévios permanecem inalterados.",
     "Áreas como cor visível, fluorescência e Rf não são propriedades universais do nome do composto; registrar solvente, pH, fase, temperatura e detector.",
     "Quinoline Yellow E104 exige representação de mistura, nunca o CID 6731 isolado.",
-    "Lote de 23/11: quatro identidades de corantes E102/E110/E124/E133 conferidas como sais do cromóforo principal, sem identidade de impurezas ou composição da formulação comercial."
+    "Lote de 23/11: quatro identidades de corantes E102/E110/E124/E133 conferidas como sais do cromóforo principal, sem identidade de impurezas ou composição da formulação comercial.",
+    "Lote adicional: alaranjado de metila (CAS 547-58-0, CID 23673835) e Sudan IV (CAS 85-83-6, CID 62330) conferidos como espécies moleculares; os Rf sobre HFSA continuam sem homologação devido a dados pontuais sem replicatas."
   ],
   "fontesGerais": [
     {
@@ -30,7 +31,7 @@
     "exigemEspecificacao": 49,
     "idsDuplicados": 0,
     "homologadasParaMotor": 0,
-    "identidadesConferidas": 6
+    "identidadesConferidas": 8
   },
   "candidatos": [
     {
@@ -1726,12 +1727,18 @@
       "referenciaQuimica": {
         "pubchemCID": 23673835,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/23673835",
-        "classe": "cid_candidato_forma_a_confirmar",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": "Registro candidato de sal de sódio; cor depende de pH.",
-        "casConferido": null,
+        "classe": "estrutura_principal_da_substancia_conferida",
+        "status": "identidade_molecular_referencial_conferida_sem_pureza_do_lote",
+        "nota": "Estrutura PubChem coerente com denominação e fórmula estrutural publicada em Shakarova et al. (2026); pureza do padrão não estabelecida.",
+        "casConferido": "547-58-0",
         "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "estruturaEFormaConferidas": true,
+        "formulaMolecularConferida": "C14H14N3NaO3S",
+        "fontesConferencia": [
+          "https://pubchem.ncbi.nlm.nih.gov/compound/23673835",
+          "https://www.mdpi.com/2297-8739/13/11/336"
+        ],
+        "dataConferencia": "2026-11-23"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {
@@ -1870,12 +1877,18 @@
       "referenciaQuimica": {
         "pubchemCID": 62330,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/62330",
-        "classe": "cid_candidato_localizado",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": null,
-        "casConferido": null,
+        "classe": "estrutura_principal_da_substancia_conferida",
+        "status": "identidade_molecular_referencial_conferida_sem_pureza_do_lote",
+        "nota": "Estrutura PubChem coerente com denominação e fórmula estrutural publicada em Shakarova et al. (2026); pureza do padrão não estabelecida.",
+        "casConferido": "85-83-6",
         "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "estruturaEFormaConferidas": true,
+        "formulaMolecularConferida": "C24H20N4O",
+        "fontesConferencia": [
+          "https://pubchem.ncbi.nlm.nih.gov/compound/62330",
+          "https://www.mdpi.com/2297-8739/13/11/336"
+        ],
+        "dataConferencia": "2026-11-23"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {
