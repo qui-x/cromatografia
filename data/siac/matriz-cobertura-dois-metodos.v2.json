@@ -3,7 +3,7 @@
   "data": "2026-11-23",
   "titulo": "Matriz preliminar de cobertura científica do SIAC",
   "fonte": "data/siac/analitos-protocolos.v1.json",
-  "observacao": "Duas substâncias (cafeína e paracetamol) com dados científicos homologados exclusivamente em HPTLC NP/RP de artigo primário, sem cena de HPTLC operacional. Methyl orange/Sudan IV têm Rf na literatura primária HFSA e métodos conferidos, mas sem replicatas e sem caracterização de incerteza; não homologar nem extrapolar. Lote 01: identidades moleculares dos principais sais de E102/E110/E124/E133 e oito Rf de triagem Sobańska (2017) conferidos; seguem não homologados como métodos quantitativos.",
+  "observacao": "Duas substâncias (cafeína e paracetamol) com dados científicos homologados exclusivamente em HPTLC NP/RP de artigo primário, sem cena de HPTLC operacional. Methyl orange/Sudan IV têm Rf na literatura primária HFSA e métodos conferidos, mas sem replicatas e sem caracterização de incerteza; não homologar nem extrapolar. Lote 01: identidades moleculares dos principais sais de E102/E110/E124/E133 e oito Rf de triagem Sobańska (2017) conferidos; seguem não homologados como métodos quantitativos. Lote complementar: identidades de alaranjado de metila e Sudan IV conferidas; Rf em HFSA permanece evidência pontual, sem replicatas.",
   "regras": {
     "minimoMetodosIndependentesComRetencaoIndividual": 2,
     "minimoSolventesQuimicamenteDistintos": 2,
@@ -26,7 +26,7 @@
     "protocolos": 29,
     "liberadosParaSimulacaoReal": 0,
     "metodosHptlcComFontePrimariaHomologada": 2,
-    "identidadesQuimicasConferidas": 6
+    "identidadesQuimicasConferidas": 8
   },
   "candidatos": [
     {
@@ -7928,7 +7928,7 @@
       "id": "methyl_orange",
       "nome": "Alaranjado de metila",
       "grupo": "indicadores_e_traçadores",
-      "identidadeConfirmada": false,
+      "identidadeConfirmada": true,
       "metodosComRetencaoIndividual": 2,
       "metodos": [
         {
@@ -8052,9 +8052,19 @@
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_e_condicoes_a_homologar",
-        "replicatas_nao_reportadas_hfsa"
-      ]
+        "replicatas_nao_reportadas_hfsa",
+        "HFSA_sem_replicatas_e_sem_validacao_quantitativa_para_matriz_real"
+      ],
+      "auditoriaRetencao": {
+        "estado": "dois_rf_pontuais_primarios_conferidos_sem_replicatas",
+        "fonte": "https://www.mdpi.com/2297-8739/13/11/336",
+        "metodos": [
+          "tlc_hfsa_2026_mph1_hexane_isopropanol",
+          "tlc_hfsa_2026_mph2_hexane_isopropanol_water_acetic"
+        ],
+        "quantificacaoHomologada": false,
+        "habilitarCenaQuantitativa": false
+      }
     },
     {
       "id": "methyl_red",
@@ -8150,7 +8160,7 @@
       "id": "sudan_iv",
       "nome": "Sudan IV",
       "grupo": "indicadores_e_traçadores",
-      "identidadeConfirmada": false,
+      "identidadeConfirmada": true,
       "metodosComRetencaoIndividual": 2,
       "metodos": [
         {
@@ -8274,9 +8284,19 @@
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_e_condicoes_a_homologar",
-        "replicatas_nao_reportadas_hfsa"
-      ]
+        "replicatas_nao_reportadas_hfsa",
+        "HFSA_sem_replicatas_e_sem_validacao_quantitativa_para_matriz_real"
+      ],
+      "auditoriaRetencao": {
+        "estado": "dois_rf_pontuais_primarios_conferidos_sem_replicatas",
+        "fonte": "https://www.mdpi.com/2297-8739/13/11/336",
+        "metodos": [
+          "tlc_hfsa_2026_mph1_hexane_isopropanol",
+          "tlc_hfsa_2026_mph2_hexane_isopropanol_water_acetic"
+        ],
+        "quantificacaoHomologada": false,
+        "habilitarCenaQuantitativa": false
+      }
     }
   ]
 }
