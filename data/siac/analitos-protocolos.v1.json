@@ -34,9 +34,17 @@
       "nome": "Tartrazina (FD&C Yellow 5)",
       "grupo": "corantes_alimenticios",
       "identity": {
-        "cas": null,
-        "pubchemCID": null,
-        "verificadoIndividualmente": false
+        "cas": "1934-21-0",
+        "pubchemCID": 164825,
+        "verificadoIndividualmente": true,
+        "formulaMolecular": "C16H9N4Na3O9S2",
+        "formaInvestigada": "tartrazina, sal trissódico; cromóforo principal E102",
+        "fontesIdentidade": [
+          "https://pubchem.ncbi.nlm.nih.gov/compound/164825",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC5536146/"
+        ],
+        "dataConferencia": "2026-11-23",
+        "observacao": "Estrutura molecular do corante principal e contraíons conferidos; não corresponde à composição integral de corante alimentício comercial, que pode conter isômeros, impurezas e sais. Não implica homologação do protocolo quantitativo nem da cena."
       },
       "propriedades": {
         "densidade": null,
@@ -52,16 +60,36 @@
         "fatorK": [],
         "isotermas": []
       },
-      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
+      "auditoriaRetencao": {
+        "estado": "dois_rf_primarios_conferidos_em_triangulacao",
+        "metodos": [
+          "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9",
+          "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water"
+        ],
+        "fontePrimaria": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5536146/",
+        "escopo": "consulta_Rf_por_condicao_de_triagem",
+        "homologacaoMetodoQuantitativo": false,
+        "homologacaoCena": false,
+        "nota": "Não extrapolar parâmetros de validação do procedimento final do artigo para os eluentes de triagem."
+      }
     },
     {
       "id": "sunset_yellow_fcf",
       "nome": "Amarelo crepúsculo FCF (Yellow 6)",
       "grupo": "corantes_alimenticios",
       "identity": {
-        "cas": null,
-        "pubchemCID": null,
-        "verificadoIndividualmente": false
+        "cas": "2783-94-0",
+        "pubchemCID": 17730,
+        "verificadoIndividualmente": true,
+        "formulaMolecular": "C16H10N2Na2O7S2",
+        "formaInvestigada": "amarelo crepúsculo FCF, sal dissódico; cromóforo principal E110",
+        "fontesIdentidade": [
+          "https://pubchem.ncbi.nlm.nih.gov/compound/17730",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC5536146/"
+        ],
+        "dataConferencia": "2026-11-23",
+        "observacao": "Estrutura molecular do corante principal e contraíons conferidos; não corresponde à composição integral de corante alimentício comercial, que pode conter isômeros, impurezas e sais. Não implica homologação do protocolo quantitativo nem da cena."
       },
       "propriedades": {
         "densidade": null,
@@ -77,7 +105,19 @@
         "fatorK": [],
         "isotermas": []
       },
-      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
+      "auditoriaRetencao": {
+        "estado": "dois_rf_primarios_conferidos_em_triangulacao",
+        "metodos": [
+          "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9",
+          "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water"
+        ],
+        "fontePrimaria": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5536146/",
+        "escopo": "consulta_Rf_por_condicao_de_triagem",
+        "homologacaoMetodoQuantitativo": false,
+        "homologacaoCena": false,
+        "nota": "Não extrapolar parâmetros de validação do procedimento final do artigo para os eluentes de triagem."
+      }
     },
     {
       "id": "allura_red_ac",
@@ -109,9 +149,17 @@
       "nome": "Azul brilhante FCF (Blue 1)",
       "grupo": "corantes_alimenticios",
       "identity": {
-        "cas": null,
-        "pubchemCID": null,
-        "verificadoIndividualmente": false
+        "cas": "3844-45-9",
+        "pubchemCID": 19700,
+        "verificadoIndividualmente": true,
+        "formulaMolecular": "C37H34N2Na2O9S3",
+        "formaInvestigada": "azul brilhante FCF, sal dissódico; cromóforo principal E133",
+        "fontesIdentidade": [
+          "https://pubchem.ncbi.nlm.nih.gov/compound/19700",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC5536146/"
+        ],
+        "dataConferencia": "2026-11-23",
+        "observacao": "Estrutura molecular do corante principal e contraíons conferidos; não corresponde à composição integral de corante alimentício comercial, que pode conter isômeros, impurezas e sais. Não implica homologação do protocolo quantitativo nem da cena."
       },
       "propriedades": {
         "densidade": null,
@@ -127,7 +175,19 @@
         "fatorK": [],
         "isotermas": []
       },
-      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
+      "auditoriaRetencao": {
+        "estado": "dois_rf_primarios_conferidos_em_triangulacao",
+        "metodos": [
+          "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9",
+          "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water"
+        ],
+        "fontePrimaria": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5536146/",
+        "escopo": "consulta_Rf_por_condicao_de_triagem",
+        "homologacaoMetodoQuantitativo": false,
+        "homologacaoCena": false,
+        "nota": "Não extrapolar parâmetros de validação do procedimento final do artigo para os eluentes de triagem."
+      }
     },
     {
       "id": "indigotine",
@@ -209,9 +269,17 @@
       "nome": "Ponceau 4R",
       "grupo": "corantes_alimenticios",
       "identity": {
-        "cas": null,
-        "pubchemCID": null,
-        "verificadoIndividualmente": false
+        "cas": "2611-82-7",
+        "pubchemCID": 17466,
+        "verificadoIndividualmente": true,
+        "formulaMolecular": "C20H11N2Na3O10S3",
+        "formaInvestigada": "Ponceau 4R, sal trissódico; cromóforo principal E124",
+        "fontesIdentidade": [
+          "https://pubchem.ncbi.nlm.nih.gov/compound/17466",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC5536146/"
+        ],
+        "dataConferencia": "2026-11-23",
+        "observacao": "Estrutura molecular do corante principal e contraíons conferidos; não corresponde à composição integral de corante alimentício comercial, que pode conter isômeros, impurezas e sais. Não implica homologação do protocolo quantitativo nem da cena."
       },
       "propriedades": {
         "densidade": null,
@@ -227,7 +295,19 @@
         "fatorK": [],
         "isotermas": []
       },
-      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
+      "auditoriaRetencao": {
+        "estado": "dois_rf_primarios_conferidos_em_triangulacao",
+        "metodos": [
+          "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9",
+          "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water"
+        ],
+        "fontePrimaria": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5536146/",
+        "escopo": "consulta_Rf_por_condicao_de_triagem",
+        "homologacaoMetodoQuantitativo": false,
+        "homologacaoCena": false,
+        "nota": "Não extrapolar parâmetros de validação do procedimento final do artigo para os eluentes de triagem."
+      }
     },
     {
       "id": "amaranth",
@@ -2295,7 +2375,10 @@
           "fonte": "ukil2013",
           "temperaturaC": null,
           "homologado": false,
-          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação",
+          "fontePrimariaConferida": true,
+          "dataConferenciaFonte": "2026-11-23",
+          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
         },
         {
           "analito": "cysteine",
@@ -2304,7 +2387,10 @@
           "fonte": "ukil2013",
           "temperaturaC": null,
           "homologado": false,
-          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação",
+          "fontePrimariaConferida": true,
+          "dataConferenciaFonte": "2026-11-23",
+          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
         },
         {
           "analito": "histidine",
@@ -2313,7 +2399,10 @@
           "fonte": "ukil2013",
           "temperaturaC": null,
           "homologado": false,
-          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação",
+          "fontePrimariaConferida": true,
+          "dataConferenciaFonte": "2026-11-23",
+          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
         },
         {
           "analito": "isoleucine",
@@ -2322,7 +2411,10 @@
           "fonte": "ukil2013",
           "temperaturaC": null,
           "homologado": false,
-          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação",
+          "fontePrimariaConferida": true,
+          "dataConferenciaFonte": "2026-11-23",
+          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
         },
         {
           "analito": "glutamine",
@@ -2331,7 +2423,10 @@
           "fonte": "ukil2013",
           "temperaturaC": null,
           "homologado": false,
-          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação",
+          "fontePrimariaConferida": true,
+          "dataConferenciaFonte": "2026-11-23",
+          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
         },
         {
           "analito": "lysine",
@@ -2340,7 +2435,10 @@
           "fonte": "ukil2013",
           "temperaturaC": null,
           "homologado": false,
-          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação",
+          "fontePrimariaConferida": true,
+          "dataConferenciaFonte": "2026-11-23",
+          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
         },
         {
           "analito": "asparagine",
@@ -2349,7 +2447,10 @@
           "fonte": "ukil2013",
           "temperaturaC": null,
           "homologado": false,
-          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação",
+          "fontePrimariaConferida": true,
+          "dataConferenciaFonte": "2026-11-23",
+          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
         },
         {
           "analito": "phenylalanine",
@@ -2358,7 +2459,10 @@
           "fonte": "ukil2013",
           "temperaturaC": null,
           "homologado": false,
-          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação",
+          "fontePrimariaConferida": true,
+          "dataConferenciaFonte": "2026-11-23",
+          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
         },
         {
           "analito": "serine",
@@ -2367,7 +2471,10 @@
           "fonte": "ukil2013",
           "temperaturaC": null,
           "homologado": false,
-          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação",
+          "fontePrimariaConferida": true,
+          "dataConferenciaFonte": "2026-11-23",
+          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
         },
         {
           "analito": "threonine",
@@ -2376,7 +2483,10 @@
           "fonte": "ukil2013",
           "temperaturaC": null,
           "homologado": false,
-          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação",
+          "fontePrimariaConferida": true,
+          "dataConferenciaFonte": "2026-11-23",
+          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
         },
         {
           "analito": "alanine",
@@ -2385,7 +2495,10 @@
           "fonte": "ukil2013",
           "temperaturaC": null,
           "homologado": false,
-          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação",
+          "fontePrimariaConferida": true,
+          "dataConferenciaFonte": "2026-11-23",
+          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
         },
         {
           "analito": "glutamic_acid",
@@ -2394,7 +2507,10 @@
           "fonte": "ukil2013",
           "temperaturaC": null,
           "homologado": false,
-          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação",
+          "fontePrimariaConferida": true,
+          "dataConferenciaFonte": "2026-11-23",
+          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
         },
         {
           "analito": "valine",
@@ -2403,7 +2519,10 @@
           "fonte": "ukil2013",
           "temperaturaC": null,
           "homologado": false,
-          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação",
+          "fontePrimariaConferida": true,
+          "dataConferenciaFonte": "2026-11-23",
+          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
         },
         {
           "analito": "methionine",
@@ -2412,7 +2531,10 @@
           "fonte": "ukil2013",
           "temperaturaC": null,
           "homologado": false,
-          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação",
+          "fontePrimariaConferida": true,
+          "dataConferenciaFonte": "2026-11-23",
+          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
         },
         {
           "analito": "aspartic_acid",
@@ -2421,7 +2543,10 @@
           "fonte": "ukil2013",
           "temperaturaC": null,
           "homologado": false,
-          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação",
+          "fontePrimariaConferida": true,
+          "dataConferenciaFonte": "2026-11-23",
+          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
         },
         {
           "analito": "tyrosine",
@@ -2430,7 +2555,10 @@
           "fonte": "ukil2013",
           "temperaturaC": null,
           "homologado": false,
-          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação",
+          "fontePrimariaConferida": true,
+          "dataConferenciaFonte": "2026-11-23",
+          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
         },
         {
           "analito": "leucine",
@@ -2439,7 +2567,10 @@
           "fonte": "ukil2013",
           "temperaturaC": null,
           "homologado": false,
-          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação",
+          "fontePrimariaConferida": true,
+          "dataConferenciaFonte": "2026-11-23",
+          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
         },
         {
           "analito": "glycine",
@@ -2448,7 +2579,10 @@
           "fonte": "ukil2013",
           "temperaturaC": null,
           "homologado": false,
-          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação",
+          "fontePrimariaConferida": true,
+          "dataConferenciaFonte": "2026-11-23",
+          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
         },
         {
           "analito": "proline",
@@ -2457,7 +2591,10 @@
           "fonte": "ukil2013",
           "temperaturaC": null,
           "homologado": false,
-          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação",
+          "fontePrimariaConferida": true,
+          "dataConferenciaFonte": "2026-11-23",
+          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
         },
         {
           "analito": "tryptophan",
@@ -2466,10 +2603,24 @@
           "fonte": "ukil2013",
           "temperaturaC": null,
           "homologado": false,
-          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação"
+          "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação",
+          "fontePrimariaConferida": true,
+          "dataConferenciaFonte": "2026-11-23",
+          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
         }
       ],
-      "nota": "A revelação descrita não é apenas ninhidrina; a tabela também compara limites de detecção da ninhidrina, mas não relata suas cores como cores da tabela. Distâncias de frente/mancha e temperatura de eluição não informadas. Fonte primária inspecionada, homologação ainda requer identidade e conferência de condições completas."
+      "nota": "A revelação descrita não é apenas ninhidrina; a tabela também compara limites de detecção da ninhidrina, mas não relata suas cores como cores da tabela. Distâncias de frente/mancha e temperatura de eluição não informadas. Fonte primária inspecionada, homologação ainda requer identidade e conferência de condições completas.",
+      "auditoriaCientifica": {
+        "estado": "transcricao_rf_primaria_conferida_metodo_unico_sem_homologacao",
+        "fontePrimaria": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+        "secoesConferidas": "Materials and Methods; Table 1; 1-propanol/água 70:30; placa sílica G",
+        "dataConferencia": "2026-11-23",
+        "limites": [
+          "Ausente segundo sistema independente deste artigo",
+          "Não inferir estereoquímica L/D do aminoácido só pelo nome",
+          "Revelação final realizada com 4-dimetilaminobenzaldeído e isatina; ninhidrina é comparação de limite de detecção"
+        ]
+      }
     },
     {
       "id": "tlc_spinach_dobado_hexane_acetone_7_3",
@@ -2948,7 +3099,10 @@
           "distanciaManchaCm": 0.55,
           "distanciaFrenteCm": 3.5,
           "diferencaRfDistancias": -0.0029,
-          "nota": null
+          "nota": null,
+          "fontePrimariaConferida": true,
+          "dataConferenciaFonte": "2026-11-23",
+          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
         },
         {
           "analito": "histidine",
@@ -2960,7 +3114,10 @@
           "distanciaManchaCm": 0.4,
           "distanciaFrenteCm": 3.5,
           "diferencaRfDistancias": 0.0043,
-          "nota": null
+          "nota": null,
+          "fontePrimariaConferida": true,
+          "dataConferenciaFonte": "2026-11-23",
+          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
         },
         {
           "analito": "alanine",
@@ -2972,7 +3129,10 @@
           "distanciaManchaCm": 2,
           "distanciaFrenteCm": 3.5,
           "diferencaRfDistancias": 0.0014,
-          "nota": null
+          "nota": null,
+          "fontePrimariaConferida": true,
+          "dataConferenciaFonte": "2026-11-23",
+          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
         },
         {
           "analito": "arginine",
@@ -2984,7 +3144,10 @@
           "distanciaManchaCm": 0.8,
           "distanciaFrenteCm": 3.5,
           "diferencaRfDistancias": -0.0014,
-          "nota": null
+          "nota": null,
+          "fontePrimariaConferida": true,
+          "dataConferenciaFonte": "2026-11-23",
+          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
         },
         {
           "analito": "methionine",
@@ -2996,7 +3159,10 @@
           "distanciaManchaCm": 1.8,
           "distanciaFrenteCm": 3.5,
           "diferencaRfDistancias": 0.0043,
-          "nota": null
+          "nota": null,
+          "fontePrimariaConferida": true,
+          "dataConferenciaFonte": "2026-11-23",
+          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
         },
         {
           "analito": "valine",
@@ -3008,7 +3174,11 @@
           "distanciaManchaCm": 1.85,
           "distanciaFrenteCm": 3.5,
           "diferencaRfDistancias": 0.0086,
-          "nota": "Tabela reporta 0,52; 1,85/3,5 = 0,5286 (aproxima 0,53 com duas casas). Preservar o valor publicado e sinalizar discrepância de arredondamento."
+          "nota": "Tabela reporta 0,52; 1,85/3,5 = 0,5286 (aproxima 0,53 com duas casas). Preservar o valor publicado e sinalizar discrepância de arredondamento.",
+          "fontePrimariaConferida": true,
+          "dataConferenciaFonte": "2026-11-23",
+          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa",
+          "vereditoAritmetico": "divergencia_de_arredondamento_no_artigo_0_52_vs_0_53"
         },
         {
           "analito": "lysine",
@@ -3020,7 +3190,10 @@
           "distanciaManchaCm": 0.8,
           "distanciaFrenteCm": 3.5,
           "diferencaRfDistancias": -0.0014,
-          "nota": null
+          "nota": null,
+          "fontePrimariaConferida": true,
+          "dataConferenciaFonte": "2026-11-23",
+          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
         },
         {
           "analito": "tryptophan",
@@ -3032,10 +3205,24 @@
           "distanciaManchaCm": 0.8,
           "distanciaFrenteCm": 3.5,
           "diferencaRfDistancias": -0.0014,
-          "nota": null
+          "nota": null,
+          "fontePrimariaConferida": true,
+          "dataConferenciaFonte": "2026-11-23",
+          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
         }
       ],
-      "nota": "Artigo apresenta dados experimentais, inclusive distâncias mensuradas. Há ambiguidade no solvente de preparo da ninhidrina e inconsistência de arredondamento para valina: isso impede homologação automática. Não considerar sistemas aquosos com hidrótopos como solventes diferentes sem substâncias solventes distintas."
+      "nota": "Artigo apresenta dados experimentais, inclusive distâncias mensuradas. Há ambiguidade no solvente de preparo da ninhidrina e inconsistência de arredondamento para valina: isso impede homologação automática. Não considerar sistemas aquosos com hidrótopos como solventes diferentes sem substâncias solventes distintas.",
+      "auditoriaCientifica": {
+        "estado": "transcricao_primaria_conferida_com_discrepancia_aritmetica_sem_homologacao",
+        "fontePrimaria": "https://www.ijpsjournal.com/article/enhanced-thin-layer-chromatography-of-amino-acids-using-mixed-hydrotropic-solutions",
+        "secoesConferidas": "Materials And Method; Table 2; Organic Phase",
+        "dataConferencia": "2026-11-23",
+        "limites": [
+          "Valina: 1,85/3,5 = 0,52857, arredonda a 0,53; tabela publica 0,52",
+          "Preparo de ninhidrina descrito inconsistentemente como etanólico e aquoso",
+          "Fonte usa fases hidrotópicas distintas com sais dissolvidos em água; aditivos não são solventes puros"
+        ]
+      }
     },
     {
       "id": "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
@@ -3360,7 +3547,10 @@
           "classe": "Rf medido durante triagem de solventes, Tabela 2, sistema 15",
           "temperaturaC": null,
           "homologado": false,
-          "nota": "Valor reportado para a composição eluente desta fonte. Não inferir identidade pela correspondência de Rf."
+          "nota": "Valor reportado para a composição eluente desta fonte. Não inferir identidade pela correspondência de Rf.",
+          "fontePrimariaConferida": true,
+          "dataConferenciaFonte": "2026-11-23",
+          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
         },
         {
           "analito": "sunset_yellow_fcf",
@@ -3369,7 +3559,10 @@
           "classe": "Rf medido durante triagem de solventes, Tabela 2, sistema 15",
           "temperaturaC": null,
           "homologado": false,
-          "nota": "Valor reportado para a composição eluente desta fonte. Não inferir identidade pela correspondência de Rf."
+          "nota": "Valor reportado para a composição eluente desta fonte. Não inferir identidade pela correspondência de Rf.",
+          "fontePrimariaConferida": true,
+          "dataConferenciaFonte": "2026-11-23",
+          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
         },
         {
           "analito": "ponceau_4r",
@@ -3378,7 +3571,10 @@
           "classe": "Rf medido durante triagem de solventes, Tabela 2, sistema 15",
           "temperaturaC": null,
           "homologado": false,
-          "nota": "Valor reportado para a composição eluente desta fonte. Não inferir identidade pela correspondência de Rf."
+          "nota": "Valor reportado para a composição eluente desta fonte. Não inferir identidade pela correspondência de Rf.",
+          "fontePrimariaConferida": true,
+          "dataConferenciaFonte": "2026-11-23",
+          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
         },
         {
           "analito": "brilliant_blue_fcf",
@@ -3387,10 +3583,27 @@
           "classe": "Rf medido durante triagem de solventes, Tabela 2, sistema 15",
           "temperaturaC": null,
           "homologado": false,
-          "nota": "Valor reportado para a composição eluente desta fonte. Não inferir identidade pela correspondência de Rf."
+          "nota": "Valor reportado para a composição eluente desta fonte. Não inferir identidade pela correspondência de Rf.",
+          "fontePrimariaConferida": true,
+          "dataConferenciaFonte": "2026-11-23",
+          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
         }
       ],
-      "nota": "Tabela 2 contém 20 fases móveis de otimização; protocolo final usa um eluente diferente (clorofórmio:isopropanol:amônia 1:3:1), portanto NÃO atribuir automaticamente o tempo de desenvolvimento, densitometria e demais parâmetros finais a esta condição da triagem."
+      "nota": "Tabela 2 contém 20 fases móveis de otimização; protocolo final usa um eluente diferente (clorofórmio:isopropanol:amônia 1:3:1), portanto NÃO atribuir automaticamente o tempo de desenvolvimento, densitometria e demais parâmetros finais a esta condição da triagem.",
+      "auditoriaCientifica": {
+        "estado": "rf_de_triagem_conferido_em_artigo_primario_nao_homologado_para_quantificacao",
+        "fontePrimaria": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5536146/",
+        "doi": "10.1155/2017/9528472",
+        "secoesConferidas": "2.1, 2.3, 3.1.2, Tabela 2 (#15 e #18), Figura 1",
+        "dataConferencia": "2026-11-23",
+        "dadosConferidos": "valores_Rf_4_corantes_por_sistema",
+        "limites": [
+          "Uma medição de Rf por condição, sem desvio-padrão relatado para a triagem",
+          "O procedimento final com clorofórmio/isopropanol/amônia (1:3:1) difere dos sistemas 15 e 18",
+          "Comprimentos de onda e calibração quantitativa não são curvas específicas dos sistemas 15 e 18",
+          "Amostras comerciais podem conter corantes subsidiários; não tratar o registro molecular como composição total"
+        ]
+      }
     },
     {
       "id": "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water",
@@ -3443,7 +3656,10 @@
           "classe": "Rf medido durante triagem de solventes, Tabela 2, sistema 18",
           "temperaturaC": null,
           "homologado": false,
-          "nota": "Valor reportado para a composição eluente desta fonte. Não inferir identidade pela correspondência de Rf."
+          "nota": "Valor reportado para a composição eluente desta fonte. Não inferir identidade pela correspondência de Rf.",
+          "fontePrimariaConferida": true,
+          "dataConferenciaFonte": "2026-11-23",
+          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
         },
         {
           "analito": "sunset_yellow_fcf",
@@ -3452,7 +3668,10 @@
           "classe": "Rf medido durante triagem de solventes, Tabela 2, sistema 18",
           "temperaturaC": null,
           "homologado": false,
-          "nota": "Valor reportado para a composição eluente desta fonte. Não inferir identidade pela correspondência de Rf."
+          "nota": "Valor reportado para a composição eluente desta fonte. Não inferir identidade pela correspondência de Rf.",
+          "fontePrimariaConferida": true,
+          "dataConferenciaFonte": "2026-11-23",
+          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
         },
         {
           "analito": "ponceau_4r",
@@ -3461,7 +3680,10 @@
           "classe": "Rf medido durante triagem de solventes, Tabela 2, sistema 18",
           "temperaturaC": null,
           "homologado": false,
-          "nota": "Valor reportado para a composição eluente desta fonte. Não inferir identidade pela correspondência de Rf."
+          "nota": "Valor reportado para a composição eluente desta fonte. Não inferir identidade pela correspondência de Rf.",
+          "fontePrimariaConferida": true,
+          "dataConferenciaFonte": "2026-11-23",
+          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
         },
         {
           "analito": "brilliant_blue_fcf",
@@ -3470,10 +3692,27 @@
           "classe": "Rf medido durante triagem de solventes, Tabela 2, sistema 18",
           "temperaturaC": null,
           "homologado": false,
-          "nota": "Valor reportado para a composição eluente desta fonte. Não inferir identidade pela correspondência de Rf."
+          "nota": "Valor reportado para a composição eluente desta fonte. Não inferir identidade pela correspondência de Rf.",
+          "fontePrimariaConferida": true,
+          "dataConferenciaFonte": "2026-11-23",
+          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
         }
       ],
-      "nota": "Usar Rf somente sob este eluente; valores diferem radicalmente do eluente metanol/tolueno 11:9. Não usar a condição final quantitativa como se fosse esta fase móvel."
+      "nota": "Usar Rf somente sob este eluente; valores diferem radicalmente do eluente metanol/tolueno 11:9. Não usar a condição final quantitativa como se fosse esta fase móvel.",
+      "auditoriaCientifica": {
+        "estado": "rf_de_triagem_conferido_em_artigo_primario_nao_homologado_para_quantificacao",
+        "fontePrimaria": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5536146/",
+        "doi": "10.1155/2017/9528472",
+        "secoesConferidas": "2.1, 2.3, 3.1.2, Tabela 2 (#15 e #18), Figura 1",
+        "dataConferencia": "2026-11-23",
+        "dadosConferidos": "valores_Rf_4_corantes_por_sistema",
+        "limites": [
+          "Uma medição de Rf por condição, sem desvio-padrão relatado para a triagem",
+          "O procedimento final com clorofórmio/isopropanol/amônia (1:3:1) difere dos sistemas 15 e 18",
+          "Comprimentos de onda e calibração quantitativa não são curvas específicas dos sistemas 15 e 18",
+          "Amostras comerciais podem conter corantes subsidiários; não tratar o registro molecular como composição total"
+        ]
+      }
     },
     {
       "id": "tlc_hfsa_2026_mph1_hexane_isopropanol",
@@ -3530,7 +3769,9 @@
           "fontePrimariaConferida": true,
           "replicatas": null,
           "desvioPadraoRf": null,
-          "observacao": "Um Rf por condição: sem média/DP/tolerância experimental reportada."
+          "observacao": "Um Rf por condição: sem média/DP/tolerância experimental reportada.",
+          "dataConferenciaFonte": "2026-11-23",
+          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
         },
         {
           "analito": "sudan_iv",
@@ -3542,30 +3783,22 @@
           "fontePrimariaConferida": true,
           "replicatas": null,
           "desvioPadraoRf": null,
-          "observacao": "Um Rf por condição: sem média/DP/tolerância experimental reportada."
+          "observacao": "Um Rf por condição: sem média/DP/tolerância experimental reportada.",
+          "dataConferenciaFonte": "2026-11-23",
+          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
         }
       ],
       "nota": "Um Rf individual reportado sem replicatas; NÃO copiar a coluna MSS, que usa suporte diferente; n-hexano ainda não normalizado no catálogo de solventes.",
       "auditoriaCientifica": {
-        "estado": "fonte_primaria_conferida_sem_replicatas",
+        "estado": "transcricao_rf_primaria_conferida_sem_replicatas_nao_homologado",
         "fontePrimaria": "https://www.mdpi.com/2297-8739/13/11/336",
-        "doi": "10.3390/separations13110336",
-        "secoesConferidas": "2.4 Chromatographic Procedure; 3.2; Table 2",
+        "secoesConferidas": "2.4 e Tabela 2; HFSA; MPh1/MPh2",
         "dataConferencia": "2026-11-23",
-        "evidencias": [
-          "Rf na Table 2 sob HFSA, não coluna MSS",
-          "Composição dos dois eluentes",
-          "Camada de 100 µm medida em posições limitadas",
-          "Padrões 15 mg/mL em etanol, 1 µL, origem 15 mm",
-          "Câmara saturada 30 min; revelação visual"
-        ],
-        "lacunas": [
-          "Sem replicatas independentes por condição; variabilidade não estimada",
-          "Uniformidade e aderência da camada não quantificadas",
-          "Temperatura e umidade não sistematicamente testadas",
-          "Identidade molecular ainda não revisada individualmente no SIAC"
-        ],
-        "criterio": "Dado experimental primário conferido; sem homologação reprodutível para motor de cena"
+        "limites": [
+          "Sem replicatas independentes para erro/variabilidade",
+          "Camada híbrida HFSA não é sílica TLC genérica",
+          "Validade somente para formulação e misturas padrões publicadas"
+        ]
       },
       "disponibilidadeSimulador": {
         "habilitarCenaQuantitativa": false,
@@ -3635,7 +3868,9 @@
           "fontePrimariaConferida": true,
           "replicatas": null,
           "desvioPadraoRf": null,
-          "observacao": "Um Rf por condição: sem média/DP/tolerância experimental reportada."
+          "observacao": "Um Rf por condição: sem média/DP/tolerância experimental reportada.",
+          "dataConferenciaFonte": "2026-11-23",
+          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
         },
         {
           "analito": "sudan_iv",
@@ -3647,30 +3882,22 @@
           "fontePrimariaConferida": true,
           "replicatas": null,
           "desvioPadraoRf": null,
-          "observacao": "Um Rf por condição: sem média/DP/tolerância experimental reportada."
+          "observacao": "Um Rf por condição: sem média/DP/tolerância experimental reportada.",
+          "dataConferenciaFonte": "2026-11-23",
+          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
         }
       ],
       "nota": "Mesmo suporte HFSA do método MPh1; adição REAL de água e ácido acético. Sem replicatas independentes, não inferir desvio padrão ou comportamento sob outros suportes.",
       "auditoriaCientifica": {
-        "estado": "fonte_primaria_conferida_sem_replicatas",
+        "estado": "transcricao_rf_primaria_conferida_sem_replicatas_nao_homologado",
         "fontePrimaria": "https://www.mdpi.com/2297-8739/13/11/336",
-        "doi": "10.3390/separations13110336",
-        "secoesConferidas": "2.4 Chromatographic Procedure; 3.2; Table 2",
+        "secoesConferidas": "2.4 e Tabela 2; HFSA; MPh1/MPh2",
         "dataConferencia": "2026-11-23",
-        "evidencias": [
-          "Rf na Table 2 sob HFSA, não coluna MSS",
-          "Composição dos dois eluentes",
-          "Camada de 100 µm medida em posições limitadas",
-          "Padrões 15 mg/mL em etanol, 1 µL, origem 15 mm",
-          "Câmara saturada 30 min; revelação visual"
-        ],
-        "lacunas": [
-          "Sem replicatas independentes por condição; variabilidade não estimada",
-          "Uniformidade e aderência da camada não quantificadas",
-          "Temperatura e umidade não sistematicamente testadas",
-          "Identidade molecular ainda não revisada individualmente no SIAC"
-        ],
-        "criterio": "Dado experimental primário conferido; sem homologação reprodutível para motor de cena"
+        "limites": [
+          "Sem replicatas independentes para erro/variabilidade",
+          "Camada híbrida HFSA não é sílica TLC genérica",
+          "Validade somente para formulação e misturas padrões publicadas"
+        ]
       },
       "disponibilidadeSimulador": {
         "habilitarCenaQuantitativa": false,
