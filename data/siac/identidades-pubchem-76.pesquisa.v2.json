@@ -6,7 +6,8 @@
     "Não inferir a presença de um composto em TLCexp, BigSolDB ou MixtureSolDB apenas por coincidência de nome: cruzamento CSV ainda pendente.",
     "CIDs indicam candidatos químicos localizados, não prova de amostra pura, sal, isômero, CAS ou método cromatográfico. Estatutos de homologação prévios permanecem inalterados.",
     "Áreas como cor visível, fluorescência e Rf não são propriedades universais do nome do composto; registrar solvente, pH, fase, temperatura e detector.",
-    "Quinoline Yellow E104 exige representação de mistura, nunca o CID 6731 isolado."
+    "Quinoline Yellow E104 exige representação de mistura, nunca o CID 6731 isolado.",
+    "Lote de 23/11: quatro identidades de corantes E102/E110/E124/E133 conferidas como sais do cromóforo principal, sem identidade de impurezas ou composição da formulação comercial."
   ],
   "fontesGerais": [
     {
@@ -29,7 +30,7 @@
     "exigemEspecificacao": 49,
     "idsDuplicados": 0,
     "homologadasParaMotor": 0,
-    "identidadesConferidas": 2
+    "identidadesConferidas": 6
   },
   "candidatos": [
     {
@@ -39,12 +40,18 @@
       "referenciaQuimica": {
         "pubchemCID": 164825,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/164825",
-        "classe": "cid_candidato_forma_a_confirmar",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": "Registro candidato é forma trissódica; a forma ácida tem outro CID.",
-        "casConferido": null,
+        "classe": "estrutura_principal_do_sal_conferida",
+        "status": "identidade_molecular_referencial_conferida_sem_pureza_do_lote",
+        "nota": "Sal de sódio do cromóforo principal conferido por PubChem e estudo 2017 (E102/E110/E124/E133); não equivale a caracterizar todos os componentes de produto comercial.",
+        "casConferido": "1934-21-0",
         "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "estruturaEFormaConferidas": true,
+        "formulaMolecularConferida": "C16H9N4Na3O9S2",
+        "fontesConferencia": [
+          "https://pubchem.ncbi.nlm.nih.gov/compound/164825",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC5536146/"
+        ],
+        "dataConferencia": "2026-11-23"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {
@@ -63,12 +70,18 @@
       "referenciaQuimica": {
         "pubchemCID": 17730,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/17730",
-        "classe": "cid_candidato_forma_a_confirmar",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": "Registro candidato de sal dissódico; pureza de padrão depende da ficha.",
-        "casConferido": null,
+        "classe": "estrutura_principal_do_sal_conferida",
+        "status": "identidade_molecular_referencial_conferida_sem_pureza_do_lote",
+        "nota": "Sal de sódio do cromóforo principal conferido por PubChem e estudo 2017 (E102/E110/E124/E133); não equivale a caracterizar todos os componentes de produto comercial.",
+        "casConferido": "2783-94-0",
         "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "estruturaEFormaConferidas": true,
+        "formulaMolecularConferida": "C16H10N2Na2O7S2",
+        "fontesConferencia": [
+          "https://pubchem.ncbi.nlm.nih.gov/compound/17730",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC5536146/"
+        ],
+        "dataConferencia": "2026-11-23"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {
@@ -111,12 +124,18 @@
       "referenciaQuimica": {
         "pubchemCID": 19700,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/19700",
-        "classe": "cid_candidato_forma_a_confirmar",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": "Registro candidato forma dissódica; checar proporção de corante e sal em formulações.",
-        "casConferido": null,
+        "classe": "estrutura_principal_do_sal_conferida",
+        "status": "identidade_molecular_referencial_conferida_sem_pureza_do_lote",
+        "nota": "Sal de sódio do cromóforo principal conferido por PubChem e estudo 2017 (E102/E110/E124/E133); não equivale a caracterizar todos os componentes de produto comercial.",
+        "casConferido": "3844-45-9",
         "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "estruturaEFormaConferidas": true,
+        "formulaMolecularConferida": "C37H34N2Na2O9S3",
+        "fontesConferencia": [
+          "https://pubchem.ncbi.nlm.nih.gov/compound/19700",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC5536146/"
+        ],
+        "dataConferencia": "2026-11-23"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {
@@ -207,12 +226,18 @@
       "referenciaQuimica": {
         "pubchemCID": 17466,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/17466",
-        "classe": "cid_candidato_forma_a_confirmar",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": "Registro candidato de sal trissódico; não igualar a corante comercial parcialmente impuro.",
-        "casConferido": null,
+        "classe": "estrutura_principal_do_sal_conferida",
+        "status": "identidade_molecular_referencial_conferida_sem_pureza_do_lote",
+        "nota": "Sal de sódio do cromóforo principal conferido por PubChem e estudo 2017 (E102/E110/E124/E133); não equivale a caracterizar todos os componentes de produto comercial.",
+        "casConferido": "2611-82-7",
         "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "estruturaEFormaConferidas": true,
+        "formulaMolecularConferida": "C20H11N2Na3O10S3",
+        "fontesConferencia": [
+          "https://pubchem.ncbi.nlm.nih.gov/compound/17466",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC5536146/"
+        ],
+        "dataConferencia": "2026-11-23"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {
