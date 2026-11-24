@@ -1,0 +1,274 @@
+{
+  "version": "0.1",
+  "data": "2026-11-23",
+  "estado": "triagem_bibliografica_sem_integracao_ao_motor",
+  "politica": "Valores publicados não são automaticamente métodos homologados. Não alterar totais da matriz ou liberar simulação até auditoria e integração.",
+  "fontesMassivas": [
+    {
+      "nome": "TLCexp",
+      "doi": "10.5281/zenodo.18467289",
+      "url": "https://zenodo.org/records/18467289",
+      "arquivo": "rf_dataset_0203_total.csv",
+      "registrosDeclarados": 22902,
+      "compostosDeclarados": 15701,
+      "estado": "download_e_cruzamento_pendentes"
+    },
+    {
+      "nome": "Xu et al.",
+      "url": "https://github.com/woshixuhao/Discovery_of_column_chromatography",
+      "arquivo": "TLC_dataset.xlsx",
+      "registrosDeclarados": 4944,
+      "compostosDeclarados": 387,
+      "estado": "cruzamento_pendente"
+    },
+    {
+      "nome": "FAO/JECFA",
+      "url": "https://www.fao.org/4/a0691e/A0691E07.htm",
+      "estado": "ampliar_sistemas_sem_confundir_bandas_secundarias"
+    },
+    {
+      "nome": "CAMAG CCBS",
+      "url": "https://camag.com/academy/camag-cumulative-bibliography-service-ccbs/"
+    },
+    {
+      "nome": "HPTLC Association",
+      "url": "https://www.hptlc-association.org/methods/about_the_method_collection.cfm"
+    }
+  ],
+  "protocolosEmTriagem": [
+    {
+      "id": "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+      "doi": "10.1556/1006.2016.29.2.9",
+      "fonte": "https://www.researchgate.net/publication/299517750_Identification_of_free_amino_acids_in_several_crude_extracts_of_two_legumes_using_thin-layer_chromatography",
+      "localizacao": "Tabela 1; seção 2.2",
+      "tecnica": "ccd",
+      "faseEstacionaria": "Whatman silica gel 60 A com indicador fluorescente, 20 x 20 cm, 250 µm",
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "butanol_1",
+            "partes": 12
+          },
+          {
+            "id": "acetic_acid",
+            "partes": 3
+          },
+          {
+            "id": "water",
+            "partes": 5
+          }
+        ],
+        "base": "v/v"
+      },
+      "padrao": "soluções aquosas 2% m/v; estereoquímica e pureza individuais a conferir",
+      "detector": "ninhidrina 0,2 g/100 mL de etanol; aquecimento 80–100 °C por 5 min",
+      "desenvolvimento": "aproximadamente 3 h",
+      "dadosRf": [
+        {
+          "analito": "alanine",
+          "rf": 0.277,
+          "homologado": false
+        },
+        {
+          "analito": "arginine",
+          "rf": 0.162,
+          "homologado": false
+        },
+        {
+          "analito": "asparagine",
+          "rf": 0.215,
+          "homologado": false
+        },
+        {
+          "analito": "aspartic_acid",
+          "rf": 0.24,
+          "homologado": false
+        },
+        {
+          "analito": "cysteine",
+          "rf": 0.362,
+          "homologado": false
+        },
+        {
+          "analito": "glutamic_acid",
+          "rf": 0.277,
+          "homologado": false
+        },
+        {
+          "analito": "glutamine",
+          "rf": 0.223,
+          "homologado": false
+        },
+        {
+          "analito": "glycine",
+          "rf": 0.246,
+          "homologado": false
+        },
+        {
+          "analito": "histidine",
+          "rf": 0.162,
+          "homologado": false
+        },
+        {
+          "analito": "isoleucine",
+          "rf": 0.515,
+          "homologado": false
+        },
+        {
+          "analito": "leucine",
+          "rf": 0.562,
+          "homologado": false
+        },
+        {
+          "analito": "lysine",
+          "rf": 0.131,
+          "homologado": false
+        },
+        {
+          "analito": "methionine",
+          "rf": 0.462,
+          "homologado": false
+        },
+        {
+          "analito": "phenylalanine",
+          "rf": 0.615,
+          "homologado": false
+        },
+        {
+          "analito": "proline",
+          "rf": 0.262,
+          "homologado": false
+        },
+        {
+          "analito": "serine",
+          "rf": 0.254,
+          "homologado": false
+        },
+        {
+          "analito": "threonine",
+          "rf": 0.262,
+          "homologado": false
+        },
+        {
+          "analito": "tryptophan",
+          "rf": 0.615,
+          "homologado": false
+        },
+        {
+          "analito": "tyrosine",
+          "rf": 0.539,
+          "homologado": false
+        },
+        {
+          "analito": "valine",
+          "rf": 0.439,
+          "homologado": false
+        }
+      ],
+      "ressalva": "Valores de padrões, não de extratos; sem incerteza individual explicitada na tabela; contrastante com 1-propanol/água de Ukil 2013."
+    },
+    {
+      "id": "hptlc_vanillin_hingse2014",
+      "doi": "10.1186/s40543-014-0021-6",
+      "fonte": "https://link.springer.com/article/10.1186/s40543-014-0021-6",
+      "tecnica": "hptlc",
+      "faseMovel": "tolueno:1,4-dioxano:ácido acético 9:2,5:0,4 v/v",
+      "detectorNm": 312,
+      "dadosRf": [
+        {
+          "analito": "vanillin",
+          "rf": 0.56,
+          "homologado": false
+        }
+      ],
+      "nota": "Artigo descreve validação analítica; verificar condições completas, identidade e parâmetros antes de integração."
+    },
+    {
+      "id": "hptlc_vanillin_krishnaveni2013",
+      "fonte": "https://sciensage.info/index.php/JASR/article/view/150",
+      "tecnica": "hptlc",
+      "faseEstacionaria": "alumínio com sílica gel 60 GF254",
+      "faseMovel": "metanol:água:ácido acético glacial 20:5:2 v/v",
+      "dadosRf": [
+        {
+          "analito": "vanillin",
+          "rf": 0.84,
+          "homologado": false
+        }
+      ],
+      "nota": "Verificar método integral e validação."
+    },
+    {
+      "id": "ccd_dilrukshi2019_propanol_ammonia",
+      "doi": "10.1155/2019/7453169",
+      "fonte": "https://onlinelibrary.wiley.com/doi/10.1155/2019/7453169",
+      "faseMovel": "n-propanol:amônia 4:1; concentração de amônia a esclarecer",
+      "dadosRf": [
+        {
+          "analito": "allura_red_ac",
+          "rf": 0.46,
+          "homologado": false
+        },
+        {
+          "analito": "rhodamine_b",
+          "rf": 0.86,
+          "homologado": false
+        },
+        {
+          "analito": "ponceau_4r",
+          "rf": 0.39,
+          "homologado": false
+        },
+        {
+          "analito": "erythrosine",
+          "rf": 0.77,
+          "homologado": false
+        }
+      ],
+      "nota": "Tabela 2; suporte de sílica mencionado, especificação a conferir. Não confundir UV-Vis de corante extraído com densitometria de placa."
+    }
+  ],
+  "pistas": [
+    {
+      "doi": "10.1080/10826076.2017.1298028",
+      "alvos": [
+        "bromothymol_blue",
+        "fluorescein",
+        "methyl_red",
+        "sudan_iii",
+        "sudan_iv",
+        "amaranth",
+        "erythrosine",
+        "patent_blue_v"
+      ],
+      "nota": "Microplacas sílica/celulose, 303 K; extrair tabelas de retenção, largura e assimetria do texto integral."
+    },
+    {
+      "doi": "10.1111/j.1365-313X.2004.02151.x",
+      "alvos": [
+        "zeaxanthin",
+        "beta_cryptoxanthin",
+        "violaxanthin",
+        "neoxanthin",
+        "beta_carotene",
+        "lutein"
+      ],
+      "nota": "Tabela de padrões de carotenoides, conferir fase móvel antes de importar."
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/3443633/",
+      "alvos": [
+        "allura_red_ac",
+        "fast_green_fcf"
+      ],
+      "nota": "Método em RP18, localizar Rf individual no texto integral; resumo não fornece valores."
+    }
+  ],
+  "estrategiaBusca": [
+    "Buscar por nome inglês, sinônimos, CAS, CID e estrutura; variantes Rf, RF, hRf, retardation factor, retention factor, TLC, HPTLC, paper chromatography.",
+    "Cruzar estruturas exatas e formas iônicas/estereoquímicas; não associar mistura comercial a molécula única.",
+    "Extrair técnica, fase estacionária, componentes/proporções, detecção, preparo, condições, valor e incerteza; registrar ausências como null.",
+    "Converter hRf apenas quando escala explicitamente indicada, dividindo por 100. Não tratar Rf como fator k de coluna.",
+    "Separar solventes diferentes de mudanças de proporção; não homologar a partir de Rf isolado ou predição."
+  ]
+}
