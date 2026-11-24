@@ -1,0 +1,29 @@
+name: "SIAC — Pesquisa bibliográfica Rf dos 76 candidatos"
+on:
+  push:
+    branches: [feat/siac-motor-cromatografico]
+    paths:
+      - "scripts/siac-pesquisar-rf.py"
+      - ".github/workflows/siac-pesquisar-rf.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  pesquisar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install requests
+      - name: Buscar literatura e rastrear tabelas
+        run: python -u scripts/siac-pesquisar-rf.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: siac-literatura-rf-76
+          path: docs/evidencias/siac-literatura-rf/
+          if-no-files-found: warn
+          retention-days: 30
