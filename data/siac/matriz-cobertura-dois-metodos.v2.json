@@ -3,7 +3,7 @@
   "data": "2026-11-23",
   "titulo": "Matriz preliminar de cobertura científica do SIAC",
   "fonte": "data/siac/analitos-protocolos.v1.json",
-  "observacao": "Duas substâncias (cafeína e paracetamol) com dados científicos homologados exclusivamente em HPTLC NP/RP de artigo primário, sem cena de HPTLC operacional. Methyl orange/Sudan IV têm Rf na literatura primária HFSA e métodos conferidos, mas sem replicatas e sem caracterização de incerteza; não homologar nem extrapolar.",
+  "observacao": "Duas substâncias (cafeína e paracetamol) com dados científicos homologados exclusivamente em HPTLC NP/RP de artigo primário, sem cena de HPTLC operacional. Methyl orange/Sudan IV têm Rf na literatura primária HFSA e métodos conferidos, mas sem replicatas e sem caracterização de incerteza; não homologar nem extrapolar. Lote 01: identidades moleculares dos principais sais de E102/E110/E124/E133 e oito Rf de triagem Sobańska (2017) conferidos; seguem não homologados como métodos quantitativos.",
   "regras": {
     "minimoMetodosIndependentesComRetencaoIndividual": 2,
     "minimoSolventesQuimicamenteDistintos": 2,
@@ -26,14 +26,14 @@
     "protocolos": 29,
     "liberadosParaSimulacaoReal": 0,
     "metodosHptlcComFontePrimariaHomologada": 2,
-    "identidadesQuimicasConferidas": 2
+    "identidadesQuimicasConferidas": 6
   },
   "candidatos": [
     {
       "id": "tartrazina",
       "nome": "Tartrazina (FD&C Yellow 5)",
       "grupo": "corantes_alimenticios",
-      "identidadeConfirmada": false,
+      "identidadeConfirmada": true,
       "metodosComRetencaoIndividual": 4,
       "metodos": [
         {
@@ -153,11 +153,17 @@
             {
               "valor": 0.42,
               "classe": "Rf medido durante triagem de solventes, Tabela 2, sistema 15",
-              "homologado": false
+              "homologado": false,
+              "fontePrimariaConferida": true
             }
           ],
           "rfIntervalo": [],
-          "estado": "tabela_artigo_primario_nao_homologada"
+          "estado": "tabela_artigo_primario_nao_homologada",
+          "auditoriaRf": {
+            "estado": "conferido_na_tabela_2_fonte_primaria",
+            "data": "2026-11-23",
+            "homologadoParaSimulacao": false
+          }
         },
         {
           "protocoloId": "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water",
@@ -194,11 +200,17 @@
             {
               "valor": 0.06,
               "classe": "Rf medido durante triagem de solventes, Tabela 2, sistema 18",
-              "homologado": false
+              "homologado": false,
+              "fontePrimariaConferida": true
             }
           ],
           "rfIntervalo": [],
-          "estado": "tabela_artigo_primario_nao_homologada"
+          "estado": "tabela_artigo_primario_nao_homologada",
+          "auditoriaRf": {
+            "estado": "conferido_na_tabela_2_fonte_primaria",
+            "data": "2026-11-23",
+            "homologadoParaSimulacao": false
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -297,14 +309,24 @@
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_e_condicoes_a_homologar"
-      ]
+        "dois_sistemas_de_triagem_sem_validacao_quantitativa_independente"
+      ],
+      "auditoriaRetencao": {
+        "estado": "dois_rf_primarios_conferidos_so_para_consulta",
+        "fonte": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5536146/",
+        "metodos": [
+          "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9",
+          "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water"
+        ],
+        "quantificacaoHomologada": false,
+        "habilitarCenaQuantitativa": false
+      }
     },
     {
       "id": "sunset_yellow_fcf",
       "nome": "Amarelo crepúsculo FCF (Yellow 6)",
       "grupo": "corantes_alimenticios",
-      "identidadeConfirmada": false,
+      "identidadeConfirmada": true,
       "metodosComRetencaoIndividual": 4,
       "metodos": [
         {
@@ -424,11 +446,17 @@
             {
               "valor": 0.8,
               "classe": "Rf medido durante triagem de solventes, Tabela 2, sistema 15",
-              "homologado": false
+              "homologado": false,
+              "fontePrimariaConferida": true
             }
           ],
           "rfIntervalo": [],
-          "estado": "tabela_artigo_primario_nao_homologada"
+          "estado": "tabela_artigo_primario_nao_homologada",
+          "auditoriaRf": {
+            "estado": "conferido_na_tabela_2_fonte_primaria",
+            "data": "2026-11-23",
+            "homologadoParaSimulacao": false
+          }
         },
         {
           "protocoloId": "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water",
@@ -465,11 +493,17 @@
             {
               "valor": 0.42,
               "classe": "Rf medido durante triagem de solventes, Tabela 2, sistema 18",
-              "homologado": false
+              "homologado": false,
+              "fontePrimariaConferida": true
             }
           ],
           "rfIntervalo": [],
-          "estado": "tabela_artigo_primario_nao_homologada"
+          "estado": "tabela_artigo_primario_nao_homologada",
+          "auditoriaRf": {
+            "estado": "conferido_na_tabela_2_fonte_primaria",
+            "data": "2026-11-23",
+            "homologadoParaSimulacao": false
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -568,8 +602,18 @@
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_e_condicoes_a_homologar"
-      ]
+        "dois_sistemas_de_triagem_sem_validacao_quantitativa_independente"
+      ],
+      "auditoriaRetencao": {
+        "estado": "dois_rf_primarios_conferidos_so_para_consulta",
+        "fonte": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5536146/",
+        "metodos": [
+          "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9",
+          "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water"
+        ],
+        "quantificacaoHomologada": false,
+        "habilitarCenaQuantitativa": false
+      }
     },
     {
       "id": "allura_red_ac",
@@ -593,7 +637,7 @@
       "id": "brilliant_blue_fcf",
       "nome": "Azul brilhante FCF (Blue 1)",
       "grupo": "corantes_alimenticios",
-      "identidadeConfirmada": false,
+      "identidadeConfirmada": true,
       "metodosComRetencaoIndividual": 4,
       "metodos": [
         {
@@ -713,11 +757,17 @@
             {
               "valor": 0.74,
               "classe": "Rf medido durante triagem de solventes, Tabela 2, sistema 15",
-              "homologado": false
+              "homologado": false,
+              "fontePrimariaConferida": true
             }
           ],
           "rfIntervalo": [],
-          "estado": "tabela_artigo_primario_nao_homologada"
+          "estado": "tabela_artigo_primario_nao_homologada",
+          "auditoriaRf": {
+            "estado": "conferido_na_tabela_2_fonte_primaria",
+            "data": "2026-11-23",
+            "homologadoParaSimulacao": false
+          }
         },
         {
           "protocoloId": "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water",
@@ -754,11 +804,17 @@
             {
               "valor": 0.19,
               "classe": "Rf medido durante triagem de solventes, Tabela 2, sistema 18",
-              "homologado": false
+              "homologado": false,
+              "fontePrimariaConferida": true
             }
           ],
           "rfIntervalo": [],
-          "estado": "tabela_artigo_primario_nao_homologada"
+          "estado": "tabela_artigo_primario_nao_homologada",
+          "auditoriaRf": {
+            "estado": "conferido_na_tabela_2_fonte_primaria",
+            "data": "2026-11-23",
+            "homologadoParaSimulacao": false
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -857,8 +913,18 @@
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_e_condicoes_a_homologar"
-      ]
+        "dois_sistemas_de_triagem_sem_validacao_quantitativa_independente"
+      ],
+      "auditoriaRetencao": {
+        "estado": "dois_rf_primarios_conferidos_so_para_consulta",
+        "fonte": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5536146/",
+        "metodos": [
+          "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9",
+          "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water"
+        ],
+        "quantificacaoHomologada": false,
+        "habilitarCenaQuantitativa": false
+      }
     },
     {
       "id": "indigotine",
@@ -1115,7 +1181,7 @@
       "id": "ponceau_4r",
       "nome": "Ponceau 4R",
       "grupo": "corantes_alimenticios",
-      "identidadeConfirmada": false,
+      "identidadeConfirmada": true,
       "metodosComRetencaoIndividual": 4,
       "metodos": [
         {
@@ -1235,11 +1301,17 @@
             {
               "valor": 0.59,
               "classe": "Rf medido durante triagem de solventes, Tabela 2, sistema 15",
-              "homologado": false
+              "homologado": false,
+              "fontePrimariaConferida": true
             }
           ],
           "rfIntervalo": [],
-          "estado": "tabela_artigo_primario_nao_homologada"
+          "estado": "tabela_artigo_primario_nao_homologada",
+          "auditoriaRf": {
+            "estado": "conferido_na_tabela_2_fonte_primaria",
+            "data": "2026-11-23",
+            "homologadoParaSimulacao": false
+          }
         },
         {
           "protocoloId": "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water",
@@ -1276,11 +1348,17 @@
             {
               "valor": 0.13,
               "classe": "Rf medido durante triagem de solventes, Tabela 2, sistema 18",
-              "homologado": false
+              "homologado": false,
+              "fontePrimariaConferida": true
             }
           ],
           "rfIntervalo": [],
-          "estado": "tabela_artigo_primario_nao_homologada"
+          "estado": "tabela_artigo_primario_nao_homologada",
+          "auditoriaRf": {
+            "estado": "conferido_na_tabela_2_fonte_primaria",
+            "data": "2026-11-23",
+            "homologadoParaSimulacao": false
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -1379,8 +1457,18 @@
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_e_condicoes_a_homologar"
-      ]
+        "dois_sistemas_de_triagem_sem_validacao_quantitativa_independente"
+      ],
+      "auditoriaRetencao": {
+        "estado": "dois_rf_primarios_conferidos_so_para_consulta",
+        "fonte": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5536146/",
+        "metodos": [
+          "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9",
+          "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water"
+        ],
+        "quantificacaoHomologada": false,
+        "habilitarCenaQuantitativa": false
+      }
     },
     {
       "id": "amaranth",
