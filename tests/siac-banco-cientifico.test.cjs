@@ -95,7 +95,7 @@ for(const p of solvents.paresMiscibilidade){
 }
 const candidates=new Set(analytes.candidatos.map(a=>a.id));
 assert.equal(analytes.candidatos.filter(a=>a.homologacao==="homologado_hptlc_condicional").length,2);
-assert.equal(analytes.candidatos.filter(a=>a.identity.verificadoIndividualmente).length,2);
+assert.equal(analytes.candidatos.filter(a=>a.identity.verificadoIndividualmente).length,6);
 assert(analytes.candidatos.every(a=>a.propriedades.densidade===null));
 assert.equal(analytes.candidatos.filter(a=>a.retencao.rf.length===2).length,2);
 let rfs=0;
@@ -201,6 +201,30 @@ for(const model of engines.motores){url(model.url);assert(model.acao&&model.adeq
 const html=fs.readFileSync(path.join(root,"index.html"),"utf8");
 assert(!html.includes("solventes-propriedades.v1.json"),"Não integrar dados não homologados ao runtime");
 assert(!html.includes("analitos-protocolos.v1.json"),"Não integrar Rf de pesquisa ao runtime");
+
+const corantesAuditados={
+ tartrazina:{cas:"1934-21-0",cid:164825,rf:[.42,.06]},
+ sunset_yellow_fcf:{cas:"2783-94-0",cid:17730,rf:[.80,.42]},
+ ponceau_4r:{cas:"2611-82-7",cid:17466,rf:[.59,.13]},
+ brilliant_blue_fcf:{cas:"3844-45-9",cid:19700,rf:[.74,.19]}
+};
+for(const [id,e] of Object.entries(corantesAuditados)){
+ const a=analytes.candidatos.find(a=>a.id===id);
+ assert(a.identity.verificadoIndividualmente&&a.identity.cas===e.cas&&a.identity.pubchemCID===e.cid);
+ assert.equal(a.auditoriaRetencao.homologacaoCena,false);
+ const found=sobanska.map(p=>p.dadosRf.find(x=>x.analito===id));
+ assert.deepEqual(found.map(x=>x.rf),e.rf);
+ assert(found.every(x=>x.fontePrimariaConferida===true&&x.homologado!==true));
+}
+const ukil=analytes.protocolos.find(p=>p.id==="tlc_aminoacids_ukil_2013_propanol_water_70_30");
+assert.equal(ukil.dadosRf.filter(r=>r.fontePrimariaConferida).length,20);
+const hfsa=analytes.protocolos.filter(p=>p.id.startsWith("tlc_hfsa_2026_mph"));
+assert.equal(hfsa.reduce((n,p)=>n+p.dadosRf.filter(r=>r.fontePrimariaConferida).length,0),4);
+assert.equal(padiyar.dadosRf.filter(r=>r.fontePrimariaConferida).length,8);
+assert.equal(padiyar.dadosRf.find(r=>r.analito==="valine").vereditoAritmetico,
+ "divergencia_de_arredondamento_no_artigo_0_52_vs_0_53");
+assert.equal(analytes.protocolos.filter(p=>p.status==="homologado").length,2);
+
 console.log("SIAC BANCO — OK:",solvents.solventes.length,"solventes,",completeDensity.length,"densidades,",solvents.paresMiscibilidade.length,
  "pares qualitativos,",analytes.candidatos.length,"analitos,",analytes.protocolos.length,
  "protocolos,",rfs,"Rf condicionais,",engines.motores.length,"motores/fontes candidatos.");
