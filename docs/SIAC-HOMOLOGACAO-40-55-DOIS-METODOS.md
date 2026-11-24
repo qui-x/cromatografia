@@ -102,3 +102,20 @@ A matriz auditável em `data/siac/matriz-cobertura-dois-metodos.v2.json` identif
 5. Validar individualmente o que está disponível por técnica e testar regressões de Montagem/Ver/Dados e módulos do laboratório.
 
 **Regra operacional:** dois métodos completos + duas fases móveis com solventes quimicamente diferentes, identidade e dados conferidos. Menos que isso permanece “em pesquisa”, ainda que o composto apareça no catálogo.
+
+
+## Lote 01 — auditoria adicional de fontes primárias (23/11/2026)
+
+**Sem nova homologação de método quantitativo.** Confirmadas as estruturas principais dos sais E102, E110, E124 e E133 (CAS/CID com estado iônico explicitado), e a transcrição de oito Rf da Tabela 2 do artigo de Sobańska et al. 2017. São **dois sistemas de triagem CCD documentados**, não o método final de quantificação de amostras, que usa outro eluente. Não transportar curvas de calibração, precisão, limite de quantificação nem UV final para o sistema 15 ou 18.
+
+- E102 tartrazina: CAS 1934-21-0, CID 164825; Rf 0,42 (sistema 15) / 0,06 (sistema 18).
+- E110 amarelo crepúsculo: CAS 2783-94-0, CID 17730; Rf 0,80 / 0,42.
+- E124 Ponceau 4R: CAS 2611-82-7, CID 17466; Rf 0,59 / 0,13.
+- E133 azul brilhante FCF: CAS 3844-45-9, CID 19700; Rf 0,74 / 0,19.
+
+Também conferidos: 20 valores pontuais de Ukil et al. 2013 (um sistema 1-propanol/água); quatro valores de Shakarova et al. 2026 em HFSA (sem replicatas) e oito transcrições de Padiyar et al. 2024, das quais uma (valina) tem discrepância de arredondamento. Todos continuam condicionados aos respectivos protocolos.
+
+**Contadores atuais:** 76 candidatos; 40 com dois sistemas bibliográficos distintos; **6 identidades moleculares principais conferidas** (incluindo cafeína e paracetamol); **2 substâncias integralmente homologadas para HPTLC**; 0 habilitadas a cenas quantitativas. A contagem 6 é de identidade, não de homologação cromatográfica. 
+
+Fontes: https://pmc.ncbi.nlm.nih.gov/articles/PMC5536146/ ; https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/ ; https://www.mdpi.com/2297-8739/13/11/336 ; https://www.ijpsjournal.com/article/enhanced-thin-layer-chromatography-of-amino-acids-using-mixed-hydrotropic-solutions .
+
