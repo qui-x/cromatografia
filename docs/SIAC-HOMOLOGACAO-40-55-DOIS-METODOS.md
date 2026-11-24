@@ -119,3 +119,10 @@ Também conferidos: 20 valores pontuais de Ukil et al. 2013 (um sistema 1-propan
 
 Fontes: https://pmc.ncbi.nlm.nih.gov/articles/PMC5536146/ ; https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/ ; https://www.mdpi.com/2297-8739/13/11/336 ; https://www.ijpsjournal.com/article/enhanced-thin-layer-chromatography-of-amino-acids-using-mixed-hydrotropic-solutions .
 
+
+### Lote complementar de identidades em HFSA (23/11/2026)
+
+- **Alaranjado de metila:** sal de sódio do cromóforo, CAS 547-58-0, PubChem CID 23673835; Rf em HFSA de 0,73 (MPh1) e 0,49 (MPh2).
+- **Sudan IV:** composto neutro C24H20N4O, CAS 85-83-6, PubChem CID 62330; Rf em HFSA de 0,33 (MPh1) e 0,86 (MPh2).
+
+Os dois resultados estão transcritos da Tabela 2 de Shakarova et al. (2026), https://www.mdpi.com/2297-8739/13/11/336. **Limites:** são observações únicas, sem replicatas independentes, e a película HFSA não tem estabilidade/adesão validada. Portanto, não elevamos esses protocolos a métodos quantitativos homologados. A contagem de identidades conferidas chega a **8/76**, enquanto a de substâncias plenamente homologadas permanece **2/76**.
