@@ -226,6 +226,95 @@
         }
       ],
       "nota": "Tabela 2; suporte de sílica mencionado, especificação a conferir. Não confundir UV-Vis de corante extraído com densitometria de placa."
+    },
+    {
+      "id": "ccd_cocoa_sers2025_A",
+      "doi": "10.1002/ansa.70033",
+      "fonte": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12303255/",
+      "localizacao": "seção 2.4, tabela 1",
+      "tecnica": "ccd",
+      "faseEstacionaria": "placa de sílica gel",
+      "faseMovel": "formiato de etila:ácido fórmico:água:tolueno",
+      "proporcaoPublicada": "10:1.33:1:1:0.5 v/v",
+      "proporcaoInterpretada": null,
+      "detector": "UV 254 nm; caracterização posterior SERS",
+      "dadosRf": [
+        {
+          "analito": "caffeine",
+          "rf": 0.84,
+          "homologado": false
+        },
+        {
+          "analito": "theobromine",
+          "rf": 0.71,
+          "homologado": false
+        }
+      ],
+      "ressalva": "Quatro componentes nomeados, cinco proporções publicadas. Não inferir componente faltante ou associar proporções. Padrões cafeína 99%, teobromina 98%. Triplicatas SERS não equivalem a replicatas de Rf."
+    },
+    {
+      "id": "ccd_cocoa_sers2025_B",
+      "doi": "10.1002/ansa.70033",
+      "fonte": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12303255/",
+      "localizacao": "seção 2.4, tabela 1",
+      "tecnica": "ccd",
+      "faseEstacionaria": "placa de sílica gel",
+      "faseMovel": "acetato de etila:metanol:água 10:1,35:1 v/v",
+      "detector": "UV 254 nm; SERS posterior",
+      "dadosRf": [
+        {
+          "analito": "caffeine",
+          "rf": 0.48,
+          "homologado": false
+        },
+        {
+          "analito": "theobromine",
+          "rf": 0.43,
+          "homologado": false
+        }
+      ],
+      "ressalva": "Rf de padrões; não assumir erro experimental nem quantificação validada nos dois eluentes."
+    },
+    {
+      "id": "ccd_clark_algal_pigments_petroleum_ether_acetone",
+      "fonte": "https://wordpress.clarku.edu/debrobertson/laboratory-protocols/algal-pigments/",
+      "localizacao": "seção B, tabela 2",
+      "tecnica": "ccd",
+      "faseEstacionaria": "placa de sílica gel",
+      "faseMovel": "éter de petróleo:acetona 7:3 v/v",
+      "dadosRf": [
+        {
+          "analito": "chlorophyll_a",
+          "rf": 0.68,
+          "homologado": false
+        },
+        {
+          "analito": "chlorophyll_b",
+          "rf": 0.54,
+          "homologado": false
+        },
+        {
+          "analito": "beta_carotene",
+          "rf": 0.94,
+          "homologado": false
+        },
+        {
+          "analito": "lutein",
+          "rf": 0.43,
+          "homologado": false
+        },
+        {
+          "analito": "violaxanthin",
+          "rf": 0.22,
+          "homologado": false
+        },
+        {
+          "analito": "neoxanthin",
+          "rf": 0.08,
+          "homologado": false
+        }
+      ],
+      "ressalva": "Valores aproximados didáticos para identificação de bandas de extrato; confirmação espectral e fontes primárias necessárias."
     }
   ],
   "pistas": [
@@ -262,6 +351,13 @@
         "fast_green_fcf"
       ],
       "nota": "Método em RP18, localizar Rf individual no texto integral; resumo não fornece valores."
+    },
+    {
+      "fonte": "https://www.fao.org/4/a0691e/A0691E07.htm",
+      "alvos": [
+        "quinoline_yellow"
+      ],
+      "nota": "E104: mistura comercial, dados de bandas múltiplas; não representar como molécula única."
     }
   ],
   "estrategiaBusca": [
