@@ -28,7 +28,7 @@ assert.equal(analytes.status,"PESQUISA_NAO_HOMOLOGADA");
 assert.equal(engines.status,"candidatos_nao_integrados");
 assert.equal(solvents.solventes.length,43);
 assert.equal(analytes.candidatos.length,76);
-assert.equal(analytes.protocolos.length,59);
+assert.equal(analytes.protocolos.length,69);
 assert.equal(engines.motores.length,9);
 assert.equal(stationary.status,"PESQUISA_NAO_HOMOLOGADA");
 assert.equal(stationary.fasesEstacionarias.length,18);
@@ -94,10 +94,10 @@ for(const p of solvents.paresMiscibilidade){
   assert.equal(p.temperaturaC,null,"Não inventar temperatura de matriz");
 }
 const candidates=new Set(analytes.candidatos.map(a=>a.id));
-assert.equal(analytes.candidatos.filter(a=>a.homologacao==="homologado_hptlc_condicional").length,5);
-assert.equal(analytes.candidatos.filter(a=>a.identity.verificadoIndividualmente).length,13);
+assert.equal(analytes.candidatos.filter(a=>a.homologacao==="homologado_hptlc_condicional").length,7);
+assert.equal(analytes.candidatos.filter(a=>a.identity.verificadoIndividualmente).length,15);
 assert(analytes.candidatos.every(a=>a.propriedades.densidade===null));
-assert.equal(analytes.candidatos.filter(a=>a.retencao.rf.length===2).length,6);
+assert.equal(analytes.candidatos.filter(a=>a.retencao.rf.length===2).length,8);
 let rfs=0;
 for(const p of analytes.protocolos){
   assert(analytes.fontes[p.fonte]&&p.tecnica&&p.status,"método sem contexto/URL");
@@ -111,7 +111,7 @@ for(const p of analytes.protocolos){
     rfs++;
   }
 }
-assert.equal(rfs,188);
+assert.equal(rfs,198);
 let intervalos=0;
 for(const p of analytes.protocolos){
  for(const r of (p.dadosRfIntervalos||[])){
@@ -169,10 +169,10 @@ for(const p of analytes.protocolos){
 }
 
 const homologados=analytes.protocolos.filter(p=>p.status==="homologado");
-assert.equal(homologados.length,8);
+assert.equal(homologados.length,12);
 assert.deepEqual(homologados.map(x=>x.id).sort(),[
  "hptlc_green2022_normal_ethylacetate_ethanol_85_15",
- "hptlc_green2022_reverse_ethanol_water_50_50","hptlc_vanillin_hingse2014","hptlc_flavonoids_alam2017_rp","ccd_coumarin_kulikov2021_micellar","hptlc_coumarin_stiefel2017","hptlc_vanillin_sharma2007_rp","hptlc_flavonoids_thomas2020_np"].sort());
+ "hptlc_green2022_reverse_ethanol_water_50_50","hptlc_vanillin_hingse2014","hptlc_flavonoids_alam2017_rp","ccd_coumarin_kulikov2021_micellar","hptlc_coumarin_stiefel2017","hptlc_vanillin_sharma2007_rp","hptlc_flavonoids_thomas2020_np","hptlc_curcumin_ashraf2012","hptlc_curcumin_bmad063","hptlc_ascorbic_2022_rp","hptlc_ascorbic_alam2019_np"].sort());
 assert(homologados.every(p=>p.disponibilidadeSimulador?.habilitarCenaQuantitativa===false));
 assert(analytes.protocolos.filter(p=>p.status!=="homologado").every(p=>p.dadosRf.every(d=>d.homologado!==true)),
  "Somente métodos NP/RP-HPTLC de fonte conferida podem ter marcação de retenção homologada");
@@ -228,7 +228,7 @@ for(const [id,cas,cid] of [["methyl_orange","547-58-0",23673835],["sudan_iv","85
  assert(c.identity.verificadoIndividualmente&&c.identity.cas===cas&&c.identity.pubchemCID===cid);
  assert.equal(c.auditoriaRetencao.homologacaoMetodoQuantitativo,false);
 }
-assert.equal(analytes.protocolos.filter(p=>p.status==="homologado").length,8);
+assert.equal(analytes.protocolos.filter(p=>p.status==="homologado").length,12);
 
 console.log("SIAC BANCO — OK:",solvents.solventes.length,"solventes,",completeDensity.length,"densidades,",solvents.paresMiscibilidade.length,
  "pares qualitativos,",analytes.candidatos.length,"analitos,",analytes.protocolos.length,
@@ -239,3 +239,5 @@ assert.equal(lote24.length,8);
 assert.equal(lote24.reduce((n,p)=>n+p.dadosRf.length,0),32);
 assert(lote24.every(p=>p.disponibilidadeSimulador.habilitarCenaQuantitativa===false));
 assert.equal(lote24.find(p=>p.id==="hptlc_vanillin_krishnaveni2013").status,"referencia_primaria_conferida_nao_homologada");
+
+const screeningAA=analytes.protocolos.filter(p=>p.id.startsWith("hptlc_ascorbic_2022_rp_screen_"));assert.equal(screeningAA.length,6);assert(screeningAA.every(p=>p.status!=="homologado"&&p.dadosRf[0].replicatas===3));

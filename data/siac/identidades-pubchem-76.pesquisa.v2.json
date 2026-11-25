@@ -31,7 +31,7 @@
     "exigemEspecificacao": 49,
     "idsDuplicados": 0,
     "homologadasParaMotor": 0,
-    "identidadesConferidas": 13
+    "identidadesConferidas": 15
   },
   "candidatos": [
     {
@@ -719,20 +719,23 @@
       "referenciaQuimica": {
         "pubchemCID": 969516,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/969516",
-        "classe": "cid_candidato_localizado",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": null,
-        "casConferido": null,
+        "classe": "identidade_molecular_individual_conferida",
+        "status": "identidade_quimica_confirmada_pubchem",
+        "nota": "curcumina I, não mistura de curcuminoides",
+        "casConferido": "458-37-7",
         "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "estruturaEFormaConferidas": true,
+        "fonteConferencia": "https://pubchem.ncbi.nlm.nih.gov/compound/969516",
+        "dataConferencia": "2026-11-24"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {
         "corObservadaSobCondicoes": null,
         "uv254": null,
         "uv365": null,
-        "rfHomologado": false,
-        "kColunaHomologado": false
+        "rfHomologado": true,
+        "kColunaHomologado": false,
+        "rfHomologadoRestricao": "Somente dois métodos HPTLC auditados, referência contextual."
       },
       "autorizacaoSimulacaoReal": false
     },
@@ -1621,20 +1624,23 @@
       "referenciaQuimica": {
         "pubchemCID": 54670067,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/54670067",
-        "classe": "cid_candidato_localizado",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": null,
-        "casConferido": null,
+        "classe": "identidade_molecular_individual_conferida",
+        "status": "identidade_quimica_confirmada_pubchem",
+        "nota": "ácido L-ascórbico, não sal ou deidroascórbico",
+        "casConferido": "50-81-7",
         "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "estruturaEFormaConferidas": true,
+        "fonteConferencia": "https://pubchem.ncbi.nlm.nih.gov/compound/54670067",
+        "dataConferencia": "2026-11-24"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {
         "corObservadaSobCondicoes": null,
         "uv254": null,
         "uv365": null,
-        "rfHomologado": false,
-        "kColunaHomologado": false
+        "rfHomologado": true,
+        "kColunaHomologado": false,
+        "rfHomologadoRestricao": "Somente dois métodos HPTLC auditados, referência contextual."
       },
       "autorizacaoSimulacaoReal": false
     },

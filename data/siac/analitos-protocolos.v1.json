@@ -39,7 +39,11 @@
     "stiefel2017coumarin": "https://doi.org/10.1021/acsomega.7b00562",
     "sharma2007vanillin": "https://doi.org/10.1002/jssc.200700229",
     "thomas2020moringa": "https://doi.org/10.4274/tjps.galenos.2018.80958",
-    "kagathara2022antioxidants": "https://doi.org/10.1007/s13738-022-02586-9"
+    "kagathara2022antioxidants": "https://doi.org/10.1007/s13738-022-02586-9",
+    "ashraf2012curcumin": "https://doi.org/10.1016/S2221-1691(12)60278-0",
+    "curcuminBmad063": "https://doi.org/10.1093/chromsci/bmad063",
+    "ascorbicGreen2022": "https://doi.org/10.3390/agronomy12051016",
+    "ascorbicAlam2019": "https://doi.org/10.1016/j.jsps.2019.07.006"
   },
   "candidatos": [
     {
@@ -856,9 +860,16 @@
       "nome": "Curcumina",
       "grupo": "pigmentos_vegetais",
       "identity": {
-        "cas": null,
-        "pubchemCID": null,
-        "verificadoIndividualmente": false
+        "cas": "458-37-7",
+        "pubchemCID": 969516,
+        "verificadoIndividualmente": true,
+        "formulaMolecular": "C21H20O6",
+        "formaInvestigada": "curcumina I, não mistura de curcuminoides",
+        "fontesIdentidade": [
+          "https://pubchem.ncbi.nlm.nih.gov/compound/969516"
+        ],
+        "dataConferencia": "2026-11-24",
+        "observacao": "Identidade molecular de referência; não implica pureza do lote."
       },
       "propriedades": {
         "densidade": null,
@@ -868,13 +879,33 @@
         "corObservavel": null,
         "absorcaoUV": null
       },
-      "homologacao": "candidato_sem_parametros",
+      "homologacao": "homologado_hptlc_condicional",
       "retencao": {
-        "rf": [],
+        "rf": [
+          {
+            "metodoId": "hptlc_curcumin_ashraf2012",
+            "tecnica": "hptlc",
+            "valor": 0.31,
+            "fonte": "ashraf2012curcumin",
+            "faseMovel": "toluene 5 : chloroform 4 : methanol 1",
+            "condicao": "somente condições do artigo",
+            "homologado": true,
+            "incertezaRfReportada": 0.02
+          },
+          {
+            "metodoId": "hptlc_curcumin_bmad063",
+            "tecnica": "hptlc",
+            "valor": 0.42,
+            "fonte": "curcuminBmad063",
+            "faseMovel": "toluene 4 : acetic_acid 1",
+            "condicao": "somente condições do artigo",
+            "homologado": true
+          }
+        ],
         "fatorK": [],
         "isotermas": []
       },
-      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+      "observacao": "Dois métodos HPTLC de referência com sistemas contrastantes; não homologar curva instrumental nem cena."
     },
     {
       "id": "capsanthin",
@@ -1904,9 +1935,16 @@
       "nome": "Ácido ascórbico",
       "grupo": "farmacos_e_organicos",
       "identity": {
-        "cas": null,
-        "pubchemCID": null,
-        "verificadoIndividualmente": false
+        "cas": "50-81-7",
+        "pubchemCID": 54670067,
+        "verificadoIndividualmente": true,
+        "formulaMolecular": "C6H8O6",
+        "formaInvestigada": "ácido L-ascórbico, não sal ou deidroascórbico",
+        "fontesIdentidade": [
+          "https://pubchem.ncbi.nlm.nih.gov/compound/54670067"
+        ],
+        "dataConferencia": "2026-11-24",
+        "observacao": "Identidade molecular de referência; não implica pureza do lote."
       },
       "propriedades": {
         "densidade": null,
@@ -1916,13 +1954,34 @@
         "corObservavel": null,
         "absorcaoUV": null
       },
-      "homologacao": "candidato_sem_parametros",
+      "homologacao": "homologado_hptlc_condicional",
       "retencao": {
-        "rf": [],
+        "rf": [
+          {
+            "metodoId": "hptlc_ascorbic_2022_rp",
+            "tecnica": "hptlc",
+            "valor": 0.86,
+            "fonte": "ascorbicGreen2022",
+            "faseMovel": "water 70 : ethanol 30",
+            "condicao": "somente condições do artigo",
+            "homologado": true,
+            "incertezaRfReportada": 0.02
+          },
+          {
+            "metodoId": "hptlc_ascorbic_alam2019_np",
+            "tecnica": "hptlc",
+            "valor": 0.54,
+            "fonte": "ascorbicAlam2019",
+            "faseMovel": "ethyl_acetate 10 : acetone 6 : water 2 : formic_acid 2",
+            "condicao": "somente condições do artigo",
+            "homologado": true,
+            "incertezaRfReportada": 0.02
+          }
+        ],
         "fatorK": [],
         "isotermas": []
       },
-      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+      "observacao": "Dois métodos HPTLC de referência com sistemas contrastantes; não homologar curva instrumental nem cena."
     },
     {
       "id": "fluorescein",
@@ -7192,6 +7251,694 @@
         "ressalvas": [
           "Padrões Sigma-Aldrich, saturação 15 min. A tabela e o texto apresentam divergência nas recuperações de curcumina; Rf claramente publicado. Manter referência sem homologar toda a validação; não inferir pureza.",
           "Não transferir Rf ou calibração para outra técnica ou cena."
+        ]
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "hptlc",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false
+      }
+    },
+    {
+      "id": "hptlc_curcumin_ashraf2012",
+      "fonte": "ashraf2012curcumin",
+      "ano": 2012,
+      "tecnica": "hptlc",
+      "assuntos": [
+        "pigmentos_vegetais"
+      ],
+      "status": "homologado",
+      "referenciaSecao": "Métodos, resultados e validação",
+      "faseEstacionaria": {
+        "classe": "Sílica gel 60 F254 Merck em alumínio",
+        "detalhamento": "20 × 10 cm, 0,2 mm",
+        "homologada": true
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "toluene",
+            "partes": 5
+          },
+          {
+            "id": "chloroform",
+            "partes": 4
+          },
+          {
+            "id": "methanol",
+            "partes": 1
+          }
+        ],
+        "base": "v/v",
+        "mistura": "toluene 5 : chloroform 4 : methanol 1",
+        "homologada": true
+      },
+      "aplicacao": {
+        "detector": "Densitometria a 430 nm",
+        "detectorHomologado": true,
+        "detectorNm": 430,
+        "temperaturaC": {
+          "min": 23,
+          "max": 27
+        },
+        "umidadeRelativaPct": {
+          "min": 55,
+          "max": 65
+        },
+        "saturacaoCamaraMin": 15,
+        "desenvolvimentoFrenteMm": 80,
+        "larguraBandaMm": 3
+      },
+      "dadosRf": [
+        {
+          "analito": "curcumin",
+          "rf": 0.31,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "ashraf2012curcumin",
+          "homologado": true,
+          "fontePrimariaConferida": true,
+          "incertezaRfReportada": 0.02
+        }
+      ],
+      "nota": "Padrão ChromaDex 98%; recuperação 98,35–100,68%. Rf contextual; não interpretar incerteza como SD sem definição explícita.",
+      "auditoriaCientifica": {
+        "estado": "metodo_experimental_revisado_referencia_condicional",
+        "fontePrimaria": "https://doi.org/10.1016/S2221-1691(12)60278-0",
+        "doi": "10.1016/S2221-1691(12)60278-0",
+        "secoesConferidas": "Métodos, resultados e tabelas de validação",
+        "dataConferencia": "2026-11-24",
+        "ressalvas": [
+          "Padrão ChromaDex 98%; recuperação 98,35–100,68%. Rf contextual; não interpretar incerteza como SD sem definição explícita.",
+          "Não extrapolar a CCD genérica, papel, coluna ou cena quantitativa."
+        ]
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "hptlc",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false
+      }
+    },
+    {
+      "id": "hptlc_curcumin_bmad063",
+      "fonte": "curcuminBmad063",
+      "ano": 2025,
+      "tecnica": "hptlc",
+      "assuntos": [
+        "pigmentos_vegetais"
+      ],
+      "status": "homologado",
+      "referenciaSecao": "Métodos, resultados e validação",
+      "faseEstacionaria": {
+        "classe": "Sílica gel 60 F254 Merck em alumínio",
+        "detalhamento": "20 × 10 cm; desenvolvimento ascendente",
+        "homologada": true
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "toluene",
+            "partes": 4
+          },
+          {
+            "id": "acetic_acid",
+            "partes": 1
+          }
+        ],
+        "base": "v/v",
+        "mistura": "toluene 4 : acetic_acid 1",
+        "homologada": true
+      },
+      "aplicacao": {
+        "detector": "Absorbância a 425 nm conforme métodos; imagens sob luz branca, 254 e 366 nm",
+        "detectorHomologado": true,
+        "detectorNm": 425,
+        "temperaturaC": {
+          "min": 22,
+          "max": 26
+        },
+        "umidadeRelativaPct": 30,
+        "saturacaoCamaraMin": 20,
+        "desenvolvimentoFrenteMm": 70,
+        "larguraBandaMm": 8
+      },
+      "dadosRf": [
+        {
+          "analito": "curcumin",
+          "rf": 0.42,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "curcuminBmad063",
+          "homologado": true,
+          "fontePrimariaConferida": true
+        }
+      ],
+      "nota": "Publicado online em 2023; padrão ≥94%. Resumo descreve visualização 366 nm e método descreve escaneamento 425 nm. Faixa de massa da calibração e volumes descritos não coincidem; não homologar curva de calibração, somente Rf e condições de referência.",
+      "auditoriaCientifica": {
+        "estado": "metodo_experimental_revisado_referencia_condicional",
+        "fontePrimaria": "https://doi.org/10.1093/chromsci/bmad063",
+        "doi": "10.1093/chromsci/bmad063",
+        "secoesConferidas": "Métodos, resultados e tabelas de validação",
+        "dataConferencia": "2026-11-24",
+        "ressalvas": [
+          "Publicado online em 2023; padrão ≥94%. Resumo descreve visualização 366 nm e método descreve escaneamento 425 nm. Faixa de massa da calibração e volumes descritos não coincidem; não homologar curva de calibração, somente Rf e condições de referência.",
+          "Não extrapolar a CCD genérica, papel, coluna ou cena quantitativa."
+        ]
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "hptlc",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false
+      }
+    },
+    {
+      "id": "hptlc_ascorbic_2022_rp",
+      "fonte": "ascorbicGreen2022",
+      "ano": 2022,
+      "tecnica": "hptlc",
+      "assuntos": [
+        "farmacos_e_organicos"
+      ],
+      "status": "homologado",
+      "referenciaSecao": "Métodos, resultados e validação",
+      "faseEstacionaria": {
+        "classe": "Sílica RP 60 F254S Merck em vidro",
+        "detalhamento": "10 × 20 cm, fase reversa; ligante não especificado",
+        "homologada": true
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "water",
+            "partes": 70
+          },
+          {
+            "id": "ethanol",
+            "partes": 30
+          }
+        ],
+        "base": "v/v",
+        "mistura": "water 70 : ethanol 30",
+        "homologada": true
+      },
+      "aplicacao": {
+        "detector": "Densitometria a 265 nm",
+        "detectorHomologado": true,
+        "detectorNm": 265,
+        "temperaturaC": 22,
+        "saturacaoCamaraMin": 30,
+        "desenvolvimentoFrenteMm": 80,
+        "larguraBandaMm": 6
+      },
+      "dadosRf": [
+        {
+          "analito": "ascorbic_acid",
+          "rf": 0.86,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "ascorbicGreen2022",
+          "homologado": true,
+          "fontePrimariaConferida": true,
+          "incertezaRfReportada": 0.02,
+          "desvioPadraoRf": 0.02,
+          "replicatas": 3
+        }
+      ],
+      "nota": "Tabela 1: média ± SD n=3. Recuperação 99,05–101,28%; padrão Sigma-Aldrich. Referência apenas para suporte RP e condições do artigo.",
+      "auditoriaCientifica": {
+        "estado": "metodo_experimental_revisado_referencia_condicional",
+        "fontePrimaria": "https://doi.org/10.3390/agronomy12051016",
+        "doi": "10.3390/agronomy12051016",
+        "secoesConferidas": "Métodos, resultados e tabelas de validação",
+        "dataConferencia": "2026-11-24",
+        "ressalvas": [
+          "Tabela 1: média ± SD n=3. Recuperação 99,05–101,28%; padrão Sigma-Aldrich. Referência apenas para suporte RP e condições do artigo.",
+          "Não extrapolar a CCD genérica, papel, coluna ou cena quantitativa."
+        ]
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "hptlc",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false
+      }
+    },
+    {
+      "id": "hptlc_ascorbic_alam2019_np",
+      "fonte": "ascorbicAlam2019",
+      "ano": 2019,
+      "tecnica": "hptlc",
+      "assuntos": [
+        "farmacos_e_organicos"
+      ],
+      "status": "homologado",
+      "referenciaSecao": "Métodos, resultados e validação",
+      "faseEstacionaria": {
+        "classe": "Sílica gel 60 F254 em vidro",
+        "detalhamento": "20 × 10 cm; comparação com padrão individual",
+        "homologada": true
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "ethyl_acetate",
+            "partes": 10
+          },
+          {
+            "id": "acetone",
+            "partes": 6
+          },
+          {
+            "id": "water",
+            "partes": 2
+          },
+          {
+            "id": "formic_acid",
+            "partes": 2
+          }
+        ],
+        "base": "v/v",
+        "mistura": "ethyl_acetate 10 : acetone 6 : water 2 : formic_acid 2",
+        "homologada": true
+      },
+      "aplicacao": {
+        "detector": "Densitometria a 254 nm",
+        "detectorHomologado": true,
+        "detectorNm": 254
+      },
+      "dadosRf": [
+        {
+          "analito": "ascorbic_acid",
+          "rf": 0.54,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "ascorbicAlam2019",
+          "homologado": true,
+          "fontePrimariaConferida": true,
+          "incertezaRfReportada": 0.02
+        }
+      ],
+      "nota": "Métodos e seção 3.1: Rf 0,54 ± 0,02; validação de precisão, recuperação, robustez. Faixa de linearidade diverge entre resumo e resultados, não transferir calibração.",
+      "auditoriaCientifica": {
+        "estado": "metodo_experimental_revisado_referencia_condicional",
+        "fontePrimaria": "https://doi.org/10.1016/j.jsps.2019.07.006",
+        "doi": "10.1016/j.jsps.2019.07.006",
+        "secoesConferidas": "Métodos, resultados e tabelas de validação",
+        "dataConferencia": "2026-11-24",
+        "ressalvas": [
+          "Métodos e seção 3.1: Rf 0,54 ± 0,02; validação de precisão, recuperação, robustez. Faixa de linearidade diverge entre resumo e resultados, não transferir calibração.",
+          "Não extrapolar a CCD genérica, papel, coluna ou cena quantitativa."
+        ]
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "hptlc",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false
+      }
+    },
+    {
+      "id": "hptlc_ascorbic_2022_rp_screen_30",
+      "fonte": "ascorbicGreen2022",
+      "ano": 2022,
+      "tecnica": "hptlc",
+      "assuntos": [
+        "farmacos_e_organicos"
+      ],
+      "status": "referencia_primaria_conferida_nao_homologada",
+      "referenciaSecao": "Métodos, resultados e validação",
+      "faseEstacionaria": {
+        "classe": "Sílica RP 60 F254S Merck em vidro",
+        "detalhamento": "10 × 20 cm, fase reversa",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "water",
+            "partes": 30
+          },
+          {
+            "id": "ethanol",
+            "partes": 70
+          }
+        ],
+        "base": "v/v",
+        "mistura": "water 30 : ethanol 70",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "Densitometria a 265 nm",
+        "detectorHomologado": false,
+        "detectorNm": 265
+      },
+      "dadosRf": [
+        {
+          "analito": "ascorbic_acid",
+          "rf": 0.78,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "ascorbicGreen2022",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "incertezaRfReportada": 0.03,
+          "replicatas": 3,
+          "desvioPadraoRf": 0.03
+        }
+      ],
+      "nota": "Tabela 1, triagem de composição; média ± SD n=3; mesmo estudo, não método independente nem validação quantitativa do eluente.",
+      "auditoriaCientifica": {
+        "estado": "triagem_de_eluente",
+        "fontePrimaria": "https://doi.org/10.3390/agronomy12051016",
+        "doi": "10.3390/agronomy12051016",
+        "secoesConferidas": "Métodos, resultados e tabelas de validação",
+        "dataConferencia": "2026-11-24",
+        "ressalvas": [
+          "Tabela 1, triagem de composição; média ± SD n=3; mesmo estudo, não método independente nem validação quantitativa do eluente.",
+          "Não extrapolar a CCD genérica, papel, coluna ou cena quantitativa."
+        ]
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "hptlc",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false
+      }
+    },
+    {
+      "id": "hptlc_ascorbic_2022_rp_screen_40",
+      "fonte": "ascorbicGreen2022",
+      "ano": 2022,
+      "tecnica": "hptlc",
+      "assuntos": [
+        "farmacos_e_organicos"
+      ],
+      "status": "referencia_primaria_conferida_nao_homologada",
+      "referenciaSecao": "Métodos, resultados e validação",
+      "faseEstacionaria": {
+        "classe": "Sílica RP 60 F254S Merck em vidro",
+        "detalhamento": "10 × 20 cm, fase reversa",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "water",
+            "partes": 40
+          },
+          {
+            "id": "ethanol",
+            "partes": 60
+          }
+        ],
+        "base": "v/v",
+        "mistura": "water 40 : ethanol 60",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "Densitometria a 265 nm",
+        "detectorHomologado": false,
+        "detectorNm": 265
+      },
+      "dadosRf": [
+        {
+          "analito": "ascorbic_acid",
+          "rf": 0.8,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "ascorbicGreen2022",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "incertezaRfReportada": 0.02,
+          "replicatas": 3,
+          "desvioPadraoRf": 0.02
+        }
+      ],
+      "nota": "Tabela 1, triagem de composição; média ± SD n=3; mesmo estudo, não método independente nem validação quantitativa do eluente.",
+      "auditoriaCientifica": {
+        "estado": "triagem_de_eluente",
+        "fontePrimaria": "https://doi.org/10.3390/agronomy12051016",
+        "doi": "10.3390/agronomy12051016",
+        "secoesConferidas": "Métodos, resultados e tabelas de validação",
+        "dataConferencia": "2026-11-24",
+        "ressalvas": [
+          "Tabela 1, triagem de composição; média ± SD n=3; mesmo estudo, não método independente nem validação quantitativa do eluente.",
+          "Não extrapolar a CCD genérica, papel, coluna ou cena quantitativa."
+        ]
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "hptlc",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false
+      }
+    },
+    {
+      "id": "hptlc_ascorbic_2022_rp_screen_50",
+      "fonte": "ascorbicGreen2022",
+      "ano": 2022,
+      "tecnica": "hptlc",
+      "assuntos": [
+        "farmacos_e_organicos"
+      ],
+      "status": "referencia_primaria_conferida_nao_homologada",
+      "referenciaSecao": "Métodos, resultados e validação",
+      "faseEstacionaria": {
+        "classe": "Sílica RP 60 F254S Merck em vidro",
+        "detalhamento": "10 × 20 cm, fase reversa",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "water",
+            "partes": 50
+          },
+          {
+            "id": "ethanol",
+            "partes": 50
+          }
+        ],
+        "base": "v/v",
+        "mistura": "water 50 : ethanol 50",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "Densitometria a 265 nm",
+        "detectorHomologado": false,
+        "detectorNm": 265
+      },
+      "dadosRf": [
+        {
+          "analito": "ascorbic_acid",
+          "rf": 0.82,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "ascorbicGreen2022",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "incertezaRfReportada": 0.03,
+          "replicatas": 3,
+          "desvioPadraoRf": 0.03
+        }
+      ],
+      "nota": "Tabela 1, triagem de composição; média ± SD n=3; mesmo estudo, não método independente nem validação quantitativa do eluente.",
+      "auditoriaCientifica": {
+        "estado": "triagem_de_eluente",
+        "fontePrimaria": "https://doi.org/10.3390/agronomy12051016",
+        "doi": "10.3390/agronomy12051016",
+        "secoesConferidas": "Métodos, resultados e tabelas de validação",
+        "dataConferencia": "2026-11-24",
+        "ressalvas": [
+          "Tabela 1, triagem de composição; média ± SD n=3; mesmo estudo, não método independente nem validação quantitativa do eluente.",
+          "Não extrapolar a CCD genérica, papel, coluna ou cena quantitativa."
+        ]
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "hptlc",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false
+      }
+    },
+    {
+      "id": "hptlc_ascorbic_2022_rp_screen_60",
+      "fonte": "ascorbicGreen2022",
+      "ano": 2022,
+      "tecnica": "hptlc",
+      "assuntos": [
+        "farmacos_e_organicos"
+      ],
+      "status": "referencia_primaria_conferida_nao_homologada",
+      "referenciaSecao": "Métodos, resultados e validação",
+      "faseEstacionaria": {
+        "classe": "Sílica RP 60 F254S Merck em vidro",
+        "detalhamento": "10 × 20 cm, fase reversa",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "water",
+            "partes": 60
+          },
+          {
+            "id": "ethanol",
+            "partes": 40
+          }
+        ],
+        "base": "v/v",
+        "mistura": "water 60 : ethanol 40",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "Densitometria a 265 nm",
+        "detectorHomologado": false,
+        "detectorNm": 265
+      },
+      "dadosRf": [
+        {
+          "analito": "ascorbic_acid",
+          "rf": 0.84,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "ascorbicGreen2022",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "incertezaRfReportada": 0.02,
+          "replicatas": 3,
+          "desvioPadraoRf": 0.02
+        }
+      ],
+      "nota": "Tabela 1, triagem de composição; média ± SD n=3; mesmo estudo, não método independente nem validação quantitativa do eluente.",
+      "auditoriaCientifica": {
+        "estado": "triagem_de_eluente",
+        "fontePrimaria": "https://doi.org/10.3390/agronomy12051016",
+        "doi": "10.3390/agronomy12051016",
+        "secoesConferidas": "Métodos, resultados e tabelas de validação",
+        "dataConferencia": "2026-11-24",
+        "ressalvas": [
+          "Tabela 1, triagem de composição; média ± SD n=3; mesmo estudo, não método independente nem validação quantitativa do eluente.",
+          "Não extrapolar a CCD genérica, papel, coluna ou cena quantitativa."
+        ]
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "hptlc",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false
+      }
+    },
+    {
+      "id": "hptlc_ascorbic_2022_rp_screen_80",
+      "fonte": "ascorbicGreen2022",
+      "ano": 2022,
+      "tecnica": "hptlc",
+      "assuntos": [
+        "farmacos_e_organicos"
+      ],
+      "status": "referencia_primaria_conferida_nao_homologada",
+      "referenciaSecao": "Métodos, resultados e validação",
+      "faseEstacionaria": {
+        "classe": "Sílica RP 60 F254S Merck em vidro",
+        "detalhamento": "10 × 20 cm, fase reversa",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "water",
+            "partes": 80
+          },
+          {
+            "id": "ethanol",
+            "partes": 20
+          }
+        ],
+        "base": "v/v",
+        "mistura": "water 80 : ethanol 20",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "Densitometria a 265 nm",
+        "detectorHomologado": false,
+        "detectorNm": 265
+      },
+      "dadosRf": [
+        {
+          "analito": "ascorbic_acid",
+          "rf": 0.88,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "ascorbicGreen2022",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "incertezaRfReportada": 0.02,
+          "replicatas": 3,
+          "desvioPadraoRf": 0.02
+        }
+      ],
+      "nota": "Tabela 1, triagem de composição; média ± SD n=3; mesmo estudo, não método independente nem validação quantitativa do eluente.",
+      "auditoriaCientifica": {
+        "estado": "triagem_de_eluente",
+        "fontePrimaria": "https://doi.org/10.3390/agronomy12051016",
+        "doi": "10.3390/agronomy12051016",
+        "secoesConferidas": "Métodos, resultados e tabelas de validação",
+        "dataConferencia": "2026-11-24",
+        "ressalvas": [
+          "Tabela 1, triagem de composição; média ± SD n=3; mesmo estudo, não método independente nem validação quantitativa do eluente.",
+          "Não extrapolar a CCD genérica, papel, coluna ou cena quantitativa."
+        ]
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "hptlc",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false
+      }
+    },
+    {
+      "id": "hptlc_ascorbic_2022_rp_screen_90",
+      "fonte": "ascorbicGreen2022",
+      "ano": 2022,
+      "tecnica": "hptlc",
+      "assuntos": [
+        "farmacos_e_organicos"
+      ],
+      "status": "referencia_primaria_conferida_nao_homologada",
+      "referenciaSecao": "Métodos, resultados e validação",
+      "faseEstacionaria": {
+        "classe": "Sílica RP 60 F254S Merck em vidro",
+        "detalhamento": "10 × 20 cm, fase reversa",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "water",
+            "partes": 90
+          },
+          {
+            "id": "ethanol",
+            "partes": 10
+          }
+        ],
+        "base": "v/v",
+        "mistura": "water 90 : ethanol 10",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "Densitometria a 265 nm",
+        "detectorHomologado": false,
+        "detectorNm": 265
+      },
+      "dadosRf": [
+        {
+          "analito": "ascorbic_acid",
+          "rf": 0.9,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "ascorbicGreen2022",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "incertezaRfReportada": 0.02,
+          "replicatas": 3,
+          "desvioPadraoRf": 0.02
+        }
+      ],
+      "nota": "Tabela 1, triagem de composição; média ± SD n=3; mesmo estudo, não método independente nem validação quantitativa do eluente.",
+      "auditoriaCientifica": {
+        "estado": "triagem_de_eluente",
+        "fontePrimaria": "https://doi.org/10.3390/agronomy12051016",
+        "doi": "10.3390/agronomy12051016",
+        "secoesConferidas": "Métodos, resultados e tabelas de validação",
+        "dataConferencia": "2026-11-24",
+        "ressalvas": [
+          "Tabela 1, triagem de composição; média ± SD n=3; mesmo estudo, não método independente nem validação quantitativa do eluente.",
+          "Não extrapolar a CCD genérica, papel, coluna ou cena quantitativa."
         ]
       },
       "disponibilidadeSimulador": {
