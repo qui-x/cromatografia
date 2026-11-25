@@ -1,0 +1,1313 @@
+{
+  "data": "2026-11-24",
+  "run": 45301167120,
+  "estado": "origem_e_deduplicacao",
+  "totalCorrespondencias": 52,
+  "integradosXu": 25,
+  "tlcexpRetidos": 27,
+  "nota": "Registros TLCexp de Xu são correspondências potenciais, não observações independentes. Conflitos água/hexano e proporções preservados; não corrigir arquivo externo. Outros DOIs em revisão.",
+  "registros": [
+    {
+      "fonte": "TLCexp",
+      "linha_planilha": 6766,
+      "analito": "paracetamol",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "OC1=CC=C(C=C1)NC(C)=O",
+      "inchikey_fonte": "RZVAJINKPMORJF-UHFFFAOYSA-N",
+      "rf": 0.1,
+      "componentes": [
+        {
+          "solvente": "Petroleum ether",
+          "proporcao": 0.5
+        },
+        {
+          "solvente": "Ethyl acetate",
+          "proporcao": 0.5
+        }
+      ],
+      "conjunto_solventes": [
+        "ethyl acetate",
+        "petroleum ether"
+      ],
+      "doi": "10.1038/s44160-023-00293-8",
+      "label": "non-standard",
+      "homologado": false
+    },
+    {
+      "fonte": "TLCexp",
+      "linha_planilha": 12256,
+      "analito": "benzoic_acid",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "C(C1=CC=CC=C1)(=O)O",
+      "inchikey_fonte": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+      "rf": 0.16,
+      "componentes": [
+        {
+          "solvente": "Hexane",
+          "proporcao": 0.8
+        },
+        {
+          "solvente": "Ethyl acetate",
+          "proporcao": 0.2
+        }
+      ],
+      "conjunto_solventes": [
+        "ethyl acetate",
+        "hexane"
+      ],
+      "doi": "10.1039/d1ra04661f",
+      "label": "non-standard",
+      "homologado": false
+    },
+    {
+      "fonte": "TLCexp",
+      "linha_planilha": 18610,
+      "analito": "benzoic_acid",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C(O)C1=CC=CC=C1",
+      "inchikey_fonte": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+      "rf": 0.009,
+      "componentes": [
+        {
+          "solvente": "Water",
+          "proporcao": 1
+        }
+      ],
+      "conjunto_solventes": [
+        "water"
+      ],
+      "doi": "10.1016/j.chempr.2022.08.008",
+      "label": "standard",
+      "homologado": false
+    },
+    {
+      "fonte": "TLCexp",
+      "linha_planilha": 18611,
+      "analito": "benzoic_acid",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C(O)C1=CC=CC=C1",
+      "inchikey_fonte": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+      "rf": 0.059,
+      "componentes": [
+        {
+          "solvente": "Water",
+          "proporcao": 0.98
+        },
+        {
+          "solvente": "Ethyl acetate",
+          "proporcao": 0.02
+        }
+      ],
+      "conjunto_solventes": [
+        "ethyl acetate",
+        "water"
+      ],
+      "doi": "10.1016/j.chempr.2022.08.008",
+      "label": "standard",
+      "homologado": false
+    },
+    {
+      "fonte": "TLCexp",
+      "linha_planilha": 18612,
+      "analito": "benzoic_acid",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C(O)C1=CC=CC=C1",
+      "inchikey_fonte": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+      "rf": 0.108,
+      "componentes": [
+        {
+          "solvente": "Water",
+          "proporcao": 0.952
+        },
+        {
+          "solvente": "Ethyl acetate",
+          "proporcao": 0.048
+        }
+      ],
+      "conjunto_solventes": [
+        "ethyl acetate",
+        "water"
+      ],
+      "doi": "10.1016/j.chempr.2022.08.008",
+      "label": "standard",
+      "homologado": false
+    },
+    {
+      "fonte": "TLCexp",
+      "linha_planilha": 18613,
+      "analito": "benzoic_acid",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C(O)C1=CC=CC=C1",
+      "inchikey_fonte": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+      "rf": 0.229,
+      "componentes": [
+        {
+          "solvente": "Water",
+          "proporcao": 0.833
+        },
+        {
+          "solvente": "Ethyl acetate",
+          "proporcao": 0.167
+        }
+      ],
+      "conjunto_solventes": [
+        "ethyl acetate",
+        "water"
+      ],
+      "doi": "10.1016/j.chempr.2022.08.008",
+      "label": "standard",
+      "homologado": false
+    },
+    {
+      "fonte": "TLCexp",
+      "linha_planilha": 18614,
+      "analito": "benzoic_acid",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C(O)C1=CC=CC=C1",
+      "inchikey_fonte": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+      "rf": 0.4,
+      "componentes": [
+        {
+          "solvente": "Water",
+          "proporcao": 0.75
+        },
+        {
+          "solvente": "Ethyl acetate",
+          "proporcao": 0.25
+        }
+      ],
+      "conjunto_solventes": [
+        "ethyl acetate",
+        "water"
+      ],
+      "doi": "10.1016/j.chempr.2022.08.008",
+      "label": "standard",
+      "homologado": false
+    },
+    {
+      "fonte": "TLCexp",
+      "linha_planilha": 18615,
+      "analito": "benzoic_acid",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C(O)C1=CC=CC=C1",
+      "inchikey_fonte": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+      "rf": 0.667,
+      "componentes": [
+        {
+          "solvente": "Water",
+          "proporcao": 0.5
+        },
+        {
+          "solvente": "Ethyl acetate",
+          "proporcao": 0.5
+        }
+      ],
+      "conjunto_solventes": [
+        "ethyl acetate",
+        "water"
+      ],
+      "doi": "10.1016/j.chempr.2022.08.008",
+      "label": "standard",
+      "homologado": false
+    },
+    {
+      "fonte": "TLCexp",
+      "linha_planilha": 18616,
+      "analito": "benzoic_acid",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C(O)C1=CC=CC=C1",
+      "inchikey_fonte": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+      "rf": 0.803,
+      "componentes": [
+        {
+          "solvente": "Ethyl acetate",
+          "proporcao": 0.667
+        },
+        {
+          "solvente": "Water",
+          "proporcao": 0.333
+        }
+      ],
+      "conjunto_solventes": [
+        "ethyl acetate",
+        "water"
+      ],
+      "doi": "10.1016/j.chempr.2022.08.008",
+      "label": "standard",
+      "homologado": false
+    },
+    {
+      "fonte": "TLCexp",
+      "linha_planilha": 18617,
+      "analito": "benzoic_acid",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C(O)C1=CC=CC=C1",
+      "inchikey_fonte": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+      "rf": 0.914,
+      "componentes": [
+        {
+          "solvente": "Ethyl acetate",
+          "proporcao": 1
+        }
+      ],
+      "conjunto_solventes": [
+        "ethyl acetate"
+      ],
+      "doi": "10.1016/j.chempr.2022.08.008",
+      "label": "standard",
+      "homologado": false
+    },
+    {
+      "fonte": "TLCexp",
+      "linha_planilha": 20822,
+      "analito": "benzoic_acid",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C(O)C1=CC=CC=C1",
+      "inchikey_fonte": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+      "rf": 0.1,
+      "componentes": [
+        {
+          "solvente": "Dichloromethane",
+          "proporcao": 1
+        }
+      ],
+      "conjunto_solventes": [
+        "dichloromethane"
+      ],
+      "doi": "10.1016/j.chempr.2022.08.008",
+      "label": "standard",
+      "homologado": false
+    },
+    {
+      "fonte": "TLCexp",
+      "linha_planilha": 20823,
+      "analito": "benzoic_acid",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C(O)C1=CC=CC=C1",
+      "inchikey_fonte": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+      "rf": 0.128,
+      "componentes": [
+        {
+          "solvente": "Dichloromethane",
+          "proporcao": 0.99
+        },
+        {
+          "solvente": "Methanol",
+          "proporcao": 0.01
+        }
+      ],
+      "conjunto_solventes": [
+        "dichloromethane",
+        "methanol"
+      ],
+      "doi": "10.1016/j.chempr.2022.08.008",
+      "label": "standard",
+      "homologado": false
+    },
+    {
+      "fonte": "TLCexp",
+      "linha_planilha": 20824,
+      "analito": "benzoic_acid",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C(O)C1=CC=CC=C1",
+      "inchikey_fonte": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+      "rf": 0.163,
+      "componentes": [
+        {
+          "solvente": "Dichloromethane",
+          "proporcao": 0.98
+        },
+        {
+          "solvente": "Methanol",
+          "proporcao": 0.02
+        }
+      ],
+      "conjunto_solventes": [
+        "dichloromethane",
+        "methanol"
+      ],
+      "doi": "10.1016/j.chempr.2022.08.008",
+      "label": "standard",
+      "homologado": false
+    },
+    {
+      "fonte": "TLCexp",
+      "linha_planilha": 20825,
+      "analito": "benzoic_acid",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C(O)C1=CC=CC=C1",
+      "inchikey_fonte": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+      "rf": 0.278,
+      "componentes": [
+        {
+          "solvente": "Dichloromethane",
+          "proporcao": 0.968
+        },
+        {
+          "solvente": "Methanol",
+          "proporcao": 0.032
+        }
+      ],
+      "conjunto_solventes": [
+        "dichloromethane",
+        "methanol"
+      ],
+      "doi": "10.1016/j.chempr.2022.08.008",
+      "label": "standard",
+      "homologado": false
+    },
+    {
+      "fonte": "TLCexp",
+      "linha_planilha": 20826,
+      "analito": "benzoic_acid",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C(O)C1=CC=CC=C1",
+      "inchikey_fonte": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+      "rf": 0.505,
+      "componentes": [
+        {
+          "solvente": "Dichloromethane",
+          "proporcao": 0.952
+        },
+        {
+          "solvente": "Methanol",
+          "proporcao": 0.048
+        }
+      ],
+      "conjunto_solventes": [
+        "dichloromethane",
+        "methanol"
+      ],
+      "doi": "10.1016/j.chempr.2022.08.008",
+      "label": "standard",
+      "homologado": false
+    },
+    {
+      "fonte": "TLCexp",
+      "linha_planilha": 20827,
+      "analito": "benzoic_acid",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C(O)C1=CC=CC=C1",
+      "inchikey_fonte": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+      "rf": 0.675,
+      "componentes": [
+        {
+          "solvente": "Dichloromethane",
+          "proporcao": 0.909
+        },
+        {
+          "solvente": "Methanol",
+          "proporcao": 0.091
+        }
+      ],
+      "conjunto_solventes": [
+        "dichloromethane",
+        "methanol"
+      ],
+      "doi": "10.1016/j.chempr.2022.08.008",
+      "label": "standard",
+      "homologado": false
+    },
+    {
+      "fonte": "TLCexp",
+      "linha_planilha": 22049,
+      "analito": "benzoic_acid",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C(O)C1=CC=CC=C1",
+      "inchikey_fonte": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+      "rf": 0.232,
+      "componentes": [
+        {
+          "solvente": "Dichloromethane",
+          "proporcao": 1
+        }
+      ],
+      "conjunto_solventes": [
+        "dichloromethane"
+      ],
+      "doi": "10.1016/j.chempr.2022.08.008",
+      "label": "standard",
+      "homologado": false
+    },
+    {
+      "fonte": "TLCexp",
+      "linha_planilha": 22050,
+      "analito": "benzoic_acid",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C(O)C1=CC=CC=C1",
+      "inchikey_fonte": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+      "rf": 0.338,
+      "componentes": [
+        {
+          "solvente": "Dichloromethane",
+          "proporcao": 0.99
+        },
+        {
+          "solvente": "Methanol",
+          "proporcao": 0.01
+        }
+      ],
+      "conjunto_solventes": [
+        "dichloromethane",
+        "methanol"
+      ],
+      "doi": "10.1016/j.chempr.2022.08.008",
+      "label": "standard",
+      "homologado": false
+    },
+    {
+      "fonte": "TLCexp",
+      "linha_planilha": 22051,
+      "analito": "benzoic_acid",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C(O)C1=CC=CC=C1",
+      "inchikey_fonte": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+      "rf": 0.746,
+      "componentes": [
+        {
+          "solvente": "Dichloromethane",
+          "proporcao": 0.98
+        },
+        {
+          "solvente": "Methanol",
+          "proporcao": 0.02
+        }
+      ],
+      "conjunto_solventes": [
+        "dichloromethane",
+        "methanol"
+      ],
+      "doi": "10.1016/j.chempr.2022.08.008",
+      "label": "standard",
+      "homologado": false
+    },
+    {
+      "fonte": "TLCexp",
+      "linha_planilha": 22052,
+      "analito": "benzoic_acid",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C(O)C1=CC=CC=C1",
+      "inchikey_fonte": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+      "rf": 0.828,
+      "componentes": [
+        {
+          "solvente": "Dichloromethane",
+          "proporcao": 0.968
+        },
+        {
+          "solvente": "Methanol",
+          "proporcao": 0.032
+        }
+      ],
+      "conjunto_solventes": [
+        "dichloromethane",
+        "methanol"
+      ],
+      "doi": "10.1016/j.chempr.2022.08.008",
+      "label": "standard",
+      "homologado": false
+    },
+    {
+      "fonte": "TLCexp",
+      "linha_planilha": 22053,
+      "analito": "benzoic_acid",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C(O)C1=CC=CC=C1",
+      "inchikey_fonte": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+      "rf": 0.921,
+      "componentes": [
+        {
+          "solvente": "Dichloromethane",
+          "proporcao": 0.952
+        },
+        {
+          "solvente": "Methanol",
+          "proporcao": 0.048
+        }
+      ],
+      "conjunto_solventes": [
+        "dichloromethane",
+        "methanol"
+      ],
+      "doi": "10.1016/j.chempr.2022.08.008",
+      "label": "standard",
+      "homologado": false
+    },
+    {
+      "fonte": "TLCexp",
+      "linha_planilha": 22054,
+      "analito": "benzoic_acid",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C(O)C1=CC=CC=C1",
+      "inchikey_fonte": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+      "rf": 0.936,
+      "componentes": [
+        {
+          "solvente": "Dichloromethane",
+          "proporcao": 0.909
+        },
+        {
+          "solvente": "Methanol",
+          "proporcao": 0.091
+        }
+      ],
+      "conjunto_solventes": [
+        "dichloromethane",
+        "methanol"
+      ],
+      "doi": "10.1016/j.chempr.2022.08.008",
+      "label": "standard",
+      "homologado": false
+    },
+    {
+      "fonte": "TLCexp",
+      "linha_planilha": 22468,
+      "analito": "coumarin",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C1C=CC2=C(O1)C=CC=C2",
+      "inchikey_fonte": "ZYGHJZDHTFUPRJ-UHFFFAOYSA-N",
+      "rf": 0.926,
+      "componentes": [
+        {
+          "solvente": "Diethyl ether",
+          "proporcao": 1
+        }
+      ],
+      "conjunto_solventes": [
+        "diethyl ether"
+      ],
+      "doi": "10.1016/j.chempr.2022.08.008",
+      "label": "standard",
+      "homologado": false
+    },
+    {
+      "fonte": "TLCexp",
+      "linha_planilha": 22469,
+      "analito": "coumarin",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C1C=CC2=C(O1)C=CC=C2",
+      "inchikey_fonte": "ZYGHJZDHTFUPRJ-UHFFFAOYSA-N",
+      "rf": 0.447,
+      "componentes": [
+        {
+          "solvente": "Water",
+          "proporcao": 0.5
+        },
+        {
+          "solvente": "Diethyl ether",
+          "proporcao": 0.5
+        }
+      ],
+      "conjunto_solventes": [
+        "diethyl ether",
+        "water"
+      ],
+      "doi": "10.1016/j.chempr.2022.08.008",
+      "label": "standard",
+      "homologado": false
+    },
+    {
+      "fonte": "TLCexp",
+      "linha_planilha": 22470,
+      "analito": "coumarin",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C1C=CC2=C(O1)C=CC=C2",
+      "inchikey_fonte": "ZYGHJZDHTFUPRJ-UHFFFAOYSA-N",
+      "rf": 0.3,
+      "componentes": [
+        {
+          "solvente": "Water",
+          "proporcao": 0.667
+        },
+        {
+          "solvente": "Diethyl ether",
+          "proporcao": 0.333
+        }
+      ],
+      "conjunto_solventes": [
+        "diethyl ether",
+        "water"
+      ],
+      "doi": "10.1016/j.chempr.2022.08.008",
+      "label": "standard",
+      "homologado": false
+    },
+    {
+      "fonte": "TLCexp",
+      "linha_planilha": 22639,
+      "analito": "benzoic_acid",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C(O)C1=CC=CC=C1",
+      "inchikey_fonte": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+      "rf": 0.512,
+      "componentes": [
+        {
+          "solvente": "Water",
+          "proporcao": 0.5
+        },
+        {
+          "solvente": "Diethyl ether",
+          "proporcao": 0.5
+        }
+      ],
+      "conjunto_solventes": [
+        "diethyl ether",
+        "water"
+      ],
+      "doi": "10.1016/j.chempr.2022.08.008",
+      "label": "standard",
+      "homologado": false
+    },
+    {
+      "fonte": "TLCexp",
+      "linha_planilha": 22640,
+      "analito": "benzoic_acid",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C(O)C1=CC=CC=C1",
+      "inchikey_fonte": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+      "rf": 0.29,
+      "componentes": [
+        {
+          "solvente": "Water",
+          "proporcao": 0.667
+        },
+        {
+          "solvente": "Diethyl ether",
+          "proporcao": 0.333
+        }
+      ],
+      "conjunto_solventes": [
+        "diethyl ether",
+        "water"
+      ],
+      "doi": "10.1016/j.chempr.2022.08.008",
+      "label": "standard",
+      "homologado": false
+    },
+    {
+      "fonte": "Xu",
+      "linha_planilha": 652,
+      "analito": "benzoic_acid",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C(O)C1=CC=CC=C1",
+      "inchikey_fonte": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+      "rf": 0.009436,
+      "componentes": [
+        {
+          "solvente": "hexane",
+          "proporcao": 1
+        }
+      ],
+      "conjunto_solventes": [
+        "hexane"
+      ],
+      "doi": null,
+      "label": null,
+      "homologado": false
+    },
+    {
+      "fonte": "Xu",
+      "linha_planilha": 653,
+      "analito": "benzoic_acid",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C(O)C1=CC=CC=C1",
+      "inchikey_fonte": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+      "rf": 0.058688,
+      "componentes": [
+        {
+          "solvente": "hexane",
+          "proporcao": 0.980392
+        },
+        {
+          "solvente": "ethyl acetate",
+          "proporcao": 0.019608
+        }
+      ],
+      "conjunto_solventes": [
+        "ethyl acetate",
+        "hexane"
+      ],
+      "doi": null,
+      "label": null,
+      "homologado": false
+    },
+    {
+      "fonte": "Xu",
+      "linha_planilha": 654,
+      "analito": "benzoic_acid",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C(O)C1=CC=CC=C1",
+      "inchikey_fonte": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+      "rf": 0.107676,
+      "componentes": [
+        {
+          "solvente": "hexane",
+          "proporcao": 0.952381
+        },
+        {
+          "solvente": "ethyl acetate",
+          "proporcao": 0.047619
+        }
+      ],
+      "conjunto_solventes": [
+        "ethyl acetate",
+        "hexane"
+      ],
+      "doi": null,
+      "label": null,
+      "homologado": false
+    },
+    {
+      "fonte": "Xu",
+      "linha_planilha": 655,
+      "analito": "benzoic_acid",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C(O)C1=CC=CC=C1",
+      "inchikey_fonte": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+      "rf": 0.228693,
+      "componentes": [
+        {
+          "solvente": "hexane",
+          "proporcao": 0.833333
+        },
+        {
+          "solvente": "ethyl acetate",
+          "proporcao": 0.166667
+        }
+      ],
+      "conjunto_solventes": [
+        "ethyl acetate",
+        "hexane"
+      ],
+      "doi": null,
+      "label": null,
+      "homologado": false
+    },
+    {
+      "fonte": "Xu",
+      "linha_planilha": 656,
+      "analito": "benzoic_acid",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C(O)C1=CC=CC=C1",
+      "inchikey_fonte": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+      "rf": 0.400359,
+      "componentes": [
+        {
+          "solvente": "hexane",
+          "proporcao": 0.75
+        },
+        {
+          "solvente": "ethyl acetate",
+          "proporcao": 0.25
+        }
+      ],
+      "conjunto_solventes": [
+        "ethyl acetate",
+        "hexane"
+      ],
+      "doi": null,
+      "label": null,
+      "homologado": false
+    },
+    {
+      "fonte": "Xu",
+      "linha_planilha": 657,
+      "analito": "benzoic_acid",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C(O)C1=CC=CC=C1",
+      "inchikey_fonte": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+      "rf": 0.666877,
+      "componentes": [
+        {
+          "solvente": "hexane",
+          "proporcao": 0.5
+        },
+        {
+          "solvente": "ethyl acetate",
+          "proporcao": 0.5
+        }
+      ],
+      "conjunto_solventes": [
+        "ethyl acetate",
+        "hexane"
+      ],
+      "doi": null,
+      "label": null,
+      "homologado": false
+    },
+    {
+      "fonte": "Xu",
+      "linha_planilha": 658,
+      "analito": "benzoic_acid",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C(O)C1=CC=CC=C1",
+      "inchikey_fonte": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+      "rf": 0.802591,
+      "componentes": [
+        {
+          "solvente": "hexane",
+          "proporcao": 0.333333
+        },
+        {
+          "solvente": "ethyl acetate",
+          "proporcao": 0.666667
+        }
+      ],
+      "conjunto_solventes": [
+        "ethyl acetate",
+        "hexane"
+      ],
+      "doi": null,
+      "label": null,
+      "homologado": false
+    },
+    {
+      "fonte": "Xu",
+      "linha_planilha": 659,
+      "analito": "benzoic_acid",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C(O)C1=CC=CC=C1",
+      "inchikey_fonte": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+      "rf": 0.913634,
+      "componentes": [
+        {
+          "solvente": "ethyl acetate",
+          "proporcao": 1
+        }
+      ],
+      "conjunto_solventes": [
+        "ethyl acetate"
+      ],
+      "doi": null,
+      "label": null,
+      "homologado": false
+    },
+    {
+      "fonte": "Xu",
+      "linha_planilha": 2864,
+      "analito": "benzoic_acid",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C(O)C1=CC=CC=C1",
+      "inchikey_fonte": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+      "rf": 0.09966,
+      "componentes": [
+        {
+          "solvente": "dichloromethane",
+          "proporcao": 1
+        }
+      ],
+      "conjunto_solventes": [
+        "dichloromethane"
+      ],
+      "doi": null,
+      "label": null,
+      "homologado": false
+    },
+    {
+      "fonte": "Xu",
+      "linha_planilha": 2865,
+      "analito": "benzoic_acid",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C(O)C1=CC=CC=C1",
+      "inchikey_fonte": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+      "rf": 0.128047,
+      "componentes": [
+        {
+          "solvente": "dichloromethane",
+          "proporcao": 0.990099
+        },
+        {
+          "solvente": "methanol",
+          "proporcao": 0.009901
+        }
+      ],
+      "conjunto_solventes": [
+        "dichloromethane",
+        "methanol"
+      ],
+      "doi": null,
+      "label": null,
+      "homologado": false
+    },
+    {
+      "fonte": "Xu",
+      "linha_planilha": 2866,
+      "analito": "benzoic_acid",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C(O)C1=CC=CC=C1",
+      "inchikey_fonte": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+      "rf": 0.162521,
+      "componentes": [
+        {
+          "solvente": "dichloromethane",
+          "proporcao": 0.980392
+        },
+        {
+          "solvente": "methanol",
+          "proporcao": 0.019608
+        }
+      ],
+      "conjunto_solventes": [
+        "dichloromethane",
+        "methanol"
+      ],
+      "doi": null,
+      "label": null,
+      "homologado": false
+    },
+    {
+      "fonte": "Xu",
+      "linha_planilha": 2867,
+      "analito": "benzoic_acid",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C(O)C1=CC=CC=C1",
+      "inchikey_fonte": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+      "rf": 0.278343,
+      "componentes": [
+        {
+          "solvente": "dichloromethane",
+          "proporcao": 0.967742
+        },
+        {
+          "solvente": "methanol",
+          "proporcao": 0.032258
+        }
+      ],
+      "conjunto_solventes": [
+        "dichloromethane",
+        "methanol"
+      ],
+      "doi": null,
+      "label": null,
+      "homologado": false
+    },
+    {
+      "fonte": "Xu",
+      "linha_planilha": 2868,
+      "analito": "benzoic_acid",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C(O)C1=CC=CC=C1",
+      "inchikey_fonte": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+      "rf": 0.504696,
+      "componentes": [
+        {
+          "solvente": "dichloromethane",
+          "proporcao": 0.952381
+        },
+        {
+          "solvente": "methanol",
+          "proporcao": 0.047619
+        }
+      ],
+      "conjunto_solventes": [
+        "dichloromethane",
+        "methanol"
+      ],
+      "doi": null,
+      "label": null,
+      "homologado": false
+    },
+    {
+      "fonte": "Xu",
+      "linha_planilha": 2869,
+      "analito": "benzoic_acid",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C(O)C1=CC=CC=C1",
+      "inchikey_fonte": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+      "rf": 0.674731,
+      "componentes": [
+        {
+          "solvente": "dichloromethane",
+          "proporcao": 0.909091
+        },
+        {
+          "solvente": "methanol",
+          "proporcao": 0.090909
+        }
+      ],
+      "conjunto_solventes": [
+        "dichloromethane",
+        "methanol"
+      ],
+      "doi": null,
+      "label": null,
+      "homologado": false
+    },
+    {
+      "fonte": "Xu",
+      "linha_planilha": 4091,
+      "analito": "benzoic_acid",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C(O)C1=CC=CC=C1",
+      "inchikey_fonte": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+      "rf": 0.23154,
+      "componentes": [
+        {
+          "solvente": "dichloromethane",
+          "proporcao": 1
+        }
+      ],
+      "conjunto_solventes": [
+        "dichloromethane"
+      ],
+      "doi": null,
+      "label": null,
+      "homologado": false
+    },
+    {
+      "fonte": "Xu",
+      "linha_planilha": 4092,
+      "analito": "benzoic_acid",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C(O)C1=CC=CC=C1",
+      "inchikey_fonte": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+      "rf": 0.338418,
+      "componentes": [
+        {
+          "solvente": "dichloromethane",
+          "proporcao": 0.990099
+        },
+        {
+          "solvente": "methanol",
+          "proporcao": 0.009901
+        }
+      ],
+      "conjunto_solventes": [
+        "dichloromethane",
+        "methanol"
+      ],
+      "doi": null,
+      "label": null,
+      "homologado": false
+    },
+    {
+      "fonte": "Xu",
+      "linha_planilha": 4093,
+      "analito": "benzoic_acid",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C(O)C1=CC=CC=C1",
+      "inchikey_fonte": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+      "rf": 0.745813,
+      "componentes": [
+        {
+          "solvente": "dichloromethane",
+          "proporcao": 0.980392
+        },
+        {
+          "solvente": "methanol",
+          "proporcao": 0.019608
+        }
+      ],
+      "conjunto_solventes": [
+        "dichloromethane",
+        "methanol"
+      ],
+      "doi": null,
+      "label": null,
+      "homologado": false
+    },
+    {
+      "fonte": "Xu",
+      "linha_planilha": 4094,
+      "analito": "benzoic_acid",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C(O)C1=CC=CC=C1",
+      "inchikey_fonte": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+      "rf": 0.828291,
+      "componentes": [
+        {
+          "solvente": "dichloromethane",
+          "proporcao": 0.967742
+        },
+        {
+          "solvente": "methanol",
+          "proporcao": 0.032258
+        }
+      ],
+      "conjunto_solventes": [
+        "dichloromethane",
+        "methanol"
+      ],
+      "doi": null,
+      "label": null,
+      "homologado": false
+    },
+    {
+      "fonte": "Xu",
+      "linha_planilha": 4095,
+      "analito": "benzoic_acid",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C(O)C1=CC=CC=C1",
+      "inchikey_fonte": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+      "rf": 0.921201,
+      "componentes": [
+        {
+          "solvente": "dichloromethane",
+          "proporcao": 0.952381
+        },
+        {
+          "solvente": "methanol",
+          "proporcao": 0.047619
+        }
+      ],
+      "conjunto_solventes": [
+        "dichloromethane",
+        "methanol"
+      ],
+      "doi": null,
+      "label": null,
+      "homologado": false
+    },
+    {
+      "fonte": "Xu",
+      "linha_planilha": 4096,
+      "analito": "benzoic_acid",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C(O)C1=CC=CC=C1",
+      "inchikey_fonte": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+      "rf": 0.935986,
+      "componentes": [
+        {
+          "solvente": "dichloromethane",
+          "proporcao": 0.909091
+        },
+        {
+          "solvente": "methanol",
+          "proporcao": 0.090909
+        }
+      ],
+      "conjunto_solventes": [
+        "dichloromethane",
+        "methanol"
+      ],
+      "doi": null,
+      "label": null,
+      "homologado": false
+    },
+    {
+      "fonte": "Xu",
+      "linha_planilha": 4510,
+      "analito": "coumarin",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C1C=CC2=C(O1)C=CC=C2",
+      "inchikey_fonte": "ZYGHJZDHTFUPRJ-UHFFFAOYSA-N",
+      "rf": 0.925582,
+      "componentes": [
+        {
+          "solvente": "diethyl ether",
+          "proporcao": 1
+        }
+      ],
+      "conjunto_solventes": [
+        "diethyl ether"
+      ],
+      "doi": null,
+      "label": null,
+      "homologado": false
+    },
+    {
+      "fonte": "Xu",
+      "linha_planilha": 4511,
+      "analito": "coumarin",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C1C=CC2=C(O1)C=CC=C2",
+      "inchikey_fonte": "ZYGHJZDHTFUPRJ-UHFFFAOYSA-N",
+      "rf": 0.447284,
+      "componentes": [
+        {
+          "solvente": "hexane",
+          "proporcao": 0.5
+        },
+        {
+          "solvente": "diethyl ether",
+          "proporcao": 0.5
+        }
+      ],
+      "conjunto_solventes": [
+        "diethyl ether",
+        "hexane"
+      ],
+      "doi": null,
+      "label": null,
+      "homologado": false
+    },
+    {
+      "fonte": "Xu",
+      "linha_planilha": 4512,
+      "analito": "coumarin",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C1C=CC2=C(O1)C=CC=C2",
+      "inchikey_fonte": "ZYGHJZDHTFUPRJ-UHFFFAOYSA-N",
+      "rf": 0.300444,
+      "componentes": [
+        {
+          "solvente": "hexane",
+          "proporcao": 0.666667
+        },
+        {
+          "solvente": "diethyl ether",
+          "proporcao": 0.333333
+        }
+      ],
+      "conjunto_solventes": [
+        "diethyl ether",
+        "hexane"
+      ],
+      "doi": null,
+      "label": null,
+      "homologado": false
+    },
+    {
+      "fonte": "Xu",
+      "linha_planilha": 4681,
+      "analito": "benzoic_acid",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C(O)C1=CC=CC=C1",
+      "inchikey_fonte": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+      "rf": 0.511553,
+      "componentes": [
+        {
+          "solvente": "hexane",
+          "proporcao": 0.5
+        },
+        {
+          "solvente": "diethyl ether",
+          "proporcao": 0.5
+        }
+      ],
+      "conjunto_solventes": [
+        "diethyl ether",
+        "hexane"
+      ],
+      "doi": null,
+      "label": null,
+      "homologado": false
+    },
+    {
+      "fonte": "Xu",
+      "linha_planilha": 4682,
+      "analito": "benzoic_acid",
+      "tipo_correspondencia": "estrutura_exata",
+      "smiles_fonte": "O=C(O)C1=CC=CC=C1",
+      "inchikey_fonte": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+      "rf": 0.29024,
+      "componentes": [
+        {
+          "solvente": "hexane",
+          "proporcao": 0.666667
+        },
+        {
+          "solvente": "diethyl ether",
+          "proporcao": 0.333333
+        }
+      ],
+      "conjunto_solventes": [
+        "diethyl ether",
+        "hexane"
+      ],
+      "doi": null,
+      "label": null,
+      "homologado": false
+    }
+  ]
+}

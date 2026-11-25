@@ -33,7 +33,10 @@
     "adamczuk2025": "https://doi.org/10.3390/antiox14121438",
     "alam2017flavonoids": "https://doi.org/10.1080/13880209.2017.1300175",
     "arjunarishta2011": "https://ajrconline.org/HTML_Papers/Asian%20Journal%20of%20Research%20in%20Chemistry__PID__2011-4-6-38.html",
-    "nair2017polyphenols": "https://doi.org/10.4103/pr.pr_122_16"
+    "nair2017polyphenols": "https://doi.org/10.4103/pr.pr_122_16",
+    "xu2022": "https://doi.org/10.1016/j.chempr.2022.08.008",
+    "kulikov2021coumarin": "https://www.advancechemjournal.com/journals/aac/aac-aid1024.php",
+    "stiefel2017coumarin": "https://doi.org/10.1021/acsomega.7b00562"
   },
   "candidatos": [
     {
@@ -1665,9 +1668,17 @@
       "nome": "Ácido benzoico",
       "grupo": "farmacos_e_organicos",
       "identity": {
-        "cas": null,
-        "pubchemCID": null,
-        "verificadoIndividualmente": false
+        "cas": "65-85-0",
+        "pubchemCID": 243,
+        "verificadoIndividualmente": true,
+        "formulaMolecular": "C7H6O2",
+        "inchiKey": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+        "formaInvestigada": "ácido benzoico molecular",
+        "fontesIdentidade": [
+          "https://pubchem.ncbi.nlm.nih.gov/compound/243"
+        ],
+        "dataConferencia": "2026-11-24",
+        "observacao": "Identidade estrutural confirmada; não implica pureza do padrão."
       },
       "propriedades": {
         "densidade": null,
@@ -1757,9 +1768,17 @@
       "nome": "Cumarina",
       "grupo": "farmacos_e_organicos",
       "identity": {
-        "cas": null,
-        "pubchemCID": null,
-        "verificadoIndividualmente": false
+        "cas": "91-64-5",
+        "pubchemCID": 323,
+        "verificadoIndividualmente": true,
+        "formulaMolecular": "C9H6O2",
+        "inchiKey": "ZYGHJZDHTFUPRJ-UHFFFAOYSA-N",
+        "formaInvestigada": "cumarina não substituída",
+        "fontesIdentidade": [
+          "https://pubchem.ncbi.nlm.nih.gov/compound/323"
+        ],
+        "dataConferencia": "2026-11-24",
+        "observacao": "Identidade estrutural confirmada; não implica pureza do padrão."
       },
       "propriedades": {
         "densidade": null,
@@ -1769,13 +1788,34 @@
         "corObservavel": null,
         "absorcaoUV": null
       },
-      "homologacao": "candidato_sem_parametros",
+      "homologacao": "homologado_multitecnica_condicional",
       "retencao": {
-        "rf": [],
+        "rf": [
+          {
+            "metodoId": "ccd_coumarin_kulikov2021_micellar",
+            "tecnica": "ccd",
+            "valor": 0.8,
+            "incertezaRfReportada": 0.02,
+            "fonte": "kulikov2021coumarin",
+            "faseMovel": "isopropanol 5 : water 95",
+            "condicao": "somente condições do artigo",
+            "homologado": true
+          },
+          {
+            "metodoId": "hptlc_coumarin_stiefel2017",
+            "tecnica": "hptlc",
+            "valor": 0.5,
+            "incertezaRfReportada": 0.02,
+            "fonte": "stiefel2017coumarin",
+            "faseMovel": "n_hexane 3.8 : ethyl_acetate 1.3 : aqueous_ammonia_25pct 0.05",
+            "condicao": "somente condições do artigo",
+            "homologado": true
+          }
+        ],
         "fatorK": [],
         "isotermas": []
       },
-      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+      "observacao": "Dois métodos independentes de referência, CCD micelar e HPTLC; motor não calibrado."
     },
     {
       "id": "nicotinamide",
@@ -5594,6 +5634,1279 @@
         "parametrosRetencaoConferidos": true,
         "habilitarCenaQuantitativa": false,
         "motivo": "Referência experimental contextual; motor não calibrado."
+      }
+    },
+    {
+      "id": "ccd_xu2022_receita_01",
+      "tecnica": "ccd",
+      "assuntos": [
+        "farmacos_e_organicos"
+      ],
+      "status": "referencia_primaria_conferida_nao_homologada",
+      "fonte": "xu2022",
+      "ano": 2022,
+      "referenciaSecao": "TLC_dataset.xlsx, linhas 652",
+      "faseEstacionaria": {
+        "classe": "Sílica gel, plataforma automatizada",
+        "detalhamento": "Família do suporte; espessura e lote por linha não confirmados",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "n_hexane",
+            "partes": 1
+          }
+        ],
+        "base": "fracao_volumetrica",
+        "mistura": "n_hexane 1",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "Registro de imagem UV; comprimento de onda por linha não confirmado",
+        "detectorHomologado": false
+      },
+      "dadosRf": [
+        {
+          "analito": "benzoic_acid",
+          "rf": 0.009436,
+          "classe": "Rf_medido_planilha_original",
+          "fonte": "xu2022",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "linhaPlanilha": 652,
+          "smiles": "O=C(O)C1=CC=CC=C1",
+          "inchikey": "WPYMKLBDIGXBTP-UHFFFAOYSA-N"
+        }
+      ],
+      "nota": "Receita experimental, não estudo independente. Valores distintos na mesma composição preservados sem média; metadados de série pendentes. Hexane interpretado como n-hexano conforme descrição dos sistemas.",
+      "auditoriaCientifica": {
+        "fontePrimaria": "https://doi.org/10.1016/j.chempr.2022.08.008",
+        "doi": "10.1016/j.chempr.2022.08.008",
+        "planilha": "https://github.com/woshixuhao/Discovery_of_column_chromatography/blob/main/data/TLC_dataset.xlsx",
+        "sha256": "de37cf3656632b474d50fe51b73588309e8a3da7971974b2dd343958c1f386a5",
+        "secoesConferidas": "Artigo e planilha experimental republicada em repositório vinculado à publicação de 2025",
+        "dataConferencia": "2026-11-24"
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "ccd",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false
+      }
+    },
+    {
+      "id": "ccd_xu2022_receita_02",
+      "tecnica": "ccd",
+      "assuntos": [
+        "farmacos_e_organicos"
+      ],
+      "status": "referencia_primaria_conferida_nao_homologada",
+      "fonte": "xu2022",
+      "ano": 2022,
+      "referenciaSecao": "TLC_dataset.xlsx, linhas 653",
+      "faseEstacionaria": {
+        "classe": "Sílica gel, plataforma automatizada",
+        "detalhamento": "Família do suporte; espessura e lote por linha não confirmados",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "ethyl_acetate",
+            "partes": 0.019608
+          },
+          {
+            "id": "n_hexane",
+            "partes": 0.980392
+          }
+        ],
+        "base": "fracao_volumetrica",
+        "mistura": "ethyl_acetate 0.019608 : n_hexane 0.980392",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "Registro de imagem UV; comprimento de onda por linha não confirmado",
+        "detectorHomologado": false
+      },
+      "dadosRf": [
+        {
+          "analito": "benzoic_acid",
+          "rf": 0.058688,
+          "classe": "Rf_medido_planilha_original",
+          "fonte": "xu2022",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "linhaPlanilha": 653,
+          "smiles": "O=C(O)C1=CC=CC=C1",
+          "inchikey": "WPYMKLBDIGXBTP-UHFFFAOYSA-N"
+        }
+      ],
+      "nota": "Receita experimental, não estudo independente. Valores distintos na mesma composição preservados sem média; metadados de série pendentes. Hexane interpretado como n-hexano conforme descrição dos sistemas.",
+      "auditoriaCientifica": {
+        "fontePrimaria": "https://doi.org/10.1016/j.chempr.2022.08.008",
+        "doi": "10.1016/j.chempr.2022.08.008",
+        "planilha": "https://github.com/woshixuhao/Discovery_of_column_chromatography/blob/main/data/TLC_dataset.xlsx",
+        "sha256": "de37cf3656632b474d50fe51b73588309e8a3da7971974b2dd343958c1f386a5",
+        "secoesConferidas": "Artigo e planilha experimental republicada em repositório vinculado à publicação de 2025",
+        "dataConferencia": "2026-11-24"
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "ccd",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false
+      }
+    },
+    {
+      "id": "ccd_xu2022_receita_03",
+      "tecnica": "ccd",
+      "assuntos": [
+        "farmacos_e_organicos"
+      ],
+      "status": "referencia_primaria_conferida_nao_homologada",
+      "fonte": "xu2022",
+      "ano": 2022,
+      "referenciaSecao": "TLC_dataset.xlsx, linhas 654",
+      "faseEstacionaria": {
+        "classe": "Sílica gel, plataforma automatizada",
+        "detalhamento": "Família do suporte; espessura e lote por linha não confirmados",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "ethyl_acetate",
+            "partes": 0.047619
+          },
+          {
+            "id": "n_hexane",
+            "partes": 0.952381
+          }
+        ],
+        "base": "fracao_volumetrica",
+        "mistura": "ethyl_acetate 0.047619 : n_hexane 0.952381",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "Registro de imagem UV; comprimento de onda por linha não confirmado",
+        "detectorHomologado": false
+      },
+      "dadosRf": [
+        {
+          "analito": "benzoic_acid",
+          "rf": 0.107676,
+          "classe": "Rf_medido_planilha_original",
+          "fonte": "xu2022",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "linhaPlanilha": 654,
+          "smiles": "O=C(O)C1=CC=CC=C1",
+          "inchikey": "WPYMKLBDIGXBTP-UHFFFAOYSA-N"
+        }
+      ],
+      "nota": "Receita experimental, não estudo independente. Valores distintos na mesma composição preservados sem média; metadados de série pendentes. Hexane interpretado como n-hexano conforme descrição dos sistemas.",
+      "auditoriaCientifica": {
+        "fontePrimaria": "https://doi.org/10.1016/j.chempr.2022.08.008",
+        "doi": "10.1016/j.chempr.2022.08.008",
+        "planilha": "https://github.com/woshixuhao/Discovery_of_column_chromatography/blob/main/data/TLC_dataset.xlsx",
+        "sha256": "de37cf3656632b474d50fe51b73588309e8a3da7971974b2dd343958c1f386a5",
+        "secoesConferidas": "Artigo e planilha experimental republicada em repositório vinculado à publicação de 2025",
+        "dataConferencia": "2026-11-24"
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "ccd",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false
+      }
+    },
+    {
+      "id": "ccd_xu2022_receita_04",
+      "tecnica": "ccd",
+      "assuntos": [
+        "farmacos_e_organicos"
+      ],
+      "status": "referencia_primaria_conferida_nao_homologada",
+      "fonte": "xu2022",
+      "ano": 2022,
+      "referenciaSecao": "TLC_dataset.xlsx, linhas 655",
+      "faseEstacionaria": {
+        "classe": "Sílica gel, plataforma automatizada",
+        "detalhamento": "Família do suporte; espessura e lote por linha não confirmados",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "ethyl_acetate",
+            "partes": 0.166667
+          },
+          {
+            "id": "n_hexane",
+            "partes": 0.833333
+          }
+        ],
+        "base": "fracao_volumetrica",
+        "mistura": "ethyl_acetate 0.166667 : n_hexane 0.833333",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "Registro de imagem UV; comprimento de onda por linha não confirmado",
+        "detectorHomologado": false
+      },
+      "dadosRf": [
+        {
+          "analito": "benzoic_acid",
+          "rf": 0.228693,
+          "classe": "Rf_medido_planilha_original",
+          "fonte": "xu2022",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "linhaPlanilha": 655,
+          "smiles": "O=C(O)C1=CC=CC=C1",
+          "inchikey": "WPYMKLBDIGXBTP-UHFFFAOYSA-N"
+        }
+      ],
+      "nota": "Receita experimental, não estudo independente. Valores distintos na mesma composição preservados sem média; metadados de série pendentes. Hexane interpretado como n-hexano conforme descrição dos sistemas.",
+      "auditoriaCientifica": {
+        "fontePrimaria": "https://doi.org/10.1016/j.chempr.2022.08.008",
+        "doi": "10.1016/j.chempr.2022.08.008",
+        "planilha": "https://github.com/woshixuhao/Discovery_of_column_chromatography/blob/main/data/TLC_dataset.xlsx",
+        "sha256": "de37cf3656632b474d50fe51b73588309e8a3da7971974b2dd343958c1f386a5",
+        "secoesConferidas": "Artigo e planilha experimental republicada em repositório vinculado à publicação de 2025",
+        "dataConferencia": "2026-11-24"
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "ccd",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false
+      }
+    },
+    {
+      "id": "ccd_xu2022_receita_05",
+      "tecnica": "ccd",
+      "assuntos": [
+        "farmacos_e_organicos"
+      ],
+      "status": "referencia_primaria_conferida_nao_homologada",
+      "fonte": "xu2022",
+      "ano": 2022,
+      "referenciaSecao": "TLC_dataset.xlsx, linhas 656",
+      "faseEstacionaria": {
+        "classe": "Sílica gel, plataforma automatizada",
+        "detalhamento": "Família do suporte; espessura e lote por linha não confirmados",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "ethyl_acetate",
+            "partes": 0.25
+          },
+          {
+            "id": "n_hexane",
+            "partes": 0.75
+          }
+        ],
+        "base": "fracao_volumetrica",
+        "mistura": "ethyl_acetate 0.25 : n_hexane 0.75",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "Registro de imagem UV; comprimento de onda por linha não confirmado",
+        "detectorHomologado": false
+      },
+      "dadosRf": [
+        {
+          "analito": "benzoic_acid",
+          "rf": 0.400359,
+          "classe": "Rf_medido_planilha_original",
+          "fonte": "xu2022",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "linhaPlanilha": 656,
+          "smiles": "O=C(O)C1=CC=CC=C1",
+          "inchikey": "WPYMKLBDIGXBTP-UHFFFAOYSA-N"
+        }
+      ],
+      "nota": "Receita experimental, não estudo independente. Valores distintos na mesma composição preservados sem média; metadados de série pendentes. Hexane interpretado como n-hexano conforme descrição dos sistemas.",
+      "auditoriaCientifica": {
+        "fontePrimaria": "https://doi.org/10.1016/j.chempr.2022.08.008",
+        "doi": "10.1016/j.chempr.2022.08.008",
+        "planilha": "https://github.com/woshixuhao/Discovery_of_column_chromatography/blob/main/data/TLC_dataset.xlsx",
+        "sha256": "de37cf3656632b474d50fe51b73588309e8a3da7971974b2dd343958c1f386a5",
+        "secoesConferidas": "Artigo e planilha experimental republicada em repositório vinculado à publicação de 2025",
+        "dataConferencia": "2026-11-24"
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "ccd",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false
+      }
+    },
+    {
+      "id": "ccd_xu2022_receita_06",
+      "tecnica": "ccd",
+      "assuntos": [
+        "farmacos_e_organicos"
+      ],
+      "status": "referencia_primaria_conferida_nao_homologada",
+      "fonte": "xu2022",
+      "ano": 2022,
+      "referenciaSecao": "TLC_dataset.xlsx, linhas 657",
+      "faseEstacionaria": {
+        "classe": "Sílica gel, plataforma automatizada",
+        "detalhamento": "Família do suporte; espessura e lote por linha não confirmados",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "ethyl_acetate",
+            "partes": 0.5
+          },
+          {
+            "id": "n_hexane",
+            "partes": 0.5
+          }
+        ],
+        "base": "fracao_volumetrica",
+        "mistura": "ethyl_acetate 0.5 : n_hexane 0.5",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "Registro de imagem UV; comprimento de onda por linha não confirmado",
+        "detectorHomologado": false
+      },
+      "dadosRf": [
+        {
+          "analito": "benzoic_acid",
+          "rf": 0.666877,
+          "classe": "Rf_medido_planilha_original",
+          "fonte": "xu2022",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "linhaPlanilha": 657,
+          "smiles": "O=C(O)C1=CC=CC=C1",
+          "inchikey": "WPYMKLBDIGXBTP-UHFFFAOYSA-N"
+        }
+      ],
+      "nota": "Receita experimental, não estudo independente. Valores distintos na mesma composição preservados sem média; metadados de série pendentes. Hexane interpretado como n-hexano conforme descrição dos sistemas.",
+      "auditoriaCientifica": {
+        "fontePrimaria": "https://doi.org/10.1016/j.chempr.2022.08.008",
+        "doi": "10.1016/j.chempr.2022.08.008",
+        "planilha": "https://github.com/woshixuhao/Discovery_of_column_chromatography/blob/main/data/TLC_dataset.xlsx",
+        "sha256": "de37cf3656632b474d50fe51b73588309e8a3da7971974b2dd343958c1f386a5",
+        "secoesConferidas": "Artigo e planilha experimental republicada em repositório vinculado à publicação de 2025",
+        "dataConferencia": "2026-11-24"
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "ccd",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false
+      }
+    },
+    {
+      "id": "ccd_xu2022_receita_07",
+      "tecnica": "ccd",
+      "assuntos": [
+        "farmacos_e_organicos"
+      ],
+      "status": "referencia_primaria_conferida_nao_homologada",
+      "fonte": "xu2022",
+      "ano": 2022,
+      "referenciaSecao": "TLC_dataset.xlsx, linhas 658",
+      "faseEstacionaria": {
+        "classe": "Sílica gel, plataforma automatizada",
+        "detalhamento": "Família do suporte; espessura e lote por linha não confirmados",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "ethyl_acetate",
+            "partes": 0.666667
+          },
+          {
+            "id": "n_hexane",
+            "partes": 0.333333
+          }
+        ],
+        "base": "fracao_volumetrica",
+        "mistura": "ethyl_acetate 0.666667 : n_hexane 0.333333",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "Registro de imagem UV; comprimento de onda por linha não confirmado",
+        "detectorHomologado": false
+      },
+      "dadosRf": [
+        {
+          "analito": "benzoic_acid",
+          "rf": 0.802591,
+          "classe": "Rf_medido_planilha_original",
+          "fonte": "xu2022",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "linhaPlanilha": 658,
+          "smiles": "O=C(O)C1=CC=CC=C1",
+          "inchikey": "WPYMKLBDIGXBTP-UHFFFAOYSA-N"
+        }
+      ],
+      "nota": "Receita experimental, não estudo independente. Valores distintos na mesma composição preservados sem média; metadados de série pendentes. Hexane interpretado como n-hexano conforme descrição dos sistemas.",
+      "auditoriaCientifica": {
+        "fontePrimaria": "https://doi.org/10.1016/j.chempr.2022.08.008",
+        "doi": "10.1016/j.chempr.2022.08.008",
+        "planilha": "https://github.com/woshixuhao/Discovery_of_column_chromatography/blob/main/data/TLC_dataset.xlsx",
+        "sha256": "de37cf3656632b474d50fe51b73588309e8a3da7971974b2dd343958c1f386a5",
+        "secoesConferidas": "Artigo e planilha experimental republicada em repositório vinculado à publicação de 2025",
+        "dataConferencia": "2026-11-24"
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "ccd",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false
+      }
+    },
+    {
+      "id": "ccd_xu2022_receita_08",
+      "tecnica": "ccd",
+      "assuntos": [
+        "farmacos_e_organicos"
+      ],
+      "status": "referencia_primaria_conferida_nao_homologada",
+      "fonte": "xu2022",
+      "ano": 2022,
+      "referenciaSecao": "TLC_dataset.xlsx, linhas 659",
+      "faseEstacionaria": {
+        "classe": "Sílica gel, plataforma automatizada",
+        "detalhamento": "Família do suporte; espessura e lote por linha não confirmados",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "ethyl_acetate",
+            "partes": 1
+          }
+        ],
+        "base": "fracao_volumetrica",
+        "mistura": "ethyl_acetate 1",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "Registro de imagem UV; comprimento de onda por linha não confirmado",
+        "detectorHomologado": false
+      },
+      "dadosRf": [
+        {
+          "analito": "benzoic_acid",
+          "rf": 0.913634,
+          "classe": "Rf_medido_planilha_original",
+          "fonte": "xu2022",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "linhaPlanilha": 659,
+          "smiles": "O=C(O)C1=CC=CC=C1",
+          "inchikey": "WPYMKLBDIGXBTP-UHFFFAOYSA-N"
+        }
+      ],
+      "nota": "Receita experimental, não estudo independente. Valores distintos na mesma composição preservados sem média; metadados de série pendentes. Hexane interpretado como n-hexano conforme descrição dos sistemas.",
+      "auditoriaCientifica": {
+        "fontePrimaria": "https://doi.org/10.1016/j.chempr.2022.08.008",
+        "doi": "10.1016/j.chempr.2022.08.008",
+        "planilha": "https://github.com/woshixuhao/Discovery_of_column_chromatography/blob/main/data/TLC_dataset.xlsx",
+        "sha256": "de37cf3656632b474d50fe51b73588309e8a3da7971974b2dd343958c1f386a5",
+        "secoesConferidas": "Artigo e planilha experimental republicada em repositório vinculado à publicação de 2025",
+        "dataConferencia": "2026-11-24"
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "ccd",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false
+      }
+    },
+    {
+      "id": "ccd_xu2022_receita_09",
+      "tecnica": "ccd",
+      "assuntos": [
+        "farmacos_e_organicos"
+      ],
+      "status": "referencia_primaria_conferida_nao_homologada",
+      "fonte": "xu2022",
+      "ano": 2022,
+      "referenciaSecao": "TLC_dataset.xlsx, linhas 2864, 4091",
+      "faseEstacionaria": {
+        "classe": "Sílica gel, plataforma automatizada",
+        "detalhamento": "Família do suporte; espessura e lote por linha não confirmados",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "dcm",
+            "partes": 1
+          }
+        ],
+        "base": "fracao_volumetrica",
+        "mistura": "dcm 1",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "Registro de imagem UV; comprimento de onda por linha não confirmado",
+        "detectorHomologado": false
+      },
+      "dadosRf": [
+        {
+          "analito": "benzoic_acid",
+          "rf": 0.09966,
+          "classe": "Rf_medido_planilha_original",
+          "fonte": "xu2022",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "linhaPlanilha": 2864,
+          "smiles": "O=C(O)C1=CC=CC=C1",
+          "inchikey": "WPYMKLBDIGXBTP-UHFFFAOYSA-N"
+        },
+        {
+          "analito": "benzoic_acid",
+          "rf": 0.23154,
+          "classe": "Rf_medido_planilha_original",
+          "fonte": "xu2022",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "linhaPlanilha": 4091,
+          "smiles": "O=C(O)C1=CC=CC=C1",
+          "inchikey": "WPYMKLBDIGXBTP-UHFFFAOYSA-N"
+        }
+      ],
+      "nota": "Receita experimental, não estudo independente. Valores distintos na mesma composição preservados sem média; metadados de série pendentes. Hexane interpretado como n-hexano conforme descrição dos sistemas.",
+      "auditoriaCientifica": {
+        "fontePrimaria": "https://doi.org/10.1016/j.chempr.2022.08.008",
+        "doi": "10.1016/j.chempr.2022.08.008",
+        "planilha": "https://github.com/woshixuhao/Discovery_of_column_chromatography/blob/main/data/TLC_dataset.xlsx",
+        "sha256": "de37cf3656632b474d50fe51b73588309e8a3da7971974b2dd343958c1f386a5",
+        "secoesConferidas": "Artigo e planilha experimental republicada em repositório vinculado à publicação de 2025",
+        "dataConferencia": "2026-11-24"
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "ccd",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false
+      }
+    },
+    {
+      "id": "ccd_xu2022_receita_10",
+      "tecnica": "ccd",
+      "assuntos": [
+        "farmacos_e_organicos"
+      ],
+      "status": "referencia_primaria_conferida_nao_homologada",
+      "fonte": "xu2022",
+      "ano": 2022,
+      "referenciaSecao": "TLC_dataset.xlsx, linhas 2865, 4092",
+      "faseEstacionaria": {
+        "classe": "Sílica gel, plataforma automatizada",
+        "detalhamento": "Família do suporte; espessura e lote por linha não confirmados",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "dcm",
+            "partes": 0.990099
+          },
+          {
+            "id": "methanol",
+            "partes": 0.009901
+          }
+        ],
+        "base": "fracao_volumetrica",
+        "mistura": "dcm 0.990099 : methanol 0.009901",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "Registro de imagem UV; comprimento de onda por linha não confirmado",
+        "detectorHomologado": false
+      },
+      "dadosRf": [
+        {
+          "analito": "benzoic_acid",
+          "rf": 0.128047,
+          "classe": "Rf_medido_planilha_original",
+          "fonte": "xu2022",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "linhaPlanilha": 2865,
+          "smiles": "O=C(O)C1=CC=CC=C1",
+          "inchikey": "WPYMKLBDIGXBTP-UHFFFAOYSA-N"
+        },
+        {
+          "analito": "benzoic_acid",
+          "rf": 0.338418,
+          "classe": "Rf_medido_planilha_original",
+          "fonte": "xu2022",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "linhaPlanilha": 4092,
+          "smiles": "O=C(O)C1=CC=CC=C1",
+          "inchikey": "WPYMKLBDIGXBTP-UHFFFAOYSA-N"
+        }
+      ],
+      "nota": "Receita experimental, não estudo independente. Valores distintos na mesma composição preservados sem média; metadados de série pendentes. Hexane interpretado como n-hexano conforme descrição dos sistemas.",
+      "auditoriaCientifica": {
+        "fontePrimaria": "https://doi.org/10.1016/j.chempr.2022.08.008",
+        "doi": "10.1016/j.chempr.2022.08.008",
+        "planilha": "https://github.com/woshixuhao/Discovery_of_column_chromatography/blob/main/data/TLC_dataset.xlsx",
+        "sha256": "de37cf3656632b474d50fe51b73588309e8a3da7971974b2dd343958c1f386a5",
+        "secoesConferidas": "Artigo e planilha experimental republicada em repositório vinculado à publicação de 2025",
+        "dataConferencia": "2026-11-24"
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "ccd",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false
+      }
+    },
+    {
+      "id": "ccd_xu2022_receita_11",
+      "tecnica": "ccd",
+      "assuntos": [
+        "farmacos_e_organicos"
+      ],
+      "status": "referencia_primaria_conferida_nao_homologada",
+      "fonte": "xu2022",
+      "ano": 2022,
+      "referenciaSecao": "TLC_dataset.xlsx, linhas 2866, 4093",
+      "faseEstacionaria": {
+        "classe": "Sílica gel, plataforma automatizada",
+        "detalhamento": "Família do suporte; espessura e lote por linha não confirmados",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "dcm",
+            "partes": 0.980392
+          },
+          {
+            "id": "methanol",
+            "partes": 0.019608
+          }
+        ],
+        "base": "fracao_volumetrica",
+        "mistura": "dcm 0.980392 : methanol 0.019608",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "Registro de imagem UV; comprimento de onda por linha não confirmado",
+        "detectorHomologado": false
+      },
+      "dadosRf": [
+        {
+          "analito": "benzoic_acid",
+          "rf": 0.162521,
+          "classe": "Rf_medido_planilha_original",
+          "fonte": "xu2022",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "linhaPlanilha": 2866,
+          "smiles": "O=C(O)C1=CC=CC=C1",
+          "inchikey": "WPYMKLBDIGXBTP-UHFFFAOYSA-N"
+        },
+        {
+          "analito": "benzoic_acid",
+          "rf": 0.745813,
+          "classe": "Rf_medido_planilha_original",
+          "fonte": "xu2022",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "linhaPlanilha": 4093,
+          "smiles": "O=C(O)C1=CC=CC=C1",
+          "inchikey": "WPYMKLBDIGXBTP-UHFFFAOYSA-N"
+        }
+      ],
+      "nota": "Receita experimental, não estudo independente. Valores distintos na mesma composição preservados sem média; metadados de série pendentes. Hexane interpretado como n-hexano conforme descrição dos sistemas.",
+      "auditoriaCientifica": {
+        "fontePrimaria": "https://doi.org/10.1016/j.chempr.2022.08.008",
+        "doi": "10.1016/j.chempr.2022.08.008",
+        "planilha": "https://github.com/woshixuhao/Discovery_of_column_chromatography/blob/main/data/TLC_dataset.xlsx",
+        "sha256": "de37cf3656632b474d50fe51b73588309e8a3da7971974b2dd343958c1f386a5",
+        "secoesConferidas": "Artigo e planilha experimental republicada em repositório vinculado à publicação de 2025",
+        "dataConferencia": "2026-11-24"
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "ccd",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false
+      }
+    },
+    {
+      "id": "ccd_xu2022_receita_12",
+      "tecnica": "ccd",
+      "assuntos": [
+        "farmacos_e_organicos"
+      ],
+      "status": "referencia_primaria_conferida_nao_homologada",
+      "fonte": "xu2022",
+      "ano": 2022,
+      "referenciaSecao": "TLC_dataset.xlsx, linhas 2867, 4094",
+      "faseEstacionaria": {
+        "classe": "Sílica gel, plataforma automatizada",
+        "detalhamento": "Família do suporte; espessura e lote por linha não confirmados",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "dcm",
+            "partes": 0.967742
+          },
+          {
+            "id": "methanol",
+            "partes": 0.032258
+          }
+        ],
+        "base": "fracao_volumetrica",
+        "mistura": "dcm 0.967742 : methanol 0.032258",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "Registro de imagem UV; comprimento de onda por linha não confirmado",
+        "detectorHomologado": false
+      },
+      "dadosRf": [
+        {
+          "analito": "benzoic_acid",
+          "rf": 0.278343,
+          "classe": "Rf_medido_planilha_original",
+          "fonte": "xu2022",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "linhaPlanilha": 2867,
+          "smiles": "O=C(O)C1=CC=CC=C1",
+          "inchikey": "WPYMKLBDIGXBTP-UHFFFAOYSA-N"
+        },
+        {
+          "analito": "benzoic_acid",
+          "rf": 0.828291,
+          "classe": "Rf_medido_planilha_original",
+          "fonte": "xu2022",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "linhaPlanilha": 4094,
+          "smiles": "O=C(O)C1=CC=CC=C1",
+          "inchikey": "WPYMKLBDIGXBTP-UHFFFAOYSA-N"
+        }
+      ],
+      "nota": "Receita experimental, não estudo independente. Valores distintos na mesma composição preservados sem média; metadados de série pendentes. Hexane interpretado como n-hexano conforme descrição dos sistemas.",
+      "auditoriaCientifica": {
+        "fontePrimaria": "https://doi.org/10.1016/j.chempr.2022.08.008",
+        "doi": "10.1016/j.chempr.2022.08.008",
+        "planilha": "https://github.com/woshixuhao/Discovery_of_column_chromatography/blob/main/data/TLC_dataset.xlsx",
+        "sha256": "de37cf3656632b474d50fe51b73588309e8a3da7971974b2dd343958c1f386a5",
+        "secoesConferidas": "Artigo e planilha experimental republicada em repositório vinculado à publicação de 2025",
+        "dataConferencia": "2026-11-24"
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "ccd",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false
+      }
+    },
+    {
+      "id": "ccd_xu2022_receita_13",
+      "tecnica": "ccd",
+      "assuntos": [
+        "farmacos_e_organicos"
+      ],
+      "status": "referencia_primaria_conferida_nao_homologada",
+      "fonte": "xu2022",
+      "ano": 2022,
+      "referenciaSecao": "TLC_dataset.xlsx, linhas 2868, 4095",
+      "faseEstacionaria": {
+        "classe": "Sílica gel, plataforma automatizada",
+        "detalhamento": "Família do suporte; espessura e lote por linha não confirmados",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "dcm",
+            "partes": 0.952381
+          },
+          {
+            "id": "methanol",
+            "partes": 0.047619
+          }
+        ],
+        "base": "fracao_volumetrica",
+        "mistura": "dcm 0.952381 : methanol 0.047619",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "Registro de imagem UV; comprimento de onda por linha não confirmado",
+        "detectorHomologado": false
+      },
+      "dadosRf": [
+        {
+          "analito": "benzoic_acid",
+          "rf": 0.504696,
+          "classe": "Rf_medido_planilha_original",
+          "fonte": "xu2022",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "linhaPlanilha": 2868,
+          "smiles": "O=C(O)C1=CC=CC=C1",
+          "inchikey": "WPYMKLBDIGXBTP-UHFFFAOYSA-N"
+        },
+        {
+          "analito": "benzoic_acid",
+          "rf": 0.921201,
+          "classe": "Rf_medido_planilha_original",
+          "fonte": "xu2022",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "linhaPlanilha": 4095,
+          "smiles": "O=C(O)C1=CC=CC=C1",
+          "inchikey": "WPYMKLBDIGXBTP-UHFFFAOYSA-N"
+        }
+      ],
+      "nota": "Receita experimental, não estudo independente. Valores distintos na mesma composição preservados sem média; metadados de série pendentes. Hexane interpretado como n-hexano conforme descrição dos sistemas.",
+      "auditoriaCientifica": {
+        "fontePrimaria": "https://doi.org/10.1016/j.chempr.2022.08.008",
+        "doi": "10.1016/j.chempr.2022.08.008",
+        "planilha": "https://github.com/woshixuhao/Discovery_of_column_chromatography/blob/main/data/TLC_dataset.xlsx",
+        "sha256": "de37cf3656632b474d50fe51b73588309e8a3da7971974b2dd343958c1f386a5",
+        "secoesConferidas": "Artigo e planilha experimental republicada em repositório vinculado à publicação de 2025",
+        "dataConferencia": "2026-11-24"
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "ccd",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false
+      }
+    },
+    {
+      "id": "ccd_xu2022_receita_14",
+      "tecnica": "ccd",
+      "assuntos": [
+        "farmacos_e_organicos"
+      ],
+      "status": "referencia_primaria_conferida_nao_homologada",
+      "fonte": "xu2022",
+      "ano": 2022,
+      "referenciaSecao": "TLC_dataset.xlsx, linhas 2869, 4096",
+      "faseEstacionaria": {
+        "classe": "Sílica gel, plataforma automatizada",
+        "detalhamento": "Família do suporte; espessura e lote por linha não confirmados",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "dcm",
+            "partes": 0.909091
+          },
+          {
+            "id": "methanol",
+            "partes": 0.090909
+          }
+        ],
+        "base": "fracao_volumetrica",
+        "mistura": "dcm 0.909091 : methanol 0.090909",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "Registro de imagem UV; comprimento de onda por linha não confirmado",
+        "detectorHomologado": false
+      },
+      "dadosRf": [
+        {
+          "analito": "benzoic_acid",
+          "rf": 0.674731,
+          "classe": "Rf_medido_planilha_original",
+          "fonte": "xu2022",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "linhaPlanilha": 2869,
+          "smiles": "O=C(O)C1=CC=CC=C1",
+          "inchikey": "WPYMKLBDIGXBTP-UHFFFAOYSA-N"
+        },
+        {
+          "analito": "benzoic_acid",
+          "rf": 0.935986,
+          "classe": "Rf_medido_planilha_original",
+          "fonte": "xu2022",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "linhaPlanilha": 4096,
+          "smiles": "O=C(O)C1=CC=CC=C1",
+          "inchikey": "WPYMKLBDIGXBTP-UHFFFAOYSA-N"
+        }
+      ],
+      "nota": "Receita experimental, não estudo independente. Valores distintos na mesma composição preservados sem média; metadados de série pendentes. Hexane interpretado como n-hexano conforme descrição dos sistemas.",
+      "auditoriaCientifica": {
+        "fontePrimaria": "https://doi.org/10.1016/j.chempr.2022.08.008",
+        "doi": "10.1016/j.chempr.2022.08.008",
+        "planilha": "https://github.com/woshixuhao/Discovery_of_column_chromatography/blob/main/data/TLC_dataset.xlsx",
+        "sha256": "de37cf3656632b474d50fe51b73588309e8a3da7971974b2dd343958c1f386a5",
+        "secoesConferidas": "Artigo e planilha experimental republicada em repositório vinculado à publicação de 2025",
+        "dataConferencia": "2026-11-24"
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "ccd",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false
+      }
+    },
+    {
+      "id": "ccd_xu2022_receita_15",
+      "tecnica": "ccd",
+      "assuntos": [
+        "farmacos_e_organicos"
+      ],
+      "status": "referencia_primaria_conferida_nao_homologada",
+      "fonte": "xu2022",
+      "ano": 2022,
+      "referenciaSecao": "TLC_dataset.xlsx, linhas 4510",
+      "faseEstacionaria": {
+        "classe": "Sílica gel, plataforma automatizada",
+        "detalhamento": "Família do suporte; espessura e lote por linha não confirmados",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "diethyl_ether",
+            "partes": 1
+          }
+        ],
+        "base": "fracao_volumetrica",
+        "mistura": "diethyl_ether 1",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "Registro de imagem UV; comprimento de onda por linha não confirmado",
+        "detectorHomologado": false
+      },
+      "dadosRf": [
+        {
+          "analito": "coumarin",
+          "rf": 0.925582,
+          "classe": "Rf_medido_planilha_original",
+          "fonte": "xu2022",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "linhaPlanilha": 4510,
+          "smiles": "O=C1C=CC2=C(O1)C=CC=C2",
+          "inchikey": "ZYGHJZDHTFUPRJ-UHFFFAOYSA-N"
+        }
+      ],
+      "nota": "Receita experimental, não estudo independente. Valores distintos na mesma composição preservados sem média; metadados de série pendentes. Hexane interpretado como n-hexano conforme descrição dos sistemas.",
+      "auditoriaCientifica": {
+        "fontePrimaria": "https://doi.org/10.1016/j.chempr.2022.08.008",
+        "doi": "10.1016/j.chempr.2022.08.008",
+        "planilha": "https://github.com/woshixuhao/Discovery_of_column_chromatography/blob/main/data/TLC_dataset.xlsx",
+        "sha256": "de37cf3656632b474d50fe51b73588309e8a3da7971974b2dd343958c1f386a5",
+        "secoesConferidas": "Artigo e planilha experimental republicada em repositório vinculado à publicação de 2025",
+        "dataConferencia": "2026-11-24"
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "ccd",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false
+      }
+    },
+    {
+      "id": "ccd_xu2022_receita_16",
+      "tecnica": "ccd",
+      "assuntos": [
+        "farmacos_e_organicos"
+      ],
+      "status": "referencia_primaria_conferida_nao_homologada",
+      "fonte": "xu2022",
+      "ano": 2022,
+      "referenciaSecao": "TLC_dataset.xlsx, linhas 4511, 4681",
+      "faseEstacionaria": {
+        "classe": "Sílica gel, plataforma automatizada",
+        "detalhamento": "Família do suporte; espessura e lote por linha não confirmados",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "diethyl_ether",
+            "partes": 0.5
+          },
+          {
+            "id": "n_hexane",
+            "partes": 0.5
+          }
+        ],
+        "base": "fracao_volumetrica",
+        "mistura": "diethyl_ether 0.5 : n_hexane 0.5",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "Registro de imagem UV; comprimento de onda por linha não confirmado",
+        "detectorHomologado": false
+      },
+      "dadosRf": [
+        {
+          "analito": "coumarin",
+          "rf": 0.447284,
+          "classe": "Rf_medido_planilha_original",
+          "fonte": "xu2022",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "linhaPlanilha": 4511,
+          "smiles": "O=C1C=CC2=C(O1)C=CC=C2",
+          "inchikey": "ZYGHJZDHTFUPRJ-UHFFFAOYSA-N"
+        },
+        {
+          "analito": "benzoic_acid",
+          "rf": 0.511553,
+          "classe": "Rf_medido_planilha_original",
+          "fonte": "xu2022",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "linhaPlanilha": 4681,
+          "smiles": "O=C(O)C1=CC=CC=C1",
+          "inchikey": "WPYMKLBDIGXBTP-UHFFFAOYSA-N"
+        }
+      ],
+      "nota": "Receita experimental, não estudo independente. Valores distintos na mesma composição preservados sem média; metadados de série pendentes. Hexane interpretado como n-hexano conforme descrição dos sistemas.",
+      "auditoriaCientifica": {
+        "fontePrimaria": "https://doi.org/10.1016/j.chempr.2022.08.008",
+        "doi": "10.1016/j.chempr.2022.08.008",
+        "planilha": "https://github.com/woshixuhao/Discovery_of_column_chromatography/blob/main/data/TLC_dataset.xlsx",
+        "sha256": "de37cf3656632b474d50fe51b73588309e8a3da7971974b2dd343958c1f386a5",
+        "secoesConferidas": "Artigo e planilha experimental republicada em repositório vinculado à publicação de 2025",
+        "dataConferencia": "2026-11-24"
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "ccd",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false
+      }
+    },
+    {
+      "id": "ccd_xu2022_receita_17",
+      "tecnica": "ccd",
+      "assuntos": [
+        "farmacos_e_organicos"
+      ],
+      "status": "referencia_primaria_conferida_nao_homologada",
+      "fonte": "xu2022",
+      "ano": 2022,
+      "referenciaSecao": "TLC_dataset.xlsx, linhas 4512, 4682",
+      "faseEstacionaria": {
+        "classe": "Sílica gel, plataforma automatizada",
+        "detalhamento": "Família do suporte; espessura e lote por linha não confirmados",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "diethyl_ether",
+            "partes": 0.333333
+          },
+          {
+            "id": "n_hexane",
+            "partes": 0.666667
+          }
+        ],
+        "base": "fracao_volumetrica",
+        "mistura": "diethyl_ether 0.333333 : n_hexane 0.666667",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "Registro de imagem UV; comprimento de onda por linha não confirmado",
+        "detectorHomologado": false
+      },
+      "dadosRf": [
+        {
+          "analito": "coumarin",
+          "rf": 0.300444,
+          "classe": "Rf_medido_planilha_original",
+          "fonte": "xu2022",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "linhaPlanilha": 4512,
+          "smiles": "O=C1C=CC2=C(O1)C=CC=C2",
+          "inchikey": "ZYGHJZDHTFUPRJ-UHFFFAOYSA-N"
+        },
+        {
+          "analito": "benzoic_acid",
+          "rf": 0.29024,
+          "classe": "Rf_medido_planilha_original",
+          "fonte": "xu2022",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "linhaPlanilha": 4682,
+          "smiles": "O=C(O)C1=CC=CC=C1",
+          "inchikey": "WPYMKLBDIGXBTP-UHFFFAOYSA-N"
+        }
+      ],
+      "nota": "Receita experimental, não estudo independente. Valores distintos na mesma composição preservados sem média; metadados de série pendentes. Hexane interpretado como n-hexano conforme descrição dos sistemas.",
+      "auditoriaCientifica": {
+        "fontePrimaria": "https://doi.org/10.1016/j.chempr.2022.08.008",
+        "doi": "10.1016/j.chempr.2022.08.008",
+        "planilha": "https://github.com/woshixuhao/Discovery_of_column_chromatography/blob/main/data/TLC_dataset.xlsx",
+        "sha256": "de37cf3656632b474d50fe51b73588309e8a3da7971974b2dd343958c1f386a5",
+        "secoesConferidas": "Artigo e planilha experimental republicada em repositório vinculado à publicação de 2025",
+        "dataConferencia": "2026-11-24"
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "ccd",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false
+      }
+    },
+    {
+      "id": "ccd_coumarin_kulikov2021_micellar",
+      "fonte": "kulikov2021coumarin",
+      "ano": 2021,
+      "tecnica": "ccd",
+      "assuntos": [
+        "farmacos_e_organicos"
+      ],
+      "status": "homologado",
+      "referenciaSecao": "Métodos, resultados e validação",
+      "faseEstacionaria": {
+        "classe": "Sorbfil-PTCX-P-A-UV-254",
+        "detalhamento": "Placa PET 10 × 15 cm, camada 100 µm",
+        "homologada": true
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "isopropanol",
+            "partes": 5
+          },
+          {
+            "id": "water",
+            "partes": 95
+          }
+        ],
+        "base": "v/v",
+        "mistura": "isopropanol 5 : water 95",
+        "homologada": true,
+        "aditivos": [
+          {
+            "nome": "Tween 80",
+            "tipo": "surfactante",
+            "concentracaoMolL": 0.0005
+          }
+        ]
+      },
+      "aplicacao": {
+        "detector": "Densitometria CAMAG a 275 nm",
+        "detectorHomologado": true,
+        "temperaturaC": {
+          "min": 19,
+          "max": 21
+        },
+        "saturacaoCamaraMin": 0,
+        "desenvolvimentoFrenteMm": 85,
+        "detectorNm": 275
+      },
+      "dadosRf": [
+        {
+          "analito": "coumarin",
+          "rf": 0.8,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "kulikov2021coumarin",
+          "homologado": true,
+          "fontePrimariaConferida": true,
+          "incertezaRfReportada": 0.02
+        }
+      ],
+      "nota": "Padrão 99,9%; Rf 0,80 ± 0,02; precisão, seletividade, recuperação e robustez avaliadas; não usar modelo de sílica genérico.",
+      "auditoriaCientifica": {
+        "estado": "metodo_experimental_revisado_referencia_condicional",
+        "fontePrimaria": "https://www.advancechemjournal.com/journals/aac/aac-aid1024.php",
+        "doi": "10.29328/journal.aac.1001024",
+        "secoesConferidas": "Métodos, resultados, validação e figura 1",
+        "dataConferencia": "2026-11-24",
+        "ressalvas": [
+          "Padrão 99,9%; Rf 0,80 ± 0,02; precisão, seletividade, recuperação e robustez avaliadas; não usar modelo de sílica genérico.",
+          "Não extrapolar a papel, coluna ou cena quantitativa."
+        ]
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "ccd",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false
+      }
+    },
+    {
+      "id": "hptlc_coumarin_stiefel2017",
+      "fonte": "stiefel2017coumarin",
+      "ano": 2017,
+      "tecnica": "hptlc",
+      "assuntos": [
+        "farmacos_e_organicos"
+      ],
+      "status": "homologado",
+      "referenciaSecao": "Métodos, resultados e validação",
+      "faseEstacionaria": {
+        "classe": "HPTLC sílica gel 60, vidro",
+        "detalhamento": "Merck 20 × 10 cm, camada aproximadamente 200 µm",
+        "homologada": true
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "n_hexane",
+            "partes": 3.8
+          },
+          {
+            "id": "ethyl_acetate",
+            "partes": 1.3
+          },
+          {
+            "id": "aqueous_ammonia_25pct",
+            "partes": 0.05
+          }
+        ],
+        "base": "v/v",
+        "mistura": "n_hexane 3.8 : ethyl_acetate 1.3 : aqueous_ammonia_25pct 0.05",
+        "homologada": true
+      },
+      "aplicacao": {
+        "detector": "Fluorescência 366/>400 nm após derivatização alcalina e estabilização PEG",
+        "detectorHomologado": true,
+        "saturacaoCamaraMin": 5,
+        "desenvolvimentoDistanciaDaBordaMm": 55,
+        "detectorNm": 366
+      },
+      "dadosRf": [
+        {
+          "analito": "coumarin",
+          "rf": 0.5,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "stiefel2017coumarin",
+          "homologado": true,
+          "fontePrimariaConferida": true,
+          "incertezaRfReportada": 0.02
+        }
+      ],
+      "nota": "hRf 50 ± 2 convertido para Rf 0,50 ± 0,02. Recuperação 96–102%, repetibilidade 1,1–2,9% RSD. Amônia 25% como modificador.",
+      "auditoriaCientifica": {
+        "estado": "metodo_experimental_revisado_referencia_condicional",
+        "fontePrimaria": "https://doi.org/10.1021/acsomega.7b00562",
+        "doi": "10.1021/acsomega.7b00562",
+        "secoesConferidas": "Métodos, resultados, validação e figura 1",
+        "dataConferencia": "2026-11-24",
+        "ressalvas": [
+          "hRf 50 ± 2 convertido para Rf 0,50 ± 0,02. Recuperação 96–102%, repetibilidade 1,1–2,9% RSD. Amônia 25% como modificador.",
+          "Não extrapolar a papel, coluna ou cena quantitativa."
+        ]
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "hptlc",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false
       }
     }
   ],

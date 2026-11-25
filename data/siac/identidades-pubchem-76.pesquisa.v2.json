@@ -31,7 +31,7 @@
     "exigemEspecificacao": 49,
     "idsDuplicados": 0,
     "homologadasParaMotor": 0,
-    "identidadesConferidas": 11
+    "identidadesConferidas": 13
   },
   "candidatos": [
     {
@@ -1469,12 +1469,14 @@
       "referenciaQuimica": {
         "pubchemCID": 243,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/243",
-        "classe": "cid_candidato_localizado",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": null,
-        "casConferido": null,
-        "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "classe": "identidade_molecular_individual_conferida",
+        "status": "identidade_quimica_confirmada_pubchem",
+        "nota": "ácido benzoico molecular",
+        "casConferido": "65-85-0",
+        "inchiKeyConferido": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+        "estruturaEFormaConferidas": true,
+        "fonteConferencia": "https://pubchem.ncbi.nlm.nih.gov/compound/243",
+        "dataConferencia": "2026-11-24"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {
@@ -1544,20 +1546,23 @@
       "referenciaQuimica": {
         "pubchemCID": 323,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/323",
-        "classe": "cid_candidato_localizado",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": null,
-        "casConferido": null,
-        "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "classe": "identidade_molecular_individual_conferida",
+        "status": "identidade_quimica_confirmada_pubchem",
+        "nota": "cumarina não substituída",
+        "casConferido": "91-64-5",
+        "inchiKeyConferido": "ZYGHJZDHTFUPRJ-UHFFFAOYSA-N",
+        "estruturaEFormaConferidas": true,
+        "fonteConferencia": "https://pubchem.ncbi.nlm.nih.gov/compound/323",
+        "dataConferencia": "2026-11-24"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {
         "corObservadaSobCondicoes": null,
         "uv254": null,
         "uv365": null,
-        "rfHomologado": false,
-        "kColunaHomologado": false
+        "rfHomologado": true,
+        "kColunaHomologado": false,
+        "rfHomologadoRestricao": "somente CCD micelar Kulikov e HPTLC Stiefel; não extrapolar"
       },
       "autorizacaoSimulacaoReal": false
     },
