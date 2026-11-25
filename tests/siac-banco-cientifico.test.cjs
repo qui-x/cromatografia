@@ -26,9 +26,9 @@ unique(stationary.fasesEstacionarias,"fases estacionárias");
 assert.equal(solvents.status,"PESQUISA_NAO_HOMOLOGADA");
 assert.equal(analytes.status,"PESQUISA_NAO_HOMOLOGADA");
 assert.equal(engines.status,"candidatos_nao_integrados");
-assert.equal(solvents.solventes.length,42);
+assert.equal(solvents.solventes.length,43);
 assert.equal(analytes.candidatos.length,76);
-assert.equal(analytes.protocolos.length,29);
+assert.equal(analytes.protocolos.length,37);
 assert.equal(engines.motores.length,9);
 assert.equal(stationary.status,"PESQUISA_NAO_HOMOLOGADA");
 assert.equal(stationary.fasesEstacionarias.length,18);
@@ -95,7 +95,7 @@ for(const p of solvents.paresMiscibilidade){
 }
 const candidates=new Set(analytes.candidatos.map(a=>a.id));
 assert.equal(analytes.candidatos.filter(a=>a.homologacao==="homologado_hptlc_condicional").length,2);
-assert.equal(analytes.candidatos.filter(a=>a.identity.verificadoIndividualmente).length,8);
+assert.equal(analytes.candidatos.filter(a=>a.identity.verificadoIndividualmente).length,11);
 assert(analytes.candidatos.every(a=>a.propriedades.densidade===null));
 assert.equal(analytes.candidatos.filter(a=>a.retencao.rf.length===2).length,2);
 let rfs=0;
@@ -107,11 +107,11 @@ for(const p of analytes.protocolos){
     assert(r.fonte&&analytes.fontes[r.fonte],"Rf sem proveniência");
     assert(candidates.has(r.analito)||r.analito.endsWith("_band"),
       "Banda precisa ser um candidato ou fração não identificada: "+r.analito);
-    if(p.status==="homologado")assert(r.homologado===true&&p.auditoriaCientifica?.doi==="10.3390/molecules27020405","Homologação sem auditoria bibliográfica");
+    if(p.status==="homologado")assert(r.homologado===true&&r.fontePrimariaConferida===true&&p.auditoriaCientifica?.fontePrimaria===analytes.fontes[p.fonte]&&p.auditoriaCientifica?.doi,"Homologação sem auditoria bibliográfica");
     rfs++;
   }
 }
-assert.equal(rfs,123);
+assert.equal(rfs,155);
 let intervalos=0;
 for(const p of analytes.protocolos){
  for(const r of (p.dadosRfIntervalos||[])){
@@ -169,10 +169,10 @@ for(const p of analytes.protocolos){
 }
 
 const homologados=analytes.protocolos.filter(p=>p.status==="homologado");
-assert.equal(homologados.length,2);
+assert.equal(homologados.length,4);
 assert.deepEqual(homologados.map(x=>x.id).sort(),[
  "hptlc_green2022_normal_ethylacetate_ethanol_85_15",
- "hptlc_green2022_reverse_ethanol_water_50_50"].sort());
+ "hptlc_green2022_reverse_ethanol_water_50_50","hptlc_vanillin_hingse2014","hptlc_flavonoids_alam2017_rp"].sort());
 assert(homologados.every(p=>p.disponibilidadeSimulador?.habilitarCenaQuantitativa===false));
 assert(analytes.protocolos.filter(p=>p.status!=="homologado").every(p=>p.dadosRf.every(d=>d.homologado!==true)),
  "Somente métodos NP/RP-HPTLC de fonte conferida podem ter marcação de retenção homologada");
@@ -228,8 +228,14 @@ for(const [id,cas,cid] of [["methyl_orange","547-58-0",23673835],["sudan_iv","85
  assert(c.identity.verificadoIndividualmente&&c.identity.cas===cas&&c.identity.pubchemCID===cid);
  assert.equal(c.auditoriaRetencao.homologacaoMetodoQuantitativo,false);
 }
-assert.equal(analytes.protocolos.filter(p=>p.status==="homologado").length,2);
+assert.equal(analytes.protocolos.filter(p=>p.status==="homologado").length,4);
 
 console.log("SIAC BANCO — OK:",solvents.solventes.length,"solventes,",completeDensity.length,"densidades,",solvents.paresMiscibilidade.length,
  "pares qualitativos,",analytes.candidatos.length,"analitos,",analytes.protocolos.length,
  "protocolos,",rfs,"Rf condicionais,",engines.motores.length,"motores/fontes candidatos.");
+
+const lote24=analytes.protocolos.filter(p=>["tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5","hptlc_vanillin_hingse2014","hptlc_vanillin_krishnaveni2013","tlc_carotenoids_adamczuk2025","hptlc_flavonoids_alam2017_rp","hptlc_arjunarishta2011_quercetin","hptlc_arjunarishta2011_rutin","hptlc_nair2017_polyphenols_np"].includes(p.id));
+assert.equal(lote24.length,8);
+assert.equal(lote24.reduce((n,p)=>n+p.dadosRf.length,0),32);
+assert(lote24.every(p=>p.disponibilidadeSimulador.habilitarCenaQuantitativa===false));
+assert.equal(lote24.find(p=>p.id==="hptlc_vanillin_krishnaveni2013").status,"referencia_primaria_conferida_nao_homologada");

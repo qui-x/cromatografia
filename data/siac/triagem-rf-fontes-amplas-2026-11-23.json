@@ -165,7 +165,9 @@
           "homologado": false
         }
       ],
-      "ressalva": "Valores de padrões, não de extratos; sem incerteza individual explicitada na tabela; contrastante com 1-propanol/água de Ukil 2013."
+      "ressalva": "Valores de padrões, não de extratos; sem incerteza individual explicitada na tabela; contrastante com 1-propanol/água de Ukil 2013.",
+      "estadoIntegracao": "incorporado_ao_catalogo_cientifico",
+      "homologacaoCena": false
     },
     {
       "id": "hptlc_vanillin_hingse2014",
@@ -181,7 +183,9 @@
           "homologado": false
         }
       ],
-      "nota": "Artigo descreve validação analítica; verificar condições completas, identidade e parâmetros antes de integração."
+      "nota": "Artigo descreve validação analítica; verificar condições completas, identidade e parâmetros antes de integração.",
+      "estadoIntegracao": "incorporado_ao_catalogo_cientifico",
+      "homologacaoCena": false
     },
     {
       "id": "hptlc_vanillin_krishnaveni2013",
@@ -196,7 +200,9 @@
           "homologado": false
         }
       ],
-      "nota": "Verificar método integral e validação."
+      "nota": "Verificar método integral e validação.",
+      "estadoIntegracao": "incorporado_ao_catalogo_cientifico",
+      "homologacaoCena": false
     },
     {
       "id": "ccd_dilrukshi2019_propanol_ammonia",

@@ -1,6 +1,6 @@
 {
   "versao": "2.6.0",
-  "data": "2026-11-23",
+  "data": "2026-11-24",
   "titulo": "Matriz preliminar de cobertura científica do SIAC",
   "fonte": "data/siac/analitos-protocolos.v1.json",
   "observacao": "Duas substâncias (cafeína e paracetamol) com dados científicos homologados exclusivamente em HPTLC NP/RP de artigo primário, sem cena de HPTLC operacional. Methyl orange/Sudan IV têm Rf na literatura primária HFSA e métodos conferidos, mas sem replicatas e sem caracterização de incerteza; não homologar nem extrapolar. Lote 01: identidades moleculares dos principais sais de E102/E110/E124/E133 e oito Rf de triagem Sobańska (2017) conferidos; seguem não homologados como métodos quantitativos. Lote complementar: identidades de alaranjado de metila e Sudan IV conferidas; Rf em HFSA permanece evidência pontual, sem replicatas.",
@@ -15,18 +15,18 @@
   },
   "resumo": {
     "candidatos": 76,
-    "comPeloMenosUmRfIndividual": 42,
-    "comDoisMetodosDocumentados": 40,
-    "comDoisMetodosESolventesDistintos": 40,
+    "comPeloMenosUmRfIndividual": 46,
+    "comDoisMetodosDocumentados": 44,
+    "comDoisMetodosESolventesDistintos": 44,
     "homologadosNaRegraNova": 2,
     "faltamParaMetaMinima": 38,
     "faltamParaMetaAmpliada": 53,
-    "totaisRegistroRfPontual": 123,
+    "totaisRegistroRfPontual": 155,
     "totalRfIntervalos": 1,
-    "protocolos": 29,
+    "protocolos": 37,
     "liberadosParaSimulacaoReal": 0,
-    "metodosHptlcComFontePrimariaHomologada": 2,
-    "identidadesQuimicasConferidas": 8
+    "metodosHptlcComFontePrimariaHomologada": 4,
+    "identidadesQuimicasConferidas": 11
   },
   "candidatos": [
     {
@@ -2213,7 +2213,7 @@
       "nome": "β-caroteno",
       "grupo": "pigmentos_vegetais",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 2,
+      "metodosComRetencaoIndividual": 3,
       "metodos": [
         {
           "protocoloId": "tlc_carotenoids_yuangsoi2008_petroleumether_diethylether_acetone",
@@ -2292,6 +2292,65 @@
           ],
           "rfIntervalo": [],
           "estado": "referencia_primaria_em_revisao_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_carotenoids_adamczuk2025",
+          "tecnica": "ccd",
+          "fonte": "adamczuk2025",
+          "fonteUrl": "https://doi.org/10.3390/antiox14121438",
+          "solventes": [
+            "acetone",
+            "ethyl_acetate",
+            "heptane"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "heptane",
+                "partes": 65
+              },
+              {
+                "id": "ethyl_acetate",
+                "partes": 20
+              },
+              {
+                "id": "acetone",
+                "partes": 20
+              }
+            ],
+            "base": "v/v",
+            "mistura": "n-heptano:acetato de etila:acetona 65:20:20 (partes)",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel 60 em vidro",
+          "detector": "Luz do dia; caracterização adicional HPLC-DAD-ESI-MS",
+          "rf": [
+            {
+              "valor": 0.74,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "fonte_primaria_conferida_referencia_condicional",
+            "fontePrimaria": "https://doi.org/10.3390/antiox14121438",
+            "doi": "10.3390/antiox14121438",
+            "secoesConferidas": "Métodos, figura 4, tabela 4",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Padrões e comparação com extratos; cis-luteína e derivados não importados. Preservar proporção publicada em partes.",
+              "Não extrapolar para CCD genérica, papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false,
+            "motivo": "Referência experimental contextual; motor não calibrado."
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -2311,11 +2370,43 @@
             "acetone",
             "n_hexane"
           ]
+        },
+        {
+          "metodos": [
+            "tlc_carotenoids_yuangsoi2008_petroleumether_diethylether_acetone",
+            "tlc_carotenoids_adamczuk2025"
+          ],
+          "solventesA": [
+            "acetone",
+            "diethyl_ether",
+            "petroleum_ether_mixture"
+          ],
+          "solventesB": [
+            "acetone",
+            "ethyl_acetate",
+            "heptane"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_carotenoids_adedoyin2017_acetone_nhexane_30_70",
+            "tlc_carotenoids_adamczuk2025"
+          ],
+          "solventesA": [
+            "acetone",
+            "n_hexane"
+          ],
+          "solventesB": [
+            "acetone",
+            "ethyl_acetate",
+            "heptane"
+          ]
         }
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_e_condicoes_a_homologar"
+        "identidade_primaria_a_conferir",
+        "metodos_e_condicoes_a_homologar"
       ]
     },
     {
@@ -2341,7 +2432,7 @@
       "nome": "Luteína",
       "grupo": "pigmentos_vegetais",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 2,
+      "metodosComRetencaoIndividual": 3,
       "metodos": [
         {
           "protocoloId": "tlc_carotenoids_yuangsoi2008_petroleumether_diethylether_acetone",
@@ -2420,6 +2511,65 @@
           ],
           "rfIntervalo": [],
           "estado": "referencia_primaria_em_revisao_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_carotenoids_adamczuk2025",
+          "tecnica": "ccd",
+          "fonte": "adamczuk2025",
+          "fonteUrl": "https://doi.org/10.3390/antiox14121438",
+          "solventes": [
+            "acetone",
+            "ethyl_acetate",
+            "heptane"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "heptane",
+                "partes": 65
+              },
+              {
+                "id": "ethyl_acetate",
+                "partes": 20
+              },
+              {
+                "id": "acetone",
+                "partes": 20
+              }
+            ],
+            "base": "v/v",
+            "mistura": "n-heptano:acetato de etila:acetona 65:20:20 (partes)",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel 60 em vidro",
+          "detector": "Luz do dia; caracterização adicional HPLC-DAD-ESI-MS",
+          "rf": [
+            {
+              "valor": 0.35,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "fonte_primaria_conferida_referencia_condicional",
+            "fontePrimaria": "https://doi.org/10.3390/antiox14121438",
+            "doi": "10.3390/antiox14121438",
+            "secoesConferidas": "Métodos, figura 4, tabela 4",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Padrões e comparação com extratos; cis-luteína e derivados não importados. Preservar proporção publicada em partes.",
+              "Não extrapolar para CCD genérica, papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false,
+            "motivo": "Referência experimental contextual; motor não calibrado."
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -2439,11 +2589,43 @@
             "acetone",
             "n_hexane"
           ]
+        },
+        {
+          "metodos": [
+            "tlc_carotenoids_yuangsoi2008_petroleumether_diethylether_acetone",
+            "tlc_carotenoids_adamczuk2025"
+          ],
+          "solventesA": [
+            "acetone",
+            "diethyl_ether",
+            "petroleum_ether_mixture"
+          ],
+          "solventesB": [
+            "acetone",
+            "ethyl_acetate",
+            "heptane"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_carotenoids_adedoyin2017_acetone_nhexane_30_70",
+            "tlc_carotenoids_adamczuk2025"
+          ],
+          "solventesA": [
+            "acetone",
+            "n_hexane"
+          ],
+          "solventesB": [
+            "acetone",
+            "ethyl_acetate",
+            "heptane"
+          ]
         }
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_e_condicoes_a_homologar"
+        "identidade_primaria_a_conferir",
+        "metodos_e_condicoes_a_homologar"
       ]
     },
     {
@@ -2451,17 +2633,77 @@
       "nome": "Zeaxantina",
       "grupo": "pigmentos_vegetais",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 0,
-      "metodos": [],
+      "metodosComRetencaoIndividual": 1,
+      "metodos": [
+        {
+          "protocoloId": "tlc_carotenoids_adamczuk2025",
+          "tecnica": "ccd",
+          "fonte": "adamczuk2025",
+          "fonteUrl": "https://doi.org/10.3390/antiox14121438",
+          "solventes": [
+            "acetone",
+            "ethyl_acetate",
+            "heptane"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "heptane",
+                "partes": 65
+              },
+              {
+                "id": "ethyl_acetate",
+                "partes": 20
+              },
+              {
+                "id": "acetone",
+                "partes": 20
+              }
+            ],
+            "base": "v/v",
+            "mistura": "n-heptano:acetato de etila:acetona 65:20:20 (partes)",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel 60 em vidro",
+          "detector": "Luz do dia; caracterização adicional HPLC-DAD-ESI-MS",
+          "rf": [
+            {
+              "valor": 0.33,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "fonte_primaria_conferida_referencia_condicional",
+            "fontePrimaria": "https://doi.org/10.3390/antiox14121438",
+            "doi": "10.3390/antiox14121438",
+            "secoesConferidas": "Métodos, figura 4, tabela 4",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Padrões e comparação com extratos; cis-luteína e derivados não importados. Preservar proporção publicada em partes.",
+              "Não extrapolar para CCD genérica, papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false,
+            "motivo": "Referência experimental contextual; motor não calibrado."
+          }
+        }
+      ],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
       "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
-        "sem_retencao_experimental",
+        "identidade_primaria_a_conferir",
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_primaria_e_condicoes_a_homologar"
+        "metodos_e_condicoes_a_homologar"
       ]
     },
     {
@@ -2523,17 +2765,77 @@
       "nome": "β-criptoxantina",
       "grupo": "pigmentos_vegetais",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 0,
-      "metodos": [],
+      "metodosComRetencaoIndividual": 1,
+      "metodos": [
+        {
+          "protocoloId": "tlc_carotenoids_adamczuk2025",
+          "tecnica": "ccd",
+          "fonte": "adamczuk2025",
+          "fonteUrl": "https://doi.org/10.3390/antiox14121438",
+          "solventes": [
+            "acetone",
+            "ethyl_acetate",
+            "heptane"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "heptane",
+                "partes": 65
+              },
+              {
+                "id": "ethyl_acetate",
+                "partes": 20
+              },
+              {
+                "id": "acetone",
+                "partes": 20
+              }
+            ],
+            "base": "v/v",
+            "mistura": "n-heptano:acetato de etila:acetona 65:20:20 (partes)",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel 60 em vidro",
+          "detector": "Luz do dia; caracterização adicional HPLC-DAD-ESI-MS",
+          "rf": [
+            {
+              "valor": 0.56,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "fonte_primaria_conferida_referencia_condicional",
+            "fontePrimaria": "https://doi.org/10.3390/antiox14121438",
+            "doi": "10.3390/antiox14121438",
+            "secoesConferidas": "Métodos, figura 4, tabela 4",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Padrões e comparação com extratos; cis-luteína e derivados não importados. Preservar proporção publicada em partes.",
+              "Não extrapolar para CCD genérica, papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false,
+            "motivo": "Referência experimental contextual; motor não calibrado."
+          }
+        }
+      ],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
       "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
-        "sem_retencao_experimental",
+        "identidade_primaria_a_conferir",
         "metodo_2_documentado",
         "solventes_contrastantes",
-        "identidade_primaria_e_condicoes_a_homologar"
+        "metodos_e_condicoes_a_homologar"
       ]
     },
     {
@@ -2576,8 +2878,8 @@
       "id": "quercetin",
       "nome": "Quercetina",
       "grupo": "pigmentos_vegetais",
-      "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 2,
+      "identidadeConfirmada": true,
+      "metodosComRetencaoIndividual": 5,
       "metodos": [
         {
           "protocoloId": "tlc_quercetin2010_system1_toluene_ethylacetate_acetic",
@@ -2655,6 +2957,190 @@
           ],
           "rfIntervalo": [],
           "estado": "referencia_primaria_em_revisao_nao_homologada"
+        },
+        {
+          "protocoloId": "hptlc_flavonoids_alam2017_rp",
+          "tecnica": "hptlc",
+          "fonte": "alam2017flavonoids",
+          "fonteUrl": "https://doi.org/10.1080/13880209.2017.1300175",
+          "solventes": [
+            "acetonitrile",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "acetonitrile",
+                "partes": 4
+              },
+              {
+                "id": "water",
+                "partes": 6
+              }
+            ],
+            "base": "v/v",
+            "mistura": "acetonitrila:água 4:6",
+            "homologada": true
+          },
+          "faseEstacionaria": "Sílica gel 60 F254 RP-18 sobre vidro",
+          "detector": "Densitometria de absorbância a 360 nm",
+          "rf": [
+            {
+              "valor": 0.23,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": true,
+              "fontePrimariaConferida": true,
+              "incertezaRfReportada": 0.005
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "homologado",
+          "auditoriaCientifica": {
+            "estado": "metodo_experimental_revisado_e_homologado_somente_hptlc",
+            "fontePrimaria": "https://doi.org/10.1080/13880209.2017.1300175",
+            "doi": "10.1080/13880209.2017.1300175",
+            "secoesConferidas": "Métodos, figura 3, tabela 1 e tabelas de validação",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Padrões Sigma-Aldrich; hidratação/pureza de lote não especificadas; somente Rf de referência.",
+              "Não extrapolar para CCD genérica, papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "hptlc",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false,
+            "motivo": "Referência experimental contextual; motor não calibrado."
+          }
+        },
+        {
+          "protocoloId": "hptlc_arjunarishta2011_quercetin",
+          "tecnica": "hptlc",
+          "fonte": "arjunarishta2011",
+          "fonteUrl": "https://ajrconline.org/HTML_Papers/Asian%20Journal%20of%20Research%20in%20Chemistry__PID__2011-4-6-38.html",
+          "solventes": [
+            "ethyl_acetate",
+            "formic_acid",
+            "methanol",
+            "toluene"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "toluene",
+                "partes": 6
+              },
+              {
+                "id": "ethyl_acetate",
+                "partes": 3
+              },
+              {
+                "id": "methanol",
+                "partes": 0.2
+              },
+              {
+                "id": "formic_acid",
+                "partes": 0.4
+              }
+            ],
+            "base": "v/v",
+            "mistura": "tolueno:acetato de etila:metanol:ácido fórmico 6:3:0,2:0,4",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel 60 F254 Merck",
+          "detector": "Densitometria a 300 nm",
+          "rf": [
+            {
+              "valor": 0.36,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true,
+              "incertezaRfReportada": 0.02
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "fonte_primaria_conferida_referencia_condicional",
+            "fontePrimaria": "https://ajrconline.org/HTML_Papers/Asian%20Journal%20of%20Research%20in%20Chemistry__PID__2011-4-6-38.html",
+            "secoesConferidas": "Seções 2.3–2.5, 3.1–3.2 e tabelas 1–2",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Padrão 98%; saturação de 20 min em 2.4 e 30 min em 3.1. Não selecionar valor nem declarar reprodução exata.",
+              "Não extrapolar para CCD genérica, papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "hptlc",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false,
+            "motivo": "Referência experimental contextual; motor não calibrado."
+          }
+        },
+        {
+          "protocoloId": "hptlc_nair2017_polyphenols_np",
+          "tecnica": "hptlc",
+          "fonte": "nair2017polyphenols",
+          "fonteUrl": "https://doi.org/10.4103/pr.pr_122_16",
+          "solventes": [
+            "ethyl_acetate",
+            "formic_acid",
+            "methanol",
+            "toluene"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "toluene",
+                "partes": 3
+              },
+              {
+                "id": "ethyl_acetate",
+                "partes": 4
+              },
+              {
+                "id": "formic_acid",
+                "partes": 0.8
+              },
+              {
+                "id": "methanol",
+                "partes": 0.7
+              }
+            ],
+            "base": "v/v",
+            "mistura": "tolueno:acetato de etila:ácido fórmico:metanol 3:4:0,8:0,7",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel 60 F254 em alumínio",
+          "detector": "Densitometria de absorbância a 254 nm",
+          "rf": [
+            {
+              "valor": 0.76,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true,
+              "incertezaRfReportada": 0.01
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "fonte_primaria_conferida_referencia_condicional",
+            "fontePrimaria": "https://doi.org/10.4103/pr.pr_122_16",
+            "doi": "10.4103/pr.pr_122_16",
+            "secoesConferidas": "Métodos, resultados, figura 1a, resumo",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Valores confirmados no texto e figura 1a; rutina tri-hidratada >98%, não transferir massa para anidra; texto de pureza espectral da quercetina suspeito.",
+              "Não extrapolar para CCD genérica, papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "hptlc",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false,
+            "motivo": "Referência experimental contextual; motor não calibrado."
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -2674,29 +3160,389 @@
             "acetic_acid",
             "toluene"
           ]
+        },
+        {
+          "metodos": [
+            "tlc_quercetin2010_system1_toluene_ethylacetate_acetic",
+            "hptlc_flavonoids_alam2017_rp"
+          ],
+          "solventesA": [
+            "acetic_acid",
+            "ethyl_acetate",
+            "toluene"
+          ],
+          "solventesB": [
+            "acetonitrile",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_quercetin2010_system1_toluene_ethylacetate_acetic",
+            "hptlc_arjunarishta2011_quercetin"
+          ],
+          "solventesA": [
+            "acetic_acid",
+            "ethyl_acetate",
+            "toluene"
+          ],
+          "solventesB": [
+            "ethyl_acetate",
+            "formic_acid",
+            "methanol",
+            "toluene"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_quercetin2010_system1_toluene_ethylacetate_acetic",
+            "hptlc_nair2017_polyphenols_np"
+          ],
+          "solventesA": [
+            "acetic_acid",
+            "ethyl_acetate",
+            "toluene"
+          ],
+          "solventesB": [
+            "ethyl_acetate",
+            "formic_acid",
+            "methanol",
+            "toluene"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_quercetin2010_system4_toluene_acetic",
+            "hptlc_flavonoids_alam2017_rp"
+          ],
+          "solventesA": [
+            "acetic_acid",
+            "toluene"
+          ],
+          "solventesB": [
+            "acetonitrile",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_quercetin2010_system4_toluene_acetic",
+            "hptlc_arjunarishta2011_quercetin"
+          ],
+          "solventesA": [
+            "acetic_acid",
+            "toluene"
+          ],
+          "solventesB": [
+            "ethyl_acetate",
+            "formic_acid",
+            "methanol",
+            "toluene"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_quercetin2010_system4_toluene_acetic",
+            "hptlc_nair2017_polyphenols_np"
+          ],
+          "solventesA": [
+            "acetic_acid",
+            "toluene"
+          ],
+          "solventesB": [
+            "ethyl_acetate",
+            "formic_acid",
+            "methanol",
+            "toluene"
+          ]
+        },
+        {
+          "metodos": [
+            "hptlc_flavonoids_alam2017_rp",
+            "hptlc_arjunarishta2011_quercetin"
+          ],
+          "solventesA": [
+            "acetonitrile",
+            "water"
+          ],
+          "solventesB": [
+            "ethyl_acetate",
+            "formic_acid",
+            "methanol",
+            "toluene"
+          ]
+        },
+        {
+          "metodos": [
+            "hptlc_flavonoids_alam2017_rp",
+            "hptlc_nair2017_polyphenols_np"
+          ],
+          "solventesA": [
+            "acetonitrile",
+            "water"
+          ],
+          "solventesB": [
+            "ethyl_acetate",
+            "formic_acid",
+            "methanol",
+            "toluene"
+          ]
         }
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_e_condicoes_a_homologar"
+        "metodos_e_condicoes_a_homologar"
       ]
     },
     {
       "id": "rutin",
       "nome": "Rutina",
       "grupo": "pigmentos_vegetais",
-      "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 0,
-      "metodos": [],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
-      "paresDocumentados": [],
+      "identidadeConfirmada": true,
+      "metodosComRetencaoIndividual": 3,
+      "metodos": [
+        {
+          "protocoloId": "hptlc_flavonoids_alam2017_rp",
+          "tecnica": "hptlc",
+          "fonte": "alam2017flavonoids",
+          "fonteUrl": "https://doi.org/10.1080/13880209.2017.1300175",
+          "solventes": [
+            "acetonitrile",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "acetonitrile",
+                "partes": 4
+              },
+              {
+                "id": "water",
+                "partes": 6
+              }
+            ],
+            "base": "v/v",
+            "mistura": "acetonitrila:água 4:6",
+            "homologada": true
+          },
+          "faseEstacionaria": "Sílica gel 60 F254 RP-18 sobre vidro",
+          "detector": "Densitometria de absorbância a 360 nm",
+          "rf": [
+            {
+              "valor": 0.52,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": true,
+              "fontePrimariaConferida": true,
+              "incertezaRfReportada": 0.006
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "homologado",
+          "auditoriaCientifica": {
+            "estado": "metodo_experimental_revisado_e_homologado_somente_hptlc",
+            "fontePrimaria": "https://doi.org/10.1080/13880209.2017.1300175",
+            "doi": "10.1080/13880209.2017.1300175",
+            "secoesConferidas": "Métodos, figura 3, tabela 1 e tabelas de validação",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Padrões Sigma-Aldrich; hidratação/pureza de lote não especificadas; somente Rf de referência.",
+              "Não extrapolar para CCD genérica, papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "hptlc",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false,
+            "motivo": "Referência experimental contextual; motor não calibrado."
+          }
+        },
+        {
+          "protocoloId": "hptlc_arjunarishta2011_rutin",
+          "tecnica": "hptlc",
+          "fonte": "arjunarishta2011",
+          "fonteUrl": "https://ajrconline.org/HTML_Papers/Asian%20Journal%20of%20Research%20in%20Chemistry__PID__2011-4-6-38.html",
+          "solventes": [
+            "butanol_1",
+            "ethyl_acetate",
+            "formic_acid",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "ethyl_acetate",
+                "partes": 10
+              },
+              {
+                "id": "butanol_1",
+                "partes": 6
+              },
+              {
+                "id": "formic_acid",
+                "partes": 2
+              },
+              {
+                "id": "water",
+                "partes": 2
+              }
+            ],
+            "base": "v/v",
+            "mistura": "acetato de etila:1-butanol:ácido fórmico:água 10:6:2:2",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel 60 F254 Merck",
+          "detector": "Densitometria a 280 nm",
+          "rf": [
+            {
+              "valor": 0.59,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true,
+              "incertezaRfReportada": 0.02
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "fonte_primaria_conferida_referencia_condicional",
+            "fontePrimaria": "https://ajrconline.org/HTML_Papers/Asian%20Journal%20of%20Research%20in%20Chemistry__PID__2011-4-6-38.html",
+            "secoesConferidas": "Seções 2.3–2.5, 3.1–3.2 e tabelas 1–2",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Padrão 98%; saturação de 20 min em 2.4 e 30 min em 3.1. Não selecionar valor nem declarar reprodução exata.",
+              "Não extrapolar para CCD genérica, papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "hptlc",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false,
+            "motivo": "Referência experimental contextual; motor não calibrado."
+          }
+        },
+        {
+          "protocoloId": "hptlc_nair2017_polyphenols_np",
+          "tecnica": "hptlc",
+          "fonte": "nair2017polyphenols",
+          "fonteUrl": "https://doi.org/10.4103/pr.pr_122_16",
+          "solventes": [
+            "ethyl_acetate",
+            "formic_acid",
+            "methanol",
+            "toluene"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "toluene",
+                "partes": 3
+              },
+              {
+                "id": "ethyl_acetate",
+                "partes": 4
+              },
+              {
+                "id": "formic_acid",
+                "partes": 0.8
+              },
+              {
+                "id": "methanol",
+                "partes": 0.7
+              }
+            ],
+            "base": "v/v",
+            "mistura": "tolueno:acetato de etila:ácido fórmico:metanol 3:4:0,8:0,7",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel 60 F254 em alumínio",
+          "detector": "Densitometria de absorbância a 254 nm",
+          "rf": [
+            {
+              "valor": 0.08,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true,
+              "incertezaRfReportada": 0.02
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "fonte_primaria_conferida_referencia_condicional",
+            "fontePrimaria": "https://doi.org/10.4103/pr.pr_122_16",
+            "doi": "10.4103/pr.pr_122_16",
+            "secoesConferidas": "Métodos, resultados, figura 1a, resumo",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Valores confirmados no texto e figura 1a; rutina tri-hidratada >98%, não transferir massa para anidra; texto de pureza espectral da quercetina suspeito.",
+              "Não extrapolar para CCD genérica, papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "hptlc",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false,
+            "motivo": "Referência experimental contextual; motor não calibrado."
+          }
+        }
+      ],
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "hptlc_flavonoids_alam2017_rp",
+            "hptlc_arjunarishta2011_rutin"
+          ],
+          "solventesA": [
+            "acetonitrile",
+            "water"
+          ],
+          "solventesB": [
+            "butanol_1",
+            "ethyl_acetate",
+            "formic_acid",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "hptlc_flavonoids_alam2017_rp",
+            "hptlc_nair2017_polyphenols_np"
+          ],
+          "solventesA": [
+            "acetonitrile",
+            "water"
+          ],
+          "solventesB": [
+            "ethyl_acetate",
+            "formic_acid",
+            "methanol",
+            "toluene"
+          ]
+        },
+        {
+          "metodos": [
+            "hptlc_arjunarishta2011_rutin",
+            "hptlc_nair2017_polyphenols_np"
+          ],
+          "solventesA": [
+            "butanol_1",
+            "ethyl_acetate",
+            "formic_acid",
+            "water"
+          ],
+          "solventesB": [
+            "ethyl_acetate",
+            "formic_acid",
+            "methanol",
+            "toluene"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "sem_retencao_experimental",
-        "metodo_2_documentado",
-        "solventes_contrastantes",
-        "identidade_primaria_e_condicoes_a_homologar"
+        "metodos_e_condicoes_a_homologar"
       ]
     },
     {
@@ -2861,7 +3707,7 @@
       "nome": "Alanina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 5,
+      "metodosComRetencaoIndividual": 6,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_amrita_12_3_5",
@@ -3057,6 +3903,65 @@
           ],
           "rfIntervalo": [],
           "estado": "artigo_primario_com_discrepancias_a_auditar"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "tecnica": "ccd",
+          "fonte": "hudaib2016",
+          "fonteUrl": "https://doi.org/10.1556/1006.2016.29.2.9",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 12
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 3
+              },
+              {
+                "id": "water",
+                "partes": 5
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-butanol:ácido acético:água 12:3:5",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel 60 A Whatman com indicador fluorescente",
+          "detector": "ninhidrina 0,2 g/100 mL de etanol; aquecimento 80–100 °C por 5 min",
+          "rf": [
+            {
+              "valor": 0.277,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "fonte_primaria_conferida_referencia_condicional",
+            "fontePrimaria": "https://doi.org/10.1556/1006.2016.29.2.9",
+            "doi": "10.1556/1006.2016.29.2.9",
+            "secoesConferidas": "Seção 2.2, tabela 1",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Padrões 2% m/v; desenvolvimento ~3 h. Estereoquímica, pureza e dispersão individual de Rf não especificadas.",
+              "Não extrapolar para CCD genérica, papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false,
+            "motivo": "Referência experimental contextual; motor não calibrado."
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -3138,6 +4043,21 @@
         },
         {
           "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
             "tlc_aminoacids_protechex_etanol96_water_7_3",
             "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
           ],
@@ -3165,11 +4085,27 @@
             "butanol_1",
             "water"
           ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
         }
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_e_condicoes_a_homologar"
+        "identidade_primaria_a_conferir",
+        "metodos_e_condicoes_a_homologar"
       ]
     },
     {
@@ -3177,7 +4113,7 @@
       "nome": "Arginina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 2,
+      "metodosComRetencaoIndividual": 3,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
@@ -3255,6 +4191,65 @@
           ],
           "rfIntervalo": [],
           "estado": "artigo_primario_com_discrepancias_a_auditar"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "tecnica": "ccd",
+          "fonte": "hudaib2016",
+          "fonteUrl": "https://doi.org/10.1556/1006.2016.29.2.9",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 12
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 3
+              },
+              {
+                "id": "water",
+                "partes": 5
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-butanol:ácido acético:água 12:3:5",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel 60 A Whatman com indicador fluorescente",
+          "detector": "ninhidrina 0,2 g/100 mL de etanol; aquecimento 80–100 °C por 5 min",
+          "rf": [
+            {
+              "valor": 0.162,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "fonte_primaria_conferida_referencia_condicional",
+            "fontePrimaria": "https://doi.org/10.1556/1006.2016.29.2.9",
+            "doi": "10.1556/1006.2016.29.2.9",
+            "secoesConferidas": "Seção 2.2, tabela 1",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Padrões 2% m/v; desenvolvimento ~3 h. Estereoquímica, pureza e dispersão individual de Rf não especificadas.",
+              "Não extrapolar para CCD genérica, papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false,
+            "motivo": "Referência experimental contextual; motor não calibrado."
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -3274,11 +4269,27 @@
             "butanol_1",
             "water"
           ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
         }
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_e_condicoes_a_homologar"
+        "identidade_primaria_a_conferir",
+        "metodos_e_condicoes_a_homologar"
       ]
     },
     {
@@ -3286,7 +4297,7 @@
       "nome": "Asparagina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 1,
+      "metodosComRetencaoIndividual": 2,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
@@ -3323,16 +4334,90 @@
           ],
           "rfIntervalo": [],
           "estado": "referencia_primaria_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "tecnica": "ccd",
+          "fonte": "hudaib2016",
+          "fonteUrl": "https://doi.org/10.1556/1006.2016.29.2.9",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 12
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 3
+              },
+              {
+                "id": "water",
+                "partes": 5
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-butanol:ácido acético:água 12:3:5",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel 60 A Whatman com indicador fluorescente",
+          "detector": "ninhidrina 0,2 g/100 mL de etanol; aquecimento 80–100 °C por 5 min",
+          "rf": [
+            {
+              "valor": 0.215,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "fonte_primaria_conferida_referencia_condicional",
+            "fontePrimaria": "https://doi.org/10.1556/1006.2016.29.2.9",
+            "doi": "10.1556/1006.2016.29.2.9",
+            "secoesConferidas": "Seção 2.2, tabela 1",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Padrões 2% m/v; desenvolvimento ~3 h. Estereoquímica, pureza e dispersão individual de Rf não especificadas.",
+              "Não extrapolar para CCD genérica, papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false,
+            "motivo": "Referência experimental contextual; motor não calibrado."
+          }
         }
       ],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
-      "paresDocumentados": [],
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "metodo_2_documentado",
-        "solventes_contrastantes",
-        "identidade_primaria_e_condicoes_a_homologar"
+        "identidade_primaria_a_conferir",
+        "metodos_e_condicoes_a_homologar"
       ]
     },
     {
@@ -3340,7 +4425,7 @@
       "nome": "Ácido aspártico",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 3,
+      "metodosComRetencaoIndividual": 4,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
@@ -3454,6 +4539,65 @@
           ],
           "rfIntervalo": [],
           "estado": "tabela_referencia_comercial_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "tecnica": "ccd",
+          "fonte": "hudaib2016",
+          "fonteUrl": "https://doi.org/10.1556/1006.2016.29.2.9",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 12
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 3
+              },
+              {
+                "id": "water",
+                "partes": 5
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-butanol:ácido acético:água 12:3:5",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel 60 A Whatman com indicador fluorescente",
+          "detector": "ninhidrina 0,2 g/100 mL de etanol; aquecimento 80–100 °C por 5 min",
+          "rf": [
+            {
+              "valor": 0.24,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "fonte_primaria_conferida_referencia_condicional",
+            "fontePrimaria": "https://doi.org/10.1556/1006.2016.29.2.9",
+            "doi": "10.1556/1006.2016.29.2.9",
+            "secoesConferidas": "Seção 2.2, tabela 1",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Padrões 2% m/v; desenvolvimento ~3 h. Estereoquímica, pureza e dispersão individual de Rf não especificadas.",
+              "Não extrapolar para CCD genérica, papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false,
+            "motivo": "Referência experimental contextual; motor não calibrado."
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -3490,8 +4634,38 @@
         },
         {
           "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
             "tlc_aminoacids_protechex_etanol96_water_7_3",
             "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
           ],
           "solventesA": [
             "ethanol",
@@ -3506,7 +4680,8 @@
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_e_condicoes_a_homologar"
+        "identidade_primaria_a_conferir",
+        "metodos_e_condicoes_a_homologar"
       ]
     },
     {
@@ -3514,7 +4689,7 @@
       "nome": "Cisteína",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 1,
+      "metodosComRetencaoIndividual": 2,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
@@ -3551,16 +4726,90 @@
           ],
           "rfIntervalo": [],
           "estado": "referencia_primaria_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "tecnica": "ccd",
+          "fonte": "hudaib2016",
+          "fonteUrl": "https://doi.org/10.1556/1006.2016.29.2.9",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 12
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 3
+              },
+              {
+                "id": "water",
+                "partes": 5
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-butanol:ácido acético:água 12:3:5",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel 60 A Whatman com indicador fluorescente",
+          "detector": "ninhidrina 0,2 g/100 mL de etanol; aquecimento 80–100 °C por 5 min",
+          "rf": [
+            {
+              "valor": 0.362,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "fonte_primaria_conferida_referencia_condicional",
+            "fontePrimaria": "https://doi.org/10.1556/1006.2016.29.2.9",
+            "doi": "10.1556/1006.2016.29.2.9",
+            "secoesConferidas": "Seção 2.2, tabela 1",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Padrões 2% m/v; desenvolvimento ~3 h. Estereoquímica, pureza e dispersão individual de Rf não especificadas.",
+              "Não extrapolar para CCD genérica, papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false,
+            "motivo": "Referência experimental contextual; motor não calibrado."
+          }
         }
       ],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
-      "paresDocumentados": [],
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "metodo_2_documentado",
-        "solventes_contrastantes",
-        "identidade_primaria_e_condicoes_a_homologar"
+        "identidade_primaria_a_conferir",
+        "metodos_e_condicoes_a_homologar"
       ]
     },
     {
@@ -3568,7 +4817,7 @@
       "nome": "Ácido glutâmico",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 4,
+      "metodosComRetencaoIndividual": 5,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_amrita_12_3_5",
@@ -3723,6 +4972,65 @@
           ],
           "rfIntervalo": [],
           "estado": "tabela_referencia_comercial_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "tecnica": "ccd",
+          "fonte": "hudaib2016",
+          "fonteUrl": "https://doi.org/10.1556/1006.2016.29.2.9",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 12
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 3
+              },
+              {
+                "id": "water",
+                "partes": 5
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-butanol:ácido acético:água 12:3:5",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel 60 A Whatman com indicador fluorescente",
+          "detector": "ninhidrina 0,2 g/100 mL de etanol; aquecimento 80–100 °C por 5 min",
+          "rf": [
+            {
+              "valor": 0.277,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "fonte_primaria_conferida_referencia_condicional",
+            "fontePrimaria": "https://doi.org/10.1556/1006.2016.29.2.9",
+            "doi": "10.1556/1006.2016.29.2.9",
+            "secoesConferidas": "Seção 2.2, tabela 1",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Padrões 2% m/v; desenvolvimento ~3 h. Estereoquímica, pureza e dispersão individual de Rf não especificadas.",
+              "Não extrapolar para CCD genérica, papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false,
+            "motivo": "Referência experimental contextual; motor não calibrado."
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -3789,8 +5097,38 @@
         },
         {
           "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
             "tlc_aminoacids_protechex_etanol96_water_7_3",
             "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
           ],
           "solventesA": [
             "ethanol",
@@ -3805,7 +5143,8 @@
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_e_condicoes_a_homologar"
+        "identidade_primaria_a_conferir",
+        "metodos_e_condicoes_a_homologar"
       ]
     },
     {
@@ -3813,7 +5152,7 @@
       "nome": "Glutamina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 2,
+      "metodosComRetencaoIndividual": 3,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
@@ -3891,6 +5230,65 @@
           ],
           "rfIntervalo": [],
           "estado": "artigo_primario_com_discrepancias_a_auditar"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "tecnica": "ccd",
+          "fonte": "hudaib2016",
+          "fonteUrl": "https://doi.org/10.1556/1006.2016.29.2.9",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 12
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 3
+              },
+              {
+                "id": "water",
+                "partes": 5
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-butanol:ácido acético:água 12:3:5",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel 60 A Whatman com indicador fluorescente",
+          "detector": "ninhidrina 0,2 g/100 mL de etanol; aquecimento 80–100 °C por 5 min",
+          "rf": [
+            {
+              "valor": 0.223,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "fonte_primaria_conferida_referencia_condicional",
+            "fontePrimaria": "https://doi.org/10.1556/1006.2016.29.2.9",
+            "doi": "10.1556/1006.2016.29.2.9",
+            "secoesConferidas": "Seção 2.2, tabela 1",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Padrões 2% m/v; desenvolvimento ~3 h. Estereoquímica, pureza e dispersão individual de Rf não especificadas.",
+              "Não extrapolar para CCD genérica, papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false,
+            "motivo": "Referência experimental contextual; motor não calibrado."
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -3910,11 +5308,27 @@
             "butanol_1",
             "water"
           ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
         }
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_e_condicoes_a_homologar"
+        "identidade_primaria_a_conferir",
+        "metodos_e_condicoes_a_homologar"
       ]
     },
     {
@@ -3922,7 +5336,7 @@
       "nome": "Glicina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 4,
+      "metodosComRetencaoIndividual": 5,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_amrita_12_3_5",
@@ -4077,6 +5491,65 @@
           ],
           "rfIntervalo": [],
           "estado": "tabela_referencia_comercial_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "tecnica": "ccd",
+          "fonte": "hudaib2016",
+          "fonteUrl": "https://doi.org/10.1556/1006.2016.29.2.9",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 12
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 3
+              },
+              {
+                "id": "water",
+                "partes": 5
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-butanol:ácido acético:água 12:3:5",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel 60 A Whatman com indicador fluorescente",
+          "detector": "ninhidrina 0,2 g/100 mL de etanol; aquecimento 80–100 °C por 5 min",
+          "rf": [
+            {
+              "valor": 0.246,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "fonte_primaria_conferida_referencia_condicional",
+            "fontePrimaria": "https://doi.org/10.1556/1006.2016.29.2.9",
+            "doi": "10.1556/1006.2016.29.2.9",
+            "secoesConferidas": "Seção 2.2, tabela 1",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Padrões 2% m/v; desenvolvimento ~3 h. Estereoquímica, pureza e dispersão individual de Rf não especificadas.",
+              "Não extrapolar para CCD genérica, papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false,
+            "motivo": "Referência experimental contextual; motor não calibrado."
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -4143,8 +5616,38 @@
         },
         {
           "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
             "tlc_aminoacids_protechex_etanol96_water_7_3",
             "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
           ],
           "solventesA": [
             "ethanol",
@@ -4159,7 +5662,8 @@
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_e_condicoes_a_homologar"
+        "identidade_primaria_a_conferir",
+        "metodos_e_condicoes_a_homologar"
       ]
     },
     {
@@ -4167,7 +5671,7 @@
       "nome": "Histidina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 4,
+      "metodosComRetencaoIndividual": 5,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
@@ -4322,6 +5826,65 @@
           ],
           "rfIntervalo": [],
           "estado": "artigo_primario_com_discrepancias_a_auditar"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "tecnica": "ccd",
+          "fonte": "hudaib2016",
+          "fonteUrl": "https://doi.org/10.1556/1006.2016.29.2.9",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 12
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 3
+              },
+              {
+                "id": "water",
+                "partes": 5
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-butanol:ácido acético:água 12:3:5",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel 60 A Whatman com indicador fluorescente",
+          "detector": "ninhidrina 0,2 g/100 mL de etanol; aquecimento 80–100 °C por 5 min",
+          "rf": [
+            {
+              "valor": 0.162,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "fonte_primaria_conferida_referencia_condicional",
+            "fontePrimaria": "https://doi.org/10.1556/1006.2016.29.2.9",
+            "doi": "10.1556/1006.2016.29.2.9",
+            "secoesConferidas": "Seção 2.2, tabela 1",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Padrões 2% m/v; desenvolvimento ~3 h. Estereoquímica, pureza e dispersão individual de Rf não especificadas.",
+              "Não extrapolar para CCD genérica, papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false,
+            "motivo": "Referência experimental contextual; motor não calibrado."
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -4373,6 +5936,21 @@
         },
         {
           "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
             "tlc_aminoacids_protechex_etanol96_water_7_3",
             "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
           ],
@@ -4400,11 +5978,27 @@
             "butanol_1",
             "water"
           ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
         }
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_e_condicoes_a_homologar"
+        "identidade_primaria_a_conferir",
+        "metodos_e_condicoes_a_homologar"
       ]
     },
     {
@@ -4412,7 +6006,7 @@
       "nome": "Isoleucina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 3,
+      "metodosComRetencaoIndividual": 4,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
@@ -4526,6 +6120,65 @@
           ],
           "rfIntervalo": [],
           "estado": "tabela_referencia_comercial_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "tecnica": "ccd",
+          "fonte": "hudaib2016",
+          "fonteUrl": "https://doi.org/10.1556/1006.2016.29.2.9",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 12
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 3
+              },
+              {
+                "id": "water",
+                "partes": 5
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-butanol:ácido acético:água 12:3:5",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel 60 A Whatman com indicador fluorescente",
+          "detector": "ninhidrina 0,2 g/100 mL de etanol; aquecimento 80–100 °C por 5 min",
+          "rf": [
+            {
+              "valor": 0.515,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "fonte_primaria_conferida_referencia_condicional",
+            "fontePrimaria": "https://doi.org/10.1556/1006.2016.29.2.9",
+            "doi": "10.1556/1006.2016.29.2.9",
+            "secoesConferidas": "Seção 2.2, tabela 1",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Padrões 2% m/v; desenvolvimento ~3 h. Estereoquímica, pureza e dispersão individual de Rf não especificadas.",
+              "Não extrapolar para CCD genérica, papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false,
+            "motivo": "Referência experimental contextual; motor não calibrado."
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -4562,8 +6215,38 @@
         },
         {
           "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
             "tlc_aminoacids_protechex_etanol96_water_7_3",
             "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
           ],
           "solventesA": [
             "ethanol",
@@ -4578,7 +6261,8 @@
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_e_condicoes_a_homologar"
+        "identidade_primaria_a_conferir",
+        "metodos_e_condicoes_a_homologar"
       ]
     },
     {
@@ -4586,7 +6270,7 @@
       "nome": "Leucina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 4,
+      "metodosComRetencaoIndividual": 5,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_amrita_12_3_5",
@@ -4741,6 +6425,65 @@
           ],
           "rfIntervalo": [],
           "estado": "tabela_referencia_comercial_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "tecnica": "ccd",
+          "fonte": "hudaib2016",
+          "fonteUrl": "https://doi.org/10.1556/1006.2016.29.2.9",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 12
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 3
+              },
+              {
+                "id": "water",
+                "partes": 5
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-butanol:ácido acético:água 12:3:5",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel 60 A Whatman com indicador fluorescente",
+          "detector": "ninhidrina 0,2 g/100 mL de etanol; aquecimento 80–100 °C por 5 min",
+          "rf": [
+            {
+              "valor": 0.562,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "fonte_primaria_conferida_referencia_condicional",
+            "fontePrimaria": "https://doi.org/10.1556/1006.2016.29.2.9",
+            "doi": "10.1556/1006.2016.29.2.9",
+            "secoesConferidas": "Seção 2.2, tabela 1",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Padrões 2% m/v; desenvolvimento ~3 h. Estereoquímica, pureza e dispersão individual de Rf não especificadas.",
+              "Não extrapolar para CCD genérica, papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false,
+            "motivo": "Referência experimental contextual; motor não calibrado."
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -4807,8 +6550,38 @@
         },
         {
           "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
             "tlc_aminoacids_protechex_etanol96_water_7_3",
             "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
           ],
           "solventesA": [
             "ethanol",
@@ -4823,7 +6596,8 @@
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_e_condicoes_a_homologar"
+        "identidade_primaria_a_conferir",
+        "metodos_e_condicoes_a_homologar"
       ]
     },
     {
@@ -4831,7 +6605,7 @@
       "nome": "Lisina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 3,
+      "metodosComRetencaoIndividual": 4,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_amrita_12_3_5",
@@ -4950,6 +6724,65 @@
           ],
           "rfIntervalo": [],
           "estado": "artigo_primario_com_discrepancias_a_auditar"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "tecnica": "ccd",
+          "fonte": "hudaib2016",
+          "fonteUrl": "https://doi.org/10.1556/1006.2016.29.2.9",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 12
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 3
+              },
+              {
+                "id": "water",
+                "partes": 5
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-butanol:ácido acético:água 12:3:5",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel 60 A Whatman com indicador fluorescente",
+          "detector": "ninhidrina 0,2 g/100 mL de etanol; aquecimento 80–100 °C por 5 min",
+          "rf": [
+            {
+              "valor": 0.131,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "fonte_primaria_conferida_referencia_condicional",
+            "fontePrimaria": "https://doi.org/10.1556/1006.2016.29.2.9",
+            "doi": "10.1556/1006.2016.29.2.9",
+            "secoesConferidas": "Seção 2.2, tabela 1",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Padrões 2% m/v; desenvolvimento ~3 h. Estereoquímica, pureza e dispersão individual de Rf não especificadas.",
+              "Não extrapolar para CCD genérica, papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false,
+            "motivo": "Referência experimental contextual; motor não calibrado."
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -4984,11 +6817,27 @@
             "butanol_1",
             "water"
           ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
         }
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_e_condicoes_a_homologar"
+        "identidade_primaria_a_conferir",
+        "metodos_e_condicoes_a_homologar"
       ]
     },
     {
@@ -4996,7 +6845,7 @@
       "nome": "Metionina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 4,
+      "metodosComRetencaoIndividual": 5,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
@@ -5151,6 +7000,65 @@
           ],
           "rfIntervalo": [],
           "estado": "artigo_primario_com_discrepancias_a_auditar"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "tecnica": "ccd",
+          "fonte": "hudaib2016",
+          "fonteUrl": "https://doi.org/10.1556/1006.2016.29.2.9",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 12
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 3
+              },
+              {
+                "id": "water",
+                "partes": 5
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-butanol:ácido acético:água 12:3:5",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel 60 A Whatman com indicador fluorescente",
+          "detector": "ninhidrina 0,2 g/100 mL de etanol; aquecimento 80–100 °C por 5 min",
+          "rf": [
+            {
+              "valor": 0.462,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "fonte_primaria_conferida_referencia_condicional",
+            "fontePrimaria": "https://doi.org/10.1556/1006.2016.29.2.9",
+            "doi": "10.1556/1006.2016.29.2.9",
+            "secoesConferidas": "Seção 2.2, tabela 1",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Padrões 2% m/v; desenvolvimento ~3 h. Estereoquímica, pureza e dispersão individual de Rf não especificadas.",
+              "Não extrapolar para CCD genérica, papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false,
+            "motivo": "Referência experimental contextual; motor não calibrado."
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -5202,6 +7110,21 @@
         },
         {
           "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
             "tlc_aminoacids_protechex_etanol96_water_7_3",
             "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
           ],
@@ -5229,11 +7152,27 @@
             "butanol_1",
             "water"
           ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
         }
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_e_condicoes_a_homologar"
+        "identidade_primaria_a_conferir",
+        "metodos_e_condicoes_a_homologar"
       ]
     },
     {
@@ -5241,7 +7180,7 @@
       "nome": "Fenilalanina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 3,
+      "metodosComRetencaoIndividual": 4,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
@@ -5355,6 +7294,65 @@
           ],
           "rfIntervalo": [],
           "estado": "tabela_referencia_comercial_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "tecnica": "ccd",
+          "fonte": "hudaib2016",
+          "fonteUrl": "https://doi.org/10.1556/1006.2016.29.2.9",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 12
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 3
+              },
+              {
+                "id": "water",
+                "partes": 5
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-butanol:ácido acético:água 12:3:5",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel 60 A Whatman com indicador fluorescente",
+          "detector": "ninhidrina 0,2 g/100 mL de etanol; aquecimento 80–100 °C por 5 min",
+          "rf": [
+            {
+              "valor": 0.615,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "fonte_primaria_conferida_referencia_condicional",
+            "fontePrimaria": "https://doi.org/10.1556/1006.2016.29.2.9",
+            "doi": "10.1556/1006.2016.29.2.9",
+            "secoesConferidas": "Seção 2.2, tabela 1",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Padrões 2% m/v; desenvolvimento ~3 h. Estereoquímica, pureza e dispersão individual de Rf não especificadas.",
+              "Não extrapolar para CCD genérica, papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false,
+            "motivo": "Referência experimental contextual; motor não calibrado."
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -5391,8 +7389,38 @@
         },
         {
           "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
             "tlc_aminoacids_protechex_etanol96_water_7_3",
             "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
           ],
           "solventesA": [
             "ethanol",
@@ -5407,7 +7435,8 @@
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_e_condicoes_a_homologar"
+        "identidade_primaria_a_conferir",
+        "metodos_e_condicoes_a_homologar"
       ]
     },
     {
@@ -5415,7 +7444,7 @@
       "nome": "Prolina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 3,
+      "metodosComRetencaoIndividual": 4,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
@@ -5529,6 +7558,65 @@
           ],
           "rfIntervalo": [],
           "estado": "tabela_referencia_comercial_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "tecnica": "ccd",
+          "fonte": "hudaib2016",
+          "fonteUrl": "https://doi.org/10.1556/1006.2016.29.2.9",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 12
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 3
+              },
+              {
+                "id": "water",
+                "partes": 5
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-butanol:ácido acético:água 12:3:5",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel 60 A Whatman com indicador fluorescente",
+          "detector": "ninhidrina 0,2 g/100 mL de etanol; aquecimento 80–100 °C por 5 min",
+          "rf": [
+            {
+              "valor": 0.262,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "fonte_primaria_conferida_referencia_condicional",
+            "fontePrimaria": "https://doi.org/10.1556/1006.2016.29.2.9",
+            "doi": "10.1556/1006.2016.29.2.9",
+            "secoesConferidas": "Seção 2.2, tabela 1",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Padrões 2% m/v; desenvolvimento ~3 h. Estereoquímica, pureza e dispersão individual de Rf não especificadas.",
+              "Não extrapolar para CCD genérica, papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false,
+            "motivo": "Referência experimental contextual; motor não calibrado."
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -5565,8 +7653,38 @@
         },
         {
           "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
             "tlc_aminoacids_protechex_etanol96_water_7_3",
             "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
           ],
           "solventesA": [
             "ethanol",
@@ -5581,7 +7699,8 @@
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_e_condicoes_a_homologar"
+        "identidade_primaria_a_conferir",
+        "metodos_e_condicoes_a_homologar"
       ]
     },
     {
@@ -5589,7 +7708,7 @@
       "nome": "Serina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 3,
+      "metodosComRetencaoIndividual": 4,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
@@ -5703,6 +7822,65 @@
           ],
           "rfIntervalo": [],
           "estado": "tabela_referencia_comercial_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "tecnica": "ccd",
+          "fonte": "hudaib2016",
+          "fonteUrl": "https://doi.org/10.1556/1006.2016.29.2.9",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 12
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 3
+              },
+              {
+                "id": "water",
+                "partes": 5
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-butanol:ácido acético:água 12:3:5",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel 60 A Whatman com indicador fluorescente",
+          "detector": "ninhidrina 0,2 g/100 mL de etanol; aquecimento 80–100 °C por 5 min",
+          "rf": [
+            {
+              "valor": 0.254,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "fonte_primaria_conferida_referencia_condicional",
+            "fontePrimaria": "https://doi.org/10.1556/1006.2016.29.2.9",
+            "doi": "10.1556/1006.2016.29.2.9",
+            "secoesConferidas": "Seção 2.2, tabela 1",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Padrões 2% m/v; desenvolvimento ~3 h. Estereoquímica, pureza e dispersão individual de Rf não especificadas.",
+              "Não extrapolar para CCD genérica, papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false,
+            "motivo": "Referência experimental contextual; motor não calibrado."
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -5739,8 +7917,38 @@
         },
         {
           "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
             "tlc_aminoacids_protechex_etanol96_water_7_3",
             "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
           ],
           "solventesA": [
             "ethanol",
@@ -5755,7 +7963,8 @@
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_e_condicoes_a_homologar"
+        "identidade_primaria_a_conferir",
+        "metodos_e_condicoes_a_homologar"
       ]
     },
     {
@@ -5763,7 +7972,7 @@
       "nome": "Treonina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 3,
+      "metodosComRetencaoIndividual": 4,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
@@ -5877,6 +8086,65 @@
           ],
           "rfIntervalo": [],
           "estado": "tabela_referencia_comercial_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "tecnica": "ccd",
+          "fonte": "hudaib2016",
+          "fonteUrl": "https://doi.org/10.1556/1006.2016.29.2.9",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 12
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 3
+              },
+              {
+                "id": "water",
+                "partes": 5
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-butanol:ácido acético:água 12:3:5",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel 60 A Whatman com indicador fluorescente",
+          "detector": "ninhidrina 0,2 g/100 mL de etanol; aquecimento 80–100 °C por 5 min",
+          "rf": [
+            {
+              "valor": 0.262,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "fonte_primaria_conferida_referencia_condicional",
+            "fontePrimaria": "https://doi.org/10.1556/1006.2016.29.2.9",
+            "doi": "10.1556/1006.2016.29.2.9",
+            "secoesConferidas": "Seção 2.2, tabela 1",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Padrões 2% m/v; desenvolvimento ~3 h. Estereoquímica, pureza e dispersão individual de Rf não especificadas.",
+              "Não extrapolar para CCD genérica, papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false,
+            "motivo": "Referência experimental contextual; motor não calibrado."
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -5913,8 +8181,38 @@
         },
         {
           "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
             "tlc_aminoacids_protechex_etanol96_water_7_3",
             "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
           ],
           "solventesA": [
             "ethanol",
@@ -5929,7 +8227,8 @@
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_e_condicoes_a_homologar"
+        "identidade_primaria_a_conferir",
+        "metodos_e_condicoes_a_homologar"
       ]
     },
     {
@@ -5937,7 +8236,7 @@
       "nome": "Triptofano",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 4,
+      "metodosComRetencaoIndividual": 5,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
@@ -6092,6 +8391,65 @@
           ],
           "rfIntervalo": [],
           "estado": "artigo_primario_com_discrepancias_a_auditar"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "tecnica": "ccd",
+          "fonte": "hudaib2016",
+          "fonteUrl": "https://doi.org/10.1556/1006.2016.29.2.9",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 12
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 3
+              },
+              {
+                "id": "water",
+                "partes": 5
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-butanol:ácido acético:água 12:3:5",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel 60 A Whatman com indicador fluorescente",
+          "detector": "ninhidrina 0,2 g/100 mL de etanol; aquecimento 80–100 °C por 5 min",
+          "rf": [
+            {
+              "valor": 0.615,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "fonte_primaria_conferida_referencia_condicional",
+            "fontePrimaria": "https://doi.org/10.1556/1006.2016.29.2.9",
+            "doi": "10.1556/1006.2016.29.2.9",
+            "secoesConferidas": "Seção 2.2, tabela 1",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Padrões 2% m/v; desenvolvimento ~3 h. Estereoquímica, pureza e dispersão individual de Rf não especificadas.",
+              "Não extrapolar para CCD genérica, papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false,
+            "motivo": "Referência experimental contextual; motor não calibrado."
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -6143,6 +8501,21 @@
         },
         {
           "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
             "tlc_aminoacids_protechex_etanol96_water_7_3",
             "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
           ],
@@ -6170,11 +8543,27 @@
             "butanol_1",
             "water"
           ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
         }
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_e_condicoes_a_homologar"
+        "identidade_primaria_a_conferir",
+        "metodos_e_condicoes_a_homologar"
       ]
     },
     {
@@ -6182,7 +8571,7 @@
       "nome": "Tirosina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 4,
+      "metodosComRetencaoIndividual": 5,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_amrita_12_3_5",
@@ -6337,6 +8726,65 @@
           ],
           "rfIntervalo": [],
           "estado": "tabela_referencia_comercial_nao_homologada"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "tecnica": "ccd",
+          "fonte": "hudaib2016",
+          "fonteUrl": "https://doi.org/10.1556/1006.2016.29.2.9",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 12
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 3
+              },
+              {
+                "id": "water",
+                "partes": 5
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-butanol:ácido acético:água 12:3:5",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel 60 A Whatman com indicador fluorescente",
+          "detector": "ninhidrina 0,2 g/100 mL de etanol; aquecimento 80–100 °C por 5 min",
+          "rf": [
+            {
+              "valor": 0.539,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "fonte_primaria_conferida_referencia_condicional",
+            "fontePrimaria": "https://doi.org/10.1556/1006.2016.29.2.9",
+            "doi": "10.1556/1006.2016.29.2.9",
+            "secoesConferidas": "Seção 2.2, tabela 1",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Padrões 2% m/v; desenvolvimento ~3 h. Estereoquímica, pureza e dispersão individual de Rf não especificadas.",
+              "Não extrapolar para CCD genérica, papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false,
+            "motivo": "Referência experimental contextual; motor não calibrado."
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -6403,8 +8851,38 @@
         },
         {
           "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
             "tlc_aminoacids_protechex_etanol96_water_7_3",
             "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
           ],
           "solventesA": [
             "ethanol",
@@ -6419,7 +8897,8 @@
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_e_condicoes_a_homologar"
+        "identidade_primaria_a_conferir",
+        "metodos_e_condicoes_a_homologar"
       ]
     },
     {
@@ -6427,7 +8906,7 @@
       "nome": "Valina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 5,
+      "metodosComRetencaoIndividual": 6,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_amrita_12_3_5",
@@ -6623,6 +9102,65 @@
           ],
           "rfIntervalo": [],
           "estado": "artigo_primario_com_discrepancias_a_auditar"
+        },
+        {
+          "protocoloId": "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "tecnica": "ccd",
+          "fonte": "hudaib2016",
+          "fonteUrl": "https://doi.org/10.1556/1006.2016.29.2.9",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 12
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 3
+              },
+              {
+                "id": "water",
+                "partes": 5
+              }
+            ],
+            "base": "v/v",
+            "mistura": "1-butanol:ácido acético:água 12:3:5",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel 60 A Whatman com indicador fluorescente",
+          "detector": "ninhidrina 0,2 g/100 mL de etanol; aquecimento 80–100 °C por 5 min",
+          "rf": [
+            {
+              "valor": 0.439,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "fonte_primaria_conferida_referencia_condicional",
+            "fontePrimaria": "https://doi.org/10.1556/1006.2016.29.2.9",
+            "doi": "10.1556/1006.2016.29.2.9",
+            "secoesConferidas": "Seção 2.2, tabela 1",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Padrões 2% m/v; desenvolvimento ~3 h. Estereoquímica, pureza e dispersão individual de Rf não especificadas.",
+              "Não extrapolar para CCD genérica, papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false,
+            "motivo": "Referência experimental contextual; motor não calibrado."
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -6704,6 +9242,21 @@
         },
         {
           "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
             "tlc_aminoacids_protechex_etanol96_water_7_3",
             "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
           ],
@@ -6731,11 +9284,27 @@
             "butanol_1",
             "water"
           ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
         }
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_e_condicoes_a_homologar"
+        "identidade_primaria_a_conferir",
+        "metodos_e_condicoes_a_homologar"
       ]
     },
     {
@@ -7748,18 +10317,150 @@
       "id": "vanillin",
       "nome": "Vanilina",
       "grupo": "farmacos_e_organicos",
-      "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 0,
-      "metodos": [],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
-      "paresDocumentados": [],
+      "identidadeConfirmada": true,
+      "metodosComRetencaoIndividual": 2,
+      "metodos": [
+        {
+          "protocoloId": "hptlc_vanillin_hingse2014",
+          "tecnica": "hptlc",
+          "fonte": "hingse2014",
+          "fonteUrl": "https://doi.org/10.1186/s40543-014-0021-6",
+          "solventes": [
+            "acetic_acid",
+            "dioxane_1_4",
+            "toluene"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "toluene",
+                "partes": 9
+              },
+              {
+                "id": "dioxane_1_4",
+                "partes": 2.5
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 0.4
+              }
+            ],
+            "base": "v/v",
+            "mistura": "tolueno:1,4-dioxano:ácido acético 9:2,5:0,4",
+            "homologada": true
+          },
+          "faseEstacionaria": "Sílica gel 60 F254",
+          "detector": "Densitometria a 312 nm",
+          "rf": [
+            {
+              "valor": 0.56,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": true,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "homologado",
+          "auditoriaCientifica": {
+            "estado": "metodo_experimental_revisado_e_homologado_somente_hptlc",
+            "fontePrimaria": "https://doi.org/10.1186/s40543-014-0021-6",
+            "doi": "10.1186/s40543-014-0021-6",
+            "secoesConferidas": "Métodos, parâmetros cromatográficos, validação e resultados",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Padrão 99%; precisão de área <2% RSD; recuperação média 98,45%. Não inventar SD do Rf.",
+              "Não extrapolar para CCD genérica, papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "hptlc",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false,
+            "motivo": "Referência experimental contextual; motor não calibrado."
+          }
+        },
+        {
+          "protocoloId": "hptlc_vanillin_krishnaveni2013",
+          "tecnica": "hptlc",
+          "fonte": "krishnaveni2013",
+          "fonteUrl": "https://sciensage.info/index.php/JASR/article/view/150",
+          "solventes": [
+            "acetic_acid",
+            "methanol",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "methanol",
+                "partes": 20
+              },
+              {
+                "id": "water",
+                "partes": 5
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 2
+              }
+            ],
+            "base": "v/v",
+            "mistura": "metanol:água:ácido acético glacial 20:5:2",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel 60 GF254 em alumínio",
+          "detector": "Densitometria de absorbância a 275 nm",
+          "rf": [
+            {
+              "valor": 0.84,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "fonte_primaria_conferida_referencia_condicional",
+            "fontePrimaria": "https://sciensage.info/index.php/JASR/article/view/150",
+            "secoesConferidas": "Seções 2.1–2.3, 3, figura 1",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Padrão Sigma-Aldrich. Rf textual 0,84. Introdução tem nome estrutural incorreto; tabela 2 rotulada ácido elágico; tabela 4 matrizes discrepantes e LOD/LOQ invertidos no texto. Não homologar validação.",
+              "Não extrapolar para CCD genérica, papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "hptlc",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false,
+            "motivo": "Referência experimental contextual; motor não calibrado."
+          }
+        }
+      ],
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "hptlc_vanillin_hingse2014",
+            "hptlc_vanillin_krishnaveni2013"
+          ],
+          "solventesA": [
+            "acetic_acid",
+            "dioxane_1_4",
+            "toluene"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "methanol",
+            "water"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "sem_retencao_experimental",
-        "metodo_2_documentado",
-        "solventes_contrastantes",
-        "identidade_primaria_e_condicoes_a_homologar"
+        "metodos_e_condicoes_a_homologar"
       ]
     },
     {

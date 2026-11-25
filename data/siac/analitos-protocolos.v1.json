@@ -26,7 +26,14 @@
     "stevensLipsy": "https://web.stevens.edu/wit/research/samples/plipsy_organic_chemistry_lab_report",
     "bentonite2021": "https://rjptonline.org/HTML_Papers/Research%20Journal%20of%20Pharmacy%20and%20Technology__PID__2021-14-4-51.html",
     "carotenoid2008": "https://sjst.psu.ac.th/index.php/article/915/PaperPDFw-Links/download",
-    "microalgae2017": "https://researchspace.ukzn.ac.za/server/api/core/bitstreams/9a07f1d3-0158-4a58-8c4e-1bdcc923bd98/content"
+    "microalgae2017": "https://researchspace.ukzn.ac.za/server/api/core/bitstreams/9a07f1d3-0158-4a58-8c4e-1bdcc923bd98/content",
+    "hudaib2016": "https://doi.org/10.1556/1006.2016.29.2.9",
+    "hingse2014": "https://doi.org/10.1186/s40543-014-0021-6",
+    "krishnaveni2013": "https://sciensage.info/index.php/JASR/article/view/150",
+    "adamczuk2025": "https://doi.org/10.3390/antiox14121438",
+    "alam2017flavonoids": "https://doi.org/10.1080/13880209.2017.1300175",
+    "arjunarishta2011": "https://ajrconline.org/HTML_Papers/Asian%20Journal%20of%20Research%20in%20Chemistry__PID__2011-4-6-38.html",
+    "nair2017polyphenols": "https://doi.org/10.4103/pr.pr_122_16"
   },
   "candidatos": [
     {
@@ -739,9 +746,16 @@
       "nome": "Quercetina",
       "grupo": "pigmentos_vegetais",
       "identity": {
-        "cas": null,
-        "pubchemCID": null,
-        "verificadoIndividualmente": false
+        "cas": "117-39-5",
+        "pubchemCID": 5280343,
+        "verificadoIndividualmente": true,
+        "formulaMolecular": "C15H10O7",
+        "formaInvestigada": "quercetina aglicona",
+        "fontesIdentidade": [
+          "https://pubchem.ncbi.nlm.nih.gov/compound/5280343"
+        ],
+        "dataConferencia": "2026-11-24",
+        "observacao": "Identidade molecular de referência; não implica pureza/hidratação do lote."
       },
       "propriedades": {
         "densidade": null,
@@ -753,20 +767,37 @@
       },
       "homologacao": "candidato_sem_parametros",
       "retencao": {
-        "rf": [],
+        "rf": [
+          {
+            "metodoId": "hptlc_flavonoids_alam2017_rp",
+            "tecnica": "hptlc",
+            "valor": 0.23,
+            "fonte": "alam2017flavonoids",
+            "faseMovel": "acetonitrila:água 4:6",
+            "condicao": "somente condições do artigo",
+            "homologado": true
+          }
+        ],
         "fatorK": [],
         "isotermas": []
       },
-      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+      "observacao": "Identidade conferida; um método HPTLC de referência homologado, segundo em revisão; cena não autorizada."
     },
     {
       "id": "rutin",
       "nome": "Rutina",
       "grupo": "pigmentos_vegetais",
       "identity": {
-        "cas": null,
-        "pubchemCID": null,
-        "verificadoIndividualmente": false
+        "cas": "153-18-4",
+        "pubchemCID": 5280805,
+        "verificadoIndividualmente": true,
+        "formulaMolecular": "C27H30O16",
+        "formaInvestigada": "rutina; hidratação do padrão depende da fonte",
+        "fontesIdentidade": [
+          "https://pubchem.ncbi.nlm.nih.gov/compound/5280805"
+        ],
+        "dataConferencia": "2026-11-24",
+        "observacao": "Identidade molecular de referência; não implica pureza/hidratação do lote."
       },
       "propriedades": {
         "densidade": null,
@@ -778,11 +809,21 @@
       },
       "homologacao": "candidato_sem_parametros",
       "retencao": {
-        "rf": [],
+        "rf": [
+          {
+            "metodoId": "hptlc_flavonoids_alam2017_rp",
+            "tecnica": "hptlc",
+            "valor": 0.52,
+            "fonte": "alam2017flavonoids",
+            "faseMovel": "acetonitrila:água 4:6",
+            "condicao": "somente condições do artigo",
+            "homologado": true
+          }
+        ],
         "fatorK": [],
         "isotermas": []
       },
-      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+      "observacao": "Identidade conferida; um método HPTLC de referência homologado, segundo em revisão; cena não autorizada."
     },
     {
       "id": "curcumin",
@@ -1649,9 +1690,16 @@
       "nome": "Vanilina",
       "grupo": "farmacos_e_organicos",
       "identity": {
-        "cas": null,
-        "pubchemCID": null,
-        "verificadoIndividualmente": false
+        "cas": "121-33-5",
+        "pubchemCID": 1183,
+        "verificadoIndividualmente": true,
+        "formulaMolecular": "C8H8O3",
+        "formaInvestigada": "4-hidroxi-3-metoxibenzaldeído",
+        "fontesIdentidade": [
+          "https://pubchem.ncbi.nlm.nih.gov/compound/1183"
+        ],
+        "dataConferencia": "2026-11-24",
+        "observacao": "Identidade molecular de referência; não implica pureza/hidratação do lote."
       },
       "propriedades": {
         "densidade": null,
@@ -1663,11 +1711,21 @@
       },
       "homologacao": "candidato_sem_parametros",
       "retencao": {
-        "rf": [],
+        "rf": [
+          {
+            "metodoId": "hptlc_vanillin_hingse2014",
+            "tecnica": "hptlc",
+            "valor": 0.56,
+            "fonte": "hingse2014",
+            "faseMovel": "tolueno:1,4-dioxano:ácido acético 9:2,5:0,4",
+            "condicao": "somente condições do artigo",
+            "homologado": true
+          }
+        ],
         "fatorK": [],
         "isotermas": []
       },
-      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+      "observacao": "Identidade conferida; um método HPTLC de referência homologado, segundo em revisão; cena não autorizada."
     },
     {
       "id": "ethyl_vanillin",
@@ -4729,6 +4787,814 @@
         }
       ],
       "nota": "β-caroteno .95 em extrato, enquanto padrão autêntico .98 no mesmo sistema. Luteína .54 identificada em banda de extrato; não declarar identidade confirmada somente por Rf."
+    },
+    {
+      "id": "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+      "tecnica": "ccd",
+      "assuntos": [
+        "aminoacidos"
+      ],
+      "status": "referencia_primaria_conferida_nao_homologada",
+      "fonte": "hudaib2016",
+      "ano": 2016,
+      "referenciaSecao": "Seção 2.2, tabela 1",
+      "faseEstacionaria": {
+        "classe": "Sílica gel 60 A Whatman com indicador fluorescente",
+        "detalhamento": "20 × 20 cm; camada de 250 µm",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "butanol_1",
+            "partes": 12
+          },
+          {
+            "id": "acetic_acid",
+            "partes": 3
+          },
+          {
+            "id": "water",
+            "partes": 5
+          }
+        ],
+        "base": "v/v",
+        "mistura": "1-butanol:ácido acético:água 12:3:5",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "ninhidrina 0,2 g/100 mL de etanol; aquecimento 80–100 °C por 5 min",
+        "detectorHomologado": false,
+        "desenvolvimentoMinAprox": 180
+      },
+      "dadosRf": [
+        {
+          "analito": "alanine",
+          "rf": 0.277,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "hudaib2016",
+          "temperaturaC": null,
+          "homologado": false,
+          "fontePrimariaConferida": true
+        },
+        {
+          "analito": "arginine",
+          "rf": 0.162,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "hudaib2016",
+          "temperaturaC": null,
+          "homologado": false,
+          "fontePrimariaConferida": true
+        },
+        {
+          "analito": "asparagine",
+          "rf": 0.215,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "hudaib2016",
+          "temperaturaC": null,
+          "homologado": false,
+          "fontePrimariaConferida": true
+        },
+        {
+          "analito": "aspartic_acid",
+          "rf": 0.24,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "hudaib2016",
+          "temperaturaC": null,
+          "homologado": false,
+          "fontePrimariaConferida": true
+        },
+        {
+          "analito": "cysteine",
+          "rf": 0.362,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "hudaib2016",
+          "temperaturaC": null,
+          "homologado": false,
+          "fontePrimariaConferida": true
+        },
+        {
+          "analito": "glutamic_acid",
+          "rf": 0.277,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "hudaib2016",
+          "temperaturaC": null,
+          "homologado": false,
+          "fontePrimariaConferida": true
+        },
+        {
+          "analito": "glutamine",
+          "rf": 0.223,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "hudaib2016",
+          "temperaturaC": null,
+          "homologado": false,
+          "fontePrimariaConferida": true
+        },
+        {
+          "analito": "glycine",
+          "rf": 0.246,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "hudaib2016",
+          "temperaturaC": null,
+          "homologado": false,
+          "fontePrimariaConferida": true
+        },
+        {
+          "analito": "histidine",
+          "rf": 0.162,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "hudaib2016",
+          "temperaturaC": null,
+          "homologado": false,
+          "fontePrimariaConferida": true
+        },
+        {
+          "analito": "isoleucine",
+          "rf": 0.515,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "hudaib2016",
+          "temperaturaC": null,
+          "homologado": false,
+          "fontePrimariaConferida": true
+        },
+        {
+          "analito": "leucine",
+          "rf": 0.562,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "hudaib2016",
+          "temperaturaC": null,
+          "homologado": false,
+          "fontePrimariaConferida": true
+        },
+        {
+          "analito": "lysine",
+          "rf": 0.131,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "hudaib2016",
+          "temperaturaC": null,
+          "homologado": false,
+          "fontePrimariaConferida": true
+        },
+        {
+          "analito": "methionine",
+          "rf": 0.462,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "hudaib2016",
+          "temperaturaC": null,
+          "homologado": false,
+          "fontePrimariaConferida": true
+        },
+        {
+          "analito": "phenylalanine",
+          "rf": 0.615,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "hudaib2016",
+          "temperaturaC": null,
+          "homologado": false,
+          "fontePrimariaConferida": true
+        },
+        {
+          "analito": "proline",
+          "rf": 0.262,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "hudaib2016",
+          "temperaturaC": null,
+          "homologado": false,
+          "fontePrimariaConferida": true
+        },
+        {
+          "analito": "serine",
+          "rf": 0.254,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "hudaib2016",
+          "temperaturaC": null,
+          "homologado": false,
+          "fontePrimariaConferida": true
+        },
+        {
+          "analito": "threonine",
+          "rf": 0.262,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "hudaib2016",
+          "temperaturaC": null,
+          "homologado": false,
+          "fontePrimariaConferida": true
+        },
+        {
+          "analito": "tryptophan",
+          "rf": 0.615,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "hudaib2016",
+          "temperaturaC": null,
+          "homologado": false,
+          "fontePrimariaConferida": true
+        },
+        {
+          "analito": "tyrosine",
+          "rf": 0.539,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "hudaib2016",
+          "temperaturaC": null,
+          "homologado": false,
+          "fontePrimariaConferida": true
+        },
+        {
+          "analito": "valine",
+          "rf": 0.439,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "hudaib2016",
+          "temperaturaC": null,
+          "homologado": false,
+          "fontePrimariaConferida": true
+        }
+      ],
+      "nota": "Padrões 2% m/v; desenvolvimento ~3 h. Estereoquímica, pureza e dispersão individual de Rf não especificadas.",
+      "auditoriaCientifica": {
+        "estado": "fonte_primaria_conferida_referencia_condicional",
+        "fontePrimaria": "https://doi.org/10.1556/1006.2016.29.2.9",
+        "doi": "10.1556/1006.2016.29.2.9",
+        "secoesConferidas": "Seção 2.2, tabela 1",
+        "dataConferencia": "2026-11-24",
+        "ressalvas": [
+          "Padrões 2% m/v; desenvolvimento ~3 h. Estereoquímica, pureza e dispersão individual de Rf não especificadas.",
+          "Não extrapolar para CCD genérica, papel, coluna ou cena quantitativa."
+        ]
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "ccd",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false,
+        "motivo": "Referência experimental contextual; motor não calibrado."
+      }
+    },
+    {
+      "id": "hptlc_vanillin_hingse2014",
+      "tecnica": "hptlc",
+      "assuntos": [
+        "farmacos_e_organicos"
+      ],
+      "status": "homologado",
+      "fonte": "hingse2014",
+      "ano": 2014,
+      "referenciaSecao": "Métodos, parâmetros cromatográficos, validação e resultados",
+      "faseEstacionaria": {
+        "classe": "Sílica gel 60 F254",
+        "detalhamento": "Merck, 20 × 10 cm, desenvolvimento ascendente",
+        "homologada": true
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "toluene",
+            "partes": 9
+          },
+          {
+            "id": "dioxane_1_4",
+            "partes": 2.5
+          },
+          {
+            "id": "acetic_acid",
+            "partes": 0.4
+          }
+        ],
+        "base": "v/v",
+        "mistura": "tolueno:1,4-dioxano:ácido acético 9:2,5:0,4",
+        "homologada": true
+      },
+      "aplicacao": {
+        "detector": "Densitometria a 312 nm",
+        "detectorHomologado": true,
+        "temperaturaC": 25,
+        "desenvolvimentoFrenteMm": 85,
+        "detectorNm": 312
+      },
+      "dadosRf": [
+        {
+          "analito": "vanillin",
+          "rf": 0.56,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "hingse2014",
+          "temperaturaC": null,
+          "homologado": true,
+          "fontePrimariaConferida": true
+        }
+      ],
+      "nota": "Padrão 99%; precisão de área <2% RSD; recuperação média 98,45%. Não inventar SD do Rf.",
+      "auditoriaCientifica": {
+        "estado": "metodo_experimental_revisado_e_homologado_somente_hptlc",
+        "fontePrimaria": "https://doi.org/10.1186/s40543-014-0021-6",
+        "doi": "10.1186/s40543-014-0021-6",
+        "secoesConferidas": "Métodos, parâmetros cromatográficos, validação e resultados",
+        "dataConferencia": "2026-11-24",
+        "ressalvas": [
+          "Padrão 99%; precisão de área <2% RSD; recuperação média 98,45%. Não inventar SD do Rf.",
+          "Não extrapolar para CCD genérica, papel, coluna ou cena quantitativa."
+        ]
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "hptlc",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false,
+        "motivo": "Referência experimental contextual; motor não calibrado."
+      }
+    },
+    {
+      "id": "hptlc_vanillin_krishnaveni2013",
+      "tecnica": "hptlc",
+      "assuntos": [
+        "farmacos_e_organicos"
+      ],
+      "status": "referencia_primaria_conferida_nao_homologada",
+      "fonte": "krishnaveni2013",
+      "ano": 2013,
+      "referenciaSecao": "Seções 2.1–2.3, 3, figura 1",
+      "faseEstacionaria": {
+        "classe": "Sílica gel 60 GF254 em alumínio",
+        "detalhamento": "Camada 0,2 mm, pré-lavada com metanol",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "methanol",
+            "partes": 20
+          },
+          {
+            "id": "water",
+            "partes": 5
+          },
+          {
+            "id": "acetic_acid",
+            "partes": 2
+          }
+        ],
+        "base": "v/v",
+        "mistura": "metanol:água:ácido acético glacial 20:5:2",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "Densitometria de absorbância a 275 nm",
+        "detectorHomologado": false
+      },
+      "dadosRf": [
+        {
+          "analito": "vanillin",
+          "rf": 0.84,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "krishnaveni2013",
+          "temperaturaC": null,
+          "homologado": false,
+          "fontePrimariaConferida": true
+        }
+      ],
+      "nota": "Padrão Sigma-Aldrich. Rf textual 0,84. Introdução tem nome estrutural incorreto; tabela 2 rotulada ácido elágico; tabela 4 matrizes discrepantes e LOD/LOQ invertidos no texto. Não homologar validação.",
+      "auditoriaCientifica": {
+        "estado": "fonte_primaria_conferida_referencia_condicional",
+        "fontePrimaria": "https://sciensage.info/index.php/JASR/article/view/150",
+        "secoesConferidas": "Seções 2.1–2.3, 3, figura 1",
+        "dataConferencia": "2026-11-24",
+        "ressalvas": [
+          "Padrão Sigma-Aldrich. Rf textual 0,84. Introdução tem nome estrutural incorreto; tabela 2 rotulada ácido elágico; tabela 4 matrizes discrepantes e LOD/LOQ invertidos no texto. Não homologar validação.",
+          "Não extrapolar para CCD genérica, papel, coluna ou cena quantitativa."
+        ]
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "hptlc",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false,
+        "motivo": "Referência experimental contextual; motor não calibrado."
+      }
+    },
+    {
+      "id": "tlc_carotenoids_adamczuk2025",
+      "tecnica": "ccd",
+      "assuntos": [
+        "pigmentos_vegetais"
+      ],
+      "status": "referencia_primaria_conferida_nao_homologada",
+      "fonte": "adamczuk2025",
+      "ano": 2025,
+      "referenciaSecao": "Métodos, figura 4, tabela 4",
+      "faseEstacionaria": {
+        "classe": "Sílica gel 60 em vidro",
+        "detalhamento": "Placas TLC, desenvolvimento 50 mm sem saturação",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "heptane",
+            "partes": 65
+          },
+          {
+            "id": "ethyl_acetate",
+            "partes": 20
+          },
+          {
+            "id": "acetone",
+            "partes": 20
+          }
+        ],
+        "base": "v/v",
+        "mistura": "n-heptano:acetato de etila:acetona 65:20:20 (partes)",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "Luz do dia; caracterização adicional HPLC-DAD-ESI-MS",
+        "detectorHomologado": false
+      },
+      "dadosRf": [
+        {
+          "analito": "beta_carotene",
+          "rf": 0.74,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "adamczuk2025",
+          "temperaturaC": null,
+          "homologado": false,
+          "fontePrimariaConferida": true
+        },
+        {
+          "analito": "lutein",
+          "rf": 0.35,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "adamczuk2025",
+          "temperaturaC": null,
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "forma": "trans-luteína"
+        },
+        {
+          "analito": "zeaxanthin",
+          "rf": 0.33,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "adamczuk2025",
+          "temperaturaC": null,
+          "homologado": false,
+          "fontePrimariaConferida": true
+        },
+        {
+          "analito": "beta_cryptoxanthin",
+          "rf": 0.56,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "adamczuk2025",
+          "temperaturaC": null,
+          "homologado": false,
+          "fontePrimariaConferida": true
+        }
+      ],
+      "nota": "Padrões e comparação com extratos; cis-luteína e derivados não importados. Preservar proporção publicada em partes.",
+      "auditoriaCientifica": {
+        "estado": "fonte_primaria_conferida_referencia_condicional",
+        "fontePrimaria": "https://doi.org/10.3390/antiox14121438",
+        "doi": "10.3390/antiox14121438",
+        "secoesConferidas": "Métodos, figura 4, tabela 4",
+        "dataConferencia": "2026-11-24",
+        "ressalvas": [
+          "Padrões e comparação com extratos; cis-luteína e derivados não importados. Preservar proporção publicada em partes.",
+          "Não extrapolar para CCD genérica, papel, coluna ou cena quantitativa."
+        ]
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "ccd",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false,
+        "motivo": "Referência experimental contextual; motor não calibrado."
+      }
+    },
+    {
+      "id": "hptlc_flavonoids_alam2017_rp",
+      "tecnica": "hptlc",
+      "assuntos": [
+        "pigmentos_vegetais"
+      ],
+      "status": "homologado",
+      "fonte": "alam2017flavonoids",
+      "ano": 2017,
+      "referenciaSecao": "Métodos, figura 3, tabela 1 e tabelas de validação",
+      "faseEstacionaria": {
+        "classe": "Sílica gel 60 F254 RP-18 sobre vidro",
+        "detalhamento": "HPTLC fase reversa, câmara twin trough 20 × 10 cm",
+        "homologada": true
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "acetonitrile",
+            "partes": 4
+          },
+          {
+            "id": "water",
+            "partes": 6
+          }
+        ],
+        "base": "v/v",
+        "mistura": "acetonitrila:água 4:6",
+        "homologada": true
+      },
+      "aplicacao": {
+        "detector": "Densitometria de absorbância a 360 nm",
+        "detectorHomologado": true,
+        "temperaturaC": {
+          "min": 23,
+          "max": 27
+        },
+        "saturacaoCamaraMin": 20,
+        "volumeSaturacaoMl": 20,
+        "detectorNm": 360
+      },
+      "dadosRf": [
+        {
+          "analito": "quercetin",
+          "rf": 0.23,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "alam2017flavonoids",
+          "temperaturaC": null,
+          "homologado": true,
+          "fontePrimariaConferida": true,
+          "incertezaRfReportada": 0.005
+        },
+        {
+          "analito": "rutin",
+          "rf": 0.52,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "alam2017flavonoids",
+          "temperaturaC": null,
+          "homologado": true,
+          "fontePrimariaConferida": true,
+          "incertezaRfReportada": 0.006
+        }
+      ],
+      "nota": "Padrões Sigma-Aldrich; hidratação/pureza de lote não especificadas; somente Rf de referência.",
+      "auditoriaCientifica": {
+        "estado": "metodo_experimental_revisado_e_homologado_somente_hptlc",
+        "fontePrimaria": "https://doi.org/10.1080/13880209.2017.1300175",
+        "doi": "10.1080/13880209.2017.1300175",
+        "secoesConferidas": "Métodos, figura 3, tabela 1 e tabelas de validação",
+        "dataConferencia": "2026-11-24",
+        "ressalvas": [
+          "Padrões Sigma-Aldrich; hidratação/pureza de lote não especificadas; somente Rf de referência.",
+          "Não extrapolar para CCD genérica, papel, coluna ou cena quantitativa."
+        ]
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "hptlc",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false,
+        "motivo": "Referência experimental contextual; motor não calibrado."
+      }
+    },
+    {
+      "id": "hptlc_arjunarishta2011_quercetin",
+      "tecnica": "hptlc",
+      "assuntos": [
+        "pigmentos_vegetais"
+      ],
+      "status": "referencia_primaria_conferida_nao_homologada",
+      "fonte": "arjunarishta2011",
+      "ano": 2011,
+      "referenciaSecao": "Seções 2.3–2.5, 3.1–3.2 e tabelas 1–2",
+      "faseEstacionaria": {
+        "classe": "Sílica gel 60 F254 Merck",
+        "detalhamento": "20 × 10 cm, camada 0,25 mm, pré-lavada e ativada",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "toluene",
+            "partes": 6
+          },
+          {
+            "id": "ethyl_acetate",
+            "partes": 3
+          },
+          {
+            "id": "methanol",
+            "partes": 0.2
+          },
+          {
+            "id": "formic_acid",
+            "partes": 0.4
+          }
+        ],
+        "base": "v/v",
+        "mistura": "tolueno:acetato de etila:metanol:ácido fórmico 6:3:0,2:0,4",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "Densitometria a 300 nm",
+        "detectorHomologado": false,
+        "temperaturaC": {
+          "min": 23,
+          "max": 27
+        },
+        "desenvolvimentoFrenteMm": 80,
+        "saturacaoCamaraMin": null,
+        "saturacaoReportadaMin": [
+          20,
+          30
+        ],
+        "detectorNm": 300
+      },
+      "dadosRf": [
+        {
+          "analito": "quercetin",
+          "rf": 0.36,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "arjunarishta2011",
+          "temperaturaC": null,
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "incertezaRfReportada": 0.02
+        }
+      ],
+      "nota": "Padrão 98%; saturação de 20 min em 2.4 e 30 min em 3.1. Não selecionar valor nem declarar reprodução exata.",
+      "auditoriaCientifica": {
+        "estado": "fonte_primaria_conferida_referencia_condicional",
+        "fontePrimaria": "https://ajrconline.org/HTML_Papers/Asian%20Journal%20of%20Research%20in%20Chemistry__PID__2011-4-6-38.html",
+        "secoesConferidas": "Seções 2.3–2.5, 3.1–3.2 e tabelas 1–2",
+        "dataConferencia": "2026-11-24",
+        "ressalvas": [
+          "Padrão 98%; saturação de 20 min em 2.4 e 30 min em 3.1. Não selecionar valor nem declarar reprodução exata.",
+          "Não extrapolar para CCD genérica, papel, coluna ou cena quantitativa."
+        ]
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "hptlc",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false,
+        "motivo": "Referência experimental contextual; motor não calibrado."
+      }
+    },
+    {
+      "id": "hptlc_arjunarishta2011_rutin",
+      "tecnica": "hptlc",
+      "assuntos": [
+        "pigmentos_vegetais"
+      ],
+      "status": "referencia_primaria_conferida_nao_homologada",
+      "fonte": "arjunarishta2011",
+      "ano": 2011,
+      "referenciaSecao": "Seções 2.3–2.5, 3.1–3.2 e tabelas 1–2",
+      "faseEstacionaria": {
+        "classe": "Sílica gel 60 F254 Merck",
+        "detalhamento": "20 × 10 cm, camada 0,25 mm, pré-lavada e ativada",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "ethyl_acetate",
+            "partes": 10
+          },
+          {
+            "id": "butanol_1",
+            "partes": 6
+          },
+          {
+            "id": "formic_acid",
+            "partes": 2
+          },
+          {
+            "id": "water",
+            "partes": 2
+          }
+        ],
+        "base": "v/v",
+        "mistura": "acetato de etila:1-butanol:ácido fórmico:água 10:6:2:2",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "Densitometria a 280 nm",
+        "detectorHomologado": false,
+        "temperaturaC": {
+          "min": 23,
+          "max": 27
+        },
+        "desenvolvimentoFrenteMm": 80,
+        "saturacaoCamaraMin": null,
+        "saturacaoReportadaMin": [
+          20,
+          30
+        ],
+        "detectorNm": 280
+      },
+      "dadosRf": [
+        {
+          "analito": "rutin",
+          "rf": 0.59,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "arjunarishta2011",
+          "temperaturaC": null,
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "incertezaRfReportada": 0.02
+        }
+      ],
+      "nota": "Padrão 98%; saturação de 20 min em 2.4 e 30 min em 3.1. Não selecionar valor nem declarar reprodução exata.",
+      "auditoriaCientifica": {
+        "estado": "fonte_primaria_conferida_referencia_condicional",
+        "fontePrimaria": "https://ajrconline.org/HTML_Papers/Asian%20Journal%20of%20Research%20in%20Chemistry__PID__2011-4-6-38.html",
+        "secoesConferidas": "Seções 2.3–2.5, 3.1–3.2 e tabelas 1–2",
+        "dataConferencia": "2026-11-24",
+        "ressalvas": [
+          "Padrão 98%; saturação de 20 min em 2.4 e 30 min em 3.1. Não selecionar valor nem declarar reprodução exata.",
+          "Não extrapolar para CCD genérica, papel, coluna ou cena quantitativa."
+        ]
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "hptlc",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false,
+        "motivo": "Referência experimental contextual; motor não calibrado."
+      }
+    },
+    {
+      "id": "hptlc_nair2017_polyphenols_np",
+      "tecnica": "hptlc",
+      "assuntos": [
+        "pigmentos_vegetais"
+      ],
+      "status": "referencia_primaria_conferida_nao_homologada",
+      "fonte": "nair2017polyphenols",
+      "ano": 2017,
+      "referenciaSecao": "Métodos, resultados, figura 1a, resumo",
+      "faseEstacionaria": {
+        "classe": "Sílica gel 60 F254 em alumínio",
+        "detalhamento": "20 × 10 cm, 0,2 mm, Merck",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "toluene",
+            "partes": 3
+          },
+          {
+            "id": "ethyl_acetate",
+            "partes": 4
+          },
+          {
+            "id": "formic_acid",
+            "partes": 0.8
+          },
+          {
+            "id": "methanol",
+            "partes": 0.7
+          }
+        ],
+        "base": "v/v",
+        "mistura": "tolueno:acetato de etila:ácido fórmico:metanol 3:4:0,8:0,7",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "Densitometria de absorbância a 254 nm",
+        "detectorHomologado": false,
+        "saturacaoCamaraMin": 30,
+        "detectorNm": 254
+      },
+      "dadosRf": [
+        {
+          "analito": "quercetin",
+          "rf": 0.76,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "nair2017polyphenols",
+          "temperaturaC": null,
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "incertezaRfReportada": 0.01
+        },
+        {
+          "analito": "rutin",
+          "rf": 0.08,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "nair2017polyphenols",
+          "temperaturaC": null,
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "incertezaRfReportada": 0.02,
+          "formaPadrao": "rutina tri-hidratada"
+        }
+      ],
+      "nota": "Valores confirmados no texto e figura 1a; rutina tri-hidratada >98%, não transferir massa para anidra; texto de pureza espectral da quercetina suspeito.",
+      "auditoriaCientifica": {
+        "estado": "fonte_primaria_conferida_referencia_condicional",
+        "fontePrimaria": "https://doi.org/10.4103/pr.pr_122_16",
+        "doi": "10.4103/pr.pr_122_16",
+        "secoesConferidas": "Métodos, resultados, figura 1a, resumo",
+        "dataConferencia": "2026-11-24",
+        "ressalvas": [
+          "Valores confirmados no texto e figura 1a; rutina tri-hidratada >98%, não transferir massa para anidra; texto de pureza espectral da quercetina suspeito.",
+          "Não extrapolar para CCD genérica, papel, coluna ou cena quantitativa."
+        ]
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "hptlc",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false,
+        "motivo": "Referência experimental contextual; motor não calibrado."
+      }
     }
   ],
   "observacoes": [

@@ -31,7 +31,7 @@
     "exigemEspecificacao": 49,
     "idsDuplicados": 0,
     "homologadasParaMotor": 0,
-    "identidadesConferidas": 8
+    "identidadesConferidas": 11
   },
   "candidatos": [
     {
@@ -665,12 +665,14 @@
       "referenciaQuimica": {
         "pubchemCID": 5280343,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/5280343",
-        "classe": "cid_candidato_localizado",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": null,
-        "casConferido": null,
+        "classe": "identidade_molecular_individual_conferida",
+        "status": "identidade_quimica_confirmada_pubchem",
+        "nota": "quercetina aglicona",
+        "casConferido": "117-39-5",
         "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "estruturaEFormaConferidas": true,
+        "fonteConferencia": "https://pubchem.ncbi.nlm.nih.gov/compound/5280343",
+        "dataConferencia": "2026-11-24"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {
@@ -678,7 +680,8 @@
         "uv254": null,
         "uv365": null,
         "rfHomologado": false,
-        "kColunaHomologado": false
+        "kColunaHomologado": false,
+        "rfHomologadoRestricao": "Um método HPTLC de referência conferido; falta segundo método homologado."
       },
       "autorizacaoSimulacaoReal": false
     },
@@ -689,12 +692,14 @@
       "referenciaQuimica": {
         "pubchemCID": 5280805,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/5280805",
-        "classe": "cid_candidato_localizado",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": null,
-        "casConferido": null,
+        "classe": "identidade_molecular_individual_conferida",
+        "status": "identidade_quimica_confirmada_pubchem",
+        "nota": "rutina; hidratação do padrão depende da fonte",
+        "casConferido": "153-18-4",
         "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "estruturaEFormaConferidas": true,
+        "fonteConferencia": "https://pubchem.ncbi.nlm.nih.gov/compound/5280805",
+        "dataConferencia": "2026-11-24"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {
@@ -702,7 +707,8 @@
         "uv254": null,
         "uv365": null,
         "rfHomologado": false,
-        "kColunaHomologado": false
+        "kColunaHomologado": false,
+        "rfHomologadoRestricao": "Um método HPTLC de referência conferido; falta segundo método homologado."
       },
       "autorizacaoSimulacaoReal": false
     },
@@ -1487,12 +1493,14 @@
       "referenciaQuimica": {
         "pubchemCID": 1183,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/1183",
-        "classe": "cid_candidato_localizado",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": null,
-        "casConferido": null,
+        "classe": "identidade_molecular_individual_conferida",
+        "status": "identidade_quimica_confirmada_pubchem",
+        "nota": "4-hidroxi-3-metoxibenzaldeído",
+        "casConferido": "121-33-5",
         "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "estruturaEFormaConferidas": true,
+        "fonteConferencia": "https://pubchem.ncbi.nlm.nih.gov/compound/1183",
+        "dataConferencia": "2026-11-24"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {
@@ -1500,7 +1508,8 @@
         "uv254": null,
         "uv365": null,
         "rfHomologado": false,
-        "kColunaHomologado": false
+        "kColunaHomologado": false,
+        "rfHomologadoRestricao": "Um método HPTLC de referência conferido; falta segundo método homologado."
       },
       "autorizacaoSimulacaoReal": false
     },

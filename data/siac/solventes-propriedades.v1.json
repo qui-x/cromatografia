@@ -63,6 +63,12 @@
       "name": "HPTLC Association — International Atlas",
       "type": "reference_catalog",
       "url": "https://www.hptlc-association.org/atlas/about-hptlc-atlas.cfm"
+    },
+    "PUBCHEM_FORMIC_ACID": {
+      "name": "PubChem CID 284 — ácido fórmico",
+      "type": "identidade_quimica",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/compound/284",
+      "context": "CAS 64-18-6; propriedades quantitativas em revisão"
     }
   },
   "unidades": {
@@ -1918,6 +1924,26 @@
         "usoAluno": "somente_simulacao_ate_revisao"
       },
       "observacoes": "Incluído por exigência de identidade de protocolos n-hexano/2-propanol e acetona/n-hexano; não reutilizar dados compilados de hexanos comerciais nem assumir miscibilidade/viscosidade sem fonte específica. Propriedades numéricas em pesquisa."
+    },
+    {
+      "id": "formic_acid",
+      "nome": "Ácido fórmico",
+      "cas": "64-18-6",
+      "tipo": "substancia",
+      "propriedades": {
+        "densidade": null,
+        "viscosidadeDinamica": null,
+        "pontoEbulicao": null,
+        "corteUV": null,
+        "indicePolaridadeSnyder": null,
+        "forcaEluotropicaSilica": null
+      },
+      "miscibilidadeComAgua": null,
+      "seguranca": {
+        "status": "revisao_fispq_obrigatoria",
+        "usoAluno": "somente_simulacao_ate_revisao"
+      },
+      "observacoes": "Componente de eluentes HPTLC; não presumir propriedades."
     }
   ],
   "paresMiscibilidade": [
