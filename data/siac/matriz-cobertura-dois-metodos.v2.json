@@ -15,19 +15,19 @@
   },
   "resumo": {
     "candidatos": 76,
-    "comPeloMenosUmRfIndividual": 49,
+    "comPeloMenosUmRfIndividual": 52,
     "comDoisMetodosDocumentados": 47,
     "comDoisMetodosESolventesDistintos": 47,
-    "homologadosNaRegraNova": 8,
-    "faltamParaMetaMinima": 32,
-    "faltamParaMetaAmpliada": 47,
-    "totaisRegistroRfPontual": 198,
+    "homologadosNaRegraNova": 11,
+    "faltamParaMetaMinima": 29,
+    "faltamParaMetaAmpliada": 44,
+    "totaisRegistroRfPontual": 230,
     "totalRfIntervalos": 1,
-    "protocolos": 69,
+    "protocolos": 76,
     "liberadosParaSimulacaoReal": 0,
-    "metodosHptlcComFontePrimariaHomologada": 11,
-    "identidadesQuimicasConferidas": 15,
-    "metodosCcdComFontePrimariaHomologada": 1
+    "metodosHptlcComFontePrimariaHomologada": 12,
+    "identidadesQuimicasConferidas": 20,
+    "metodosCcdComFontePrimariaHomologada": 2
   },
   "candidatos": [
     {
@@ -35,7 +35,7 @@
       "nome": "Tartrazina (FD&C Yellow 5)",
       "grupo": "corantes_alimenticios",
       "identidadeConfirmada": true,
-      "metodosComRetencaoIndividual": 4,
+      "metodosComRetencaoIndividual": 10,
       "metodos": [
         {
           "protocoloId": "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
@@ -212,6 +212,347 @@
             "data": "2026-11-23",
             "homologadoParaSimulacao": false
           }
+        },
+        {
+          "protocoloId": "tlc_food_dyes_sobanska2017_final",
+          "tecnica": "ccd",
+          "fonte": "sobanska2017",
+          "fonteUrl": "https://onlinelibrary.wiley.com/doi/10.1155/2017/9528472",
+          "solventes": [
+            "chloroform",
+            "isopropanol"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "chloroform",
+                "partes": 1
+              },
+              {
+                "id": "isopropanol",
+                "partes": 3
+              },
+              {
+                "id": "aqueous_ammonia_25pct",
+                "partes": 1
+              }
+            ],
+            "base": "v/v",
+            "mistura": "chloroform 1 : isopropanol 3 : aqueous_ammonia_25pct 1",
+            "homologada": true
+          },
+          "faseEstacionaria": "Sílica gel 60 Merck",
+          "detector": "Densitometria por refletância, comprimentos de onda específicos",
+          "rf": [
+            {
+              "valor": 0.21,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": true,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "homologado",
+          "auditoriaCientifica": {
+            "estado": "metodo_experimental_revisado_referencia_condicional",
+            "fontePrimaria": "https://onlinelibrary.wiley.com/doi/10.1155/2017/9528472",
+            "doi": "10.1155/2017/9528472",
+            "secoesConferidas": "Seções 2.1, 2.3, 3.1.2, 3.2; tabela 2 sistema 1 e tabelas 3–5",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Tabela 2 sistema 1; procedimento final seção 2.3 e validação 3.2. CV ≤4,1% para concentração, não SD de Rf. Separação de tartrazina/Ponceau 4R insuficiente em mistura; referência individual, não autoriza identificação de mistura pelo Rf.",
+              "Não extrapolar para papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
+        },
+        {
+          "protocoloId": "hptlc_food_dyes_nandanwadkar2020",
+          "tecnica": "hptlc",
+          "fonte": "nandanwadkar2020",
+          "fonteUrl": "https://doi.org/10.1007/s00764-020-00038-9",
+          "solventes": [
+            "butanol_1",
+            "isopropanol",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 65
+              },
+              {
+                "id": "isopropanol",
+                "partes": 20
+              },
+              {
+                "id": "aqueous_ammonia_25pct",
+                "partes": 10
+              },
+              {
+                "id": "water",
+                "partes": 5
+              }
+            ],
+            "base": "v/v",
+            "mistura": "butanol_1 65 : isopropanol 20 : aqueous_ammonia_25pct 10 : water 5",
+            "homologada": true
+          },
+          "faseEstacionaria": "Sílica gel 60 F254 em alumínio",
+          "detector": "Spectrodensitometria, máximos reportados específicos do método",
+          "rf": [
+            {
+              "valor": 0.16,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": true,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "homologado",
+          "auditoriaCientifica": {
+            "estado": "metodo_experimental_revisado_referencia_condicional",
+            "fontePrimaria": "https://doi.org/10.1007/s00764-020-00038-9",
+            "doi": "10.1007/s00764-020-00038-9",
+            "secoesConferidas": "Seções 2.3, 3.1–3.4; tabela 2; figuras 1–3",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Tabela 2; padrões com certificado de análise, repetibilidade de sinal 0,33–0,63% RSD e robustez reportada. Recuperação não realizada. Janela de Rf não é desvio-padrão; máximos espectrais relatados não são universais. Homologação restrita a Rf individual, não quantificação de matrizes.",
+              "Não extrapolar para papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "hptlc",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
+        },
+        {
+          "protocoloId": "ccd_mjofs2021_ipa_4_1",
+          "tecnica": "ccd",
+          "fonte": "mjofs2021dyes",
+          "fonteUrl": "https://forensics.org.my/mjofs/pdf/fssmVol.10No.1/Article03.pdf",
+          "solventes": [
+            "isopropanol"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "isopropanol",
+                "partes": 4
+              },
+              {
+                "id": "aqueous_ammonia_sg0880",
+                "partes": 1
+              }
+            ],
+            "base": "v/v",
+            "mistura": "isopropanol 4 : aqueous_ammonia_sg0880 1",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel em alumínio",
+          "detector": "Observação visual e UV de fluorescência; comprimento exato não informado",
+          "rf": [
+            {
+              "valor": 0.81,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_experimental_condicional",
+            "fontePrimaria": "https://forensics.org.my/mjofs/pdf/fssmVol.10No.1/Article03.pdf",
+            "secoesConferidas": "Metodologia e tabela 1, p. 23",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Tabela 1, padrões de corantes; estudo qualitativo, sem dispersão individual de Rf. Não inferir pureza; excluir manchas múltiplas sem atribuição molecular. Screenshot da tabela indisponível; transcrição do texto do PDF.",
+              "Não extrapolar para papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
+        },
+        {
+          "protocoloId": "ccd_mjofs2021_butanol_10_5_6",
+          "tecnica": "ccd",
+          "fonte": "mjofs2021dyes",
+          "fonteUrl": "https://forensics.org.my/mjofs/pdf/fssmVol.10No.1/Article03.pdf",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 10
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 5
+              },
+              {
+                "id": "water",
+                "partes": 6
+              }
+            ],
+            "base": "v/v",
+            "mistura": "butanol_1 10 : acetic_acid 5 : water 6",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel em alumínio",
+          "detector": "Observação visual e UV de fluorescência; comprimento exato não informado",
+          "rf": [
+            {
+              "valor": 0.84,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_experimental_condicional",
+            "fontePrimaria": "https://forensics.org.my/mjofs/pdf/fssmVol.10No.1/Article03.pdf",
+            "secoesConferidas": "Metodologia e tabela 1, p. 23",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Tabela 1, padrões de corantes; estudo qualitativo, sem dispersão individual de Rf. Não inferir pureza; excluir manchas múltiplas sem atribuição molecular. Screenshot da tabela indisponível; transcrição do texto do PDF.",
+              "Não extrapolar para papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
+        },
+        {
+          "protocoloId": "ccd_mjofs2021_ipa_7_2_1",
+          "tecnica": "ccd",
+          "fonte": "mjofs2021dyes",
+          "fonteUrl": "https://forensics.org.my/mjofs/pdf/fssmVol.10No.1/Article03.pdf",
+          "solventes": [
+            "isopropanol",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "isopropanol",
+                "partes": 7
+              },
+              {
+                "id": "aqueous_ammonia_sg0880",
+                "partes": 2
+              },
+              {
+                "id": "water",
+                "partes": 1
+              }
+            ],
+            "base": "v/v",
+            "mistura": "isopropanol 7 : aqueous_ammonia_sg0880 2 : water 1",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel em alumínio",
+          "detector": "Observação visual e UV de fluorescência; comprimento exato não informado",
+          "rf": [
+            {
+              "valor": 0.62,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_experimental_condicional",
+            "fontePrimaria": "https://forensics.org.my/mjofs/pdf/fssmVol.10No.1/Article03.pdf",
+            "secoesConferidas": "Metodologia e tabela 1, p. 23",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Tabela 1, padrões de corantes; estudo qualitativo, sem dispersão individual de Rf. Não inferir pureza; excluir manchas múltiplas sem atribuição molecular. Screenshot da tabela indisponível; transcrição do texto do PDF.",
+              "Não extrapolar para papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
+        },
+        {
+          "protocoloId": "ccd_dilrukshi2019_butanol",
+          "tecnica": "ccd",
+          "fonte": "dilrukshi2019",
+          "fonteUrl": "https://doi.org/10.1155/2019/7453169",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 10
+              },
+              {
+                "id": "water",
+                "partes": 6
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 5
+              }
+            ],
+            "base": "v/v",
+            "mistura": "butanol_1 10 : water 6 : acetic_acid 5",
+            "homologada": false
+          },
+          "faseEstacionaria": "Placa de sílica para CCD",
+          "detector": "Observação de manchas coloridas; UV-Vis em solução após extração para confirmação",
+          "rf": [
+            {
+              "valor": 0.42,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_experimental_condicional",
+            "fontePrimaria": "https://doi.org/10.1155/2019/7453169",
+            "doi": "10.1155/2019/7453169",
+            "secoesConferidas": "Seções 2.5–2.6 e tabela 2",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Tabela 2: valores de padrões; concentração da amônia não informada; λmax em solução não é comprimento de onda de densitometria da placa.",
+              "Não extrapolar para papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -263,6 +604,78 @@
         },
         {
           "metodos": [
+            "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
+            "tlc_food_dyes_sobanska2017_final"
+          ],
+          "solventesA": [
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "chloroform",
+            "isopropanol"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
+            "hptlc_food_dyes_nandanwadkar2020"
+          ],
+          "solventesA": [
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "butanol_1",
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
+            "ccd_mjofs2021_ipa_4_1"
+          ],
+          "solventesA": [
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "isopropanol"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
+            "ccd_mjofs2021_butanol_10_5_6"
+          ],
+          "solventesA": [
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
+            "ccd_dilrukshi2019_butanol"
+          ],
+          "solventesA": [
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
             "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water",
             "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9"
           ],
@@ -294,6 +707,98 @@
         },
         {
           "metodos": [
+            "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water",
+            "tlc_food_dyes_sobanska2017_final"
+          ],
+          "solventesA": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ],
+          "solventesB": [
+            "chloroform",
+            "isopropanol"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water",
+            "hptlc_food_dyes_nandanwadkar2020"
+          ],
+          "solventesA": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ],
+          "solventesB": [
+            "butanol_1",
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water",
+            "ccd_mjofs2021_ipa_4_1"
+          ],
+          "solventesA": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ],
+          "solventesB": [
+            "isopropanol"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water",
+            "ccd_mjofs2021_butanol_10_5_6"
+          ],
+          "solventesA": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water",
+            "ccd_mjofs2021_ipa_7_2_1"
+          ],
+          "solventesA": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ],
+          "solventesB": [
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water",
+            "ccd_dilrukshi2019_butanol"
+          ],
+          "solventesA": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
             "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9",
             "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water"
           ],
@@ -306,12 +811,392 @@
             "isopropanol",
             "water"
           ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9",
+            "tlc_food_dyes_sobanska2017_final"
+          ],
+          "solventesA": [
+            "methanol",
+            "toluene"
+          ],
+          "solventesB": [
+            "chloroform",
+            "isopropanol"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9",
+            "hptlc_food_dyes_nandanwadkar2020"
+          ],
+          "solventesA": [
+            "methanol",
+            "toluene"
+          ],
+          "solventesB": [
+            "butanol_1",
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9",
+            "ccd_mjofs2021_ipa_4_1"
+          ],
+          "solventesA": [
+            "methanol",
+            "toluene"
+          ],
+          "solventesB": [
+            "isopropanol"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9",
+            "ccd_mjofs2021_butanol_10_5_6"
+          ],
+          "solventesA": [
+            "methanol",
+            "toluene"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9",
+            "ccd_mjofs2021_ipa_7_2_1"
+          ],
+          "solventesA": [
+            "methanol",
+            "toluene"
+          ],
+          "solventesB": [
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9",
+            "ccd_dilrukshi2019_butanol"
+          ],
+          "solventesA": [
+            "methanol",
+            "toluene"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water",
+            "tlc_food_dyes_sobanska2017_final"
+          ],
+          "solventesA": [
+            "ethyl_acetate",
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "chloroform",
+            "isopropanol"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water",
+            "hptlc_food_dyes_nandanwadkar2020"
+          ],
+          "solventesA": [
+            "ethyl_acetate",
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "butanol_1",
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water",
+            "ccd_mjofs2021_ipa_4_1"
+          ],
+          "solventesA": [
+            "ethyl_acetate",
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "isopropanol"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water",
+            "ccd_mjofs2021_butanol_10_5_6"
+          ],
+          "solventesA": [
+            "ethyl_acetate",
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water",
+            "ccd_mjofs2021_ipa_7_2_1"
+          ],
+          "solventesA": [
+            "ethyl_acetate",
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water",
+            "ccd_dilrukshi2019_butanol"
+          ],
+          "solventesA": [
+            "ethyl_acetate",
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_final",
+            "hptlc_food_dyes_nandanwadkar2020"
+          ],
+          "solventesA": [
+            "chloroform",
+            "isopropanol"
+          ],
+          "solventesB": [
+            "butanol_1",
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_final",
+            "ccd_mjofs2021_ipa_4_1"
+          ],
+          "solventesA": [
+            "chloroform",
+            "isopropanol"
+          ],
+          "solventesB": [
+            "isopropanol"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_final",
+            "ccd_mjofs2021_butanol_10_5_6"
+          ],
+          "solventesA": [
+            "chloroform",
+            "isopropanol"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_final",
+            "ccd_mjofs2021_ipa_7_2_1"
+          ],
+          "solventesA": [
+            "chloroform",
+            "isopropanol"
+          ],
+          "solventesB": [
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_final",
+            "ccd_dilrukshi2019_butanol"
+          ],
+          "solventesA": [
+            "chloroform",
+            "isopropanol"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "hptlc_food_dyes_nandanwadkar2020",
+            "ccd_mjofs2021_ipa_4_1"
+          ],
+          "solventesA": [
+            "butanol_1",
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "isopropanol"
+          ]
+        },
+        {
+          "metodos": [
+            "hptlc_food_dyes_nandanwadkar2020",
+            "ccd_mjofs2021_butanol_10_5_6"
+          ],
+          "solventesA": [
+            "butanol_1",
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "hptlc_food_dyes_nandanwadkar2020",
+            "ccd_mjofs2021_ipa_7_2_1"
+          ],
+          "solventesA": [
+            "butanol_1",
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "hptlc_food_dyes_nandanwadkar2020",
+            "ccd_dilrukshi2019_butanol"
+          ],
+          "solventesA": [
+            "butanol_1",
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "ccd_mjofs2021_ipa_4_1",
+            "ccd_mjofs2021_butanol_10_5_6"
+          ],
+          "solventesA": [
+            "isopropanol"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "ccd_mjofs2021_ipa_4_1",
+            "ccd_mjofs2021_ipa_7_2_1"
+          ],
+          "solventesA": [
+            "isopropanol"
+          ],
+          "solventesB": [
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "ccd_mjofs2021_ipa_4_1",
+            "ccd_dilrukshi2019_butanol"
+          ],
+          "solventesA": [
+            "isopropanol"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "ccd_mjofs2021_butanol_10_5_6",
+            "ccd_mjofs2021_ipa_7_2_1"
+          ],
+          "solventesA": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "ccd_mjofs2021_ipa_7_2_1",
+            "ccd_dilrukshi2019_butanol"
+          ],
+          "solventesA": [
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
         }
       ],
-      "homologacaoCompleta": false,
-      "pendencias": [
-        "dois_sistemas_de_triagem_sem_validacao_quantitativa_independente"
-      ],
+      "homologacaoCompleta": true,
+      "pendencias": [],
       "auditoriaRetencao": {
         "estado": "dois_rf_primarios_conferidos_so_para_consulta",
         "fonte": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5536146/",
@@ -321,14 +1206,16 @@
         ],
         "quantificacaoHomologada": false,
         "habilitarCenaQuantitativa": false
-      }
+      },
+      "disponibilidadeSimulacaoReal": false,
+      "condicaoHomologacao": "Rf individual contextual CCD/HPTLC; sem calibração de cena"
     },
     {
       "id": "sunset_yellow_fcf",
       "nome": "Amarelo crepúsculo FCF (Yellow 6)",
       "grupo": "corantes_alimenticios",
       "identidadeConfirmada": true,
-      "metodosComRetencaoIndividual": 4,
+      "metodosComRetencaoIndividual": 9,
       "metodos": [
         {
           "protocoloId": "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
@@ -505,6 +1392,285 @@
             "data": "2026-11-23",
             "homologadoParaSimulacao": false
           }
+        },
+        {
+          "protocoloId": "tlc_food_dyes_sobanska2017_final",
+          "tecnica": "ccd",
+          "fonte": "sobanska2017",
+          "fonteUrl": "https://onlinelibrary.wiley.com/doi/10.1155/2017/9528472",
+          "solventes": [
+            "chloroform",
+            "isopropanol"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "chloroform",
+                "partes": 1
+              },
+              {
+                "id": "isopropanol",
+                "partes": 3
+              },
+              {
+                "id": "aqueous_ammonia_25pct",
+                "partes": 1
+              }
+            ],
+            "base": "v/v",
+            "mistura": "chloroform 1 : isopropanol 3 : aqueous_ammonia_25pct 1",
+            "homologada": true
+          },
+          "faseEstacionaria": "Sílica gel 60 Merck",
+          "detector": "Densitometria por refletância, comprimentos de onda específicos",
+          "rf": [
+            {
+              "valor": 0.48,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": true,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "homologado",
+          "auditoriaCientifica": {
+            "estado": "metodo_experimental_revisado_referencia_condicional",
+            "fontePrimaria": "https://onlinelibrary.wiley.com/doi/10.1155/2017/9528472",
+            "doi": "10.1155/2017/9528472",
+            "secoesConferidas": "Seções 2.1, 2.3, 3.1.2, 3.2; tabela 2 sistema 1 e tabelas 3–5",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Tabela 2 sistema 1; procedimento final seção 2.3 e validação 3.2. CV ≤4,1% para concentração, não SD de Rf. Separação de tartrazina/Ponceau 4R insuficiente em mistura; referência individual, não autoriza identificação de mistura pelo Rf.",
+              "Não extrapolar para papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
+        },
+        {
+          "protocoloId": "ccd_mjofs2021_ipa_4_1",
+          "tecnica": "ccd",
+          "fonte": "mjofs2021dyes",
+          "fonteUrl": "https://forensics.org.my/mjofs/pdf/fssmVol.10No.1/Article03.pdf",
+          "solventes": [
+            "isopropanol"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "isopropanol",
+                "partes": 4
+              },
+              {
+                "id": "aqueous_ammonia_sg0880",
+                "partes": 1
+              }
+            ],
+            "base": "v/v",
+            "mistura": "isopropanol 4 : aqueous_ammonia_sg0880 1",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel em alumínio",
+          "detector": "Observação visual e UV de fluorescência; comprimento exato não informado",
+          "rf": [
+            {
+              "valor": 0.83,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_experimental_condicional",
+            "fontePrimaria": "https://forensics.org.my/mjofs/pdf/fssmVol.10No.1/Article03.pdf",
+            "secoesConferidas": "Metodologia e tabela 1, p. 23",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Tabela 1, padrões de corantes; estudo qualitativo, sem dispersão individual de Rf. Não inferir pureza; excluir manchas múltiplas sem atribuição molecular. Screenshot da tabela indisponível; transcrição do texto do PDF.",
+              "Não extrapolar para papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
+        },
+        {
+          "protocoloId": "ccd_mjofs2021_butanol_10_5_6",
+          "tecnica": "ccd",
+          "fonte": "mjofs2021dyes",
+          "fonteUrl": "https://forensics.org.my/mjofs/pdf/fssmVol.10No.1/Article03.pdf",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 10
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 5
+              },
+              {
+                "id": "water",
+                "partes": 6
+              }
+            ],
+            "base": "v/v",
+            "mistura": "butanol_1 10 : acetic_acid 5 : water 6",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel em alumínio",
+          "detector": "Observação visual e UV de fluorescência; comprimento exato não informado",
+          "rf": [
+            {
+              "valor": 0.86,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_experimental_condicional",
+            "fontePrimaria": "https://forensics.org.my/mjofs/pdf/fssmVol.10No.1/Article03.pdf",
+            "secoesConferidas": "Metodologia e tabela 1, p. 23",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Tabela 1, padrões de corantes; estudo qualitativo, sem dispersão individual de Rf. Não inferir pureza; excluir manchas múltiplas sem atribuição molecular. Screenshot da tabela indisponível; transcrição do texto do PDF.",
+              "Não extrapolar para papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
+        },
+        {
+          "protocoloId": "ccd_mjofs2021_ipa_7_2_1",
+          "tecnica": "ccd",
+          "fonte": "mjofs2021dyes",
+          "fonteUrl": "https://forensics.org.my/mjofs/pdf/fssmVol.10No.1/Article03.pdf",
+          "solventes": [
+            "isopropanol",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "isopropanol",
+                "partes": 7
+              },
+              {
+                "id": "aqueous_ammonia_sg0880",
+                "partes": 2
+              },
+              {
+                "id": "water",
+                "partes": 1
+              }
+            ],
+            "base": "v/v",
+            "mistura": "isopropanol 7 : aqueous_ammonia_sg0880 2 : water 1",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel em alumínio",
+          "detector": "Observação visual e UV de fluorescência; comprimento exato não informado",
+          "rf": [
+            {
+              "valor": 0.68,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_experimental_condicional",
+            "fontePrimaria": "https://forensics.org.my/mjofs/pdf/fssmVol.10No.1/Article03.pdf",
+            "secoesConferidas": "Metodologia e tabela 1, p. 23",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Tabela 1, padrões de corantes; estudo qualitativo, sem dispersão individual de Rf. Não inferir pureza; excluir manchas múltiplas sem atribuição molecular. Screenshot da tabela indisponível; transcrição do texto do PDF.",
+              "Não extrapolar para papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
+        },
+        {
+          "protocoloId": "ccd_dilrukshi2019_butanol",
+          "tecnica": "ccd",
+          "fonte": "dilrukshi2019",
+          "fonteUrl": "https://doi.org/10.1155/2019/7453169",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 10
+              },
+              {
+                "id": "water",
+                "partes": 6
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 5
+              }
+            ],
+            "base": "v/v",
+            "mistura": "butanol_1 10 : water 6 : acetic_acid 5",
+            "homologada": false
+          },
+          "faseEstacionaria": "Placa de sílica para CCD",
+          "detector": "Observação de manchas coloridas; UV-Vis em solução após extração para confirmação",
+          "rf": [
+            {
+              "valor": 0.73,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_experimental_condicional",
+            "fontePrimaria": "https://doi.org/10.1155/2019/7453169",
+            "doi": "10.1155/2019/7453169",
+            "secoesConferidas": "Seções 2.5–2.6 e tabela 2",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Tabela 2: valores de padrões; concentração da amônia não informada; λmax em solução não é comprimento de onda de densitometria da placa.",
+              "Não extrapolar para papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -556,6 +1722,63 @@
         },
         {
           "metodos": [
+            "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
+            "tlc_food_dyes_sobanska2017_final"
+          ],
+          "solventesA": [
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "chloroform",
+            "isopropanol"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
+            "ccd_mjofs2021_ipa_4_1"
+          ],
+          "solventesA": [
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "isopropanol"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
+            "ccd_mjofs2021_butanol_10_5_6"
+          ],
+          "solventesA": [
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
+            "ccd_dilrukshi2019_butanol"
+          ],
+          "solventesA": [
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
             "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water",
             "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9"
           ],
@@ -587,6 +1810,82 @@
         },
         {
           "metodos": [
+            "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water",
+            "tlc_food_dyes_sobanska2017_final"
+          ],
+          "solventesA": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ],
+          "solventesB": [
+            "chloroform",
+            "isopropanol"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water",
+            "ccd_mjofs2021_ipa_4_1"
+          ],
+          "solventesA": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ],
+          "solventesB": [
+            "isopropanol"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water",
+            "ccd_mjofs2021_butanol_10_5_6"
+          ],
+          "solventesA": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water",
+            "ccd_mjofs2021_ipa_7_2_1"
+          ],
+          "solventesA": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ],
+          "solventesB": [
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water",
+            "ccd_dilrukshi2019_butanol"
+          ],
+          "solventesA": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
             "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9",
             "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water"
           ],
@@ -599,11 +1898,286 @@
             "isopropanol",
             "water"
           ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9",
+            "tlc_food_dyes_sobanska2017_final"
+          ],
+          "solventesA": [
+            "methanol",
+            "toluene"
+          ],
+          "solventesB": [
+            "chloroform",
+            "isopropanol"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9",
+            "ccd_mjofs2021_ipa_4_1"
+          ],
+          "solventesA": [
+            "methanol",
+            "toluene"
+          ],
+          "solventesB": [
+            "isopropanol"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9",
+            "ccd_mjofs2021_butanol_10_5_6"
+          ],
+          "solventesA": [
+            "methanol",
+            "toluene"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9",
+            "ccd_mjofs2021_ipa_7_2_1"
+          ],
+          "solventesA": [
+            "methanol",
+            "toluene"
+          ],
+          "solventesB": [
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9",
+            "ccd_dilrukshi2019_butanol"
+          ],
+          "solventesA": [
+            "methanol",
+            "toluene"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water",
+            "tlc_food_dyes_sobanska2017_final"
+          ],
+          "solventesA": [
+            "ethyl_acetate",
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "chloroform",
+            "isopropanol"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water",
+            "ccd_mjofs2021_ipa_4_1"
+          ],
+          "solventesA": [
+            "ethyl_acetate",
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "isopropanol"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water",
+            "ccd_mjofs2021_butanol_10_5_6"
+          ],
+          "solventesA": [
+            "ethyl_acetate",
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water",
+            "ccd_mjofs2021_ipa_7_2_1"
+          ],
+          "solventesA": [
+            "ethyl_acetate",
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water",
+            "ccd_dilrukshi2019_butanol"
+          ],
+          "solventesA": [
+            "ethyl_acetate",
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_final",
+            "ccd_mjofs2021_ipa_4_1"
+          ],
+          "solventesA": [
+            "chloroform",
+            "isopropanol"
+          ],
+          "solventesB": [
+            "isopropanol"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_final",
+            "ccd_mjofs2021_butanol_10_5_6"
+          ],
+          "solventesA": [
+            "chloroform",
+            "isopropanol"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_final",
+            "ccd_mjofs2021_ipa_7_2_1"
+          ],
+          "solventesA": [
+            "chloroform",
+            "isopropanol"
+          ],
+          "solventesB": [
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_final",
+            "ccd_dilrukshi2019_butanol"
+          ],
+          "solventesA": [
+            "chloroform",
+            "isopropanol"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "ccd_mjofs2021_ipa_4_1",
+            "ccd_mjofs2021_butanol_10_5_6"
+          ],
+          "solventesA": [
+            "isopropanol"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "ccd_mjofs2021_ipa_4_1",
+            "ccd_mjofs2021_ipa_7_2_1"
+          ],
+          "solventesA": [
+            "isopropanol"
+          ],
+          "solventesB": [
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "ccd_mjofs2021_ipa_4_1",
+            "ccd_dilrukshi2019_butanol"
+          ],
+          "solventesA": [
+            "isopropanol"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "ccd_mjofs2021_butanol_10_5_6",
+            "ccd_mjofs2021_ipa_7_2_1"
+          ],
+          "solventesA": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "ccd_mjofs2021_ipa_7_2_1",
+            "ccd_dilrukshi2019_butanol"
+          ],
+          "solventesA": [
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
         }
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "dois_sistemas_de_triagem_sem_validacao_quantitativa_independente"
+        "metodos_e_condicoes_a_homologar"
       ],
       "auditoriaRetencao": {
         "estado": "dois_rf_primarios_conferidos_so_para_consulta",
@@ -620,18 +2194,69 @@
       "id": "allura_red_ac",
       "nome": "Vermelho Allura AC (Red 40)",
       "grupo": "corantes_alimenticios",
-      "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 0,
-      "metodos": [],
+      "identidadeConfirmada": true,
+      "metodosComRetencaoIndividual": 1,
+      "metodos": [
+        {
+          "protocoloId": "ccd_dilrukshi2019_propanol_ammonia",
+          "tecnica": "ccd",
+          "fonte": "dilrukshi2019",
+          "fonteUrl": "https://doi.org/10.1155/2019/7453169",
+          "solventes": [
+            "propanol_1"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "propanol_1",
+                "partes": 4
+              },
+              {
+                "id": "aqueous_ammonia_unspecified",
+                "partes": 1
+              }
+            ],
+            "base": "v/v",
+            "mistura": "propanol_1 4 : aqueous_ammonia_unspecified 1",
+            "homologada": false
+          },
+          "faseEstacionaria": "Placa de sílica para CCD",
+          "detector": "Observação de manchas coloridas; UV-Vis em solução após extração para confirmação",
+          "rf": [
+            {
+              "valor": 0.46,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_experimental_condicional",
+            "fontePrimaria": "https://doi.org/10.1155/2019/7453169",
+            "doi": "10.1155/2019/7453169",
+            "secoesConferidas": "Seções 2.5–2.6 e tabela 2",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Tabela 2: valores de padrões; concentração da amônia não informada; λmax em solução não é comprimento de onda de densitometria da placa.",
+              "Não extrapolar para papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
+        }
+      ],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
       "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
-        "sem_retencao_experimental",
-        "metodo_2_documentado",
-        "solventes_contrastantes",
-        "identidade_primaria_e_condicoes_a_homologar"
+        "segundo_metodo_documentado",
+        "metodos_e_condicoes_a_homologar"
       ]
     },
     {
@@ -639,7 +2264,7 @@
       "nome": "Azul brilhante FCF (Blue 1)",
       "grupo": "corantes_alimenticios",
       "identidadeConfirmada": true,
-      "metodosComRetencaoIndividual": 4,
+      "metodosComRetencaoIndividual": 9,
       "metodos": [
         {
           "protocoloId": "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
@@ -816,6 +2441,289 @@
             "data": "2026-11-23",
             "homologadoParaSimulacao": false
           }
+        },
+        {
+          "protocoloId": "tlc_food_dyes_sobanska2017_final",
+          "tecnica": "ccd",
+          "fonte": "sobanska2017",
+          "fonteUrl": "https://onlinelibrary.wiley.com/doi/10.1155/2017/9528472",
+          "solventes": [
+            "chloroform",
+            "isopropanol"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "chloroform",
+                "partes": 1
+              },
+              {
+                "id": "isopropanol",
+                "partes": 3
+              },
+              {
+                "id": "aqueous_ammonia_25pct",
+                "partes": 1
+              }
+            ],
+            "base": "v/v",
+            "mistura": "chloroform 1 : isopropanol 3 : aqueous_ammonia_25pct 1",
+            "homologada": true
+          },
+          "faseEstacionaria": "Sílica gel 60 Merck",
+          "detector": "Densitometria por refletância, comprimentos de onda específicos",
+          "rf": [
+            {
+              "valor": 0.37,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": true,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "homologado",
+          "auditoriaCientifica": {
+            "estado": "metodo_experimental_revisado_referencia_condicional",
+            "fontePrimaria": "https://onlinelibrary.wiley.com/doi/10.1155/2017/9528472",
+            "doi": "10.1155/2017/9528472",
+            "secoesConferidas": "Seções 2.1, 2.3, 3.1.2, 3.2; tabela 2 sistema 1 e tabelas 3–5",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Tabela 2 sistema 1; procedimento final seção 2.3 e validação 3.2. CV ≤4,1% para concentração, não SD de Rf. Separação de tartrazina/Ponceau 4R insuficiente em mistura; referência individual, não autoriza identificação de mistura pelo Rf.",
+              "Não extrapolar para papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
+        },
+        {
+          "protocoloId": "hptlc_food_dyes_nandanwadkar2020",
+          "tecnica": "hptlc",
+          "fonte": "nandanwadkar2020",
+          "fonteUrl": "https://doi.org/10.1007/s00764-020-00038-9",
+          "solventes": [
+            "butanol_1",
+            "isopropanol",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 65
+              },
+              {
+                "id": "isopropanol",
+                "partes": 20
+              },
+              {
+                "id": "aqueous_ammonia_25pct",
+                "partes": 10
+              },
+              {
+                "id": "water",
+                "partes": 5
+              }
+            ],
+            "base": "v/v",
+            "mistura": "butanol_1 65 : isopropanol 20 : aqueous_ammonia_25pct 10 : water 5",
+            "homologada": true
+          },
+          "faseEstacionaria": "Sílica gel 60 F254 em alumínio",
+          "detector": "Spectrodensitometria, máximos reportados específicos do método",
+          "rf": [
+            {
+              "valor": 0.36,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": true,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "homologado",
+          "auditoriaCientifica": {
+            "estado": "metodo_experimental_revisado_referencia_condicional",
+            "fontePrimaria": "https://doi.org/10.1007/s00764-020-00038-9",
+            "doi": "10.1007/s00764-020-00038-9",
+            "secoesConferidas": "Seções 2.3, 3.1–3.4; tabela 2; figuras 1–3",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Tabela 2; padrões com certificado de análise, repetibilidade de sinal 0,33–0,63% RSD e robustez reportada. Recuperação não realizada. Janela de Rf não é desvio-padrão; máximos espectrais relatados não são universais. Homologação restrita a Rf individual, não quantificação de matrizes.",
+              "Não extrapolar para papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "hptlc",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
+        },
+        {
+          "protocoloId": "ccd_mjofs2021_ipa_4_1",
+          "tecnica": "ccd",
+          "fonte": "mjofs2021dyes",
+          "fonteUrl": "https://forensics.org.my/mjofs/pdf/fssmVol.10No.1/Article03.pdf",
+          "solventes": [
+            "isopropanol"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "isopropanol",
+                "partes": 4
+              },
+              {
+                "id": "aqueous_ammonia_sg0880",
+                "partes": 1
+              }
+            ],
+            "base": "v/v",
+            "mistura": "isopropanol 4 : aqueous_ammonia_sg0880 1",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel em alumínio",
+          "detector": "Observação visual e UV de fluorescência; comprimento exato não informado",
+          "rf": [
+            {
+              "valor": 0.76,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_experimental_condicional",
+            "fontePrimaria": "https://forensics.org.my/mjofs/pdf/fssmVol.10No.1/Article03.pdf",
+            "secoesConferidas": "Metodologia e tabela 1, p. 23",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Tabela 1, padrões de corantes; estudo qualitativo, sem dispersão individual de Rf. Não inferir pureza; excluir manchas múltiplas sem atribuição molecular. Screenshot da tabela indisponível; transcrição do texto do PDF.",
+              "Não extrapolar para papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
+        },
+        {
+          "protocoloId": "ccd_mjofs2021_butanol_10_5_6",
+          "tecnica": "ccd",
+          "fonte": "mjofs2021dyes",
+          "fonteUrl": "https://forensics.org.my/mjofs/pdf/fssmVol.10No.1/Article03.pdf",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 10
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 5
+              },
+              {
+                "id": "water",
+                "partes": 6
+              }
+            ],
+            "base": "v/v",
+            "mistura": "butanol_1 10 : acetic_acid 5 : water 6",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel em alumínio",
+          "detector": "Observação visual e UV de fluorescência; comprimento exato não informado",
+          "rf": [
+            {
+              "valor": 0.84,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_experimental_condicional",
+            "fontePrimaria": "https://forensics.org.my/mjofs/pdf/fssmVol.10No.1/Article03.pdf",
+            "secoesConferidas": "Metodologia e tabela 1, p. 23",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Tabela 1, padrões de corantes; estudo qualitativo, sem dispersão individual de Rf. Não inferir pureza; excluir manchas múltiplas sem atribuição molecular. Screenshot da tabela indisponível; transcrição do texto do PDF.",
+              "Não extrapolar para papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
+        },
+        {
+          "protocoloId": "ccd_mjofs2021_ipa_7_2_1",
+          "tecnica": "ccd",
+          "fonte": "mjofs2021dyes",
+          "fonteUrl": "https://forensics.org.my/mjofs/pdf/fssmVol.10No.1/Article03.pdf",
+          "solventes": [
+            "isopropanol",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "isopropanol",
+                "partes": 7
+              },
+              {
+                "id": "aqueous_ammonia_sg0880",
+                "partes": 2
+              },
+              {
+                "id": "water",
+                "partes": 1
+              }
+            ],
+            "base": "v/v",
+            "mistura": "isopropanol 7 : aqueous_ammonia_sg0880 2 : water 1",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel em alumínio",
+          "detector": "Observação visual e UV de fluorescência; comprimento exato não informado",
+          "rf": [
+            {
+              "valor": 0.68,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_experimental_condicional",
+            "fontePrimaria": "https://forensics.org.my/mjofs/pdf/fssmVol.10No.1/Article03.pdf",
+            "secoesConferidas": "Metodologia e tabela 1, p. 23",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Tabela 1, padrões de corantes; estudo qualitativo, sem dispersão individual de Rf. Não inferir pureza; excluir manchas múltiplas sem atribuição molecular. Screenshot da tabela indisponível; transcrição do texto do PDF.",
+              "Não extrapolar para papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -867,6 +2775,63 @@
         },
         {
           "metodos": [
+            "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
+            "tlc_food_dyes_sobanska2017_final"
+          ],
+          "solventesA": [
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "chloroform",
+            "isopropanol"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
+            "hptlc_food_dyes_nandanwadkar2020"
+          ],
+          "solventesA": [
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "butanol_1",
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
+            "ccd_mjofs2021_ipa_4_1"
+          ],
+          "solventesA": [
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "isopropanol"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
+            "ccd_mjofs2021_butanol_10_5_6"
+          ],
+          "solventesA": [
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
             "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water",
             "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9"
           ],
@@ -898,6 +2863,82 @@
         },
         {
           "metodos": [
+            "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water",
+            "tlc_food_dyes_sobanska2017_final"
+          ],
+          "solventesA": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ],
+          "solventesB": [
+            "chloroform",
+            "isopropanol"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water",
+            "hptlc_food_dyes_nandanwadkar2020"
+          ],
+          "solventesA": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ],
+          "solventesB": [
+            "butanol_1",
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water",
+            "ccd_mjofs2021_ipa_4_1"
+          ],
+          "solventesA": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ],
+          "solventesB": [
+            "isopropanol"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water",
+            "ccd_mjofs2021_butanol_10_5_6"
+          ],
+          "solventesA": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water",
+            "ccd_mjofs2021_ipa_7_2_1"
+          ],
+          "solventesA": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ],
+          "solventesB": [
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
             "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9",
             "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water"
           ],
@@ -910,12 +2951,301 @@
             "isopropanol",
             "water"
           ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9",
+            "tlc_food_dyes_sobanska2017_final"
+          ],
+          "solventesA": [
+            "methanol",
+            "toluene"
+          ],
+          "solventesB": [
+            "chloroform",
+            "isopropanol"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9",
+            "hptlc_food_dyes_nandanwadkar2020"
+          ],
+          "solventesA": [
+            "methanol",
+            "toluene"
+          ],
+          "solventesB": [
+            "butanol_1",
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9",
+            "ccd_mjofs2021_ipa_4_1"
+          ],
+          "solventesA": [
+            "methanol",
+            "toluene"
+          ],
+          "solventesB": [
+            "isopropanol"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9",
+            "ccd_mjofs2021_butanol_10_5_6"
+          ],
+          "solventesA": [
+            "methanol",
+            "toluene"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9",
+            "ccd_mjofs2021_ipa_7_2_1"
+          ],
+          "solventesA": [
+            "methanol",
+            "toluene"
+          ],
+          "solventesB": [
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water",
+            "tlc_food_dyes_sobanska2017_final"
+          ],
+          "solventesA": [
+            "ethyl_acetate",
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "chloroform",
+            "isopropanol"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water",
+            "hptlc_food_dyes_nandanwadkar2020"
+          ],
+          "solventesA": [
+            "ethyl_acetate",
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "butanol_1",
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water",
+            "ccd_mjofs2021_ipa_4_1"
+          ],
+          "solventesA": [
+            "ethyl_acetate",
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "isopropanol"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water",
+            "ccd_mjofs2021_butanol_10_5_6"
+          ],
+          "solventesA": [
+            "ethyl_acetate",
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water",
+            "ccd_mjofs2021_ipa_7_2_1"
+          ],
+          "solventesA": [
+            "ethyl_acetate",
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_final",
+            "hptlc_food_dyes_nandanwadkar2020"
+          ],
+          "solventesA": [
+            "chloroform",
+            "isopropanol"
+          ],
+          "solventesB": [
+            "butanol_1",
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_final",
+            "ccd_mjofs2021_ipa_4_1"
+          ],
+          "solventesA": [
+            "chloroform",
+            "isopropanol"
+          ],
+          "solventesB": [
+            "isopropanol"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_final",
+            "ccd_mjofs2021_butanol_10_5_6"
+          ],
+          "solventesA": [
+            "chloroform",
+            "isopropanol"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_final",
+            "ccd_mjofs2021_ipa_7_2_1"
+          ],
+          "solventesA": [
+            "chloroform",
+            "isopropanol"
+          ],
+          "solventesB": [
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "hptlc_food_dyes_nandanwadkar2020",
+            "ccd_mjofs2021_ipa_4_1"
+          ],
+          "solventesA": [
+            "butanol_1",
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "isopropanol"
+          ]
+        },
+        {
+          "metodos": [
+            "hptlc_food_dyes_nandanwadkar2020",
+            "ccd_mjofs2021_butanol_10_5_6"
+          ],
+          "solventesA": [
+            "butanol_1",
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "hptlc_food_dyes_nandanwadkar2020",
+            "ccd_mjofs2021_ipa_7_2_1"
+          ],
+          "solventesA": [
+            "butanol_1",
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "ccd_mjofs2021_ipa_4_1",
+            "ccd_mjofs2021_butanol_10_5_6"
+          ],
+          "solventesA": [
+            "isopropanol"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "ccd_mjofs2021_ipa_4_1",
+            "ccd_mjofs2021_ipa_7_2_1"
+          ],
+          "solventesA": [
+            "isopropanol"
+          ],
+          "solventesB": [
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "ccd_mjofs2021_butanol_10_5_6",
+            "ccd_mjofs2021_ipa_7_2_1"
+          ],
+          "solventesA": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "isopropanol",
+            "water"
+          ]
         }
       ],
-      "homologacaoCompleta": false,
-      "pendencias": [
-        "dois_sistemas_de_triagem_sem_validacao_quantitativa_independente"
-      ],
+      "homologacaoCompleta": true,
+      "pendencias": [],
       "auditoriaRetencao": {
         "estado": "dois_rf_primarios_conferidos_so_para_consulta",
         "fonte": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5536146/",
@@ -925,13 +3255,15 @@
         ],
         "quantificacaoHomologada": false,
         "habilitarCenaQuantitativa": false
-      }
+      },
+      "disponibilidadeSimulacaoReal": false,
+      "condicaoHomologacao": "Rf individual contextual CCD/HPTLC; sem calibração de cena"
     },
     {
       "id": "indigotine",
       "nome": "Indigotina (Blue 2)",
       "grupo": "corantes_alimenticios",
-      "identidadeConfirmada": false,
+      "identidadeConfirmada": true,
       "metodosComRetencaoIndividual": 2,
       "metodos": [
         {
@@ -1050,8 +3382,8 @@
       "id": "erythrosine",
       "nome": "Eritrosina (Red 3)",
       "grupo": "corantes_alimenticios",
-      "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 2,
+      "identidadeConfirmada": true,
+      "metodosComRetencaoIndividual": 6,
       "metodos": [
         {
           "protocoloId": "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
@@ -1134,6 +3466,222 @@
           ],
           "rfIntervalo": [],
           "estado": "compendio_fao_republicado_nao_homologado"
+        },
+        {
+          "protocoloId": "ccd_mjofs2021_ipa_4_1",
+          "tecnica": "ccd",
+          "fonte": "mjofs2021dyes",
+          "fonteUrl": "https://forensics.org.my/mjofs/pdf/fssmVol.10No.1/Article03.pdf",
+          "solventes": [
+            "isopropanol"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "isopropanol",
+                "partes": 4
+              },
+              {
+                "id": "aqueous_ammonia_sg0880",
+                "partes": 1
+              }
+            ],
+            "base": "v/v",
+            "mistura": "isopropanol 4 : aqueous_ammonia_sg0880 1",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel em alumínio",
+          "detector": "Observação visual e UV de fluorescência; comprimento exato não informado",
+          "rf": [
+            {
+              "valor": 0.89,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_experimental_condicional",
+            "fontePrimaria": "https://forensics.org.my/mjofs/pdf/fssmVol.10No.1/Article03.pdf",
+            "secoesConferidas": "Metodologia e tabela 1, p. 23",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Tabela 1, padrões de corantes; estudo qualitativo, sem dispersão individual de Rf. Não inferir pureza; excluir manchas múltiplas sem atribuição molecular. Screenshot da tabela indisponível; transcrição do texto do PDF.",
+              "Não extrapolar para papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
+        },
+        {
+          "protocoloId": "ccd_mjofs2021_butanol_10_5_6",
+          "tecnica": "ccd",
+          "fonte": "mjofs2021dyes",
+          "fonteUrl": "https://forensics.org.my/mjofs/pdf/fssmVol.10No.1/Article03.pdf",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 10
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 5
+              },
+              {
+                "id": "water",
+                "partes": 6
+              }
+            ],
+            "base": "v/v",
+            "mistura": "butanol_1 10 : acetic_acid 5 : water 6",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel em alumínio",
+          "detector": "Observação visual e UV de fluorescência; comprimento exato não informado",
+          "rf": [
+            {
+              "valor": 0.86,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_experimental_condicional",
+            "fontePrimaria": "https://forensics.org.my/mjofs/pdf/fssmVol.10No.1/Article03.pdf",
+            "secoesConferidas": "Metodologia e tabela 1, p. 23",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Tabela 1, padrões de corantes; estudo qualitativo, sem dispersão individual de Rf. Não inferir pureza; excluir manchas múltiplas sem atribuição molecular. Screenshot da tabela indisponível; transcrição do texto do PDF.",
+              "Não extrapolar para papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
+        },
+        {
+          "protocoloId": "ccd_mjofs2021_ipa_7_2_1",
+          "tecnica": "ccd",
+          "fonte": "mjofs2021dyes",
+          "fonteUrl": "https://forensics.org.my/mjofs/pdf/fssmVol.10No.1/Article03.pdf",
+          "solventes": [
+            "isopropanol",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "isopropanol",
+                "partes": 7
+              },
+              {
+                "id": "aqueous_ammonia_sg0880",
+                "partes": 2
+              },
+              {
+                "id": "water",
+                "partes": 1
+              }
+            ],
+            "base": "v/v",
+            "mistura": "isopropanol 7 : aqueous_ammonia_sg0880 2 : water 1",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel em alumínio",
+          "detector": "Observação visual e UV de fluorescência; comprimento exato não informado",
+          "rf": [
+            {
+              "valor": 0.78,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_experimental_condicional",
+            "fontePrimaria": "https://forensics.org.my/mjofs/pdf/fssmVol.10No.1/Article03.pdf",
+            "secoesConferidas": "Metodologia e tabela 1, p. 23",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Tabela 1, padrões de corantes; estudo qualitativo, sem dispersão individual de Rf. Não inferir pureza; excluir manchas múltiplas sem atribuição molecular. Screenshot da tabela indisponível; transcrição do texto do PDF.",
+              "Não extrapolar para papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
+        },
+        {
+          "protocoloId": "ccd_dilrukshi2019_propanol_ammonia",
+          "tecnica": "ccd",
+          "fonte": "dilrukshi2019",
+          "fonteUrl": "https://doi.org/10.1155/2019/7453169",
+          "solventes": [
+            "propanol_1"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "propanol_1",
+                "partes": 4
+              },
+              {
+                "id": "aqueous_ammonia_unspecified",
+                "partes": 1
+              }
+            ],
+            "base": "v/v",
+            "mistura": "propanol_1 4 : aqueous_ammonia_unspecified 1",
+            "homologada": false
+          },
+          "faseEstacionaria": "Placa de sílica para CCD",
+          "detector": "Observação de manchas coloridas; UV-Vis em solução após extração para confirmação",
+          "rf": [
+            {
+              "valor": 0.77,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_experimental_condicional",
+            "fontePrimaria": "https://doi.org/10.1155/2019/7453169",
+            "doi": "10.1155/2019/7453169",
+            "secoesConferidas": "Seções 2.5–2.6 e tabela 2",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Tabela 2: valores de padrões; concentração da amônia não informada; λmax em solução não é comprimento de onda de densitometria da placa.",
+              "Não extrapolar para papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -1153,29 +3701,250 @@
             "butanol_1",
             "water"
           ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
+            "ccd_mjofs2021_ipa_4_1"
+          ],
+          "solventesA": [
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "isopropanol"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
+            "ccd_mjofs2021_butanol_10_5_6"
+          ],
+          "solventesA": [
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
+            "ccd_dilrukshi2019_propanol_ammonia"
+          ],
+          "solventesA": [
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "propanol_1"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_10_butanol_acetic_water",
+            "ccd_mjofs2021_ipa_4_1"
+          ],
+          "solventesA": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "isopropanol"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_10_butanol_acetic_water",
+            "ccd_mjofs2021_ipa_7_2_1"
+          ],
+          "solventesA": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_10_butanol_acetic_water",
+            "ccd_dilrukshi2019_propanol_ammonia"
+          ],
+          "solventesA": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "propanol_1"
+          ]
+        },
+        {
+          "metodos": [
+            "ccd_mjofs2021_ipa_4_1",
+            "ccd_mjofs2021_butanol_10_5_6"
+          ],
+          "solventesA": [
+            "isopropanol"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "ccd_mjofs2021_ipa_4_1",
+            "ccd_mjofs2021_ipa_7_2_1"
+          ],
+          "solventesA": [
+            "isopropanol"
+          ],
+          "solventesB": [
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "ccd_mjofs2021_ipa_4_1",
+            "ccd_dilrukshi2019_propanol_ammonia"
+          ],
+          "solventesA": [
+            "isopropanol"
+          ],
+          "solventesB": [
+            "propanol_1"
+          ]
+        },
+        {
+          "metodos": [
+            "ccd_mjofs2021_butanol_10_5_6",
+            "ccd_mjofs2021_ipa_7_2_1"
+          ],
+          "solventesA": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "ccd_mjofs2021_butanol_10_5_6",
+            "ccd_dilrukshi2019_propanol_ammonia"
+          ],
+          "solventesA": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "propanol_1"
+          ]
+        },
+        {
+          "metodos": [
+            "ccd_mjofs2021_ipa_7_2_1",
+            "ccd_dilrukshi2019_propanol_ammonia"
+          ],
+          "solventesA": [
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "propanol_1"
+          ]
         }
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_e_condicoes_a_homologar"
+        "metodos_e_condicoes_a_homologar"
       ]
     },
     {
       "id": "fast_green_fcf",
       "nome": "Verde rápido FCF (Green 3)",
       "grupo": "corantes_alimenticios",
-      "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 0,
-      "metodos": [],
+      "identidadeConfirmada": true,
+      "metodosComRetencaoIndividual": 1,
+      "metodos": [
+        {
+          "protocoloId": "ccd_mjofs2021_butanol_10_5_6",
+          "tecnica": "ccd",
+          "fonte": "mjofs2021dyes",
+          "fonteUrl": "https://forensics.org.my/mjofs/pdf/fssmVol.10No.1/Article03.pdf",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 10
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 5
+              },
+              {
+                "id": "water",
+                "partes": 6
+              }
+            ],
+            "base": "v/v",
+            "mistura": "butanol_1 10 : acetic_acid 5 : water 6",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel em alumínio",
+          "detector": "Observação visual e UV de fluorescência; comprimento exato não informado",
+          "rf": [
+            {
+              "valor": 0.87,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_experimental_condicional",
+            "fontePrimaria": "https://forensics.org.my/mjofs/pdf/fssmVol.10No.1/Article03.pdf",
+            "secoesConferidas": "Metodologia e tabela 1, p. 23",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Tabela 1, padrões de corantes; estudo qualitativo, sem dispersão individual de Rf. Não inferir pureza; excluir manchas múltiplas sem atribuição molecular. Screenshot da tabela indisponível; transcrição do texto do PDF.",
+              "Não extrapolar para papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
+        }
+      ],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
       "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
-        "sem_retencao_experimental",
-        "metodo_2_documentado",
-        "solventes_contrastantes",
-        "identidade_primaria_e_condicoes_a_homologar"
+        "segundo_metodo_documentado",
+        "metodos_e_condicoes_a_homologar"
       ]
     },
     {
@@ -1183,7 +3952,7 @@
       "nome": "Ponceau 4R",
       "grupo": "corantes_alimenticios",
       "identidadeConfirmada": true,
-      "metodosComRetencaoIndividual": 4,
+      "metodosComRetencaoIndividual": 10,
       "metodos": [
         {
           "protocoloId": "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
@@ -1360,6 +4129,341 @@
             "data": "2026-11-23",
             "homologadoParaSimulacao": false
           }
+        },
+        {
+          "protocoloId": "tlc_food_dyes_sobanska2017_final",
+          "tecnica": "ccd",
+          "fonte": "sobanska2017",
+          "fonteUrl": "https://onlinelibrary.wiley.com/doi/10.1155/2017/9528472",
+          "solventes": [
+            "chloroform",
+            "isopropanol"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "chloroform",
+                "partes": 1
+              },
+              {
+                "id": "isopropanol",
+                "partes": 3
+              },
+              {
+                "id": "aqueous_ammonia_25pct",
+                "partes": 1
+              }
+            ],
+            "base": "v/v",
+            "mistura": "chloroform 1 : isopropanol 3 : aqueous_ammonia_25pct 1",
+            "homologada": true
+          },
+          "faseEstacionaria": "Sílica gel 60 Merck",
+          "detector": "Densitometria por refletância, comprimentos de onda específicos",
+          "rf": [
+            {
+              "valor": 0.2,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": true,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "homologado",
+          "auditoriaCientifica": {
+            "estado": "metodo_experimental_revisado_referencia_condicional",
+            "fontePrimaria": "https://onlinelibrary.wiley.com/doi/10.1155/2017/9528472",
+            "doi": "10.1155/2017/9528472",
+            "secoesConferidas": "Seções 2.1, 2.3, 3.1.2, 3.2; tabela 2 sistema 1 e tabelas 3–5",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Tabela 2 sistema 1; procedimento final seção 2.3 e validação 3.2. CV ≤4,1% para concentração, não SD de Rf. Separação de tartrazina/Ponceau 4R insuficiente em mistura; referência individual, não autoriza identificação de mistura pelo Rf.",
+              "Não extrapolar para papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
+        },
+        {
+          "protocoloId": "hptlc_food_dyes_nandanwadkar2020",
+          "tecnica": "hptlc",
+          "fonte": "nandanwadkar2020",
+          "fonteUrl": "https://doi.org/10.1007/s00764-020-00038-9",
+          "solventes": [
+            "butanol_1",
+            "isopropanol",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 65
+              },
+              {
+                "id": "isopropanol",
+                "partes": 20
+              },
+              {
+                "id": "aqueous_ammonia_25pct",
+                "partes": 10
+              },
+              {
+                "id": "water",
+                "partes": 5
+              }
+            ],
+            "base": "v/v",
+            "mistura": "butanol_1 65 : isopropanol 20 : aqueous_ammonia_25pct 10 : water 5",
+            "homologada": true
+          },
+          "faseEstacionaria": "Sílica gel 60 F254 em alumínio",
+          "detector": "Spectrodensitometria, máximos reportados específicos do método",
+          "rf": [
+            {
+              "valor": 0.188,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": true,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "homologado",
+          "auditoriaCientifica": {
+            "estado": "metodo_experimental_revisado_referencia_condicional",
+            "fontePrimaria": "https://doi.org/10.1007/s00764-020-00038-9",
+            "doi": "10.1007/s00764-020-00038-9",
+            "secoesConferidas": "Seções 2.3, 3.1–3.4; tabela 2; figuras 1–3",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Tabela 2; padrões com certificado de análise, repetibilidade de sinal 0,33–0,63% RSD e robustez reportada. Recuperação não realizada. Janela de Rf não é desvio-padrão; máximos espectrais relatados não são universais. Homologação restrita a Rf individual, não quantificação de matrizes.",
+              "Não extrapolar para papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "hptlc",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
+        },
+        {
+          "protocoloId": "ccd_mjofs2021_ipa_4_1",
+          "tecnica": "ccd",
+          "fonte": "mjofs2021dyes",
+          "fonteUrl": "https://forensics.org.my/mjofs/pdf/fssmVol.10No.1/Article03.pdf",
+          "solventes": [
+            "isopropanol"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "isopropanol",
+                "partes": 4
+              },
+              {
+                "id": "aqueous_ammonia_sg0880",
+                "partes": 1
+              }
+            ],
+            "base": "v/v",
+            "mistura": "isopropanol 4 : aqueous_ammonia_sg0880 1",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel em alumínio",
+          "detector": "Observação visual e UV de fluorescência; comprimento exato não informado",
+          "rf": [
+            {
+              "valor": 0.79,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_experimental_condicional",
+            "fontePrimaria": "https://forensics.org.my/mjofs/pdf/fssmVol.10No.1/Article03.pdf",
+            "secoesConferidas": "Metodologia e tabela 1, p. 23",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Tabela 1, padrões de corantes; estudo qualitativo, sem dispersão individual de Rf. Não inferir pureza; excluir manchas múltiplas sem atribuição molecular. Screenshot da tabela indisponível; transcrição do texto do PDF.",
+              "Não extrapolar para papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
+        },
+        {
+          "protocoloId": "ccd_mjofs2021_butanol_10_5_6",
+          "tecnica": "ccd",
+          "fonte": "mjofs2021dyes",
+          "fonteUrl": "https://forensics.org.my/mjofs/pdf/fssmVol.10No.1/Article03.pdf",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 10
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 5
+              },
+              {
+                "id": "water",
+                "partes": 6
+              }
+            ],
+            "base": "v/v",
+            "mistura": "butanol_1 10 : acetic_acid 5 : water 6",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel em alumínio",
+          "detector": "Observação visual e UV de fluorescência; comprimento exato não informado",
+          "rf": [
+            {
+              "valor": 0.84,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_experimental_condicional",
+            "fontePrimaria": "https://forensics.org.my/mjofs/pdf/fssmVol.10No.1/Article03.pdf",
+            "secoesConferidas": "Metodologia e tabela 1, p. 23",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Tabela 1, padrões de corantes; estudo qualitativo, sem dispersão individual de Rf. Não inferir pureza; excluir manchas múltiplas sem atribuição molecular. Screenshot da tabela indisponível; transcrição do texto do PDF.",
+              "Não extrapolar para papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
+        },
+        {
+          "protocoloId": "ccd_mjofs2021_ipa_7_2_1",
+          "tecnica": "ccd",
+          "fonte": "mjofs2021dyes",
+          "fonteUrl": "https://forensics.org.my/mjofs/pdf/fssmVol.10No.1/Article03.pdf",
+          "solventes": [
+            "isopropanol",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "isopropanol",
+                "partes": 7
+              },
+              {
+                "id": "aqueous_ammonia_sg0880",
+                "partes": 2
+              },
+              {
+                "id": "water",
+                "partes": 1
+              }
+            ],
+            "base": "v/v",
+            "mistura": "isopropanol 7 : aqueous_ammonia_sg0880 2 : water 1",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel em alumínio",
+          "detector": "Observação visual e UV de fluorescência; comprimento exato não informado",
+          "rf": [
+            {
+              "valor": 0.61,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_experimental_condicional",
+            "fontePrimaria": "https://forensics.org.my/mjofs/pdf/fssmVol.10No.1/Article03.pdf",
+            "secoesConferidas": "Metodologia e tabela 1, p. 23",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Tabela 1, padrões de corantes; estudo qualitativo, sem dispersão individual de Rf. Não inferir pureza; excluir manchas múltiplas sem atribuição molecular. Screenshot da tabela indisponível; transcrição do texto do PDF.",
+              "Não extrapolar para papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
+        },
+        {
+          "protocoloId": "ccd_dilrukshi2019_propanol_ammonia",
+          "tecnica": "ccd",
+          "fonte": "dilrukshi2019",
+          "fonteUrl": "https://doi.org/10.1155/2019/7453169",
+          "solventes": [
+            "propanol_1"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "propanol_1",
+                "partes": 4
+              },
+              {
+                "id": "aqueous_ammonia_unspecified",
+                "partes": 1
+              }
+            ],
+            "base": "v/v",
+            "mistura": "propanol_1 4 : aqueous_ammonia_unspecified 1",
+            "homologada": false
+          },
+          "faseEstacionaria": "Placa de sílica para CCD",
+          "detector": "Observação de manchas coloridas; UV-Vis em solução após extração para confirmação",
+          "rf": [
+            {
+              "valor": 0.39,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_experimental_condicional",
+            "fontePrimaria": "https://doi.org/10.1155/2019/7453169",
+            "doi": "10.1155/2019/7453169",
+            "secoesConferidas": "Seções 2.5–2.6 e tabela 2",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Tabela 2: valores de padrões; concentração da amônia não informada; λmax em solução não é comprimento de onda de densitometria da placa.",
+              "Não extrapolar para papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -1411,6 +4515,76 @@
         },
         {
           "metodos": [
+            "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
+            "tlc_food_dyes_sobanska2017_final"
+          ],
+          "solventesA": [
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "chloroform",
+            "isopropanol"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
+            "hptlc_food_dyes_nandanwadkar2020"
+          ],
+          "solventesA": [
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "butanol_1",
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
+            "ccd_mjofs2021_ipa_4_1"
+          ],
+          "solventesA": [
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "isopropanol"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
+            "ccd_mjofs2021_butanol_10_5_6"
+          ],
+          "solventesA": [
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
+            "ccd_dilrukshi2019_propanol_ammonia"
+          ],
+          "solventesA": [
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "propanol_1"
+          ]
+        },
+        {
+          "metodos": [
             "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water",
             "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9"
           ],
@@ -1442,6 +4616,96 @@
         },
         {
           "metodos": [
+            "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water",
+            "tlc_food_dyes_sobanska2017_final"
+          ],
+          "solventesA": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ],
+          "solventesB": [
+            "chloroform",
+            "isopropanol"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water",
+            "hptlc_food_dyes_nandanwadkar2020"
+          ],
+          "solventesA": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ],
+          "solventesB": [
+            "butanol_1",
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water",
+            "ccd_mjofs2021_ipa_4_1"
+          ],
+          "solventesA": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ],
+          "solventesB": [
+            "isopropanol"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water",
+            "ccd_mjofs2021_butanol_10_5_6"
+          ],
+          "solventesA": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water",
+            "ccd_mjofs2021_ipa_7_2_1"
+          ],
+          "solventesA": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ],
+          "solventesB": [
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water",
+            "ccd_dilrukshi2019_propanol_ammonia"
+          ],
+          "solventesA": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ],
+          "solventesB": [
+            "propanol_1"
+          ]
+        },
+        {
+          "metodos": [
             "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9",
             "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water"
           ],
@@ -1454,12 +4718,394 @@
             "isopropanol",
             "water"
           ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9",
+            "tlc_food_dyes_sobanska2017_final"
+          ],
+          "solventesA": [
+            "methanol",
+            "toluene"
+          ],
+          "solventesB": [
+            "chloroform",
+            "isopropanol"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9",
+            "hptlc_food_dyes_nandanwadkar2020"
+          ],
+          "solventesA": [
+            "methanol",
+            "toluene"
+          ],
+          "solventesB": [
+            "butanol_1",
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9",
+            "ccd_mjofs2021_ipa_4_1"
+          ],
+          "solventesA": [
+            "methanol",
+            "toluene"
+          ],
+          "solventesB": [
+            "isopropanol"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9",
+            "ccd_mjofs2021_butanol_10_5_6"
+          ],
+          "solventesA": [
+            "methanol",
+            "toluene"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9",
+            "ccd_mjofs2021_ipa_7_2_1"
+          ],
+          "solventesA": [
+            "methanol",
+            "toluene"
+          ],
+          "solventesB": [
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system15_methanol_toluene_11_9",
+            "ccd_dilrukshi2019_propanol_ammonia"
+          ],
+          "solventesA": [
+            "methanol",
+            "toluene"
+          ],
+          "solventesB": [
+            "propanol_1"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water",
+            "tlc_food_dyes_sobanska2017_final"
+          ],
+          "solventesA": [
+            "ethyl_acetate",
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "chloroform",
+            "isopropanol"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water",
+            "hptlc_food_dyes_nandanwadkar2020"
+          ],
+          "solventesA": [
+            "ethyl_acetate",
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "butanol_1",
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water",
+            "ccd_mjofs2021_ipa_4_1"
+          ],
+          "solventesA": [
+            "ethyl_acetate",
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "isopropanol"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water",
+            "ccd_mjofs2021_butanol_10_5_6"
+          ],
+          "solventesA": [
+            "ethyl_acetate",
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water",
+            "ccd_mjofs2021_ipa_7_2_1"
+          ],
+          "solventesA": [
+            "ethyl_acetate",
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_system18_ethylacetate_isopropanol_water",
+            "ccd_dilrukshi2019_propanol_ammonia"
+          ],
+          "solventesA": [
+            "ethyl_acetate",
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "propanol_1"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_final",
+            "hptlc_food_dyes_nandanwadkar2020"
+          ],
+          "solventesA": [
+            "chloroform",
+            "isopropanol"
+          ],
+          "solventesB": [
+            "butanol_1",
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_final",
+            "ccd_mjofs2021_ipa_4_1"
+          ],
+          "solventesA": [
+            "chloroform",
+            "isopropanol"
+          ],
+          "solventesB": [
+            "isopropanol"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_final",
+            "ccd_mjofs2021_butanol_10_5_6"
+          ],
+          "solventesA": [
+            "chloroform",
+            "isopropanol"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_final",
+            "ccd_mjofs2021_ipa_7_2_1"
+          ],
+          "solventesA": [
+            "chloroform",
+            "isopropanol"
+          ],
+          "solventesB": [
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_sobanska2017_final",
+            "ccd_dilrukshi2019_propanol_ammonia"
+          ],
+          "solventesA": [
+            "chloroform",
+            "isopropanol"
+          ],
+          "solventesB": [
+            "propanol_1"
+          ]
+        },
+        {
+          "metodos": [
+            "hptlc_food_dyes_nandanwadkar2020",
+            "ccd_mjofs2021_ipa_4_1"
+          ],
+          "solventesA": [
+            "butanol_1",
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "isopropanol"
+          ]
+        },
+        {
+          "metodos": [
+            "hptlc_food_dyes_nandanwadkar2020",
+            "ccd_mjofs2021_butanol_10_5_6"
+          ],
+          "solventesA": [
+            "butanol_1",
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "hptlc_food_dyes_nandanwadkar2020",
+            "ccd_mjofs2021_ipa_7_2_1"
+          ],
+          "solventesA": [
+            "butanol_1",
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "hptlc_food_dyes_nandanwadkar2020",
+            "ccd_dilrukshi2019_propanol_ammonia"
+          ],
+          "solventesA": [
+            "butanol_1",
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "propanol_1"
+          ]
+        },
+        {
+          "metodos": [
+            "ccd_mjofs2021_ipa_4_1",
+            "ccd_mjofs2021_butanol_10_5_6"
+          ],
+          "solventesA": [
+            "isopropanol"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "ccd_mjofs2021_ipa_4_1",
+            "ccd_mjofs2021_ipa_7_2_1"
+          ],
+          "solventesA": [
+            "isopropanol"
+          ],
+          "solventesB": [
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "ccd_mjofs2021_ipa_4_1",
+            "ccd_dilrukshi2019_propanol_ammonia"
+          ],
+          "solventesA": [
+            "isopropanol"
+          ],
+          "solventesB": [
+            "propanol_1"
+          ]
+        },
+        {
+          "metodos": [
+            "ccd_mjofs2021_butanol_10_5_6",
+            "ccd_mjofs2021_ipa_7_2_1"
+          ],
+          "solventesA": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "ccd_mjofs2021_butanol_10_5_6",
+            "ccd_dilrukshi2019_propanol_ammonia"
+          ],
+          "solventesA": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "propanol_1"
+          ]
+        },
+        {
+          "metodos": [
+            "ccd_mjofs2021_ipa_7_2_1",
+            "ccd_dilrukshi2019_propanol_ammonia"
+          ],
+          "solventesA": [
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "propanol_1"
+          ]
         }
       ],
-      "homologacaoCompleta": false,
-      "pendencias": [
-        "dois_sistemas_de_triagem_sem_validacao_quantitativa_independente"
-      ],
+      "homologacaoCompleta": true,
+      "pendencias": [],
       "auditoriaRetencao": {
         "estado": "dois_rf_primarios_conferidos_so_para_consulta",
         "fonte": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5536146/",
@@ -1469,14 +5115,16 @@
         ],
         "quantificacaoHomologada": false,
         "habilitarCenaQuantitativa": false
-      }
+      },
+      "disponibilidadeSimulacaoReal": false,
+      "condicaoHomologacao": "Rf individual contextual CCD/HPTLC; sem calibração de cena"
     },
     {
       "id": "amaranth",
       "nome": "Amaranto (corante azo)",
       "grupo": "corantes_alimenticios",
-      "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 2,
+      "identidadeConfirmada": true,
+      "metodosComRetencaoIndividual": 5,
       "metodos": [
         {
           "protocoloId": "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
@@ -1564,6 +5212,170 @@
           ],
           "rfIntervalo": [],
           "estado": "compendio_fao_republicado_nao_homologado"
+        },
+        {
+          "protocoloId": "ccd_mjofs2021_ipa_4_1",
+          "tecnica": "ccd",
+          "fonte": "mjofs2021dyes",
+          "fonteUrl": "https://forensics.org.my/mjofs/pdf/fssmVol.10No.1/Article03.pdf",
+          "solventes": [
+            "isopropanol"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "isopropanol",
+                "partes": 4
+              },
+              {
+                "id": "aqueous_ammonia_sg0880",
+                "partes": 1
+              }
+            ],
+            "base": "v/v",
+            "mistura": "isopropanol 4 : aqueous_ammonia_sg0880 1",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel em alumínio",
+          "detector": "Observação visual e UV de fluorescência; comprimento exato não informado",
+          "rf": [
+            {
+              "valor": 0.71,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_experimental_condicional",
+            "fontePrimaria": "https://forensics.org.my/mjofs/pdf/fssmVol.10No.1/Article03.pdf",
+            "secoesConferidas": "Metodologia e tabela 1, p. 23",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Tabela 1, padrões de corantes; estudo qualitativo, sem dispersão individual de Rf. Não inferir pureza; excluir manchas múltiplas sem atribuição molecular. Screenshot da tabela indisponível; transcrição do texto do PDF.",
+              "Não extrapolar para papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
+        },
+        {
+          "protocoloId": "ccd_mjofs2021_butanol_10_5_6",
+          "tecnica": "ccd",
+          "fonte": "mjofs2021dyes",
+          "fonteUrl": "https://forensics.org.my/mjofs/pdf/fssmVol.10No.1/Article03.pdf",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 10
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 5
+              },
+              {
+                "id": "water",
+                "partes": 6
+              }
+            ],
+            "base": "v/v",
+            "mistura": "butanol_1 10 : acetic_acid 5 : water 6",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel em alumínio",
+          "detector": "Observação visual e UV de fluorescência; comprimento exato não informado",
+          "rf": [
+            {
+              "valor": 0.9,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_experimental_condicional",
+            "fontePrimaria": "https://forensics.org.my/mjofs/pdf/fssmVol.10No.1/Article03.pdf",
+            "secoesConferidas": "Metodologia e tabela 1, p. 23",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Tabela 1, padrões de corantes; estudo qualitativo, sem dispersão individual de Rf. Não inferir pureza; excluir manchas múltiplas sem atribuição molecular. Screenshot da tabela indisponível; transcrição do texto do PDF.",
+              "Não extrapolar para papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
+        },
+        {
+          "protocoloId": "ccd_mjofs2021_ipa_7_2_1",
+          "tecnica": "ccd",
+          "fonte": "mjofs2021dyes",
+          "fonteUrl": "https://forensics.org.my/mjofs/pdf/fssmVol.10No.1/Article03.pdf",
+          "solventes": [
+            "isopropanol",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "isopropanol",
+                "partes": 7
+              },
+              {
+                "id": "aqueous_ammonia_sg0880",
+                "partes": 2
+              },
+              {
+                "id": "water",
+                "partes": 1
+              }
+            ],
+            "base": "v/v",
+            "mistura": "isopropanol 7 : aqueous_ammonia_sg0880 2 : water 1",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel em alumínio",
+          "detector": "Observação visual e UV de fluorescência; comprimento exato não informado",
+          "rf": [
+            {
+              "valor": 0.62,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_experimental_condicional",
+            "fontePrimaria": "https://forensics.org.my/mjofs/pdf/fssmVol.10No.1/Article03.pdf",
+            "secoesConferidas": "Metodologia e tabela 1, p. 23",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Tabela 1, padrões de corantes; estudo qualitativo, sem dispersão individual de Rf. Não inferir pureza; excluir manchas múltiplas sem atribuição molecular. Screenshot da tabela indisponível; transcrição do texto do PDF.",
+              "Não extrapolar para papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -1583,11 +5395,126 @@
             "methyl_ethyl_ketone",
             "water"
           ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
+            "ccd_mjofs2021_ipa_4_1"
+          ],
+          "solventesA": [
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "isopropanol"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_1_isopropanol_ammonia_water",
+            "ccd_mjofs2021_butanol_10_5_6"
+          ],
+          "solventesA": [
+            "isopropanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water",
+            "ccd_mjofs2021_ipa_4_1"
+          ],
+          "solventesA": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ],
+          "solventesB": [
+            "isopropanol"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water",
+            "ccd_mjofs2021_butanol_10_5_6"
+          ],
+          "solventesA": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_food_dyes_fao_system_7_acetone_butanone_ammonia_water",
+            "ccd_mjofs2021_ipa_7_2_1"
+          ],
+          "solventesA": [
+            "acetone",
+            "methyl_ethyl_ketone",
+            "water"
+          ],
+          "solventesB": [
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "ccd_mjofs2021_ipa_4_1",
+            "ccd_mjofs2021_butanol_10_5_6"
+          ],
+          "solventesA": [
+            "isopropanol"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "ccd_mjofs2021_ipa_4_1",
+            "ccd_mjofs2021_ipa_7_2_1"
+          ],
+          "solventesA": [
+            "isopropanol"
+          ],
+          "solventesB": [
+            "isopropanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "ccd_mjofs2021_butanol_10_5_6",
+            "ccd_mjofs2021_ipa_7_2_1"
+          ],
+          "solventesA": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "isopropanol",
+            "water"
+          ]
         }
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_e_condicoes_a_homologar"
+        "metodos_e_condicoes_a_homologar"
       ]
     },
     {
@@ -14600,17 +18527,69 @@
       "nome": "Rodamina B",
       "grupo": "indicadores_e_traçadores",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 0,
-      "metodos": [],
+      "metodosComRetencaoIndividual": 1,
+      "metodos": [
+        {
+          "protocoloId": "ccd_dilrukshi2019_propanol_ammonia",
+          "tecnica": "ccd",
+          "fonte": "dilrukshi2019",
+          "fonteUrl": "https://doi.org/10.1155/2019/7453169",
+          "solventes": [
+            "propanol_1"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "propanol_1",
+                "partes": 4
+              },
+              {
+                "id": "aqueous_ammonia_unspecified",
+                "partes": 1
+              }
+            ],
+            "base": "v/v",
+            "mistura": "propanol_1 4 : aqueous_ammonia_unspecified 1",
+            "homologada": false
+          },
+          "faseEstacionaria": "Placa de sílica para CCD",
+          "detector": "Observação de manchas coloridas; UV-Vis em solução após extração para confirmação",
+          "rf": [
+            {
+              "valor": 0.86,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_experimental_condicional",
+            "fontePrimaria": "https://doi.org/10.1155/2019/7453169",
+            "doi": "10.1155/2019/7453169",
+            "secoesConferidas": "Seções 2.5–2.6 e tabela 2",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Tabela 2: valores de padrões; concentração da amônia não informada; λmax em solução não é comprimento de onda de densitometria da placa.",
+              "Não extrapolar para papel, coluna ou cena quantitativa."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
+        }
+      ],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
       "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
-        "sem_retencao_experimental",
-        "metodo_2_documentado",
-        "solventes_contrastantes",
-        "identidade_primaria_e_condicoes_a_homologar"
+        "identidade_quimica_a_conferir",
+        "segundo_metodo_documentado",
+        "metodos_e_condicoes_a_homologar"
       ]
     },
     {

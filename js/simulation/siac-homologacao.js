@@ -25,7 +25,7 @@
   exigeDetectorConferido:true,
   proibeHomologacaoPorPrevisaoRf:true
  });
- const ADITIVOS=new Set(["sodium_chloride","nacl","sodium_acetate","acido_fosforico_sal","aqueous_ammonia_sg0880","aqueous_ammonia_25pct"]);
+ const ADITIVOS=new Set(["sodium_chloride","nacl","sodium_acetate","acido_fosforico_sal","aqueous_ammonia_sg0880","aqueous_ammonia_25pct","aqueous_ammonia_unspecified"]);
  function indexar(protocolos){
   return new Map((Array.isArray(protocolos)?protocolos:[]).map(p=>[p.id,p]));
  }

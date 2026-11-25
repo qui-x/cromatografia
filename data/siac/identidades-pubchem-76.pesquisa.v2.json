@@ -31,7 +31,7 @@
     "exigemEspecificacao": 49,
     "idsDuplicados": 0,
     "homologadasParaMotor": 0,
-    "identidadesConferidas": 15
+    "identidadesConferidas": 20
   },
   "candidatos": [
     {
@@ -59,8 +59,9 @@
         "corObservadaSobCondicoes": null,
         "uv254": null,
         "uv365": null,
-        "rfHomologado": false,
-        "kColunaHomologado": false
+        "rfHomologado": true,
+        "kColunaHomologado": false,
+        "rfHomologadoRestricao": "Somente Rf individual em CCD Sobańska 2017 e HPTLC Nandanwadkar 2020."
       },
       "autorizacaoSimulacaoReal": false
     },
@@ -90,7 +91,8 @@
         "uv254": null,
         "uv365": null,
         "rfHomologado": false,
-        "kColunaHomologado": false
+        "kColunaHomologado": false,
+        "rfHomologadoRestricao": "Um método de Rf individual de referência, pendente segundo método."
       },
       "autorizacaoSimulacaoReal": false
     },
@@ -101,12 +103,14 @@
       "referenciaQuimica": {
         "pubchemCID": 33258,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/33258",
-        "classe": "cid_candidato_localizado",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": null,
-        "casConferido": null,
+        "classe": "identidade_molecular_individual_conferida",
+        "status": "identidade_quimica_confirmada_pubchem",
+        "nota": "sal dissódico E129",
+        "casConferido": "25956-17-6",
         "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "estruturaEFormaConferidas": true,
+        "fonteConferencia": "https://pubchem.ncbi.nlm.nih.gov/compound/33258",
+        "dataConferencia": "2026-11-24"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {
@@ -143,8 +147,9 @@
         "corObservadaSobCondicoes": null,
         "uv254": null,
         "uv365": null,
-        "rfHomologado": false,
-        "kColunaHomologado": false
+        "rfHomologado": true,
+        "kColunaHomologado": false,
+        "rfHomologadoRestricao": "Somente Rf individual em CCD Sobańska 2017 e HPTLC Nandanwadkar 2020."
       },
       "autorizacaoSimulacaoReal": false
     },
@@ -155,12 +160,14 @@
       "referenciaQuimica": {
         "pubchemCID": 2723854,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/2723854",
-        "classe": "cid_candidato_forma_a_confirmar",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": "Registro candidato é índigo carmim (sal dissódico); não trocar por anião isolado ou índigo.",
-        "casConferido": null,
+        "classe": "identidade_molecular_individual_conferida",
+        "status": "identidade_quimica_confirmada_pubchem",
+        "nota": "índigo carmim dissódico E132, não indigotina não sulfonada",
+        "casConferido": "860-22-0",
         "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "estruturaEFormaConferidas": true,
+        "fonteConferencia": "https://pubchem.ncbi.nlm.nih.gov/compound/2723854",
+        "dataConferencia": "2026-11-24"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {
@@ -179,12 +186,14 @@
       "referenciaQuimica": {
         "pubchemCID": 27872,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/27872",
-        "classe": "cid_candidato_forma_a_confirmar",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": "Registro candidato de eritrosina sal de sódio; outros CIDs de protonação/formulação existem.",
-        "casConferido": null,
+        "classe": "identidade_molecular_individual_conferida",
+        "status": "identidade_quimica_confirmada_pubchem",
+        "nota": "sal dissódico E127, hidratação não determinada",
+        "casConferido": "16423-68-0",
         "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "estruturaEFormaConferidas": true,
+        "fonteConferencia": "https://pubchem.ncbi.nlm.nih.gov/compound/27872",
+        "dataConferencia": "2026-11-24"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {
@@ -203,12 +212,14 @@
       "referenciaQuimica": {
         "pubchemCID": 16887,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/16887",
-        "classe": "cid_candidato_localizado",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": null,
-        "casConferido": null,
+        "classe": "identidade_molecular_individual_conferida",
+        "status": "identidade_quimica_confirmada_pubchem",
+        "nota": "sal dissódico E143",
+        "casConferido": "2353-45-9",
         "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "estruturaEFormaConferidas": true,
+        "fonteConferencia": "https://pubchem.ncbi.nlm.nih.gov/compound/16887",
+        "dataConferencia": "2026-11-24"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {
@@ -245,8 +256,9 @@
         "corObservadaSobCondicoes": null,
         "uv254": null,
         "uv365": null,
-        "rfHomologado": false,
-        "kColunaHomologado": false
+        "rfHomologado": true,
+        "kColunaHomologado": false,
+        "rfHomologadoRestricao": "Somente Rf individual em CCD Sobańska 2017 e HPTLC Nandanwadkar 2020."
       },
       "autorizacaoSimulacaoReal": false
     },
@@ -257,12 +269,14 @@
       "referenciaQuimica": {
         "pubchemCID": 13506,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/13506",
-        "classe": "cid_candidato_forma_a_confirmar",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": "Registrar corante azo, não planta amaranto.",
-        "casConferido": null,
+        "classe": "identidade_molecular_individual_conferida",
+        "status": "identidade_quimica_confirmada_pubchem",
+        "nota": "sal trissódico E123",
+        "casConferido": "915-67-3",
         "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "estruturaEFormaConferidas": true,
+        "fonteConferencia": "https://pubchem.ncbi.nlm.nih.gov/compound/13506",
+        "dataConferencia": "2026-11-24"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {

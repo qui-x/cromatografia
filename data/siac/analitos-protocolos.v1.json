@@ -43,7 +43,10 @@
     "ashraf2012curcumin": "https://doi.org/10.1016/S2221-1691(12)60278-0",
     "curcuminBmad063": "https://doi.org/10.1093/chromsci/bmad063",
     "ascorbicGreen2022": "https://doi.org/10.3390/agronomy12051016",
-    "ascorbicAlam2019": "https://doi.org/10.1016/j.jsps.2019.07.006"
+    "ascorbicAlam2019": "https://doi.org/10.1016/j.jsps.2019.07.006",
+    "nandanwadkar2020": "https://doi.org/10.1007/s00764-020-00038-9",
+    "mjofs2021dyes": "https://forensics.org.my/mjofs/pdf/fssmVol.10No.1/Article03.pdf",
+    "dilrukshi2019": "https://doi.org/10.1155/2019/7453169"
   },
   "candidatos": [
     {
@@ -71,13 +74,32 @@
         "corObservavel": null,
         "absorcaoUV": null
       },
-      "homologacao": "candidato_sem_parametros",
+      "homologacao": "homologado_multitecnica_condicional",
       "retencao": {
-        "rf": [],
+        "rf": [
+          {
+            "metodoId": "tlc_food_dyes_sobanska2017_final",
+            "tecnica": "ccd",
+            "valor": 0.21,
+            "fonte": "sobanska2017",
+            "faseMovel": "chloroform 1 : isopropanol 3 : aqueous_ammonia_25pct 1",
+            "condicao": "somente condições experimentais e Rf individual",
+            "homologado": true
+          },
+          {
+            "metodoId": "hptlc_food_dyes_nandanwadkar2020",
+            "tecnica": "hptlc",
+            "valor": 0.16,
+            "fonte": "nandanwadkar2020",
+            "faseMovel": "butanol_1 65 : isopropanol 20 : aqueous_ammonia_25pct 10 : water 5",
+            "condicao": "somente condições experimentais e Rf individual",
+            "homologado": true
+          }
+        ],
         "fatorK": [],
         "isotermas": []
       },
-      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
+      "observacao": "Dois protocolos independentes de referência de retenção individual, CCD/HPTLC; não valida identificação de mistura ou quantificação.",
       "auditoriaRetencao": {
         "estado": "dois_rf_primarios_conferidos_em_triangulacao",
         "metodos": [
@@ -118,11 +140,21 @@
       },
       "homologacao": "candidato_sem_parametros",
       "retencao": {
-        "rf": [],
+        "rf": [
+          {
+            "metodoId": "tlc_food_dyes_sobanska2017_final",
+            "tecnica": "ccd",
+            "valor": 0.48,
+            "fonte": "sobanska2017",
+            "faseMovel": "chloroform 1 : isopropanol 3 : aqueous_ammonia_25pct 1",
+            "condicao": "somente condições experimentais e Rf individual",
+            "homologado": true
+          }
+        ],
         "fatorK": [],
         "isotermas": []
       },
-      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
+      "observacao": "Um método quantitativo de referência conferido; falta segundo método homologado.",
       "auditoriaRetencao": {
         "estado": "dois_rf_primarios_conferidos_em_triangulacao",
         "metodos": [
@@ -141,9 +173,16 @@
       "nome": "Vermelho Allura AC (Red 40)",
       "grupo": "corantes_alimenticios",
       "identity": {
-        "cas": null,
-        "pubchemCID": null,
-        "verificadoIndividualmente": false
+        "cas": "25956-17-6",
+        "pubchemCID": 33258,
+        "verificadoIndividualmente": true,
+        "formulaMolecular": "C18H14N2Na2O8S2",
+        "formaInvestigada": "sal dissódico E129",
+        "fontesIdentidade": [
+          "https://pubchem.ncbi.nlm.nih.gov/compound/33258"
+        ],
+        "dataConferencia": "2026-11-24",
+        "observacao": "Identidade de referência do componente principal; não comprova pureza ou composição integral de produto comercial."
       },
       "propriedades": {
         "densidade": null,
@@ -186,13 +225,32 @@
         "corObservavel": null,
         "absorcaoUV": null
       },
-      "homologacao": "candidato_sem_parametros",
+      "homologacao": "homologado_multitecnica_condicional",
       "retencao": {
-        "rf": [],
+        "rf": [
+          {
+            "metodoId": "tlc_food_dyes_sobanska2017_final",
+            "tecnica": "ccd",
+            "valor": 0.37,
+            "fonte": "sobanska2017",
+            "faseMovel": "chloroform 1 : isopropanol 3 : aqueous_ammonia_25pct 1",
+            "condicao": "somente condições experimentais e Rf individual",
+            "homologado": true
+          },
+          {
+            "metodoId": "hptlc_food_dyes_nandanwadkar2020",
+            "tecnica": "hptlc",
+            "valor": 0.36,
+            "fonte": "nandanwadkar2020",
+            "faseMovel": "butanol_1 65 : isopropanol 20 : aqueous_ammonia_25pct 10 : water 5",
+            "condicao": "somente condições experimentais e Rf individual",
+            "homologado": true
+          }
+        ],
         "fatorK": [],
         "isotermas": []
       },
-      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
+      "observacao": "Dois protocolos independentes de referência de retenção individual, CCD/HPTLC; não valida identificação de mistura ou quantificação.",
       "auditoriaRetencao": {
         "estado": "dois_rf_primarios_conferidos_em_triangulacao",
         "metodos": [
@@ -211,9 +269,16 @@
       "nome": "Indigotina (Blue 2)",
       "grupo": "corantes_alimenticios",
       "identity": {
-        "cas": null,
-        "pubchemCID": null,
-        "verificadoIndividualmente": false
+        "cas": "860-22-0",
+        "pubchemCID": 2723854,
+        "verificadoIndividualmente": true,
+        "formulaMolecular": "C16H8N2Na2O8S2",
+        "formaInvestigada": "índigo carmim dissódico E132, não indigotina não sulfonada",
+        "fontesIdentidade": [
+          "https://pubchem.ncbi.nlm.nih.gov/compound/2723854"
+        ],
+        "dataConferencia": "2026-11-24",
+        "observacao": "Identidade de referência do componente principal; não comprova pureza ou composição integral de produto comercial."
       },
       "propriedades": {
         "densidade": null,
@@ -236,9 +301,16 @@
       "nome": "Eritrosina (Red 3)",
       "grupo": "corantes_alimenticios",
       "identity": {
-        "cas": null,
-        "pubchemCID": null,
-        "verificadoIndividualmente": false
+        "cas": "16423-68-0",
+        "pubchemCID": 27872,
+        "verificadoIndividualmente": true,
+        "formulaMolecular": "C20H6I4Na2O5",
+        "formaInvestigada": "sal dissódico E127, hidratação não determinada",
+        "fontesIdentidade": [
+          "https://pubchem.ncbi.nlm.nih.gov/compound/27872"
+        ],
+        "dataConferencia": "2026-11-24",
+        "observacao": "Identidade de referência do componente principal; não comprova pureza ou composição integral de produto comercial."
       },
       "propriedades": {
         "densidade": null,
@@ -261,9 +333,16 @@
       "nome": "Verde rápido FCF (Green 3)",
       "grupo": "corantes_alimenticios",
       "identity": {
-        "cas": null,
-        "pubchemCID": null,
-        "verificadoIndividualmente": false
+        "cas": "2353-45-9",
+        "pubchemCID": 16887,
+        "verificadoIndividualmente": true,
+        "formulaMolecular": "C37H34N2Na2O10S3",
+        "formaInvestigada": "sal dissódico E143",
+        "fontesIdentidade": [
+          "https://pubchem.ncbi.nlm.nih.gov/compound/16887"
+        ],
+        "dataConferencia": "2026-11-24",
+        "observacao": "Identidade de referência do componente principal; não comprova pureza ou composição integral de produto comercial."
       },
       "propriedades": {
         "densidade": null,
@@ -306,13 +385,32 @@
         "corObservavel": null,
         "absorcaoUV": null
       },
-      "homologacao": "candidato_sem_parametros",
+      "homologacao": "homologado_multitecnica_condicional",
       "retencao": {
-        "rf": [],
+        "rf": [
+          {
+            "metodoId": "tlc_food_dyes_sobanska2017_final",
+            "tecnica": "ccd",
+            "valor": 0.2,
+            "fonte": "sobanska2017",
+            "faseMovel": "chloroform 1 : isopropanol 3 : aqueous_ammonia_25pct 1",
+            "condicao": "somente condições experimentais e Rf individual",
+            "homologado": true
+          },
+          {
+            "metodoId": "hptlc_food_dyes_nandanwadkar2020",
+            "tecnica": "hptlc",
+            "valor": 0.188,
+            "fonte": "nandanwadkar2020",
+            "faseMovel": "butanol_1 65 : isopropanol 20 : aqueous_ammonia_25pct 10 : water 5",
+            "condicao": "somente condições experimentais e Rf individual",
+            "homologado": true
+          }
+        ],
         "fatorK": [],
         "isotermas": []
       },
-      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
+      "observacao": "Dois protocolos independentes de referência de retenção individual, CCD/HPTLC; não valida identificação de mistura ou quantificação.",
       "auditoriaRetencao": {
         "estado": "dois_rf_primarios_conferidos_em_triangulacao",
         "metodos": [
@@ -331,9 +429,16 @@
       "nome": "Amaranto (corante azo)",
       "grupo": "corantes_alimenticios",
       "identity": {
-        "cas": null,
-        "pubchemCID": null,
-        "verificadoIndividualmente": false
+        "cas": "915-67-3",
+        "pubchemCID": 13506,
+        "verificadoIndividualmente": true,
+        "formulaMolecular": "C20H11N2Na3O10S3",
+        "formaInvestigada": "sal trissódico E123",
+        "fontesIdentidade": [
+          "https://pubchem.ncbi.nlm.nih.gov/compound/13506"
+        ],
+        "dataConferencia": "2026-11-24",
+        "observacao": "Identidade de referência do componente principal; não comprova pureza ou composição integral de produto comercial."
       },
       "propriedades": {
         "densidade": null,
@@ -7943,6 +8048,692 @@
       },
       "disponibilidadeSimulador": {
         "tipo": "hptlc",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false
+      }
+    },
+    {
+      "id": "tlc_food_dyes_sobanska2017_final",
+      "fonte": "sobanska2017",
+      "ano": 2017,
+      "tecnica": "ccd",
+      "assuntos": [
+        "corantes_alimenticios"
+      ],
+      "status": "homologado",
+      "referenciaSecao": "Seções 2.1, 2.3, 3.1.2, 3.2; tabela 2 sistema 1 e tabelas 3–5",
+      "faseEstacionaria": {
+        "classe": "Sílica gel 60 Merck",
+        "detalhamento": "10 × 20 cm, camada 0,25 mm, pré-lavada com metanol/diclorometano 1:1",
+        "homologada": true
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "chloroform",
+            "partes": 1
+          },
+          {
+            "id": "isopropanol",
+            "partes": 3
+          },
+          {
+            "id": "aqueous_ammonia_25pct",
+            "partes": 1
+          }
+        ],
+        "base": "v/v",
+        "mistura": "chloroform 1 : isopropanol 3 : aqueous_ammonia_25pct 1",
+        "homologada": true
+      },
+      "aplicacao": {
+        "detector": "Densitometria por refletância, comprimentos de onda específicos",
+        "detectorHomologado": true,
+        "saturacaoCamaraMin": 20,
+        "desenvolvimentoDistanciaDaBordaMm": 75,
+        "linhaAplicacaoDaBordaMm": 15,
+        "desenvolvimentoFrenteMm": 60,
+        "volumeAplicacaoUl": 1,
+        "temperaturaSecagemC": 20
+      },
+      "dadosRf": [
+        {
+          "analito": "tartrazina",
+          "rf": 0.21,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "sobanska2017",
+          "homologado": true,
+          "fontePrimariaConferida": true,
+          "detectorNm": 420
+        },
+        {
+          "analito": "sunset_yellow_fcf",
+          "rf": 0.48,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "sobanska2017",
+          "homologado": true,
+          "fontePrimariaConferida": true,
+          "detectorNm": 460
+        },
+        {
+          "analito": "ponceau_4r",
+          "rf": 0.2,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "sobanska2017",
+          "homologado": true,
+          "fontePrimariaConferida": true,
+          "detectorNm": 500
+        },
+        {
+          "analito": "brilliant_blue_fcf",
+          "rf": 0.37,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "sobanska2017",
+          "homologado": true,
+          "fontePrimariaConferida": true,
+          "detectorNm": 620
+        }
+      ],
+      "nota": "Tabela 2 sistema 1; procedimento final seção 2.3 e validação 3.2. CV ≤4,1% para concentração, não SD de Rf. Separação de tartrazina/Ponceau 4R insuficiente em mistura; referência individual, não autoriza identificação de mistura pelo Rf.",
+      "auditoriaCientifica": {
+        "estado": "metodo_experimental_revisado_referencia_condicional",
+        "fontePrimaria": "https://onlinelibrary.wiley.com/doi/10.1155/2017/9528472",
+        "doi": "10.1155/2017/9528472",
+        "secoesConferidas": "Seções 2.1, 2.3, 3.1.2, 3.2; tabela 2 sistema 1 e tabelas 3–5",
+        "dataConferencia": "2026-11-24",
+        "ressalvas": [
+          "Tabela 2 sistema 1; procedimento final seção 2.3 e validação 3.2. CV ≤4,1% para concentração, não SD de Rf. Separação de tartrazina/Ponceau 4R insuficiente em mistura; referência individual, não autoriza identificação de mistura pelo Rf.",
+          "Não extrapolar para papel, coluna ou cena quantitativa."
+        ]
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "ccd",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false
+      }
+    },
+    {
+      "id": "hptlc_food_dyes_nandanwadkar2020",
+      "fonte": "nandanwadkar2020",
+      "ano": 2020,
+      "tecnica": "hptlc",
+      "assuntos": [
+        "corantes_alimenticios"
+      ],
+      "status": "homologado",
+      "referenciaSecao": "Seções 2.3, 3.1–3.4; tabela 2; figuras 1–3",
+      "faseEstacionaria": {
+        "classe": "Sílica gel 60 F254 em alumínio",
+        "detalhamento": "HPTLC, câmara CAMAG twin-trough, pad Whatman 1 Chr",
+        "homologada": true
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "butanol_1",
+            "partes": 65
+          },
+          {
+            "id": "isopropanol",
+            "partes": 20
+          },
+          {
+            "id": "aqueous_ammonia_25pct",
+            "partes": 10
+          },
+          {
+            "id": "water",
+            "partes": 5
+          }
+        ],
+        "base": "v/v",
+        "mistura": "butanol_1 65 : isopropanol 20 : aqueous_ammonia_25pct 10 : water 5",
+        "homologada": true
+      },
+      "aplicacao": {
+        "detector": "Spectrodensitometria, máximos reportados específicos do método",
+        "detectorHomologado": true,
+        "temperaturaC": 22,
+        "umidadeRelativaPct": {
+          "min": 50,
+          "max": 60
+        }
+      },
+      "dadosRf": [
+        {
+          "analito": "tartrazina",
+          "rf": 0.16,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "nandanwadkar2020",
+          "homologado": true,
+          "fontePrimariaConferida": true,
+          "janelaRfReportada": 0.048,
+          "detectorNm": 420
+        },
+        {
+          "analito": "ponceau_4r",
+          "rf": 0.188,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "nandanwadkar2020",
+          "homologado": true,
+          "fontePrimariaConferida": true,
+          "janelaRfReportada": 0.01,
+          "detectorNm": 335
+        },
+        {
+          "analito": "brilliant_blue_fcf",
+          "rf": 0.36,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "nandanwadkar2020",
+          "homologado": true,
+          "fontePrimariaConferida": true,
+          "janelaRfReportada": 0.038,
+          "detectorNm": 410
+        }
+      ],
+      "nota": "Tabela 2; padrões com certificado de análise, repetibilidade de sinal 0,33–0,63% RSD e robustez reportada. Recuperação não realizada. Janela de Rf não é desvio-padrão; máximos espectrais relatados não são universais. Homologação restrita a Rf individual, não quantificação de matrizes.",
+      "auditoriaCientifica": {
+        "estado": "metodo_experimental_revisado_referencia_condicional",
+        "fontePrimaria": "https://doi.org/10.1007/s00764-020-00038-9",
+        "doi": "10.1007/s00764-020-00038-9",
+        "secoesConferidas": "Seções 2.3, 3.1–3.4; tabela 2; figuras 1–3",
+        "dataConferencia": "2026-11-24",
+        "ressalvas": [
+          "Tabela 2; padrões com certificado de análise, repetibilidade de sinal 0,33–0,63% RSD e robustez reportada. Recuperação não realizada. Janela de Rf não é desvio-padrão; máximos espectrais relatados não são universais. Homologação restrita a Rf individual, não quantificação de matrizes.",
+          "Não extrapolar para papel, coluna ou cena quantitativa."
+        ]
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "hptlc",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false
+      }
+    },
+    {
+      "id": "ccd_mjofs2021_ipa_4_1",
+      "fonte": "mjofs2021dyes",
+      "ano": 2021,
+      "tecnica": "ccd",
+      "assuntos": [
+        "corantes_alimenticios"
+      ],
+      "status": "referencia_primaria_conferida_nao_homologada",
+      "referenciaSecao": "Metodologia e tabela 1, p. 23",
+      "faseEstacionaria": {
+        "classe": "Sílica gel em alumínio",
+        "detalhamento": "Placa original 20 × 20 cm, cortada ao meio; ativada a 98 °C",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "isopropanol",
+            "partes": 4
+          },
+          {
+            "id": "aqueous_ammonia_sg0880",
+            "partes": 1
+          }
+        ],
+        "base": "v/v",
+        "mistura": "isopropanol 4 : aqueous_ammonia_sg0880 1",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "Observação visual e UV de fluorescência; comprimento exato não informado",
+        "detectorHomologado": false
+      },
+      "dadosRf": [
+        {
+          "analito": "tartrazina",
+          "rf": 0.81,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "mjofs2021dyes",
+          "homologado": false,
+          "fontePrimariaConferida": true
+        },
+        {
+          "analito": "sunset_yellow_fcf",
+          "rf": 0.83,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "mjofs2021dyes",
+          "homologado": false,
+          "fontePrimariaConferida": true
+        },
+        {
+          "analito": "brilliant_blue_fcf",
+          "rf": 0.76,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "mjofs2021dyes",
+          "homologado": false,
+          "fontePrimariaConferida": true
+        },
+        {
+          "analito": "amaranth",
+          "rf": 0.71,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "mjofs2021dyes",
+          "homologado": false,
+          "fontePrimariaConferida": true
+        },
+        {
+          "analito": "erythrosine",
+          "rf": 0.89,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "mjofs2021dyes",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "fluorescenciaReportada": "fraca em UV de onda longa"
+        },
+        {
+          "analito": "ponceau_4r",
+          "rf": 0.79,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "mjofs2021dyes",
+          "homologado": false,
+          "fontePrimariaConferida": true
+        }
+      ],
+      "nota": "Tabela 1, padrões de corantes; estudo qualitativo, sem dispersão individual de Rf. Não inferir pureza; excluir manchas múltiplas sem atribuição molecular. Screenshot da tabela indisponível; transcrição do texto do PDF.",
+      "auditoriaCientifica": {
+        "estado": "referencia_experimental_condicional",
+        "fontePrimaria": "https://forensics.org.my/mjofs/pdf/fssmVol.10No.1/Article03.pdf",
+        "secoesConferidas": "Metodologia e tabela 1, p. 23",
+        "dataConferencia": "2026-11-24",
+        "ressalvas": [
+          "Tabela 1, padrões de corantes; estudo qualitativo, sem dispersão individual de Rf. Não inferir pureza; excluir manchas múltiplas sem atribuição molecular. Screenshot da tabela indisponível; transcrição do texto do PDF.",
+          "Não extrapolar para papel, coluna ou cena quantitativa."
+        ]
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "ccd",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false
+      }
+    },
+    {
+      "id": "ccd_mjofs2021_butanol_10_5_6",
+      "fonte": "mjofs2021dyes",
+      "ano": 2021,
+      "tecnica": "ccd",
+      "assuntos": [
+        "corantes_alimenticios"
+      ],
+      "status": "referencia_primaria_conferida_nao_homologada",
+      "referenciaSecao": "Metodologia e tabela 1, p. 23",
+      "faseEstacionaria": {
+        "classe": "Sílica gel em alumínio",
+        "detalhamento": "Placa original 20 × 20 cm, cortada ao meio; ativada a 98 °C",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "butanol_1",
+            "partes": 10
+          },
+          {
+            "id": "acetic_acid",
+            "partes": 5
+          },
+          {
+            "id": "water",
+            "partes": 6
+          }
+        ],
+        "base": "v/v",
+        "mistura": "butanol_1 10 : acetic_acid 5 : water 6",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "Observação visual e UV de fluorescência; comprimento exato não informado",
+        "detectorHomologado": false
+      },
+      "dadosRf": [
+        {
+          "analito": "tartrazina",
+          "rf": 0.84,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "mjofs2021dyes",
+          "homologado": false,
+          "fontePrimariaConferida": true
+        },
+        {
+          "analito": "sunset_yellow_fcf",
+          "rf": 0.86,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "mjofs2021dyes",
+          "homologado": false,
+          "fontePrimariaConferida": true
+        },
+        {
+          "analito": "brilliant_blue_fcf",
+          "rf": 0.84,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "mjofs2021dyes",
+          "homologado": false,
+          "fontePrimariaConferida": true
+        },
+        {
+          "analito": "amaranth",
+          "rf": 0.9,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "mjofs2021dyes",
+          "homologado": false,
+          "fontePrimariaConferida": true
+        },
+        {
+          "analito": "erythrosine",
+          "rf": 0.86,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "mjofs2021dyes",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "fluorescenciaReportada": "fraca em UV de onda longa"
+        },
+        {
+          "analito": "ponceau_4r",
+          "rf": 0.84,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "mjofs2021dyes",
+          "homologado": false,
+          "fontePrimariaConferida": true
+        },
+        {
+          "analito": "fast_green_fcf",
+          "rf": 0.87,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "mjofs2021dyes",
+          "homologado": false,
+          "fontePrimariaConferida": true
+        }
+      ],
+      "nota": "Tabela 1, padrões de corantes; estudo qualitativo, sem dispersão individual de Rf. Não inferir pureza; excluir manchas múltiplas sem atribuição molecular. Screenshot da tabela indisponível; transcrição do texto do PDF.",
+      "auditoriaCientifica": {
+        "estado": "referencia_experimental_condicional",
+        "fontePrimaria": "https://forensics.org.my/mjofs/pdf/fssmVol.10No.1/Article03.pdf",
+        "secoesConferidas": "Metodologia e tabela 1, p. 23",
+        "dataConferencia": "2026-11-24",
+        "ressalvas": [
+          "Tabela 1, padrões de corantes; estudo qualitativo, sem dispersão individual de Rf. Não inferir pureza; excluir manchas múltiplas sem atribuição molecular. Screenshot da tabela indisponível; transcrição do texto do PDF.",
+          "Não extrapolar para papel, coluna ou cena quantitativa."
+        ]
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "ccd",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false
+      }
+    },
+    {
+      "id": "ccd_mjofs2021_ipa_7_2_1",
+      "fonte": "mjofs2021dyes",
+      "ano": 2021,
+      "tecnica": "ccd",
+      "assuntos": [
+        "corantes_alimenticios"
+      ],
+      "status": "referencia_primaria_conferida_nao_homologada",
+      "referenciaSecao": "Metodologia e tabela 1, p. 23",
+      "faseEstacionaria": {
+        "classe": "Sílica gel em alumínio",
+        "detalhamento": "Placa original 20 × 20 cm, cortada ao meio; ativada a 98 °C",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "isopropanol",
+            "partes": 7
+          },
+          {
+            "id": "aqueous_ammonia_sg0880",
+            "partes": 2
+          },
+          {
+            "id": "water",
+            "partes": 1
+          }
+        ],
+        "base": "v/v",
+        "mistura": "isopropanol 7 : aqueous_ammonia_sg0880 2 : water 1",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "Observação visual e UV de fluorescência; comprimento exato não informado",
+        "detectorHomologado": false
+      },
+      "dadosRf": [
+        {
+          "analito": "tartrazina",
+          "rf": 0.62,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "mjofs2021dyes",
+          "homologado": false,
+          "fontePrimariaConferida": true
+        },
+        {
+          "analito": "sunset_yellow_fcf",
+          "rf": 0.68,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "mjofs2021dyes",
+          "homologado": false,
+          "fontePrimariaConferida": true
+        },
+        {
+          "analito": "brilliant_blue_fcf",
+          "rf": 0.68,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "mjofs2021dyes",
+          "homologado": false,
+          "fontePrimariaConferida": true
+        },
+        {
+          "analito": "amaranth",
+          "rf": 0.62,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "mjofs2021dyes",
+          "homologado": false,
+          "fontePrimariaConferida": true
+        },
+        {
+          "analito": "erythrosine",
+          "rf": 0.78,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "mjofs2021dyes",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "fluorescenciaReportada": "fraca em UV de onda longa"
+        },
+        {
+          "analito": "ponceau_4r",
+          "rf": 0.61,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "mjofs2021dyes",
+          "homologado": false,
+          "fontePrimariaConferida": true
+        }
+      ],
+      "nota": "Tabela 1, padrões de corantes; estudo qualitativo, sem dispersão individual de Rf. Não inferir pureza; excluir manchas múltiplas sem atribuição molecular. Screenshot da tabela indisponível; transcrição do texto do PDF.",
+      "auditoriaCientifica": {
+        "estado": "referencia_experimental_condicional",
+        "fontePrimaria": "https://forensics.org.my/mjofs/pdf/fssmVol.10No.1/Article03.pdf",
+        "secoesConferidas": "Metodologia e tabela 1, p. 23",
+        "dataConferencia": "2026-11-24",
+        "ressalvas": [
+          "Tabela 1, padrões de corantes; estudo qualitativo, sem dispersão individual de Rf. Não inferir pureza; excluir manchas múltiplas sem atribuição molecular. Screenshot da tabela indisponível; transcrição do texto do PDF.",
+          "Não extrapolar para papel, coluna ou cena quantitativa."
+        ]
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "ccd",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false
+      }
+    },
+    {
+      "id": "ccd_dilrukshi2019_propanol_ammonia",
+      "fonte": "dilrukshi2019",
+      "ano": 2019,
+      "tecnica": "ccd",
+      "assuntos": [
+        "corantes_alimenticios",
+        "indicadores_e_traçadores"
+      ],
+      "status": "referencia_primaria_conferida_nao_homologada",
+      "referenciaSecao": "Seções 2.5–2.6 e tabela 2",
+      "faseEstacionaria": {
+        "classe": "Placa de sílica para CCD",
+        "detalhamento": "Especificação de placa, camada e lote não informada",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "propanol_1",
+            "partes": 4
+          },
+          {
+            "id": "aqueous_ammonia_unspecified",
+            "partes": 1
+          }
+        ],
+        "base": "v/v",
+        "mistura": "propanol_1 4 : aqueous_ammonia_unspecified 1",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "Observação de manchas coloridas; UV-Vis em solução após extração para confirmação",
+        "detectorHomologado": false
+      },
+      "dadosRf": [
+        {
+          "analito": "ponceau_4r",
+          "rf": 0.39,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "dilrukshi2019",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "lambdaMaxSolucaoNm": 508
+        },
+        {
+          "analito": "erythrosine",
+          "rf": 0.77,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "dilrukshi2019",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "lambdaMaxSolucaoNm": 526
+        },
+        {
+          "analito": "allura_red_ac",
+          "rf": 0.46,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "dilrukshi2019",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "lambdaMaxSolucaoNm": 506
+        },
+        {
+          "analito": "rhodamine_b",
+          "rf": 0.86,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "dilrukshi2019",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "lambdaMaxSolucaoNm": 553
+        }
+      ],
+      "nota": "Tabela 2: valores de padrões; concentração da amônia não informada; λmax em solução não é comprimento de onda de densitometria da placa.",
+      "auditoriaCientifica": {
+        "estado": "referencia_experimental_condicional",
+        "fontePrimaria": "https://doi.org/10.1155/2019/7453169",
+        "doi": "10.1155/2019/7453169",
+        "secoesConferidas": "Seções 2.5–2.6 e tabela 2",
+        "dataConferencia": "2026-11-24",
+        "ressalvas": [
+          "Tabela 2: valores de padrões; concentração da amônia não informada; λmax em solução não é comprimento de onda de densitometria da placa.",
+          "Não extrapolar para papel, coluna ou cena quantitativa."
+        ]
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "ccd",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false
+      }
+    },
+    {
+      "id": "ccd_dilrukshi2019_butanol",
+      "fonte": "dilrukshi2019",
+      "ano": 2019,
+      "tecnica": "ccd",
+      "assuntos": [
+        "corantes_alimenticios"
+      ],
+      "status": "referencia_primaria_conferida_nao_homologada",
+      "referenciaSecao": "Seções 2.5–2.6 e tabela 2",
+      "faseEstacionaria": {
+        "classe": "Placa de sílica para CCD",
+        "detalhamento": "Especificação de placa, camada e lote não informada",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "butanol_1",
+            "partes": 10
+          },
+          {
+            "id": "water",
+            "partes": 6
+          },
+          {
+            "id": "acetic_acid",
+            "partes": 5
+          }
+        ],
+        "base": "v/v",
+        "mistura": "butanol_1 10 : water 6 : acetic_acid 5",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "Observação de manchas coloridas; UV-Vis em solução após extração para confirmação",
+        "detectorHomologado": false
+      },
+      "dadosRf": [
+        {
+          "analito": "sunset_yellow_fcf",
+          "rf": 0.73,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "dilrukshi2019",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "lambdaMaxSolucaoNm": 482
+        },
+        {
+          "analito": "tartrazina",
+          "rf": 0.42,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "dilrukshi2019",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "lambdaMaxSolucaoNm": 426
+        }
+      ],
+      "nota": "Tabela 2: valores de padrões; concentração da amônia não informada; λmax em solução não é comprimento de onda de densitometria da placa.",
+      "auditoriaCientifica": {
+        "estado": "referencia_experimental_condicional",
+        "fontePrimaria": "https://doi.org/10.1155/2019/7453169",
+        "doi": "10.1155/2019/7453169",
+        "secoesConferidas": "Seções 2.5–2.6 e tabela 2",
+        "dataConferencia": "2026-11-24",
+        "ressalvas": [
+          "Tabela 2: valores de padrões; concentração da amônia não informada; λmax em solução não é comprimento de onda de densitometria da placa.",
+          "Não extrapolar para papel, coluna ou cena quantitativa."
+        ]
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "ccd",
         "parametrosRetencaoConferidos": true,
         "habilitarCenaQuantitativa": false
       }

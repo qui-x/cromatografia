@@ -1,0 +1,5 @@
+# SIAC — corantes alimentícios, 24/11/2026
+
+Sobańska 2017 DOI 10.1155/2017/9528472: procedimento final, tabela 2 sistema 1. Nandanwadkar 2020 DOI 10.1007/s00764-020-00038-9: tabela 2; sem recuperação; referência individual apenas. MJFS 2021: padrões em três receitas, não usar manchas múltiplas de Fast Green e rodamina nem sistema com Rf 1 para identificação. Dilrukshi 2019 DOI 10.1155/2019/7453169: tabela 2, concentração de amônia ausente. PubChem: cinco identidades adicionais. Azul patente V permanece pendente de forma salina; quinolina é mistura. Não liberar cena nem quantificação de misturas.
+
+{"candidatos":76,"comPeloMenosUmRfIndividual":52,"comDoisMetodosDocumentados":47,"comDoisMetodosESolventesDistintos":47,"homologadosNaRegraNova":11,"faltamParaMetaMinima":29,"faltamParaMetaAmpliada":44,"totaisRegistroRfPontual":230,"totalRfIntervalos":1,"protocolos":76,"liberadosParaSimulacaoReal":0,"metodosHptlcComFontePrimariaHomologada":12,"identidadesQuimicasConferidas":20,"metodosCcdComFontePrimariaHomologada":2}
