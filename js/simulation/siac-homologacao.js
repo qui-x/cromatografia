@@ -11,7 +11,8 @@
  if(raiz){raiz.SIAC=raiz.SIAC||{};raiz.SIAC.homologacao=api;}
 })(typeof globalThis==="object"?globalThis:null,function(){
  const POLITICA=Object.freeze({
-  versao:"2.2.0",
+  versao:"2.3.0",
+  referenciaDidaticaSeparadaDaHomologacao:true,
   metaMinimaSubstancias:40,
   metaAmpliadaSubstancias:55,
   minimoMetodosIndependentes:2,
@@ -88,6 +89,14 @@
   if(p.faseEstacionaria?.homologada!==true)deficits.push("suporte_nao_homologado");
   if(fm?.homologada!==true)deficits.push("eluente_nao_homologado");
   if(p.aplicacao?.detectorHomologado!==true)deficits.push("detector_nao_homologado");
+  // Referência contextual exige auditoria explícita, não apenas um Rf no catálogo.
+  const auditoria=p.referenciaDidatica;
+  const refDidatica=auditoria?.estado==="referencia_contextual_conferida" &&
+   auditoria.fontePrimaria===fonteCatalogo?.[p.fonte] &&
+   Boolean(auditoria.restricao) && /^\d{4}-\d{2}-\d{2}$/.test(auditoria.dataConferencia||"") &&
+   auditoria.habilitarCenaQuantitativa===false &&
+   sistemaBemDescrito(fm) && Boolean(p.faseEstacionaria?.classe&&p.faseEstacionaria?.detalhamento&&p.aplicacao?.detector) &&
+   medida.rf.some(d=>d.referenciaDidaticaConferida===true&&d.fontePrimariaConferida===true&&d.fonte===p.fonte&&!/predi|estimad|simulad/i.test(d.classe||""));
   const naoPredito=x=>x.homologado===true&&
    x.classe!=="estimado"&&x.classe!=="predito"&&x.classe!=="simulado";
   if(!medida.rf.some(naoPredito)&&!medida.intervalos.some(naoPredito)&&
@@ -103,6 +112,7 @@
    registrosRfIntervalos:medida.intervalos.length,
    registrosColuna:medida.coluna.length,
    prontoComoMetodo:deficits.length===0,
+   referenciaDidaticaConferida:refDidatica===true,
    habilitadoNoMotor:deficits.length===0&&p.disponibilidadeSimulador?.habilitarCenaQuantitativa===true,
    pendencias:deficits
   };
@@ -141,8 +151,11 @@
   const candidatosComContraste=contrastes(metodos,false);
   const homologadosComContraste=contrastes(metodos,true);
   const identidadeConferida=found.identity?.verificadoIndividualmente===true &&
-   Boolean(found.identity?.cas||found.identity?.pubchemCID||found.identity?.inchiKey);
+   Boolean(found.identity?.cas||found.identity?.pubchemCID||found.identity?.inchiKey||found.identity?.chebiID);
   const apto=identidadeConferida&&homologadosComContraste.length>0;
+  const refs=metodos.filter(m=>m.referenciaDidaticaConferida);
+  const paresDidaticos=contrastes(refs).filter(par=>refs.find(m=>m.protocoloId===par.metodos[0]).fonte!==refs.find(m=>m.protocoloId===par.metodos[1]).fonte);
+  const consultaDidatica=identidadeConferida&&(apto||paresDidaticos.length>0);
   const paraCena=identidadeConferida&&contrastes(metodos.filter(m=>m.habilitadoNoMotor),true).length>0;
   const pendencias=[];
   if(!identidadeConferida)pendencias.push("identidade_quimica_nao_conferida");
@@ -155,6 +168,9 @@
     comparacoesPossiveis:candidatosComContraste,
     comparacoesHomologadas:homologadosComContraste,
     metodos,homologacaoCompleta:apto,
+    referenciaDidaticaValidada:consultaDidatica,
+    comparacoesDidaticasConferidas:paresDidaticos,
+    escopoReferenciaDidatica:consultaDidatica?"consulta_contextual_sem_autorizacao_de_cena":null,
     disponibilidadeSimulacaoReal:paraCena,
     pendencias};
  }
@@ -168,6 +184,8 @@
    comDoisOuMaisMetodosDeRetencao:linhas.filter(c=>c.metodosComRetencaoIndividual>=2).length,
    comDoisMetodosESolventesContrastantes:linhas.filter(c=>c.comparacoesPossiveis.length>0).length,
    completamenteHomologados:elegiveis.length,
+   comReferenciaDidaticaValidada:linhas.filter(x=>x.referenciaDidaticaValidada).length,
+   somenteReferenciaDidatica:linhas.filter(x=>x.referenciaDidaticaValidada&&!x.homologacaoCompleta).length,
    liberadosParaSimulacaoReal:linhas.filter(x=>x.disponibilidadeSimulacaoReal).length,
    faltamParaMetaMinima:Math.max(0,POLITICA.metaMinimaSubstancias-elegiveis.length),
    faltamParaMetaAmpliada:Math.max(0,POLITICA.metaAmpliadaSubstancias-elegiveis.length)

@@ -31,7 +31,7 @@
     "exigemEspecificacao": 49,
     "idsDuplicados": 0,
     "homologadasParaMotor": 0,
-    "identidadesConferidas": 21
+    "identidadesConferidas": 40
   },
   "candidatos": [
     {
@@ -832,12 +832,17 @@
       "referenciaQuimica": {
         "pubchemCID": 5950,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/5950",
-        "classe": "cid_candidato_estereoisomero_L",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": "PubChem referente à forma L; o nome no catálogo SIAC não especificava estereoisômero.",
+        "classe": "identidade_molecular_de_referencia_conferida_chebi",
+        "status": "identidade_quimica_confirmada_chebi",
+        "nota": "Forma L de referência confirmada pelo registro ChEBI individual; CID cruzado com ProteinIQ. PubChem direto indisponível; forma do padrão dos ensaios não comprovada.",
         "casConferido": null,
         "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "estruturaEFormaConferidas": true,
+        "chebiID": "CHEBI:16977",
+        "formulaMolecular": "C3H7NO2",
+        "fonteConferencia": "https://www.ebi.ac.uk/chebi/CHEBI:16977",
+        "fonteCruzamentoCid": "https://proteiniq.io/datasets/biological-molecules",
+        "dataConferencia": "2026-11-24"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {
@@ -856,12 +861,17 @@
       "referenciaQuimica": {
         "pubchemCID": 6322,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6322",
-        "classe": "cid_candidato_estereoisomero_L",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": "PubChem referente à forma L; o nome no catálogo SIAC não especificava estereoisômero.",
+        "classe": "identidade_molecular_de_referencia_conferida_chebi",
+        "status": "identidade_quimica_confirmada_chebi",
+        "nota": "Forma L de referência confirmada pelo registro ChEBI individual; CID cruzado com ProteinIQ. PubChem direto indisponível; forma do padrão dos ensaios não comprovada.",
         "casConferido": null,
         "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "estruturaEFormaConferidas": true,
+        "chebiID": "CHEBI:16467",
+        "formulaMolecular": "C6H14N4O2",
+        "fonteConferencia": "https://www.ebi.ac.uk/chebi/CHEBI:16467",
+        "fonteCruzamentoCid": "https://proteiniq.io/datasets/biological-molecules",
+        "dataConferencia": "2026-11-24"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {
@@ -880,12 +890,17 @@
       "referenciaQuimica": {
         "pubchemCID": 6267,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6267",
-        "classe": "cid_candidato_estereoisomero_L",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": "PubChem referente à forma L; o nome no catálogo SIAC não especificava estereoisômero.",
+        "classe": "identidade_molecular_de_referencia_conferida_chebi",
+        "status": "identidade_quimica_confirmada_chebi",
+        "nota": "Forma L de referência confirmada pelo registro ChEBI individual; CID cruzado com ProteinIQ. PubChem direto indisponível; forma do padrão dos ensaios não comprovada.",
         "casConferido": null,
         "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "estruturaEFormaConferidas": true,
+        "chebiID": "CHEBI:17196",
+        "formulaMolecular": "C4H8N2O3",
+        "fonteConferencia": "https://www.ebi.ac.uk/chebi/CHEBI:17196",
+        "fonteCruzamentoCid": "https://proteiniq.io/datasets/biological-molecules",
+        "dataConferencia": "2026-11-24"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {
@@ -904,12 +919,17 @@
       "referenciaQuimica": {
         "pubchemCID": 5960,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/5960",
-        "classe": "cid_candidato_estereoisomero_L",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": "PubChem referente à forma L; o nome no catálogo SIAC não especificava estereoisômero.",
+        "classe": "identidade_molecular_de_referencia_conferida_chebi",
+        "status": "identidade_quimica_confirmada_chebi",
+        "nota": "Forma L de referência confirmada pelo registro ChEBI individual; CID cruzado com ProteinIQ. PubChem direto indisponível; forma do padrão dos ensaios não comprovada.",
         "casConferido": null,
         "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "estruturaEFormaConferidas": true,
+        "chebiID": "CHEBI:17053",
+        "formulaMolecular": "C4H7NO4",
+        "fonteConferencia": "https://www.ebi.ac.uk/chebi/CHEBI:17053",
+        "fonteCruzamentoCid": "https://proteiniq.io/datasets/biological-molecules",
+        "dataConferencia": "2026-11-24"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {
@@ -928,12 +948,17 @@
       "referenciaQuimica": {
         "pubchemCID": 5862,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/5862",
-        "classe": "cid_candidato_estereoisomero_L",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": "PubChem referente à forma L; o nome no catálogo SIAC não especificava estereoisômero.",
+        "classe": "identidade_molecular_de_referencia_conferida_chebi",
+        "status": "identidade_quimica_confirmada_chebi",
+        "nota": "Forma L de referência confirmada pelo registro ChEBI individual; CID cruzado com ProteinIQ. PubChem direto indisponível; forma do padrão dos ensaios não comprovada.",
         "casConferido": null,
         "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "estruturaEFormaConferidas": true,
+        "chebiID": "CHEBI:17561",
+        "formulaMolecular": "C3H7NO2S",
+        "fonteConferencia": "https://www.ebi.ac.uk/chebi/CHEBI:17561",
+        "fonteCruzamentoCid": "https://proteiniq.io/datasets/biological-molecules",
+        "dataConferencia": "2026-11-24"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {
@@ -952,12 +977,17 @@
       "referenciaQuimica": {
         "pubchemCID": 33032,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/33032",
-        "classe": "cid_candidato_estereoisomero_L",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": "PubChem referente à forma L; o nome no catálogo SIAC não especificava estereoisômero.",
+        "classe": "identidade_molecular_de_referencia_conferida_chebi",
+        "status": "identidade_quimica_confirmada_chebi",
+        "nota": "Forma L de referência confirmada pelo registro ChEBI individual; CID cruzado com ProteinIQ. PubChem direto indisponível; forma do padrão dos ensaios não comprovada.",
         "casConferido": null,
         "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "estruturaEFormaConferidas": true,
+        "chebiID": "CHEBI:16015",
+        "formulaMolecular": "C5H9NO4",
+        "fonteConferencia": "https://www.ebi.ac.uk/chebi/CHEBI:16015",
+        "fonteCruzamentoCid": "https://proteiniq.io/datasets/biological-molecules",
+        "dataConferencia": "2026-11-24"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {
@@ -976,12 +1006,17 @@
       "referenciaQuimica": {
         "pubchemCID": 5961,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/5961",
-        "classe": "cid_candidato_estereoisomero_L",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": "PubChem referente à forma L; o nome no catálogo SIAC não especificava estereoisômero.",
+        "classe": "identidade_molecular_de_referencia_conferida_chebi",
+        "status": "identidade_quimica_confirmada_chebi",
+        "nota": "Forma L de referência confirmada pelo registro ChEBI individual; CID cruzado com ProteinIQ. PubChem direto indisponível; forma do padrão dos ensaios não comprovada.",
         "casConferido": null,
         "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "estruturaEFormaConferidas": true,
+        "chebiID": "CHEBI:18050",
+        "formulaMolecular": "C5H10N2O3",
+        "fonteConferencia": "https://www.ebi.ac.uk/chebi/CHEBI:18050",
+        "fonteCruzamentoCid": "https://proteiniq.io/datasets/biological-molecules",
+        "dataConferencia": "2026-11-24"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {
@@ -1007,7 +1042,8 @@
         "inchiKeyConferido": null,
         "estruturaEFormaConferidas": true,
         "fonteConferencia": "https://pubchem.ncbi.nlm.nih.gov/compound/750",
-        "dataConferencia": "2026-11-24"
+        "dataConferencia": "2026-11-24",
+        "chebiID": "CHEBI:15428"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {
@@ -1026,12 +1062,17 @@
       "referenciaQuimica": {
         "pubchemCID": 6274,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6274",
-        "classe": "cid_candidato_estereoisomero_L",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": "PubChem referente à forma L; o nome no catálogo SIAC não especificava estereoisômero.",
+        "classe": "identidade_molecular_de_referencia_conferida_chebi",
+        "status": "identidade_quimica_confirmada_chebi",
+        "nota": "Forma L de referência confirmada pelo registro ChEBI individual; CID cruzado com ProteinIQ. PubChem direto indisponível; forma do padrão dos ensaios não comprovada.",
         "casConferido": null,
         "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "estruturaEFormaConferidas": true,
+        "chebiID": "CHEBI:15971",
+        "formulaMolecular": "C6H9N3O2",
+        "fonteConferencia": "https://www.ebi.ac.uk/chebi/CHEBI:15971",
+        "fonteCruzamentoCid": "https://proteiniq.io/datasets/biological-molecules",
+        "dataConferencia": "2026-11-24"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {
@@ -1050,12 +1091,17 @@
       "referenciaQuimica": {
         "pubchemCID": 6306,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6306",
-        "classe": "cid_candidato_estereoisomero_L",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": "PubChem referente à forma L; o nome no catálogo SIAC não especificava estereoisômero.",
+        "classe": "identidade_molecular_de_referencia_conferida_chebi",
+        "status": "identidade_quimica_confirmada_chebi",
+        "nota": "Forma L de referência confirmada pelo registro ChEBI individual; CID cruzado com ProteinIQ. PubChem direto indisponível; forma do padrão dos ensaios não comprovada.",
         "casConferido": null,
         "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "estruturaEFormaConferidas": true,
+        "chebiID": "CHEBI:17191",
+        "formulaMolecular": "C6H13NO2",
+        "fonteConferencia": "https://www.ebi.ac.uk/chebi/CHEBI:17191",
+        "fonteCruzamentoCid": "https://proteiniq.io/datasets/biological-molecules",
+        "dataConferencia": "2026-11-24"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {
@@ -1074,12 +1120,17 @@
       "referenciaQuimica": {
         "pubchemCID": 6106,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6106",
-        "classe": "cid_candidato_estereoisomero_L",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": "PubChem referente à forma L; o nome no catálogo SIAC não especificava estereoisômero.",
+        "classe": "identidade_molecular_de_referencia_conferida_chebi",
+        "status": "identidade_quimica_confirmada_chebi",
+        "nota": "Forma L de referência confirmada pelo registro ChEBI individual; CID cruzado com ProteinIQ. PubChem direto indisponível; forma do padrão dos ensaios não comprovada.",
         "casConferido": null,
         "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "estruturaEFormaConferidas": true,
+        "chebiID": "CHEBI:15603",
+        "formulaMolecular": "C6H13NO2",
+        "fonteConferencia": "https://www.ebi.ac.uk/chebi/CHEBI:15603",
+        "fonteCruzamentoCid": "https://proteiniq.io/datasets/biological-molecules",
+        "dataConferencia": "2026-11-24"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {
@@ -1098,12 +1149,17 @@
       "referenciaQuimica": {
         "pubchemCID": 5962,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/5962",
-        "classe": "cid_candidato_estereoisomero_L",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": "PubChem referente à forma L; o nome no catálogo SIAC não especificava estereoisômero.",
+        "classe": "identidade_molecular_de_referencia_conferida_chebi",
+        "status": "identidade_quimica_confirmada_chebi",
+        "nota": "Forma L de referência confirmada pelo registro ChEBI individual; CID cruzado com ProteinIQ. PubChem direto indisponível; forma do padrão dos ensaios não comprovada.",
         "casConferido": null,
         "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "estruturaEFormaConferidas": true,
+        "chebiID": "CHEBI:18019",
+        "formulaMolecular": "C6H14N2O2",
+        "fonteConferencia": "https://www.ebi.ac.uk/chebi/CHEBI:18019",
+        "fonteCruzamentoCid": "https://proteiniq.io/datasets/biological-molecules",
+        "dataConferencia": "2026-11-24"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {
@@ -1122,12 +1178,17 @@
       "referenciaQuimica": {
         "pubchemCID": 6137,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6137",
-        "classe": "cid_candidato_estereoisomero_L",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": "PubChem referente à forma L; o nome no catálogo SIAC não especificava estereoisômero.",
+        "classe": "identidade_molecular_de_referencia_conferida_chebi",
+        "status": "identidade_quimica_confirmada_chebi",
+        "nota": "Forma L de referência confirmada pelo registro ChEBI individual; CID cruzado com ProteinIQ. PubChem direto indisponível; forma do padrão dos ensaios não comprovada.",
         "casConferido": null,
         "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "estruturaEFormaConferidas": true,
+        "chebiID": "CHEBI:16643",
+        "formulaMolecular": "C5H11NO2S",
+        "fonteConferencia": "https://www.ebi.ac.uk/chebi/CHEBI:16643",
+        "fonteCruzamentoCid": "https://proteiniq.io/datasets/biological-molecules",
+        "dataConferencia": "2026-11-24"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {
@@ -1146,12 +1207,17 @@
       "referenciaQuimica": {
         "pubchemCID": 6140,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6140",
-        "classe": "cid_candidato_estereoisomero_L",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": "PubChem referente à forma L; o nome no catálogo SIAC não especificava estereoisômero.",
+        "classe": "identidade_molecular_de_referencia_conferida_chebi",
+        "status": "identidade_quimica_confirmada_chebi",
+        "nota": "Forma L de referência confirmada pelo registro ChEBI individual; CID cruzado com ProteinIQ. PubChem direto indisponível; forma do padrão dos ensaios não comprovada.",
         "casConferido": null,
         "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "estruturaEFormaConferidas": true,
+        "chebiID": "CHEBI:17295",
+        "formulaMolecular": "C9H11NO2",
+        "fonteConferencia": "https://www.ebi.ac.uk/chebi/CHEBI:17295",
+        "fonteCruzamentoCid": "https://proteiniq.io/datasets/biological-molecules",
+        "dataConferencia": "2026-11-24"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {
@@ -1170,12 +1236,17 @@
       "referenciaQuimica": {
         "pubchemCID": 145742,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/145742",
-        "classe": "cid_candidato_estereoisomero_L",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": "PubChem referente à forma L; o nome no catálogo SIAC não especificava estereoisômero.",
+        "classe": "identidade_molecular_de_referencia_conferida_chebi",
+        "status": "identidade_quimica_confirmada_chebi",
+        "nota": "Forma L de referência confirmada pelo registro ChEBI individual; CID cruzado com ProteinIQ. PubChem direto indisponível; forma do padrão dos ensaios não comprovada.",
         "casConferido": null,
         "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "estruturaEFormaConferidas": true,
+        "chebiID": "CHEBI:17203",
+        "formulaMolecular": "C5H9NO2",
+        "fonteConferencia": "https://www.ebi.ac.uk/chebi/CHEBI:17203",
+        "fonteCruzamentoCid": "https://proteiniq.io/datasets/biological-molecules",
+        "dataConferencia": "2026-11-24"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {
@@ -1194,12 +1265,17 @@
       "referenciaQuimica": {
         "pubchemCID": 5951,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/5951",
-        "classe": "cid_candidato_estereoisomero_L",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": "PubChem referente à forma L; o nome no catálogo SIAC não especificava estereoisômero.",
+        "classe": "identidade_molecular_de_referencia_conferida_chebi",
+        "status": "identidade_quimica_confirmada_chebi",
+        "nota": "Forma L de referência confirmada pelo registro ChEBI individual; CID cruzado com ProteinIQ. PubChem direto indisponível; forma do padrão dos ensaios não comprovada.",
         "casConferido": null,
         "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "estruturaEFormaConferidas": true,
+        "chebiID": "CHEBI:17115",
+        "formulaMolecular": "C3H7NO3",
+        "fonteConferencia": "https://www.ebi.ac.uk/chebi/CHEBI:17115",
+        "fonteCruzamentoCid": "https://proteiniq.io/datasets/biological-molecules",
+        "dataConferencia": "2026-11-24"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {
@@ -1218,12 +1294,17 @@
       "referenciaQuimica": {
         "pubchemCID": 6288,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6288",
-        "classe": "cid_candidato_estereoisomero_L",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": "PubChem referente à forma L; o nome no catálogo SIAC não especificava estereoisômero.",
+        "classe": "identidade_molecular_de_referencia_conferida_chebi",
+        "status": "identidade_quimica_confirmada_chebi",
+        "nota": "Forma L de referência confirmada pelo registro ChEBI individual; CID cruzado com ProteinIQ. PubChem direto indisponível; forma do padrão dos ensaios não comprovada.",
         "casConferido": null,
         "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "estruturaEFormaConferidas": true,
+        "chebiID": "CHEBI:16857",
+        "formulaMolecular": "C4H9NO3",
+        "fonteConferencia": "https://www.ebi.ac.uk/chebi/CHEBI:16857",
+        "fonteCruzamentoCid": "https://proteiniq.io/datasets/biological-molecules",
+        "dataConferencia": "2026-11-24"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {
@@ -1242,12 +1323,17 @@
       "referenciaQuimica": {
         "pubchemCID": 6305,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6305",
-        "classe": "cid_candidato_estereoisomero_L",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": "PubChem referente à forma L; o nome no catálogo SIAC não especificava estereoisômero.",
+        "classe": "identidade_molecular_de_referencia_conferida_chebi",
+        "status": "identidade_quimica_confirmada_chebi",
+        "nota": "Forma L de referência confirmada pelo registro ChEBI individual; CID cruzado com ProteinIQ. PubChem direto indisponível; forma do padrão dos ensaios não comprovada.",
         "casConferido": null,
         "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "estruturaEFormaConferidas": true,
+        "chebiID": "CHEBI:16828",
+        "formulaMolecular": "C11H12N2O2",
+        "fonteConferencia": "https://www.ebi.ac.uk/chebi/CHEBI:16828",
+        "fonteCruzamentoCid": "https://proteiniq.io/datasets/biological-molecules",
+        "dataConferencia": "2026-11-24"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {
@@ -1266,12 +1352,17 @@
       "referenciaQuimica": {
         "pubchemCID": 6057,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6057",
-        "classe": "cid_candidato_estereoisomero_L",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": "PubChem referente à forma L; o nome no catálogo SIAC não especificava estereoisômero.",
+        "classe": "identidade_molecular_de_referencia_conferida_chebi",
+        "status": "identidade_quimica_confirmada_chebi",
+        "nota": "Forma L de referência confirmada pelo registro ChEBI individual; CID cruzado com ProteinIQ. PubChem direto indisponível; forma do padrão dos ensaios não comprovada.",
         "casConferido": null,
         "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "estruturaEFormaConferidas": true,
+        "chebiID": "CHEBI:17895",
+        "formulaMolecular": "C9H11NO3",
+        "fonteConferencia": "https://www.ebi.ac.uk/chebi/CHEBI:17895",
+        "fonteCruzamentoCid": "https://proteiniq.io/datasets/biological-molecules",
+        "dataConferencia": "2026-11-24"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {
@@ -1290,12 +1381,17 @@
       "referenciaQuimica": {
         "pubchemCID": 6287,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/6287",
-        "classe": "cid_candidato_estereoisomero_L",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": "PubChem referente à forma L; o nome no catálogo SIAC não especificava estereoisômero.",
+        "classe": "identidade_molecular_de_referencia_conferida_chebi",
+        "status": "identidade_quimica_confirmada_chebi",
+        "nota": "Forma L de referência confirmada pelo registro ChEBI individual; CID cruzado com ProteinIQ. PubChem direto indisponível; forma do padrão dos ensaios não comprovada.",
         "casConferido": null,
         "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "estruturaEFormaConferidas": true,
+        "chebiID": "CHEBI:16414",
+        "formulaMolecular": "C5H11NO2",
+        "fonteConferencia": "https://www.ebi.ac.uk/chebi/CHEBI:16414",
+        "fonteCruzamentoCid": "https://proteiniq.io/datasets/biological-molecules",
+        "dataConferencia": "2026-11-24"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {

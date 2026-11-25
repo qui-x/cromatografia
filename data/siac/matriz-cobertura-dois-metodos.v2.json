@@ -26,10 +26,14 @@
     "protocolos": 77,
     "liberadosParaSimulacaoReal": 0,
     "metodosHptlcComFontePrimariaHomologada": 12,
-    "identidadesQuimicasConferidas": 21,
+    "identidadesQuimicasConferidas": 40,
     "metodosCcdComFontePrimariaHomologada": 2,
     "aminoacidosComTresProtocolosPrimariosConferidos": 20,
-    "aminoacidosComCorRevelacaoDocumentada": 20
+    "aminoacidosComCorRevelacaoDocumentada": 20,
+    "comReferenciaDidaticaValidada": 31,
+    "somenteReferenciaDidatica": 20,
+    "aminoacidosComIdentidadeDeReferenciaConferida": 20,
+    "aminoacidosComReferenciaDidaticaValidada": 20
   },
   "candidatos": [
     {
@@ -1210,7 +1214,8 @@
         "habilitarCenaQuantitativa": false
       },
       "disponibilidadeSimulacaoReal": false,
-      "condicaoHomologacao": "Rf individual contextual CCD/HPTLC; sem calibração de cena"
+      "condicaoHomologacao": "Rf individual contextual CCD/HPTLC; sem calibração de cena",
+      "referenciaDidaticaValidada": true
     },
     {
       "id": "sunset_yellow_fcf",
@@ -2190,7 +2195,9 @@
         ],
         "quantificacaoHomologada": false,
         "habilitarCenaQuantitativa": false
-      }
+      },
+      "referenciaDidaticaValidada": false,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "allura_red_ac",
@@ -2259,7 +2266,9 @@
       "pendencias": [
         "segundo_metodo_documentado",
         "metodos_e_condicoes_a_homologar"
-      ]
+      ],
+      "referenciaDidaticaValidada": false,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "brilliant_blue_fcf",
@@ -3259,7 +3268,8 @@
         "habilitarCenaQuantitativa": false
       },
       "disponibilidadeSimulacaoReal": false,
-      "condicaoHomologacao": "Rf individual contextual CCD/HPTLC; sem calibração de cena"
+      "condicaoHomologacao": "Rf individual contextual CCD/HPTLC; sem calibração de cena",
+      "referenciaDidaticaValidada": true
     },
     {
       "id": "indigotine",
@@ -3378,7 +3388,9 @@
       "homologacaoCompleta": false,
       "pendencias": [
         "identidade_primaria_e_condicoes_a_homologar"
-      ]
+      ],
+      "referenciaDidaticaValidada": false,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "erythrosine",
@@ -3873,7 +3885,9 @@
       "homologacaoCompleta": false,
       "pendencias": [
         "metodos_e_condicoes_a_homologar"
-      ]
+      ],
+      "referenciaDidaticaValidada": false,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "fast_green_fcf",
@@ -3947,7 +3961,9 @@
       "pendencias": [
         "segundo_metodo_documentado",
         "metodos_e_condicoes_a_homologar"
-      ]
+      ],
+      "referenciaDidaticaValidada": false,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "ponceau_4r",
@@ -5119,7 +5135,8 @@
         "habilitarCenaQuantitativa": false
       },
       "disponibilidadeSimulacaoReal": false,
-      "condicaoHomologacao": "Rf individual contextual CCD/HPTLC; sem calibração de cena"
+      "condicaoHomologacao": "Rf individual contextual CCD/HPTLC; sem calibração de cena",
+      "referenciaDidaticaValidada": true
     },
     {
       "id": "amaranth",
@@ -5517,7 +5534,9 @@
       "homologacaoCompleta": false,
       "pendencias": [
         "metodos_e_condicoes_a_homologar"
-      ]
+      ],
+      "referenciaDidaticaValidada": false,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "patent_blue_v",
@@ -5637,7 +5656,9 @@
       "homologacaoCompleta": false,
       "pendencias": [
         "identidade_primaria_e_condicoes_a_homologar"
-      ]
+      ],
+      "referenciaDidaticaValidada": false,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "quinoline_yellow",
@@ -5655,7 +5676,9 @@
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
-      ]
+      ],
+      "referenciaDidaticaValidada": false,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "chlorophyll_a",
@@ -5775,7 +5798,9 @@
       "homologacaoCompleta": false,
       "pendencias": [
         "identidade_primaria_e_condicoes_a_homologar"
-      ]
+      ],
+      "referenciaDidaticaValidada": false,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "chlorophyll_b",
@@ -5895,7 +5920,9 @@
       "homologacaoCompleta": false,
       "pendencias": [
         "identidade_primaria_e_condicoes_a_homologar"
-      ]
+      ],
+      "referenciaDidaticaValidada": false,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "pheophytin_a",
@@ -6015,7 +6042,9 @@
       "homologacaoCompleta": false,
       "pendencias": [
         "identidade_primaria_e_condicoes_a_homologar"
-      ]
+      ],
+      "referenciaDidaticaValidada": false,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "pheophytin_b",
@@ -6136,7 +6165,9 @@
       "homologacaoCompleta": false,
       "pendencias": [
         "identidade_primaria_e_condicoes_a_homologar"
-      ]
+      ],
+      "referenciaDidaticaValidada": false,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "beta_carotene",
@@ -6337,7 +6368,9 @@
       "pendencias": [
         "identidade_primaria_a_conferir",
         "metodos_e_condicoes_a_homologar"
-      ]
+      ],
+      "referenciaDidaticaValidada": false,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "alpha_carotene",
@@ -6355,7 +6388,9 @@
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
-      ]
+      ],
+      "referenciaDidaticaValidada": false,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "lutein",
@@ -6556,7 +6591,9 @@
       "pendencias": [
         "identidade_primaria_a_conferir",
         "metodos_e_condicoes_a_homologar"
-      ]
+      ],
+      "referenciaDidaticaValidada": false,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "zeaxanthin",
@@ -6634,7 +6671,9 @@
         "metodo_2_documentado",
         "solventes_contrastantes",
         "metodos_e_condicoes_a_homologar"
-      ]
+      ],
+      "referenciaDidaticaValidada": false,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "lycopene",
@@ -6652,7 +6691,9 @@
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
-      ]
+      ],
+      "referenciaDidaticaValidada": false,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "violaxanthin",
@@ -6670,7 +6711,9 @@
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
-      ]
+      ],
+      "referenciaDidaticaValidada": false,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "neoxanthin",
@@ -6688,7 +6731,9 @@
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
-      ]
+      ],
+      "referenciaDidaticaValidada": false,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "beta_cryptoxanthin",
@@ -6766,7 +6811,9 @@
         "metodo_2_documentado",
         "solventes_contrastantes",
         "metodos_e_condicoes_a_homologar"
-      ]
+      ],
+      "referenciaDidaticaValidada": false,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "cyanidin_3_glucoside",
@@ -6784,7 +6831,9 @@
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
-      ]
+      ],
+      "referenciaDidaticaValidada": false,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "delphinidin_3_glucoside",
@@ -6802,7 +6851,9 @@
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
-      ]
+      ],
+      "referenciaDidaticaValidada": false,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "quercetin",
@@ -7491,7 +7542,8 @@
       "homologacaoCompleta": true,
       "pendencias": [],
       "disponibilidadeSimulacaoReal": false,
-      "condicaoHomologacao": "Dois métodos HPTLC independentes; referência experimental contextual"
+      "condicaoHomologacao": "Dois métodos HPTLC independentes; referência experimental contextual",
+      "referenciaDidaticaValidada": true
     },
     {
       "id": "rutin",
@@ -7840,7 +7892,8 @@
       "homologacaoCompleta": true,
       "pendencias": [],
       "disponibilidadeSimulacaoReal": false,
-      "condicaoHomologacao": "Dois métodos HPTLC independentes; referência experimental contextual"
+      "condicaoHomologacao": "Dois métodos HPTLC independentes; referência experimental contextual",
+      "referenciaDidaticaValidada": true
     },
     {
       "id": "curcumin",
@@ -8248,7 +8301,8 @@
       "homologacaoCompleta": true,
       "pendencias": [],
       "disponibilidadeSimulacaoReal": false,
-      "condicaoHomologacao": "Dois métodos HPTLC de referência, sem calibração de cena."
+      "condicaoHomologacao": "Dois métodos HPTLC de referência, sem calibração de cena.",
+      "referenciaDidaticaValidada": true
     },
     {
       "id": "capsanthin",
@@ -8266,7 +8320,9 @@
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
-      ]
+      ],
+      "referenciaDidaticaValidada": false,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "bixin",
@@ -8284,7 +8340,9 @@
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
-      ]
+      ],
+      "referenciaDidaticaValidada": false,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "norbixin",
@@ -8302,13 +8360,15 @@
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
-      ]
+      ],
+      "referenciaDidaticaValidada": false,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "alanine",
       "nome": "Alanina",
       "grupo": "aminoacidos",
-      "identidadeConfirmada": false,
+      "identidadeConfirmada": true,
       "metodosComRetencaoIndividual": 7,
       "metodos": [
         {
@@ -8389,11 +8449,20 @@
                 "fonte": "ukil2013",
                 "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
                 "incerteza": null
-              }
+              },
+              "referenciaDidaticaConferida": true
             }
           ],
           "rfIntervalo": [],
-          "estado": "referencia_primaria_nao_homologada"
+          "estado": "referencia_primaria_nao_homologada",
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+            "dataConferencia": "2026-11-24",
+            "escopo": "comparar Rf de padrões nominais sob condições publicadas",
+            "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+            "habilitarCenaQuantitativa": false
+          }
         },
         {
           "protocoloId": "tlc_aminoacids_protechex_etanol96_water_7_3",
@@ -8549,7 +8618,8 @@
               "valor": 0.277,
               "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
               "homologado": false,
-              "fontePrimariaConferida": true
+              "fontePrimariaConferida": true,
+              "referenciaDidaticaConferida": true
             }
           ],
           "rfIntervalo": [],
@@ -8570,6 +8640,14 @@
             "parametrosRetencaoConferidos": true,
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
+          },
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://doi.org/10.1556/1006.2016.29.2.9",
+            "dataConferencia": "2026-11-24",
+            "escopo": "comparar Rf de padrões nominais sob condições publicadas",
+            "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+            "habilitarCenaQuantitativa": false
           }
         },
         {
@@ -8798,11 +8876,11 @@
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_e_forma_quimica_a_conferir",
-        "precisao_e_condicoes_experimentais_a_validar"
+        "precisao_e_condicoes_experimentais_a_validar",
+        "forma_e_pureza_dos_padroes_experimentais_a_conferir"
       ],
       "auditoriaRetencao": {
-        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "estado": "identidade_de_referencia_e_dois_sistemas_contextuais_conferidos",
         "metodos": [
           "tlc_aminoacids_ukil_2013_propanol_water_70_30",
           "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
@@ -8815,14 +8893,27 @@
         ],
         "homologacaoMetodoQuantitativo": false,
         "homologacaoCena": false,
-        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
-      }
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas.",
+        "estereoquimicaPadraoConferida": false,
+        "referenciaDidaticaConferida": true
+      },
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+        ],
+        "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+        "habilitarCenaQuantitativa": false
+      },
+      "referenciaDidaticaValidada": true,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "arginine",
       "nome": "Arginina",
       "grupo": "aminoacidos",
-      "identidadeConfirmada": false,
+      "identidadeConfirmada": true,
       "metodosComRetencaoIndividual": 4,
       "metodos": [
         {
@@ -8862,11 +8953,20 @@
                 "fonte": "ukil2013",
                 "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
                 "incerteza": null
-              }
+              },
+              "referenciaDidaticaConferida": true
             }
           ],
           "rfIntervalo": [],
-          "estado": "referencia_primaria_nao_homologada"
+          "estado": "referencia_primaria_nao_homologada",
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+            "dataConferencia": "2026-11-24",
+            "escopo": "comparar Rf de padrões nominais sob condições publicadas",
+            "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+            "habilitarCenaQuantitativa": false
+          }
         },
         {
           "protocoloId": "tlc_aminoacids_padiyar2024_butanol_acetic_water_4_1_1",
@@ -8945,7 +9045,8 @@
               "valor": 0.162,
               "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
               "homologado": false,
-              "fontePrimariaConferida": true
+              "fontePrimariaConferida": true,
+              "referenciaDidaticaConferida": true
             }
           ],
           "rfIntervalo": [],
@@ -8966,6 +9067,14 @@
             "parametrosRetencaoConferidos": true,
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
+          },
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://doi.org/10.1556/1006.2016.29.2.9",
+            "dataConferencia": "2026-11-24",
+            "escopo": "comparar Rf de padrões nominais sob condições publicadas",
+            "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+            "habilitarCenaQuantitativa": false
           }
         },
         {
@@ -9075,11 +9184,11 @@
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_e_forma_quimica_a_conferir",
-        "precisao_e_condicoes_experimentais_a_validar"
+        "precisao_e_condicoes_experimentais_a_validar",
+        "forma_e_pureza_dos_padroes_experimentais_a_conferir"
       ],
       "auditoriaRetencao": {
-        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "estado": "identidade_de_referencia_e_dois_sistemas_contextuais_conferidos",
         "metodos": [
           "tlc_aminoacids_ukil_2013_propanol_water_70_30",
           "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
@@ -9092,14 +9201,27 @@
         ],
         "homologacaoMetodoQuantitativo": false,
         "homologacaoCena": false,
-        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
-      }
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas.",
+        "estereoquimicaPadraoConferida": false,
+        "referenciaDidaticaConferida": true
+      },
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+        ],
+        "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+        "habilitarCenaQuantitativa": false
+      },
+      "referenciaDidaticaValidada": true,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "asparagine",
       "nome": "Asparagina",
       "grupo": "aminoacidos",
-      "identidadeConfirmada": false,
+      "identidadeConfirmada": true,
       "metodosComRetencaoIndividual": 3,
       "metodos": [
         {
@@ -9139,11 +9261,20 @@
                 "fonte": "ukil2013",
                 "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
                 "incerteza": null
-              }
+              },
+              "referenciaDidaticaConferida": true
             }
           ],
           "rfIntervalo": [],
-          "estado": "referencia_primaria_nao_homologada"
+          "estado": "referencia_primaria_nao_homologada",
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+            "dataConferencia": "2026-11-24",
+            "escopo": "comparar Rf de padrões nominais sob condições publicadas",
+            "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+            "habilitarCenaQuantitativa": false
+          }
         },
         {
           "protocoloId": "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
@@ -9181,7 +9312,8 @@
               "valor": 0.215,
               "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
               "homologado": false,
-              "fontePrimariaConferida": true
+              "fontePrimariaConferida": true,
+              "referenciaDidaticaConferida": true
             }
           ],
           "rfIntervalo": [],
@@ -9202,6 +9334,14 @@
             "parametrosRetencaoConferidos": true,
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
+          },
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://doi.org/10.1556/1006.2016.29.2.9",
+            "dataConferencia": "2026-11-24",
+            "escopo": "comparar Rf de padrões nominais sob condições publicadas",
+            "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+            "habilitarCenaQuantitativa": false
           }
         },
         {
@@ -9296,11 +9436,11 @@
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_e_forma_quimica_a_conferir",
-        "precisao_e_condicoes_experimentais_a_validar"
+        "precisao_e_condicoes_experimentais_a_validar",
+        "forma_e_pureza_dos_padroes_experimentais_a_conferir"
       ],
       "auditoriaRetencao": {
-        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "estado": "identidade_de_referencia_e_dois_sistemas_contextuais_conferidos",
         "metodos": [
           "tlc_aminoacids_ukil_2013_propanol_water_70_30",
           "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
@@ -9313,14 +9453,27 @@
         ],
         "homologacaoMetodoQuantitativo": false,
         "homologacaoCena": false,
-        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
-      }
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas.",
+        "estereoquimicaPadraoConferida": false,
+        "referenciaDidaticaConferida": true
+      },
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+        ],
+        "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+        "habilitarCenaQuantitativa": false
+      },
+      "referenciaDidaticaValidada": true,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "aspartic_acid",
       "nome": "Ácido aspártico",
       "grupo": "aminoacidos",
-      "identidadeConfirmada": false,
+      "identidadeConfirmada": true,
       "metodosComRetencaoIndividual": 5,
       "metodos": [
         {
@@ -9360,11 +9513,20 @@
                 "fonte": "ukil2013",
                 "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
                 "incerteza": null
-              }
+              },
+              "referenciaDidaticaConferida": true
             }
           ],
           "rfIntervalo": [],
-          "estado": "referencia_primaria_nao_homologada"
+          "estado": "referencia_primaria_nao_homologada",
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+            "dataConferencia": "2026-11-24",
+            "escopo": "comparar Rf de padrões nominais sob condições publicadas",
+            "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+            "habilitarCenaQuantitativa": false
+          }
         },
         {
           "protocoloId": "tlc_aminoacids_protechex_etanol96_water_7_3",
@@ -9479,7 +9641,8 @@
               "valor": 0.24,
               "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
               "homologado": false,
-              "fontePrimariaConferida": true
+              "fontePrimariaConferida": true,
+              "referenciaDidaticaConferida": true
             }
           ],
           "rfIntervalo": [],
@@ -9500,6 +9663,14 @@
             "parametrosRetencaoConferidos": true,
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
+          },
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://doi.org/10.1556/1006.2016.29.2.9",
+            "dataConferencia": "2026-11-24",
+            "escopo": "comparar Rf de padrões nominais sob condições publicadas",
+            "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+            "habilitarCenaQuantitativa": false
           }
         },
         {
@@ -9668,11 +9839,11 @@
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_e_forma_quimica_a_conferir",
-        "precisao_e_condicoes_experimentais_a_validar"
+        "precisao_e_condicoes_experimentais_a_validar",
+        "forma_e_pureza_dos_padroes_experimentais_a_conferir"
       ],
       "auditoriaRetencao": {
-        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "estado": "identidade_de_referencia_e_dois_sistemas_contextuais_conferidos",
         "metodos": [
           "tlc_aminoacids_ukil_2013_propanol_water_70_30",
           "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
@@ -9685,14 +9856,27 @@
         ],
         "homologacaoMetodoQuantitativo": false,
         "homologacaoCena": false,
-        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
-      }
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas.",
+        "estereoquimicaPadraoConferida": false,
+        "referenciaDidaticaConferida": true
+      },
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+        ],
+        "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+        "habilitarCenaQuantitativa": false
+      },
+      "referenciaDidaticaValidada": true,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "cysteine",
       "nome": "Cisteína",
       "grupo": "aminoacidos",
-      "identidadeConfirmada": false,
+      "identidadeConfirmada": true,
       "metodosComRetencaoIndividual": 3,
       "metodos": [
         {
@@ -9732,11 +9916,20 @@
                 "fonte": "ukil2013",
                 "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
                 "incerteza": null
-              }
+              },
+              "referenciaDidaticaConferida": true
             }
           ],
           "rfIntervalo": [],
-          "estado": "referencia_primaria_nao_homologada"
+          "estado": "referencia_primaria_nao_homologada",
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+            "dataConferencia": "2026-11-24",
+            "escopo": "comparar Rf de padrões nominais sob condições publicadas",
+            "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+            "habilitarCenaQuantitativa": false
+          }
         },
         {
           "protocoloId": "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
@@ -9774,7 +9967,8 @@
               "valor": 0.362,
               "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
               "homologado": false,
-              "fontePrimariaConferida": true
+              "fontePrimariaConferida": true,
+              "referenciaDidaticaConferida": true
             }
           ],
           "rfIntervalo": [],
@@ -9795,6 +9989,14 @@
             "parametrosRetencaoConferidos": true,
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
+          },
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://doi.org/10.1556/1006.2016.29.2.9",
+            "dataConferencia": "2026-11-24",
+            "escopo": "comparar Rf de padrões nominais sob condições publicadas",
+            "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+            "habilitarCenaQuantitativa": false
           }
         },
         {
@@ -9889,11 +10091,11 @@
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_e_forma_quimica_a_conferir",
-        "precisao_e_condicoes_experimentais_a_validar"
+        "precisao_e_condicoes_experimentais_a_validar",
+        "forma_e_pureza_dos_padroes_experimentais_a_conferir"
       ],
       "auditoriaRetencao": {
-        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "estado": "identidade_de_referencia_e_dois_sistemas_contextuais_conferidos",
         "metodos": [
           "tlc_aminoacids_ukil_2013_propanol_water_70_30",
           "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
@@ -9906,14 +10108,27 @@
         ],
         "homologacaoMetodoQuantitativo": false,
         "homologacaoCena": false,
-        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
-      }
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas.",
+        "estereoquimicaPadraoConferida": false,
+        "referenciaDidaticaConferida": true
+      },
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+        ],
+        "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+        "habilitarCenaQuantitativa": false
+      },
+      "referenciaDidaticaValidada": true,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "glutamic_acid",
       "nome": "Ácido glutâmico",
       "grupo": "aminoacidos",
-      "identidadeConfirmada": false,
+      "identidadeConfirmada": true,
       "metodosComRetencaoIndividual": 6,
       "metodos": [
         {
@@ -9994,11 +10209,20 @@
                 "fonte": "ukil2013",
                 "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
                 "incerteza": null
-              }
+              },
+              "referenciaDidaticaConferida": true
             }
           ],
           "rfIntervalo": [],
-          "estado": "referencia_primaria_nao_homologada"
+          "estado": "referencia_primaria_nao_homologada",
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+            "dataConferencia": "2026-11-24",
+            "escopo": "comparar Rf de padrões nominais sob condições publicadas",
+            "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+            "habilitarCenaQuantitativa": false
+          }
         },
         {
           "protocoloId": "tlc_aminoacids_protechex_etanol96_water_7_3",
@@ -10113,7 +10337,8 @@
               "valor": 0.277,
               "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
               "homologado": false,
-              "fontePrimariaConferida": true
+              "fontePrimariaConferida": true,
+              "referenciaDidaticaConferida": true
             }
           ],
           "rfIntervalo": [],
@@ -10134,6 +10359,14 @@
             "parametrosRetencaoConferidos": true,
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
+          },
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://doi.org/10.1556/1006.2016.29.2.9",
+            "dataConferencia": "2026-11-24",
+            "escopo": "comparar Rf de padrões nominais sob condições publicadas",
+            "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+            "habilitarCenaQuantitativa": false
           }
         },
         {
@@ -10332,11 +10565,11 @@
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_e_forma_quimica_a_conferir",
-        "precisao_e_condicoes_experimentais_a_validar"
+        "precisao_e_condicoes_experimentais_a_validar",
+        "forma_e_pureza_dos_padroes_experimentais_a_conferir"
       ],
       "auditoriaRetencao": {
-        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "estado": "identidade_de_referencia_e_dois_sistemas_contextuais_conferidos",
         "metodos": [
           "tlc_aminoacids_ukil_2013_propanol_water_70_30",
           "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
@@ -10349,14 +10582,27 @@
         ],
         "homologacaoMetodoQuantitativo": false,
         "homologacaoCena": false,
-        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
-      }
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas.",
+        "estereoquimicaPadraoConferida": false,
+        "referenciaDidaticaConferida": true
+      },
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+        ],
+        "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+        "habilitarCenaQuantitativa": false
+      },
+      "referenciaDidaticaValidada": true,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "glutamine",
       "nome": "Glutamina",
       "grupo": "aminoacidos",
-      "identidadeConfirmada": false,
+      "identidadeConfirmada": true,
       "metodosComRetencaoIndividual": 4,
       "metodos": [
         {
@@ -10396,11 +10642,20 @@
                 "fonte": "ukil2013",
                 "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
                 "incerteza": null
-              }
+              },
+              "referenciaDidaticaConferida": true
             }
           ],
           "rfIntervalo": [],
-          "estado": "referencia_primaria_nao_homologada"
+          "estado": "referencia_primaria_nao_homologada",
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+            "dataConferencia": "2026-11-24",
+            "escopo": "comparar Rf de padrões nominais sob condições publicadas",
+            "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+            "habilitarCenaQuantitativa": false
+          }
         },
         {
           "protocoloId": "tlc_aminoacids_padiyar2024_butanol_acetic_water_4_1_1",
@@ -10479,7 +10734,8 @@
               "valor": 0.223,
               "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
               "homologado": false,
-              "fontePrimariaConferida": true
+              "fontePrimariaConferida": true,
+              "referenciaDidaticaConferida": true
             }
           ],
           "rfIntervalo": [],
@@ -10500,6 +10756,14 @@
             "parametrosRetencaoConferidos": true,
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
+          },
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://doi.org/10.1556/1006.2016.29.2.9",
+            "dataConferencia": "2026-11-24",
+            "escopo": "comparar Rf de padrões nominais sob condições publicadas",
+            "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+            "habilitarCenaQuantitativa": false
           }
         },
         {
@@ -10609,11 +10873,11 @@
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_e_forma_quimica_a_conferir",
-        "precisao_e_condicoes_experimentais_a_validar"
+        "precisao_e_condicoes_experimentais_a_validar",
+        "forma_e_pureza_dos_padroes_experimentais_a_conferir"
       ],
       "auditoriaRetencao": {
-        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "estado": "identidade_de_referencia_e_dois_sistemas_contextuais_conferidos",
         "metodos": [
           "tlc_aminoacids_ukil_2013_propanol_water_70_30",
           "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
@@ -10626,8 +10890,21 @@
         ],
         "homologacaoMetodoQuantitativo": false,
         "homologacaoCena": false,
-        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
-      }
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas.",
+        "estereoquimicaPadraoConferida": false,
+        "referenciaDidaticaConferida": true
+      },
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+        ],
+        "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+        "habilitarCenaQuantitativa": false
+      },
+      "referenciaDidaticaValidada": true,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "glycine",
@@ -10714,11 +10991,20 @@
                 "fonte": "ukil2013",
                 "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
                 "incerteza": null
-              }
+              },
+              "referenciaDidaticaConferida": true
             }
           ],
           "rfIntervalo": [],
-          "estado": "referencia_primaria_nao_homologada"
+          "estado": "referencia_primaria_nao_homologada",
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+            "dataConferencia": "2026-11-24",
+            "escopo": "comparar Rf de padrões nominais sob condições publicadas",
+            "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+            "habilitarCenaQuantitativa": false
+          }
         },
         {
           "protocoloId": "tlc_aminoacids_protechex_etanol96_water_7_3",
@@ -10833,7 +11119,8 @@
               "valor": 0.246,
               "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
               "homologado": false,
-              "fontePrimariaConferida": true
+              "fontePrimariaConferida": true,
+              "referenciaDidaticaConferida": true
             }
           ],
           "rfIntervalo": [],
@@ -10854,6 +11141,14 @@
             "parametrosRetencaoConferidos": true,
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
+          },
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://doi.org/10.1556/1006.2016.29.2.9",
+            "dataConferencia": "2026-11-24",
+            "escopo": "comparar Rf de padrões nominais sob condições publicadas",
+            "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+            "habilitarCenaQuantitativa": false
           }
         },
         {
@@ -11055,7 +11350,7 @@
         "precisao_e_condicoes_experimentais_a_validar"
       ],
       "auditoriaRetencao": {
-        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "estado": "identidade_de_referencia_e_dois_sistemas_contextuais_conferidos",
         "metodos": [
           "tlc_aminoacids_ukil_2013_propanol_water_70_30",
           "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
@@ -11068,14 +11363,27 @@
         ],
         "homologacaoMetodoQuantitativo": false,
         "homologacaoCena": false,
-        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
-      }
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas.",
+        "estereoquimicaPadraoConferida": null,
+        "referenciaDidaticaConferida": true
+      },
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+        ],
+        "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+        "habilitarCenaQuantitativa": false
+      },
+      "referenciaDidaticaValidada": true,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "histidine",
       "nome": "Histidina",
       "grupo": "aminoacidos",
-      "identidadeConfirmada": false,
+      "identidadeConfirmada": true,
       "metodosComRetencaoIndividual": 6,
       "metodos": [
         {
@@ -11115,11 +11423,20 @@
                 "fonte": "ukil2013",
                 "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
                 "incerteza": null
-              }
+              },
+              "referenciaDidaticaConferida": true
             }
           ],
           "rfIntervalo": [],
-          "estado": "referencia_primaria_nao_homologada"
+          "estado": "referencia_primaria_nao_homologada",
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+            "dataConferencia": "2026-11-24",
+            "escopo": "comparar Rf de padrões nominais sob condições publicadas",
+            "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+            "habilitarCenaQuantitativa": false
+          }
         },
         {
           "protocoloId": "tlc_aminoacids_protechex_etanol96_water_7_3",
@@ -11275,7 +11592,8 @@
               "valor": 0.162,
               "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
               "homologado": false,
-              "fontePrimariaConferida": true
+              "fontePrimariaConferida": true,
+              "referenciaDidaticaConferida": true
             }
           ],
           "rfIntervalo": [],
@@ -11296,6 +11614,14 @@
             "parametrosRetencaoConferidos": true,
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
+          },
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://doi.org/10.1556/1006.2016.29.2.9",
+            "dataConferencia": "2026-11-24",
+            "escopo": "comparar Rf de padrões nominais sob condições publicadas",
+            "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+            "habilitarCenaQuantitativa": false
           }
         },
         {
@@ -11494,11 +11820,11 @@
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_e_forma_quimica_a_conferir",
-        "precisao_e_condicoes_experimentais_a_validar"
+        "precisao_e_condicoes_experimentais_a_validar",
+        "forma_e_pureza_dos_padroes_experimentais_a_conferir"
       ],
       "auditoriaRetencao": {
-        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "estado": "identidade_de_referencia_e_dois_sistemas_contextuais_conferidos",
         "metodos": [
           "tlc_aminoacids_ukil_2013_propanol_water_70_30",
           "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
@@ -11511,14 +11837,27 @@
         ],
         "homologacaoMetodoQuantitativo": false,
         "homologacaoCena": false,
-        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
-      }
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas.",
+        "estereoquimicaPadraoConferida": false,
+        "referenciaDidaticaConferida": true
+      },
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+        ],
+        "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+        "habilitarCenaQuantitativa": false
+      },
+      "referenciaDidaticaValidada": true,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "isoleucine",
       "nome": "Isoleucina",
       "grupo": "aminoacidos",
-      "identidadeConfirmada": false,
+      "identidadeConfirmada": true,
       "metodosComRetencaoIndividual": 5,
       "metodos": [
         {
@@ -11558,11 +11897,20 @@
                 "fonte": "ukil2013",
                 "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
                 "incerteza": null
-              }
+              },
+              "referenciaDidaticaConferida": true
             }
           ],
           "rfIntervalo": [],
-          "estado": "referencia_primaria_nao_homologada"
+          "estado": "referencia_primaria_nao_homologada",
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+            "dataConferencia": "2026-11-24",
+            "escopo": "comparar Rf de padrões nominais sob condições publicadas",
+            "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+            "habilitarCenaQuantitativa": false
+          }
         },
         {
           "protocoloId": "tlc_aminoacids_protechex_etanol96_water_7_3",
@@ -11677,7 +12025,8 @@
               "valor": 0.515,
               "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
               "homologado": false,
-              "fontePrimariaConferida": true
+              "fontePrimariaConferida": true,
+              "referenciaDidaticaConferida": true
             }
           ],
           "rfIntervalo": [],
@@ -11698,6 +12047,14 @@
             "parametrosRetencaoConferidos": true,
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
+          },
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://doi.org/10.1556/1006.2016.29.2.9",
+            "dataConferencia": "2026-11-24",
+            "escopo": "comparar Rf de padrões nominais sob condições publicadas",
+            "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+            "habilitarCenaQuantitativa": false
           }
         },
         {
@@ -11866,11 +12223,11 @@
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_e_forma_quimica_a_conferir",
-        "precisao_e_condicoes_experimentais_a_validar"
+        "precisao_e_condicoes_experimentais_a_validar",
+        "forma_e_pureza_dos_padroes_experimentais_a_conferir"
       ],
       "auditoriaRetencao": {
-        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "estado": "identidade_de_referencia_e_dois_sistemas_contextuais_conferidos",
         "metodos": [
           "tlc_aminoacids_ukil_2013_propanol_water_70_30",
           "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
@@ -11883,14 +12240,27 @@
         ],
         "homologacaoMetodoQuantitativo": false,
         "homologacaoCena": false,
-        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
-      }
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas.",
+        "estereoquimicaPadraoConferida": false,
+        "referenciaDidaticaConferida": true
+      },
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+        ],
+        "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+        "habilitarCenaQuantitativa": false
+      },
+      "referenciaDidaticaValidada": true,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "leucine",
       "nome": "Leucina",
       "grupo": "aminoacidos",
-      "identidadeConfirmada": false,
+      "identidadeConfirmada": true,
       "metodosComRetencaoIndividual": 6,
       "metodos": [
         {
@@ -11971,11 +12341,20 @@
                 "fonte": "ukil2013",
                 "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
                 "incerteza": null
-              }
+              },
+              "referenciaDidaticaConferida": true
             }
           ],
           "rfIntervalo": [],
-          "estado": "referencia_primaria_nao_homologada"
+          "estado": "referencia_primaria_nao_homologada",
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+            "dataConferencia": "2026-11-24",
+            "escopo": "comparar Rf de padrões nominais sob condições publicadas",
+            "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+            "habilitarCenaQuantitativa": false
+          }
         },
         {
           "protocoloId": "tlc_aminoacids_protechex_etanol96_water_7_3",
@@ -12090,7 +12469,8 @@
               "valor": 0.562,
               "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
               "homologado": false,
-              "fontePrimariaConferida": true
+              "fontePrimariaConferida": true,
+              "referenciaDidaticaConferida": true
             }
           ],
           "rfIntervalo": [],
@@ -12111,6 +12491,14 @@
             "parametrosRetencaoConferidos": true,
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
+          },
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://doi.org/10.1556/1006.2016.29.2.9",
+            "dataConferencia": "2026-11-24",
+            "escopo": "comparar Rf de padrões nominais sob condições publicadas",
+            "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+            "habilitarCenaQuantitativa": false
           }
         },
         {
@@ -12309,11 +12697,11 @@
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_e_forma_quimica_a_conferir",
-        "precisao_e_condicoes_experimentais_a_validar"
+        "precisao_e_condicoes_experimentais_a_validar",
+        "forma_e_pureza_dos_padroes_experimentais_a_conferir"
       ],
       "auditoriaRetencao": {
-        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "estado": "identidade_de_referencia_e_dois_sistemas_contextuais_conferidos",
         "metodos": [
           "tlc_aminoacids_ukil_2013_propanol_water_70_30",
           "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
@@ -12326,14 +12714,27 @@
         ],
         "homologacaoMetodoQuantitativo": false,
         "homologacaoCena": false,
-        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
-      }
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas.",
+        "estereoquimicaPadraoConferida": false,
+        "referenciaDidaticaConferida": true
+      },
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+        ],
+        "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+        "habilitarCenaQuantitativa": false
+      },
+      "referenciaDidaticaValidada": true,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "lysine",
       "nome": "Lisina",
       "grupo": "aminoacidos",
-      "identidadeConfirmada": false,
+      "identidadeConfirmada": true,
       "metodosComRetencaoIndividual": 5,
       "metodos": [
         {
@@ -12414,11 +12815,20 @@
                 "fonte": "ukil2013",
                 "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
                 "incerteza": null
-              }
+              },
+              "referenciaDidaticaConferida": true
             }
           ],
           "rfIntervalo": [],
-          "estado": "referencia_primaria_nao_homologada"
+          "estado": "referencia_primaria_nao_homologada",
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+            "dataConferencia": "2026-11-24",
+            "escopo": "comparar Rf de padrões nominais sob condições publicadas",
+            "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+            "habilitarCenaQuantitativa": false
+          }
         },
         {
           "protocoloId": "tlc_aminoacids_padiyar2024_butanol_acetic_water_4_1_1",
@@ -12497,7 +12907,8 @@
               "valor": 0.131,
               "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
               "homologado": false,
-              "fontePrimariaConferida": true
+              "fontePrimariaConferida": true,
+              "referenciaDidaticaConferida": true
             }
           ],
           "rfIntervalo": [],
@@ -12518,6 +12929,14 @@
             "parametrosRetencaoConferidos": true,
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
+          },
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://doi.org/10.1556/1006.2016.29.2.9",
+            "dataConferencia": "2026-11-24",
+            "escopo": "comparar Rf de padrões nominais sob condições publicadas",
+            "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+            "habilitarCenaQuantitativa": false
           }
         },
         {
@@ -12642,11 +13061,11 @@
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_e_forma_quimica_a_conferir",
-        "precisao_e_condicoes_experimentais_a_validar"
+        "precisao_e_condicoes_experimentais_a_validar",
+        "forma_e_pureza_dos_padroes_experimentais_a_conferir"
       ],
       "auditoriaRetencao": {
-        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "estado": "identidade_de_referencia_e_dois_sistemas_contextuais_conferidos",
         "metodos": [
           "tlc_aminoacids_ukil_2013_propanol_water_70_30",
           "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
@@ -12659,14 +13078,27 @@
         ],
         "homologacaoMetodoQuantitativo": false,
         "homologacaoCena": false,
-        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
-      }
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas.",
+        "estereoquimicaPadraoConferida": false,
+        "referenciaDidaticaConferida": true
+      },
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+        ],
+        "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+        "habilitarCenaQuantitativa": false
+      },
+      "referenciaDidaticaValidada": true,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "methionine",
       "nome": "Metionina",
       "grupo": "aminoacidos",
-      "identidadeConfirmada": false,
+      "identidadeConfirmada": true,
       "metodosComRetencaoIndividual": 6,
       "metodos": [
         {
@@ -12706,11 +13138,20 @@
                 "fonte": "ukil2013",
                 "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
                 "incerteza": null
-              }
+              },
+              "referenciaDidaticaConferida": true
             }
           ],
           "rfIntervalo": [],
-          "estado": "referencia_primaria_nao_homologada"
+          "estado": "referencia_primaria_nao_homologada",
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+            "dataConferencia": "2026-11-24",
+            "escopo": "comparar Rf de padrões nominais sob condições publicadas",
+            "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+            "habilitarCenaQuantitativa": false
+          }
         },
         {
           "protocoloId": "tlc_aminoacids_protechex_etanol96_water_7_3",
@@ -12866,7 +13307,8 @@
               "valor": 0.462,
               "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
               "homologado": false,
-              "fontePrimariaConferida": true
+              "fontePrimariaConferida": true,
+              "referenciaDidaticaConferida": true
             }
           ],
           "rfIntervalo": [],
@@ -12887,6 +13329,14 @@
             "parametrosRetencaoConferidos": true,
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
+          },
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://doi.org/10.1556/1006.2016.29.2.9",
+            "dataConferencia": "2026-11-24",
+            "escopo": "comparar Rf de padrões nominais sob condições publicadas",
+            "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+            "habilitarCenaQuantitativa": false
           }
         },
         {
@@ -13085,11 +13535,11 @@
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_e_forma_quimica_a_conferir",
-        "precisao_e_condicoes_experimentais_a_validar"
+        "precisao_e_condicoes_experimentais_a_validar",
+        "forma_e_pureza_dos_padroes_experimentais_a_conferir"
       ],
       "auditoriaRetencao": {
-        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "estado": "identidade_de_referencia_e_dois_sistemas_contextuais_conferidos",
         "metodos": [
           "tlc_aminoacids_ukil_2013_propanol_water_70_30",
           "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
@@ -13102,14 +13552,27 @@
         ],
         "homologacaoMetodoQuantitativo": false,
         "homologacaoCena": false,
-        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
-      }
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas.",
+        "estereoquimicaPadraoConferida": false,
+        "referenciaDidaticaConferida": true
+      },
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+        ],
+        "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+        "habilitarCenaQuantitativa": false
+      },
+      "referenciaDidaticaValidada": true,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "phenylalanine",
       "nome": "Fenilalanina",
       "grupo": "aminoacidos",
-      "identidadeConfirmada": false,
+      "identidadeConfirmada": true,
       "metodosComRetencaoIndividual": 5,
       "metodos": [
         {
@@ -13149,11 +13612,20 @@
                 "fonte": "ukil2013",
                 "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
                 "incerteza": null
-              }
+              },
+              "referenciaDidaticaConferida": true
             }
           ],
           "rfIntervalo": [],
-          "estado": "referencia_primaria_nao_homologada"
+          "estado": "referencia_primaria_nao_homologada",
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+            "dataConferencia": "2026-11-24",
+            "escopo": "comparar Rf de padrões nominais sob condições publicadas",
+            "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+            "habilitarCenaQuantitativa": false
+          }
         },
         {
           "protocoloId": "tlc_aminoacids_protechex_etanol96_water_7_3",
@@ -13268,7 +13740,8 @@
               "valor": 0.615,
               "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
               "homologado": false,
-              "fontePrimariaConferida": true
+              "fontePrimariaConferida": true,
+              "referenciaDidaticaConferida": true
             }
           ],
           "rfIntervalo": [],
@@ -13289,6 +13762,14 @@
             "parametrosRetencaoConferidos": true,
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
+          },
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://doi.org/10.1556/1006.2016.29.2.9",
+            "dataConferencia": "2026-11-24",
+            "escopo": "comparar Rf de padrões nominais sob condições publicadas",
+            "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+            "habilitarCenaQuantitativa": false
           }
         },
         {
@@ -13457,11 +13938,11 @@
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_e_forma_quimica_a_conferir",
-        "precisao_e_condicoes_experimentais_a_validar"
+        "precisao_e_condicoes_experimentais_a_validar",
+        "forma_e_pureza_dos_padroes_experimentais_a_conferir"
       ],
       "auditoriaRetencao": {
-        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "estado": "identidade_de_referencia_e_dois_sistemas_contextuais_conferidos",
         "metodos": [
           "tlc_aminoacids_ukil_2013_propanol_water_70_30",
           "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
@@ -13474,14 +13955,27 @@
         ],
         "homologacaoMetodoQuantitativo": false,
         "homologacaoCena": false,
-        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
-      }
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas.",
+        "estereoquimicaPadraoConferida": false,
+        "referenciaDidaticaConferida": true
+      },
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+        ],
+        "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+        "habilitarCenaQuantitativa": false
+      },
+      "referenciaDidaticaValidada": true,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "proline",
       "nome": "Prolina",
       "grupo": "aminoacidos",
-      "identidadeConfirmada": false,
+      "identidadeConfirmada": true,
       "metodosComRetencaoIndividual": 5,
       "metodos": [
         {
@@ -13521,11 +14015,20 @@
                 "fonte": "ukil2013",
                 "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
                 "incerteza": null
-              }
+              },
+              "referenciaDidaticaConferida": true
             }
           ],
           "rfIntervalo": [],
-          "estado": "referencia_primaria_nao_homologada"
+          "estado": "referencia_primaria_nao_homologada",
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+            "dataConferencia": "2026-11-24",
+            "escopo": "comparar Rf de padrões nominais sob condições publicadas",
+            "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+            "habilitarCenaQuantitativa": false
+          }
         },
         {
           "protocoloId": "tlc_aminoacids_protechex_etanol96_water_7_3",
@@ -13640,7 +14143,8 @@
               "valor": 0.262,
               "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
               "homologado": false,
-              "fontePrimariaConferida": true
+              "fontePrimariaConferida": true,
+              "referenciaDidaticaConferida": true
             }
           ],
           "rfIntervalo": [],
@@ -13661,6 +14165,14 @@
             "parametrosRetencaoConferidos": true,
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
+          },
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://doi.org/10.1556/1006.2016.29.2.9",
+            "dataConferencia": "2026-11-24",
+            "escopo": "comparar Rf de padrões nominais sob condições publicadas",
+            "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+            "habilitarCenaQuantitativa": false
           }
         },
         {
@@ -13829,11 +14341,11 @@
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_e_forma_quimica_a_conferir",
-        "precisao_e_condicoes_experimentais_a_validar"
+        "precisao_e_condicoes_experimentais_a_validar",
+        "forma_e_pureza_dos_padroes_experimentais_a_conferir"
       ],
       "auditoriaRetencao": {
-        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "estado": "identidade_de_referencia_e_dois_sistemas_contextuais_conferidos",
         "metodos": [
           "tlc_aminoacids_ukil_2013_propanol_water_70_30",
           "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
@@ -13846,14 +14358,27 @@
         ],
         "homologacaoMetodoQuantitativo": false,
         "homologacaoCena": false,
-        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
-      }
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas.",
+        "estereoquimicaPadraoConferida": false,
+        "referenciaDidaticaConferida": true
+      },
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+        ],
+        "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+        "habilitarCenaQuantitativa": false
+      },
+      "referenciaDidaticaValidada": true,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "serine",
       "nome": "Serina",
       "grupo": "aminoacidos",
-      "identidadeConfirmada": false,
+      "identidadeConfirmada": true,
       "metodosComRetencaoIndividual": 5,
       "metodos": [
         {
@@ -13893,11 +14418,20 @@
                 "fonte": "ukil2013",
                 "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
                 "incerteza": null
-              }
+              },
+              "referenciaDidaticaConferida": true
             }
           ],
           "rfIntervalo": [],
-          "estado": "referencia_primaria_nao_homologada"
+          "estado": "referencia_primaria_nao_homologada",
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+            "dataConferencia": "2026-11-24",
+            "escopo": "comparar Rf de padrões nominais sob condições publicadas",
+            "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+            "habilitarCenaQuantitativa": false
+          }
         },
         {
           "protocoloId": "tlc_aminoacids_protechex_etanol96_water_7_3",
@@ -14012,7 +14546,8 @@
               "valor": 0.254,
               "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
               "homologado": false,
-              "fontePrimariaConferida": true
+              "fontePrimariaConferida": true,
+              "referenciaDidaticaConferida": true
             }
           ],
           "rfIntervalo": [],
@@ -14033,6 +14568,14 @@
             "parametrosRetencaoConferidos": true,
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
+          },
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://doi.org/10.1556/1006.2016.29.2.9",
+            "dataConferencia": "2026-11-24",
+            "escopo": "comparar Rf de padrões nominais sob condições publicadas",
+            "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+            "habilitarCenaQuantitativa": false
           }
         },
         {
@@ -14201,11 +14744,11 @@
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_e_forma_quimica_a_conferir",
-        "precisao_e_condicoes_experimentais_a_validar"
+        "precisao_e_condicoes_experimentais_a_validar",
+        "forma_e_pureza_dos_padroes_experimentais_a_conferir"
       ],
       "auditoriaRetencao": {
-        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "estado": "identidade_de_referencia_e_dois_sistemas_contextuais_conferidos",
         "metodos": [
           "tlc_aminoacids_ukil_2013_propanol_water_70_30",
           "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
@@ -14218,14 +14761,27 @@
         ],
         "homologacaoMetodoQuantitativo": false,
         "homologacaoCena": false,
-        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
-      }
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas.",
+        "estereoquimicaPadraoConferida": false,
+        "referenciaDidaticaConferida": true
+      },
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+        ],
+        "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+        "habilitarCenaQuantitativa": false
+      },
+      "referenciaDidaticaValidada": true,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "threonine",
       "nome": "Treonina",
       "grupo": "aminoacidos",
-      "identidadeConfirmada": false,
+      "identidadeConfirmada": true,
       "metodosComRetencaoIndividual": 5,
       "metodos": [
         {
@@ -14265,11 +14821,20 @@
                 "fonte": "ukil2013",
                 "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
                 "incerteza": null
-              }
+              },
+              "referenciaDidaticaConferida": true
             }
           ],
           "rfIntervalo": [],
-          "estado": "referencia_primaria_nao_homologada"
+          "estado": "referencia_primaria_nao_homologada",
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+            "dataConferencia": "2026-11-24",
+            "escopo": "comparar Rf de padrões nominais sob condições publicadas",
+            "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+            "habilitarCenaQuantitativa": false
+          }
         },
         {
           "protocoloId": "tlc_aminoacids_protechex_etanol96_water_7_3",
@@ -14384,7 +14949,8 @@
               "valor": 0.262,
               "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
               "homologado": false,
-              "fontePrimariaConferida": true
+              "fontePrimariaConferida": true,
+              "referenciaDidaticaConferida": true
             }
           ],
           "rfIntervalo": [],
@@ -14405,6 +14971,14 @@
             "parametrosRetencaoConferidos": true,
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
+          },
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://doi.org/10.1556/1006.2016.29.2.9",
+            "dataConferencia": "2026-11-24",
+            "escopo": "comparar Rf de padrões nominais sob condições publicadas",
+            "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+            "habilitarCenaQuantitativa": false
           }
         },
         {
@@ -14573,11 +15147,11 @@
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_e_forma_quimica_a_conferir",
-        "precisao_e_condicoes_experimentais_a_validar"
+        "precisao_e_condicoes_experimentais_a_validar",
+        "forma_e_pureza_dos_padroes_experimentais_a_conferir"
       ],
       "auditoriaRetencao": {
-        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "estado": "identidade_de_referencia_e_dois_sistemas_contextuais_conferidos",
         "metodos": [
           "tlc_aminoacids_ukil_2013_propanol_water_70_30",
           "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
@@ -14590,14 +15164,27 @@
         ],
         "homologacaoMetodoQuantitativo": false,
         "homologacaoCena": false,
-        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
-      }
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas.",
+        "estereoquimicaPadraoConferida": false,
+        "referenciaDidaticaConferida": true
+      },
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+        ],
+        "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+        "habilitarCenaQuantitativa": false
+      },
+      "referenciaDidaticaValidada": true,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "tryptophan",
       "nome": "Triptofano",
       "grupo": "aminoacidos",
-      "identidadeConfirmada": false,
+      "identidadeConfirmada": true,
       "metodosComRetencaoIndividual": 6,
       "metodos": [
         {
@@ -14637,11 +15224,20 @@
                 "fonte": "ukil2013",
                 "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
                 "incerteza": null
-              }
+              },
+              "referenciaDidaticaConferida": true
             }
           ],
           "rfIntervalo": [],
-          "estado": "referencia_primaria_nao_homologada"
+          "estado": "referencia_primaria_nao_homologada",
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+            "dataConferencia": "2026-11-24",
+            "escopo": "comparar Rf de padrões nominais sob condições publicadas",
+            "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+            "habilitarCenaQuantitativa": false
+          }
         },
         {
           "protocoloId": "tlc_aminoacids_protechex_etanol96_water_7_3",
@@ -14797,7 +15393,8 @@
               "valor": 0.615,
               "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
               "homologado": false,
-              "fontePrimariaConferida": true
+              "fontePrimariaConferida": true,
+              "referenciaDidaticaConferida": true
             }
           ],
           "rfIntervalo": [],
@@ -14818,6 +15415,14 @@
             "parametrosRetencaoConferidos": true,
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
+          },
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://doi.org/10.1556/1006.2016.29.2.9",
+            "dataConferencia": "2026-11-24",
+            "escopo": "comparar Rf de padrões nominais sob condições publicadas",
+            "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+            "habilitarCenaQuantitativa": false
           }
         },
         {
@@ -15016,11 +15621,11 @@
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_e_forma_quimica_a_conferir",
-        "precisao_e_condicoes_experimentais_a_validar"
+        "precisao_e_condicoes_experimentais_a_validar",
+        "forma_e_pureza_dos_padroes_experimentais_a_conferir"
       ],
       "auditoriaRetencao": {
-        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "estado": "identidade_de_referencia_e_dois_sistemas_contextuais_conferidos",
         "metodos": [
           "tlc_aminoacids_ukil_2013_propanol_water_70_30",
           "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
@@ -15033,14 +15638,27 @@
         ],
         "homologacaoMetodoQuantitativo": false,
         "homologacaoCena": false,
-        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
-      }
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas.",
+        "estereoquimicaPadraoConferida": false,
+        "referenciaDidaticaConferida": true
+      },
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+        ],
+        "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+        "habilitarCenaQuantitativa": false
+      },
+      "referenciaDidaticaValidada": true,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "tyrosine",
       "nome": "Tirosina",
       "grupo": "aminoacidos",
-      "identidadeConfirmada": false,
+      "identidadeConfirmada": true,
       "metodosComRetencaoIndividual": 6,
       "metodos": [
         {
@@ -15121,11 +15739,20 @@
                 "fonte": "ukil2013",
                 "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
                 "incerteza": null
-              }
+              },
+              "referenciaDidaticaConferida": true
             }
           ],
           "rfIntervalo": [],
-          "estado": "referencia_primaria_nao_homologada"
+          "estado": "referencia_primaria_nao_homologada",
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+            "dataConferencia": "2026-11-24",
+            "escopo": "comparar Rf de padrões nominais sob condições publicadas",
+            "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+            "habilitarCenaQuantitativa": false
+          }
         },
         {
           "protocoloId": "tlc_aminoacids_protechex_etanol96_water_7_3",
@@ -15240,7 +15867,8 @@
               "valor": 0.539,
               "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
               "homologado": false,
-              "fontePrimariaConferida": true
+              "fontePrimariaConferida": true,
+              "referenciaDidaticaConferida": true
             }
           ],
           "rfIntervalo": [],
@@ -15261,6 +15889,14 @@
             "parametrosRetencaoConferidos": true,
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
+          },
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://doi.org/10.1556/1006.2016.29.2.9",
+            "dataConferencia": "2026-11-24",
+            "escopo": "comparar Rf de padrões nominais sob condições publicadas",
+            "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+            "habilitarCenaQuantitativa": false
           }
         },
         {
@@ -15459,11 +16095,11 @@
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_e_forma_quimica_a_conferir",
-        "precisao_e_condicoes_experimentais_a_validar"
+        "precisao_e_condicoes_experimentais_a_validar",
+        "forma_e_pureza_dos_padroes_experimentais_a_conferir"
       ],
       "auditoriaRetencao": {
-        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "estado": "identidade_de_referencia_e_dois_sistemas_contextuais_conferidos",
         "metodos": [
           "tlc_aminoacids_ukil_2013_propanol_water_70_30",
           "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
@@ -15476,14 +16112,27 @@
         ],
         "homologacaoMetodoQuantitativo": false,
         "homologacaoCena": false,
-        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
-      }
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas.",
+        "estereoquimicaPadraoConferida": false,
+        "referenciaDidaticaConferida": true
+      },
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+        ],
+        "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+        "habilitarCenaQuantitativa": false
+      },
+      "referenciaDidaticaValidada": true,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "valine",
       "nome": "Valina",
       "grupo": "aminoacidos",
-      "identidadeConfirmada": false,
+      "identidadeConfirmada": true,
       "metodosComRetencaoIndividual": 7,
       "metodos": [
         {
@@ -15564,11 +16213,20 @@
                 "fonte": "ukil2013",
                 "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
                 "incerteza": null
-              }
+              },
+              "referenciaDidaticaConferida": true
             }
           ],
           "rfIntervalo": [],
-          "estado": "referencia_primaria_nao_homologada"
+          "estado": "referencia_primaria_nao_homologada",
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+            "dataConferencia": "2026-11-24",
+            "escopo": "comparar Rf de padrões nominais sob condições publicadas",
+            "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+            "habilitarCenaQuantitativa": false
+          }
         },
         {
           "protocoloId": "tlc_aminoacids_protechex_etanol96_water_7_3",
@@ -15724,7 +16382,8 @@
               "valor": 0.439,
               "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
               "homologado": false,
-              "fontePrimariaConferida": true
+              "fontePrimariaConferida": true,
+              "referenciaDidaticaConferida": true
             }
           ],
           "rfIntervalo": [],
@@ -15745,6 +16404,14 @@
             "parametrosRetencaoConferidos": true,
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
+          },
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://doi.org/10.1556/1006.2016.29.2.9",
+            "dataConferencia": "2026-11-24",
+            "escopo": "comparar Rf de padrões nominais sob condições publicadas",
+            "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+            "habilitarCenaQuantitativa": false
           }
         },
         {
@@ -15973,11 +16640,11 @@
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_e_forma_quimica_a_conferir",
-        "precisao_e_condicoes_experimentais_a_validar"
+        "precisao_e_condicoes_experimentais_a_validar",
+        "forma_e_pureza_dos_padroes_experimentais_a_conferir"
       ],
       "auditoriaRetencao": {
-        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "estado": "identidade_de_referencia_e_dois_sistemas_contextuais_conferidos",
         "metodos": [
           "tlc_aminoacids_ukil_2013_propanol_water_70_30",
           "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
@@ -15990,8 +16657,21 @@
         ],
         "homologacaoMetodoQuantitativo": false,
         "homologacaoCena": false,
-        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
-      }
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas.",
+        "estereoquimicaPadraoConferida": false,
+        "referenciaDidaticaConferida": true
+      },
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+        ],
+        "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+        "habilitarCenaQuantitativa": false
+      },
+      "referenciaDidaticaValidada": true,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "caffeine",
@@ -16333,7 +17013,8 @@
       "pendencias": [],
       "condicaoHomologacao": "exclusivamente dois sistemas HPTLC NP/RP do artigo Alam et al. 2022, detector de absorbância a 260 nm",
       "disponibilidadeSimulacaoReal": false,
-      "dadosHomologadosEmFontesPrimarias": 2
+      "dadosHomologadosEmFontesPrimarias": 2,
+      "referenciaDidaticaValidada": true
     },
     {
       "id": "theobromine",
@@ -16351,7 +17032,9 @@
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
-      ]
+      ],
+      "referenciaDidaticaValidada": false,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "paracetamol",
@@ -16693,7 +17376,8 @@
       "pendencias": [],
       "condicaoHomologacao": "exclusivamente dois sistemas HPTLC NP/RP do artigo Alam et al. 2022, detector de absorbância a 260 nm",
       "disponibilidadeSimulacaoReal": false,
-      "dadosHomologadosEmFontesPrimarias": 2
+      "dadosHomologadosEmFontesPrimarias": 2,
+      "referenciaDidaticaValidada": true
     },
     {
       "id": "acetylsalicylic_acid",
@@ -16802,7 +17486,9 @@
       "homologacaoCompleta": false,
       "pendencias": [
         "identidade_primaria_e_condicoes_a_homologar"
-      ]
+      ],
+      "referenciaDidaticaValidada": false,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "salicylic_acid",
@@ -16820,7 +17506,9 @@
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
-      ]
+      ],
+      "referenciaDidaticaValidada": false,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "ibuprofen",
@@ -16961,7 +17649,9 @@
       "homologacaoCompleta": false,
       "pendencias": [
         "identidade_primaria_e_condicoes_a_homologar"
-      ]
+      ],
+      "referenciaDidaticaValidada": false,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "naproxen",
@@ -16979,7 +17669,9 @@
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
-      ]
+      ],
+      "referenciaDidaticaValidada": false,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "benzoic_acid",
@@ -19111,7 +19803,9 @@
       "pendencias": [
         "independencia_de_metodos_e_validacao_quantitativa",
         "metadados_das_duas_series_DCM"
-      ]
+      ],
+      "referenciaDidaticaValidada": false,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "vanillin",
@@ -19358,7 +20052,8 @@
       "homologacaoCompleta": true,
       "pendencias": [],
       "disponibilidadeSimulacaoReal": false,
-      "condicaoHomologacao": "Dois métodos HPTLC independentes; referência experimental contextual"
+      "condicaoHomologacao": "Dois métodos HPTLC independentes; referência experimental contextual",
+      "referenciaDidaticaValidada": true
     },
     {
       "id": "ethyl_vanillin",
@@ -19376,7 +20071,9 @@
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
-      ]
+      ],
+      "referenciaDidaticaValidada": false,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "coumarin",
@@ -19782,7 +20479,8 @@
       "homologacaoCompleta": true,
       "pendencias": [],
       "disponibilidadeSimulacaoReal": false,
-      "condicaoHomologacao": "CCD micelar e HPTLC, duas fontes; somente referência"
+      "condicaoHomologacao": "CCD micelar e HPTLC, duas fontes; somente referência",
+      "referenciaDidaticaValidada": true
     },
     {
       "id": "nicotinamide",
@@ -19800,7 +20498,9 @@
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
-      ]
+      ],
+      "referenciaDidaticaValidada": false,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "riboflavin",
@@ -19818,7 +20518,9 @@
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
-      ]
+      ],
+      "referenciaDidaticaValidada": false,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "ascorbic_acid",
@@ -20570,7 +21272,8 @@
       "homologacaoCompleta": true,
       "pendencias": [],
       "disponibilidadeSimulacaoReal": false,
-      "condicaoHomologacao": "Dois métodos HPTLC de referência, sem calibração de cena."
+      "condicaoHomologacao": "Dois métodos HPTLC de referência, sem calibração de cena.",
+      "referenciaDidaticaValidada": true
     },
     {
       "id": "fluorescein",
@@ -20588,7 +21291,9 @@
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
-      ]
+      ],
+      "referenciaDidaticaValidada": false,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "eosin_y",
@@ -20606,7 +21311,9 @@
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
-      ]
+      ],
+      "referenciaDidaticaValidada": false,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "rhodamine_b",
@@ -20676,7 +21383,9 @@
         "identidade_quimica_a_conferir",
         "segundo_metodo_documentado",
         "metodos_e_condicoes_a_homologar"
-      ]
+      ],
+      "referenciaDidaticaValidada": false,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "methylene_blue",
@@ -20694,7 +21403,9 @@
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
-      ]
+      ],
+      "referenciaDidaticaValidada": false,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "methyl_orange",
@@ -20836,7 +21547,9 @@
         ],
         "quantificacaoHomologada": false,
         "habilitarCenaQuantitativa": false
-      }
+      },
+      "referenciaDidaticaValidada": false,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "methyl_red",
@@ -20854,7 +21567,9 @@
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
-      ]
+      ],
+      "referenciaDidaticaValidada": false,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "bromothymol_blue",
@@ -20872,7 +21587,9 @@
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
-      ]
+      ],
+      "referenciaDidaticaValidada": false,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "phenolphthalein",
@@ -20890,7 +21607,9 @@
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
-      ]
+      ],
+      "referenciaDidaticaValidada": false,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "crystal_violet",
@@ -20908,7 +21627,9 @@
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
-      ]
+      ],
+      "referenciaDidaticaValidada": false,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "sudan_iii",
@@ -20926,7 +21647,9 @@
         "metodo_2_documentado",
         "solventes_contrastantes",
         "identidade_primaria_e_condicoes_a_homologar"
-      ]
+      ],
+      "referenciaDidaticaValidada": false,
+      "disponibilidadeSimulacaoReal": false
     },
     {
       "id": "sudan_iv",
@@ -21068,7 +21791,9 @@
         ],
         "quantificacaoHomologada": false,
         "habilitarCenaQuantitativa": false
-      }
+      },
+      "referenciaDidaticaValidada": false,
+      "disponibilidadeSimulacaoReal": false
     }
   ]
 }

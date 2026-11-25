@@ -1094,8 +1094,18 @@
       "grupo": "aminoacidos",
       "identity": {
         "cas": null,
-        "pubchemCID": null,
-        "verificadoIndividualmente": false
+        "pubchemCID": 5950,
+        "verificadoIndividualmente": true,
+        "chebiID": "CHEBI:16977",
+        "formulaMolecular": "C3H7NO2",
+        "formaInvestigada": "Forma L proteinogênica de referência, não uma afirmação sobre a forma do padrão experimental",
+        "fontesIdentidade": [
+          "https://www.ebi.ac.uk/chebi/CHEBI:16977",
+          "https://www.ebi.ac.uk/chebi/CHEBI:83813",
+          "https://proteiniq.io/datasets/biological-molecules"
+        ],
+        "dataConferencia": "2026-11-24",
+        "observacao": "Identidade e forma L conferidas individualmente no ChEBI. CID e fórmula cruzados com compilação ProteinIQ; acesso direto PubChem bloqueado. CAS não conferido nesta rodada. Não inferir estereoquímica dos padrões Ukil/Hudaib nem separar enantiômeros por Rf."
       },
       "propriedades": {
         "densidade": null,
@@ -1126,7 +1136,7 @@
       },
       "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
       "auditoriaRetencao": {
-        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "estado": "identidade_de_referencia_e_dois_sistemas_contextuais_conferidos",
         "metodos": [
           "tlc_aminoacids_ukil_2013_propanol_water_70_30",
           "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
@@ -1139,7 +1149,18 @@
         ],
         "homologacaoMetodoQuantitativo": false,
         "homologacaoCena": false,
-        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas.",
+        "estereoquimicaPadraoConferida": false,
+        "referenciaDidaticaConferida": true
+      },
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+        ],
+        "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+        "habilitarCenaQuantitativa": false
       }
     },
     {
@@ -1148,8 +1169,18 @@
       "grupo": "aminoacidos",
       "identity": {
         "cas": null,
-        "pubchemCID": null,
-        "verificadoIndividualmente": false
+        "pubchemCID": 6322,
+        "verificadoIndividualmente": true,
+        "chebiID": "CHEBI:16467",
+        "formulaMolecular": "C6H14N4O2",
+        "formaInvestigada": "Forma L proteinogênica de referência, não uma afirmação sobre a forma do padrão experimental",
+        "fontesIdentidade": [
+          "https://www.ebi.ac.uk/chebi/CHEBI:16467",
+          "https://www.ebi.ac.uk/chebi/CHEBI:83813",
+          "https://proteiniq.io/datasets/biological-molecules"
+        ],
+        "dataConferencia": "2026-11-24",
+        "observacao": "Identidade e forma L conferidas individualmente no ChEBI. CID e fórmula cruzados com compilação ProteinIQ; acesso direto PubChem bloqueado. CAS não conferido nesta rodada. Não inferir estereoquímica dos padrões Ukil/Hudaib nem separar enantiômeros por Rf."
       },
       "propriedades": {
         "densidade": null,
@@ -1180,7 +1211,7 @@
       },
       "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
       "auditoriaRetencao": {
-        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "estado": "identidade_de_referencia_e_dois_sistemas_contextuais_conferidos",
         "metodos": [
           "tlc_aminoacids_ukil_2013_propanol_water_70_30",
           "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
@@ -1193,7 +1224,18 @@
         ],
         "homologacaoMetodoQuantitativo": false,
         "homologacaoCena": false,
-        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas.",
+        "estereoquimicaPadraoConferida": false,
+        "referenciaDidaticaConferida": true
+      },
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+        ],
+        "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+        "habilitarCenaQuantitativa": false
       }
     },
     {
@@ -1202,8 +1244,18 @@
       "grupo": "aminoacidos",
       "identity": {
         "cas": null,
-        "pubchemCID": null,
-        "verificadoIndividualmente": false
+        "pubchemCID": 6267,
+        "verificadoIndividualmente": true,
+        "chebiID": "CHEBI:17196",
+        "formulaMolecular": "C4H8N2O3",
+        "formaInvestigada": "Forma L proteinogênica de referência, não uma afirmação sobre a forma do padrão experimental",
+        "fontesIdentidade": [
+          "https://www.ebi.ac.uk/chebi/CHEBI:17196",
+          "https://www.ebi.ac.uk/chebi/CHEBI:83813",
+          "https://proteiniq.io/datasets/biological-molecules"
+        ],
+        "dataConferencia": "2026-11-24",
+        "observacao": "Identidade e forma L conferidas individualmente no ChEBI. CID e fórmula cruzados com compilação ProteinIQ; acesso direto PubChem bloqueado. CAS não conferido nesta rodada. Não inferir estereoquímica dos padrões Ukil/Hudaib nem separar enantiômeros por Rf."
       },
       "propriedades": {
         "densidade": null,
@@ -1234,7 +1286,7 @@
       },
       "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
       "auditoriaRetencao": {
-        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "estado": "identidade_de_referencia_e_dois_sistemas_contextuais_conferidos",
         "metodos": [
           "tlc_aminoacids_ukil_2013_propanol_water_70_30",
           "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
@@ -1247,7 +1299,18 @@
         ],
         "homologacaoMetodoQuantitativo": false,
         "homologacaoCena": false,
-        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas.",
+        "estereoquimicaPadraoConferida": false,
+        "referenciaDidaticaConferida": true
+      },
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+        ],
+        "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+        "habilitarCenaQuantitativa": false
       }
     },
     {
@@ -1256,8 +1319,18 @@
       "grupo": "aminoacidos",
       "identity": {
         "cas": null,
-        "pubchemCID": null,
-        "verificadoIndividualmente": false
+        "pubchemCID": 5960,
+        "verificadoIndividualmente": true,
+        "chebiID": "CHEBI:17053",
+        "formulaMolecular": "C4H7NO4",
+        "formaInvestigada": "Forma L proteinogênica de referência, não uma afirmação sobre a forma do padrão experimental",
+        "fontesIdentidade": [
+          "https://www.ebi.ac.uk/chebi/CHEBI:17053",
+          "https://www.ebi.ac.uk/chebi/CHEBI:83813",
+          "https://proteiniq.io/datasets/biological-molecules"
+        ],
+        "dataConferencia": "2026-11-24",
+        "observacao": "Identidade e forma L conferidas individualmente no ChEBI. CID e fórmula cruzados com compilação ProteinIQ; acesso direto PubChem bloqueado. CAS não conferido nesta rodada. Não inferir estereoquímica dos padrões Ukil/Hudaib nem separar enantiômeros por Rf."
       },
       "propriedades": {
         "densidade": null,
@@ -1288,7 +1361,7 @@
       },
       "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
       "auditoriaRetencao": {
-        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "estado": "identidade_de_referencia_e_dois_sistemas_contextuais_conferidos",
         "metodos": [
           "tlc_aminoacids_ukil_2013_propanol_water_70_30",
           "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
@@ -1301,7 +1374,18 @@
         ],
         "homologacaoMetodoQuantitativo": false,
         "homologacaoCena": false,
-        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas.",
+        "estereoquimicaPadraoConferida": false,
+        "referenciaDidaticaConferida": true
+      },
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+        ],
+        "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+        "habilitarCenaQuantitativa": false
       }
     },
     {
@@ -1310,8 +1394,18 @@
       "grupo": "aminoacidos",
       "identity": {
         "cas": null,
-        "pubchemCID": null,
-        "verificadoIndividualmente": false
+        "pubchemCID": 5862,
+        "verificadoIndividualmente": true,
+        "chebiID": "CHEBI:17561",
+        "formulaMolecular": "C3H7NO2S",
+        "formaInvestigada": "Forma L proteinogênica de referência, não uma afirmação sobre a forma do padrão experimental",
+        "fontesIdentidade": [
+          "https://www.ebi.ac.uk/chebi/CHEBI:17561",
+          "https://www.ebi.ac.uk/chebi/CHEBI:83813",
+          "https://proteiniq.io/datasets/biological-molecules"
+        ],
+        "dataConferencia": "2026-11-24",
+        "observacao": "Identidade e forma L conferidas individualmente no ChEBI. CID e fórmula cruzados com compilação ProteinIQ; acesso direto PubChem bloqueado. CAS não conferido nesta rodada. Não inferir estereoquímica dos padrões Ukil/Hudaib nem separar enantiômeros por Rf."
       },
       "propriedades": {
         "densidade": null,
@@ -1342,7 +1436,7 @@
       },
       "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
       "auditoriaRetencao": {
-        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "estado": "identidade_de_referencia_e_dois_sistemas_contextuais_conferidos",
         "metodos": [
           "tlc_aminoacids_ukil_2013_propanol_water_70_30",
           "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
@@ -1355,7 +1449,18 @@
         ],
         "homologacaoMetodoQuantitativo": false,
         "homologacaoCena": false,
-        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas.",
+        "estereoquimicaPadraoConferida": false,
+        "referenciaDidaticaConferida": true
+      },
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+        ],
+        "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+        "habilitarCenaQuantitativa": false
       }
     },
     {
@@ -1364,8 +1469,18 @@
       "grupo": "aminoacidos",
       "identity": {
         "cas": null,
-        "pubchemCID": null,
-        "verificadoIndividualmente": false
+        "pubchemCID": 33032,
+        "verificadoIndividualmente": true,
+        "chebiID": "CHEBI:16015",
+        "formulaMolecular": "C5H9NO4",
+        "formaInvestigada": "Forma L proteinogênica de referência, não uma afirmação sobre a forma do padrão experimental",
+        "fontesIdentidade": [
+          "https://www.ebi.ac.uk/chebi/CHEBI:16015",
+          "https://www.ebi.ac.uk/chebi/CHEBI:83813",
+          "https://proteiniq.io/datasets/biological-molecules"
+        ],
+        "dataConferencia": "2026-11-24",
+        "observacao": "Identidade e forma L conferidas individualmente no ChEBI. CID e fórmula cruzados com compilação ProteinIQ; acesso direto PubChem bloqueado. CAS não conferido nesta rodada. Não inferir estereoquímica dos padrões Ukil/Hudaib nem separar enantiômeros por Rf."
       },
       "propriedades": {
         "densidade": null,
@@ -1396,7 +1511,7 @@
       },
       "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
       "auditoriaRetencao": {
-        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "estado": "identidade_de_referencia_e_dois_sistemas_contextuais_conferidos",
         "metodos": [
           "tlc_aminoacids_ukil_2013_propanol_water_70_30",
           "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
@@ -1409,7 +1524,18 @@
         ],
         "homologacaoMetodoQuantitativo": false,
         "homologacaoCena": false,
-        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas.",
+        "estereoquimicaPadraoConferida": false,
+        "referenciaDidaticaConferida": true
+      },
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+        ],
+        "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+        "habilitarCenaQuantitativa": false
       }
     },
     {
@@ -1418,8 +1544,18 @@
       "grupo": "aminoacidos",
       "identity": {
         "cas": null,
-        "pubchemCID": null,
-        "verificadoIndividualmente": false
+        "pubchemCID": 5961,
+        "verificadoIndividualmente": true,
+        "chebiID": "CHEBI:18050",
+        "formulaMolecular": "C5H10N2O3",
+        "formaInvestigada": "Forma L proteinogênica de referência, não uma afirmação sobre a forma do padrão experimental",
+        "fontesIdentidade": [
+          "https://www.ebi.ac.uk/chebi/CHEBI:18050",
+          "https://www.ebi.ac.uk/chebi/CHEBI:83813",
+          "https://proteiniq.io/datasets/biological-molecules"
+        ],
+        "dataConferencia": "2026-11-24",
+        "observacao": "Identidade e forma L conferidas individualmente no ChEBI. CID e fórmula cruzados com compilação ProteinIQ; acesso direto PubChem bloqueado. CAS não conferido nesta rodada. Não inferir estereoquímica dos padrões Ukil/Hudaib nem separar enantiômeros por Rf."
       },
       "propriedades": {
         "densidade": null,
@@ -1450,7 +1586,7 @@
       },
       "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
       "auditoriaRetencao": {
-        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "estado": "identidade_de_referencia_e_dois_sistemas_contextuais_conferidos",
         "metodos": [
           "tlc_aminoacids_ukil_2013_propanol_water_70_30",
           "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
@@ -1463,7 +1599,18 @@
         ],
         "homologacaoMetodoQuantitativo": false,
         "homologacaoCena": false,
-        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas.",
+        "estereoquimicaPadraoConferida": false,
+        "referenciaDidaticaConferida": true
+      },
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+        ],
+        "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+        "habilitarCenaQuantitativa": false
       }
     },
     {
@@ -1477,10 +1624,12 @@
         "formulaMolecular": "C2H5NO2",
         "formaInvestigada": "Glicina, aminoácido aquiral; forma livre",
         "fontesIdentidade": [
-          "https://pubchem.ncbi.nlm.nih.gov/compound/750"
+          "https://pubchem.ncbi.nlm.nih.gov/compound/750",
+          "https://www.ebi.ac.uk/chebi/CHEBI:15428"
         ],
         "dataConferencia": "2026-11-24",
-        "observacao": "Identidade molecular confirmada; sem extrapolação à pureza do lote."
+        "observacao": "Identidade molecular confirmada; sem extrapolação à pureza do lote.",
+        "chebiID": "CHEBI:15428"
       },
       "propriedades": {
         "densidade": null,
@@ -1511,7 +1660,7 @@
       },
       "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
       "auditoriaRetencao": {
-        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "estado": "identidade_de_referencia_e_dois_sistemas_contextuais_conferidos",
         "metodos": [
           "tlc_aminoacids_ukil_2013_propanol_water_70_30",
           "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
@@ -1524,7 +1673,18 @@
         ],
         "homologacaoMetodoQuantitativo": false,
         "homologacaoCena": false,
-        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas.",
+        "estereoquimicaPadraoConferida": null,
+        "referenciaDidaticaConferida": true
+      },
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+        ],
+        "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+        "habilitarCenaQuantitativa": false
       }
     },
     {
@@ -1533,8 +1693,18 @@
       "grupo": "aminoacidos",
       "identity": {
         "cas": null,
-        "pubchemCID": null,
-        "verificadoIndividualmente": false
+        "pubchemCID": 6274,
+        "verificadoIndividualmente": true,
+        "chebiID": "CHEBI:15971",
+        "formulaMolecular": "C6H9N3O2",
+        "formaInvestigada": "Forma L proteinogênica de referência, não uma afirmação sobre a forma do padrão experimental",
+        "fontesIdentidade": [
+          "https://www.ebi.ac.uk/chebi/CHEBI:15971",
+          "https://www.ebi.ac.uk/chebi/CHEBI:83813",
+          "https://proteiniq.io/datasets/biological-molecules"
+        ],
+        "dataConferencia": "2026-11-24",
+        "observacao": "Identidade e forma L conferidas individualmente no ChEBI. CID e fórmula cruzados com compilação ProteinIQ; acesso direto PubChem bloqueado. CAS não conferido nesta rodada. Não inferir estereoquímica dos padrões Ukil/Hudaib nem separar enantiômeros por Rf."
       },
       "propriedades": {
         "densidade": null,
@@ -1565,7 +1735,7 @@
       },
       "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
       "auditoriaRetencao": {
-        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "estado": "identidade_de_referencia_e_dois_sistemas_contextuais_conferidos",
         "metodos": [
           "tlc_aminoacids_ukil_2013_propanol_water_70_30",
           "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
@@ -1578,7 +1748,18 @@
         ],
         "homologacaoMetodoQuantitativo": false,
         "homologacaoCena": false,
-        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas.",
+        "estereoquimicaPadraoConferida": false,
+        "referenciaDidaticaConferida": true
+      },
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+        ],
+        "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+        "habilitarCenaQuantitativa": false
       }
     },
     {
@@ -1587,8 +1768,18 @@
       "grupo": "aminoacidos",
       "identity": {
         "cas": null,
-        "pubchemCID": null,
-        "verificadoIndividualmente": false
+        "pubchemCID": 6306,
+        "verificadoIndividualmente": true,
+        "chebiID": "CHEBI:17191",
+        "formulaMolecular": "C6H13NO2",
+        "formaInvestigada": "Forma L proteinogênica de referência, não uma afirmação sobre a forma do padrão experimental",
+        "fontesIdentidade": [
+          "https://www.ebi.ac.uk/chebi/CHEBI:17191",
+          "https://www.ebi.ac.uk/chebi/CHEBI:83813",
+          "https://proteiniq.io/datasets/biological-molecules"
+        ],
+        "dataConferencia": "2026-11-24",
+        "observacao": "Identidade e forma L conferidas individualmente no ChEBI. CID e fórmula cruzados com compilação ProteinIQ; acesso direto PubChem bloqueado. CAS não conferido nesta rodada. Não inferir estereoquímica dos padrões Ukil/Hudaib nem separar enantiômeros por Rf."
       },
       "propriedades": {
         "densidade": null,
@@ -1619,7 +1810,7 @@
       },
       "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
       "auditoriaRetencao": {
-        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "estado": "identidade_de_referencia_e_dois_sistemas_contextuais_conferidos",
         "metodos": [
           "tlc_aminoacids_ukil_2013_propanol_water_70_30",
           "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
@@ -1632,7 +1823,18 @@
         ],
         "homologacaoMetodoQuantitativo": false,
         "homologacaoCena": false,
-        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas.",
+        "estereoquimicaPadraoConferida": false,
+        "referenciaDidaticaConferida": true
+      },
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+        ],
+        "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+        "habilitarCenaQuantitativa": false
       }
     },
     {
@@ -1641,8 +1843,18 @@
       "grupo": "aminoacidos",
       "identity": {
         "cas": null,
-        "pubchemCID": null,
-        "verificadoIndividualmente": false
+        "pubchemCID": 6106,
+        "verificadoIndividualmente": true,
+        "chebiID": "CHEBI:15603",
+        "formulaMolecular": "C6H13NO2",
+        "formaInvestigada": "Forma L proteinogênica de referência, não uma afirmação sobre a forma do padrão experimental",
+        "fontesIdentidade": [
+          "https://www.ebi.ac.uk/chebi/CHEBI:15603",
+          "https://www.ebi.ac.uk/chebi/CHEBI:83813",
+          "https://proteiniq.io/datasets/biological-molecules"
+        ],
+        "dataConferencia": "2026-11-24",
+        "observacao": "Identidade e forma L conferidas individualmente no ChEBI. CID e fórmula cruzados com compilação ProteinIQ; acesso direto PubChem bloqueado. CAS não conferido nesta rodada. Não inferir estereoquímica dos padrões Ukil/Hudaib nem separar enantiômeros por Rf."
       },
       "propriedades": {
         "densidade": null,
@@ -1673,7 +1885,7 @@
       },
       "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
       "auditoriaRetencao": {
-        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "estado": "identidade_de_referencia_e_dois_sistemas_contextuais_conferidos",
         "metodos": [
           "tlc_aminoacids_ukil_2013_propanol_water_70_30",
           "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
@@ -1686,7 +1898,18 @@
         ],
         "homologacaoMetodoQuantitativo": false,
         "homologacaoCena": false,
-        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas.",
+        "estereoquimicaPadraoConferida": false,
+        "referenciaDidaticaConferida": true
+      },
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+        ],
+        "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+        "habilitarCenaQuantitativa": false
       }
     },
     {
@@ -1695,8 +1918,18 @@
       "grupo": "aminoacidos",
       "identity": {
         "cas": null,
-        "pubchemCID": null,
-        "verificadoIndividualmente": false
+        "pubchemCID": 5962,
+        "verificadoIndividualmente": true,
+        "chebiID": "CHEBI:18019",
+        "formulaMolecular": "C6H14N2O2",
+        "formaInvestigada": "Forma L proteinogênica de referência, não uma afirmação sobre a forma do padrão experimental",
+        "fontesIdentidade": [
+          "https://www.ebi.ac.uk/chebi/CHEBI:18019",
+          "https://www.ebi.ac.uk/chebi/CHEBI:83813",
+          "https://proteiniq.io/datasets/biological-molecules"
+        ],
+        "dataConferencia": "2026-11-24",
+        "observacao": "Identidade e forma L conferidas individualmente no ChEBI. CID e fórmula cruzados com compilação ProteinIQ; acesso direto PubChem bloqueado. CAS não conferido nesta rodada. Não inferir estereoquímica dos padrões Ukil/Hudaib nem separar enantiômeros por Rf."
       },
       "propriedades": {
         "densidade": null,
@@ -1727,7 +1960,7 @@
       },
       "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
       "auditoriaRetencao": {
-        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "estado": "identidade_de_referencia_e_dois_sistemas_contextuais_conferidos",
         "metodos": [
           "tlc_aminoacids_ukil_2013_propanol_water_70_30",
           "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
@@ -1740,7 +1973,18 @@
         ],
         "homologacaoMetodoQuantitativo": false,
         "homologacaoCena": false,
-        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas.",
+        "estereoquimicaPadraoConferida": false,
+        "referenciaDidaticaConferida": true
+      },
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+        ],
+        "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+        "habilitarCenaQuantitativa": false
       }
     },
     {
@@ -1749,8 +1993,18 @@
       "grupo": "aminoacidos",
       "identity": {
         "cas": null,
-        "pubchemCID": null,
-        "verificadoIndividualmente": false
+        "pubchemCID": 6137,
+        "verificadoIndividualmente": true,
+        "chebiID": "CHEBI:16643",
+        "formulaMolecular": "C5H11NO2S",
+        "formaInvestigada": "Forma L proteinogênica de referência, não uma afirmação sobre a forma do padrão experimental",
+        "fontesIdentidade": [
+          "https://www.ebi.ac.uk/chebi/CHEBI:16643",
+          "https://www.ebi.ac.uk/chebi/CHEBI:83813",
+          "https://proteiniq.io/datasets/biological-molecules"
+        ],
+        "dataConferencia": "2026-11-24",
+        "observacao": "Identidade e forma L conferidas individualmente no ChEBI. CID e fórmula cruzados com compilação ProteinIQ; acesso direto PubChem bloqueado. CAS não conferido nesta rodada. Não inferir estereoquímica dos padrões Ukil/Hudaib nem separar enantiômeros por Rf."
       },
       "propriedades": {
         "densidade": null,
@@ -1781,7 +2035,7 @@
       },
       "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
       "auditoriaRetencao": {
-        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "estado": "identidade_de_referencia_e_dois_sistemas_contextuais_conferidos",
         "metodos": [
           "tlc_aminoacids_ukil_2013_propanol_water_70_30",
           "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
@@ -1794,7 +2048,18 @@
         ],
         "homologacaoMetodoQuantitativo": false,
         "homologacaoCena": false,
-        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas.",
+        "estereoquimicaPadraoConferida": false,
+        "referenciaDidaticaConferida": true
+      },
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+        ],
+        "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+        "habilitarCenaQuantitativa": false
       }
     },
     {
@@ -1803,8 +2068,18 @@
       "grupo": "aminoacidos",
       "identity": {
         "cas": null,
-        "pubchemCID": null,
-        "verificadoIndividualmente": false
+        "pubchemCID": 6140,
+        "verificadoIndividualmente": true,
+        "chebiID": "CHEBI:17295",
+        "formulaMolecular": "C9H11NO2",
+        "formaInvestigada": "Forma L proteinogênica de referência, não uma afirmação sobre a forma do padrão experimental",
+        "fontesIdentidade": [
+          "https://www.ebi.ac.uk/chebi/CHEBI:17295",
+          "https://www.ebi.ac.uk/chebi/CHEBI:83813",
+          "https://proteiniq.io/datasets/biological-molecules"
+        ],
+        "dataConferencia": "2026-11-24",
+        "observacao": "Identidade e forma L conferidas individualmente no ChEBI. CID e fórmula cruzados com compilação ProteinIQ; acesso direto PubChem bloqueado. CAS não conferido nesta rodada. Não inferir estereoquímica dos padrões Ukil/Hudaib nem separar enantiômeros por Rf."
       },
       "propriedades": {
         "densidade": null,
@@ -1835,7 +2110,7 @@
       },
       "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
       "auditoriaRetencao": {
-        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "estado": "identidade_de_referencia_e_dois_sistemas_contextuais_conferidos",
         "metodos": [
           "tlc_aminoacids_ukil_2013_propanol_water_70_30",
           "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
@@ -1848,7 +2123,18 @@
         ],
         "homologacaoMetodoQuantitativo": false,
         "homologacaoCena": false,
-        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas.",
+        "estereoquimicaPadraoConferida": false,
+        "referenciaDidaticaConferida": true
+      },
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+        ],
+        "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+        "habilitarCenaQuantitativa": false
       }
     },
     {
@@ -1857,8 +2143,18 @@
       "grupo": "aminoacidos",
       "identity": {
         "cas": null,
-        "pubchemCID": null,
-        "verificadoIndividualmente": false
+        "pubchemCID": 145742,
+        "verificadoIndividualmente": true,
+        "chebiID": "CHEBI:17203",
+        "formulaMolecular": "C5H9NO2",
+        "formaInvestigada": "Forma L proteinogênica de referência, não uma afirmação sobre a forma do padrão experimental",
+        "fontesIdentidade": [
+          "https://www.ebi.ac.uk/chebi/CHEBI:17203",
+          "https://www.ebi.ac.uk/chebi/CHEBI:83813",
+          "https://proteiniq.io/datasets/biological-molecules"
+        ],
+        "dataConferencia": "2026-11-24",
+        "observacao": "Identidade e forma L conferidas individualmente no ChEBI. CID e fórmula cruzados com compilação ProteinIQ; acesso direto PubChem bloqueado. CAS não conferido nesta rodada. Não inferir estereoquímica dos padrões Ukil/Hudaib nem separar enantiômeros por Rf."
       },
       "propriedades": {
         "densidade": null,
@@ -1889,7 +2185,7 @@
       },
       "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
       "auditoriaRetencao": {
-        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "estado": "identidade_de_referencia_e_dois_sistemas_contextuais_conferidos",
         "metodos": [
           "tlc_aminoacids_ukil_2013_propanol_water_70_30",
           "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
@@ -1902,7 +2198,18 @@
         ],
         "homologacaoMetodoQuantitativo": false,
         "homologacaoCena": false,
-        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas.",
+        "estereoquimicaPadraoConferida": false,
+        "referenciaDidaticaConferida": true
+      },
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+        ],
+        "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+        "habilitarCenaQuantitativa": false
       }
     },
     {
@@ -1911,8 +2218,18 @@
       "grupo": "aminoacidos",
       "identity": {
         "cas": null,
-        "pubchemCID": null,
-        "verificadoIndividualmente": false
+        "pubchemCID": 5951,
+        "verificadoIndividualmente": true,
+        "chebiID": "CHEBI:17115",
+        "formulaMolecular": "C3H7NO3",
+        "formaInvestigada": "Forma L proteinogênica de referência, não uma afirmação sobre a forma do padrão experimental",
+        "fontesIdentidade": [
+          "https://www.ebi.ac.uk/chebi/CHEBI:17115",
+          "https://www.ebi.ac.uk/chebi/CHEBI:83813",
+          "https://proteiniq.io/datasets/biological-molecules"
+        ],
+        "dataConferencia": "2026-11-24",
+        "observacao": "Identidade e forma L conferidas individualmente no ChEBI. CID e fórmula cruzados com compilação ProteinIQ; acesso direto PubChem bloqueado. CAS não conferido nesta rodada. Não inferir estereoquímica dos padrões Ukil/Hudaib nem separar enantiômeros por Rf."
       },
       "propriedades": {
         "densidade": null,
@@ -1943,7 +2260,7 @@
       },
       "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
       "auditoriaRetencao": {
-        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "estado": "identidade_de_referencia_e_dois_sistemas_contextuais_conferidos",
         "metodos": [
           "tlc_aminoacids_ukil_2013_propanol_water_70_30",
           "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
@@ -1956,7 +2273,18 @@
         ],
         "homologacaoMetodoQuantitativo": false,
         "homologacaoCena": false,
-        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas.",
+        "estereoquimicaPadraoConferida": false,
+        "referenciaDidaticaConferida": true
+      },
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+        ],
+        "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+        "habilitarCenaQuantitativa": false
       }
     },
     {
@@ -1965,8 +2293,18 @@
       "grupo": "aminoacidos",
       "identity": {
         "cas": null,
-        "pubchemCID": null,
-        "verificadoIndividualmente": false
+        "pubchemCID": 6288,
+        "verificadoIndividualmente": true,
+        "chebiID": "CHEBI:16857",
+        "formulaMolecular": "C4H9NO3",
+        "formaInvestigada": "Forma L proteinogênica de referência, não uma afirmação sobre a forma do padrão experimental",
+        "fontesIdentidade": [
+          "https://www.ebi.ac.uk/chebi/CHEBI:16857",
+          "https://www.ebi.ac.uk/chebi/CHEBI:83813",
+          "https://proteiniq.io/datasets/biological-molecules"
+        ],
+        "dataConferencia": "2026-11-24",
+        "observacao": "Identidade e forma L conferidas individualmente no ChEBI. CID e fórmula cruzados com compilação ProteinIQ; acesso direto PubChem bloqueado. CAS não conferido nesta rodada. Não inferir estereoquímica dos padrões Ukil/Hudaib nem separar enantiômeros por Rf."
       },
       "propriedades": {
         "densidade": null,
@@ -1997,7 +2335,7 @@
       },
       "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
       "auditoriaRetencao": {
-        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "estado": "identidade_de_referencia_e_dois_sistemas_contextuais_conferidos",
         "metodos": [
           "tlc_aminoacids_ukil_2013_propanol_water_70_30",
           "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
@@ -2010,7 +2348,18 @@
         ],
         "homologacaoMetodoQuantitativo": false,
         "homologacaoCena": false,
-        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas.",
+        "estereoquimicaPadraoConferida": false,
+        "referenciaDidaticaConferida": true
+      },
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+        ],
+        "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+        "habilitarCenaQuantitativa": false
       }
     },
     {
@@ -2019,8 +2368,18 @@
       "grupo": "aminoacidos",
       "identity": {
         "cas": null,
-        "pubchemCID": null,
-        "verificadoIndividualmente": false
+        "pubchemCID": 6305,
+        "verificadoIndividualmente": true,
+        "chebiID": "CHEBI:16828",
+        "formulaMolecular": "C11H12N2O2",
+        "formaInvestigada": "Forma L proteinogênica de referência, não uma afirmação sobre a forma do padrão experimental",
+        "fontesIdentidade": [
+          "https://www.ebi.ac.uk/chebi/CHEBI:16828",
+          "https://www.ebi.ac.uk/chebi/CHEBI:83813",
+          "https://proteiniq.io/datasets/biological-molecules"
+        ],
+        "dataConferencia": "2026-11-24",
+        "observacao": "Identidade e forma L conferidas individualmente no ChEBI. CID e fórmula cruzados com compilação ProteinIQ; acesso direto PubChem bloqueado. CAS não conferido nesta rodada. Não inferir estereoquímica dos padrões Ukil/Hudaib nem separar enantiômeros por Rf."
       },
       "propriedades": {
         "densidade": null,
@@ -2051,7 +2410,7 @@
       },
       "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
       "auditoriaRetencao": {
-        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "estado": "identidade_de_referencia_e_dois_sistemas_contextuais_conferidos",
         "metodos": [
           "tlc_aminoacids_ukil_2013_propanol_water_70_30",
           "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
@@ -2064,7 +2423,18 @@
         ],
         "homologacaoMetodoQuantitativo": false,
         "homologacaoCena": false,
-        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas.",
+        "estereoquimicaPadraoConferida": false,
+        "referenciaDidaticaConferida": true
+      },
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+        ],
+        "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+        "habilitarCenaQuantitativa": false
       }
     },
     {
@@ -2073,8 +2443,18 @@
       "grupo": "aminoacidos",
       "identity": {
         "cas": null,
-        "pubchemCID": null,
-        "verificadoIndividualmente": false
+        "pubchemCID": 6057,
+        "verificadoIndividualmente": true,
+        "chebiID": "CHEBI:17895",
+        "formulaMolecular": "C9H11NO3",
+        "formaInvestigada": "Forma L proteinogênica de referência, não uma afirmação sobre a forma do padrão experimental",
+        "fontesIdentidade": [
+          "https://www.ebi.ac.uk/chebi/CHEBI:17895",
+          "https://www.ebi.ac.uk/chebi/CHEBI:83813",
+          "https://proteiniq.io/datasets/biological-molecules"
+        ],
+        "dataConferencia": "2026-11-24",
+        "observacao": "Identidade e forma L conferidas individualmente no ChEBI. CID e fórmula cruzados com compilação ProteinIQ; acesso direto PubChem bloqueado. CAS não conferido nesta rodada. Não inferir estereoquímica dos padrões Ukil/Hudaib nem separar enantiômeros por Rf."
       },
       "propriedades": {
         "densidade": null,
@@ -2105,7 +2485,7 @@
       },
       "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
       "auditoriaRetencao": {
-        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "estado": "identidade_de_referencia_e_dois_sistemas_contextuais_conferidos",
         "metodos": [
           "tlc_aminoacids_ukil_2013_propanol_water_70_30",
           "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
@@ -2118,7 +2498,18 @@
         ],
         "homologacaoMetodoQuantitativo": false,
         "homologacaoCena": false,
-        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas.",
+        "estereoquimicaPadraoConferida": false,
+        "referenciaDidaticaConferida": true
+      },
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+        ],
+        "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+        "habilitarCenaQuantitativa": false
       }
     },
     {
@@ -2127,8 +2518,18 @@
       "grupo": "aminoacidos",
       "identity": {
         "cas": null,
-        "pubchemCID": null,
-        "verificadoIndividualmente": false
+        "pubchemCID": 6287,
+        "verificadoIndividualmente": true,
+        "chebiID": "CHEBI:16414",
+        "formulaMolecular": "C5H11NO2",
+        "formaInvestigada": "Forma L proteinogênica de referência, não uma afirmação sobre a forma do padrão experimental",
+        "fontesIdentidade": [
+          "https://www.ebi.ac.uk/chebi/CHEBI:16414",
+          "https://www.ebi.ac.uk/chebi/CHEBI:83813",
+          "https://proteiniq.io/datasets/biological-molecules"
+        ],
+        "dataConferencia": "2026-11-24",
+        "observacao": "Identidade e forma L conferidas individualmente no ChEBI. CID e fórmula cruzados com compilação ProteinIQ; acesso direto PubChem bloqueado. CAS não conferido nesta rodada. Não inferir estereoquímica dos padrões Ukil/Hudaib nem separar enantiômeros por Rf."
       },
       "propriedades": {
         "densidade": null,
@@ -2159,7 +2560,7 @@
       },
       "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
       "auditoriaRetencao": {
-        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "estado": "identidade_de_referencia_e_dois_sistemas_contextuais_conferidos",
         "metodos": [
           "tlc_aminoacids_ukil_2013_propanol_water_70_30",
           "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
@@ -2172,7 +2573,18 @@
         ],
         "homologacaoMetodoQuantitativo": false,
         "homologacaoCena": false,
-        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas.",
+        "estereoquimicaPadraoConferida": false,
+        "referenciaDidaticaConferida": true
+      },
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5"
+        ],
+        "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+        "habilitarCenaQuantitativa": false
       }
     },
     {
@@ -3307,7 +3719,9 @@
             "fonte": "ukil2013",
             "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
             "incerteza": null
-          }
+          },
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa."
         },
         {
           "analito": "cysteine",
@@ -3326,7 +3740,9 @@
             "fonte": "ukil2013",
             "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
             "incerteza": null
-          }
+          },
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa."
         },
         {
           "analito": "histidine",
@@ -3345,7 +3761,9 @@
             "fonte": "ukil2013",
             "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
             "incerteza": null
-          }
+          },
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa."
         },
         {
           "analito": "isoleucine",
@@ -3364,7 +3782,9 @@
             "fonte": "ukil2013",
             "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
             "incerteza": null
-          }
+          },
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa."
         },
         {
           "analito": "glutamine",
@@ -3383,7 +3803,9 @@
             "fonte": "ukil2013",
             "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
             "incerteza": null
-          }
+          },
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa."
         },
         {
           "analito": "lysine",
@@ -3402,7 +3824,9 @@
             "fonte": "ukil2013",
             "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
             "incerteza": null
-          }
+          },
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa."
         },
         {
           "analito": "asparagine",
@@ -3421,7 +3845,9 @@
             "fonte": "ukil2013",
             "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
             "incerteza": null
-          }
+          },
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa."
         },
         {
           "analito": "phenylalanine",
@@ -3440,7 +3866,9 @@
             "fonte": "ukil2013",
             "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
             "incerteza": null
-          }
+          },
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa."
         },
         {
           "analito": "serine",
@@ -3459,7 +3887,9 @@
             "fonte": "ukil2013",
             "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
             "incerteza": null
-          }
+          },
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa."
         },
         {
           "analito": "threonine",
@@ -3478,7 +3908,9 @@
             "fonte": "ukil2013",
             "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
             "incerteza": null
-          }
+          },
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa."
         },
         {
           "analito": "alanine",
@@ -3497,7 +3929,9 @@
             "fonte": "ukil2013",
             "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
             "incerteza": null
-          }
+          },
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa."
         },
         {
           "analito": "glutamic_acid",
@@ -3516,7 +3950,9 @@
             "fonte": "ukil2013",
             "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
             "incerteza": null
-          }
+          },
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa."
         },
         {
           "analito": "valine",
@@ -3535,7 +3971,9 @@
             "fonte": "ukil2013",
             "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
             "incerteza": null
-          }
+          },
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa."
         },
         {
           "analito": "methionine",
@@ -3554,7 +3992,9 @@
             "fonte": "ukil2013",
             "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
             "incerteza": null
-          }
+          },
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa."
         },
         {
           "analito": "aspartic_acid",
@@ -3573,7 +4013,9 @@
             "fonte": "ukil2013",
             "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
             "incerteza": null
-          }
+          },
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa."
         },
         {
           "analito": "tyrosine",
@@ -3592,7 +4034,9 @@
             "fonte": "ukil2013",
             "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
             "incerteza": null
-          }
+          },
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa."
         },
         {
           "analito": "leucine",
@@ -3611,7 +4055,9 @@
             "fonte": "ukil2013",
             "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
             "incerteza": null
-          }
+          },
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa."
         },
         {
           "analito": "glycine",
@@ -3630,7 +4076,9 @@
             "fonte": "ukil2013",
             "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
             "incerteza": null
-          }
+          },
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa."
         },
         {
           "analito": "proline",
@@ -3649,7 +4097,9 @@
             "fonte": "ukil2013",
             "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
             "incerteza": null
-          }
+          },
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa."
         },
         {
           "analito": "tryptophan",
@@ -3668,7 +4118,9 @@
             "fonte": "ukil2013",
             "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
             "incerteza": null
-          }
+          },
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa."
         }
       ],
       "nota": "A revelação descrita não é apenas ninhidrina; a tabela também compara limites de detecção da ninhidrina, mas não relata suas cores como cores da tabela. Distâncias de frente/mancha e temperatura de eluição não informadas. Fonte primária inspecionada, homologação ainda requer identidade e conferência de condições completas.",
@@ -3682,6 +4134,14 @@
           "Não inferir estereoquímica L/D do aminoácido só pelo nome",
           "Revelação final realizada com 4-dimetilaminobenzaldeído e isatina; ninhidrina é comparação de limite de detecção"
         ]
+      },
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "fontePrimaria": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+        "dataConferencia": "2026-11-24",
+        "escopo": "comparar Rf de padrões nominais sob condições publicadas",
+        "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+        "habilitarCenaQuantitativa": false
       }
     },
     {
@@ -5800,7 +6260,9 @@
           "temperaturaC": null,
           "homologado": false,
           "fontePrimariaConferida": true,
-          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada"
+          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada",
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa."
         },
         {
           "analito": "arginine",
@@ -5810,7 +6272,9 @@
           "temperaturaC": null,
           "homologado": false,
           "fontePrimariaConferida": true,
-          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada"
+          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada",
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa."
         },
         {
           "analito": "asparagine",
@@ -5820,7 +6284,9 @@
           "temperaturaC": null,
           "homologado": false,
           "fontePrimariaConferida": true,
-          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada"
+          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada",
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa."
         },
         {
           "analito": "aspartic_acid",
@@ -5830,7 +6296,9 @@
           "temperaturaC": null,
           "homologado": false,
           "fontePrimariaConferida": true,
-          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada"
+          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada",
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa."
         },
         {
           "analito": "cysteine",
@@ -5840,7 +6308,9 @@
           "temperaturaC": null,
           "homologado": false,
           "fontePrimariaConferida": true,
-          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada"
+          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada",
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa."
         },
         {
           "analito": "glutamic_acid",
@@ -5850,7 +6320,9 @@
           "temperaturaC": null,
           "homologado": false,
           "fontePrimariaConferida": true,
-          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada"
+          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada",
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa."
         },
         {
           "analito": "glutamine",
@@ -5860,7 +6332,9 @@
           "temperaturaC": null,
           "homologado": false,
           "fontePrimariaConferida": true,
-          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada"
+          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada",
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa."
         },
         {
           "analito": "glycine",
@@ -5870,7 +6344,9 @@
           "temperaturaC": null,
           "homologado": false,
           "fontePrimariaConferida": true,
-          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada"
+          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada",
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa."
         },
         {
           "analito": "histidine",
@@ -5880,7 +6356,9 @@
           "temperaturaC": null,
           "homologado": false,
           "fontePrimariaConferida": true,
-          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada"
+          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada",
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa."
         },
         {
           "analito": "isoleucine",
@@ -5890,7 +6368,9 @@
           "temperaturaC": null,
           "homologado": false,
           "fontePrimariaConferida": true,
-          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada"
+          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada",
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa."
         },
         {
           "analito": "leucine",
@@ -5900,7 +6380,9 @@
           "temperaturaC": null,
           "homologado": false,
           "fontePrimariaConferida": true,
-          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada"
+          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada",
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa."
         },
         {
           "analito": "lysine",
@@ -5910,7 +6392,9 @@
           "temperaturaC": null,
           "homologado": false,
           "fontePrimariaConferida": true,
-          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada"
+          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada",
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa."
         },
         {
           "analito": "methionine",
@@ -5920,7 +6404,9 @@
           "temperaturaC": null,
           "homologado": false,
           "fontePrimariaConferida": true,
-          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada"
+          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada",
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa."
         },
         {
           "analito": "phenylalanine",
@@ -5930,7 +6416,9 @@
           "temperaturaC": null,
           "homologado": false,
           "fontePrimariaConferida": true,
-          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada"
+          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada",
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa."
         },
         {
           "analito": "proline",
@@ -5940,7 +6428,9 @@
           "temperaturaC": null,
           "homologado": false,
           "fontePrimariaConferida": true,
-          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada"
+          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada",
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa."
         },
         {
           "analito": "serine",
@@ -5950,7 +6440,9 @@
           "temperaturaC": null,
           "homologado": false,
           "fontePrimariaConferida": true,
-          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada"
+          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada",
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa."
         },
         {
           "analito": "threonine",
@@ -5960,7 +6452,9 @@
           "temperaturaC": null,
           "homologado": false,
           "fontePrimariaConferida": true,
-          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada"
+          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada",
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa."
         },
         {
           "analito": "tryptophan",
@@ -5970,7 +6464,9 @@
           "temperaturaC": null,
           "homologado": false,
           "fontePrimariaConferida": true,
-          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada"
+          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada",
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa."
         },
         {
           "analito": "tyrosine",
@@ -5980,7 +6476,9 @@
           "temperaturaC": null,
           "homologado": false,
           "fontePrimariaConferida": true,
-          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada"
+          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada",
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa."
         },
         {
           "analito": "valine",
@@ -5990,7 +6488,9 @@
           "temperaturaC": null,
           "homologado": false,
           "fontePrimariaConferida": true,
-          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada"
+          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada",
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa."
         }
       ],
       "nota": "Padrões 2% m/v; desenvolvimento ~3 h. Estereoquímica, pureza e dispersão individual de Rf não especificadas.",
@@ -6010,6 +6510,14 @@
         "parametrosRetencaoConferidos": true,
         "habilitarCenaQuantitativa": false,
         "motivo": "Referência experimental contextual; motor não calibrado."
+      },
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "fontePrimaria": "https://doi.org/10.1556/1006.2016.29.2.9",
+        "dataConferencia": "2026-11-24",
+        "escopo": "comparar Rf de padrões nominais sob condições publicadas",
+        "restricao": "Rf publicado de padrão nominal, sob condições da fonte; não confirma estereoquímica, pureza, identificação inequívoca em mistura, repetibilidade de Rf ou calibração. Consulta contextual; sem predição ou cena quantitativa.",
+        "habilitarCenaQuantitativa": false
       }
     },
     {

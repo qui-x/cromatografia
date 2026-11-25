@@ -49,7 +49,7 @@ assert.deepEqual(
 assert.deepEqual(matriz.candidatos.filter(c=>c.homologacaoCompleta).map(c=>c.id).sort(),["ascorbic_acid","brilliant_blue_fcf","caffeine","coumarin","curcumin","paracetamol","ponceau_4r","quercetin","rutin","tartrazina","vanillin"]);
 assert.equal(matriz.resumo.liberadosParaSimulacaoReal,0,"HPTLC não pode abrir a cena de CCD ou coluna");
 assert.equal(matriz.resumo.liberadosParaSimulacaoReal,report.resumo.liberadosParaSimulacaoReal);
-assert.equal(matriz.resumo.identidadesQuimicasConferidas,21);
+assert.equal(matriz.resumo.identidadesQuimicasConferidas,40);
 
 assert(matriz.candidatos.every(c=>!c.homologacaoCompleta||c.disponibilidadeSimulacaoReal===false));
 
@@ -149,3 +149,25 @@ for(const id of ["curcumin","ascorbic_acid"]){const z=h.avaliarSubstancia(id,bas
 for(const id of ["tartrazina","ponceau_4r","brilliant_blue_fcf"]){const z=h.avaliarSubstancia(id,base);assert.equal(z.homologacaoCompleta,true);assert.equal(z.metodosComCondicoesHomologadas,2);assert.equal(z.disponibilidadeSimulacaoReal,false);}
 
 assert.equal(report.candidatos.filter(c=>c.grupo==="aminoacidos"&&c.metodosComRetencaoIndividual>=3).length,20);assert.equal(report.candidatos.filter(c=>c.grupo==="aminoacidos"&&c.homologacaoCompleta).length,0);
+
+assert.equal(report.resumo.comReferenciaDidaticaValidada,31);
+assert.equal(report.resumo.somenteReferenciaDidatica,20);
+assert.equal(matriz.resumo.comReferenciaDidaticaValidada,report.resumo.comReferenciaDidaticaValidada);
+assert.deepEqual(matriz.candidatos.filter(c=>c.referenciaDidaticaValidada).map(c=>c.id).sort(),report.candidatos.filter(c=>c.referenciaDidaticaValidada).map(c=>c.id).sort());
+for(const c of report.candidatos.filter(c=>c.grupo==="aminoacidos")){
+ assert(c.identidadeConferida&&c.referenciaDidaticaValidada);
+ assert.equal(c.comparacoesDidaticasConferidas.length,1);
+ assert.equal(c.homologacaoCompleta,false);
+ assert.equal(c.disponibilidadeSimulacaoReal,false);
+}
+const clone=JSON.parse(JSON.stringify(base));
+const uk=clone.protocolos.find(p=>p.id==="tlc_aminoacids_ukil_2013_propanol_water_70_30");
+uk.referenciaDidatica.fontePrimaria="https://example.org/fonte-errada";
+assert.equal(h.avaliarSubstancia("alanine",clone).referenciaDidaticaValidada,false);
+uk.referenciaDidatica.fontePrimaria=clone.fontes[uk.fonte];
+uk.dadosRf.find(d=>d.analito==="alanine").classe="predito";
+assert.equal(h.avaliarSubstancia("alanine",clone).referenciaDidaticaValidada,false);
+uk.dadosRf.find(d=>d.analito==="alanine").classe="medido";
+const hu=clone.protocolos.find(p=>p.id==="tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5");
+hu.fonte=uk.fonte;hu.referenciaDidatica.fontePrimaria=clone.fontes[uk.fonte];hu.dadosRf.find(d=>d.analito==="alanine").fonte=uk.fonte;
+assert.equal(h.avaliarSubstancia("alanine",clone).referenciaDidaticaValidada,false);

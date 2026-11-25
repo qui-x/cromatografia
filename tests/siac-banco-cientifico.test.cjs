@@ -95,7 +95,7 @@ for(const p of solvents.paresMiscibilidade){
 }
 const candidates=new Set(analytes.candidatos.map(a=>a.id));
 assert.equal(analytes.candidatos.filter(a=>a.homologacao==="homologado_hptlc_condicional").length,7);
-assert.equal(analytes.candidatos.filter(a=>a.identity.verificadoIndividualmente).length,21);
+assert.equal(analytes.candidatos.filter(a=>a.identity.verificadoIndividualmente).length,40);
 assert(analytes.candidatos.every(a=>a.propriedades.densidade===null));
 assert.equal(analytes.candidatos.filter(a=>a.retencao.rf.length===2).length,11);
 let rfs=0;
@@ -243,3 +243,9 @@ assert.equal(lote24.find(p=>p.id==="hptlc_vanillin_krishnaveni2013").status,"ref
 const screeningAA=analytes.protocolos.filter(p=>p.id.startsWith("hptlc_ascorbic_2022_rp_screen_"));assert.equal(screeningAA.length,6);assert(screeningAA.every(p=>p.status!=="homologado"&&p.dadosRf[0].replicatas===3));
 
 const amino2020=analytes.protocolos.find(p=>p.id==="ccd_aminoacidos_santiarporn_chanroj2020");assert.equal(amino2020.dadosRf.length,20);assert(amino2020.dadosRf.every(d=>d.homologado===false&&d.fontePrimariaConferida===true));assert.equal(ukil.dadosRf.filter(d=>d.revelacaoObservada?.corQualitativa&&Number.isFinite(d.revelacaoObservada.limiteDeteccaoUg)).length,20);assert(analytes.candidatos.filter(c=>c.grupo==="aminoacidos").every(c=>c.propriedades.corObservavel.homologadoParaCena===false));
+
+const aaIdentidades=analytes.candidatos.filter(c=>c.grupo==="aminoacidos");
+assert.equal(aaIdentidades.length,20);
+assert(aaIdentidades.every(c=>c.identity.verificadoIndividualmente===true&&/^CHEBI:\d+$/.test(c.identity.chebiID)));
+assert.equal(new Set(aaIdentidades.map(c=>c.identity.chebiID)).size,20);
+assert(aaIdentidades.every(c=>c.referenciaDidatica.habilitarCenaQuantitativa===false));
