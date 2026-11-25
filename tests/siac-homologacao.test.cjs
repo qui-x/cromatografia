@@ -4,26 +4,26 @@ const h=require("../js/simulation/siac-homologacao.js");
 const base=require("../data/siac/analitos-protocolos.v1.json");
 const report=h.auditarCatalogo(base);
 assert.equal(report.resumo.catalogados,76);
-assert.equal(report.resumo.comUmOuMaisMetodosDeRetencao,48);
+assert.equal(report.resumo.comUmOuMaisMetodosDeRetencao,49);
 assert.equal(report.resumo.comDoisOuMaisMetodosDeRetencao,46,
   "os 20 candidatos com dois métodos devem ter evidência individual");
 assert.equal(report.resumo.comDoisMetodosESolventesContrastantes,46);
-assert.equal(report.resumo.completamenteHomologados,3,
+assert.equal(report.resumo.completamenteHomologados,6,
  "cafeína e paracetamol têm dados HPTLC com dois eluentes e fonte primária conferida");
-assert.equal(report.resumo.faltamParaMetaMinima,37);
+assert.equal(report.resumo.faltamParaMetaMinima,34);
 assert.equal(report.resumo.liberadosParaSimulacaoReal,0,
  "validação científica de HPTLC NÃO autoriza cena física de CCD, papel nem coluna");
 assert(report.candidatos.every(x=>x.disponibilidadeSimulacaoReal===false));
 
-assert.equal(report.resumo.faltamParaMetaAmpliada,52);
-assert.deepEqual(report.candidatos.filter(c=>c.homologacaoCompleta).map(c=>c.id).sort(),["caffeine","coumarin","paracetamol"]);
+assert.equal(report.resumo.faltamParaMetaAmpliada,49);
+assert.deepEqual(report.candidatos.filter(c=>c.homologacaoCompleta).map(c=>c.id).sort(),["caffeine","coumarin","paracetamol","quercetin","rutin","vanillin"]);
 const novos40=["methyl_orange","sudan_iv","quercetin","curcumin","caffeine","paracetamol",
  "ibuprofen","acetylsalicylic_acid","beta_carotene","lutein"];
 for(const id of novos40){
  const x=h.avaliarSubstancia(id,base);
  assert(x.metodosComRetencaoIndividual>=2,"dois métodos faltando: "+id);
  assert(x.comparacoesPossiveis.length>0,"solventes sem contraste real: "+id);
- assert.equal(x.homologacaoCompleta,["caffeine","paracetamol"].includes(id),"somente dois analitos HPTLC foram revisados na fonte primária");
+ assert.equal(x.homologacaoCompleta,["caffeine","paracetamol","quercetin"].includes(id),"somente dois analitos HPTLC foram revisados na fonte primária");
 }
 const porGrupo=report.candidatos.filter(c=>c.comparacoesPossiveis.length>0)
  .reduce((acc,c)=>(acc[c.grupo]=(acc[c.grupo]||0)+1,acc),{});
@@ -40,13 +40,13 @@ assert.equal(matriz.resumo.totaisRegistroRfPontual,
  base.protocolos.reduce((n,p)=>n+(p.dadosRf?.length||0),0));
 assert.equal(matriz.resumo.totalRfIntervalos,
  base.protocolos.reduce((n,p)=>n+(p.dadosRfIntervalos?.length||0),0));
-assert.equal(matriz.resumo.totaisRegistroRfPontual,182);
+assert.equal(matriz.resumo.totaisRegistroRfPontual,188);
 assert.equal(matriz.resumo.totalRfIntervalos,1);
 assert.deepEqual(
  matriz.candidatos.filter(c=>c.doisSolventesContrastantesEmDoisMetodos).map(c=>c.id).sort(),
  report.candidatos.filter(c=>c.comparacoesPossiveis.length>0).map(c=>c.id).sort(),
  "pares de métodos em pesquisa precisam coincidir entre a matriz publicada e o motor");
-assert.deepEqual(matriz.candidatos.filter(c=>c.homologacaoCompleta).map(c=>c.id).sort(),["caffeine","coumarin","paracetamol"]);
+assert.deepEqual(matriz.candidatos.filter(c=>c.homologacaoCompleta).map(c=>c.id).sort(),["caffeine","coumarin","paracetamol","quercetin","rutin","vanillin"]);
 assert.equal(matriz.resumo.liberadosParaSimulacaoReal,0,"HPTLC não pode abrir a cena de CCD ou coluna");
 assert.equal(matriz.resumo.liberadosParaSimulacaoReal,report.resumo.liberadosParaSimulacaoReal);
 assert.equal(matriz.resumo.identidadesQuimicasConferidas,13);
@@ -137,7 +137,7 @@ assert.equal(h.auditarCatalogo(source).resumo.completamenteHomologados,1,
 
 console.log("SIAC homologação: mínimo dois métodos e solventes contrastantes, dados e identidade homologados — OK");
 
-for(const id of ["vanillin","rutin","quercetin"]){const z=h.avaliarSubstancia(id,base);assert(z.identidadeConferida);assert(z.comparacoesPossiveis.length);assert.equal(z.metodosComCondicoesHomologadas,1);assert.equal(z.homologacaoCompleta,false);assert.equal(z.disponibilidadeSimulacaoReal,false);}
+for(const id of ["vanillin","rutin","quercetin"]){const z=h.avaliarSubstancia(id,base);assert(z.identidadeConferida);assert(z.comparacoesPossiveis.length);assert.equal(z.metodosComCondicoesHomologadas,2);assert.equal(z.homologacaoCompleta,true);assert.equal(z.disponibilidadeSimulacaoReal,false);}
 for(const id of ["asparagine","cysteine"])assert(h.avaliarSubstancia(id,base).comparacoesPossiveis.length);
 
 assert.equal(h.avaliarSubstancia("coumarin",base).homologacaoCompleta,true);

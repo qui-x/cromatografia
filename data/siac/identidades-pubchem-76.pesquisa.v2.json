@@ -679,9 +679,9 @@
         "corObservadaSobCondicoes": null,
         "uv254": null,
         "uv365": null,
-        "rfHomologado": false,
+        "rfHomologado": true,
         "kColunaHomologado": false,
-        "rfHomologadoRestricao": "Um método HPTLC de referência conferido; falta segundo método homologado."
+        "rfHomologadoRestricao": "Somente os dois métodos HPTLC auditados; não extrapolar."
       },
       "autorizacaoSimulacaoReal": false
     },
@@ -706,9 +706,9 @@
         "corObservadaSobCondicoes": null,
         "uv254": null,
         "uv365": null,
-        "rfHomologado": false,
+        "rfHomologado": true,
         "kColunaHomologado": false,
-        "rfHomologadoRestricao": "Um método HPTLC de referência conferido; falta segundo método homologado."
+        "rfHomologadoRestricao": "Somente os dois métodos HPTLC auditados; não extrapolar."
       },
       "autorizacaoSimulacaoReal": false
     },
@@ -1509,9 +1509,9 @@
         "corObservadaSobCondicoes": null,
         "uv254": null,
         "uv365": null,
-        "rfHomologado": false,
+        "rfHomologado": true,
         "kColunaHomologado": false,
-        "rfHomologadoRestricao": "Um método HPTLC de referência conferido; falta segundo método homologado."
+        "rfHomologadoRestricao": "Somente os dois métodos HPTLC auditados; não extrapolar."
       },
       "autorizacaoSimulacaoReal": false
     },

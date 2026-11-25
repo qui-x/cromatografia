@@ -36,7 +36,10 @@
     "nair2017polyphenols": "https://doi.org/10.4103/pr.pr_122_16",
     "xu2022": "https://doi.org/10.1016/j.chempr.2022.08.008",
     "kulikov2021coumarin": "https://www.advancechemjournal.com/journals/aac/aac-aid1024.php",
-    "stiefel2017coumarin": "https://doi.org/10.1021/acsomega.7b00562"
+    "stiefel2017coumarin": "https://doi.org/10.1021/acsomega.7b00562",
+    "sharma2007vanillin": "https://doi.org/10.1002/jssc.200700229",
+    "thomas2020moringa": "https://doi.org/10.4274/tjps.galenos.2018.80958",
+    "kagathara2022antioxidants": "https://doi.org/10.1007/s13738-022-02586-9"
   },
   "candidatos": [
     {
@@ -768,7 +771,7 @@
         "corObservavel": null,
         "absorcaoUV": null
       },
-      "homologacao": "candidato_sem_parametros",
+      "homologacao": "homologado_hptlc_condicional",
       "retencao": {
         "rf": [
           {
@@ -779,12 +782,22 @@
             "faseMovel": "acetonitrila:água 4:6",
             "condicao": "somente condições do artigo",
             "homologado": true
+          },
+          {
+            "metodoId": "hptlc_flavonoids_thomas2020_np",
+            "tecnica": "hptlc",
+            "valor": 0.8,
+            "fonte": "thomas2020moringa",
+            "faseMovel": "toluene 4.9 : ethyl_acetate 4.1 : methanol 2 : formic_acid 0.5",
+            "condicao": "somente condições do artigo",
+            "homologado": true,
+            "incertezaRfReportada": 0.03
           }
         ],
         "fatorK": [],
         "isotermas": []
       },
-      "observacao": "Identidade conferida; um método HPTLC de referência homologado, segundo em revisão; cena não autorizada."
+      "observacao": "Dois métodos HPTLC de fontes independentes e eluentes distintos, referência experimental contextual. Motor quantitativo não calibrado."
     },
     {
       "id": "rutin",
@@ -810,7 +823,7 @@
         "corObservavel": null,
         "absorcaoUV": null
       },
-      "homologacao": "candidato_sem_parametros",
+      "homologacao": "homologado_hptlc_condicional",
       "retencao": {
         "rf": [
           {
@@ -821,12 +834,22 @@
             "faseMovel": "acetonitrila:água 4:6",
             "condicao": "somente condições do artigo",
             "homologado": true
+          },
+          {
+            "metodoId": "hptlc_flavonoids_thomas2020_np",
+            "tecnica": "hptlc",
+            "valor": 0.22,
+            "fonte": "thomas2020moringa",
+            "faseMovel": "toluene 4.9 : ethyl_acetate 4.1 : methanol 2 : formic_acid 0.5",
+            "condicao": "somente condições do artigo",
+            "homologado": true,
+            "incertezaRfReportada": 0.02
           }
         ],
         "fatorK": [],
         "isotermas": []
       },
-      "observacao": "Identidade conferida; um método HPTLC de referência homologado, segundo em revisão; cena não autorizada."
+      "observacao": "Dois métodos HPTLC de fontes independentes e eluentes distintos, referência experimental contextual. Motor quantitativo não calibrado."
     },
     {
       "id": "curcumin",
@@ -1720,7 +1743,7 @@
         "corObservavel": null,
         "absorcaoUV": null
       },
-      "homologacao": "candidato_sem_parametros",
+      "homologacao": "homologado_hptlc_condicional",
       "retencao": {
         "rf": [
           {
@@ -1731,12 +1754,21 @@
             "faseMovel": "tolueno:1,4-dioxano:ácido acético 9:2,5:0,4",
             "condicao": "somente condições do artigo",
             "homologado": true
+          },
+          {
+            "metodoId": "hptlc_vanillin_sharma2007_rp",
+            "tecnica": "hptlc",
+            "valor": 0.41,
+            "fonte": "sharma2007vanillin",
+            "faseMovel": "methanol 30 : water 65 : isopropanol 2 : acetic_acid 3",
+            "condicao": "somente condições do artigo",
+            "homologado": true
           }
         ],
         "fatorK": [],
         "isotermas": []
       },
-      "observacao": "Identidade conferida; um método HPTLC de referência homologado, segundo em revisão; cena não autorizada."
+      "observacao": "Dois métodos HPTLC de fontes independentes e eluentes distintos, referência experimental contextual. Motor quantitativo não calibrado."
     },
     {
       "id": "ethyl_vanillin",
@@ -6901,6 +6933,265 @@
         "ressalvas": [
           "hRf 50 ± 2 convertido para Rf 0,50 ± 0,02. Recuperação 96–102%, repetibilidade 1,1–2,9% RSD. Amônia 25% como modificador.",
           "Não extrapolar a papel, coluna ou cena quantitativa."
+        ]
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "hptlc",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false
+      }
+    },
+    {
+      "id": "hptlc_vanillin_sharma2007_rp",
+      "fonte": "sharma2007vanillin",
+      "ano": 2007,
+      "tecnica": "hptlc",
+      "assuntos": [
+        "farmacos_e_organicos"
+      ],
+      "status": "homologado",
+      "referenciaSecao": "Seções 2.1, 2.3.1–2.3.5, 3.2, tabela 1 (composto 7), figura 4",
+      "faseEstacionaria": {
+        "classe": "HPTLC sílica RP-18 F254S Merck",
+        "detalhamento": "Placa 20 × 20 cm, sem pré-tratamento ou lavagem",
+        "homologada": true
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "methanol",
+            "partes": 30
+          },
+          {
+            "id": "water",
+            "partes": 65
+          },
+          {
+            "id": "isopropanol",
+            "partes": 2
+          },
+          {
+            "id": "acetic_acid",
+            "partes": 3
+          }
+        ],
+        "base": "v/v",
+        "mistura": "methanol 30 : water 65 : isopropanol 2 : acetic_acid 3",
+        "homologada": true
+      },
+      "aplicacao": {
+        "detector": "Reflectância/absorbância a 280 nm; inspeção UV 254 nm",
+        "detectorHomologado": true,
+        "detectorNm": 280,
+        "visualizacaoNm": 254,
+        "alturaDaBaseMmAprox": 100,
+        "larguraBandaMm": 10,
+        "saturacaoCamaraMin": null,
+        "faixaCalibracaoNgPorBanda": {
+          "min": 4000,
+          "max": 20000
+        }
+      },
+      "dadosRf": [
+        {
+          "analito": "vanillin",
+          "rf": 0.41,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "sharma2007vanillin",
+          "homologado": true,
+          "fontePrimariaConferida": true
+        }
+      ],
+      "nota": "Padrão comprado Merck; Rf 0,41, dispersão específica do Rf não informada. Repetibilidade de área <3,5% e recuperação 95,4–102,5% para o conjunto dos 10 analitos; não atribuir faixa global especificamente à vanilina. Homologação de referência, não de calibração instrumental.",
+      "auditoriaCientifica": {
+        "estado": "metodo_experimental_revisado_referencia_condicional",
+        "fontePrimaria": "https://doi.org/10.1002/jssc.200700229",
+        "doi": "10.1002/jssc.200700229",
+        "secoesConferidas": "Seções 2.1, 2.3.1–2.3.5, 3.2, tabela 1 (composto 7), figura 4",
+        "dataConferencia": "2026-11-24",
+        "ressalvas": [
+          "Padrão comprado Merck; Rf 0,41, dispersão específica do Rf não informada. Repetibilidade de área <3,5% e recuperação 95,4–102,5% para o conjunto dos 10 analitos; não atribuir faixa global especificamente à vanilina. Homologação de referência, não de calibração instrumental.",
+          "Não transferir Rf ou calibração para outra técnica ou cena."
+        ]
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "hptlc",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false
+      }
+    },
+    {
+      "id": "hptlc_flavonoids_thomas2020_np",
+      "fonte": "thomas2020moringa",
+      "ano": 2020,
+      "tecnica": "hptlc",
+      "assuntos": [
+        "pigmentos_vegetais"
+      ],
+      "status": "homologado",
+      "referenciaSecao": "Resumo; materiais e métodos; otimização solução 1; validação; tabela 5; figura 8",
+      "faseEstacionaria": {
+        "classe": "Sílica gel 60 F254 Merck, alumínio",
+        "detalhamento": "10 × 10 cm, camada 0,2 mm, desenvolvimento linear ascendente",
+        "homologada": true
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "toluene",
+            "partes": 4.9
+          },
+          {
+            "id": "ethyl_acetate",
+            "partes": 4.1
+          },
+          {
+            "id": "methanol",
+            "partes": 2
+          },
+          {
+            "id": "formic_acid",
+            "partes": 0.5
+          }
+        ],
+        "base": "v/v",
+        "mistura": "toluene 4.9 : ethyl_acetate 4.1 : methanol 2 : formic_acid 0.5",
+        "homologada": true
+      },
+      "aplicacao": {
+        "detector": "Densitometria a 300 nm; comparação espectral de padrões e amostras",
+        "detectorHomologado": true,
+        "detectorNm": 300,
+        "desenvolvimentoFrenteMm": 80,
+        "larguraBandaMm": 6,
+        "tempoAplicacaoAteDesenvolvimentoMin": 26,
+        "faixaCalibracaoNgPorBanda": {
+          "min": 200,
+          "max": 1200
+        }
+      },
+      "dadosRf": [
+        {
+          "analito": "quercetin",
+          "rf": 0.8,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "thomas2020moringa",
+          "homologado": true,
+          "fontePrimariaConferida": true,
+          "incertezaRfReportada": 0.03
+        },
+        {
+          "analito": "rutin",
+          "rf": 0.22,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "thomas2020moringa",
+          "homologado": true,
+          "fontePrimariaConferida": true,
+          "incertezaRfReportada": 0.02
+        }
+      ],
+      "nota": "Padrões quercetina 99% e rutina 98%; recuperação global 98,1–99,4%, precisão de área <2% RSD. O texto de resultados e conclusão usa 'menthol', enquanto resumo, ensaios de otimização e contexto da composição descrevem metanol. Registrar provável erro editorial explicitamente; homologação de Rf contextual, não reprodução metrológica. Não pressupor hidratação do padrão.",
+      "auditoriaCientifica": {
+        "estado": "metodo_experimental_revisado_referencia_condicional",
+        "fontePrimaria": "https://doi.org/10.4274/tjps.galenos.2018.80958",
+        "doi": "10.4274/tjps.galenos.2018.80958",
+        "secoesConferidas": "Resumo; materiais e métodos; otimização solução 1; validação; tabela 5; figura 8",
+        "dataConferencia": "2026-11-24",
+        "ressalvas": [
+          "Padrões quercetina 99% e rutina 98%; recuperação global 98,1–99,4%, precisão de área <2% RSD. O texto de resultados e conclusão usa 'menthol', enquanto resumo, ensaios de otimização e contexto da composição descrevem metanol. Registrar provável erro editorial explicitamente; homologação de Rf contextual, não reprodução metrológica. Não pressupor hidratação do padrão.",
+          "Não transferir Rf ou calibração para outra técnica ou cena."
+        ]
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "hptlc",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false
+      }
+    },
+    {
+      "id": "hptlc_antioxidants_kagathara2022_np",
+      "fonte": "kagathara2022antioxidants",
+      "ano": 2022,
+      "tecnica": "hptlc",
+      "assuntos": [
+        "pigmentos_vegetais",
+        "farmacos_e_organicos"
+      ],
+      "status": "referencia_primaria_conferida_nao_homologada",
+      "referenciaSecao": "Experimental; HPTLC method development; tabelas 1–3; figuras 3–5",
+      "faseEstacionaria": {
+        "classe": "Sílica gel 60 F254, alumínio",
+        "detalhamento": "20 × 10 ou 10 × 10 cm; pré-lavagem metanol e ativação 110 °C por 10 min",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "chloroform",
+            "partes": 6
+          },
+          {
+            "id": "ethyl_acetate",
+            "partes": 6
+          },
+          {
+            "id": "formic_acid",
+            "partes": 2.5
+          }
+        ],
+        "base": "v/v",
+        "mistura": "chloroform 6 : ethyl_acetate 6 : formic_acid 2.5",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "Scanner HPTLC a 265 nm",
+        "detectorHomologado": false,
+        "detectorNm": 265,
+        "saturacaoCamaraMin": 15,
+        "faixaCalibracaoNgPorBanda": {
+          "min": 500,
+          "max": 1000
+        }
+      },
+      "dadosRf": [
+        {
+          "analito": "ascorbic_acid",
+          "rf": 0.1,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "kagathara2022antioxidants",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "incertezaRfReportada": 0.02
+        },
+        {
+          "analito": "quercetin",
+          "rf": 0.72,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "kagathara2022antioxidants",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "incertezaRfReportada": 0.02
+        },
+        {
+          "analito": "curcumin",
+          "rf": 0.83,
+          "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+          "fonte": "kagathara2022antioxidants",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "incertezaRfReportada": 0.02
+        }
+      ],
+      "nota": "Padrões Sigma-Aldrich, saturação 15 min. A tabela e o texto apresentam divergência nas recuperações de curcumina; Rf claramente publicado. Manter referência sem homologar toda a validação; não inferir pureza.",
+      "auditoriaCientifica": {
+        "estado": "fonte_primaria_conferida_referencia_condicional",
+        "fontePrimaria": "https://doi.org/10.1007/s13738-022-02586-9",
+        "doi": "10.1007/s13738-022-02586-9",
+        "secoesConferidas": "Experimental; HPTLC method development; tabelas 1–3; figuras 3–5",
+        "dataConferencia": "2026-11-24",
+        "ressalvas": [
+          "Padrões Sigma-Aldrich, saturação 15 min. A tabela e o texto apresentam divergência nas recuperações de curcumina; Rf claramente publicado. Manter referência sem homologar toda a validação; não inferir pureza.",
+          "Não transferir Rf ou calibração para outra técnica ou cena."
         ]
       },
       "disponibilidadeSimulador": {

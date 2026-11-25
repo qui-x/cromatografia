@@ -15,17 +15,17 @@
   },
   "resumo": {
     "candidatos": 76,
-    "comPeloMenosUmRfIndividual": 48,
+    "comPeloMenosUmRfIndividual": 49,
     "comDoisMetodosDocumentados": 46,
     "comDoisMetodosESolventesDistintos": 46,
-    "homologadosNaRegraNova": 3,
-    "faltamParaMetaMinima": 37,
-    "faltamParaMetaAmpliada": 52,
-    "totaisRegistroRfPontual": 182,
+    "homologadosNaRegraNova": 6,
+    "faltamParaMetaMinima": 34,
+    "faltamParaMetaAmpliada": 49,
+    "totaisRegistroRfPontual": 188,
     "totalRfIntervalos": 1,
-    "protocolos": 56,
+    "protocolos": 59,
     "liberadosParaSimulacaoReal": 0,
-    "metodosHptlcComFontePrimariaHomologada": 5,
+    "metodosHptlcComFontePrimariaHomologada": 7,
     "identidadesQuimicasConferidas": 13,
     "metodosCcdComFontePrimariaHomologada": 1
   },
@@ -2880,7 +2880,7 @@
       "nome": "Quercetina",
       "grupo": "pigmentos_vegetais",
       "identidadeConfirmada": true,
-      "metodosComRetencaoIndividual": 5,
+      "metodosComRetencaoIndividual": 7,
       "metodos": [
         {
           "protocoloId": "tlc_quercetin2010_system1_toluene_ethylacetate_acetic",
@@ -3142,6 +3142,129 @@
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
           }
+        },
+        {
+          "protocoloId": "hptlc_flavonoids_thomas2020_np",
+          "tecnica": "hptlc",
+          "fonte": "thomas2020moringa",
+          "fonteUrl": "https://doi.org/10.4274/tjps.galenos.2018.80958",
+          "solventes": [
+            "ethyl_acetate",
+            "formic_acid",
+            "methanol",
+            "toluene"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "toluene",
+                "partes": 4.9
+              },
+              {
+                "id": "ethyl_acetate",
+                "partes": 4.1
+              },
+              {
+                "id": "methanol",
+                "partes": 2
+              },
+              {
+                "id": "formic_acid",
+                "partes": 0.5
+              }
+            ],
+            "base": "v/v",
+            "mistura": "toluene 4.9 : ethyl_acetate 4.1 : methanol 2 : formic_acid 0.5",
+            "homologada": true
+          },
+          "faseEstacionaria": "Sílica gel 60 F254 Merck, alumínio",
+          "detector": "Densitometria a 300 nm; comparação espectral de padrões e amostras",
+          "rf": [
+            {
+              "valor": 0.8,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": true,
+              "fontePrimariaConferida": true,
+              "incertezaRfReportada": 0.03
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "homologado",
+          "auditoriaCientifica": {
+            "estado": "metodo_experimental_revisado_referencia_condicional",
+            "fontePrimaria": "https://doi.org/10.4274/tjps.galenos.2018.80958",
+            "doi": "10.4274/tjps.galenos.2018.80958",
+            "secoesConferidas": "Resumo; materiais e métodos; otimização solução 1; validação; tabela 5; figura 8",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Padrões quercetina 99% e rutina 98%; recuperação global 98,1–99,4%, precisão de área <2% RSD. O texto de resultados e conclusão usa 'menthol', enquanto resumo, ensaios de otimização e contexto da composição descrevem metanol. Registrar provável erro editorial explicitamente; homologação de Rf contextual, não reprodução metrológica. Não pressupor hidratação do padrão.",
+              "Não transferir Rf ou calibração para outra técnica ou cena."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "hptlc",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
+        },
+        {
+          "protocoloId": "hptlc_antioxidants_kagathara2022_np",
+          "tecnica": "hptlc",
+          "fonte": "kagathara2022antioxidants",
+          "fonteUrl": "https://doi.org/10.1007/s13738-022-02586-9",
+          "solventes": [
+            "chloroform",
+            "ethyl_acetate",
+            "formic_acid"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "chloroform",
+                "partes": 6
+              },
+              {
+                "id": "ethyl_acetate",
+                "partes": 6
+              },
+              {
+                "id": "formic_acid",
+                "partes": 2.5
+              }
+            ],
+            "base": "v/v",
+            "mistura": "chloroform 6 : ethyl_acetate 6 : formic_acid 2.5",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel 60 F254, alumínio",
+          "detector": "Scanner HPTLC a 265 nm",
+          "rf": [
+            {
+              "valor": 0.72,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true,
+              "incertezaRfReportada": 0.02
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "fonte_primaria_conferida_referencia_condicional",
+            "fontePrimaria": "https://doi.org/10.1007/s13738-022-02586-9",
+            "doi": "10.1007/s13738-022-02586-9",
+            "secoesConferidas": "Experimental; HPTLC method development; tabelas 1–3; figuras 3–5",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Padrões Sigma-Aldrich, saturação 15 min. A tabela e o texto apresentam divergência nas recuperações de curcumina; Rf claramente publicado. Manter referência sem homologar toda a validação; não inferir pureza.",
+              "Não transferir Rf ou calibração para outra técnica ou cena."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "hptlc",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -3213,6 +3336,39 @@
         },
         {
           "metodos": [
+            "tlc_quercetin2010_system1_toluene_ethylacetate_acetic",
+            "hptlc_flavonoids_thomas2020_np"
+          ],
+          "solventesA": [
+            "acetic_acid",
+            "ethyl_acetate",
+            "toluene"
+          ],
+          "solventesB": [
+            "ethyl_acetate",
+            "formic_acid",
+            "methanol",
+            "toluene"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_quercetin2010_system1_toluene_ethylacetate_acetic",
+            "hptlc_antioxidants_kagathara2022_np"
+          ],
+          "solventesA": [
+            "acetic_acid",
+            "ethyl_acetate",
+            "toluene"
+          ],
+          "solventesB": [
+            "chloroform",
+            "ethyl_acetate",
+            "formic_acid"
+          ]
+        },
+        {
+          "metodos": [
             "tlc_quercetin2010_system4_toluene_acetic",
             "hptlc_flavonoids_alam2017_rp"
           ],
@@ -3259,6 +3415,37 @@
         },
         {
           "metodos": [
+            "tlc_quercetin2010_system4_toluene_acetic",
+            "hptlc_flavonoids_thomas2020_np"
+          ],
+          "solventesA": [
+            "acetic_acid",
+            "toluene"
+          ],
+          "solventesB": [
+            "ethyl_acetate",
+            "formic_acid",
+            "methanol",
+            "toluene"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_quercetin2010_system4_toluene_acetic",
+            "hptlc_antioxidants_kagathara2022_np"
+          ],
+          "solventesA": [
+            "acetic_acid",
+            "toluene"
+          ],
+          "solventesB": [
+            "chloroform",
+            "ethyl_acetate",
+            "formic_acid"
+          ]
+        },
+        {
+          "metodos": [
             "hptlc_flavonoids_alam2017_rp",
             "hptlc_arjunarishta2011_quercetin"
           ],
@@ -3288,19 +3475,101 @@
             "methanol",
             "toluene"
           ]
+        },
+        {
+          "metodos": [
+            "hptlc_flavonoids_alam2017_rp",
+            "hptlc_flavonoids_thomas2020_np"
+          ],
+          "solventesA": [
+            "acetonitrile",
+            "water"
+          ],
+          "solventesB": [
+            "ethyl_acetate",
+            "formic_acid",
+            "methanol",
+            "toluene"
+          ]
+        },
+        {
+          "metodos": [
+            "hptlc_flavonoids_alam2017_rp",
+            "hptlc_antioxidants_kagathara2022_np"
+          ],
+          "solventesA": [
+            "acetonitrile",
+            "water"
+          ],
+          "solventesB": [
+            "chloroform",
+            "ethyl_acetate",
+            "formic_acid"
+          ]
+        },
+        {
+          "metodos": [
+            "hptlc_arjunarishta2011_quercetin",
+            "hptlc_antioxidants_kagathara2022_np"
+          ],
+          "solventesA": [
+            "ethyl_acetate",
+            "formic_acid",
+            "methanol",
+            "toluene"
+          ],
+          "solventesB": [
+            "chloroform",
+            "ethyl_acetate",
+            "formic_acid"
+          ]
+        },
+        {
+          "metodos": [
+            "hptlc_nair2017_polyphenols_np",
+            "hptlc_antioxidants_kagathara2022_np"
+          ],
+          "solventesA": [
+            "ethyl_acetate",
+            "formic_acid",
+            "methanol",
+            "toluene"
+          ],
+          "solventesB": [
+            "chloroform",
+            "ethyl_acetate",
+            "formic_acid"
+          ]
+        },
+        {
+          "metodos": [
+            "hptlc_flavonoids_thomas2020_np",
+            "hptlc_antioxidants_kagathara2022_np"
+          ],
+          "solventesA": [
+            "ethyl_acetate",
+            "formic_acid",
+            "methanol",
+            "toluene"
+          ],
+          "solventesB": [
+            "chloroform",
+            "ethyl_acetate",
+            "formic_acid"
+          ]
         }
       ],
-      "homologacaoCompleta": false,
-      "pendencias": [
-        "metodos_e_condicoes_a_homologar"
-      ]
+      "homologacaoCompleta": true,
+      "pendencias": [],
+      "disponibilidadeSimulacaoReal": false,
+      "condicaoHomologacao": "Dois métodos HPTLC independentes; referência experimental contextual"
     },
     {
       "id": "rutin",
       "nome": "Rutina",
       "grupo": "pigmentos_vegetais",
       "identidadeConfirmada": true,
-      "metodosComRetencaoIndividual": 3,
+      "metodosComRetencaoIndividual": 4,
       "metodos": [
         {
           "protocoloId": "hptlc_flavonoids_alam2017_rp",
@@ -3485,6 +3754,70 @@
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
           }
+        },
+        {
+          "protocoloId": "hptlc_flavonoids_thomas2020_np",
+          "tecnica": "hptlc",
+          "fonte": "thomas2020moringa",
+          "fonteUrl": "https://doi.org/10.4274/tjps.galenos.2018.80958",
+          "solventes": [
+            "ethyl_acetate",
+            "formic_acid",
+            "methanol",
+            "toluene"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "toluene",
+                "partes": 4.9
+              },
+              {
+                "id": "ethyl_acetate",
+                "partes": 4.1
+              },
+              {
+                "id": "methanol",
+                "partes": 2
+              },
+              {
+                "id": "formic_acid",
+                "partes": 0.5
+              }
+            ],
+            "base": "v/v",
+            "mistura": "toluene 4.9 : ethyl_acetate 4.1 : methanol 2 : formic_acid 0.5",
+            "homologada": true
+          },
+          "faseEstacionaria": "Sílica gel 60 F254 Merck, alumínio",
+          "detector": "Densitometria a 300 nm; comparação espectral de padrões e amostras",
+          "rf": [
+            {
+              "valor": 0.22,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": true,
+              "fontePrimariaConferida": true,
+              "incertezaRfReportada": 0.02
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "homologado",
+          "auditoriaCientifica": {
+            "estado": "metodo_experimental_revisado_referencia_condicional",
+            "fontePrimaria": "https://doi.org/10.4274/tjps.galenos.2018.80958",
+            "doi": "10.4274/tjps.galenos.2018.80958",
+            "secoesConferidas": "Resumo; materiais e métodos; otimização solução 1; validação; tabela 5; figura 8",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Padrões quercetina 99% e rutina 98%; recuperação global 98,1–99,4%, precisão de área <2% RSD. O texto de resultados e conclusão usa 'menthol', enquanto resumo, ensaios de otimização e contexto da composição descrevem metanol. Registrar provável erro editorial explicitamente; homologação de Rf contextual, não reprodução metrológica. Não pressupor hidratação do padrão.",
+              "Não transferir Rf ou calibração para outra técnica ou cena."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "hptlc",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -3524,6 +3857,22 @@
         },
         {
           "metodos": [
+            "hptlc_flavonoids_alam2017_rp",
+            "hptlc_flavonoids_thomas2020_np"
+          ],
+          "solventesA": [
+            "acetonitrile",
+            "water"
+          ],
+          "solventesB": [
+            "ethyl_acetate",
+            "formic_acid",
+            "methanol",
+            "toluene"
+          ]
+        },
+        {
+          "metodos": [
             "hptlc_arjunarishta2011_rutin",
             "hptlc_nair2017_polyphenols_np"
           ],
@@ -3539,19 +3888,37 @@
             "methanol",
             "toluene"
           ]
+        },
+        {
+          "metodos": [
+            "hptlc_arjunarishta2011_rutin",
+            "hptlc_flavonoids_thomas2020_np"
+          ],
+          "solventesA": [
+            "butanol_1",
+            "ethyl_acetate",
+            "formic_acid",
+            "water"
+          ],
+          "solventesB": [
+            "ethyl_acetate",
+            "formic_acid",
+            "methanol",
+            "toluene"
+          ]
         }
       ],
-      "homologacaoCompleta": false,
-      "pendencias": [
-        "metodos_e_condicoes_a_homologar"
-      ]
+      "homologacaoCompleta": true,
+      "pendencias": [],
+      "disponibilidadeSimulacaoReal": false,
+      "condicaoHomologacao": "Dois métodos HPTLC independentes; referência experimental contextual"
     },
     {
       "id": "curcumin",
       "nome": "Curcumina",
       "grupo": "pigmentos_vegetais",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 2,
+      "metodosComRetencaoIndividual": 3,
       "metodos": [
         {
           "protocoloId": "tlc_curcumin2017_toluene_ethylacetate_95_5",
@@ -3624,6 +3991,65 @@
           ],
           "rfIntervalo": [],
           "estado": "referencia_primaria_em_revisao_nao_homologada"
+        },
+        {
+          "protocoloId": "hptlc_antioxidants_kagathara2022_np",
+          "tecnica": "hptlc",
+          "fonte": "kagathara2022antioxidants",
+          "fonteUrl": "https://doi.org/10.1007/s13738-022-02586-9",
+          "solventes": [
+            "chloroform",
+            "ethyl_acetate",
+            "formic_acid"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "chloroform",
+                "partes": 6
+              },
+              {
+                "id": "ethyl_acetate",
+                "partes": 6
+              },
+              {
+                "id": "formic_acid",
+                "partes": 2.5
+              }
+            ],
+            "base": "v/v",
+            "mistura": "chloroform 6 : ethyl_acetate 6 : formic_acid 2.5",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel 60 F254, alumínio",
+          "detector": "Scanner HPTLC a 265 nm",
+          "rf": [
+            {
+              "valor": 0.83,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true,
+              "incertezaRfReportada": 0.02
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "fonte_primaria_conferida_referencia_condicional",
+            "fontePrimaria": "https://doi.org/10.1007/s13738-022-02586-9",
+            "doi": "10.1007/s13738-022-02586-9",
+            "secoesConferidas": "Experimental; HPTLC method development; tabelas 1–3; figuras 3–5",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Padrões Sigma-Aldrich, saturação 15 min. A tabela e o texto apresentam divergência nas recuperações de curcumina; Rf claramente publicado. Manter referência sem homologar toda a validação; não inferir pureza.",
+              "Não transferir Rf ou calibração para outra técnica ou cena."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "hptlc",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -3641,6 +4067,36 @@
           "solventesB": [
             "dcm",
             "methanol"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_curcumin2017_toluene_ethylacetate_95_5",
+            "hptlc_antioxidants_kagathara2022_np"
+          ],
+          "solventesA": [
+            "ethyl_acetate",
+            "toluene"
+          ],
+          "solventesB": [
+            "chloroform",
+            "ethyl_acetate",
+            "formic_acid"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_curcumin2017_dcm_methanol_95_5",
+            "hptlc_antioxidants_kagathara2022_np"
+          ],
+          "solventesA": [
+            "dcm",
+            "methanol"
+          ],
+          "solventesB": [
+            "chloroform",
+            "ethyl_acetate",
+            "formic_acid"
           ]
         }
       ],
@@ -12433,7 +12889,7 @@
       "nome": "Vanilina",
       "grupo": "farmacos_e_organicos",
       "identidadeConfirmada": true,
-      "metodosComRetencaoIndividual": 2,
+      "metodosComRetencaoIndividual": 3,
       "metodos": [
         {
           "protocoloId": "hptlc_vanillin_hingse2014",
@@ -12551,6 +13007,69 @@
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
           }
+        },
+        {
+          "protocoloId": "hptlc_vanillin_sharma2007_rp",
+          "tecnica": "hptlc",
+          "fonte": "sharma2007vanillin",
+          "fonteUrl": "https://doi.org/10.1002/jssc.200700229",
+          "solventes": [
+            "acetic_acid",
+            "isopropanol",
+            "methanol",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "methanol",
+                "partes": 30
+              },
+              {
+                "id": "water",
+                "partes": 65
+              },
+              {
+                "id": "isopropanol",
+                "partes": 2
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 3
+              }
+            ],
+            "base": "v/v",
+            "mistura": "methanol 30 : water 65 : isopropanol 2 : acetic_acid 3",
+            "homologada": true
+          },
+          "faseEstacionaria": "HPTLC sílica RP-18 F254S Merck",
+          "detector": "Reflectância/absorbância a 280 nm; inspeção UV 254 nm",
+          "rf": [
+            {
+              "valor": 0.41,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": true,
+              "fontePrimariaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "homologado",
+          "auditoriaCientifica": {
+            "estado": "metodo_experimental_revisado_referencia_condicional",
+            "fontePrimaria": "https://doi.org/10.1002/jssc.200700229",
+            "doi": "10.1002/jssc.200700229",
+            "secoesConferidas": "Seções 2.1, 2.3.1–2.3.5, 3.2, tabela 1 (composto 7), figura 4",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Padrão comprado Merck; Rf 0,41, dispersão específica do Rf não informada. Repetibilidade de área <3,5% e recuperação 95,4–102,5% para o conjunto dos 10 analitos; não atribuir faixa global especificamente à vanilina. Homologação de referência, não de calibração instrumental.",
+              "Não transferir Rf ou calibração para outra técnica ou cena."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "hptlc",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -12571,12 +13090,46 @@
             "methanol",
             "water"
           ]
+        },
+        {
+          "metodos": [
+            "hptlc_vanillin_hingse2014",
+            "hptlc_vanillin_sharma2007_rp"
+          ],
+          "solventesA": [
+            "acetic_acid",
+            "dioxane_1_4",
+            "toluene"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "isopropanol",
+            "methanol",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
+            "hptlc_vanillin_krishnaveni2013",
+            "hptlc_vanillin_sharma2007_rp"
+          ],
+          "solventesA": [
+            "acetic_acid",
+            "methanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "isopropanol",
+            "methanol",
+            "water"
+          ]
         }
       ],
-      "homologacaoCompleta": false,
-      "pendencias": [
-        "metodos_e_condicoes_a_homologar"
-      ]
+      "homologacaoCompleta": true,
+      "pendencias": [],
+      "disponibilidadeSimulacaoReal": false,
+      "condicaoHomologacao": "Dois métodos HPTLC independentes; referência experimental contextual"
     },
     {
       "id": "ethyl_vanillin",
@@ -13043,17 +13596,76 @@
       "nome": "Ácido ascórbico",
       "grupo": "farmacos_e_organicos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 0,
-      "metodos": [],
+      "metodosComRetencaoIndividual": 1,
+      "metodos": [
+        {
+          "protocoloId": "hptlc_antioxidants_kagathara2022_np",
+          "tecnica": "hptlc",
+          "fonte": "kagathara2022antioxidants",
+          "fonteUrl": "https://doi.org/10.1007/s13738-022-02586-9",
+          "solventes": [
+            "chloroform",
+            "ethyl_acetate",
+            "formic_acid"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "chloroform",
+                "partes": 6
+              },
+              {
+                "id": "ethyl_acetate",
+                "partes": 6
+              },
+              {
+                "id": "formic_acid",
+                "partes": 2.5
+              }
+            ],
+            "base": "v/v",
+            "mistura": "chloroform 6 : ethyl_acetate 6 : formic_acid 2.5",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel 60 F254, alumínio",
+          "detector": "Scanner HPTLC a 265 nm",
+          "rf": [
+            {
+              "valor": 0.1,
+              "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
+              "homologado": false,
+              "fontePrimariaConferida": true,
+              "incertezaRfReportada": 0.02
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "fonte_primaria_conferida_referencia_condicional",
+            "fontePrimaria": "https://doi.org/10.1007/s13738-022-02586-9",
+            "doi": "10.1007/s13738-022-02586-9",
+            "secoesConferidas": "Experimental; HPTLC method development; tabelas 1–3; figuras 3–5",
+            "dataConferencia": "2026-11-24",
+            "ressalvas": [
+              "Padrões Sigma-Aldrich, saturação 15 min. A tabela e o texto apresentam divergência nas recuperações de curcumina; Rf claramente publicado. Manter referência sem homologar toda a validação; não inferir pureza.",
+              "Não transferir Rf ou calibração para outra técnica ou cena."
+            ]
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "hptlc",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
+        }
+      ],
       "minimoDoisMetodos": false,
       "doisSolventesContrastantesEmDoisMetodos": false,
       "paresDocumentados": [],
       "homologacaoCompleta": false,
       "pendencias": [
-        "sem_retencao_experimental",
-        "metodo_2_documentado",
-        "solventes_contrastantes",
-        "identidade_primaria_e_condicoes_a_homologar"
+        "identidade_quimica_a_conferir",
+        "segundo_metodo_documentado",
+        "validacao_metodos"
       ]
     },
     {
