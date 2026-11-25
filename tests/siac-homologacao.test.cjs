@@ -40,7 +40,7 @@ assert.equal(matriz.resumo.totaisRegistroRfPontual,
  base.protocolos.reduce((n,p)=>n+(p.dadosRf?.length||0),0));
 assert.equal(matriz.resumo.totalRfIntervalos,
  base.protocolos.reduce((n,p)=>n+(p.dadosRfIntervalos?.length||0),0));
-assert.equal(matriz.resumo.totaisRegistroRfPontual,230);
+assert.equal(matriz.resumo.totaisRegistroRfPontual,250);
 assert.equal(matriz.resumo.totalRfIntervalos,1);
 assert.deepEqual(
  matriz.candidatos.filter(c=>c.doisSolventesContrastantesEmDoisMetodos).map(c=>c.id).sort(),
@@ -49,17 +49,17 @@ assert.deepEqual(
 assert.deepEqual(matriz.candidatos.filter(c=>c.homologacaoCompleta).map(c=>c.id).sort(),["ascorbic_acid","brilliant_blue_fcf","caffeine","coumarin","curcumin","paracetamol","ponceau_4r","quercetin","rutin","tartrazina","vanillin"]);
 assert.equal(matriz.resumo.liberadosParaSimulacaoReal,0,"HPTLC não pode abrir a cena de CCD ou coluna");
 assert.equal(matriz.resumo.liberadosParaSimulacaoReal,report.resumo.liberadosParaSimulacaoReal);
-assert.equal(matriz.resumo.identidadesQuimicasConferidas,20);
+assert.equal(matriz.resumo.identidadesQuimicasConferidas,21);
 
 assert(matriz.candidatos.every(c=>!c.homologacaoCompleta||c.disponibilidadeSimulacaoReal===false));
 
-assert.equal(h.avaliarSubstancia("glycine",base).metodosComRetencaoIndividual,5);
+assert.equal(h.avaliarSubstancia("glycine",base).metodosComRetencaoIndividual,6);
 assert.equal(h.avaliarSubstancia("chlorophyll_a",base).metodosComRetencaoIndividual,2);
 assert.equal(h.avaliarSubstancia("pheophytin_b",base).metodosComRetencaoIndividual,2);
 const pheo=h.avaliarSubstancia("pheophytin_b",base);
 assert(pheo.metodos.some(m=>m.registrosRfIntervalos===1),
  "o Rf da fonte deve permanecer como intervalo, não estimativa pontual");
-assert.equal(h.avaliarSubstancia("arginine",base).metodosComRetencaoIndividual,3,
+assert.equal(h.avaliarSubstancia("arginine",base).metodosComRetencaoIndividual,4,
  "arginina tem dois sistemas de solventes em pesquisa");
 assert.equal(h.avaliarSubstancia("tartrazina",base).metodosComRetencaoIndividual,10);
 assert.equal(h.avaliarSubstancia("amaranth",base).metodosComRetencaoIndividual,5);
@@ -67,7 +67,7 @@ assert.equal(h.avaliarSubstancia("patent_blue_v",base).metodosComRetencaoIndivid
 assert.equal(h.avaliarSubstancia("allura_red_ac",base).metodosComRetencaoIndividual,1);
 assert.equal(h.avaliarSubstancia("quinoline_yellow",base).metodosComRetencaoIndividual,0,
  "não atribuir o Rf de uma mistura comercial a um único analito");
-assert.equal(h.avaliarSubstancia("glutamine",base).metodosComRetencaoIndividual,3,
+assert.equal(h.avaliarSubstancia("glutamine",base).metodosComRetencaoIndividual,4,
  "glutamina tem dois sistemas de solventes em pesquisa");
 assert.equal(h.avaliarSubstancia("caffeine",base).metodosComRetencaoIndividual,4,
  "cafeína tem métodos HPTLC e CCD registrados em pesquisa");
@@ -147,3 +147,5 @@ assert.equal(h.avaliarSubstancia("coumarin",base).disponibilidadeSimulacaoReal,f
 for(const id of ["curcumin","ascorbic_acid"]){const z=h.avaliarSubstancia(id,base);assert.equal(z.homologacaoCompleta,true);assert.equal(z.metodosComCondicoesHomologadas,2);assert.equal(z.disponibilidadeSimulacaoReal,false);}
 
 for(const id of ["tartrazina","ponceau_4r","brilliant_blue_fcf"]){const z=h.avaliarSubstancia(id,base);assert.equal(z.homologacaoCompleta,true);assert.equal(z.metodosComCondicoesHomologadas,2);assert.equal(z.disponibilidadeSimulacaoReal,false);}
+
+assert.equal(report.candidatos.filter(c=>c.grupo==="aminoacidos"&&c.metodosComRetencaoIndividual>=3).length,20);assert.equal(report.candidatos.filter(c=>c.grupo==="aminoacidos"&&c.homologacaoCompleta).length,0);

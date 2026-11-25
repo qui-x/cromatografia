@@ -46,7 +46,8 @@
     "ascorbicAlam2019": "https://doi.org/10.1016/j.jsps.2019.07.006",
     "nandanwadkar2020": "https://doi.org/10.1007/s00764-020-00038-9",
     "mjofs2021dyes": "https://forensics.org.my/mjofs/pdf/fssmVol.10No.1/Article03.pdf",
-    "dilrukshi2019": "https://doi.org/10.1155/2019/7453169"
+    "dilrukshi2019": "https://doi.org/10.1155/2019/7453169",
+    "santiarpornChanroj2020": "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357"
   },
   "candidatos": [
     {
@@ -1101,7 +1102,20 @@
         "solubilidades": null,
         "pKa": null,
         "logP": null,
-        "corObservavel": null,
+        "corObservavel": {
+          "estado": "observacao_experimental_condicional",
+          "observacoes": [
+            {
+              "cor": "rosa pálido",
+              "metodoId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+              "fonte": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+              "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+              "limiteDeteccaoUg": 5
+            }
+          ],
+          "corIntrinseca": null,
+          "homologadoParaCena": false
+        },
         "absorcaoUV": null
       },
       "homologacao": "candidato_sem_parametros",
@@ -1110,7 +1124,23 @@
         "fatorK": [],
         "isotermas": []
       },
-      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
+      "auditoriaRetencao": {
+        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "ccd_aminoacidos_santiarporn_chanroj2020"
+        ],
+        "fontes": [
+          "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "https://doi.org/10.1556/1006.2016.29.2.9",
+          "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357"
+        ],
+        "homologacaoMetodoQuantitativo": false,
+        "homologacaoCena": false,
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+      }
     },
     {
       "id": "arginine",
@@ -1126,7 +1156,20 @@
         "solubilidades": null,
         "pKa": null,
         "logP": null,
-        "corObservavel": null,
+        "corObservavel": {
+          "estado": "observacao_experimental_condicional",
+          "observacoes": [
+            {
+              "cor": "rosa acastanhado",
+              "metodoId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+              "fonte": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+              "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+              "limiteDeteccaoUg": 5
+            }
+          ],
+          "corIntrinseca": null,
+          "homologadoParaCena": false
+        },
         "absorcaoUV": null
       },
       "homologacao": "candidato_sem_parametros",
@@ -1135,7 +1178,23 @@
         "fatorK": [],
         "isotermas": []
       },
-      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
+      "auditoriaRetencao": {
+        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "ccd_aminoacidos_santiarporn_chanroj2020"
+        ],
+        "fontes": [
+          "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "https://doi.org/10.1556/1006.2016.29.2.9",
+          "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357"
+        ],
+        "homologacaoMetodoQuantitativo": false,
+        "homologacaoCena": false,
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+      }
     },
     {
       "id": "asparagine",
@@ -1151,7 +1210,20 @@
         "solubilidades": null,
         "pKa": null,
         "logP": null,
-        "corObservavel": null,
+        "corObservavel": {
+          "estado": "observacao_experimental_condicional",
+          "observacoes": [
+            {
+              "cor": "rosa pálido",
+              "metodoId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+              "fonte": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+              "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+              "limiteDeteccaoUg": 1
+            }
+          ],
+          "corIntrinseca": null,
+          "homologadoParaCena": false
+        },
         "absorcaoUV": null
       },
       "homologacao": "candidato_sem_parametros",
@@ -1160,7 +1232,23 @@
         "fatorK": [],
         "isotermas": []
       },
-      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
+      "auditoriaRetencao": {
+        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "ccd_aminoacidos_santiarporn_chanroj2020"
+        ],
+        "fontes": [
+          "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "https://doi.org/10.1556/1006.2016.29.2.9",
+          "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357"
+        ],
+        "homologacaoMetodoQuantitativo": false,
+        "homologacaoCena": false,
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+      }
     },
     {
       "id": "aspartic_acid",
@@ -1176,7 +1264,20 @@
         "solubilidades": null,
         "pKa": null,
         "logP": null,
-        "corObservavel": null,
+        "corObservavel": {
+          "estado": "observacao_experimental_condicional",
+          "observacoes": [
+            {
+              "cor": "rosa acastanhado claro",
+              "metodoId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+              "fonte": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+              "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+              "limiteDeteccaoUg": 5
+            }
+          ],
+          "corIntrinseca": null,
+          "homologadoParaCena": false
+        },
         "absorcaoUV": null
       },
       "homologacao": "candidato_sem_parametros",
@@ -1185,7 +1286,23 @@
         "fatorK": [],
         "isotermas": []
       },
-      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
+      "auditoriaRetencao": {
+        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "ccd_aminoacidos_santiarporn_chanroj2020"
+        ],
+        "fontes": [
+          "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "https://doi.org/10.1556/1006.2016.29.2.9",
+          "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357"
+        ],
+        "homologacaoMetodoQuantitativo": false,
+        "homologacaoCena": false,
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+      }
     },
     {
       "id": "cysteine",
@@ -1201,7 +1318,20 @@
         "solubilidades": null,
         "pKa": null,
         "logP": null,
-        "corObservavel": null,
+        "corObservavel": {
+          "estado": "observacao_experimental_condicional",
+          "observacoes": [
+            {
+              "cor": "verde amarelado",
+              "metodoId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+              "fonte": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+              "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+              "limiteDeteccaoUg": 0.6
+            }
+          ],
+          "corIntrinseca": null,
+          "homologadoParaCena": false
+        },
         "absorcaoUV": null
       },
       "homologacao": "candidato_sem_parametros",
@@ -1210,7 +1340,23 @@
         "fatorK": [],
         "isotermas": []
       },
-      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
+      "auditoriaRetencao": {
+        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "ccd_aminoacidos_santiarporn_chanroj2020"
+        ],
+        "fontes": [
+          "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "https://doi.org/10.1556/1006.2016.29.2.9",
+          "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357"
+        ],
+        "homologacaoMetodoQuantitativo": false,
+        "homologacaoCena": false,
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+      }
     },
     {
       "id": "glutamic_acid",
@@ -1226,7 +1372,20 @@
         "solubilidades": null,
         "pKa": null,
         "logP": null,
-        "corObservavel": null,
+        "corObservavel": {
+          "estado": "observacao_experimental_condicional",
+          "observacoes": [
+            {
+              "cor": "rosa avermelhado claro",
+              "metodoId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+              "fonte": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+              "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+              "limiteDeteccaoUg": 0.8
+            }
+          ],
+          "corIntrinseca": null,
+          "homologadoParaCena": false
+        },
         "absorcaoUV": null
       },
       "homologacao": "candidato_sem_parametros",
@@ -1235,7 +1394,23 @@
         "fatorK": [],
         "isotermas": []
       },
-      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
+      "auditoriaRetencao": {
+        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "ccd_aminoacidos_santiarporn_chanroj2020"
+        ],
+        "fontes": [
+          "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "https://doi.org/10.1556/1006.2016.29.2.9",
+          "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357"
+        ],
+        "homologacaoMetodoQuantitativo": false,
+        "homologacaoCena": false,
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+      }
     },
     {
       "id": "glutamine",
@@ -1251,7 +1426,20 @@
         "solubilidades": null,
         "pKa": null,
         "logP": null,
-        "corObservavel": null,
+        "corObservavel": {
+          "estado": "observacao_experimental_condicional",
+          "observacoes": [
+            {
+              "cor": "rosa avermelhado",
+              "metodoId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+              "fonte": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+              "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+              "limiteDeteccaoUg": 0.2
+            }
+          ],
+          "corIntrinseca": null,
+          "homologadoParaCena": false
+        },
         "absorcaoUV": null
       },
       "homologacao": "candidato_sem_parametros",
@@ -1260,23 +1448,59 @@
         "fatorK": [],
         "isotermas": []
       },
-      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
+      "auditoriaRetencao": {
+        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "ccd_aminoacidos_santiarporn_chanroj2020"
+        ],
+        "fontes": [
+          "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "https://doi.org/10.1556/1006.2016.29.2.9",
+          "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357"
+        ],
+        "homologacaoMetodoQuantitativo": false,
+        "homologacaoCena": false,
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+      }
     },
     {
       "id": "glycine",
       "nome": "Glicina",
       "grupo": "aminoacidos",
       "identity": {
-        "cas": null,
-        "pubchemCID": null,
-        "verificadoIndividualmente": false
+        "cas": "56-40-6",
+        "pubchemCID": 750,
+        "verificadoIndividualmente": true,
+        "formulaMolecular": "C2H5NO2",
+        "formaInvestigada": "Glicina, aminoácido aquiral; forma livre",
+        "fontesIdentidade": [
+          "https://pubchem.ncbi.nlm.nih.gov/compound/750"
+        ],
+        "dataConferencia": "2026-11-24",
+        "observacao": "Identidade molecular confirmada; sem extrapolação à pureza do lote."
       },
       "propriedades": {
         "densidade": null,
         "solubilidades": null,
         "pKa": null,
         "logP": null,
-        "corObservavel": null,
+        "corObservavel": {
+          "estado": "observacao_experimental_condicional",
+          "observacoes": [
+            {
+              "cor": "violeta rosado",
+              "metodoId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+              "fonte": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+              "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+              "limiteDeteccaoUg": 1
+            }
+          ],
+          "corIntrinseca": null,
+          "homologadoParaCena": false
+        },
         "absorcaoUV": null
       },
       "homologacao": "candidato_sem_parametros",
@@ -1285,7 +1509,23 @@
         "fatorK": [],
         "isotermas": []
       },
-      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
+      "auditoriaRetencao": {
+        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "ccd_aminoacidos_santiarporn_chanroj2020"
+        ],
+        "fontes": [
+          "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "https://doi.org/10.1556/1006.2016.29.2.9",
+          "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357"
+        ],
+        "homologacaoMetodoQuantitativo": false,
+        "homologacaoCena": false,
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+      }
     },
     {
       "id": "histidine",
@@ -1301,7 +1541,20 @@
         "solubilidades": null,
         "pKa": null,
         "logP": null,
-        "corObservavel": null,
+        "corObservavel": {
+          "estado": "observacao_experimental_condicional",
+          "observacoes": [
+            {
+              "cor": "rosa acastanhado",
+              "metodoId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+              "fonte": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+              "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+              "limiteDeteccaoUg": 1
+            }
+          ],
+          "corIntrinseca": null,
+          "homologadoParaCena": false
+        },
         "absorcaoUV": null
       },
       "homologacao": "candidato_sem_parametros",
@@ -1310,7 +1563,23 @@
         "fatorK": [],
         "isotermas": []
       },
-      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
+      "auditoriaRetencao": {
+        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "ccd_aminoacidos_santiarporn_chanroj2020"
+        ],
+        "fontes": [
+          "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "https://doi.org/10.1556/1006.2016.29.2.9",
+          "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357"
+        ],
+        "homologacaoMetodoQuantitativo": false,
+        "homologacaoCena": false,
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+      }
     },
     {
       "id": "isoleucine",
@@ -1326,7 +1595,20 @@
         "solubilidades": null,
         "pKa": null,
         "logP": null,
-        "corObservavel": null,
+        "corObservavel": {
+          "estado": "observacao_experimental_condicional",
+          "observacoes": [
+            {
+              "cor": "rosa claro",
+              "metodoId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+              "fonte": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+              "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+              "limiteDeteccaoUg": 1
+            }
+          ],
+          "corIntrinseca": null,
+          "homologadoParaCena": false
+        },
         "absorcaoUV": null
       },
       "homologacao": "candidato_sem_parametros",
@@ -1335,7 +1617,23 @@
         "fatorK": [],
         "isotermas": []
       },
-      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
+      "auditoriaRetencao": {
+        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "ccd_aminoacidos_santiarporn_chanroj2020"
+        ],
+        "fontes": [
+          "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "https://doi.org/10.1556/1006.2016.29.2.9",
+          "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357"
+        ],
+        "homologacaoMetodoQuantitativo": false,
+        "homologacaoCena": false,
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+      }
     },
     {
       "id": "leucine",
@@ -1351,7 +1649,20 @@
         "solubilidades": null,
         "pKa": null,
         "logP": null,
-        "corObservavel": null,
+        "corObservavel": {
+          "estado": "observacao_experimental_condicional",
+          "observacoes": [
+            {
+              "cor": "rosa pálido",
+              "metodoId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+              "fonte": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+              "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+              "limiteDeteccaoUg": 1
+            }
+          ],
+          "corIntrinseca": null,
+          "homologadoParaCena": false
+        },
         "absorcaoUV": null
       },
       "homologacao": "candidato_sem_parametros",
@@ -1360,7 +1671,23 @@
         "fatorK": [],
         "isotermas": []
       },
-      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
+      "auditoriaRetencao": {
+        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "ccd_aminoacidos_santiarporn_chanroj2020"
+        ],
+        "fontes": [
+          "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "https://doi.org/10.1556/1006.2016.29.2.9",
+          "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357"
+        ],
+        "homologacaoMetodoQuantitativo": false,
+        "homologacaoCena": false,
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+      }
     },
     {
       "id": "lysine",
@@ -1376,7 +1703,20 @@
         "solubilidades": null,
         "pKa": null,
         "logP": null,
-        "corObservavel": null,
+        "corObservavel": {
+          "estado": "observacao_experimental_condicional",
+          "observacoes": [
+            {
+              "cor": "marfim",
+              "metodoId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+              "fonte": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+              "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+              "limiteDeteccaoUg": 0.6
+            }
+          ],
+          "corIntrinseca": null,
+          "homologadoParaCena": false
+        },
         "absorcaoUV": null
       },
       "homologacao": "candidato_sem_parametros",
@@ -1385,7 +1725,23 @@
         "fatorK": [],
         "isotermas": []
       },
-      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
+      "auditoriaRetencao": {
+        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "ccd_aminoacidos_santiarporn_chanroj2020"
+        ],
+        "fontes": [
+          "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "https://doi.org/10.1556/1006.2016.29.2.9",
+          "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357"
+        ],
+        "homologacaoMetodoQuantitativo": false,
+        "homologacaoCena": false,
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+      }
     },
     {
       "id": "methionine",
@@ -1401,7 +1757,20 @@
         "solubilidades": null,
         "pKa": null,
         "logP": null,
-        "corObservavel": null,
+        "corObservavel": {
+          "estado": "observacao_experimental_condicional",
+          "observacoes": [
+            {
+              "cor": "cor de talco (descrição qualitativa)",
+              "metodoId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+              "fonte": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+              "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+              "limiteDeteccaoUg": 1
+            }
+          ],
+          "corIntrinseca": null,
+          "homologadoParaCena": false
+        },
         "absorcaoUV": null
       },
       "homologacao": "candidato_sem_parametros",
@@ -1410,7 +1779,23 @@
         "fatorK": [],
         "isotermas": []
       },
-      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
+      "auditoriaRetencao": {
+        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "ccd_aminoacidos_santiarporn_chanroj2020"
+        ],
+        "fontes": [
+          "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "https://doi.org/10.1556/1006.2016.29.2.9",
+          "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357"
+        ],
+        "homologacaoMetodoQuantitativo": false,
+        "homologacaoCena": false,
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+      }
     },
     {
       "id": "phenylalanine",
@@ -1426,7 +1811,20 @@
         "solubilidades": null,
         "pKa": null,
         "logP": null,
-        "corObservavel": null,
+        "corObservavel": {
+          "estado": "observacao_experimental_condicional",
+          "observacoes": [
+            {
+              "cor": "cinza claro",
+              "metodoId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+              "fonte": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+              "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+              "limiteDeteccaoUg": 0.8
+            }
+          ],
+          "corIntrinseca": null,
+          "homologadoParaCena": false
+        },
         "absorcaoUV": null
       },
       "homologacao": "candidato_sem_parametros",
@@ -1435,7 +1833,23 @@
         "fatorK": [],
         "isotermas": []
       },
-      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
+      "auditoriaRetencao": {
+        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "ccd_aminoacidos_santiarporn_chanroj2020"
+        ],
+        "fontes": [
+          "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "https://doi.org/10.1556/1006.2016.29.2.9",
+          "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357"
+        ],
+        "homologacaoMetodoQuantitativo": false,
+        "homologacaoCena": false,
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+      }
     },
     {
       "id": "proline",
@@ -1451,7 +1865,20 @@
         "solubilidades": null,
         "pKa": null,
         "logP": null,
-        "corObservavel": null,
+        "corObservavel": {
+          "estado": "observacao_experimental_condicional",
+          "observacoes": [
+            {
+              "cor": "violeta azulado intenso",
+              "metodoId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+              "fonte": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+              "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+              "limiteDeteccaoUg": 0.08
+            }
+          ],
+          "corIntrinseca": null,
+          "homologadoParaCena": false
+        },
         "absorcaoUV": null
       },
       "homologacao": "candidato_sem_parametros",
@@ -1460,7 +1887,23 @@
         "fatorK": [],
         "isotermas": []
       },
-      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
+      "auditoriaRetencao": {
+        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "ccd_aminoacidos_santiarporn_chanroj2020"
+        ],
+        "fontes": [
+          "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "https://doi.org/10.1556/1006.2016.29.2.9",
+          "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357"
+        ],
+        "homologacaoMetodoQuantitativo": false,
+        "homologacaoCena": false,
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+      }
     },
     {
       "id": "serine",
@@ -1476,7 +1919,20 @@
         "solubilidades": null,
         "pKa": null,
         "logP": null,
-        "corObservavel": null,
+        "corObservavel": {
+          "estado": "observacao_experimental_condicional",
+          "observacoes": [
+            {
+              "cor": "rosa claro",
+              "metodoId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+              "fonte": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+              "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+              "limiteDeteccaoUg": 1
+            }
+          ],
+          "corIntrinseca": null,
+          "homologadoParaCena": false
+        },
         "absorcaoUV": null
       },
       "homologacao": "candidato_sem_parametros",
@@ -1485,7 +1941,23 @@
         "fatorK": [],
         "isotermas": []
       },
-      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
+      "auditoriaRetencao": {
+        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "ccd_aminoacidos_santiarporn_chanroj2020"
+        ],
+        "fontes": [
+          "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "https://doi.org/10.1556/1006.2016.29.2.9",
+          "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357"
+        ],
+        "homologacaoMetodoQuantitativo": false,
+        "homologacaoCena": false,
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+      }
     },
     {
       "id": "threonine",
@@ -1501,7 +1973,20 @@
         "solubilidades": null,
         "pKa": null,
         "logP": null,
-        "corObservavel": null,
+        "corObservavel": {
+          "estado": "observacao_experimental_condicional",
+          "observacoes": [
+            {
+              "cor": "cor de talco (descrição qualitativa)",
+              "metodoId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+              "fonte": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+              "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+              "limiteDeteccaoUg": 1
+            }
+          ],
+          "corIntrinseca": null,
+          "homologadoParaCena": false
+        },
         "absorcaoUV": null
       },
       "homologacao": "candidato_sem_parametros",
@@ -1510,7 +1995,23 @@
         "fatorK": [],
         "isotermas": []
       },
-      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
+      "auditoriaRetencao": {
+        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "ccd_aminoacidos_santiarporn_chanroj2020"
+        ],
+        "fontes": [
+          "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "https://doi.org/10.1556/1006.2016.29.2.9",
+          "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357"
+        ],
+        "homologacaoMetodoQuantitativo": false,
+        "homologacaoCena": false,
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+      }
     },
     {
       "id": "tryptophan",
@@ -1526,7 +2027,20 @@
         "solubilidades": null,
         "pKa": null,
         "logP": null,
-        "corObservavel": null,
+        "corObservavel": {
+          "estado": "observacao_experimental_condicional",
+          "observacoes": [
+            {
+              "cor": "cor de argila clara",
+              "metodoId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+              "fonte": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+              "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+              "limiteDeteccaoUg": 1
+            }
+          ],
+          "corIntrinseca": null,
+          "homologadoParaCena": false
+        },
         "absorcaoUV": null
       },
       "homologacao": "candidato_sem_parametros",
@@ -1535,7 +2049,23 @@
         "fatorK": [],
         "isotermas": []
       },
-      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
+      "auditoriaRetencao": {
+        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "ccd_aminoacidos_santiarporn_chanroj2020"
+        ],
+        "fontes": [
+          "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "https://doi.org/10.1556/1006.2016.29.2.9",
+          "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357"
+        ],
+        "homologacaoMetodoQuantitativo": false,
+        "homologacaoCena": false,
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+      }
     },
     {
       "id": "tyrosine",
@@ -1551,7 +2081,20 @@
         "solubilidades": null,
         "pKa": null,
         "logP": null,
-        "corObservavel": null,
+        "corObservavel": {
+          "estado": "observacao_experimental_condicional",
+          "observacoes": [
+            {
+              "cor": "verde pistache",
+              "metodoId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+              "fonte": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+              "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+              "limiteDeteccaoUg": 0.4
+            }
+          ],
+          "corIntrinseca": null,
+          "homologadoParaCena": false
+        },
         "absorcaoUV": null
       },
       "homologacao": "candidato_sem_parametros",
@@ -1560,7 +2103,23 @@
         "fatorK": [],
         "isotermas": []
       },
-      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
+      "auditoriaRetencao": {
+        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "ccd_aminoacidos_santiarporn_chanroj2020"
+        ],
+        "fontes": [
+          "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "https://doi.org/10.1556/1006.2016.29.2.9",
+          "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357"
+        ],
+        "homologacaoMetodoQuantitativo": false,
+        "homologacaoCena": false,
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+      }
     },
     {
       "id": "valine",
@@ -1576,7 +2135,20 @@
         "solubilidades": null,
         "pKa": null,
         "logP": null,
-        "corObservavel": null,
+        "corObservavel": {
+          "estado": "observacao_experimental_condicional",
+          "observacoes": [
+            {
+              "cor": "rosa",
+              "metodoId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+              "fonte": "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+              "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+              "limiteDeteccaoUg": 0.9
+            }
+          ],
+          "corIntrinseca": null,
+          "homologadoParaCena": false
+        },
         "absorcaoUV": null
       },
       "homologacao": "candidato_sem_parametros",
@@ -1585,7 +2157,23 @@
         "fatorK": [],
         "isotermas": []
       },
-      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
+      "auditoriaRetencao": {
+        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "ccd_aminoacidos_santiarporn_chanroj2020"
+        ],
+        "fontes": [
+          "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "https://doi.org/10.1556/1006.2016.29.2.9",
+          "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357"
+        ],
+        "homologacaoMetodoQuantitativo": false,
+        "homologacaoCena": false,
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+      }
     },
     {
       "id": "caffeine",
@@ -2712,7 +3300,14 @@
           "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação",
           "fontePrimariaConferida": true,
           "dataConferenciaFonte": "2026-11-23",
-          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
+          "escopoValidacao": "Rf de padrão e coloração qualitativa conferidos; não validação quantitativa ou estereoquímica",
+          "revelacaoObservada": {
+            "corQualitativa": "rosa acastanhado",
+            "limiteDeteccaoUg": 5,
+            "fonte": "ukil2013",
+            "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+            "incerteza": null
+          }
         },
         {
           "analito": "cysteine",
@@ -2724,7 +3319,14 @@
           "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação",
           "fontePrimariaConferida": true,
           "dataConferenciaFonte": "2026-11-23",
-          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
+          "escopoValidacao": "Rf de padrão e coloração qualitativa conferidos; não validação quantitativa ou estereoquímica",
+          "revelacaoObservada": {
+            "corQualitativa": "verde amarelado",
+            "limiteDeteccaoUg": 0.6,
+            "fonte": "ukil2013",
+            "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+            "incerteza": null
+          }
         },
         {
           "analito": "histidine",
@@ -2736,7 +3338,14 @@
           "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação",
           "fontePrimariaConferida": true,
           "dataConferenciaFonte": "2026-11-23",
-          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
+          "escopoValidacao": "Rf de padrão e coloração qualitativa conferidos; não validação quantitativa ou estereoquímica",
+          "revelacaoObservada": {
+            "corQualitativa": "rosa acastanhado",
+            "limiteDeteccaoUg": 1,
+            "fonte": "ukil2013",
+            "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+            "incerteza": null
+          }
         },
         {
           "analito": "isoleucine",
@@ -2748,7 +3357,14 @@
           "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação",
           "fontePrimariaConferida": true,
           "dataConferenciaFonte": "2026-11-23",
-          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
+          "escopoValidacao": "Rf de padrão e coloração qualitativa conferidos; não validação quantitativa ou estereoquímica",
+          "revelacaoObservada": {
+            "corQualitativa": "rosa claro",
+            "limiteDeteccaoUg": 1,
+            "fonte": "ukil2013",
+            "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+            "incerteza": null
+          }
         },
         {
           "analito": "glutamine",
@@ -2760,7 +3376,14 @@
           "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação",
           "fontePrimariaConferida": true,
           "dataConferenciaFonte": "2026-11-23",
-          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
+          "escopoValidacao": "Rf de padrão e coloração qualitativa conferidos; não validação quantitativa ou estereoquímica",
+          "revelacaoObservada": {
+            "corQualitativa": "rosa avermelhado",
+            "limiteDeteccaoUg": 0.2,
+            "fonte": "ukil2013",
+            "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+            "incerteza": null
+          }
         },
         {
           "analito": "lysine",
@@ -2772,7 +3395,14 @@
           "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação",
           "fontePrimariaConferida": true,
           "dataConferenciaFonte": "2026-11-23",
-          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
+          "escopoValidacao": "Rf de padrão e coloração qualitativa conferidos; não validação quantitativa ou estereoquímica",
+          "revelacaoObservada": {
+            "corQualitativa": "marfim",
+            "limiteDeteccaoUg": 0.6,
+            "fonte": "ukil2013",
+            "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+            "incerteza": null
+          }
         },
         {
           "analito": "asparagine",
@@ -2784,7 +3414,14 @@
           "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação",
           "fontePrimariaConferida": true,
           "dataConferenciaFonte": "2026-11-23",
-          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
+          "escopoValidacao": "Rf de padrão e coloração qualitativa conferidos; não validação quantitativa ou estereoquímica",
+          "revelacaoObservada": {
+            "corQualitativa": "rosa pálido",
+            "limiteDeteccaoUg": 1,
+            "fonte": "ukil2013",
+            "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+            "incerteza": null
+          }
         },
         {
           "analito": "phenylalanine",
@@ -2796,7 +3433,14 @@
           "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação",
           "fontePrimariaConferida": true,
           "dataConferenciaFonte": "2026-11-23",
-          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
+          "escopoValidacao": "Rf de padrão e coloração qualitativa conferidos; não validação quantitativa ou estereoquímica",
+          "revelacaoObservada": {
+            "corQualitativa": "cinza claro",
+            "limiteDeteccaoUg": 0.8,
+            "fonte": "ukil2013",
+            "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+            "incerteza": null
+          }
         },
         {
           "analito": "serine",
@@ -2808,7 +3452,14 @@
           "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação",
           "fontePrimariaConferida": true,
           "dataConferenciaFonte": "2026-11-23",
-          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
+          "escopoValidacao": "Rf de padrão e coloração qualitativa conferidos; não validação quantitativa ou estereoquímica",
+          "revelacaoObservada": {
+            "corQualitativa": "rosa claro",
+            "limiteDeteccaoUg": 1,
+            "fonte": "ukil2013",
+            "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+            "incerteza": null
+          }
         },
         {
           "analito": "threonine",
@@ -2820,7 +3471,14 @@
           "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação",
           "fontePrimariaConferida": true,
           "dataConferenciaFonte": "2026-11-23",
-          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
+          "escopoValidacao": "Rf de padrão e coloração qualitativa conferidos; não validação quantitativa ou estereoquímica",
+          "revelacaoObservada": {
+            "corQualitativa": "cor de talco (descrição qualitativa)",
+            "limiteDeteccaoUg": 1,
+            "fonte": "ukil2013",
+            "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+            "incerteza": null
+          }
         },
         {
           "analito": "alanine",
@@ -2832,7 +3490,14 @@
           "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação",
           "fontePrimariaConferida": true,
           "dataConferenciaFonte": "2026-11-23",
-          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
+          "escopoValidacao": "Rf de padrão e coloração qualitativa conferidos; não validação quantitativa ou estereoquímica",
+          "revelacaoObservada": {
+            "corQualitativa": "rosa pálido",
+            "limiteDeteccaoUg": 5,
+            "fonte": "ukil2013",
+            "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+            "incerteza": null
+          }
         },
         {
           "analito": "glutamic_acid",
@@ -2844,7 +3509,14 @@
           "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação",
           "fontePrimariaConferida": true,
           "dataConferenciaFonte": "2026-11-23",
-          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
+          "escopoValidacao": "Rf de padrão e coloração qualitativa conferidos; não validação quantitativa ou estereoquímica",
+          "revelacaoObservada": {
+            "corQualitativa": "rosa avermelhado claro",
+            "limiteDeteccaoUg": 0.8,
+            "fonte": "ukil2013",
+            "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+            "incerteza": null
+          }
         },
         {
           "analito": "valine",
@@ -2856,7 +3528,14 @@
           "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação",
           "fontePrimariaConferida": true,
           "dataConferenciaFonte": "2026-11-23",
-          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
+          "escopoValidacao": "Rf de padrão e coloração qualitativa conferidos; não validação quantitativa ou estereoquímica",
+          "revelacaoObservada": {
+            "corQualitativa": "rosa",
+            "limiteDeteccaoUg": 0.9,
+            "fonte": "ukil2013",
+            "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+            "incerteza": null
+          }
         },
         {
           "analito": "methionine",
@@ -2868,7 +3547,14 @@
           "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação",
           "fontePrimariaConferida": true,
           "dataConferenciaFonte": "2026-11-23",
-          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
+          "escopoValidacao": "Rf de padrão e coloração qualitativa conferidos; não validação quantitativa ou estereoquímica",
+          "revelacaoObservada": {
+            "corQualitativa": "cor de talco (descrição qualitativa)",
+            "limiteDeteccaoUg": 1,
+            "fonte": "ukil2013",
+            "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+            "incerteza": null
+          }
         },
         {
           "analito": "aspartic_acid",
@@ -2880,7 +3566,14 @@
           "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação",
           "fontePrimariaConferida": true,
           "dataConferenciaFonte": "2026-11-23",
-          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
+          "escopoValidacao": "Rf de padrão e coloração qualitativa conferidos; não validação quantitativa ou estereoquímica",
+          "revelacaoObservada": {
+            "corQualitativa": "rosa acastanhado claro",
+            "limiteDeteccaoUg": 5,
+            "fonte": "ukil2013",
+            "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+            "incerteza": null
+          }
         },
         {
           "analito": "tyrosine",
@@ -2892,7 +3585,14 @@
           "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação",
           "fontePrimariaConferida": true,
           "dataConferenciaFonte": "2026-11-23",
-          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
+          "escopoValidacao": "Rf de padrão e coloração qualitativa conferidos; não validação quantitativa ou estereoquímica",
+          "revelacaoObservada": {
+            "corQualitativa": "verde pistache",
+            "limiteDeteccaoUg": 0.4,
+            "fonte": "ukil2013",
+            "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+            "incerteza": null
+          }
         },
         {
           "analito": "leucine",
@@ -2904,7 +3604,14 @@
           "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação",
           "fontePrimariaConferida": true,
           "dataConferenciaFonte": "2026-11-23",
-          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
+          "escopoValidacao": "Rf de padrão e coloração qualitativa conferidos; não validação quantitativa ou estereoquímica",
+          "revelacaoObservada": {
+            "corQualitativa": "rosa pálido",
+            "limiteDeteccaoUg": 1,
+            "fonte": "ukil2013",
+            "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+            "incerteza": null
+          }
         },
         {
           "analito": "glycine",
@@ -2916,7 +3623,14 @@
           "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação",
           "fontePrimariaConferida": true,
           "dataConferenciaFonte": "2026-11-23",
-          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
+          "escopoValidacao": "Rf de padrão e coloração qualitativa conferidos; não validação quantitativa ou estereoquímica",
+          "revelacaoObservada": {
+            "corQualitativa": "violeta rosado",
+            "limiteDeteccaoUg": 1,
+            "fonte": "ukil2013",
+            "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+            "incerteza": null
+          }
         },
         {
           "analito": "proline",
@@ -2928,7 +3642,14 @@
           "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação",
           "fontePrimariaConferida": true,
           "dataConferenciaFonte": "2026-11-23",
-          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
+          "escopoValidacao": "Rf de padrão e coloração qualitativa conferidos; não validação quantitativa ou estereoquímica",
+          "revelacaoObservada": {
+            "corQualitativa": "violeta azulado intenso",
+            "limiteDeteccaoUg": 0.08,
+            "fonte": "ukil2013",
+            "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+            "incerteza": null
+          }
         },
         {
           "analito": "tryptophan",
@@ -2940,7 +3661,14 @@
           "criterioOrigem": "valor apresentado pela fonte para condições específicas; sem interpolação",
           "fontePrimariaConferida": true,
           "dataConferenciaFonte": "2026-11-23",
-          "escopoValidacao": "conferencia_transcricao_bibliografica_na_condicao_original_sem_homologacao_quantitativa"
+          "escopoValidacao": "Rf de padrão e coloração qualitativa conferidos; não validação quantitativa ou estereoquímica",
+          "revelacaoObservada": {
+            "corQualitativa": "cor de argila clara",
+            "limiteDeteccaoUg": 1,
+            "fonte": "ukil2013",
+            "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+            "incerteza": null
+          }
         }
       ],
       "nota": "A revelação descrita não é apenas ninhidrina; a tabela também compara limites de detecção da ninhidrina, mas não relata suas cores como cores da tabela. Distâncias de frente/mancha e temperatura de eluição não informadas. Fonte primária inspecionada, homologação ainda requer identidade e conferência de condições completas.",
@@ -5071,7 +5799,8 @@
           "fonte": "hudaib2016",
           "temperaturaC": null,
           "homologado": false,
-          "fontePrimariaConferida": true
+          "fontePrimariaConferida": true,
+          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada"
         },
         {
           "analito": "arginine",
@@ -5080,7 +5809,8 @@
           "fonte": "hudaib2016",
           "temperaturaC": null,
           "homologado": false,
-          "fontePrimariaConferida": true
+          "fontePrimariaConferida": true,
+          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada"
         },
         {
           "analito": "asparagine",
@@ -5089,7 +5819,8 @@
           "fonte": "hudaib2016",
           "temperaturaC": null,
           "homologado": false,
-          "fontePrimariaConferida": true
+          "fontePrimariaConferida": true,
+          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada"
         },
         {
           "analito": "aspartic_acid",
@@ -5098,7 +5829,8 @@
           "fonte": "hudaib2016",
           "temperaturaC": null,
           "homologado": false,
-          "fontePrimariaConferida": true
+          "fontePrimariaConferida": true,
+          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada"
         },
         {
           "analito": "cysteine",
@@ -5107,7 +5839,8 @@
           "fonte": "hudaib2016",
           "temperaturaC": null,
           "homologado": false,
-          "fontePrimariaConferida": true
+          "fontePrimariaConferida": true,
+          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada"
         },
         {
           "analito": "glutamic_acid",
@@ -5116,7 +5849,8 @@
           "fonte": "hudaib2016",
           "temperaturaC": null,
           "homologado": false,
-          "fontePrimariaConferida": true
+          "fontePrimariaConferida": true,
+          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada"
         },
         {
           "analito": "glutamine",
@@ -5125,7 +5859,8 @@
           "fonte": "hudaib2016",
           "temperaturaC": null,
           "homologado": false,
-          "fontePrimariaConferida": true
+          "fontePrimariaConferida": true,
+          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada"
         },
         {
           "analito": "glycine",
@@ -5134,7 +5869,8 @@
           "fonte": "hudaib2016",
           "temperaturaC": null,
           "homologado": false,
-          "fontePrimariaConferida": true
+          "fontePrimariaConferida": true,
+          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada"
         },
         {
           "analito": "histidine",
@@ -5143,7 +5879,8 @@
           "fonte": "hudaib2016",
           "temperaturaC": null,
           "homologado": false,
-          "fontePrimariaConferida": true
+          "fontePrimariaConferida": true,
+          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada"
         },
         {
           "analito": "isoleucine",
@@ -5152,7 +5889,8 @@
           "fonte": "hudaib2016",
           "temperaturaC": null,
           "homologado": false,
-          "fontePrimariaConferida": true
+          "fontePrimariaConferida": true,
+          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada"
         },
         {
           "analito": "leucine",
@@ -5161,7 +5899,8 @@
           "fonte": "hudaib2016",
           "temperaturaC": null,
           "homologado": false,
-          "fontePrimariaConferida": true
+          "fontePrimariaConferida": true,
+          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada"
         },
         {
           "analito": "lysine",
@@ -5170,7 +5909,8 @@
           "fonte": "hudaib2016",
           "temperaturaC": null,
           "homologado": false,
-          "fontePrimariaConferida": true
+          "fontePrimariaConferida": true,
+          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada"
         },
         {
           "analito": "methionine",
@@ -5179,7 +5919,8 @@
           "fonte": "hudaib2016",
           "temperaturaC": null,
           "homologado": false,
-          "fontePrimariaConferida": true
+          "fontePrimariaConferida": true,
+          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada"
         },
         {
           "analito": "phenylalanine",
@@ -5188,7 +5929,8 @@
           "fonte": "hudaib2016",
           "temperaturaC": null,
           "homologado": false,
-          "fontePrimariaConferida": true
+          "fontePrimariaConferida": true,
+          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada"
         },
         {
           "analito": "proline",
@@ -5197,7 +5939,8 @@
           "fonte": "hudaib2016",
           "temperaturaC": null,
           "homologado": false,
-          "fontePrimariaConferida": true
+          "fontePrimariaConferida": true,
+          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada"
         },
         {
           "analito": "serine",
@@ -5206,7 +5949,8 @@
           "fonte": "hudaib2016",
           "temperaturaC": null,
           "homologado": false,
-          "fontePrimariaConferida": true
+          "fontePrimariaConferida": true,
+          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada"
         },
         {
           "analito": "threonine",
@@ -5215,7 +5959,8 @@
           "fonte": "hudaib2016",
           "temperaturaC": null,
           "homologado": false,
-          "fontePrimariaConferida": true
+          "fontePrimariaConferida": true,
+          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada"
         },
         {
           "analito": "tryptophan",
@@ -5224,7 +5969,8 @@
           "fonte": "hudaib2016",
           "temperaturaC": null,
           "homologado": false,
-          "fontePrimariaConferida": true
+          "fontePrimariaConferida": true,
+          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada"
         },
         {
           "analito": "tyrosine",
@@ -5233,7 +5979,8 @@
           "fonte": "hudaib2016",
           "temperaturaC": null,
           "homologado": false,
-          "fontePrimariaConferida": true
+          "fontePrimariaConferida": true,
+          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada"
         },
         {
           "analito": "valine",
@@ -5242,7 +5989,8 @@
           "fonte": "hudaib2016",
           "temperaturaC": null,
           "homologado": false,
-          "fontePrimariaConferida": true
+          "fontePrimariaConferida": true,
+          "escopoValidacao": "Rf individual de padrão conferido na tabela 1; sem dispersão e estereoquímica individual reportada"
         }
       ],
       "nota": "Padrões 2% m/v; desenvolvimento ~3 h. Estereoquímica, pureza e dispersão individual de Rf não especificadas.",
@@ -8731,6 +9479,260 @@
           "Tabela 2: valores de padrões; concentração da amônia não informada; λmax em solução não é comprimento de onda de densitometria da placa.",
           "Não extrapolar para papel, coluna ou cena quantitativa."
         ]
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "ccd",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false
+      }
+    },
+    {
+      "id": "ccd_aminoacidos_santiarporn_chanroj2020",
+      "tecnica": "ccd",
+      "assuntos": [
+        "aminoacidos"
+      ],
+      "status": "referencia_primaria_conferida_nao_homologada",
+      "fonte": "santiarpornChanroj2020",
+      "ano": 2020,
+      "referenciaSecao": "Seção de métodos, seção 4.1, tabela 1 (coluna Control), p. 70",
+      "faseEstacionaria": {
+        "classe": "Placa de sílica gel",
+        "detalhamento": "Fabricante, espessura e preparação da camada não especificados na seção de CCD",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "butanol_1",
+            "partes": 3
+          },
+          {
+            "id": "acetic_acid",
+            "partes": 1
+          },
+          {
+            "id": "water",
+            "partes": 1
+          }
+        ],
+        "base": "proporcao_reportada",
+        "mistura": "butanol:ácido acético:água 3:1:1",
+        "homologada": false,
+        "ressalva": "Isômero do butanol e base da proporção não explicitados; 1-butanol é interpretação convencional, não confirmação."
+      },
+      "aplicacao": {
+        "detector": "Revelação visual com solução de ninhidrina",
+        "detectorHomologado": false
+      },
+      "dadosRf": [
+        {
+          "analito": "alanine",
+          "rf": 0.34,
+          "classe": "Rf_controle_padrao_tabela_1",
+          "fonte": "santiarpornChanroj2020",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "formaPadraoReportada": "L nominal no artigo",
+          "observacao": "Usar somente coluna Control; não confundir Rf do hidrolisado SEWH, nem atribuir a cor do hidrolisado ao padrão."
+        },
+        {
+          "analito": "arginine",
+          "rf": 0.28,
+          "classe": "Rf_controle_padrao_tabela_1",
+          "fonte": "santiarpornChanroj2020",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "formaPadraoReportada": "L nominal no artigo",
+          "observacao": "Usar somente coluna Control; não confundir Rf do hidrolisado SEWH, nem atribuir a cor do hidrolisado ao padrão."
+        },
+        {
+          "analito": "asparagine",
+          "rf": 0.38,
+          "classe": "Rf_controle_padrao_tabela_1",
+          "fonte": "santiarpornChanroj2020",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "formaPadraoReportada": "L nominal no artigo",
+          "observacao": "Usar somente coluna Control; não confundir Rf do hidrolisado SEWH, nem atribuir a cor do hidrolisado ao padrão."
+        },
+        {
+          "analito": "aspartic_acid",
+          "rf": 0.21,
+          "classe": "Rf_controle_padrao_tabela_1",
+          "fonte": "santiarpornChanroj2020",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "formaPadraoReportada": "L nominal no artigo",
+          "observacao": "Usar somente coluna Control; não confundir Rf do hidrolisado SEWH, nem atribuir a cor do hidrolisado ao padrão."
+        },
+        {
+          "analito": "cysteine",
+          "rf": 0.25,
+          "classe": "Rf_controle_padrao_tabela_1",
+          "fonte": "santiarpornChanroj2020",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "formaPadraoReportada": "L nominal no artigo",
+          "observacao": "Usar somente coluna Control; não confundir Rf do hidrolisado SEWH, nem atribuir a cor do hidrolisado ao padrão."
+        },
+        {
+          "analito": "glutamic_acid",
+          "rf": 0.35,
+          "classe": "Rf_controle_padrao_tabela_1",
+          "fonte": "santiarpornChanroj2020",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "formaPadraoReportada": "L nominal no artigo",
+          "observacao": "Usar somente coluna Control; não confundir Rf do hidrolisado SEWH, nem atribuir a cor do hidrolisado ao padrão."
+        },
+        {
+          "analito": "glutamine",
+          "rf": 0.15,
+          "classe": "Rf_controle_padrao_tabela_1",
+          "fonte": "santiarpornChanroj2020",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "formaPadraoReportada": "L nominal no artigo",
+          "observacao": "Usar somente coluna Control; não confundir Rf do hidrolisado SEWH, nem atribuir a cor do hidrolisado ao padrão."
+        },
+        {
+          "analito": "glycine",
+          "rf": 0.21,
+          "classe": "Rf_controle_padrao_tabela_1",
+          "fonte": "santiarpornChanroj2020",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "formaPadraoReportada": "Glicina (artigo usa L-glycine, nomenclatura imprópria para composto aquiral)",
+          "observacao": "Usar somente coluna Control; não confundir Rf do hidrolisado SEWH, nem atribuir a cor do hidrolisado ao padrão."
+        },
+        {
+          "analito": "histidine",
+          "rf": 0.19,
+          "classe": "Rf_controle_padrao_tabela_1",
+          "fonte": "santiarpornChanroj2020",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "formaPadraoReportada": "L nominal no artigo",
+          "observacao": "Usar somente coluna Control; não confundir Rf do hidrolisado SEWH, nem atribuir a cor do hidrolisado ao padrão."
+        },
+        {
+          "analito": "isoleucine",
+          "rf": 0.55,
+          "classe": "Rf_controle_padrao_tabela_1",
+          "fonte": "santiarpornChanroj2020",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "formaPadraoReportada": "L nominal no artigo",
+          "observacao": "Usar somente coluna Control; não confundir Rf do hidrolisado SEWH, nem atribuir a cor do hidrolisado ao padrão."
+        },
+        {
+          "analito": "leucine",
+          "rf": 0.55,
+          "classe": "Rf_controle_padrao_tabela_1",
+          "fonte": "santiarpornChanroj2020",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "formaPadraoReportada": "L nominal no artigo",
+          "observacao": "Usar somente coluna Control; não confundir Rf do hidrolisado SEWH, nem atribuir a cor do hidrolisado ao padrão."
+        },
+        {
+          "analito": "lysine",
+          "rf": 0.03,
+          "classe": "Rf_controle_padrao_tabela_1",
+          "fonte": "santiarpornChanroj2020",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "formaPadraoReportada": "L nominal no artigo",
+          "observacao": "Usar somente coluna Control; não confundir Rf do hidrolisado SEWH, nem atribuir a cor do hidrolisado ao padrão."
+        },
+        {
+          "analito": "methionine",
+          "rf": 0.49,
+          "classe": "Rf_controle_padrao_tabela_1",
+          "fonte": "santiarpornChanroj2020",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "formaPadraoReportada": "L nominal no artigo",
+          "observacao": "Usar somente coluna Control; não confundir Rf do hidrolisado SEWH, nem atribuir a cor do hidrolisado ao padrão."
+        },
+        {
+          "analito": "phenylalanine",
+          "rf": 0.57,
+          "classe": "Rf_controle_padrao_tabela_1",
+          "fonte": "santiarpornChanroj2020",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "formaPadraoReportada": "L nominal no artigo",
+          "observacao": "Usar somente coluna Control; não confundir Rf do hidrolisado SEWH, nem atribuir a cor do hidrolisado ao padrão."
+        },
+        {
+          "analito": "proline",
+          "rf": 0.26,
+          "classe": "Rf_controle_padrao_tabela_1",
+          "fonte": "santiarpornChanroj2020",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "formaPadraoReportada": "L nominal no artigo",
+          "observacao": "Usar somente coluna Control; não confundir Rf do hidrolisado SEWH, nem atribuir a cor do hidrolisado ao padrão."
+        },
+        {
+          "analito": "serine",
+          "rf": 0.35,
+          "classe": "Rf_controle_padrao_tabela_1",
+          "fonte": "santiarpornChanroj2020",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "formaPadraoReportada": "L nominal no artigo",
+          "observacao": "Usar somente coluna Control; não confundir Rf do hidrolisado SEWH, nem atribuir a cor do hidrolisado ao padrão."
+        },
+        {
+          "analito": "threonine",
+          "rf": 0.32,
+          "classe": "Rf_controle_padrao_tabela_1",
+          "fonte": "santiarpornChanroj2020",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "formaPadraoReportada": "L nominal no artigo",
+          "observacao": "Usar somente coluna Control; não confundir Rf do hidrolisado SEWH, nem atribuir a cor do hidrolisado ao padrão."
+        },
+        {
+          "analito": "tryptophan",
+          "rf": 0.62,
+          "classe": "Rf_controle_padrao_tabela_1",
+          "fonte": "santiarpornChanroj2020",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "formaPadraoReportada": "L nominal no artigo",
+          "observacao": "Usar somente coluna Control; não confundir Rf do hidrolisado SEWH, nem atribuir a cor do hidrolisado ao padrão."
+        },
+        {
+          "analito": "tyrosine",
+          "rf": 0.71,
+          "classe": "Rf_controle_padrao_tabela_1",
+          "fonte": "santiarpornChanroj2020",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "formaPadraoReportada": "L nominal no artigo",
+          "observacao": "Usar somente coluna Control; não confundir Rf do hidrolisado SEWH, nem atribuir a cor do hidrolisado ao padrão."
+        },
+        {
+          "analito": "valine",
+          "rf": 0.43,
+          "classe": "Rf_controle_padrao_tabela_1",
+          "fonte": "santiarpornChanroj2020",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "formaPadraoReportada": "L nominal no artigo",
+          "observacao": "Usar somente coluna Control; não confundir Rf do hidrolisado SEWH, nem atribuir a cor do hidrolisado ao padrão."
+        }
+      ],
+      "nota": "Tabela conferida visualmente no PDF original. Ensaio qualitativo; identidade de fabricante/lote, pureza, detalhes de fase estacionária e incerteza de Rf não reportados. Forma L nominal não demonstra separação quiral. Não confundir proporções de butanol/ácido acético/água com troca de solvente.",
+      "auditoriaCientifica": {
+        "estado": "referencia_qualitativa_conferida",
+        "fontePrimaria": "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357",
+        "secoesConferidas": "Métodos p. 68, tabela 1 p. 70 (controle)",
+        "dataConferencia": "2026-11-24"
       },
       "disponibilidadeSimulador": {
         "tipo": "ccd",

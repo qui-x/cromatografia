@@ -21,13 +21,15 @@
     "homologadosNaRegraNova": 11,
     "faltamParaMetaMinima": 29,
     "faltamParaMetaAmpliada": 44,
-    "totaisRegistroRfPontual": 230,
+    "totaisRegistroRfPontual": 250,
     "totalRfIntervalos": 1,
-    "protocolos": 76,
+    "protocolos": 77,
     "liberadosParaSimulacaoReal": 0,
     "metodosHptlcComFontePrimariaHomologada": 12,
-    "identidadesQuimicasConferidas": 20,
-    "metodosCcdComFontePrimariaHomologada": 2
+    "identidadesQuimicasConferidas": 21,
+    "metodosCcdComFontePrimariaHomologada": 2,
+    "aminoacidosComTresProtocolosPrimariosConferidos": 20,
+    "aminoacidosComCorRevelacaoDocumentada": 20
   },
   "candidatos": [
     {
@@ -8307,7 +8309,7 @@
       "nome": "Alanina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 6,
+      "metodosComRetencaoIndividual": 7,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_amrita_12_3_5",
@@ -8380,7 +8382,14 @@
             {
               "valor": 0.37,
               "classe": "valor_experimental_tabela_1_artigo_2013",
-              "homologado": false
+              "homologado": false,
+              "revelacaoObservada": {
+                "corQualitativa": "rosa pálido",
+                "limiteDeteccaoUg": 5,
+                "fonte": "ukil2013",
+                "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+                "incerteza": null
+              }
             }
           ],
           "rfIntervalo": [],
@@ -8562,6 +8571,61 @@
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
           }
+        },
+        {
+          "protocoloId": "ccd_aminoacidos_santiarporn_chanroj2020",
+          "tecnica": "ccd",
+          "fonte": "santiarpornChanroj2020",
+          "fonteUrl": "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 3
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 1
+              },
+              {
+                "id": "water",
+                "partes": 1
+              }
+            ],
+            "base": "proporcao_reportada",
+            "mistura": "butanol:ácido acético:água 3:1:1",
+            "homologada": false,
+            "ressalva": "Isômero do butanol e base da proporção não explicitados; 1-butanol é interpretação convencional, não confirmação."
+          },
+          "faseEstacionaria": "Placa de sílica gel",
+          "detector": "Revelação visual com solução de ninhidrina",
+          "rf": [
+            {
+              "valor": 0.34,
+              "classe": "Rf_controle_padrao_tabela_1",
+              "homologado": false,
+              "fontePrimariaConferida": true,
+              "formaPadraoReportada": "L nominal no artigo"
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_qualitativa_conferida",
+            "fontePrimaria": "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357",
+            "secoesConferidas": "Métodos p. 68, tabela 1 p. 70 (controle)",
+            "dataConferencia": "2026-11-24"
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -8658,6 +8722,21 @@
         },
         {
           "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "ccd_aminoacidos_santiarporn_chanroj2020"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
             "tlc_aminoacids_protechex_etanol96_water_7_3",
             "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
           ],
@@ -8700,20 +8779,51 @@
             "butanol_1",
             "water"
           ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "ccd_aminoacidos_santiarporn_chanroj2020"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
         }
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_a_conferir",
-        "metodos_e_condicoes_a_homologar"
-      ]
+        "identidade_e_forma_quimica_a_conferir",
+        "precisao_e_condicoes_experimentais_a_validar"
+      ],
+      "auditoriaRetencao": {
+        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "ccd_aminoacidos_santiarporn_chanroj2020"
+        ],
+        "fontes": [
+          "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "https://doi.org/10.1556/1006.2016.29.2.9",
+          "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357"
+        ],
+        "homologacaoMetodoQuantitativo": false,
+        "homologacaoCena": false,
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+      }
     },
     {
       "id": "arginine",
       "nome": "Arginina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 3,
+      "metodosComRetencaoIndividual": 4,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
@@ -8745,7 +8855,14 @@
             {
               "valor": 0.02,
               "classe": "valor_experimental_tabela_1_artigo_2013",
-              "homologado": false
+              "homologado": false,
+              "revelacaoObservada": {
+                "corQualitativa": "rosa acastanhado",
+                "limiteDeteccaoUg": 5,
+                "fonte": "ukil2013",
+                "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+                "incerteza": null
+              }
             }
           ],
           "rfIntervalo": [],
@@ -8850,6 +8967,61 @@
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
           }
+        },
+        {
+          "protocoloId": "ccd_aminoacidos_santiarporn_chanroj2020",
+          "tecnica": "ccd",
+          "fonte": "santiarpornChanroj2020",
+          "fonteUrl": "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 3
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 1
+              },
+              {
+                "id": "water",
+                "partes": 1
+              }
+            ],
+            "base": "proporcao_reportada",
+            "mistura": "butanol:ácido acético:água 3:1:1",
+            "homologada": false,
+            "ressalva": "Isômero do butanol e base da proporção não explicitados; 1-butanol é interpretação convencional, não confirmação."
+          },
+          "faseEstacionaria": "Placa de sílica gel",
+          "detector": "Revelação visual com solução de ninhidrina",
+          "rf": [
+            {
+              "valor": 0.28,
+              "classe": "Rf_controle_padrao_tabela_1",
+              "homologado": false,
+              "fontePrimariaConferida": true,
+              "formaPadraoReportada": "L nominal no artigo"
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_qualitativa_conferida",
+            "fontePrimaria": "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357",
+            "secoesConferidas": "Métodos p. 68, tabela 1 p. 70 (controle)",
+            "dataConferencia": "2026-11-24"
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -8884,20 +9056,51 @@
             "butanol_1",
             "water"
           ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "ccd_aminoacidos_santiarporn_chanroj2020"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
         }
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_a_conferir",
-        "metodos_e_condicoes_a_homologar"
-      ]
+        "identidade_e_forma_quimica_a_conferir",
+        "precisao_e_condicoes_experimentais_a_validar"
+      ],
+      "auditoriaRetencao": {
+        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "ccd_aminoacidos_santiarporn_chanroj2020"
+        ],
+        "fontes": [
+          "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "https://doi.org/10.1556/1006.2016.29.2.9",
+          "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357"
+        ],
+        "homologacaoMetodoQuantitativo": false,
+        "homologacaoCena": false,
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+      }
     },
     {
       "id": "asparagine",
       "nome": "Asparagina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 2,
+      "metodosComRetencaoIndividual": 3,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
@@ -8929,7 +9132,14 @@
             {
               "valor": 0.14,
               "classe": "valor_experimental_tabela_1_artigo_2013",
-              "homologado": false
+              "homologado": false,
+              "revelacaoObservada": {
+                "corQualitativa": "rosa pálido",
+                "limiteDeteccaoUg": 1,
+                "fonte": "ukil2013",
+                "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+                "incerteza": null
+              }
             }
           ],
           "rfIntervalo": [],
@@ -8993,6 +9203,61 @@
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
           }
+        },
+        {
+          "protocoloId": "ccd_aminoacidos_santiarporn_chanroj2020",
+          "tecnica": "ccd",
+          "fonte": "santiarpornChanroj2020",
+          "fonteUrl": "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 3
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 1
+              },
+              {
+                "id": "water",
+                "partes": 1
+              }
+            ],
+            "base": "proporcao_reportada",
+            "mistura": "butanol:ácido acético:água 3:1:1",
+            "homologada": false,
+            "ressalva": "Isômero do butanol e base da proporção não explicitados; 1-butanol é interpretação convencional, não confirmação."
+          },
+          "faseEstacionaria": "Placa de sílica gel",
+          "detector": "Revelação visual com solução de ninhidrina",
+          "rf": [
+            {
+              "valor": 0.38,
+              "classe": "Rf_controle_padrao_tabela_1",
+              "homologado": false,
+              "fontePrimariaConferida": true,
+              "formaPadraoReportada": "L nominal no artigo"
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_qualitativa_conferida",
+            "fontePrimaria": "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357",
+            "secoesConferidas": "Métodos p. 68, tabela 1 p. 70 (controle)",
+            "dataConferencia": "2026-11-24"
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -9012,20 +9277,51 @@
             "butanol_1",
             "water"
           ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "ccd_aminoacidos_santiarporn_chanroj2020"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
         }
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_a_conferir",
-        "metodos_e_condicoes_a_homologar"
-      ]
+        "identidade_e_forma_quimica_a_conferir",
+        "precisao_e_condicoes_experimentais_a_validar"
+      ],
+      "auditoriaRetencao": {
+        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "ccd_aminoacidos_santiarporn_chanroj2020"
+        ],
+        "fontes": [
+          "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "https://doi.org/10.1556/1006.2016.29.2.9",
+          "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357"
+        ],
+        "homologacaoMetodoQuantitativo": false,
+        "homologacaoCena": false,
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+      }
     },
     {
       "id": "aspartic_acid",
       "nome": "Ácido aspártico",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 4,
+      "metodosComRetencaoIndividual": 5,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
@@ -9057,7 +9353,14 @@
             {
               "valor": 0.33,
               "classe": "valor_experimental_tabela_1_artigo_2013",
-              "homologado": false
+              "homologado": false,
+              "revelacaoObservada": {
+                "corQualitativa": "rosa acastanhado claro",
+                "limiteDeteccaoUg": 5,
+                "fonte": "ukil2013",
+                "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+                "incerteza": null
+              }
             }
           ],
           "rfIntervalo": [],
@@ -9198,6 +9501,61 @@
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
           }
+        },
+        {
+          "protocoloId": "ccd_aminoacidos_santiarporn_chanroj2020",
+          "tecnica": "ccd",
+          "fonte": "santiarpornChanroj2020",
+          "fonteUrl": "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 3
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 1
+              },
+              {
+                "id": "water",
+                "partes": 1
+              }
+            ],
+            "base": "proporcao_reportada",
+            "mistura": "butanol:ácido acético:água 3:1:1",
+            "homologada": false,
+            "ressalva": "Isômero do butanol e base da proporção não explicitados; 1-butanol é interpretação convencional, não confirmação."
+          },
+          "faseEstacionaria": "Placa de sílica gel",
+          "detector": "Revelação visual com solução de ninhidrina",
+          "rf": [
+            {
+              "valor": 0.21,
+              "classe": "Rf_controle_padrao_tabela_1",
+              "homologado": false,
+              "fontePrimariaConferida": true,
+              "formaPadraoReportada": "L nominal no artigo"
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_qualitativa_conferida",
+            "fontePrimaria": "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357",
+            "secoesConferidas": "Métodos p. 68, tabela 1 p. 70 (controle)",
+            "dataConferencia": "2026-11-24"
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -9249,6 +9607,21 @@
         },
         {
           "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "ccd_aminoacidos_santiarporn_chanroj2020"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
             "tlc_aminoacids_protechex_etanol96_water_7_3",
             "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
           ],
@@ -9276,20 +9649,51 @@
             "butanol_1",
             "water"
           ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "ccd_aminoacidos_santiarporn_chanroj2020"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
         }
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_a_conferir",
-        "metodos_e_condicoes_a_homologar"
-      ]
+        "identidade_e_forma_quimica_a_conferir",
+        "precisao_e_condicoes_experimentais_a_validar"
+      ],
+      "auditoriaRetencao": {
+        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "ccd_aminoacidos_santiarporn_chanroj2020"
+        ],
+        "fontes": [
+          "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "https://doi.org/10.1556/1006.2016.29.2.9",
+          "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357"
+        ],
+        "homologacaoMetodoQuantitativo": false,
+        "homologacaoCena": false,
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+      }
     },
     {
       "id": "cysteine",
       "nome": "Cisteína",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 2,
+      "metodosComRetencaoIndividual": 3,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
@@ -9321,7 +9725,14 @@
             {
               "valor": 0.38,
               "classe": "valor_experimental_tabela_1_artigo_2013",
-              "homologado": false
+              "homologado": false,
+              "revelacaoObservada": {
+                "corQualitativa": "verde amarelado",
+                "limiteDeteccaoUg": 0.6,
+                "fonte": "ukil2013",
+                "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+                "incerteza": null
+              }
             }
           ],
           "rfIntervalo": [],
@@ -9385,6 +9796,61 @@
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
           }
+        },
+        {
+          "protocoloId": "ccd_aminoacidos_santiarporn_chanroj2020",
+          "tecnica": "ccd",
+          "fonte": "santiarpornChanroj2020",
+          "fonteUrl": "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 3
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 1
+              },
+              {
+                "id": "water",
+                "partes": 1
+              }
+            ],
+            "base": "proporcao_reportada",
+            "mistura": "butanol:ácido acético:água 3:1:1",
+            "homologada": false,
+            "ressalva": "Isômero do butanol e base da proporção não explicitados; 1-butanol é interpretação convencional, não confirmação."
+          },
+          "faseEstacionaria": "Placa de sílica gel",
+          "detector": "Revelação visual com solução de ninhidrina",
+          "rf": [
+            {
+              "valor": 0.25,
+              "classe": "Rf_controle_padrao_tabela_1",
+              "homologado": false,
+              "fontePrimariaConferida": true,
+              "formaPadraoReportada": "L nominal no artigo"
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_qualitativa_conferida",
+            "fontePrimaria": "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357",
+            "secoesConferidas": "Métodos p. 68, tabela 1 p. 70 (controle)",
+            "dataConferencia": "2026-11-24"
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -9404,20 +9870,51 @@
             "butanol_1",
             "water"
           ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "ccd_aminoacidos_santiarporn_chanroj2020"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
         }
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_a_conferir",
-        "metodos_e_condicoes_a_homologar"
-      ]
+        "identidade_e_forma_quimica_a_conferir",
+        "precisao_e_condicoes_experimentais_a_validar"
+      ],
+      "auditoriaRetencao": {
+        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "ccd_aminoacidos_santiarporn_chanroj2020"
+        ],
+        "fontes": [
+          "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "https://doi.org/10.1556/1006.2016.29.2.9",
+          "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357"
+        ],
+        "homologacaoMetodoQuantitativo": false,
+        "homologacaoCena": false,
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+      }
     },
     {
       "id": "glutamic_acid",
       "nome": "Ácido glutâmico",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 5,
+      "metodosComRetencaoIndividual": 6,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_amrita_12_3_5",
@@ -9490,7 +9987,14 @@
             {
               "valor": 0.35,
               "classe": "valor_experimental_tabela_1_artigo_2013",
-              "homologado": false
+              "homologado": false,
+              "revelacaoObservada": {
+                "corQualitativa": "rosa avermelhado claro",
+                "limiteDeteccaoUg": 0.8,
+                "fonte": "ukil2013",
+                "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+                "incerteza": null
+              }
             }
           ],
           "rfIntervalo": [],
@@ -9631,6 +10135,61 @@
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
           }
+        },
+        {
+          "protocoloId": "ccd_aminoacidos_santiarporn_chanroj2020",
+          "tecnica": "ccd",
+          "fonte": "santiarpornChanroj2020",
+          "fonteUrl": "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 3
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 1
+              },
+              {
+                "id": "water",
+                "partes": 1
+              }
+            ],
+            "base": "proporcao_reportada",
+            "mistura": "butanol:ácido acético:água 3:1:1",
+            "homologada": false,
+            "ressalva": "Isômero do butanol e base da proporção não explicitados; 1-butanol é interpretação convencional, não confirmação."
+          },
+          "faseEstacionaria": "Placa de sílica gel",
+          "detector": "Revelação visual com solução de ninhidrina",
+          "rf": [
+            {
+              "valor": 0.35,
+              "classe": "Rf_controle_padrao_tabela_1",
+              "homologado": false,
+              "fontePrimariaConferida": true,
+              "formaPadraoReportada": "L nominal no artigo"
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_qualitativa_conferida",
+            "fontePrimaria": "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357",
+            "secoesConferidas": "Métodos p. 68, tabela 1 p. 70 (controle)",
+            "dataConferencia": "2026-11-24"
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -9712,6 +10271,21 @@
         },
         {
           "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "ccd_aminoacidos_santiarporn_chanroj2020"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
             "tlc_aminoacids_protechex_etanol96_water_7_3",
             "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
           ],
@@ -9739,20 +10313,51 @@
             "butanol_1",
             "water"
           ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "ccd_aminoacidos_santiarporn_chanroj2020"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
         }
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_a_conferir",
-        "metodos_e_condicoes_a_homologar"
-      ]
+        "identidade_e_forma_quimica_a_conferir",
+        "precisao_e_condicoes_experimentais_a_validar"
+      ],
+      "auditoriaRetencao": {
+        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "ccd_aminoacidos_santiarporn_chanroj2020"
+        ],
+        "fontes": [
+          "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "https://doi.org/10.1556/1006.2016.29.2.9",
+          "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357"
+        ],
+        "homologacaoMetodoQuantitativo": false,
+        "homologacaoCena": false,
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+      }
     },
     {
       "id": "glutamine",
       "nome": "Glutamina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 3,
+      "metodosComRetencaoIndividual": 4,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
@@ -9784,7 +10389,14 @@
             {
               "valor": 0.15,
               "classe": "valor_experimental_tabela_1_artigo_2013",
-              "homologado": false
+              "homologado": false,
+              "revelacaoObservada": {
+                "corQualitativa": "rosa avermelhado",
+                "limiteDeteccaoUg": 0.2,
+                "fonte": "ukil2013",
+                "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+                "incerteza": null
+              }
             }
           ],
           "rfIntervalo": [],
@@ -9889,6 +10501,61 @@
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
           }
+        },
+        {
+          "protocoloId": "ccd_aminoacidos_santiarporn_chanroj2020",
+          "tecnica": "ccd",
+          "fonte": "santiarpornChanroj2020",
+          "fonteUrl": "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 3
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 1
+              },
+              {
+                "id": "water",
+                "partes": 1
+              }
+            ],
+            "base": "proporcao_reportada",
+            "mistura": "butanol:ácido acético:água 3:1:1",
+            "homologada": false,
+            "ressalva": "Isômero do butanol e base da proporção não explicitados; 1-butanol é interpretação convencional, não confirmação."
+          },
+          "faseEstacionaria": "Placa de sílica gel",
+          "detector": "Revelação visual com solução de ninhidrina",
+          "rf": [
+            {
+              "valor": 0.15,
+              "classe": "Rf_controle_padrao_tabela_1",
+              "homologado": false,
+              "fontePrimariaConferida": true,
+              "formaPadraoReportada": "L nominal no artigo"
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_qualitativa_conferida",
+            "fontePrimaria": "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357",
+            "secoesConferidas": "Métodos p. 68, tabela 1 p. 70 (controle)",
+            "dataConferencia": "2026-11-24"
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -9923,20 +10590,51 @@
             "butanol_1",
             "water"
           ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "ccd_aminoacidos_santiarporn_chanroj2020"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
         }
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_a_conferir",
-        "metodos_e_condicoes_a_homologar"
-      ]
+        "identidade_e_forma_quimica_a_conferir",
+        "precisao_e_condicoes_experimentais_a_validar"
+      ],
+      "auditoriaRetencao": {
+        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "ccd_aminoacidos_santiarporn_chanroj2020"
+        ],
+        "fontes": [
+          "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "https://doi.org/10.1556/1006.2016.29.2.9",
+          "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357"
+        ],
+        "homologacaoMetodoQuantitativo": false,
+        "homologacaoCena": false,
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+      }
     },
     {
       "id": "glycine",
       "nome": "Glicina",
       "grupo": "aminoacidos",
-      "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 5,
+      "identidadeConfirmada": true,
+      "metodosComRetencaoIndividual": 6,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_amrita_12_3_5",
@@ -10009,7 +10707,14 @@
             {
               "valor": 0.32,
               "classe": "valor_experimental_tabela_1_artigo_2013",
-              "homologado": false
+              "homologado": false,
+              "revelacaoObservada": {
+                "corQualitativa": "violeta rosado",
+                "limiteDeteccaoUg": 1,
+                "fonte": "ukil2013",
+                "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+                "incerteza": null
+              }
             }
           ],
           "rfIntervalo": [],
@@ -10150,6 +10855,61 @@
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
           }
+        },
+        {
+          "protocoloId": "ccd_aminoacidos_santiarporn_chanroj2020",
+          "tecnica": "ccd",
+          "fonte": "santiarpornChanroj2020",
+          "fonteUrl": "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 3
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 1
+              },
+              {
+                "id": "water",
+                "partes": 1
+              }
+            ],
+            "base": "proporcao_reportada",
+            "mistura": "butanol:ácido acético:água 3:1:1",
+            "homologada": false,
+            "ressalva": "Isômero do butanol e base da proporção não explicitados; 1-butanol é interpretação convencional, não confirmação."
+          },
+          "faseEstacionaria": "Placa de sílica gel",
+          "detector": "Revelação visual com solução de ninhidrina",
+          "rf": [
+            {
+              "valor": 0.21,
+              "classe": "Rf_controle_padrao_tabela_1",
+              "homologado": false,
+              "fontePrimariaConferida": true,
+              "formaPadraoReportada": "Glicina (artigo usa L-glycine, nomenclatura imprópria para composto aquiral)"
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_qualitativa_conferida",
+            "fontePrimaria": "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357",
+            "secoesConferidas": "Métodos p. 68, tabela 1 p. 70 (controle)",
+            "dataConferencia": "2026-11-24"
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -10231,6 +10991,21 @@
         },
         {
           "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "ccd_aminoacidos_santiarporn_chanroj2020"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
             "tlc_aminoacids_protechex_etanol96_water_7_3",
             "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
           ],
@@ -10258,20 +11033,50 @@
             "butanol_1",
             "water"
           ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "ccd_aminoacidos_santiarporn_chanroj2020"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
         }
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_a_conferir",
-        "metodos_e_condicoes_a_homologar"
-      ]
+        "precisao_e_condicoes_experimentais_a_validar"
+      ],
+      "auditoriaRetencao": {
+        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "ccd_aminoacidos_santiarporn_chanroj2020"
+        ],
+        "fontes": [
+          "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "https://doi.org/10.1556/1006.2016.29.2.9",
+          "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357"
+        ],
+        "homologacaoMetodoQuantitativo": false,
+        "homologacaoCena": false,
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+      }
     },
     {
       "id": "histidine",
       "nome": "Histidina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 5,
+      "metodosComRetencaoIndividual": 6,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
@@ -10303,7 +11108,14 @@
             {
               "valor": 0.2,
               "classe": "valor_experimental_tabela_1_artigo_2013",
-              "homologado": false
+              "homologado": false,
+              "revelacaoObservada": {
+                "corQualitativa": "rosa acastanhado",
+                "limiteDeteccaoUg": 1,
+                "fonte": "ukil2013",
+                "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+                "incerteza": null
+              }
             }
           ],
           "rfIntervalo": [],
@@ -10485,6 +11297,61 @@
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
           }
+        },
+        {
+          "protocoloId": "ccd_aminoacidos_santiarporn_chanroj2020",
+          "tecnica": "ccd",
+          "fonte": "santiarpornChanroj2020",
+          "fonteUrl": "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 3
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 1
+              },
+              {
+                "id": "water",
+                "partes": 1
+              }
+            ],
+            "base": "proporcao_reportada",
+            "mistura": "butanol:ácido acético:água 3:1:1",
+            "homologada": false,
+            "ressalva": "Isômero do butanol e base da proporção não explicitados; 1-butanol é interpretação convencional, não confirmação."
+          },
+          "faseEstacionaria": "Placa de sílica gel",
+          "detector": "Revelação visual com solução de ninhidrina",
+          "rf": [
+            {
+              "valor": 0.19,
+              "classe": "Rf_controle_padrao_tabela_1",
+              "homologado": false,
+              "fontePrimariaConferida": true,
+              "formaPadraoReportada": "L nominal no artigo"
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_qualitativa_conferida",
+            "fontePrimaria": "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357",
+            "secoesConferidas": "Métodos p. 68, tabela 1 p. 70 (controle)",
+            "dataConferencia": "2026-11-24"
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -10551,6 +11418,21 @@
         },
         {
           "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "ccd_aminoacidos_santiarporn_chanroj2020"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
             "tlc_aminoacids_protechex_etanol96_water_7_3",
             "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
           ],
@@ -10593,20 +11475,51 @@
             "butanol_1",
             "water"
           ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "ccd_aminoacidos_santiarporn_chanroj2020"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
         }
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_a_conferir",
-        "metodos_e_condicoes_a_homologar"
-      ]
+        "identidade_e_forma_quimica_a_conferir",
+        "precisao_e_condicoes_experimentais_a_validar"
+      ],
+      "auditoriaRetencao": {
+        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "ccd_aminoacidos_santiarporn_chanroj2020"
+        ],
+        "fontes": [
+          "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "https://doi.org/10.1556/1006.2016.29.2.9",
+          "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357"
+        ],
+        "homologacaoMetodoQuantitativo": false,
+        "homologacaoCena": false,
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+      }
     },
     {
       "id": "isoleucine",
       "nome": "Isoleucina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 4,
+      "metodosComRetencaoIndividual": 5,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
@@ -10638,7 +11551,14 @@
             {
               "valor": 0.53,
               "classe": "valor_experimental_tabela_1_artigo_2013",
-              "homologado": false
+              "homologado": false,
+              "revelacaoObservada": {
+                "corQualitativa": "rosa claro",
+                "limiteDeteccaoUg": 1,
+                "fonte": "ukil2013",
+                "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+                "incerteza": null
+              }
             }
           ],
           "rfIntervalo": [],
@@ -10779,6 +11699,61 @@
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
           }
+        },
+        {
+          "protocoloId": "ccd_aminoacidos_santiarporn_chanroj2020",
+          "tecnica": "ccd",
+          "fonte": "santiarpornChanroj2020",
+          "fonteUrl": "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 3
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 1
+              },
+              {
+                "id": "water",
+                "partes": 1
+              }
+            ],
+            "base": "proporcao_reportada",
+            "mistura": "butanol:ácido acético:água 3:1:1",
+            "homologada": false,
+            "ressalva": "Isômero do butanol e base da proporção não explicitados; 1-butanol é interpretação convencional, não confirmação."
+          },
+          "faseEstacionaria": "Placa de sílica gel",
+          "detector": "Revelação visual com solução de ninhidrina",
+          "rf": [
+            {
+              "valor": 0.55,
+              "classe": "Rf_controle_padrao_tabela_1",
+              "homologado": false,
+              "fontePrimariaConferida": true,
+              "formaPadraoReportada": "L nominal no artigo"
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_qualitativa_conferida",
+            "fontePrimaria": "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357",
+            "secoesConferidas": "Métodos p. 68, tabela 1 p. 70 (controle)",
+            "dataConferencia": "2026-11-24"
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -10830,6 +11805,21 @@
         },
         {
           "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "ccd_aminoacidos_santiarporn_chanroj2020"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
             "tlc_aminoacids_protechex_etanol96_water_7_3",
             "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
           ],
@@ -10857,20 +11847,51 @@
             "butanol_1",
             "water"
           ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "ccd_aminoacidos_santiarporn_chanroj2020"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
         }
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_a_conferir",
-        "metodos_e_condicoes_a_homologar"
-      ]
+        "identidade_e_forma_quimica_a_conferir",
+        "precisao_e_condicoes_experimentais_a_validar"
+      ],
+      "auditoriaRetencao": {
+        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "ccd_aminoacidos_santiarporn_chanroj2020"
+        ],
+        "fontes": [
+          "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "https://doi.org/10.1556/1006.2016.29.2.9",
+          "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357"
+        ],
+        "homologacaoMetodoQuantitativo": false,
+        "homologacaoCena": false,
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+      }
     },
     {
       "id": "leucine",
       "nome": "Leucina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 5,
+      "metodosComRetencaoIndividual": 6,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_amrita_12_3_5",
@@ -10943,7 +11964,14 @@
             {
               "valor": 0.55,
               "classe": "valor_experimental_tabela_1_artigo_2013",
-              "homologado": false
+              "homologado": false,
+              "revelacaoObservada": {
+                "corQualitativa": "rosa pálido",
+                "limiteDeteccaoUg": 1,
+                "fonte": "ukil2013",
+                "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+                "incerteza": null
+              }
             }
           ],
           "rfIntervalo": [],
@@ -11084,6 +12112,61 @@
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
           }
+        },
+        {
+          "protocoloId": "ccd_aminoacidos_santiarporn_chanroj2020",
+          "tecnica": "ccd",
+          "fonte": "santiarpornChanroj2020",
+          "fonteUrl": "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 3
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 1
+              },
+              {
+                "id": "water",
+                "partes": 1
+              }
+            ],
+            "base": "proporcao_reportada",
+            "mistura": "butanol:ácido acético:água 3:1:1",
+            "homologada": false,
+            "ressalva": "Isômero do butanol e base da proporção não explicitados; 1-butanol é interpretação convencional, não confirmação."
+          },
+          "faseEstacionaria": "Placa de sílica gel",
+          "detector": "Revelação visual com solução de ninhidrina",
+          "rf": [
+            {
+              "valor": 0.55,
+              "classe": "Rf_controle_padrao_tabela_1",
+              "homologado": false,
+              "fontePrimariaConferida": true,
+              "formaPadraoReportada": "L nominal no artigo"
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_qualitativa_conferida",
+            "fontePrimaria": "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357",
+            "secoesConferidas": "Métodos p. 68, tabela 1 p. 70 (controle)",
+            "dataConferencia": "2026-11-24"
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -11165,6 +12248,21 @@
         },
         {
           "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "ccd_aminoacidos_santiarporn_chanroj2020"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
             "tlc_aminoacids_protechex_etanol96_water_7_3",
             "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
           ],
@@ -11192,20 +12290,51 @@
             "butanol_1",
             "water"
           ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "ccd_aminoacidos_santiarporn_chanroj2020"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
         }
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_a_conferir",
-        "metodos_e_condicoes_a_homologar"
-      ]
+        "identidade_e_forma_quimica_a_conferir",
+        "precisao_e_condicoes_experimentais_a_validar"
+      ],
+      "auditoriaRetencao": {
+        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "ccd_aminoacidos_santiarporn_chanroj2020"
+        ],
+        "fontes": [
+          "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "https://doi.org/10.1556/1006.2016.29.2.9",
+          "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357"
+        ],
+        "homologacaoMetodoQuantitativo": false,
+        "homologacaoCena": false,
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+      }
     },
     {
       "id": "lysine",
       "nome": "Lisina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 4,
+      "metodosComRetencaoIndividual": 5,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_amrita_12_3_5",
@@ -11278,7 +12407,14 @@
             {
               "valor": 0.03,
               "classe": "valor_experimental_tabela_1_artigo_2013",
-              "homologado": false
+              "homologado": false,
+              "revelacaoObservada": {
+                "corQualitativa": "marfim",
+                "limiteDeteccaoUg": 0.6,
+                "fonte": "ukil2013",
+                "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+                "incerteza": null
+              }
             }
           ],
           "rfIntervalo": [],
@@ -11383,6 +12519,61 @@
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
           }
+        },
+        {
+          "protocoloId": "ccd_aminoacidos_santiarporn_chanroj2020",
+          "tecnica": "ccd",
+          "fonte": "santiarpornChanroj2020",
+          "fonteUrl": "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 3
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 1
+              },
+              {
+                "id": "water",
+                "partes": 1
+              }
+            ],
+            "base": "proporcao_reportada",
+            "mistura": "butanol:ácido acético:água 3:1:1",
+            "homologada": false,
+            "ressalva": "Isômero do butanol e base da proporção não explicitados; 1-butanol é interpretação convencional, não confirmação."
+          },
+          "faseEstacionaria": "Placa de sílica gel",
+          "detector": "Revelação visual com solução de ninhidrina",
+          "rf": [
+            {
+              "valor": 0.03,
+              "classe": "Rf_controle_padrao_tabela_1",
+              "homologado": false,
+              "fontePrimariaConferida": true,
+              "formaPadraoReportada": "L nominal no artigo"
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_qualitativa_conferida",
+            "fontePrimaria": "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357",
+            "secoesConferidas": "Métodos p. 68, tabela 1 p. 70 (controle)",
+            "dataConferencia": "2026-11-24"
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -11432,20 +12623,51 @@
             "butanol_1",
             "water"
           ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "ccd_aminoacidos_santiarporn_chanroj2020"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
         }
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_a_conferir",
-        "metodos_e_condicoes_a_homologar"
-      ]
+        "identidade_e_forma_quimica_a_conferir",
+        "precisao_e_condicoes_experimentais_a_validar"
+      ],
+      "auditoriaRetencao": {
+        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "ccd_aminoacidos_santiarporn_chanroj2020"
+        ],
+        "fontes": [
+          "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "https://doi.org/10.1556/1006.2016.29.2.9",
+          "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357"
+        ],
+        "homologacaoMetodoQuantitativo": false,
+        "homologacaoCena": false,
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+      }
     },
     {
       "id": "methionine",
       "nome": "Metionina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 5,
+      "metodosComRetencaoIndividual": 6,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
@@ -11477,7 +12699,14 @@
             {
               "valor": 0.51,
               "classe": "valor_experimental_tabela_1_artigo_2013",
-              "homologado": false
+              "homologado": false,
+              "revelacaoObservada": {
+                "corQualitativa": "cor de talco (descrição qualitativa)",
+                "limiteDeteccaoUg": 1,
+                "fonte": "ukil2013",
+                "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+                "incerteza": null
+              }
             }
           ],
           "rfIntervalo": [],
@@ -11659,6 +12888,61 @@
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
           }
+        },
+        {
+          "protocoloId": "ccd_aminoacidos_santiarporn_chanroj2020",
+          "tecnica": "ccd",
+          "fonte": "santiarpornChanroj2020",
+          "fonteUrl": "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 3
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 1
+              },
+              {
+                "id": "water",
+                "partes": 1
+              }
+            ],
+            "base": "proporcao_reportada",
+            "mistura": "butanol:ácido acético:água 3:1:1",
+            "homologada": false,
+            "ressalva": "Isômero do butanol e base da proporção não explicitados; 1-butanol é interpretação convencional, não confirmação."
+          },
+          "faseEstacionaria": "Placa de sílica gel",
+          "detector": "Revelação visual com solução de ninhidrina",
+          "rf": [
+            {
+              "valor": 0.49,
+              "classe": "Rf_controle_padrao_tabela_1",
+              "homologado": false,
+              "fontePrimariaConferida": true,
+              "formaPadraoReportada": "L nominal no artigo"
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_qualitativa_conferida",
+            "fontePrimaria": "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357",
+            "secoesConferidas": "Métodos p. 68, tabela 1 p. 70 (controle)",
+            "dataConferencia": "2026-11-24"
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -11725,6 +13009,21 @@
         },
         {
           "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "ccd_aminoacidos_santiarporn_chanroj2020"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
             "tlc_aminoacids_protechex_etanol96_water_7_3",
             "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
           ],
@@ -11767,20 +13066,51 @@
             "butanol_1",
             "water"
           ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "ccd_aminoacidos_santiarporn_chanroj2020"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
         }
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_a_conferir",
-        "metodos_e_condicoes_a_homologar"
-      ]
+        "identidade_e_forma_quimica_a_conferir",
+        "precisao_e_condicoes_experimentais_a_validar"
+      ],
+      "auditoriaRetencao": {
+        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "ccd_aminoacidos_santiarporn_chanroj2020"
+        ],
+        "fontes": [
+          "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "https://doi.org/10.1556/1006.2016.29.2.9",
+          "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357"
+        ],
+        "homologacaoMetodoQuantitativo": false,
+        "homologacaoCena": false,
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+      }
     },
     {
       "id": "phenylalanine",
       "nome": "Fenilalanina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 4,
+      "metodosComRetencaoIndividual": 5,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
@@ -11812,7 +13142,14 @@
             {
               "valor": 0.58,
               "classe": "valor_experimental_tabela_1_artigo_2013",
-              "homologado": false
+              "homologado": false,
+              "revelacaoObservada": {
+                "corQualitativa": "cinza claro",
+                "limiteDeteccaoUg": 0.8,
+                "fonte": "ukil2013",
+                "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+                "incerteza": null
+              }
             }
           ],
           "rfIntervalo": [],
@@ -11953,6 +13290,61 @@
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
           }
+        },
+        {
+          "protocoloId": "ccd_aminoacidos_santiarporn_chanroj2020",
+          "tecnica": "ccd",
+          "fonte": "santiarpornChanroj2020",
+          "fonteUrl": "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 3
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 1
+              },
+              {
+                "id": "water",
+                "partes": 1
+              }
+            ],
+            "base": "proporcao_reportada",
+            "mistura": "butanol:ácido acético:água 3:1:1",
+            "homologada": false,
+            "ressalva": "Isômero do butanol e base da proporção não explicitados; 1-butanol é interpretação convencional, não confirmação."
+          },
+          "faseEstacionaria": "Placa de sílica gel",
+          "detector": "Revelação visual com solução de ninhidrina",
+          "rf": [
+            {
+              "valor": 0.57,
+              "classe": "Rf_controle_padrao_tabela_1",
+              "homologado": false,
+              "fontePrimariaConferida": true,
+              "formaPadraoReportada": "L nominal no artigo"
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_qualitativa_conferida",
+            "fontePrimaria": "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357",
+            "secoesConferidas": "Métodos p. 68, tabela 1 p. 70 (controle)",
+            "dataConferencia": "2026-11-24"
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -12004,6 +13396,21 @@
         },
         {
           "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "ccd_aminoacidos_santiarporn_chanroj2020"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
             "tlc_aminoacids_protechex_etanol96_water_7_3",
             "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
           ],
@@ -12031,20 +13438,51 @@
             "butanol_1",
             "water"
           ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "ccd_aminoacidos_santiarporn_chanroj2020"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
         }
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_a_conferir",
-        "metodos_e_condicoes_a_homologar"
-      ]
+        "identidade_e_forma_quimica_a_conferir",
+        "precisao_e_condicoes_experimentais_a_validar"
+      ],
+      "auditoriaRetencao": {
+        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "ccd_aminoacidos_santiarporn_chanroj2020"
+        ],
+        "fontes": [
+          "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "https://doi.org/10.1556/1006.2016.29.2.9",
+          "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357"
+        ],
+        "homologacaoMetodoQuantitativo": false,
+        "homologacaoCena": false,
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+      }
     },
     {
       "id": "proline",
       "nome": "Prolina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 4,
+      "metodosComRetencaoIndividual": 5,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
@@ -12076,7 +13514,14 @@
             {
               "valor": 0.26,
               "classe": "valor_experimental_tabela_1_artigo_2013",
-              "homologado": false
+              "homologado": false,
+              "revelacaoObservada": {
+                "corQualitativa": "violeta azulado intenso",
+                "limiteDeteccaoUg": 0.08,
+                "fonte": "ukil2013",
+                "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+                "incerteza": null
+              }
             }
           ],
           "rfIntervalo": [],
@@ -12217,6 +13662,61 @@
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
           }
+        },
+        {
+          "protocoloId": "ccd_aminoacidos_santiarporn_chanroj2020",
+          "tecnica": "ccd",
+          "fonte": "santiarpornChanroj2020",
+          "fonteUrl": "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 3
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 1
+              },
+              {
+                "id": "water",
+                "partes": 1
+              }
+            ],
+            "base": "proporcao_reportada",
+            "mistura": "butanol:ácido acético:água 3:1:1",
+            "homologada": false,
+            "ressalva": "Isômero do butanol e base da proporção não explicitados; 1-butanol é interpretação convencional, não confirmação."
+          },
+          "faseEstacionaria": "Placa de sílica gel",
+          "detector": "Revelação visual com solução de ninhidrina",
+          "rf": [
+            {
+              "valor": 0.26,
+              "classe": "Rf_controle_padrao_tabela_1",
+              "homologado": false,
+              "fontePrimariaConferida": true,
+              "formaPadraoReportada": "L nominal no artigo"
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_qualitativa_conferida",
+            "fontePrimaria": "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357",
+            "secoesConferidas": "Métodos p. 68, tabela 1 p. 70 (controle)",
+            "dataConferencia": "2026-11-24"
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -12268,6 +13768,21 @@
         },
         {
           "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "ccd_aminoacidos_santiarporn_chanroj2020"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
             "tlc_aminoacids_protechex_etanol96_water_7_3",
             "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
           ],
@@ -12295,20 +13810,51 @@
             "butanol_1",
             "water"
           ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "ccd_aminoacidos_santiarporn_chanroj2020"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
         }
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_a_conferir",
-        "metodos_e_condicoes_a_homologar"
-      ]
+        "identidade_e_forma_quimica_a_conferir",
+        "precisao_e_condicoes_experimentais_a_validar"
+      ],
+      "auditoriaRetencao": {
+        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "ccd_aminoacidos_santiarporn_chanroj2020"
+        ],
+        "fontes": [
+          "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "https://doi.org/10.1556/1006.2016.29.2.9",
+          "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357"
+        ],
+        "homologacaoMetodoQuantitativo": false,
+        "homologacaoCena": false,
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+      }
     },
     {
       "id": "serine",
       "nome": "Serina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 4,
+      "metodosComRetencaoIndividual": 5,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
@@ -12340,7 +13886,14 @@
             {
               "valor": 0.35,
               "classe": "valor_experimental_tabela_1_artigo_2013",
-              "homologado": false
+              "homologado": false,
+              "revelacaoObservada": {
+                "corQualitativa": "rosa claro",
+                "limiteDeteccaoUg": 1,
+                "fonte": "ukil2013",
+                "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+                "incerteza": null
+              }
             }
           ],
           "rfIntervalo": [],
@@ -12481,6 +14034,61 @@
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
           }
+        },
+        {
+          "protocoloId": "ccd_aminoacidos_santiarporn_chanroj2020",
+          "tecnica": "ccd",
+          "fonte": "santiarpornChanroj2020",
+          "fonteUrl": "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 3
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 1
+              },
+              {
+                "id": "water",
+                "partes": 1
+              }
+            ],
+            "base": "proporcao_reportada",
+            "mistura": "butanol:ácido acético:água 3:1:1",
+            "homologada": false,
+            "ressalva": "Isômero do butanol e base da proporção não explicitados; 1-butanol é interpretação convencional, não confirmação."
+          },
+          "faseEstacionaria": "Placa de sílica gel",
+          "detector": "Revelação visual com solução de ninhidrina",
+          "rf": [
+            {
+              "valor": 0.35,
+              "classe": "Rf_controle_padrao_tabela_1",
+              "homologado": false,
+              "fontePrimariaConferida": true,
+              "formaPadraoReportada": "L nominal no artigo"
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_qualitativa_conferida",
+            "fontePrimaria": "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357",
+            "secoesConferidas": "Métodos p. 68, tabela 1 p. 70 (controle)",
+            "dataConferencia": "2026-11-24"
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -12532,6 +14140,21 @@
         },
         {
           "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "ccd_aminoacidos_santiarporn_chanroj2020"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
             "tlc_aminoacids_protechex_etanol96_water_7_3",
             "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
           ],
@@ -12559,20 +14182,51 @@
             "butanol_1",
             "water"
           ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "ccd_aminoacidos_santiarporn_chanroj2020"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
         }
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_a_conferir",
-        "metodos_e_condicoes_a_homologar"
-      ]
+        "identidade_e_forma_quimica_a_conferir",
+        "precisao_e_condicoes_experimentais_a_validar"
+      ],
+      "auditoriaRetencao": {
+        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "ccd_aminoacidos_santiarporn_chanroj2020"
+        ],
+        "fontes": [
+          "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "https://doi.org/10.1556/1006.2016.29.2.9",
+          "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357"
+        ],
+        "homologacaoMetodoQuantitativo": false,
+        "homologacaoCena": false,
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+      }
     },
     {
       "id": "threonine",
       "nome": "Treonina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 4,
+      "metodosComRetencaoIndividual": 5,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
@@ -12604,7 +14258,14 @@
             {
               "valor": 0.37,
               "classe": "valor_experimental_tabela_1_artigo_2013",
-              "homologado": false
+              "homologado": false,
+              "revelacaoObservada": {
+                "corQualitativa": "cor de talco (descrição qualitativa)",
+                "limiteDeteccaoUg": 1,
+                "fonte": "ukil2013",
+                "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+                "incerteza": null
+              }
             }
           ],
           "rfIntervalo": [],
@@ -12745,6 +14406,61 @@
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
           }
+        },
+        {
+          "protocoloId": "ccd_aminoacidos_santiarporn_chanroj2020",
+          "tecnica": "ccd",
+          "fonte": "santiarpornChanroj2020",
+          "fonteUrl": "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 3
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 1
+              },
+              {
+                "id": "water",
+                "partes": 1
+              }
+            ],
+            "base": "proporcao_reportada",
+            "mistura": "butanol:ácido acético:água 3:1:1",
+            "homologada": false,
+            "ressalva": "Isômero do butanol e base da proporção não explicitados; 1-butanol é interpretação convencional, não confirmação."
+          },
+          "faseEstacionaria": "Placa de sílica gel",
+          "detector": "Revelação visual com solução de ninhidrina",
+          "rf": [
+            {
+              "valor": 0.32,
+              "classe": "Rf_controle_padrao_tabela_1",
+              "homologado": false,
+              "fontePrimariaConferida": true,
+              "formaPadraoReportada": "L nominal no artigo"
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_qualitativa_conferida",
+            "fontePrimaria": "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357",
+            "secoesConferidas": "Métodos p. 68, tabela 1 p. 70 (controle)",
+            "dataConferencia": "2026-11-24"
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -12796,6 +14512,21 @@
         },
         {
           "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "ccd_aminoacidos_santiarporn_chanroj2020"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
             "tlc_aminoacids_protechex_etanol96_water_7_3",
             "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
           ],
@@ -12823,20 +14554,51 @@
             "butanol_1",
             "water"
           ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "ccd_aminoacidos_santiarporn_chanroj2020"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
         }
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_a_conferir",
-        "metodos_e_condicoes_a_homologar"
-      ]
+        "identidade_e_forma_quimica_a_conferir",
+        "precisao_e_condicoes_experimentais_a_validar"
+      ],
+      "auditoriaRetencao": {
+        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "ccd_aminoacidos_santiarporn_chanroj2020"
+        ],
+        "fontes": [
+          "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "https://doi.org/10.1556/1006.2016.29.2.9",
+          "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357"
+        ],
+        "homologacaoMetodoQuantitativo": false,
+        "homologacaoCena": false,
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+      }
     },
     {
       "id": "tryptophan",
       "nome": "Triptofano",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 5,
+      "metodosComRetencaoIndividual": 6,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_ukil_2013_propanol_water_70_30",
@@ -12868,7 +14630,14 @@
             {
               "valor": 0.62,
               "classe": "valor_experimental_tabela_1_artigo_2013",
-              "homologado": false
+              "homologado": false,
+              "revelacaoObservada": {
+                "corQualitativa": "cor de argila clara",
+                "limiteDeteccaoUg": 1,
+                "fonte": "ukil2013",
+                "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+                "incerteza": null
+              }
             }
           ],
           "rfIntervalo": [],
@@ -13050,6 +14819,61 @@
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
           }
+        },
+        {
+          "protocoloId": "ccd_aminoacidos_santiarporn_chanroj2020",
+          "tecnica": "ccd",
+          "fonte": "santiarpornChanroj2020",
+          "fonteUrl": "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 3
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 1
+              },
+              {
+                "id": "water",
+                "partes": 1
+              }
+            ],
+            "base": "proporcao_reportada",
+            "mistura": "butanol:ácido acético:água 3:1:1",
+            "homologada": false,
+            "ressalva": "Isômero do butanol e base da proporção não explicitados; 1-butanol é interpretação convencional, não confirmação."
+          },
+          "faseEstacionaria": "Placa de sílica gel",
+          "detector": "Revelação visual com solução de ninhidrina",
+          "rf": [
+            {
+              "valor": 0.62,
+              "classe": "Rf_controle_padrao_tabela_1",
+              "homologado": false,
+              "fontePrimariaConferida": true,
+              "formaPadraoReportada": "L nominal no artigo"
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_qualitativa_conferida",
+            "fontePrimaria": "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357",
+            "secoesConferidas": "Métodos p. 68, tabela 1 p. 70 (controle)",
+            "dataConferencia": "2026-11-24"
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -13116,6 +14940,21 @@
         },
         {
           "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "ccd_aminoacidos_santiarporn_chanroj2020"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
             "tlc_aminoacids_protechex_etanol96_water_7_3",
             "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
           ],
@@ -13158,20 +14997,51 @@
             "butanol_1",
             "water"
           ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "ccd_aminoacidos_santiarporn_chanroj2020"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
         }
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_a_conferir",
-        "metodos_e_condicoes_a_homologar"
-      ]
+        "identidade_e_forma_quimica_a_conferir",
+        "precisao_e_condicoes_experimentais_a_validar"
+      ],
+      "auditoriaRetencao": {
+        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "ccd_aminoacidos_santiarporn_chanroj2020"
+        ],
+        "fontes": [
+          "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "https://doi.org/10.1556/1006.2016.29.2.9",
+          "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357"
+        ],
+        "homologacaoMetodoQuantitativo": false,
+        "homologacaoCena": false,
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+      }
     },
     {
       "id": "tyrosine",
       "nome": "Tirosina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 5,
+      "metodosComRetencaoIndividual": 6,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_amrita_12_3_5",
@@ -13244,7 +15114,14 @@
             {
               "valor": 0.57,
               "classe": "valor_experimental_tabela_1_artigo_2013",
-              "homologado": false
+              "homologado": false,
+              "revelacaoObservada": {
+                "corQualitativa": "verde pistache",
+                "limiteDeteccaoUg": 0.4,
+                "fonte": "ukil2013",
+                "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+                "incerteza": null
+              }
             }
           ],
           "rfIntervalo": [],
@@ -13385,6 +15262,61 @@
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
           }
+        },
+        {
+          "protocoloId": "ccd_aminoacidos_santiarporn_chanroj2020",
+          "tecnica": "ccd",
+          "fonte": "santiarpornChanroj2020",
+          "fonteUrl": "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 3
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 1
+              },
+              {
+                "id": "water",
+                "partes": 1
+              }
+            ],
+            "base": "proporcao_reportada",
+            "mistura": "butanol:ácido acético:água 3:1:1",
+            "homologada": false,
+            "ressalva": "Isômero do butanol e base da proporção não explicitados; 1-butanol é interpretação convencional, não confirmação."
+          },
+          "faseEstacionaria": "Placa de sílica gel",
+          "detector": "Revelação visual com solução de ninhidrina",
+          "rf": [
+            {
+              "valor": 0.71,
+              "classe": "Rf_controle_padrao_tabela_1",
+              "homologado": false,
+              "fontePrimariaConferida": true,
+              "formaPadraoReportada": "L nominal no artigo"
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_qualitativa_conferida",
+            "fontePrimaria": "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357",
+            "secoesConferidas": "Métodos p. 68, tabela 1 p. 70 (controle)",
+            "dataConferencia": "2026-11-24"
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -13466,6 +15398,21 @@
         },
         {
           "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "ccd_aminoacidos_santiarporn_chanroj2020"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
             "tlc_aminoacids_protechex_etanol96_water_7_3",
             "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
           ],
@@ -13493,20 +15440,51 @@
             "butanol_1",
             "water"
           ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "ccd_aminoacidos_santiarporn_chanroj2020"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
         }
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_a_conferir",
-        "metodos_e_condicoes_a_homologar"
-      ]
+        "identidade_e_forma_quimica_a_conferir",
+        "precisao_e_condicoes_experimentais_a_validar"
+      ],
+      "auditoriaRetencao": {
+        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "ccd_aminoacidos_santiarporn_chanroj2020"
+        ],
+        "fontes": [
+          "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "https://doi.org/10.1556/1006.2016.29.2.9",
+          "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357"
+        ],
+        "homologacaoMetodoQuantitativo": false,
+        "homologacaoCena": false,
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+      }
     },
     {
       "id": "valine",
       "nome": "Valina",
       "grupo": "aminoacidos",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 6,
+      "metodosComRetencaoIndividual": 7,
       "metodos": [
         {
           "protocoloId": "tlc_aminoacids_amrita_12_3_5",
@@ -13579,7 +15557,14 @@
             {
               "valor": 0.45,
               "classe": "valor_experimental_tabela_1_artigo_2013",
-              "homologado": false
+              "homologado": false,
+              "revelacaoObservada": {
+                "corQualitativa": "rosa",
+                "limiteDeteccaoUg": 0.9,
+                "fonte": "ukil2013",
+                "condicao": "Após 4-dimetilaminobenzaldeído e isatina e aquecimentos conforme método; não cor intrínseca, não ninhidrina isolada",
+                "incerteza": null
+              }
             }
           ],
           "rfIntervalo": [],
@@ -13761,6 +15746,61 @@
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
           }
+        },
+        {
+          "protocoloId": "ccd_aminoacidos_santiarporn_chanroj2020",
+          "tecnica": "ccd",
+          "fonte": "santiarpornChanroj2020",
+          "fonteUrl": "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357",
+          "solventes": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "butanol_1",
+                "partes": 3
+              },
+              {
+                "id": "acetic_acid",
+                "partes": 1
+              },
+              {
+                "id": "water",
+                "partes": 1
+              }
+            ],
+            "base": "proporcao_reportada",
+            "mistura": "butanol:ácido acético:água 3:1:1",
+            "homologada": false,
+            "ressalva": "Isômero do butanol e base da proporção não explicitados; 1-butanol é interpretação convencional, não confirmação."
+          },
+          "faseEstacionaria": "Placa de sílica gel",
+          "detector": "Revelação visual com solução de ninhidrina",
+          "rf": [
+            {
+              "valor": 0.43,
+              "classe": "Rf_controle_padrao_tabela_1",
+              "homologado": false,
+              "fontePrimariaConferida": true,
+              "formaPadraoReportada": "L nominal no artigo"
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_qualitativa_conferida",
+            "fontePrimaria": "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357",
+            "secoesConferidas": "Métodos p. 68, tabela 1 p. 70 (controle)",
+            "dataConferencia": "2026-11-24"
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -13857,6 +15897,21 @@
         },
         {
           "metodos": [
+            "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+            "ccd_aminoacidos_santiarporn_chanroj2020"
+          ],
+          "solventesA": [
+            "propanol_1",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
+        },
+        {
+          "metodos": [
             "tlc_aminoacids_protechex_etanol96_water_7_3",
             "tlc_aminoacids_protechex_butanol_acetic_water_8_2_2"
           ],
@@ -13899,13 +15954,44 @@
             "butanol_1",
             "water"
           ]
+        },
+        {
+          "metodos": [
+            "tlc_aminoacids_protechex_etanol96_water_7_3",
+            "ccd_aminoacidos_santiarporn_chanroj2020"
+          ],
+          "solventesA": [
+            "ethanol",
+            "water"
+          ],
+          "solventesB": [
+            "acetic_acid",
+            "butanol_1",
+            "water"
+          ]
         }
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_a_conferir",
-        "metodos_e_condicoes_a_homologar"
-      ]
+        "identidade_e_forma_quimica_a_conferir",
+        "precisao_e_condicoes_experimentais_a_validar"
+      ],
+      "auditoriaRetencao": {
+        "estado": "tres_protocolos_de_referencia_qualitativa_conferidos",
+        "metodos": [
+          "tlc_aminoacids_ukil_2013_propanol_water_70_30",
+          "tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5",
+          "ccd_aminoacidos_santiarporn_chanroj2020"
+        ],
+        "fontes": [
+          "https://www.orientjchem.org/vol29no2/identification-of-amino-acids-on-thin-layer-chromatography-plates-with-a-new-reagent/",
+          "https://doi.org/10.1556/1006.2016.29.2.9",
+          "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357"
+        ],
+        "homologacaoMetodoQuantitativo": false,
+        "homologacaoCena": false,
+        "nota": "Não considerar a menção L no terceiro artigo como confirmação da estereoquímica dos padrões dos dois primeiros. Não atribuir pureza ou precisão não publicadas."
+      }
     },
     {
       "id": "caffeine",

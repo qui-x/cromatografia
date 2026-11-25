@@ -31,7 +31,7 @@
     "exigemEspecificacao": 49,
     "idsDuplicados": 0,
     "homologadasParaMotor": 0,
-    "identidadesConferidas": 20
+    "identidadesConferidas": 21
   },
   "candidatos": [
     {
@@ -1000,12 +1000,14 @@
       "referenciaQuimica": {
         "pubchemCID": 750,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/750",
-        "classe": "cid_candidato_localizado",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": null,
-        "casConferido": null,
+        "classe": "identidade_molecular_individual_conferida",
+        "status": "identidade_quimica_confirmada_pubchem",
+        "nota": "Glicina aquiral.",
+        "casConferido": "56-40-6",
         "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "estruturaEFormaConferidas": true,
+        "fonteConferencia": "https://pubchem.ncbi.nlm.nih.gov/compound/750",
+        "dataConferencia": "2026-11-24"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {

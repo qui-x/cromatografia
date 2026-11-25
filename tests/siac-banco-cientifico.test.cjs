@@ -28,7 +28,7 @@ assert.equal(analytes.status,"PESQUISA_NAO_HOMOLOGADA");
 assert.equal(engines.status,"candidatos_nao_integrados");
 assert.equal(solvents.solventes.length,43);
 assert.equal(analytes.candidatos.length,76);
-assert.equal(analytes.protocolos.length,76);
+assert.equal(analytes.protocolos.length,77);
 assert.equal(engines.motores.length,9);
 assert.equal(stationary.status,"PESQUISA_NAO_HOMOLOGADA");
 assert.equal(stationary.fasesEstacionarias.length,18);
@@ -95,7 +95,7 @@ for(const p of solvents.paresMiscibilidade){
 }
 const candidates=new Set(analytes.candidatos.map(a=>a.id));
 assert.equal(analytes.candidatos.filter(a=>a.homologacao==="homologado_hptlc_condicional").length,7);
-assert.equal(analytes.candidatos.filter(a=>a.identity.verificadoIndividualmente).length,20);
+assert.equal(analytes.candidatos.filter(a=>a.identity.verificadoIndividualmente).length,21);
 assert(analytes.candidatos.every(a=>a.propriedades.densidade===null));
 assert.equal(analytes.candidatos.filter(a=>a.retencao.rf.length===2).length,11);
 let rfs=0;
@@ -111,7 +111,7 @@ for(const p of analytes.protocolos){
     rfs++;
   }
 }
-assert.equal(rfs,230);
+assert.equal(rfs,250);
 let intervalos=0;
 for(const p of analytes.protocolos){
  for(const r of (p.dadosRfIntervalos||[])){
@@ -241,3 +241,5 @@ assert(lote24.every(p=>p.disponibilidadeSimulador.habilitarCenaQuantitativa===fa
 assert.equal(lote24.find(p=>p.id==="hptlc_vanillin_krishnaveni2013").status,"referencia_primaria_conferida_nao_homologada");
 
 const screeningAA=analytes.protocolos.filter(p=>p.id.startsWith("hptlc_ascorbic_2022_rp_screen_"));assert.equal(screeningAA.length,6);assert(screeningAA.every(p=>p.status!=="homologado"&&p.dadosRf[0].replicatas===3));
+
+const amino2020=analytes.protocolos.find(p=>p.id==="ccd_aminoacidos_santiarporn_chanroj2020");assert.equal(amino2020.dadosRf.length,20);assert(amino2020.dadosRf.every(d=>d.homologado===false&&d.fontePrimariaConferida===true));assert.equal(ukil.dadosRf.filter(d=>d.revelacaoObservada?.corQualitativa&&Number.isFinite(d.revelacaoObservada.limiteDeteccaoUg)).length,20);assert(analytes.candidatos.filter(c=>c.grupo==="aminoacidos").every(c=>c.propriedades.corObservavel.homologadoParaCena===false));
