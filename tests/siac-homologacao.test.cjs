@@ -4,10 +4,10 @@ const h=require("../js/simulation/siac-homologacao.js");
 const base=require("../data/siac/analitos-protocolos.v1.json");
 const report=h.auditarCatalogo(base);
 assert.equal(report.resumo.catalogados,76);
-assert.equal(report.resumo.comUmOuMaisMetodosDeRetencao,52);
-assert.equal(report.resumo.comDoisOuMaisMetodosDeRetencao,47,
+assert.equal(report.resumo.comUmOuMaisMetodosDeRetencao,54);
+assert.equal(report.resumo.comDoisOuMaisMetodosDeRetencao,51,
   "os 20 candidatos com dois métodos devem ter evidência individual");
-assert.equal(report.resumo.comDoisMetodosESolventesContrastantes,47);
+assert.equal(report.resumo.comDoisMetodosESolventesContrastantes,51);
 assert.equal(report.resumo.completamenteHomologados,11,
  "cafeína e paracetamol têm dados HPTLC com dois eluentes e fonte primária conferida");
 assert.equal(report.resumo.faltamParaMetaMinima,29);
@@ -27,7 +27,7 @@ for(const id of novos40){
 }
 const porGrupo=report.candidatos.filter(c=>c.comparacoesPossiveis.length>0)
  .reduce((acc,c)=>(acc[c.grupo]=(acc[c.grupo]||0)+1,acc),{});
-assert.deepEqual(porGrupo,{"corantes_alimenticios":8,"pigmentos_vegetais":9,"aminoacidos":20,"farmacos_e_organicos":8,"indicadores_e_traçadores":2});
+assert.deepEqual(porGrupo,{"corantes_alimenticios":8,"pigmentos_vegetais":13,"aminoacidos":20,"farmacos_e_organicos":8,"indicadores_e_traçadores":2});
 
 
 const matriz=require("../data/siac/matriz-cobertura-dois-metodos.v2.json");
@@ -40,7 +40,7 @@ assert.equal(matriz.resumo.totaisRegistroRfPontual,
  base.protocolos.reduce((n,p)=>n+(p.dadosRf?.length||0),0));
 assert.equal(matriz.resumo.totalRfIntervalos,
  base.protocolos.reduce((n,p)=>n+(p.dadosRfIntervalos?.length||0),0));
-assert.equal(matriz.resumo.totaisRegistroRfPontual,250);
+assert.equal(matriz.resumo.totaisRegistroRfPontual,262);
 assert.equal(matriz.resumo.totalRfIntervalos,1);
 assert.deepEqual(
  matriz.candidatos.filter(c=>c.doisSolventesContrastantesEmDoisMetodos).map(c=>c.id).sort(),
@@ -49,12 +49,12 @@ assert.deepEqual(
 assert.deepEqual(matriz.candidatos.filter(c=>c.homologacaoCompleta).map(c=>c.id).sort(),["ascorbic_acid","brilliant_blue_fcf","caffeine","coumarin","curcumin","paracetamol","ponceau_4r","quercetin","rutin","tartrazina","vanillin"]);
 assert.equal(matriz.resumo.liberadosParaSimulacaoReal,0,"HPTLC não pode abrir a cena de CCD ou coluna");
 assert.equal(matriz.resumo.liberadosParaSimulacaoReal,report.resumo.liberadosParaSimulacaoReal);
-assert.equal(matriz.resumo.identidadesQuimicasConferidas,40);
+assert.equal(matriz.resumo.identidadesQuimicasConferidas,47);
 
 assert(matriz.candidatos.every(c=>!c.homologacaoCompleta||c.disponibilidadeSimulacaoReal===false));
 
 assert.equal(h.avaliarSubstancia("glycine",base).metodosComRetencaoIndividual,6);
-assert.equal(h.avaliarSubstancia("chlorophyll_a",base).metodosComRetencaoIndividual,2);
+assert.equal(h.avaliarSubstancia("chlorophyll_a",base).metodosComRetencaoIndividual,3);
 assert.equal(h.avaliarSubstancia("pheophytin_b",base).metodosComRetencaoIndividual,2);
 const pheo=h.avaliarSubstancia("pheophytin_b",base);
 assert(pheo.metodos.some(m=>m.registrosRfIntervalos===1),
@@ -150,8 +150,8 @@ for(const id of ["tartrazina","ponceau_4r","brilliant_blue_fcf"]){const z=h.aval
 
 assert.equal(report.candidatos.filter(c=>c.grupo==="aminoacidos"&&c.metodosComRetencaoIndividual>=3).length,20);assert.equal(report.candidatos.filter(c=>c.grupo==="aminoacidos"&&c.homologacaoCompleta).length,0);
 
-assert.equal(report.resumo.comReferenciaDidaticaValidada,31);
-assert.equal(report.resumo.somenteReferenciaDidatica,20);
+assert.equal(report.resumo.comReferenciaDidaticaValidada,35);
+assert.equal(report.resumo.somenteReferenciaDidatica,24);
 assert.equal(matriz.resumo.comReferenciaDidaticaValidada,report.resumo.comReferenciaDidaticaValidada);
 assert.deepEqual(matriz.candidatos.filter(c=>c.referenciaDidaticaValidada).map(c=>c.id).sort(),report.candidatos.filter(c=>c.referenciaDidaticaValidada).map(c=>c.id).sort());
 for(const c of report.candidatos.filter(c=>c.grupo==="aminoacidos")){
@@ -171,3 +171,5 @@ uk.dadosRf.find(d=>d.analito==="alanine").classe="medido";
 const hu=clone.protocolos.find(p=>p.id==="tlc_aminoacids_hudaib2016_butanol_acetic_water_12_3_5");
 hu.fonte=uk.fonte;hu.referenciaDidatica.fontePrimaria=clone.fontes[uk.fonte];hu.dadosRf.find(d=>d.analito==="alanine").fonte=uk.fonte;
 assert.equal(h.avaliarSubstancia("alanine",clone).referenciaDidaticaValidada,false);
+
+for(const id of ["beta_carotene","lutein","zeaxanthin","beta_cryptoxanthin"]){const z=h.avaliarSubstancia(id,base);assert(z.identidadeConferida&&z.referenciaDidaticaValidada);assert.equal(z.homologacaoCompleta,false);assert.equal(z.disponibilidadeSimulacaoReal,false);}

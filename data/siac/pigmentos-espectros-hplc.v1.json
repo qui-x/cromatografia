@@ -1,0 +1,71 @@
+{
+  "versao": "1.0",
+  "estado": "referencias_experimentais_contextuais_nao_calibradas",
+  "data": "2026-11-24",
+  "fonte": "https://www.jstage.jst.go.jp/article/bunsekikagaku1952/38/4/38_4_182/_article/-char/en",
+  "condicoesEspectrais": {
+    "solvente": "acetone",
+    "nota": "Excitação, emissão, rendimento quântico e coeficiente molar no solvente descrito; não equivalem ao espectro em placa seca."
+  },
+  "condicoesHplc": {
+    "faseEstacionaria": "Zorbax-ODS 250 × 4,6 mm",
+    "faseMovel": [
+      {
+        "id": "acetonitrile",
+        "partes": 45
+      },
+      {
+        "id": "acetone",
+        "partes": 55
+      }
+    ],
+    "vazaoMlMin": 0.6,
+    "nota": "HPLC instrumental; não extrapolar à coluna por gravidade, não usar tR como Rf nem inferir volume morto."
+  },
+  "dados": [
+    {
+      "analito": "chlorophyll_a",
+      "absorcaoReferenciaNm": 663,
+      "coeficienteMolarLmolCm": 74000,
+      "excitacaoNm": 430,
+      "emissaoNm": 666,
+      "rendimentoQuanticoFluorescencia": 0.396,
+      "tempoRetencaoMin": 13.5,
+      "fatorCapacidadeHplc": 2,
+      "homologadoParaCena": false
+    },
+    {
+      "analito": "chlorophyll_b",
+      "absorcaoReferenciaNm": 645,
+      "coeficienteMolarLmolCm": 55000,
+      "excitacaoNm": 457,
+      "emissaoNm": 650,
+      "rendimentoQuanticoFluorescencia": 0.141,
+      "tempoRetencaoMin": 10.083333333333334,
+      "fatorCapacidadeHplc": 1.24,
+      "homologadoParaCena": false
+    },
+    {
+      "analito": "pheophytin_a",
+      "absorcaoReferenciaNm": 663,
+      "coeficienteMolarLmolCm": 42000,
+      "excitacaoNm": 410,
+      "emissaoNm": 670,
+      "rendimentoQuanticoFluorescencia": 0.141,
+      "tempoRetencaoMin": 21,
+      "fatorCapacidadeHplc": 3.67,
+      "homologadoParaCena": false
+    },
+    {
+      "analito": "pheophytin_b",
+      "absorcaoReferenciaNm": 650,
+      "coeficienteMolarLmolCm": 37000,
+      "excitacaoNm": 435,
+      "emissaoNm": 655,
+      "rendimentoQuanticoFluorescencia": 0.077,
+      "tempoRetencaoMin": 17.4,
+      "fatorCapacidadeHplc": 2.87,
+      "homologadoParaCena": false
+    }
+  ]
+}

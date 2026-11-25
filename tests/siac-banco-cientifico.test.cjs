@@ -28,7 +28,7 @@ assert.equal(analytes.status,"PESQUISA_NAO_HOMOLOGADA");
 assert.equal(engines.status,"candidatos_nao_integrados");
 assert.equal(solvents.solventes.length,43);
 assert.equal(analytes.candidatos.length,76);
-assert.equal(analytes.protocolos.length,77);
+assert.equal(analytes.protocolos.length,79);
 assert.equal(engines.motores.length,9);
 assert.equal(stationary.status,"PESQUISA_NAO_HOMOLOGADA");
 assert.equal(stationary.fasesEstacionarias.length,18);
@@ -95,7 +95,7 @@ for(const p of solvents.paresMiscibilidade){
 }
 const candidates=new Set(analytes.candidatos.map(a=>a.id));
 assert.equal(analytes.candidatos.filter(a=>a.homologacao==="homologado_hptlc_condicional").length,7);
-assert.equal(analytes.candidatos.filter(a=>a.identity.verificadoIndividualmente).length,40);
+assert.equal(analytes.candidatos.filter(a=>a.identity.verificadoIndividualmente).length,47);
 assert(analytes.candidatos.every(a=>a.propriedades.densidade===null));
 assert.equal(analytes.candidatos.filter(a=>a.retencao.rf.length===2).length,11);
 let rfs=0;
@@ -111,7 +111,7 @@ for(const p of analytes.protocolos){
     rfs++;
   }
 }
-assert.equal(rfs,250);
+assert.equal(rfs,262);
 let intervalos=0;
 for(const p of analytes.protocolos){
  for(const r of (p.dadosRfIntervalos||[])){
@@ -249,3 +249,5 @@ assert.equal(aaIdentidades.length,20);
 assert(aaIdentidades.every(c=>c.identity.verificadoIndividualmente===true&&/^CHEBI:\d+$/.test(c.identity.chebiID)));
 assert.equal(new Set(aaIdentidades.map(c=>c.identity.chebiID)).size,20);
 assert(aaIdentidades.every(c=>c.referenciaDidatica.habilitarCenaQuantitativa===false));
+
+const pigmentosRalley=analytes.protocolos.find(p=>p.id==="ccd_carotenoids_ralley2004");assert.equal(pigmentosRalley.dadosRf.length,6);assert(pigmentosRalley.dadosRf.every(d=>d.homologado===false&&d.fontePrimariaConferida));const pigmentosClark=analytes.protocolos.find(p=>p.id==="ccd_pigments_clark_petroleum_acetone");assert(pigmentosClark.dadosRf.every(d=>!d.homologado&&!d.fontePrimariaConferida));const opt=read("data/siac/pigmentos-espectros-hplc.v1.json");assert.equal(opt.dados.length,4);assert(opt.dados.every(d=>!d.homologadoParaCena&&d.rendimentoQuanticoFluorescencia>=0&&d.rendimentoQuanticoFluorescencia<=1));

@@ -47,7 +47,10 @@
     "nandanwadkar2020": "https://doi.org/10.1007/s00764-020-00038-9",
     "mjofs2021dyes": "https://forensics.org.my/mjofs/pdf/fssmVol.10No.1/Article03.pdf",
     "dilrukshi2019": "https://doi.org/10.1155/2019/7453169",
-    "santiarpornChanroj2020": "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357"
+    "santiarpornChanroj2020": "https://ph04.tci-thaijo.org/index.php/JCST/article/download/413/122/1357",
+    "ralley2004": "https://doi.org/10.1111/j.1365-313X.2004.02151.x",
+    "clarkAlgalPigments": "https://wordpress.clarku.edu/debrobertson/laboratory-protocols/algal-pigments/",
+    "chlorophyllStandards1989": "https://www.jstage.jst.go.jp/article/bunsekikagaku1952/38/4/38_4_182/_article/-char/en"
   },
   "candidatos": [
     {
@@ -514,7 +517,15 @@
       "identity": {
         "cas": null,
         "pubchemCID": null,
-        "verificadoIndividualmente": false
+        "verificadoIndividualmente": true,
+        "chebiID": "CHEBI:18230",
+        "formulaMolecular": "C55H72MgN4O5",
+        "formaInvestigada": "complexo de magnésio clorofila a",
+        "fontesIdentidade": [
+          "https://www.ebi.ac.uk/chebi/CHEBI:18230"
+        ],
+        "dataConferencia": "2026-11-24",
+        "observacao": "Identidade molecular de referência conferida em ChEBI. Não valida composição de extratos, pureza, isomeria de cada amostra ou CID preliminar."
       },
       "propriedades": {
         "densidade": null,
@@ -522,7 +533,21 @@
         "pKa": null,
         "logP": null,
         "corObservavel": null,
-        "absorcaoUV": null
+        "absorcaoUV": {
+          "estado": "referencia_espectral_contextual",
+          "observacoes": [
+            {
+              "fonte": "https://www.jstage.jst.go.jp/article/bunsekikagaku1952/38/4/38_4_182/_article/-char/en",
+              "solvente": "acetona",
+              "lambdaReferenciaNm": 663,
+              "coeficienteMolarLmolCm": 74000,
+              "excitacaoNm": 430,
+              "emissaoNm": 666,
+              "rendimentoQuanticoFluorescencia": 0.396
+            }
+          ],
+          "homologadoParaCena": false
+        }
       },
       "homologacao": "candidato_sem_parametros",
       "retencao": {
@@ -539,7 +564,15 @@
       "identity": {
         "cas": null,
         "pubchemCID": null,
-        "verificadoIndividualmente": false
+        "verificadoIndividualmente": true,
+        "chebiID": "CHEBI:27888",
+        "formulaMolecular": "C55H70MgN4O6",
+        "formaInvestigada": "complexo de magnésio clorofila b",
+        "fontesIdentidade": [
+          "https://www.ebi.ac.uk/chebi/CHEBI:27888"
+        ],
+        "dataConferencia": "2026-11-24",
+        "observacao": "Identidade molecular de referência conferida em ChEBI. Não valida composição de extratos, pureza, isomeria de cada amostra ou CID preliminar."
       },
       "propriedades": {
         "densidade": null,
@@ -547,7 +580,21 @@
         "pKa": null,
         "logP": null,
         "corObservavel": null,
-        "absorcaoUV": null
+        "absorcaoUV": {
+          "estado": "referencia_espectral_contextual",
+          "observacoes": [
+            {
+              "fonte": "https://www.jstage.jst.go.jp/article/bunsekikagaku1952/38/4/38_4_182/_article/-char/en",
+              "solvente": "acetona",
+              "lambdaReferenciaNm": 645,
+              "coeficienteMolarLmolCm": 55000,
+              "excitacaoNm": 457,
+              "emissaoNm": 650,
+              "rendimentoQuanticoFluorescencia": 0.141
+            }
+          ],
+          "homologadoParaCena": false
+        }
       },
       "homologacao": "candidato_sem_parametros",
       "retencao": {
@@ -572,7 +619,21 @@
         "pKa": null,
         "logP": null,
         "corObservavel": null,
-        "absorcaoUV": null
+        "absorcaoUV": {
+          "estado": "referencia_espectral_contextual",
+          "observacoes": [
+            {
+              "fonte": "https://www.jstage.jst.go.jp/article/bunsekikagaku1952/38/4/38_4_182/_article/-char/en",
+              "solvente": "acetona",
+              "lambdaReferenciaNm": 663,
+              "coeficienteMolarLmolCm": 42000,
+              "excitacaoNm": 410,
+              "emissaoNm": 670,
+              "rendimentoQuanticoFluorescencia": 0.141
+            }
+          ],
+          "homologadoParaCena": false
+        }
       },
       "homologacao": "candidato_sem_parametros",
       "retencao": {
@@ -597,7 +658,21 @@
         "pKa": null,
         "logP": null,
         "corObservavel": null,
-        "absorcaoUV": null
+        "absorcaoUV": {
+          "estado": "referencia_espectral_contextual",
+          "observacoes": [
+            {
+              "fonte": "https://www.jstage.jst.go.jp/article/bunsekikagaku1952/38/4/38_4_182/_article/-char/en",
+              "solvente": "acetona",
+              "lambdaReferenciaNm": 650,
+              "coeficienteMolarLmolCm": 37000,
+              "excitacaoNm": 435,
+              "emissaoNm": 655,
+              "rendimentoQuanticoFluorescencia": 0.077
+            }
+          ],
+          "homologadoParaCena": false
+        }
       },
       "homologacao": "candidato_sem_parametros",
       "retencao": {
@@ -614,15 +689,50 @@
       "identity": {
         "cas": null,
         "pubchemCID": null,
-        "verificadoIndividualmente": false
+        "verificadoIndividualmente": true,
+        "chebiID": "CHEBI:17579",
+        "formulaMolecular": "C40H56",
+        "formaInvestigada": "β-caroteno all-trans de referência",
+        "fontesIdentidade": [
+          "https://www.ebi.ac.uk/chebi/CHEBI:17579"
+        ],
+        "dataConferencia": "2026-11-24",
+        "observacao": "Identidade molecular de referência conferida em ChEBI. Não valida composição de extratos, pureza, isomeria de cada amostra ou CID preliminar."
       },
       "propriedades": {
         "densidade": null,
         "solubilidades": null,
         "pKa": null,
         "logP": null,
-        "corObservavel": null,
-        "absorcaoUV": null
+        "corObservavel": {
+          "estado": "observacao_experimental_condicional",
+          "observacoes": [
+            {
+              "cor": "laranja",
+              "metodoId": "ccd_carotenoids_ralley2004",
+              "fonte": "https://doi.org/10.1111/j.1365-313X.2004.02151.x",
+              "condicao": "mancha de padrão na placa CCD"
+            }
+          ],
+          "corIntrinseca": null,
+          "homologadoParaCena": false
+        },
+        "absorcaoUV": {
+          "estado": "referencia_espectral_contextual",
+          "observacoes": [
+            {
+              "lambdaMaxNm": [
+                440,
+                452.4,
+                480.2
+              ],
+              "tecnica": "HPLC-PDA",
+              "condicao": "fase móvel HPLC metanol/MTBE e solução aquosa conforme artigo, não fase CCD",
+              "fonte": "https://doi.org/10.1111/j.1365-313X.2004.02151.x"
+            }
+          ],
+          "homologadoParaCena": false
+        }
       },
       "homologacao": "candidato_sem_parametros",
       "retencao": {
@@ -630,7 +740,16 @@
         "fatorK": [],
         "isotermas": []
       },
-      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "ccd_carotenoids_ralley2004",
+          "tlc_carotenoids_adamczuk2025"
+        ],
+        "restricao": "Consulta contextual de padrões nominais; Rf não identifica isômero/composto isoladamente nem autoriza calibração ou previsão de cena.",
+        "habilitarCenaQuantitativa": false
+      }
     },
     {
       "id": "alpha_carotene",
@@ -664,15 +783,50 @@
       "identity": {
         "cas": null,
         "pubchemCID": null,
-        "verificadoIndividualmente": false
+        "verificadoIndividualmente": true,
+        "chebiID": "CHEBI:28838",
+        "formulaMolecular": "C40H56O2",
+        "formaInvestigada": "trans-luteína de referência",
+        "fontesIdentidade": [
+          "https://www.ebi.ac.uk/chebi/CHEBI:28838"
+        ],
+        "dataConferencia": "2026-11-24",
+        "observacao": "Identidade molecular de referência conferida em ChEBI. Não valida composição de extratos, pureza, isomeria de cada amostra ou CID preliminar."
       },
       "propriedades": {
         "densidade": null,
         "solubilidades": null,
         "pKa": null,
         "logP": null,
-        "corObservavel": null,
-        "absorcaoUV": null
+        "corObservavel": {
+          "estado": "observacao_experimental_condicional",
+          "observacoes": [
+            {
+              "cor": "amarelo",
+              "metodoId": "ccd_carotenoids_ralley2004",
+              "fonte": "https://doi.org/10.1111/j.1365-313X.2004.02151.x",
+              "condicao": "mancha de padrão na placa CCD"
+            }
+          ],
+          "corIntrinseca": null,
+          "homologadoParaCena": false
+        },
+        "absorcaoUV": {
+          "estado": "referencia_espectral_contextual",
+          "observacoes": [
+            {
+              "lambdaMaxNm": [
+                421,
+                443.9,
+                471.8
+              ],
+              "tecnica": "HPLC-PDA",
+              "condicao": "fase móvel HPLC metanol/MTBE e solução aquosa conforme artigo, não fase CCD",
+              "fonte": "https://doi.org/10.1111/j.1365-313X.2004.02151.x"
+            }
+          ],
+          "homologadoParaCena": false
+        }
       },
       "homologacao": "candidato_sem_parametros",
       "retencao": {
@@ -680,7 +834,16 @@
         "fatorK": [],
         "isotermas": []
       },
-      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "ccd_carotenoids_ralley2004",
+          "tlc_carotenoids_adamczuk2025"
+        ],
+        "restricao": "Consulta contextual de padrões nominais; Rf não identifica isômero/composto isoladamente nem autoriza calibração ou previsão de cena.",
+        "habilitarCenaQuantitativa": false
+      }
     },
     {
       "id": "zeaxanthin",
@@ -689,15 +852,50 @@
       "identity": {
         "cas": null,
         "pubchemCID": null,
-        "verificadoIndividualmente": false
+        "verificadoIndividualmente": true,
+        "chebiID": "CHEBI:27547",
+        "formulaMolecular": "C40H56O2",
+        "formaInvestigada": "zeaxantina de referência, não meso-zeaxantina",
+        "fontesIdentidade": [
+          "https://www.ebi.ac.uk/chebi/CHEBI:27547"
+        ],
+        "dataConferencia": "2026-11-24",
+        "observacao": "Identidade molecular de referência conferida em ChEBI. Não valida composição de extratos, pureza, isomeria de cada amostra ou CID preliminar."
       },
       "propriedades": {
         "densidade": null,
         "solubilidades": null,
         "pKa": null,
         "logP": null,
-        "corObservavel": null,
-        "absorcaoUV": null
+        "corObservavel": {
+          "estado": "observacao_experimental_condicional",
+          "observacoes": [
+            {
+              "cor": "amarelo",
+              "metodoId": "ccd_carotenoids_ralley2004",
+              "fonte": "https://doi.org/10.1111/j.1365-313X.2004.02151.x",
+              "condicao": "mancha de padrão na placa CCD"
+            }
+          ],
+          "corIntrinseca": null,
+          "homologadoParaCena": false
+        },
+        "absorcaoUV": {
+          "estado": "referencia_espectral_contextual",
+          "observacoes": [
+            {
+              "lambdaMaxNm": [
+                430,
+                451.2,
+                477.8
+              ],
+              "tecnica": "HPLC-PDA",
+              "condicao": "fase móvel HPLC metanol/MTBE e solução aquosa conforme artigo, não fase CCD",
+              "fonte": "https://doi.org/10.1111/j.1365-313X.2004.02151.x"
+            }
+          ],
+          "homologadoParaCena": false
+        }
       },
       "homologacao": "candidato_sem_parametros",
       "retencao": {
@@ -705,7 +903,16 @@
         "fatorK": [],
         "isotermas": []
       },
-      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "ccd_carotenoids_ralley2004",
+          "tlc_carotenoids_adamczuk2025"
+        ],
+        "restricao": "Consulta contextual de padrões nominais; Rf não identifica isômero/composto isoladamente nem autoriza calibração ou previsão de cena.",
+        "habilitarCenaQuantitativa": false
+      }
     },
     {
       "id": "lycopene",
@@ -739,15 +946,50 @@
       "identity": {
         "cas": null,
         "pubchemCID": null,
-        "verificadoIndividualmente": false
+        "verificadoIndividualmente": true,
+        "chebiID": "CHEBI:35288",
+        "formulaMolecular": "C40H56O4",
+        "formaInvestigada": "all-trans-violaxantina de referência; configuração dos padrões não presumida",
+        "fontesIdentidade": [
+          "https://www.ebi.ac.uk/chebi/CHEBI:35288"
+        ],
+        "dataConferencia": "2026-11-24",
+        "observacao": "Identidade molecular de referência conferida em ChEBI. Não valida composição de extratos, pureza, isomeria de cada amostra ou CID preliminar."
       },
       "propriedades": {
         "densidade": null,
         "solubilidades": null,
         "pKa": null,
         "logP": null,
-        "corObservavel": null,
-        "absorcaoUV": null
+        "corObservavel": {
+          "estado": "observacao_experimental_condicional",
+          "observacoes": [
+            {
+              "cor": "amarelo",
+              "metodoId": "ccd_carotenoids_ralley2004",
+              "fonte": "https://doi.org/10.1111/j.1365-313X.2004.02151.x",
+              "condicao": "mancha de padrão na placa CCD"
+            }
+          ],
+          "corIntrinseca": null,
+          "homologadoParaCena": false
+        },
+        "absorcaoUV": {
+          "estado": "referencia_espectral_contextual",
+          "observacoes": [
+            {
+              "lambdaMaxNm": [
+                419,
+                439.1,
+                469.3
+              ],
+              "tecnica": "HPLC-PDA",
+              "condicao": "fase móvel HPLC metanol/MTBE e solução aquosa conforme artigo, não fase CCD",
+              "fonte": "https://doi.org/10.1111/j.1365-313X.2004.02151.x"
+            }
+          ],
+          "homologadoParaCena": false
+        }
       },
       "homologacao": "candidato_sem_parametros",
       "retencao": {
@@ -771,8 +1013,35 @@
         "solubilidades": null,
         "pKa": null,
         "logP": null,
-        "corObservavel": null,
-        "absorcaoUV": null
+        "corObservavel": {
+          "estado": "observacao_experimental_condicional",
+          "observacoes": [
+            {
+              "cor": "amarelo",
+              "metodoId": "ccd_carotenoids_ralley2004",
+              "fonte": "https://doi.org/10.1111/j.1365-313X.2004.02151.x",
+              "condicao": "mancha de padrão na placa CCD"
+            }
+          ],
+          "corIntrinseca": null,
+          "homologadoParaCena": false
+        },
+        "absorcaoUV": {
+          "estado": "referencia_espectral_contextual",
+          "observacoes": [
+            {
+              "lambdaMaxNm": [
+                415,
+                440.3,
+                466.9
+              ],
+              "tecnica": "HPLC-PDA",
+              "condicao": "fase móvel HPLC metanol/MTBE e solução aquosa conforme artigo, não fase CCD",
+              "fonte": "https://doi.org/10.1111/j.1365-313X.2004.02151.x"
+            }
+          ],
+          "homologadoParaCena": false
+        }
       },
       "homologacao": "candidato_sem_parametros",
       "retencao": {
@@ -789,15 +1058,50 @@
       "identity": {
         "cas": null,
         "pubchemCID": null,
-        "verificadoIndividualmente": false
+        "verificadoIndividualmente": true,
+        "chebiID": "CHEBI:10362",
+        "formulaMolecular": "C40H56O",
+        "formaInvestigada": "β-criptoxantina de referência",
+        "fontesIdentidade": [
+          "https://www.ebi.ac.uk/chebi/CHEBI:10362"
+        ],
+        "dataConferencia": "2026-11-24",
+        "observacao": "Identidade molecular de referência conferida em ChEBI. Não valida composição de extratos, pureza, isomeria de cada amostra ou CID preliminar."
       },
       "propriedades": {
         "densidade": null,
         "solubilidades": null,
         "pKa": null,
         "logP": null,
-        "corObservavel": null,
-        "absorcaoUV": null
+        "corObservavel": {
+          "estado": "observacao_experimental_condicional",
+          "observacoes": [
+            {
+              "cor": "amarelo",
+              "metodoId": "ccd_carotenoids_ralley2004",
+              "fonte": "https://doi.org/10.1111/j.1365-313X.2004.02151.x",
+              "condicao": "mancha de padrão na placa CCD"
+            }
+          ],
+          "corIntrinseca": null,
+          "homologadoParaCena": false
+        },
+        "absorcaoUV": {
+          "estado": "referencia_espectral_contextual",
+          "observacoes": [
+            {
+              "lambdaMaxNm": [
+                430,
+                451.2,
+                477.8
+              ],
+              "tecnica": "HPLC-PDA",
+              "condicao": "fase móvel HPLC metanol/MTBE e solução aquosa conforme artigo, não fase CCD",
+              "fonte": "https://doi.org/10.1111/j.1365-313X.2004.02151.x"
+            }
+          ],
+          "homologadoParaCena": false
+        }
       },
       "homologacao": "candidato_sem_parametros",
       "retencao": {
@@ -805,7 +1109,16 @@
         "fatorK": [],
         "isotermas": []
       },
-      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria."
+      "observacao": "Nome candidato ao estudo. Identificação, propriedades e interação com fase móvel/estacionária precisam de referências individuais. Não atribuir cor ou Rf apenas por categoria.",
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "ccd_carotenoids_ralley2004",
+          "tlc_carotenoids_adamczuk2025"
+        ],
+        "restricao": "Consulta contextual de padrões nominais; Rf não identifica isômero/composto isoladamente nem autoriza calibração ou previsão de cena.",
+        "habilitarCenaQuantitativa": false
+      }
     },
     {
       "id": "cyanidin_3_glucoside",
@@ -6704,7 +7017,9 @@
           "fonte": "adamczuk2025",
           "temperaturaC": null,
           "homologado": false,
-          "fontePrimariaConferida": true
+          "fontePrimariaConferida": true,
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Consulta contextual de padrões nominais; Rf não identifica isômero/composto isoladamente nem autoriza calibração ou previsão de cena."
         },
         {
           "analito": "lutein",
@@ -6714,7 +7029,9 @@
           "temperaturaC": null,
           "homologado": false,
           "fontePrimariaConferida": true,
-          "forma": "trans-luteína"
+          "forma": "trans-luteína",
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Consulta contextual de padrões nominais; Rf não identifica isômero/composto isoladamente nem autoriza calibração ou previsão de cena."
         },
         {
           "analito": "zeaxanthin",
@@ -6723,7 +7040,9 @@
           "fonte": "adamczuk2025",
           "temperaturaC": null,
           "homologado": false,
-          "fontePrimariaConferida": true
+          "fontePrimariaConferida": true,
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Consulta contextual de padrões nominais; Rf não identifica isômero/composto isoladamente nem autoriza calibração ou previsão de cena."
         },
         {
           "analito": "beta_cryptoxanthin",
@@ -6732,7 +7051,9 @@
           "fonte": "adamczuk2025",
           "temperaturaC": null,
           "homologado": false,
-          "fontePrimariaConferida": true
+          "fontePrimariaConferida": true,
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Consulta contextual de padrões nominais; Rf não identifica isômero/composto isoladamente nem autoriza calibração ou previsão de cena."
         }
       ],
       "nota": "Padrões e comparação com extratos; cis-luteína e derivados não importados. Preservar proporção publicada em partes.",
@@ -6752,6 +7073,14 @@
         "parametrosRetencaoConferidos": true,
         "habilitarCenaQuantitativa": false,
         "motivo": "Referência experimental contextual; motor não calibrado."
+      },
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "fontePrimaria": "https://doi.org/10.3390/antiox14121438",
+        "dataConferencia": "2026-11-24",
+        "escopo": "Comparação dos Rf em padrões de carotenoides",
+        "restricao": "Consulta contextual de padrões nominais; Rf não identifica isômero/composto isoladamente nem autoriza calibração ou previsão de cena.",
+        "habilitarCenaQuantitativa": false
       }
     },
     {
@@ -10245,6 +10574,268 @@
       "disponibilidadeSimulador": {
         "tipo": "ccd",
         "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false
+      }
+    },
+    {
+      "id": "ccd_carotenoids_ralley2004",
+      "tecnica": "ccd",
+      "assuntos": [
+        "pigmentos_vegetais"
+      ],
+      "status": "referencia_primaria_conferida_nao_homologada",
+      "fonte": "ralley2004",
+      "ano": 2004,
+      "referenciaSecao": "Tabela 1a, padrões autênticos; Experimental procedures, análise cromatográfica",
+      "faseEstacionaria": {
+        "classe": "Sílica gel F254 VWR",
+        "detalhamento": "Placas de CCD descritas na seção experimental; espessura não informada",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "ethyl_acetate",
+            "partes": 40
+          },
+          {
+            "id": "hexanes_mixture",
+            "partes": 60
+          }
+        ],
+        "base": "v/v",
+        "mistura": "acetato de etila:hexano 40:60; isomeria/pureza do hexano não determinada",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "Cor visível da mancha; confirmação HPLC-PDA/espectral em método separado",
+        "detectorHomologado": false
+      },
+      "dadosRf": [
+        {
+          "analito": "zeaxanthin",
+          "rf": 0.11,
+          "classe": "Rf_padrao_autentico_tabela_1a",
+          "fonte": "ralley2004",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "corObservada": "amarelo",
+          "lambdaMaxHplcNm": [
+            430,
+            451.2,
+            477.8
+          ],
+          "tempoRetencaoHplcMin": 17,
+          "notaEspectral": "λmax em fase móvel HPLC, não no eluente CCD",
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Consulta contextual de padrões nominais; Rf não identifica isômero/composto isoladamente nem autoriza calibração ou previsão de cena."
+        },
+        {
+          "analito": "beta_cryptoxanthin",
+          "rf": 0.4,
+          "classe": "Rf_padrao_autentico_tabela_1a",
+          "fonte": "ralley2004",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "corObservada": "amarelo",
+          "lambdaMaxHplcNm": [
+            430,
+            451.2,
+            477.8
+          ],
+          "tempoRetencaoHplcMin": 22.8,
+          "notaEspectral": "λmax em fase móvel HPLC, não no eluente CCD",
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Consulta contextual de padrões nominais; Rf não identifica isômero/composto isoladamente nem autoriza calibração ou previsão de cena."
+        },
+        {
+          "analito": "beta_carotene",
+          "rf": 0.86,
+          "classe": "Rf_padrao_autentico_tabela_1a",
+          "fonte": "ralley2004",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "corObservada": "laranja",
+          "lambdaMaxHplcNm": [
+            440,
+            452.4,
+            480.2
+          ],
+          "tempoRetencaoHplcMin": 28.4,
+          "notaEspectral": "λmax em fase móvel HPLC, não no eluente CCD",
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Consulta contextual de padrões nominais; Rf não identifica isômero/composto isoladamente nem autoriza calibração ou previsão de cena."
+        },
+        {
+          "analito": "lutein",
+          "rf": 0.15,
+          "classe": "Rf_padrao_autentico_tabela_1a",
+          "fonte": "ralley2004",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "corObservada": "amarelo",
+          "lambdaMaxHplcNm": [
+            421,
+            443.9,
+            471.8
+          ],
+          "tempoRetencaoHplcMin": 15,
+          "notaEspectral": "λmax em fase móvel HPLC, não no eluente CCD",
+          "referenciaDidaticaConferida": true,
+          "escopoReferenciaDidatica": "Consulta contextual de padrões nominais; Rf não identifica isômero/composto isoladamente nem autoriza calibração ou previsão de cena."
+        },
+        {
+          "analito": "violaxanthin",
+          "rf": 0.1,
+          "classe": "Rf_padrao_autentico_tabela_1a",
+          "fonte": "ralley2004",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "corObservada": "amarelo",
+          "lambdaMaxHplcNm": [
+            419,
+            439.1,
+            469.3
+          ],
+          "tempoRetencaoHplcMin": 11.2,
+          "notaEspectral": "λmax em fase móvel HPLC, não no eluente CCD"
+        },
+        {
+          "analito": "neoxanthin",
+          "rf": 0.1,
+          "classe": "Rf_padrao_autentico_tabela_1a",
+          "fonte": "ralley2004",
+          "homologado": false,
+          "fontePrimariaConferida": true,
+          "corObservada": "amarelo",
+          "lambdaMaxHplcNm": [
+            415,
+            440.3,
+            466.9
+          ],
+          "tempoRetencaoHplcMin": 9.93,
+          "notaEspectral": "λmax em fase móvel HPLC, não no eluente CCD"
+        }
+      ],
+      "nota": "Padrões autênticos. Sem dispersão individual do Rf; violaxantina e neoxantina coincidem em Rf 0,10. Não inferir identidade unicamente pela mancha ou transferir espectros da fase móvel HPLC à CCD.",
+      "auditoriaCientifica": {
+        "estado": "referencia_experimental_condicional",
+        "fontePrimaria": "https://doi.org/10.1111/j.1365-313X.2004.02151.x",
+        "doi": "10.1111/j.1365-313X.2004.02151.x",
+        "secoesConferidas": "Tabela 1a e experimental procedures",
+        "dataConferencia": "2026-11-24"
+      },
+      "disponibilidadeSimulador": {
+        "tipo": "ccd",
+        "parametrosRetencaoConferidos": true,
+        "habilitarCenaQuantitativa": false
+      },
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "fontePrimaria": "https://doi.org/10.1111/j.1365-313X.2004.02151.x",
+        "dataConferencia": "2026-11-24",
+        "escopo": "Comparação dos Rf em padrões de carotenoides",
+        "restricao": "Consulta contextual de padrões nominais; Rf não identifica isômero/composto isoladamente nem autoriza calibração ou previsão de cena.",
+        "habilitarCenaQuantitativa": false
+      }
+    },
+    {
+      "id": "ccd_pigments_clark_petroleum_acetone",
+      "tecnica": "ccd",
+      "assuntos": [
+        "pigmentos_vegetais"
+      ],
+      "status": "referencia_educacional_aproximada",
+      "fonte": "clarkAlgalPigments",
+      "referenciaSecao": "Seção B, tabelas 2 e 3",
+      "faseEstacionaria": {
+        "classe": "Sílica gel",
+        "detalhamento": "Placa de CCD; fabricante e espessura não reportados",
+        "homologada": false
+      },
+      "faseMovel": {
+        "componentes": [
+          {
+            "id": "petroleum_ether_mixture",
+            "partes": 7
+          },
+          {
+            "id": "acetone",
+            "partes": 3
+          }
+        ],
+        "base": "v/v",
+        "mistura": "éter de petróleo:acetona 7:3",
+        "homologada": false
+      },
+      "aplicacao": {
+        "detector": "Bandas visíveis; confirmação por espectro de pigmento extraído",
+        "detectorHomologado": false,
+        "desenvolvimentoMinAprox": {
+          "min": 20,
+          "max": 30
+        }
+      },
+      "dadosRf": [
+        {
+          "analito": "chlorophyll_a",
+          "rf": 0.68,
+          "classe": "Rf_aproximado_protocolo_universitario",
+          "fonte": "clarkAlgalPigments",
+          "homologado": false,
+          "fontePrimariaConferida": false,
+          "fonteEducacionalConferida": true
+        },
+        {
+          "analito": "chlorophyll_b",
+          "rf": 0.54,
+          "classe": "Rf_aproximado_protocolo_universitario",
+          "fonte": "clarkAlgalPigments",
+          "homologado": false,
+          "fontePrimariaConferida": false,
+          "fonteEducacionalConferida": true
+        },
+        {
+          "analito": "beta_carotene",
+          "rf": 0.94,
+          "classe": "Rf_aproximado_protocolo_universitario",
+          "fonte": "clarkAlgalPigments",
+          "homologado": false,
+          "fontePrimariaConferida": false,
+          "fonteEducacionalConferida": true
+        },
+        {
+          "analito": "lutein",
+          "rf": 0.43,
+          "classe": "Rf_aproximado_protocolo_universitario",
+          "fonte": "clarkAlgalPigments",
+          "homologado": false,
+          "fontePrimariaConferida": false,
+          "fonteEducacionalConferida": true
+        },
+        {
+          "analito": "violaxanthin",
+          "rf": 0.22,
+          "classe": "Rf_aproximado_protocolo_universitario",
+          "fonte": "clarkAlgalPigments",
+          "homologado": false,
+          "fontePrimariaConferida": false,
+          "fonteEducacionalConferida": true
+        },
+        {
+          "analito": "neoxanthin",
+          "rf": 0.08,
+          "classe": "Rf_aproximado_protocolo_universitario",
+          "fonte": "clarkAlgalPigments",
+          "homologado": false,
+          "fontePrimariaConferida": false,
+          "fonteEducacionalConferida": true
+        }
+      ],
+      "nota": "Valores razoáveis para identificação aproximada de extratos; não são dados brutos de padrões puros. Não usar para homologação ou predição quantitativa.",
+      "disponibilidadeSimulador": {
+        "tipo": "ccd",
+        "parametrosRetencaoConferidos": false,
         "habilitarCenaQuantitativa": false
       }
     }

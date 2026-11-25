@@ -15,25 +15,26 @@
   },
   "resumo": {
     "candidatos": 76,
-    "comPeloMenosUmRfIndividual": 52,
-    "comDoisMetodosDocumentados": 47,
-    "comDoisMetodosESolventesDistintos": 47,
+    "comPeloMenosUmRfIndividual": 54,
+    "comDoisMetodosDocumentados": 51,
+    "comDoisMetodosESolventesDistintos": 51,
     "homologadosNaRegraNova": 11,
     "faltamParaMetaMinima": 29,
     "faltamParaMetaAmpliada": 44,
-    "totaisRegistroRfPontual": 250,
+    "totaisRegistroRfPontual": 262,
     "totalRfIntervalos": 1,
-    "protocolos": 77,
+    "protocolos": 79,
     "liberadosParaSimulacaoReal": 0,
     "metodosHptlcComFontePrimariaHomologada": 12,
-    "identidadesQuimicasConferidas": 40,
+    "identidadesQuimicasConferidas": 47,
     "metodosCcdComFontePrimariaHomologada": 2,
     "aminoacidosComTresProtocolosPrimariosConferidos": 20,
     "aminoacidosComCorRevelacaoDocumentada": 20,
-    "comReferenciaDidaticaValidada": 31,
-    "somenteReferenciaDidatica": 20,
+    "comReferenciaDidaticaValidada": 35,
+    "somenteReferenciaDidatica": 24,
     "aminoacidosComIdentidadeDeReferenciaConferida": 20,
-    "aminoacidosComReferenciaDidaticaValidada": 20
+    "aminoacidosComReferenciaDidaticaValidada": 20,
+    "pigmentosComDadosEspectraisContextuais": 10
   },
   "candidatos": [
     {
@@ -5684,8 +5685,8 @@
       "id": "chlorophyll_a",
       "nome": "Clorofila a",
       "grupo": "pigmentos_vegetais",
-      "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 2,
+      "identidadeConfirmada": true,
+      "metodosComRetencaoIndividual": 3,
       "metodos": [
         {
           "protocoloId": "tlc_spinach_quach_2004",
@@ -5772,6 +5773,49 @@
           ],
           "rfIntervalo": [],
           "estado": "protocolo_educacional_online_nao_homologado"
+        },
+        {
+          "protocoloId": "ccd_pigments_clark_petroleum_acetone",
+          "tecnica": "ccd",
+          "fonte": "clarkAlgalPigments",
+          "fonteUrl": "https://wordpress.clarku.edu/debrobertson/laboratory-protocols/algal-pigments/",
+          "solventes": [
+            "acetone",
+            "petroleum_ether_mixture"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "petroleum_ether_mixture",
+                "partes": 7
+              },
+              {
+                "id": "acetone",
+                "partes": 3
+              }
+            ],
+            "base": "v/v",
+            "mistura": "éter de petróleo:acetona 7:3",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel",
+          "detector": "Bandas visíveis; confirmação por espectro de pigmento extraído",
+          "rf": [
+            {
+              "valor": 0.68,
+              "classe": "Rf_aproximado_protocolo_universitario",
+              "homologado": false,
+              "fontePrimariaConferida": false,
+              "referenciaDidaticaConferida": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_educacional_aproximada",
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": false,
+            "habilitarCenaQuantitativa": false
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -5793,11 +5837,42 @@
             "acetone",
             "hexanes_mixture"
           ]
+        },
+        {
+          "metodos": [
+            "tlc_spinach_quach_2004",
+            "ccd_pigments_clark_petroleum_acetone"
+          ],
+          "solventesA": [
+            "acetone",
+            "cyclohexane",
+            "ethyl_acetate",
+            "methanol",
+            "petroleum_ether_mixture"
+          ],
+          "solventesB": [
+            "acetone",
+            "petroleum_ether_mixture"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_spinach_dobado_hexane_acetone_7_3",
+            "ccd_pigments_clark_petroleum_acetone"
+          ],
+          "solventesA": [
+            "acetone",
+            "hexanes_mixture"
+          ],
+          "solventesB": [
+            "acetone",
+            "petroleum_ether_mixture"
+          ]
         }
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_e_condicoes_a_homologar"
+        "validacao_quantitativa_e_condicoes_a_conferir"
       ],
       "referenciaDidaticaValidada": false,
       "disponibilidadeSimulacaoReal": false
@@ -5806,8 +5881,8 @@
       "id": "chlorophyll_b",
       "nome": "Clorofila b",
       "grupo": "pigmentos_vegetais",
-      "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 2,
+      "identidadeConfirmada": true,
+      "metodosComRetencaoIndividual": 3,
       "metodos": [
         {
           "protocoloId": "tlc_spinach_quach_2004",
@@ -5894,6 +5969,49 @@
           ],
           "rfIntervalo": [],
           "estado": "protocolo_educacional_online_nao_homologado"
+        },
+        {
+          "protocoloId": "ccd_pigments_clark_petroleum_acetone",
+          "tecnica": "ccd",
+          "fonte": "clarkAlgalPigments",
+          "fonteUrl": "https://wordpress.clarku.edu/debrobertson/laboratory-protocols/algal-pigments/",
+          "solventes": [
+            "acetone",
+            "petroleum_ether_mixture"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "petroleum_ether_mixture",
+                "partes": 7
+              },
+              {
+                "id": "acetone",
+                "partes": 3
+              }
+            ],
+            "base": "v/v",
+            "mistura": "éter de petróleo:acetona 7:3",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel",
+          "detector": "Bandas visíveis; confirmação por espectro de pigmento extraído",
+          "rf": [
+            {
+              "valor": 0.54,
+              "classe": "Rf_aproximado_protocolo_universitario",
+              "homologado": false,
+              "fontePrimariaConferida": false,
+              "referenciaDidaticaConferida": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_educacional_aproximada",
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": false,
+            "habilitarCenaQuantitativa": false
+          }
         }
       ],
       "minimoDoisMetodos": true,
@@ -5915,11 +6033,42 @@
             "acetone",
             "hexanes_mixture"
           ]
+        },
+        {
+          "metodos": [
+            "tlc_spinach_quach_2004",
+            "ccd_pigments_clark_petroleum_acetone"
+          ],
+          "solventesA": [
+            "acetone",
+            "cyclohexane",
+            "ethyl_acetate",
+            "methanol",
+            "petroleum_ether_mixture"
+          ],
+          "solventesB": [
+            "acetone",
+            "petroleum_ether_mixture"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_spinach_dobado_hexane_acetone_7_3",
+            "ccd_pigments_clark_petroleum_acetone"
+          ],
+          "solventesA": [
+            "acetone",
+            "hexanes_mixture"
+          ],
+          "solventesB": [
+            "acetone",
+            "petroleum_ether_mixture"
+          ]
         }
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_e_condicoes_a_homologar"
+        "validacao_quantitativa_e_condicoes_a_conferir"
       ],
       "referenciaDidaticaValidada": false,
       "disponibilidadeSimulacaoReal": false
@@ -6173,8 +6322,8 @@
       "id": "beta_carotene",
       "nome": "β-caroteno",
       "grupo": "pigmentos_vegetais",
-      "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 3,
+      "identidadeConfirmada": true,
+      "metodosComRetencaoIndividual": 5,
       "metodos": [
         {
           "protocoloId": "tlc_carotenoids_yuangsoi2008_petroleumether_diethylether_acetone",
@@ -6290,7 +6439,8 @@
               "valor": 0.74,
               "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
               "homologado": false,
-              "fontePrimariaConferida": true
+              "fontePrimariaConferida": true,
+              "referenciaDidaticaConferida": true
             }
           ],
           "rfIntervalo": [],
@@ -6311,6 +6461,115 @@
             "parametrosRetencaoConferidos": true,
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
+          },
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://doi.org/10.3390/antiox14121438",
+            "dataConferencia": "2026-11-24",
+            "escopo": "Comparação dos Rf em padrões de carotenoides",
+            "restricao": "Consulta contextual de padrões nominais; Rf não identifica isômero/composto isoladamente nem autoriza calibração ou previsão de cena.",
+            "habilitarCenaQuantitativa": false
+          }
+        },
+        {
+          "protocoloId": "ccd_carotenoids_ralley2004",
+          "tecnica": "ccd",
+          "fonte": "ralley2004",
+          "fonteUrl": "https://doi.org/10.1111/j.1365-313X.2004.02151.x",
+          "solventes": [
+            "ethyl_acetate",
+            "hexanes_mixture"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "ethyl_acetate",
+                "partes": 40
+              },
+              {
+                "id": "hexanes_mixture",
+                "partes": 60
+              }
+            ],
+            "base": "v/v",
+            "mistura": "acetato de etila:hexano 40:60; isomeria/pureza do hexano não determinada",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel F254 VWR",
+          "detector": "Cor visível da mancha; confirmação HPLC-PDA/espectral em método separado",
+          "rf": [
+            {
+              "valor": 0.86,
+              "classe": "Rf_padrao_autentico_tabela_1a",
+              "homologado": false,
+              "fontePrimariaConferida": true,
+              "referenciaDidaticaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_experimental_condicional",
+            "fontePrimaria": "https://doi.org/10.1111/j.1365-313X.2004.02151.x",
+            "doi": "10.1111/j.1365-313X.2004.02151.x",
+            "secoesConferidas": "Tabela 1a e experimental procedures",
+            "dataConferencia": "2026-11-24"
+          },
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://doi.org/10.1111/j.1365-313X.2004.02151.x",
+            "dataConferencia": "2026-11-24",
+            "escopo": "Comparação dos Rf em padrões de carotenoides",
+            "restricao": "Consulta contextual de padrões nominais; Rf não identifica isômero/composto isoladamente nem autoriza calibração ou previsão de cena.",
+            "habilitarCenaQuantitativa": false
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
+        },
+        {
+          "protocoloId": "ccd_pigments_clark_petroleum_acetone",
+          "tecnica": "ccd",
+          "fonte": "clarkAlgalPigments",
+          "fonteUrl": "https://wordpress.clarku.edu/debrobertson/laboratory-protocols/algal-pigments/",
+          "solventes": [
+            "acetone",
+            "petroleum_ether_mixture"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "petroleum_ether_mixture",
+                "partes": 7
+              },
+              {
+                "id": "acetone",
+                "partes": 3
+              }
+            ],
+            "base": "v/v",
+            "mistura": "éter de petróleo:acetona 7:3",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel",
+          "detector": "Bandas visíveis; confirmação por espectro de pigmento extraído",
+          "rf": [
+            {
+              "valor": 0.94,
+              "classe": "Rf_aproximado_protocolo_universitario",
+              "homologado": false,
+              "fontePrimariaConferida": false,
+              "referenciaDidaticaConferida": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_educacional_aproximada",
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": false,
+            "habilitarCenaQuantitativa": false
           }
         }
       ],
@@ -6350,6 +6609,36 @@
         },
         {
           "metodos": [
+            "tlc_carotenoids_yuangsoi2008_petroleumether_diethylether_acetone",
+            "ccd_carotenoids_ralley2004"
+          ],
+          "solventesA": [
+            "acetone",
+            "diethyl_ether",
+            "petroleum_ether_mixture"
+          ],
+          "solventesB": [
+            "ethyl_acetate",
+            "hexanes_mixture"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_carotenoids_yuangsoi2008_petroleumether_diethylether_acetone",
+            "ccd_pigments_clark_petroleum_acetone"
+          ],
+          "solventesA": [
+            "acetone",
+            "diethyl_ether",
+            "petroleum_ether_mixture"
+          ],
+          "solventesB": [
+            "acetone",
+            "petroleum_ether_mixture"
+          ]
+        },
+        {
+          "metodos": [
             "tlc_carotenoids_adedoyin2017_acetone_nhexane_30_70",
             "tlc_carotenoids_adamczuk2025"
           ],
@@ -6362,15 +6651,95 @@
             "ethyl_acetate",
             "heptane"
           ]
+        },
+        {
+          "metodos": [
+            "tlc_carotenoids_adedoyin2017_acetone_nhexane_30_70",
+            "ccd_carotenoids_ralley2004"
+          ],
+          "solventesA": [
+            "acetone",
+            "n_hexane"
+          ],
+          "solventesB": [
+            "ethyl_acetate",
+            "hexanes_mixture"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_carotenoids_adedoyin2017_acetone_nhexane_30_70",
+            "ccd_pigments_clark_petroleum_acetone"
+          ],
+          "solventesA": [
+            "acetone",
+            "n_hexane"
+          ],
+          "solventesB": [
+            "acetone",
+            "petroleum_ether_mixture"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_carotenoids_adamczuk2025",
+            "ccd_carotenoids_ralley2004"
+          ],
+          "solventesA": [
+            "acetone",
+            "ethyl_acetate",
+            "heptane"
+          ],
+          "solventesB": [
+            "ethyl_acetate",
+            "hexanes_mixture"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_carotenoids_adamczuk2025",
+            "ccd_pigments_clark_petroleum_acetone"
+          ],
+          "solventesA": [
+            "acetone",
+            "ethyl_acetate",
+            "heptane"
+          ],
+          "solventesB": [
+            "acetone",
+            "petroleum_ether_mixture"
+          ]
+        },
+        {
+          "metodos": [
+            "ccd_carotenoids_ralley2004",
+            "ccd_pigments_clark_petroleum_acetone"
+          ],
+          "solventesA": [
+            "ethyl_acetate",
+            "hexanes_mixture"
+          ],
+          "solventesB": [
+            "acetone",
+            "petroleum_ether_mixture"
+          ]
         }
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_a_conferir",
-        "metodos_e_condicoes_a_homologar"
+        "validacao_quantitativa_e_condicoes_a_conferir"
       ],
-      "referenciaDidaticaValidada": false,
-      "disponibilidadeSimulacaoReal": false
+      "referenciaDidaticaValidada": true,
+      "disponibilidadeSimulacaoReal": false,
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "ccd_carotenoids_ralley2004",
+          "tlc_carotenoids_adamczuk2025"
+        ],
+        "restricao": "Consulta contextual de padrões nominais; Rf não identifica isômero/composto isoladamente nem autoriza calibração ou previsão de cena.",
+        "habilitarCenaQuantitativa": false
+      }
     },
     {
       "id": "alpha_carotene",
@@ -6396,8 +6765,8 @@
       "id": "lutein",
       "nome": "Luteína",
       "grupo": "pigmentos_vegetais",
-      "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 3,
+      "identidadeConfirmada": true,
+      "metodosComRetencaoIndividual": 5,
       "metodos": [
         {
           "protocoloId": "tlc_carotenoids_yuangsoi2008_petroleumether_diethylether_acetone",
@@ -6513,7 +6882,8 @@
               "valor": 0.35,
               "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
               "homologado": false,
-              "fontePrimariaConferida": true
+              "fontePrimariaConferida": true,
+              "referenciaDidaticaConferida": true
             }
           ],
           "rfIntervalo": [],
@@ -6534,6 +6904,115 @@
             "parametrosRetencaoConferidos": true,
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
+          },
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://doi.org/10.3390/antiox14121438",
+            "dataConferencia": "2026-11-24",
+            "escopo": "Comparação dos Rf em padrões de carotenoides",
+            "restricao": "Consulta contextual de padrões nominais; Rf não identifica isômero/composto isoladamente nem autoriza calibração ou previsão de cena.",
+            "habilitarCenaQuantitativa": false
+          }
+        },
+        {
+          "protocoloId": "ccd_carotenoids_ralley2004",
+          "tecnica": "ccd",
+          "fonte": "ralley2004",
+          "fonteUrl": "https://doi.org/10.1111/j.1365-313X.2004.02151.x",
+          "solventes": [
+            "ethyl_acetate",
+            "hexanes_mixture"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "ethyl_acetate",
+                "partes": 40
+              },
+              {
+                "id": "hexanes_mixture",
+                "partes": 60
+              }
+            ],
+            "base": "v/v",
+            "mistura": "acetato de etila:hexano 40:60; isomeria/pureza do hexano não determinada",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel F254 VWR",
+          "detector": "Cor visível da mancha; confirmação HPLC-PDA/espectral em método separado",
+          "rf": [
+            {
+              "valor": 0.15,
+              "classe": "Rf_padrao_autentico_tabela_1a",
+              "homologado": false,
+              "fontePrimariaConferida": true,
+              "referenciaDidaticaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_experimental_condicional",
+            "fontePrimaria": "https://doi.org/10.1111/j.1365-313X.2004.02151.x",
+            "doi": "10.1111/j.1365-313X.2004.02151.x",
+            "secoesConferidas": "Tabela 1a e experimental procedures",
+            "dataConferencia": "2026-11-24"
+          },
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://doi.org/10.1111/j.1365-313X.2004.02151.x",
+            "dataConferencia": "2026-11-24",
+            "escopo": "Comparação dos Rf em padrões de carotenoides",
+            "restricao": "Consulta contextual de padrões nominais; Rf não identifica isômero/composto isoladamente nem autoriza calibração ou previsão de cena.",
+            "habilitarCenaQuantitativa": false
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
+        },
+        {
+          "protocoloId": "ccd_pigments_clark_petroleum_acetone",
+          "tecnica": "ccd",
+          "fonte": "clarkAlgalPigments",
+          "fonteUrl": "https://wordpress.clarku.edu/debrobertson/laboratory-protocols/algal-pigments/",
+          "solventes": [
+            "acetone",
+            "petroleum_ether_mixture"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "petroleum_ether_mixture",
+                "partes": 7
+              },
+              {
+                "id": "acetone",
+                "partes": 3
+              }
+            ],
+            "base": "v/v",
+            "mistura": "éter de petróleo:acetona 7:3",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel",
+          "detector": "Bandas visíveis; confirmação por espectro de pigmento extraído",
+          "rf": [
+            {
+              "valor": 0.43,
+              "classe": "Rf_aproximado_protocolo_universitario",
+              "homologado": false,
+              "fontePrimariaConferida": false,
+              "referenciaDidaticaConferida": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_educacional_aproximada",
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": false,
+            "habilitarCenaQuantitativa": false
           }
         }
       ],
@@ -6573,6 +7052,36 @@
         },
         {
           "metodos": [
+            "tlc_carotenoids_yuangsoi2008_petroleumether_diethylether_acetone",
+            "ccd_carotenoids_ralley2004"
+          ],
+          "solventesA": [
+            "acetone",
+            "diethyl_ether",
+            "petroleum_ether_mixture"
+          ],
+          "solventesB": [
+            "ethyl_acetate",
+            "hexanes_mixture"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_carotenoids_yuangsoi2008_petroleumether_diethylether_acetone",
+            "ccd_pigments_clark_petroleum_acetone"
+          ],
+          "solventesA": [
+            "acetone",
+            "diethyl_ether",
+            "petroleum_ether_mixture"
+          ],
+          "solventesB": [
+            "acetone",
+            "petroleum_ether_mixture"
+          ]
+        },
+        {
+          "metodos": [
             "tlc_carotenoids_adedoyin2017_acetone_nhexane_30_70",
             "tlc_carotenoids_adamczuk2025"
           ],
@@ -6585,22 +7094,102 @@
             "ethyl_acetate",
             "heptane"
           ]
+        },
+        {
+          "metodos": [
+            "tlc_carotenoids_adedoyin2017_acetone_nhexane_30_70",
+            "ccd_carotenoids_ralley2004"
+          ],
+          "solventesA": [
+            "acetone",
+            "n_hexane"
+          ],
+          "solventesB": [
+            "ethyl_acetate",
+            "hexanes_mixture"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_carotenoids_adedoyin2017_acetone_nhexane_30_70",
+            "ccd_pigments_clark_petroleum_acetone"
+          ],
+          "solventesA": [
+            "acetone",
+            "n_hexane"
+          ],
+          "solventesB": [
+            "acetone",
+            "petroleum_ether_mixture"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_carotenoids_adamczuk2025",
+            "ccd_carotenoids_ralley2004"
+          ],
+          "solventesA": [
+            "acetone",
+            "ethyl_acetate",
+            "heptane"
+          ],
+          "solventesB": [
+            "ethyl_acetate",
+            "hexanes_mixture"
+          ]
+        },
+        {
+          "metodos": [
+            "tlc_carotenoids_adamczuk2025",
+            "ccd_pigments_clark_petroleum_acetone"
+          ],
+          "solventesA": [
+            "acetone",
+            "ethyl_acetate",
+            "heptane"
+          ],
+          "solventesB": [
+            "acetone",
+            "petroleum_ether_mixture"
+          ]
+        },
+        {
+          "metodos": [
+            "ccd_carotenoids_ralley2004",
+            "ccd_pigments_clark_petroleum_acetone"
+          ],
+          "solventesA": [
+            "ethyl_acetate",
+            "hexanes_mixture"
+          ],
+          "solventesB": [
+            "acetone",
+            "petroleum_ether_mixture"
+          ]
         }
       ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_a_conferir",
-        "metodos_e_condicoes_a_homologar"
+        "validacao_quantitativa_e_condicoes_a_conferir"
       ],
-      "referenciaDidaticaValidada": false,
-      "disponibilidadeSimulacaoReal": false
+      "referenciaDidaticaValidada": true,
+      "disponibilidadeSimulacaoReal": false,
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "ccd_carotenoids_ralley2004",
+          "tlc_carotenoids_adamczuk2025"
+        ],
+        "restricao": "Consulta contextual de padrões nominais; Rf não identifica isômero/composto isoladamente nem autoriza calibração ou previsão de cena.",
+        "habilitarCenaQuantitativa": false
+      }
     },
     {
       "id": "zeaxanthin",
       "nome": "Zeaxantina",
       "grupo": "pigmentos_vegetais",
-      "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 1,
+      "identidadeConfirmada": true,
+      "metodosComRetencaoIndividual": 2,
       "metodos": [
         {
           "protocoloId": "tlc_carotenoids_adamczuk2025",
@@ -6638,7 +7227,8 @@
               "valor": 0.33,
               "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
               "homologado": false,
-              "fontePrimariaConferida": true
+              "fontePrimariaConferida": true,
+              "referenciaDidaticaConferida": true
             }
           ],
           "rfIntervalo": [],
@@ -6659,21 +7249,109 @@
             "parametrosRetencaoConferidos": true,
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
+          },
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://doi.org/10.3390/antiox14121438",
+            "dataConferencia": "2026-11-24",
+            "escopo": "Comparação dos Rf em padrões de carotenoides",
+            "restricao": "Consulta contextual de padrões nominais; Rf não identifica isômero/composto isoladamente nem autoriza calibração ou previsão de cena.",
+            "habilitarCenaQuantitativa": false
+          }
+        },
+        {
+          "protocoloId": "ccd_carotenoids_ralley2004",
+          "tecnica": "ccd",
+          "fonte": "ralley2004",
+          "fonteUrl": "https://doi.org/10.1111/j.1365-313X.2004.02151.x",
+          "solventes": [
+            "ethyl_acetate",
+            "hexanes_mixture"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "ethyl_acetate",
+                "partes": 40
+              },
+              {
+                "id": "hexanes_mixture",
+                "partes": 60
+              }
+            ],
+            "base": "v/v",
+            "mistura": "acetato de etila:hexano 40:60; isomeria/pureza do hexano não determinada",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel F254 VWR",
+          "detector": "Cor visível da mancha; confirmação HPLC-PDA/espectral em método separado",
+          "rf": [
+            {
+              "valor": 0.11,
+              "classe": "Rf_padrao_autentico_tabela_1a",
+              "homologado": false,
+              "fontePrimariaConferida": true,
+              "referenciaDidaticaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_experimental_condicional",
+            "fontePrimaria": "https://doi.org/10.1111/j.1365-313X.2004.02151.x",
+            "doi": "10.1111/j.1365-313X.2004.02151.x",
+            "secoesConferidas": "Tabela 1a e experimental procedures",
+            "dataConferencia": "2026-11-24"
+          },
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://doi.org/10.1111/j.1365-313X.2004.02151.x",
+            "dataConferencia": "2026-11-24",
+            "escopo": "Comparação dos Rf em padrões de carotenoides",
+            "restricao": "Consulta contextual de padrões nominais; Rf não identifica isômero/composto isoladamente nem autoriza calibração ou previsão de cena.",
+            "habilitarCenaQuantitativa": false
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
           }
         }
       ],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
-      "paresDocumentados": [],
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "tlc_carotenoids_adamczuk2025",
+            "ccd_carotenoids_ralley2004"
+          ],
+          "solventesA": [
+            "acetone",
+            "ethyl_acetate",
+            "heptane"
+          ],
+          "solventesB": [
+            "ethyl_acetate",
+            "hexanes_mixture"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_a_conferir",
-        "metodo_2_documentado",
-        "solventes_contrastantes",
-        "metodos_e_condicoes_a_homologar"
+        "validacao_quantitativa_e_condicoes_a_conferir"
       ],
-      "referenciaDidaticaValidada": false,
-      "disponibilidadeSimulacaoReal": false
+      "referenciaDidaticaValidada": true,
+      "disponibilidadeSimulacaoReal": false,
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "ccd_carotenoids_ralley2004",
+          "tlc_carotenoids_adamczuk2025"
+        ],
+        "restricao": "Consulta contextual de padrões nominais; Rf não identifica isômero/composto isoladamente nem autoriza calibração ou previsão de cena.",
+        "habilitarCenaQuantitativa": false
+      }
     },
     {
       "id": "lycopene",
@@ -6699,18 +7377,132 @@
       "id": "violaxanthin",
       "nome": "Violaxantina",
       "grupo": "pigmentos_vegetais",
-      "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 0,
-      "metodos": [],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
-      "paresDocumentados": [],
+      "identidadeConfirmada": true,
+      "metodosComRetencaoIndividual": 2,
+      "metodos": [
+        {
+          "protocoloId": "ccd_carotenoids_ralley2004",
+          "tecnica": "ccd",
+          "fonte": "ralley2004",
+          "fonteUrl": "https://doi.org/10.1111/j.1365-313X.2004.02151.x",
+          "solventes": [
+            "ethyl_acetate",
+            "hexanes_mixture"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "ethyl_acetate",
+                "partes": 40
+              },
+              {
+                "id": "hexanes_mixture",
+                "partes": 60
+              }
+            ],
+            "base": "v/v",
+            "mistura": "acetato de etila:hexano 40:60; isomeria/pureza do hexano não determinada",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel F254 VWR",
+          "detector": "Cor visível da mancha; confirmação HPLC-PDA/espectral em método separado",
+          "rf": [
+            {
+              "valor": 0.1,
+              "classe": "Rf_padrao_autentico_tabela_1a",
+              "homologado": false,
+              "fontePrimariaConferida": true,
+              "referenciaDidaticaConferida": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_experimental_condicional",
+            "fontePrimaria": "https://doi.org/10.1111/j.1365-313X.2004.02151.x",
+            "doi": "10.1111/j.1365-313X.2004.02151.x",
+            "secoesConferidas": "Tabela 1a e experimental procedures",
+            "dataConferencia": "2026-11-24"
+          },
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://doi.org/10.1111/j.1365-313X.2004.02151.x",
+            "dataConferencia": "2026-11-24",
+            "escopo": "Comparação dos Rf em padrões de carotenoides",
+            "restricao": "Consulta contextual de padrões nominais; Rf não identifica isômero/composto isoladamente nem autoriza calibração ou previsão de cena.",
+            "habilitarCenaQuantitativa": false
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
+        },
+        {
+          "protocoloId": "ccd_pigments_clark_petroleum_acetone",
+          "tecnica": "ccd",
+          "fonte": "clarkAlgalPigments",
+          "fonteUrl": "https://wordpress.clarku.edu/debrobertson/laboratory-protocols/algal-pigments/",
+          "solventes": [
+            "acetone",
+            "petroleum_ether_mixture"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "petroleum_ether_mixture",
+                "partes": 7
+              },
+              {
+                "id": "acetone",
+                "partes": 3
+              }
+            ],
+            "base": "v/v",
+            "mistura": "éter de petróleo:acetona 7:3",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel",
+          "detector": "Bandas visíveis; confirmação por espectro de pigmento extraído",
+          "rf": [
+            {
+              "valor": 0.22,
+              "classe": "Rf_aproximado_protocolo_universitario",
+              "homologado": false,
+              "fontePrimariaConferida": false,
+              "referenciaDidaticaConferida": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_educacional_aproximada",
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": false,
+            "habilitarCenaQuantitativa": false
+          }
+        }
+      ],
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "ccd_carotenoids_ralley2004",
+            "ccd_pigments_clark_petroleum_acetone"
+          ],
+          "solventesA": [
+            "ethyl_acetate",
+            "hexanes_mixture"
+          ],
+          "solventesB": [
+            "acetone",
+            "petroleum_ether_mixture"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "sem_retencao_experimental",
-        "metodo_2_documentado",
-        "solventes_contrastantes",
-        "identidade_primaria_e_condicoes_a_homologar"
+        "validacao_quantitativa_e_condicoes_a_conferir"
       ],
       "referenciaDidaticaValidada": false,
       "disponibilidadeSimulacaoReal": false
@@ -6720,17 +7512,132 @@
       "nome": "Neoxantina",
       "grupo": "pigmentos_vegetais",
       "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 0,
-      "metodos": [],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
-      "paresDocumentados": [],
+      "metodosComRetencaoIndividual": 2,
+      "metodos": [
+        {
+          "protocoloId": "ccd_carotenoids_ralley2004",
+          "tecnica": "ccd",
+          "fonte": "ralley2004",
+          "fonteUrl": "https://doi.org/10.1111/j.1365-313X.2004.02151.x",
+          "solventes": [
+            "ethyl_acetate",
+            "hexanes_mixture"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "ethyl_acetate",
+                "partes": 40
+              },
+              {
+                "id": "hexanes_mixture",
+                "partes": 60
+              }
+            ],
+            "base": "v/v",
+            "mistura": "acetato de etila:hexano 40:60; isomeria/pureza do hexano não determinada",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel F254 VWR",
+          "detector": "Cor visível da mancha; confirmação HPLC-PDA/espectral em método separado",
+          "rf": [
+            {
+              "valor": 0.1,
+              "classe": "Rf_padrao_autentico_tabela_1a",
+              "homologado": false,
+              "fontePrimariaConferida": true,
+              "referenciaDidaticaConferida": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_experimental_condicional",
+            "fontePrimaria": "https://doi.org/10.1111/j.1365-313X.2004.02151.x",
+            "doi": "10.1111/j.1365-313X.2004.02151.x",
+            "secoesConferidas": "Tabela 1a e experimental procedures",
+            "dataConferencia": "2026-11-24"
+          },
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://doi.org/10.1111/j.1365-313X.2004.02151.x",
+            "dataConferencia": "2026-11-24",
+            "escopo": "Comparação dos Rf em padrões de carotenoides",
+            "restricao": "Consulta contextual de padrões nominais; Rf não identifica isômero/composto isoladamente nem autoriza calibração ou previsão de cena.",
+            "habilitarCenaQuantitativa": false
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
+          }
+        },
+        {
+          "protocoloId": "ccd_pigments_clark_petroleum_acetone",
+          "tecnica": "ccd",
+          "fonte": "clarkAlgalPigments",
+          "fonteUrl": "https://wordpress.clarku.edu/debrobertson/laboratory-protocols/algal-pigments/",
+          "solventes": [
+            "acetone",
+            "petroleum_ether_mixture"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "petroleum_ether_mixture",
+                "partes": 7
+              },
+              {
+                "id": "acetone",
+                "partes": 3
+              }
+            ],
+            "base": "v/v",
+            "mistura": "éter de petróleo:acetona 7:3",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel",
+          "detector": "Bandas visíveis; confirmação por espectro de pigmento extraído",
+          "rf": [
+            {
+              "valor": 0.08,
+              "classe": "Rf_aproximado_protocolo_universitario",
+              "homologado": false,
+              "fontePrimariaConferida": false,
+              "referenciaDidaticaConferida": false
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_educacional_aproximada",
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": false,
+            "habilitarCenaQuantitativa": false
+          }
+        }
+      ],
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "ccd_carotenoids_ralley2004",
+            "ccd_pigments_clark_petroleum_acetone"
+          ],
+          "solventesA": [
+            "ethyl_acetate",
+            "hexanes_mixture"
+          ],
+          "solventesB": [
+            "acetone",
+            "petroleum_ether_mixture"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "sem_retencao_experimental",
-        "metodo_2_documentado",
-        "solventes_contrastantes",
-        "identidade_primaria_e_condicoes_a_homologar"
+        "identidade_ou_isomeria_a_conferir",
+        "validacao_quantitativa_e_condicoes_a_conferir"
       ],
       "referenciaDidaticaValidada": false,
       "disponibilidadeSimulacaoReal": false
@@ -6739,8 +7646,8 @@
       "id": "beta_cryptoxanthin",
       "nome": "β-criptoxantina",
       "grupo": "pigmentos_vegetais",
-      "identidadeConfirmada": false,
-      "metodosComRetencaoIndividual": 1,
+      "identidadeConfirmada": true,
+      "metodosComRetencaoIndividual": 2,
       "metodos": [
         {
           "protocoloId": "tlc_carotenoids_adamczuk2025",
@@ -6778,7 +7685,8 @@
               "valor": 0.56,
               "classe": "Rf_experimental_reportado_sob_condicoes_individuais",
               "homologado": false,
-              "fontePrimariaConferida": true
+              "fontePrimariaConferida": true,
+              "referenciaDidaticaConferida": true
             }
           ],
           "rfIntervalo": [],
@@ -6799,21 +7707,109 @@
             "parametrosRetencaoConferidos": true,
             "habilitarCenaQuantitativa": false,
             "motivo": "Referência experimental contextual; motor não calibrado."
+          },
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://doi.org/10.3390/antiox14121438",
+            "dataConferencia": "2026-11-24",
+            "escopo": "Comparação dos Rf em padrões de carotenoides",
+            "restricao": "Consulta contextual de padrões nominais; Rf não identifica isômero/composto isoladamente nem autoriza calibração ou previsão de cena.",
+            "habilitarCenaQuantitativa": false
+          }
+        },
+        {
+          "protocoloId": "ccd_carotenoids_ralley2004",
+          "tecnica": "ccd",
+          "fonte": "ralley2004",
+          "fonteUrl": "https://doi.org/10.1111/j.1365-313X.2004.02151.x",
+          "solventes": [
+            "ethyl_acetate",
+            "hexanes_mixture"
+          ],
+          "faseMovel": {
+            "componentes": [
+              {
+                "id": "ethyl_acetate",
+                "partes": 40
+              },
+              {
+                "id": "hexanes_mixture",
+                "partes": 60
+              }
+            ],
+            "base": "v/v",
+            "mistura": "acetato de etila:hexano 40:60; isomeria/pureza do hexano não determinada",
+            "homologada": false
+          },
+          "faseEstacionaria": "Sílica gel F254 VWR",
+          "detector": "Cor visível da mancha; confirmação HPLC-PDA/espectral em método separado",
+          "rf": [
+            {
+              "valor": 0.4,
+              "classe": "Rf_padrao_autentico_tabela_1a",
+              "homologado": false,
+              "fontePrimariaConferida": true,
+              "referenciaDidaticaConferida": true
+            }
+          ],
+          "rfIntervalo": [],
+          "estado": "referencia_primaria_conferida_nao_homologada",
+          "auditoriaCientifica": {
+            "estado": "referencia_experimental_condicional",
+            "fontePrimaria": "https://doi.org/10.1111/j.1365-313X.2004.02151.x",
+            "doi": "10.1111/j.1365-313X.2004.02151.x",
+            "secoesConferidas": "Tabela 1a e experimental procedures",
+            "dataConferencia": "2026-11-24"
+          },
+          "referenciaDidatica": {
+            "estado": "referencia_contextual_conferida",
+            "fontePrimaria": "https://doi.org/10.1111/j.1365-313X.2004.02151.x",
+            "dataConferencia": "2026-11-24",
+            "escopo": "Comparação dos Rf em padrões de carotenoides",
+            "restricao": "Consulta contextual de padrões nominais; Rf não identifica isômero/composto isoladamente nem autoriza calibração ou previsão de cena.",
+            "habilitarCenaQuantitativa": false
+          },
+          "disponibilidadeSimulador": {
+            "tipo": "ccd",
+            "parametrosRetencaoConferidos": true,
+            "habilitarCenaQuantitativa": false
           }
         }
       ],
-      "minimoDoisMetodos": false,
-      "doisSolventesContrastantesEmDoisMetodos": false,
-      "paresDocumentados": [],
+      "minimoDoisMetodos": true,
+      "doisSolventesContrastantesEmDoisMetodos": true,
+      "paresDocumentados": [
+        {
+          "metodos": [
+            "tlc_carotenoids_adamczuk2025",
+            "ccd_carotenoids_ralley2004"
+          ],
+          "solventesA": [
+            "acetone",
+            "ethyl_acetate",
+            "heptane"
+          ],
+          "solventesB": [
+            "ethyl_acetate",
+            "hexanes_mixture"
+          ]
+        }
+      ],
       "homologacaoCompleta": false,
       "pendencias": [
-        "identidade_primaria_a_conferir",
-        "metodo_2_documentado",
-        "solventes_contrastantes",
-        "metodos_e_condicoes_a_homologar"
+        "validacao_quantitativa_e_condicoes_a_conferir"
       ],
-      "referenciaDidaticaValidada": false,
-      "disponibilidadeSimulacaoReal": false
+      "referenciaDidaticaValidada": true,
+      "disponibilidadeSimulacaoReal": false,
+      "referenciaDidatica": {
+        "estado": "referencia_contextual_conferida",
+        "metodos": [
+          "ccd_carotenoids_ralley2004",
+          "tlc_carotenoids_adamczuk2025"
+        ],
+        "restricao": "Consulta contextual de padrões nominais; Rf não identifica isômero/composto isoladamente nem autoriza calibração ou previsão de cena.",
+        "habilitarCenaQuantitativa": false
+      }
     },
     {
       "id": "cyanidin_3_glucoside",

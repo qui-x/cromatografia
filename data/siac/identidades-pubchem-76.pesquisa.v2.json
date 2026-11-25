@@ -31,7 +31,7 @@
     "exigemEspecificacao": 49,
     "idsDuplicados": 0,
     "homologadasParaMotor": 0,
-    "identidadesConferidas": 40
+    "identidadesConferidas": 47
   },
   "candidatos": [
     {
@@ -343,12 +343,16 @@
       "referenciaQuimica": {
         "pubchemCID": 12085802,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/12085802",
-        "classe": "cid_candidato_forma_a_confirmar",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": "Há registros PubChem alternativos para isômeros/análogos; a configuração estrutural e origem precisam ser definidas.",
+        "classe": "identidade_molecular_de_referencia_conferida_chebi",
+        "status": "identidade_quimica_confirmada_chebi",
+        "nota": "complexo de magnésio clorofila a; CID anteriormente catalogado ainda requer confronto.",
         "casConferido": null,
         "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "estruturaEFormaConferidas": true,
+        "chebiID": "CHEBI:18230",
+        "formulaMolecular": "C55H72MgN4O5",
+        "fonteConferencia": "https://www.ebi.ac.uk/chebi/CHEBI:18230",
+        "dataConferencia": "2026-11-24"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {
@@ -367,12 +371,16 @@
       "referenciaQuimica": {
         "pubchemCID": 11593175,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/11593175",
-        "classe": "cid_candidato_forma_a_confirmar",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": "Verificar estereoquímica de extrato e evitar clorofila b' (epímero).",
+        "classe": "identidade_molecular_de_referencia_conferida_chebi",
+        "status": "identidade_quimica_confirmada_chebi",
+        "nota": "complexo de magnésio clorofila b; CID anteriormente catalogado ainda requer confronto.",
         "casConferido": null,
         "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "estruturaEFormaConferidas": true,
+        "chebiID": "CHEBI:27888",
+        "formulaMolecular": "C55H70MgN4O6",
+        "fonteConferencia": "https://www.ebi.ac.uk/chebi/CHEBI:27888",
+        "dataConferencia": "2026-11-24"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {
@@ -439,12 +447,16 @@
       "referenciaQuimica": {
         "pubchemCID": 5280489,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/5280489",
-        "classe": "cid_candidato_localizado",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": null,
+        "classe": "identidade_molecular_de_referencia_conferida_chebi",
+        "status": "identidade_quimica_confirmada_chebi",
+        "nota": "β-caroteno all-trans de referência; CID anteriormente catalogado ainda requer confronto.",
         "casConferido": null,
         "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "estruturaEFormaConferidas": true,
+        "chebiID": "CHEBI:17579",
+        "formulaMolecular": "C40H56",
+        "fonteConferencia": "https://www.ebi.ac.uk/chebi/CHEBI:17579",
+        "dataConferencia": "2026-11-24"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {
@@ -487,12 +499,16 @@
       "referenciaQuimica": {
         "pubchemCID": 5281243,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/5281243",
-        "classe": "cid_candidato_forma_a_confirmar",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": "Verificar estereoisomeria e distingui-la da zeaxantina.",
+        "classe": "identidade_molecular_de_referencia_conferida_chebi",
+        "status": "identidade_quimica_confirmada_chebi",
+        "nota": "trans-luteína de referência; CID anteriormente catalogado ainda requer confronto.",
         "casConferido": null,
         "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "estruturaEFormaConferidas": true,
+        "chebiID": "CHEBI:28838",
+        "formulaMolecular": "C40H56O2",
+        "fonteConferencia": "https://www.ebi.ac.uk/chebi/CHEBI:28838",
+        "dataConferencia": "2026-11-24"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {
@@ -511,12 +527,16 @@
       "referenciaQuimica": {
         "pubchemCID": 5280899,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/5280899",
-        "classe": "cid_candidato_forma_a_confirmar",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": "Verificar estereoisomeria; luteína e zeaxantina não são o mesmo composto.",
+        "classe": "identidade_molecular_de_referencia_conferida_chebi",
+        "status": "identidade_quimica_confirmada_chebi",
+        "nota": "zeaxantina de referência, não meso-zeaxantina; CID anteriormente catalogado ainda requer confronto.",
         "casConferido": null,
         "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "estruturaEFormaConferidas": true,
+        "chebiID": "CHEBI:27547",
+        "formulaMolecular": "C40H56O2",
+        "fonteConferencia": "https://www.ebi.ac.uk/chebi/CHEBI:27547",
+        "dataConferencia": "2026-11-24"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {
@@ -559,12 +579,16 @@
       "referenciaQuimica": {
         "pubchemCID": 448438,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/448438",
-        "classe": "cid_candidato_localizado",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": null,
+        "classe": "identidade_molecular_de_referencia_conferida_chebi",
+        "status": "identidade_quimica_confirmada_chebi",
+        "nota": "all-trans-violaxantina de referência; configuração dos padrões não presumida; CID anteriormente catalogado ainda requer confronto.",
         "casConferido": null,
         "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "estruturaEFormaConferidas": true,
+        "chebiID": "CHEBI:35288",
+        "formulaMolecular": "C40H56O4",
+        "fonteConferencia": "https://www.ebi.ac.uk/chebi/CHEBI:35288",
+        "dataConferencia": "2026-11-24"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {
@@ -607,12 +631,16 @@
       "referenciaQuimica": {
         "pubchemCID": 5281235,
         "url": "https://pubchem.ncbi.nlm.nih.gov/compound/5281235",
-        "classe": "cid_candidato_localizado",
-        "status": "correspondencia_pubchem_preliminar",
-        "nota": null,
+        "classe": "identidade_molecular_de_referencia_conferida_chebi",
+        "status": "identidade_quimica_confirmada_chebi",
+        "nota": "β-criptoxantina de referência; CID anteriormente catalogado ainda requer confronto.",
         "casConferido": null,
         "inchiKeyConferido": null,
-        "estruturaEFormaConferidas": false
+        "estruturaEFormaConferidas": true,
+        "chebiID": "CHEBI:10362",
+        "formulaMolecular": "C40H56O",
+        "fonteConferencia": "https://www.ebi.ac.uk/chebi/CHEBI:10362",
+        "dataConferencia": "2026-11-24"
       },
       "fonteDeBusca": "PubChem Compound - consulta pública individual de nome/CID; requer confronto molecular secundário",
       "quimica": {
